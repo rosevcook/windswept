@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "blueprint:block/vertical_planks",
   "textures": {
-    "all": "windswept:block/vertical_holly_planks"
+    "all": "windswept:block/holly_planks"
   }
 }

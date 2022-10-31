@@ -94,15 +94,16 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 			this.dropSelf(WindsweptBlocks.HOLLY_SAPLING.get());
 			this.dropPottedContents(WindsweptBlocks.POTTED_HOLLY_SAPLING.get());
 
-			//this.add(WindsweptBlocks.HOLLY_BEEHIVE.get(), Blocks::createBeeHiveDrop);
+			this.add(WindsweptBlocks.HOLLY_BEEHIVE.get(), Blocks::createBeeHiveDrop);
 			this.dropSelf(WindsweptBlocks.HOLLY_LADDER.get());
 			this.dropSelf(WindsweptBlocks.VERTICAL_HOLLY_PLANKS.get());
 			this.bookshelf(WindsweptBlocks.HOLLY_BOOKSHELF.get());
+			this.dropSelf(WindsweptBlocks.HOLLY_BOARDS.get());
 			this.add(WindsweptBlocks.HOLLY_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
 			this.dropSelf(WindsweptBlocks.STRIPPED_HOLLY_POST.get());
 			this.dropSelf(WindsweptBlocks.HOLLY_POST.get());
-			this.dropSelf(WindsweptBlocks.HOLLY_CHESTS.getFirst().get());
-			this.dropSelf(WindsweptBlocks.HOLLY_CHESTS.getSecond().get());
+			this.dropSelf(WindsweptBlocks.HOLLY_CHEST.get());
+			this.dropSelf(WindsweptBlocks.HOLLY_TRAPPED_CHEST.get());
 
 			this.add(WindsweptBlocks.HOLLY_LEAVES.get(), b -> createLeavesDrops(b, WindsweptBlocks.HOLLY_SAPLING
 					.get(), .05f, .0625f, .083333336f, .1f).withPool(LootPool.lootPool()
@@ -114,7 +115,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 
 			this.dropSelf(WindsweptBlocks.HOLLY_HEDGE.get());
 			this.dropSelf(WindsweptBlocks.HOLLY_LEAF_CARPET.get());
-			//this.dropSelf(WindsweptBlocks.HOLLY_LEAF_PILE.get());
+			this.dropSelf(WindsweptBlocks.HOLLY_LEAF_PILE.get());
 			
 			this.dropSelf(WindsweptBlocks.HOLLY_BERRY_CRATE.get());
 					
@@ -137,21 +138,22 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 			this.dropSelf(WindsweptBlocks.CHESTNUT_SAPLING.get());
 			this.dropPottedContents(WindsweptBlocks.POTTED_CHESTNUT_SAPLING.get());
 
-			//this.add(WindsweptBlocks.CHESTNUT_BEEHIVE.get(), Blocks::createBeeHiveDrop);
+			this.add(WindsweptBlocks.CHESTNUT_BEEHIVE.get(), Blocks::createBeeHiveDrop);
 			this.dropSelf(WindsweptBlocks.CHESTNUT_LADDER.get());
 			this.dropSelf(WindsweptBlocks.VERTICAL_CHESTNUT_PLANKS.get());
 			this.bookshelf(WindsweptBlocks.CHESTNUT_BOOKSHELF.get());
+			this.dropSelf(WindsweptBlocks.CHESTNUT_BOARDS.get());
 			this.add(WindsweptBlocks.CHESTNUT_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
 			this.dropSelf(WindsweptBlocks.STRIPPED_CHESTNUT_POST.get());
 			this.dropSelf(WindsweptBlocks.CHESTNUT_POST.get());
-			this.dropSelf(WindsweptBlocks.CHESTNUT_CHESTS.getFirst().get());
-			this.dropSelf(WindsweptBlocks.CHESTNUT_CHESTS.getSecond().get());
+			this.dropSelf(WindsweptBlocks.CHESTNUT_CHEST.get());
+			this.dropSelf(WindsweptBlocks.CHESTNUT_TRAPPED_CHEST.get());
 			
 			this.add(WindsweptBlocks.CHESTNUT_LEAVES.get(), b -> createLeavesDrops(b, WindsweptBlocks.CHESTNUT_SAPLING.get(), .05f, .0625f, .083333336f, .1f));
 			
 			this.dropSelf(WindsweptBlocks.CHESTNUT_HEDGE.get());
 			this.dropSelf(WindsweptBlocks.CHESTNUT_LEAF_CARPET.get());
-			//this.dropSelf(WindsweptBlocks.CHESTNUT_LEAF_PILE.get());
+			this.dropSelf(WindsweptBlocks.CHESTNUT_LEAF_PILE.get());
 
 			//this.dropSelf(WindsweptBlocks.CHESTNUT_CRATE.get());
 			//this.dropSelf(WindsweptBlocks.ROASTED_CHESTNUT_CRATE.get());

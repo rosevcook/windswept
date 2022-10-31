@@ -24,7 +24,10 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
 		this.tag(WindsweptBlockTags.CHESTNUT_LOGS).add(WindsweptBlocks.CHESTNUT_LOG.get(), WindsweptBlocks.CHESTNUT_WOOD.get(), WindsweptBlocks.STRIPPED_CHESTNUT_LOG.get(), WindsweptBlocks.STRIPPED_CHESTNUT_WOOD.get());
 		this.tag(WindsweptBlockTags.CHESTNUT_LEAVES).add(WindsweptBlocks.CHESTNUT_LEAVES.get());
 		this.tag(WindsweptBlockTags.SNOW_BOOTS_BLOCKS).addTag(BlockTags.SNOW);
-		
+
+		//woodworks
+		this.tag(BlueprintBlockTags.LEAF_PILES).add(WindsweptBlocks.HOLLY_LEAF_PILE.get(), WindsweptBlocks.CHESTNUT_LEAF_PILE.get());
+
 		//quark
 		this.tag(BlueprintBlockTags.HEDGES).add(WindsweptBlocks.HOLLY_HEDGE.get(), WindsweptBlocks.CHESTNUT_HEDGE.get());
 		this.tag(BlueprintBlockTags.LADDERS).add(WindsweptBlocks.HOLLY_LADDER.get(), WindsweptBlocks.CHESTNUT_LADDER.get());
@@ -35,17 +38,17 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
 				WindsweptBlocks.CHESTNUT_VERTICAL_SLAB.get());
 		
 		//forge
-		this.tag(Tags.Blocks.CHESTS_WOODEN).add(WindsweptBlocks.HOLLY_CHESTS.getFirst().get(),
-				WindsweptBlocks.HOLLY_CHESTS.getSecond().get(), WindsweptBlocks.CHESTNUT_CHESTS.getFirst().get(),
-				WindsweptBlocks.CHESTNUT_CHESTS.getSecond().get());
-		this.tag(Tags.Blocks.CHESTS_TRAPPED).add(WindsweptBlocks.HOLLY_CHESTS.getSecond().get(),
-				WindsweptBlocks.CHESTNUT_CHESTS.getSecond().get());
+		this.tag(Tags.Blocks.CHESTS_WOODEN).add(WindsweptBlocks.HOLLY_CHEST.get(),
+				WindsweptBlocks.HOLLY_TRAPPED_CHEST.get(), WindsweptBlocks.CHESTNUT_CHEST.get(),
+				WindsweptBlocks.CHESTNUT_TRAPPED_CHEST.get());
+		this.tag(Tags.Blocks.CHESTS_TRAPPED).add(WindsweptBlocks.HOLLY_TRAPPED_CHEST.get(),
+				WindsweptBlocks.CHESTNUT_TRAPPED_CHEST.get());
 		
 		//vanilla
 		this.tag(BlockTags.WALLS).add(WindsweptBlocks.BLUE_ICE_BRICK_WALL.get(), WindsweptBlocks.SNOW_BRICK_WALL.get(), WindsweptBlocks.PACKED_ICE_BRICK_WALL.get());
 		this.tag(BlockTags.SLABS).add(WindsweptBlocks.BLUE_ICE_BRICK_SLAB.get(), WindsweptBlocks.SNOW_BRICK_SLAB.get(), WindsweptBlocks.PACKED_ICE_BRICK_SLAB.get());
 		this.tag(BlockTags.STAIRS).add(WindsweptBlocks.BLUE_ICE_BRICK_STAIRS.get(), WindsweptBlocks.SNOW_BRICK_STAIRS.get(), WindsweptBlocks.PACKED_ICE_BRICK_STAIRS.get());
-		//this.tag(BlockTags.BEEHIVES).add(WindsweptBlocks.HOLLY_BEEHIVE.get(), WindsweptBlocks.CHESTNUT_BEEHIVE.get());
+		this.tag(BlockTags.BEEHIVES).add(WindsweptBlocks.HOLLY_BEEHIVE.get(), WindsweptBlocks.CHESTNUT_BEEHIVE.get());
 		this.tag(BlockTags.BUTTONS).add(WindsweptBlocks.POLISHED_DEEPSLATE_BUTTON.get());
 		this.tag(BlockTags.WOODEN_BUTTONS).add(WindsweptBlocks.HOLLY_BUTTON.get(), WindsweptBlocks.CHESTNUT_BUTTON.get());
 		this.tag(BlockTags.STONE_PRESSURE_PLATES).add(WindsweptBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE.get());
@@ -81,17 +84,16 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
 				
 		this.tag(BlockTags.MINEABLE_WITH_AXE).add(WindsweptBlocks.HOLLY_BOOKSHELF.get(),
 				WindsweptBlocks.HOLLY_VERTICAL_SLAB.get(), WindsweptBlocks.HOLLY_LADDER.get(), 
-				WindsweptBlocks.HOLLY_HEDGE.get(), WindsweptBlocks.HOLLY_CHESTS.getFirst().get(),
-				WindsweptBlocks.HOLLY_CHESTS.getSecond().get(), WindsweptBlocks.HOLLY_BERRY_CRATE.get(),
+				WindsweptBlocks.HOLLY_HEDGE.get(), WindsweptBlocks.HOLLY_CHEST.get(),
+				WindsweptBlocks.HOLLY_TRAPPED_CHEST.get(), WindsweptBlocks.HOLLY_BERRY_CRATE.get(),
 				WindsweptBlocks.HOLLY_POST.get(), WindsweptBlocks.STRIPPED_HOLLY_POST.get(), 
-				//WindsweptBlocks.HOLLY_BEEHIVE.get(), 
+				WindsweptBlocks.HOLLY_BEEHIVE.get(), WindsweptBlocks.HOLLY_BOARDS.get(),
 				WindsweptBlocks.CHESTNUT_BOOKSHELF.get(), WindsweptBlocks.CHESTNUT_VERTICAL_SLAB.get(),
 				WindsweptBlocks.CHESTNUT_LADDER.get(), WindsweptBlocks.CHESTNUT_HEDGE.get(),
-				WindsweptBlocks.CHESTNUT_CHESTS.getFirst().get(), WindsweptBlocks.CHESTNUT_CHESTS.getSecond().get(),
+				WindsweptBlocks.CHESTNUT_CHEST.get(), WindsweptBlocks.CHESTNUT_TRAPPED_CHEST.get(),
 				//WindsweptBlocks.CHESTNUT_CRATE.get(), WindsweptBlocks.ROASTED_CHESTNUT_CRATE.get(),
-				WindsweptBlocks.CHESTNUT_POST.get(), WindsweptBlocks.STRIPPED_CHESTNUT_POST.get());
-				//WindsweptBlocks.CHESTNUT_BEEHIVE.get());
-				
+				WindsweptBlocks.CHESTNUT_POST.get(), WindsweptBlocks.STRIPPED_CHESTNUT_POST.get(),
+				WindsweptBlocks.CHESTNUT_BEEHIVE.get(), WindsweptBlocks.CHESTNUT_BOARDS.get());
 		
 		this.tag(BlockTags.MINEABLE_WITH_HOE).addTag(WindsweptBlockTags.HOLLY_LEAVES)
 				.addTag(WindsweptBlockTags.CHESTNUT_LEAVES).add(WindsweptBlocks.HOLLY_LEAF_CARPET.get(),

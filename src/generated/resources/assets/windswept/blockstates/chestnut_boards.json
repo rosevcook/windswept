@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "windswept:block/chestnut_boards_horizontal",
+      "y": 270
+    },
+    "axis=y": {
+      "model": "windswept:block/chestnut_boards"
+    },
+    "axis=z": {
+      "model": "windswept:block/chestnut_boards_horizontal"
+    }
+  }
+}

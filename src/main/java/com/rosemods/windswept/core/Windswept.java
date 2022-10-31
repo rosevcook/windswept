@@ -73,10 +73,7 @@ public class Windswept {
 	}
 	
 	private void clientSetup(FMLClientSetupEvent event) {
-		event.enqueueWork(() -> {
-			WindsweptBlockInfo.setupRenderLayers();
-			WindsweptEntities.registerClient();
-		});
+		event.enqueueWork(WindsweptEntities::registerClient);
 	}
 	
 	private void dataSetup(GatherDataEvent event) {

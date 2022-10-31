@@ -18,7 +18,7 @@ public class TreeFeaturesMixin {
 
 	@Inject(method = "createSuperBirch", at = @At("RETURN"), cancellable = true)
 	private static void createSuperBirch(CallbackInfoReturnable<TreeConfiguration.TreeConfigurationBuilder> info) {
-		//info.setReturnValue(info.getReturnValue().decorators(List.of(BranchDecorator.create(Blocks.BIRCH_LOG, 4))));
+		info.setReturnValue(info.getReturnValue().decorators(List.of(BranchDecorator.create(Blocks.BIRCH_LOG, 4))));
 	}
 	
 }

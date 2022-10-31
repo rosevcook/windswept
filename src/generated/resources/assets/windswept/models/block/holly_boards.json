@@ -1,0 +1,6 @@
+{
+  "parent": "blueprint:block/template_boards",
+  "textures": {
+    "all": "windswept:block/holly_boards"
+  }
+}

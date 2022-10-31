@@ -1,5 +1,6 @@
 {
   "parent": "blueprint:block/hedge_side",
+  "render_type": "minecraft:cutout",
   "textures": {
     "leaf": "windswept:block/chestnut_leaves"
   }

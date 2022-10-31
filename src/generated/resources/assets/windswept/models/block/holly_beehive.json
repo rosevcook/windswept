@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "windswept:block/holly_beehive_front",
+    "side": "windswept:block/holly_beehive_side",
+    "top": "windswept:block/holly_beehive_end"
+  }
+}

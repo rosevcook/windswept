@@ -12,6 +12,7 @@ import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.data.event.GatherDataEvent;
 
@@ -28,7 +29,8 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
 		this.copy(WindsweptBlockTags.CHESTNUT_LOGS, WindsweptItemTags.CHESTNUT_LOGS);
 		
 		//quark
-		this.tag(BlueprintItemTags.BOATABLE_CHESTS).add(WindsweptBlocks.HOLLY_CHESTS.getFirst().get().asItem(), WindsweptBlocks.CHESTNUT_CHESTS.getFirst().get().asItem());
+		this.tag(BlueprintItemTags.BOATABLE_CHESTS).add(WindsweptBlocks.HOLLY_CHEST.get().asItem(), WindsweptBlocks.CHESTNUT_CHEST.get().asItem());
+		this.tag(BlueprintItemTags.REVERTABLE_CHESTS).add(WindsweptBlocks.HOLLY_CHEST.get().asItem(), WindsweptBlocks.CHESTNUT_CHEST.get().asItem());
 		this.copy(BlueprintBlockTags.LADDERS, BlueprintItemTags.LADDERS);
 		this.copy(BlueprintBlockTags.VERTICAL_SLABS, BlueprintItemTags.VERTICAL_SLABS);
 		this.copy(BlueprintBlockTags.WOODEN_VERTICAL_SLABS, BlueprintItemTags.WOODEN_VERTICAL_SLABS);
@@ -46,6 +48,7 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
 		this.copy(Tags.Blocks.CHESTS_TRAPPED, Tags.Items.CHESTS_TRAPPED);
 		
 		//vanilla
+		this.tag(ItemTags.NON_FLAMMABLE_WOOD).add(WindsweptBlocks.HOLLY_BOARDS.get().asItem(), WindsweptBlocks.CHESTNUT_BOARDS.get().asItem());
 		this.tag(ItemTags.BOATS).add(WindsweptItems.HOLLY_BOAT.getFirst().get(), WindsweptItems.CHESTNUT_BOAT.getFirst().get());
 		this.tag(ItemTags.CHEST_BOATS).add(WindsweptItems.HOLLY_BOAT.getSecond().get(), WindsweptItems.CHESTNUT_BOAT.getSecond().get());
 		this.tag(ItemTags.SIGNS).add(WindsweptBlocks.HOLLY_SIGNS.getFirst().get().asItem(), WindsweptBlocks.CHESTNUT_SIGNS.getFirst().get().asItem());

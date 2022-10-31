@@ -1,34 +1,6 @@
 {
-  "ambientocclusion": false,
-  "elements": [
-    {
-      "faces": {
-        "north": {
-          "texture": "#texture"
-        },
-        "south": {
-          "texture": "#texture",
-          "uv": [
-            16.0,
-            0.0,
-            0.0,
-            16.0
-          ]
-        }
-      },
-      "from": [
-        0,
-        0,
-        15.2
-      ],
-      "shade": false,
-      "to": [
-        16,
-        16,
-        15.2
-      ]
-    }
-  ],
+  "parent": "minecraft:block/ladder",
+  "render_type": "minecraft:cutout",
   "textures": {
     "particle": "windswept:block/holly_ladder",
     "texture": "windswept:block/holly_ladder"

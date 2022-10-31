@@ -8,12 +8,7 @@ import com.rosemods.windswept.common.block.wild_berry.*;
 import com.rosemods.windswept.common.world.gen.tree.*;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.other.WindsweptConstants;
-import com.teamabnormals.blueprint.common.block.BlueprintFlowerBlock;
-import com.teamabnormals.blueprint.common.block.BlueprintLadderBlock;
-import com.teamabnormals.blueprint.common.block.BookshelfBlock;
-import com.teamabnormals.blueprint.common.block.HedgeBlock;
-import com.teamabnormals.blueprint.common.block.LeafCarpetBlock;
-import com.teamabnormals.blueprint.common.block.VerticalSlabBlock;
+import com.teamabnormals.blueprint.common.block.*;
 import com.teamabnormals.blueprint.common.block.chest.BlueprintChestBlock;
 import com.teamabnormals.blueprint.common.block.chest.BlueprintTrappedChestBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintStandingSignBlock;
@@ -25,20 +20,11 @@ import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.DoorBlock;
-import net.minecraft.world.level.block.FlowerPotBlock;
-import net.minecraft.world.level.block.PressurePlateBlock;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.StairBlock;
-import net.minecraft.world.level.block.StoneButtonBlock;
-import net.minecraft.world.level.block.TrapDoorBlock;
-import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.registries.RegistryObject;
@@ -68,18 +54,20 @@ public class WindsweptBlocks {
 	public static final RegistryObject<Block> POTTED_HOLLY_SAPLING = HELPER.createBlockNoItem("potted_holly_sapling", () -> new FlowerPotBlock(HOLLY_SAPLING.get(), PropertyUtil.FLOWER_POT));
 
 	public static final RegistryObject<Block> VERTICAL_HOLLY_PLANKS = HELPER.createCompatBlock(WindsweptConstants.QUARK, "vertical_holly_planks", () -> new Block(Properties.HOLLY.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	//public static final RegistryObject<Block> HOLLY_BEEHIVE = HELPER.createCompatBlock(WindsweptConstants.WOODWORKS, "holly_beehive", () -> new BlueprintBeehiveBlock(Properties.HOLLY.beehive()), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> HOLLY_LADDER = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "holly_ladder", () -> new BlueprintLadderBlock(PropertyUtil.LADDER), 300, CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> HOLLY_BOOKSHELF = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "holly_bookshelf", () -> new BookshelfBlock(Properties.HOLLY.bookshelf()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> HOLLY_BEEHIVE = HELPER.createCompatBlock(WindsweptConstants.WOODWORKS, "holly_beehive", () -> new BlueprintBeehiveBlock(Properties.HOLLY.beehive()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> HOLLY_LADDER = HELPER.createFuelBlock("holly_ladder", () -> new BlueprintLadderBlock(PropertyUtil.LADDER), 300, ModList.get().isLoaded(WindsweptConstants.QUARK) || ModList.get().isLoaded(WindsweptConstants.WOODWORKS) ? CreativeModeTab.TAB_DECORATIONS : null);
+	public static final RegistryObject<Block> HOLLY_BOOKSHELF = HELPER.createFuelBlock("holly_bookshelf", () -> new BookshelfBlock(Properties.HOLLY.bookshelf()), 300, ModList.get().isLoaded(WindsweptConstants.QUARK) || ModList.get().isLoaded(WindsweptConstants.WOODWORKS) ? CreativeModeTab.TAB_BUILDING_BLOCKS : null);
+	public static final RegistryObject<Block> HOLLY_BOARDS = HELPER.createCompatBlock(WindsweptConstants.WOODWORKS, "holly_boards", () -> new RotatedPillarBlock(Properties.HOLLY.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+
 	public static final RegistryObject<Block> HOLLY_VERTICAL_SLAB = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "holly_vertical_slab", () -> new VerticalSlabBlock(Properties.HOLLY.planks()), 150, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_HOLLY_POST = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "stripped_holly_post", () -> new WoodPostBlock(Properties.HOLLY.post()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> HOLLY_POST = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "holly_post", () -> new WoodPostBlock(STRIPPED_HOLLY_POST, Properties.HOLLY.post()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> HOLLY_CHESTS = HELPER.createCompatChestBlocks(WindsweptConstants.QUARK, "holly", MaterialColor.COLOR_PURPLE);
-
+	public static final RegistryObject<BlueprintChestBlock> HOLLY_CHEST = HELPER.createChestBlock("holly", Properties.HOLLY.chest(), ModList.get().isLoaded(WindsweptConstants.QUARK) || ModList.get().isLoaded(WindsweptConstants.WOODWORKS) ? CreativeModeTab.TAB_DECORATIONS : null);
+	public static final RegistryObject<BlueprintTrappedChestBlock> HOLLY_TRAPPED_CHEST = HELPER.createTrappedChestBlock("holly", Properties.HOLLY.chest(), ModList.get().isLoaded(WindsweptConstants.QUARK) || ModList.get().isLoaded(WindsweptConstants.WOODWORKS) ? CreativeModeTab.TAB_REDSTONE : null);
 	public static final RegistryObject<Block> HOLLY_LEAVES = HELPER.createBlock("holly_leaves", () -> new HollyLeavesBlock(Properties.HOLLY.leaves()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> HOLLY_HEDGE = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "holly_hedge", () -> new HollyHedgeBlock(Properties.HOLLY.planks()), 300, CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> HOLLY_LEAF_CARPET = HELPER.createCompatBlock(WindsweptConstants.QUARK, "holly_leaf_carpet", () -> new LeafCarpetBlock(Properties.HOLLY.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
-	//public static final RegistryObject<Block> HOLLY_LEAF_PILE = HELPER.createCompatBlock(WindsweptConstants.WOODWORKS, "holly_leaf_pile", () -> new LeafPileBlock(Properties.HOLLY.leafPile()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> HOLLY_LEAF_PILE = HELPER.createCompatBlock(WindsweptConstants.WOODWORKS, "holly_leaf_pile", () -> new LeafPileBlock(Properties.HOLLY.leafPile()), CreativeModeTab.TAB_DECORATIONS);
 
 	public static final RegistryObject<Block> HOLLY_BERRY_CRATE = HELPER.createCompatBlock(WindsweptConstants.QUARK, "holly_berry_crate", () -> new Block(Properties.HOLLY_BERRY_CRATE), CreativeModeTab.TAB_DECORATIONS);
 	
@@ -103,18 +91,21 @@ public class WindsweptBlocks {
 	public static final RegistryObject<Block> POTTED_CHESTNUT_SAPLING = HELPER.createBlockNoItem("potted_chestnut_sapling", () -> new FlowerPotBlock(CHESTNUT_SAPLING.get(), PropertyUtil.FLOWER_POT));
 
 	public static final RegistryObject<Block> VERTICAL_CHESTNUT_PLANKS = HELPER.createCompatBlock(WindsweptConstants.QUARK, "vertical_chestnut_planks", () -> new Block(Properties.CHESTNUT.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	//public static final RegistryObject<Block> CHESTNUT_BEEHIVE = HELPER.createCompatBlock(WindsweptConstants.WOODWORKS, "chestnut_beehive", () -> new BlueprintBeehiveBlock(Properties.CHESTNUT.beehive()), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> CHESTNUT_LADDER = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "chestnut_ladder", () -> new BlueprintLadderBlock(PropertyUtil.LADDER), 300, CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> CHESTNUT_BOOKSHELF = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "chestnut_bookshelf", () -> new BookshelfBlock(Properties.CHESTNUT.bookshelf()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CHESTNUT_BEEHIVE = HELPER.createCompatBlock(WindsweptConstants.WOODWORKS, "chestnut_beehive", () -> new BlueprintBeehiveBlock(Properties.CHESTNUT.beehive()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> CHESTNUT_LADDER = HELPER.createFuelBlock("chestnut_ladder", () -> new BlueprintLadderBlock(PropertyUtil.LADDER), 300, ModList.get().isLoaded(WindsweptConstants.QUARK) || ModList.get().isLoaded(WindsweptConstants.WOODWORKS) ? CreativeModeTab.TAB_DECORATIONS : null);
+	public static final RegistryObject<Block> CHESTNUT_BOOKSHELF = HELPER.createFuelBlock("chestnut_bookshelf", () -> new BookshelfBlock(Properties.CHESTNUT.bookshelf()), 300, ModList.get().isLoaded(WindsweptConstants.QUARK) || ModList.get().isLoaded(WindsweptConstants.WOODWORKS) ? CreativeModeTab.TAB_BUILDING_BLOCKS : null);
+	public static final RegistryObject<Block> CHESTNUT_BOARDS = HELPER.createCompatBlock(WindsweptConstants.WOODWORKS, "chestnut_boards", () -> new RotatedPillarBlock(Properties.HOLLY.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+
 	public static final RegistryObject<Block> CHESTNUT_VERTICAL_SLAB = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "chestnut_vertical_slab", () -> new VerticalSlabBlock(Properties.CHESTNUT.planks()), 150, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_CHESTNUT_POST = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "stripped_chestnut_post", () -> new WoodPostBlock(Properties.CHESTNUT.post()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> CHESTNUT_POST = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "chestnut_post", () -> new WoodPostBlock(STRIPPED_CHESTNUT_POST, Properties.CHESTNUT.post()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> CHESTNUT_CHESTS = HELPER.createCompatChestBlocks(WindsweptConstants.QUARK, "chestnut", MaterialColor.COLOR_BROWN);
-	
+	public static final RegistryObject<BlueprintChestBlock> CHESTNUT_CHEST = HELPER.createChestBlock("chestnut", Properties.CHESTNUT.chest(), ModList.get().isLoaded(WindsweptConstants.QUARK) || ModList.get().isLoaded(WindsweptConstants.WOODWORKS) ? CreativeModeTab.TAB_DECORATIONS : null);
+	public static final RegistryObject<BlueprintTrappedChestBlock> CHESTNUT_TRAPPED_CHEST = HELPER.createTrappedChestBlock("chestnut", Properties.CHESTNUT.chest(), ModList.get().isLoaded(WindsweptConstants.QUARK) || ModList.get().isLoaded(WindsweptConstants.WOODWORKS) ? CreativeModeTab.TAB_REDSTONE : null);
+
 	public static final RegistryObject<Block> CHESTNUT_LEAVES = HELPER.createBlock("chestnut_leaves", () -> new BlueprintLeavesBlock(Properties.CHESTNUT.leaves()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> CHESTNUT_HEDGE = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "chestnut_hedge", () -> new HedgeBlock(Properties.CHESTNUT.planks()), 300, CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> CHESTNUT_LEAF_CARPET = HELPER.createCompatBlock(WindsweptConstants.QUARK, "chestnut_leaf_carpet", () -> new LeafCarpetBlock(Properties.CHESTNUT.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
-	//public static final RegistryObject<Block> CHESTNUT_LEAF_PILE = HELPER.createCompatBlock(WindsweptConstants.WOODWORKS, "chestnut_leaf_pile", () -> new LeafPileBlock(Properties.CHESTNUT.leafPile()), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> CHESTNUT_LEAF_PILE = HELPER.createCompatBlock(WindsweptConstants.WOODWORKS, "chestnut_leaf_pile", () -> new LeafPileBlock(Properties.CHESTNUT.leafPile()), CreativeModeTab.TAB_DECORATIONS);
 	
 	//public static final RegistryObject<Block> CHESTNUT_CRATE = HELPER.createCompatBlock(WindsweptConstants.QUARK, "chestnut_crate", () -> new Block(Properties.CHESTNUT_CRATE), CreativeModeTab.TAB_DECORATIONS);
 	//public static final RegistryObject<Block> ROASTED_CHESTNUT_CRATE = HELPER.createCompatBlock(WindsweptConstants.QUARK, "roasted_chestnut_crate", () -> new Block(Properties.CHESTNUT_CRATE), CreativeModeTab.TAB_DECORATIONS);

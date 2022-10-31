@@ -53,7 +53,8 @@ public final class WindsweptBlockInfo {
 		DataUtil.registerFlammable(WindsweptBlocks.HOLLY_STAIRS.get(), 5, 20);
 		DataUtil.registerFlammable(WindsweptBlocks.HOLLY_FENCE.get(), 5, 20);
 		DataUtil.registerFlammable(WindsweptBlocks.HOLLY_FENCE_GATE.get(), 5, 20);
-		
+		DataUtil.registerFlammable(WindsweptBlocks.HOLLY_BOARDS.get(), 5, 20);
+
 		DataUtil.registerFlammable(WindsweptBlocks.STRIPPED_CHESTNUT_LOG.get(), 5, 5);
 		DataUtil.registerFlammable(WindsweptBlocks.STRIPPED_CHESTNUT_WOOD.get(), 5, 5);
 		DataUtil.registerFlammable(WindsweptBlocks.CHESTNUT_LOG.get(), 5, 5);
@@ -64,7 +65,8 @@ public final class WindsweptBlockInfo {
 		DataUtil.registerFlammable(WindsweptBlocks.CHESTNUT_STAIRS.get(), 5, 20);
 		DataUtil.registerFlammable(WindsweptBlocks.CHESTNUT_FENCE.get(), 5, 20);
 		DataUtil.registerFlammable(WindsweptBlocks.CHESTNUT_FENCE_GATE.get(), 5, 20);
-		
+		DataUtil.registerFlammable(WindsweptBlocks.CHESTNUT_BOARDS.get(), 5, 20);
+
 		DataUtil.registerFlammable(WindsweptBlocks.HOLLY_BERRY_CRATE.get(), 5, 20);
 		//DataUtil.registerFlammable(WindsweptBlocks.CHESTNUT_CRATE.get(), 5, 20);
 		//DataUtil.registerFlammable(WindsweptBlocks.ROASTED_CHESTNUT_CRATE.get(), 5, 20);
@@ -75,19 +77,21 @@ public final class WindsweptBlockInfo {
 		DataUtil.registerFlammable(WindsweptBlocks.HOLLY_LEAF_CARPET.get(), 30, 60);
 		DataUtil.registerFlammable(WindsweptBlocks.HOLLY_VERTICAL_SLAB.get(), 5, 20);
 		DataUtil.registerFlammable(WindsweptBlocks.HOLLY_BOOKSHELF.get(), 30, 20);
-		//DataUtil.registerFlammable(WindsweptBlocks.HOLLY_BEEHIVE.get(), 5, 20);
+		DataUtil.registerFlammable(WindsweptBlocks.HOLLY_BEEHIVE.get(), 5, 20);
 		DataUtil.registerFlammable(WindsweptBlocks.HOLLY_POST.get(), 5, 20);
 		DataUtil.registerFlammable(WindsweptBlocks.STRIPPED_HOLLY_POST.get(), 5, 20);
 		DataUtil.registerFlammable(WindsweptBlocks.HOLLY_HEDGE.get(), 5, 20);
-		
+		DataUtil.registerFlammable(WindsweptBlocks.HOLLY_LEAF_PILE.get(), 30, 60);
+
 		DataUtil.registerFlammable(WindsweptBlocks.CHESTNUT_LEAF_CARPET.get(), 30, 60);
 		DataUtil.registerFlammable(WindsweptBlocks.CHESTNUT_VERTICAL_SLAB.get(), 5, 20);
 		DataUtil.registerFlammable(WindsweptBlocks.CHESTNUT_BOOKSHELF.get(), 30, 20);
-		//DataUtil.registerFlammable(WindsweptBlocks.CHESTNUT_BEEHIVE.get(), 5, 20);
+		DataUtil.registerFlammable(WindsweptBlocks.CHESTNUT_BEEHIVE.get(), 5, 20);
 		DataUtil.registerFlammable(WindsweptBlocks.CHESTNUT_POST.get(), 5, 20);
 		DataUtil.registerFlammable(WindsweptBlocks.STRIPPED_CHESTNUT_POST.get(), 5, 20);
 		DataUtil.registerFlammable(WindsweptBlocks.CHESTNUT_HEDGE.get(), 5, 20);
-		
+		DataUtil.registerFlammable(WindsweptBlocks.CHESTNUT_LEAF_PILE.get(), 30, 60);
+
 		DataUtil.registerFlammable(WindsweptBlocks.WILD_BERRY_BUSH_PIPS.get(), 60, 100);
 		DataUtil.registerFlammable(WindsweptBlocks.WILD_BERRY_BUSH.get(), 60, 100);
 		
@@ -102,64 +106,6 @@ public final class WindsweptBlockInfo {
 		DataUtil.registerFlammable(WindsweptBlocks.NIGHTSHADE.get(), 60, 100);
 		DataUtil.registerFlammable(WindsweptBlocks.BLUEBELLS.get(), 60, 100);
 
-	}
-	
-	@OnlyIn(Dist.CLIENT)
-	public static void setupRenderLayers() {
-		setRenderLayer(WindsweptBlocks.WILD_BERRY_BUSH, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.WILD_BERRY_BUSH_PIPS, RenderType.cutout());
-		
-		setRenderLayer(WindsweptBlocks.RED_ROSE, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.PINK_ROSE, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.BLUE_ROSE, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.WHITE_ROSE, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.YELLOW_ROSE, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.FOXGLOVE, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.NIGHTSHADE, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.BLUEBELLS, RenderType.cutout());
-		
-		setRenderLayer(WindsweptBlocks.POTTED_RED_ROSE, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.POTTED_PINK_ROSE, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.POTTED_BLUE_ROSE, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.POTTED_WHITE_ROSE, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.POTTED_YELLOW_ROSE, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.POTTED_FOXGLOVE, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.POTTED_NIGHTSHADE, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.POTTED_BLUEBELLS, RenderType.cutout());
-		
-		setRenderLayer(WindsweptBlocks.CHESTNUT_LEAVES, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.CHESTNUT_SAPLING, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.POTTED_CHESTNUT_SAPLING, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.CHESTNUT_LADDER, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.CHESTNUT_HEDGE, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.CHESTNUT_LEAF_CARPET, RenderType.cutout());
-		//setRenderLayer(WindsweptBlocks.CHESTNUT_LEAF_PILE, RenderType.cutout());
-
-		setRenderLayer(WindsweptBlocks.HOLLY_LEAVES, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.HOLLY_SAPLING, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.POTTED_HOLLY_SAPLING, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.HOLLY_LADDER, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.HOLLY_HEDGE, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.HOLLY_LEAF_CARPET, RenderType.cutout());
-		//setRenderLayer(WindsweptBlocks.HOLLY_LEAF_PILE, RenderType.cutout());
-
-		setRenderLayer(WindsweptBlocks.GOLDEN_DOOR, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.GOLDEN_TRAPDOOR, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.HOLLY_DOOR, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.HOLLY_TRAPDOOR, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.CHESTNUT_DOOR, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.CHESTNUT_TRAPDOOR, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.CHESTNUT_POST, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.STRIPPED_CHESTNUT_POST, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.HOLLY_POST, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.STRIPPED_HOLLY_POST, RenderType.cutout());
-		
-		setRenderLayer(WindsweptBlocks.SNOWY_SPROUTS, RenderType.cutout());
-		setRenderLayer(WindsweptBlocks.ICE_SHEET, RenderType.translucent());
-	}
-	
-	private static void setRenderLayer(RegistryObject<? extends Block> block, RenderType type) {
-		ItemBlockRenderTypes.setRenderLayer(block.get(), type::equals);
 	}
 
 }

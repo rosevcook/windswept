@@ -100,17 +100,18 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.translateBlock(WindsweptBlocks.HOLLY_LEAVES);
 		this.translateBlock(WindsweptBlocks.HOLLY_SAPLING);
 		this.translateBlock(WindsweptBlocks.POTTED_HOLLY_SAPLING);
-		//this.translateBlock(WindsweptBlocks.HOLLY_BEEHIVE);
+		this.translateBlock(WindsweptBlocks.HOLLY_BEEHIVE);
 		this.add(WindsweptBlocks.HOLLY_HEDGE.get(), "Holly Leaf Hedge");
 		this.translateBlock(WindsweptBlocks.HOLLY_LEAF_CARPET);
-		//this.translateBlock(WindsweptBlocks.HOLLY_LEAF_PILE);
+		this.translateBlock(WindsweptBlocks.HOLLY_LEAF_PILE);
 		this.translateBlock(WindsweptBlocks.HOLLY_LADDER);
 		this.translateBlock(WindsweptBlocks.HOLLY_BOOKSHELF);
+		this.translateBlock(WindsweptBlocks.HOLLY_BOARDS);
 		this.translateBlock(WindsweptBlocks.HOLLY_VERTICAL_SLAB);
 		this.translateBlock(WindsweptBlocks.HOLLY_POST);
 		this.translateBlock(WindsweptBlocks.STRIPPED_HOLLY_POST);
-		this.translateBlock(WindsweptBlocks.HOLLY_CHESTS.getFirst());
-		this.translateBlock(WindsweptBlocks.HOLLY_CHESTS.getSecond());
+		this.translateBlock(WindsweptBlocks.HOLLY_CHEST);
+		this.translateBlock(WindsweptBlocks.HOLLY_TRAPPED_CHEST);
 		this.translateBlock(WindsweptBlocks.HOLLY_BERRY_CRATE);
 		
 		this.translateBlock(WindsweptBlocks.STRIPPED_CHESTNUT_LOG);
@@ -131,17 +132,18 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.translateBlock(WindsweptBlocks.CHESTNUT_LEAVES);
 		this.translateBlock(WindsweptBlocks.CHESTNUT_SAPLING);
 		this.translateBlock(WindsweptBlocks.POTTED_CHESTNUT_SAPLING);
-		//this.translateBlock(WindsweptBlocks.CHESTNUT_BEEHIVE);
+		this.translateBlock(WindsweptBlocks.CHESTNUT_BEEHIVE);
 		this.add(WindsweptBlocks.CHESTNUT_HEDGE.get(), "Chestnut Leaf Hedge");
 		this.translateBlock(WindsweptBlocks.CHESTNUT_LEAF_CARPET);
-		//this.translateBlock(WindsweptBlocks.CHESTNUT_LEAF_PILE);
+		this.translateBlock(WindsweptBlocks.CHESTNUT_LEAF_PILE);
 		this.translateBlock(WindsweptBlocks.CHESTNUT_LADDER);
 		this.translateBlock(WindsweptBlocks.CHESTNUT_BOOKSHELF);
+		this.translateBlock(WindsweptBlocks.CHESTNUT_BOARDS);
 		this.translateBlock(WindsweptBlocks.CHESTNUT_VERTICAL_SLAB);
 		this.translateBlock(WindsweptBlocks.CHESTNUT_POST);
 		this.translateBlock(WindsweptBlocks.STRIPPED_CHESTNUT_POST);
-		this.translateBlock(WindsweptBlocks.CHESTNUT_CHESTS.getFirst());
-		this.translateBlock(WindsweptBlocks.CHESTNUT_CHESTS.getSecond());
+		this.translateBlock(WindsweptBlocks.CHESTNUT_CHEST);
+		this.translateBlock(WindsweptBlocks.CHESTNUT_TRAPPED_CHEST);
 		//this.translateBlock(WindsweptBlocks.CHESTNUT_CRATE);
 		//this.translateBlock(WindsweptBlocks.ROASTED_CHESTNUT_CRATE);
 		
