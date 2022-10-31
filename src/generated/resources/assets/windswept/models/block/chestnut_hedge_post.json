@@ -1,0 +1,7 @@
+{
+  "parent": "blueprint:block/hedge_post",
+  "textures": {
+    "leaf": "windswept:block/chestnut_leaves",
+    "log": "windswept:block/chestnut_log"
+  }
+}

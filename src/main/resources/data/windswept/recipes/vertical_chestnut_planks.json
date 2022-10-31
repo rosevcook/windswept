@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "P",
+    "P",
+    "P"
+  ],
+  "key": {
+    "P": {
+      "item": "windswept:chestnut_planks"
+    }
+  },
+  "result": {
+    "item": "windswept:vertical_chestnut_planks",
+    "count": 3
+  },
+  "conditions": [
+    {
+      "type": "blueprint:quark_flag",
+      "flag": "vertical_planks"
+    }
+  ]
+}

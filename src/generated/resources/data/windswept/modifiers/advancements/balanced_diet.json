@@ -1,0 +1,146 @@
+{
+  "modifiers": [
+    {
+      "type": "criteria",
+      "config": {
+        "criteria": {
+          "windswept:cooked_goat": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:cooked_goat"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "windswept:frozen_flesh": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:frozen_flesh"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "windswept:goat": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:goat"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "windswept:goat_stew": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:goat_stew"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "windswept:holly_berries": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:holly_berries"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "windswept:mutton_pie": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:mutton_pie"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "windswept:sweet_berry_bowl": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:sweet_berry_bowl"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "windswept:wild_berries": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:wild_berries"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "windswept:wild_berry_bowl": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:wild_berry_bowl"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "windswept:wild_berry_juice": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:wild_berry_juice"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          }
+        },
+        "requirements": [
+          [
+            "windswept:wild_berries"
+          ],
+          [
+            "windswept:wild_berry_juice"
+          ],
+          [
+            "windswept:wild_berry_bowl"
+          ],
+          [
+            "windswept:sweet_berry_bowl"
+          ],
+          [
+            "windswept:mutton_pie"
+          ],
+          [
+            "windswept:goat"
+          ],
+          [
+            "windswept:cooked_goat"
+          ],
+          [
+            "windswept:goat_stew"
+          ],
+          [
+            "windswept:holly_berries"
+          ],
+          [
+            "windswept:frozen_flesh"
+          ]
+        ],
+        "should_replace_requirements": false
+      }
+    }
+  ],
+  "priority": "normal",
+  "selector": "minecraft:husbandry/balanced_diet"
+}

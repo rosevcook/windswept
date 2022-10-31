@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "windswept:block/holly_planks",
+    "side": "windswept:block/holly_planks",
+    "top": "windswept:block/holly_planks"
+  }
+}

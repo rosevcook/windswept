@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "windswept:holly_berry_crate"
+    }
+  ],
+  "result": {
+    "item": "windswept:holly_berries",
+    "count": 9
+  },
+  "conditions": [
+    {
+      "type": "blueprint:quark_flag",
+      "flag": "berry_sack"
+    }
+  ]
+}

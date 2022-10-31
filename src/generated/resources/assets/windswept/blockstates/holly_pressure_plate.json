@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "windswept:block/holly_pressure_plate"
+    },
+    "powered=true": {
+      "model": "windswept:block/holly_pressure_plate_down"
+    }
+  }
+}

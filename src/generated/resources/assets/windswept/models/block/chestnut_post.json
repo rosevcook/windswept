@@ -1,0 +1,6 @@
+{
+  "parent": "blueprint:block/post",
+  "textures": {
+    "texture": "windswept:block/chestnut_log"
+  }
+}

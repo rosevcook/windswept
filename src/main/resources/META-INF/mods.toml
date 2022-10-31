@@ -1,0 +1,37 @@
+modLoader = "javafml"
+loaderVersion = "[32,)"
+license = "All rights reserved"
+
+[[mods]]
+    modId = "windswept"
+    version = "2.0.0"
+    displayName = "Windswept"
+    logoFile = "logo.png"
+    itemIcon = "windswept:holly_berries"
+    configBackground = "windswept:textures/block/holly_log.png"
+    displayURL = "https://www.curseforge.com/minecraft/mc-mods/windsweptmod"
+    authors = "Rose"
+    description = '''
+    A general expansion to snowy and forest areas of the game, incentivising players to explore and build in the new expanded areas.
+    '''
+
+[[dependencies.windswept]]
+    modId = "forge"
+    mandatory = true
+    versionRange = "[43.1.1,)"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[dependencies.windswept]]
+    modId = "minecraft"
+    mandatory = true
+    versionRange = "[1.19.2,)"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[dependencies.windswept]]
+    modId = "blueprint"
+    mandatory = true
+    versionRange = "[6.1.0,)"
+    ordering = "BEFORE"
+    side = "BOTH"

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "windswept:item/snow_boots",
+    "layer1": "windswept:item/snow_boots_overlay"
+  }
+}

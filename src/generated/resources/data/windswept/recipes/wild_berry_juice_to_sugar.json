@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "windswept:wild_berry_juice"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "minecraft:sugar"
+  }
+}

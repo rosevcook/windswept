@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "windswept:wild_berries"
+    },
+    {
+      "item": "windswept:wild_berries"
+    },
+    {
+      "item": "windswept:wild_berries"
+    }
+  ],
+  "result": {
+    "item": "windswept:wild_berry_bowl"
+  }
+}

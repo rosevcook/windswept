@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S",
+    "S",
+    "S"
+  ],
+  "key": {
+    "S": {
+      "item": "windswept:snow_brick_slab"
+    }
+  },
+  "result": {
+    "item": "windswept:snow_brick_vertical_slab",
+    "count": 3
+  },
+  "conditions": [
+    {
+      "type": "blueprint:quark_flag",
+      "flag": "vertical_slabs"
+    }
+  ]
+}

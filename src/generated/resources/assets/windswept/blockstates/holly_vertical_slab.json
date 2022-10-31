@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "type=double": {
+      "model": "windswept:block/holly_planks"
+    },
+    "type=east": {
+      "model": "windswept:block/holly_vertical_slab",
+      "uvlock": true,
+      "y": 90
+    },
+    "type=north": {
+      "model": "windswept:block/holly_vertical_slab",
+      "uvlock": true
+    },
+    "type=south": {
+      "model": "windswept:block/holly_vertical_slab",
+      "uvlock": true,
+      "y": 180
+    },
+    "type=west": {
+      "model": "windswept:block/holly_vertical_slab",
+      "uvlock": true,
+      "y": 270
+    }
+  }
+}

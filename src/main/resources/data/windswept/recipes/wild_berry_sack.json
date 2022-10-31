@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "windswept:wild_berries"
+    }
+  },
+  "result": {
+    "item": "windswept:wild_berry_sack"
+  },
+  "conditions": [
+    {
+      "type": "blueprint:quark_flag",
+      "flag": "berry_sack"
+    }
+  ]
+}

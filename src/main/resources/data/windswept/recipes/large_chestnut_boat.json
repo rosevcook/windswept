@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#B#",
+        "###"
+    ],
+    "key": {
+        "B": {
+            "item": "windswept:chestnut_boat"
+        },
+        "#": {
+            "item": "windswept:chestnut_planks"
+        }
+    },
+    "result": {
+        "item": "windswept:large_chestnut_boat",
+        "count": 1
+    },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "boatload"
+    }
+  ]
+}

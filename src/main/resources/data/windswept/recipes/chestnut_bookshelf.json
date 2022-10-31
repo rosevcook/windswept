@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "BBB",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "windswept:chestnut_planks"
+    },
+    "B": {
+      "item": "minecraft:book"
+    }
+  },
+  "result": {
+    "item": "windswept:chestnut_bookshelf"
+  },
+  "conditions": [
+    {
+      "type": "blueprint:quark_flag",
+      "flag": "variant_bookshelves"
+    }
+  ]
+}

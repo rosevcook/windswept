@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "windswept:block/holly_planks",
+    "side": "windswept:block/holly_bookshelf"
+  }
+}

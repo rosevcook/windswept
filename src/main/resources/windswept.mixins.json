@@ -1,0 +1,27 @@
+{
+  "required": true,
+  "package": "com.rosemods.windswept.core.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "refmap": "windswept.refmap.json",
+  "mixins": [
+    "FoxMixin",
+    "BoatMixin",
+    "SolidBucketItemMixin",
+    "FlowerPotBlockMixin",
+    "PowderSnowBlockMixin",
+    "LiquidBlockMixin",
+    "MobMixin",
+    "BlockMixin",
+    "LivingEntityMixin",
+    "SnowLayerBlockMixin",
+    "TreeFeaturesMixin",
+    "TreeConfigurationBuilderMixin"
+  ],
+  "client": [
+    "client.LivingEntityRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

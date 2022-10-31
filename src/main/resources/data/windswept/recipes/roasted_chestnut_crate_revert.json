@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "windswept:roasted_chestnut_crate"
+    }
+  ],
+  "result": {
+    "item": "windswept:roasted_chestnuts",
+    "count": 9
+  },
+  "conditions": [
+    {
+      "type": "blueprint:quark_flag",
+      "flag": "roasted_apple_crate"
+    }
+  ]
+}

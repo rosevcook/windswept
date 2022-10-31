@@ -1,0 +1,18 @@
+{
+  "music_disc.rain": {
+    "sounds": [
+      {
+        "name": "windswept:records/rain",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc.snow": {
+    "sounds": [
+      {
+        "name": "windswept:records/snow",
+        "stream": true
+      }
+    ]
+  }
+}

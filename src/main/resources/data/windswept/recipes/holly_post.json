@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "F",
+    "F",
+    "F"
+  ],
+  "key": {
+    "F": {
+      "item": "windswept:holly_wood"
+    }
+  },
+  "result": {
+    "item": "windswept:holly_post",
+    "count": 8
+  },
+  "conditions": [
+    {
+      "type": "blueprint:quark_flag",
+      "flag": "wooden_posts"
+    }
+  ]
+}

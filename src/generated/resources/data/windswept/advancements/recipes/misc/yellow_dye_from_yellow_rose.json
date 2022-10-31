@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "windswept:yellow_dye_from_yellow_rose"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_yellow_rose": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "windswept:yellow_rose"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_yellow_rose",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "windswept:yellow_dye_from_yellow_rose"
+    ]
+  }
+}

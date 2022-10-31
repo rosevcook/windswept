@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "windswept:sweet_berry_bowl"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "minecraft:sweet_berries"
+  }
+}

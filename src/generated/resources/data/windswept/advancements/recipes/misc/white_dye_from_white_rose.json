@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "windswept:white_dye_from_white_rose"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_rose": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "windswept:white_rose"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_white_rose",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "windswept:white_dye_from_white_rose"
+    ]
+  }
+}

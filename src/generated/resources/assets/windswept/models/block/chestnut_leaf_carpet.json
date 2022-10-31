@@ -1,0 +1,6 @@
+{
+  "parent": "blueprint:block/leaf_carpet",
+  "textures": {
+    "all": "windswept:block/chestnut_leaves"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "LL"
+  ],
+  "key": {
+    "L": {
+      "item": "windswept:chestnut_leaves"
+    }
+  },
+  "result": {
+    "item": "windswept:chestnut_leaf_carpet",
+    "count": 3
+  },
+  "conditions": [
+    {
+      "type": "blueprint:quark_flag",
+      "flag": "leaf_carpet"
+    }
+  ]
+}

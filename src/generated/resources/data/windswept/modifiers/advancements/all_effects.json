@@ -1,0 +1,16 @@
+{
+  "modifiers": [
+    {
+      "type": "effects_changed",
+      "config": {
+        "criteria": "all_effects",
+        "effects": {
+          "windswept:thorns": {}
+        },
+        "removes": false
+      }
+    }
+  ],
+  "priority": "normal",
+  "selector": "minecraft:nether/all_effects"
+}

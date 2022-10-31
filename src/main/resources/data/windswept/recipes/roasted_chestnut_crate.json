@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "windswept:roasted_chestnuts"
+    }
+  },
+  "result": {
+    "item": "windswept:roasted_chestnut_crate"
+  },
+  "conditions": [
+    {
+      "type": "blueprint:quark_flag",
+      "flag": "roasted_apple_crate"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left",
+  "textures": {
+    "bottom": "windswept:block/chestnut_door_bottom",
+    "top": "windswept:block/chestnut_door_top"
+  }
+}

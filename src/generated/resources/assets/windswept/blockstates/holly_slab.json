@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "windswept:block/holly_slab"
+    },
+    "type=double": {
+      "model": "windswept:block/holly_planks"
+    },
+    "type=top": {
+      "model": "windswept:block/holly_slab_top"
+    }
+  }
+}

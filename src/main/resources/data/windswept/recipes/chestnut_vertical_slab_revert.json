@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "windswept:chestnut_vertical_slab"
+    }
+  ],
+  "result": {
+    "item": "windswept:chestnut_slab"
+  },
+  "conditions": [
+    {
+      "type": "blueprint:quark_flag",
+      "flag": "vertical_slabs"
+    }
+  ]
+}

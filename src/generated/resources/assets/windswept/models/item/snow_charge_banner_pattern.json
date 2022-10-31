@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "windswept:item/snow_charge_banner_pattern"
+  }
+}

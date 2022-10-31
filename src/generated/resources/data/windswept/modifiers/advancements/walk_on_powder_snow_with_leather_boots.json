@@ -1,0 +1,49 @@
+{
+  "modifiers": [
+    {
+      "type": "criteria",
+      "config": {
+        "criteria": {
+          "windswept:snow_boots": {
+            "conditions": {
+              "player": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "equipment": {
+                      "feet": {
+                        "items": [
+                          "windswept:snow_boots"
+                        ]
+                      }
+                    },
+                    "stepping_on": {
+                      "block": {
+                        "blocks": [
+                          "minecraft:powder_snow"
+                        ]
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "trigger": "minecraft:location"
+          }
+        },
+        "indexed_requirements": [
+          {
+            "index": 0,
+            "replace": false,
+            "requirements": [
+              "windswept:snow_boots"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "priority": "normal",
+  "selector": "minecraft:adventure/walk_on_powder_snow_with_leather_boots"
+}

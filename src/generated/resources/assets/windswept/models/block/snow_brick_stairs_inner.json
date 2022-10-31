@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "windswept:block/snow_bricks",
+    "side": "windswept:block/snow_bricks",
+    "top": "windswept:block/snow_bricks"
+  }
+}

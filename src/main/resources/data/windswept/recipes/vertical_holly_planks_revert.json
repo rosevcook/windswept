@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "windswept:vertical_holly_planks"
+    }
+  ],
+  "result": {
+    "item": "windswept:holly_planks",
+    "count": 1
+  },
+  "conditions": [
+    {
+      "type": "blueprint:quark_flag",
+      "flag": "vertical_planks"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "modifiers": [
+    {
+      "type": "criteria",
+      "config": {
+        "criteria": {
+          "windswept:chilled": {
+            "conditions": {
+              "entity": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "type": "windswept:chilled"
+                  }
+                }
+              ]
+            },
+            "trigger": "minecraft:player_killed_entity"
+          }
+        },
+        "requirements": [
+          [
+            "windswept:chilled"
+          ]
+        ],
+        "should_replace_requirements": false
+      }
+    }
+  ],
+  "priority": "normal",
+  "selector": "minecraft:adventure/kill_all_mobs"
+}

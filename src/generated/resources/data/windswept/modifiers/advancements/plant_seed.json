@@ -1,0 +1,28 @@
+{
+  "modifiers": [
+    {
+      "type": "criteria",
+      "config": {
+        "criteria": {
+          "windswept:wild_berry_bush_pips": {
+            "conditions": {
+              "block": "windswept:wild_berry_bush_pips"
+            },
+            "trigger": "minecraft:placed_block"
+          }
+        },
+        "indexed_requirements": [
+          {
+            "index": 0,
+            "replace": false,
+            "requirements": [
+              "windswept:wild_berry_bush_pips"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "priority": "normal",
+  "selector": "minecraft:husbandry/plant_seed"
+}
