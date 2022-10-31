@@ -70,15 +70,15 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.translateItem(WindsweptItems.SNOW_BOOTS);
 		this.translateBannerPattern(WindsweptItems.SNOW_CHARGE_BANNER_PATTERN, "snow_charge");
 		this.translateBannerPattern(WindsweptItems.SNOW_GOLEM_BANNER_PATTERN, "snow_golem");
-		this.translateMusicDisc(WindsweptItems.MUSIC_DISC_RAIN, "london - rain");
-		this.translateMusicDisc(WindsweptItems.MUSIC_DISC_SNOW, "london - snow");
+		this.translateMusicDisc(WindsweptItems.MUSIC_DISC_RAIN, "rose - rain");
+		this.translateMusicDisc(WindsweptItems.MUSIC_DISC_SNOW, "rose - snow");
 		this.translateItem(WindsweptItems.CHILLED_SPAWN_EGG);
 		
-		//this.add(WindsweptItems.HOLLY_FURNACE_BOAT.get(), "Holly Boat with Furnace");
-		//this.translateItem(WindsweptItems.LARGE_HOLLY_BOAT);
+		this.add(WindsweptItems.HOLLY_FURNACE_BOAT.get(), "Holly Boat with Furnace");
+		this.translateItem(WindsweptItems.LARGE_HOLLY_BOAT);
 		
-		//this.add(WindsweptItems.CHESTNUT_FURNACE_BOAT.get(), "Chestnut Boat with Furnace");
-		//this.translateItem(WindsweptItems.LARGE_CHESTNUT_BOAT);
+		this.add(WindsweptItems.CHESTNUT_FURNACE_BOAT.get(), "Chestnut Boat with Furnace");
+		this.translateItem(WindsweptItems.LARGE_CHESTNUT_BOAT);
 
 		// Blocks //
 
