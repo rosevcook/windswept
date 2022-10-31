@@ -1,6 +1,7 @@
 modLoader = "javafml"
 loaderVersion = "[32,)"
-license = "All rights reserved"
+issueTrackerURL = "https://github.com/rosevcook/windswept/issues"
+license = "https://github.com/rosevcook/windswept/blob/main/LICENSE.txt"
 
 [[mods]]
     modId = "windswept"

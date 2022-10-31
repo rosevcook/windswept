@@ -19,7 +19,7 @@ mixin {
 }
 
 version = "${project.minecraft}-${project.modVersion}"
-group = "com.teamabnormals"
+group = "com.rosemomds"
 archivesBaseName = project.modId
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
