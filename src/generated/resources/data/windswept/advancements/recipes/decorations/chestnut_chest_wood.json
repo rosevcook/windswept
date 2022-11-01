@@ -1,0 +1,55 @@
+{
+  "advancements": [
+    {
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "criteria": {
+          "has_the_recipe": {
+            "conditions": {
+              "recipe": "windswept:chestnut_chest_wood"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+          },
+          "has_wood": {
+            "conditions": {
+              "items": [
+                {
+                  "items": [
+                    "windswept:chestnut_wood"
+                  ]
+                }
+              ]
+            },
+            "trigger": "minecraft:inventory_changed"
+          }
+        },
+        "requirements": [
+          [
+            "has_wood",
+            "has_the_recipe"
+          ]
+        ],
+        "rewards": {
+          "recipes": [
+            "windswept:chestnut_chest_wood"
+          ]
+        }
+      },
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "blueprint:quark_flag",
+              "flag": "wood_to_chest_recipes"
+            },
+            {
+              "type": "blueprint:quark_flag",
+              "flag": "variant_chests"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

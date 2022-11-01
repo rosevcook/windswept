@@ -1,0 +1,46 @@
+{
+  "advancements": [
+    {
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "criteria": {
+          "has_the_recipe": {
+            "conditions": {
+              "recipe": "windswept:stripped_holly_post"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+          },
+          "has_wood": {
+            "conditions": {
+              "items": [
+                {
+                  "items": [
+                    "windswept:stripped_holly_wood"
+                  ]
+                }
+              ]
+            },
+            "trigger": "minecraft:inventory_changed"
+          }
+        },
+        "requirements": [
+          [
+            "has_wood",
+            "has_the_recipe"
+          ]
+        ],
+        "rewards": {
+          "recipes": [
+            "windswept:stripped_holly_post"
+          ]
+        }
+      },
+      "conditions": [
+        {
+          "type": "blueprint:quark_flag",
+          "flag": "wooden_posts"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "berry_good"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "windswept:wild_berries"
+          }
+        ],
+        "result": {
+          "item": "windswept:wild_berry_pips"
+        }
+      }
+    }
+  ]
+}

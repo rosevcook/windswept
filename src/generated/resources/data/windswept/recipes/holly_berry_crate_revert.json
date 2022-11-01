@@ -1,0 +1,25 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "blueprint:quark_flag",
+          "flag": "berry_sack"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "windswept:holly_berry_crate"
+          }
+        ],
+        "result": {
+          "count": 9,
+          "item": "windswept:holly_berries"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "boatload"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "#": {
+            "item": "windswept:holly_boat"
+          },
+          "F": {
+            "item": "minecraft:furnace"
+          }
+        },
+        "pattern": [
+          "F",
+          "#"
+        ],
+        "result": {
+          "item": "windswept:holly_furnace_boat"
+        }
+      }
+    }
+  ]
+}

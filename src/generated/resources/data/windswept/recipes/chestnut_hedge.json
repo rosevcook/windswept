@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "blueprint:quark_flag",
+          "flag": "hedges"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "#": {
+            "item": "windswept:chestnut_log"
+          },
+          "L": {
+            "item": "windswept:chestnut_leaves"
+          }
+        },
+        "pattern": [
+          "L",
+          "#"
+        ],
+        "result": {
+          "count": 2,
+          "item": "windswept:chestnut_hedge"
+        }
+      }
+    }
+  ]
+}

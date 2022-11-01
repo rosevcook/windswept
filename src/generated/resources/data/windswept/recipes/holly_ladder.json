@@ -1,0 +1,42 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:or",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "woodworks"
+            },
+            {
+              "type": "blueprint:quark_flag",
+              "flag": "variant_ladders"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "group": "wooden_ladders",
+        "key": {
+          "#": {
+            "item": "windswept:holly_planks"
+          },
+          "S": {
+            "item": "minecraft:stick"
+          }
+        },
+        "pattern": [
+          "S S",
+          "S#S",
+          "S S"
+        ],
+        "result": {
+          "item": "windswept:holly_ladder"
+        }
+      }
+    }
+  ]
+}

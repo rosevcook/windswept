@@ -1,0 +1,28 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "blueprint:quark_flag",
+          "flag": "leaf_carpet"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "#": {
+            "item": "windswept:chestnut_leaves"
+          }
+        },
+        "pattern": [
+          "##"
+        ],
+        "result": {
+          "count": 2,
+          "item": "windswept:chestnut_leaf_carpet"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:or",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "woodworks"
+            },
+            {
+              "type": "blueprint:quark_flag",
+              "flag": "variant_bookshelves"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "group": "wooden_bookshelves",
+        "key": {
+          "#": {
+            "item": "windswept:holly_planks"
+          },
+          "B": {
+            "item": "minecraft:book"
+          }
+        },
+        "pattern": [
+          "###",
+          "BBB",
+          "###"
+        ],
+        "result": {
+          "item": "windswept:holly_bookshelf"
+        }
+      }
+    }
+  ]
+}
