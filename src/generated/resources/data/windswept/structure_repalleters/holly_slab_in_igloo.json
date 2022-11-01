@@ -1,0 +1,7 @@
+{
+  "type": "blueprint:simple",
+  "priority": "normal",
+  "replaces_block": "minecraft:spruce_slab",
+  "replaces_with": "windswept:holly_slab",
+  "selector": "minecraft:igloo"
+}

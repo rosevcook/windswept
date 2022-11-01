@@ -1,0 +1,7 @@
+{
+  "type": "blueprint:simple",
+  "priority": "normal",
+  "replaces_block": "minecraft:potted_spruce_sapling",
+  "replaces_with": "windswept:potted_red_rose",
+  "selector": "minecraft:village_taiga"
+}

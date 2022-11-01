@@ -1,0 +1,7 @@
+{
+  "type": "blueprint:simple",
+  "priority": "normal",
+  "replaces_block": "minecraft:potted_cactus",
+  "replaces_with": "windswept:potted_white_rose",
+  "selector": "minecraft:igloo"
+}

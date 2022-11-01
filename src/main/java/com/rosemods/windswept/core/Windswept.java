@@ -95,6 +95,7 @@ public class Windswept {
 		gen.addProvider(server, new WindsweptRecipeProvider(event));
 		gen.addProvider(server, new WindsweptAdvancementModifierProvider(event));
 		gen.addProvider(server, new WindsweptLootModifierProvider(event));
+		gen.addProvider(server, new WindsweptStructureRepaletterProvider(event));
 	}
     
 }
