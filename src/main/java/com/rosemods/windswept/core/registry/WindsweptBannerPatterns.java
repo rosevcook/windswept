@@ -5,22 +5,15 @@ import com.rosemods.windswept.core.Windswept;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.entity.BannerPattern;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.RegistryObject;
 
-public final class WindsweptBannerPatterns {		
-	public static final ResourceKey<BannerPattern> SNOW_CHARGE = createKey("snow_charge");
-	public static final ResourceKey<BannerPattern> SNOW_GOLEM = createKey("snow_golem");
-	
-	private static ResourceKey<BannerPattern> createKey(String name) {
-		return ResourceKey.create(Registry.BANNER_PATTERN_REGISTRY, Windswept.REGISTRY_HELPER.prefix(name));
-	}
-	
-	public static void registerBannerPatterns() {
-		register(SNOW_CHARGE, "wsc");
-		register(SNOW_GOLEM, "wsg");
-	}
-	
-	private static BannerPattern register(ResourceKey<BannerPattern> pattern, String name) {
-		return Registry.register(Registry.BANNER_PATTERN, pattern, new BannerPattern(name));
-	}
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+public class WindsweptBannerPatterns {
+	public static final DeferredRegister<BannerPattern> BANNER_PATTERNS = DeferredRegister.create(Registry.BANNER_PATTERN_REGISTRY, Windswept.MODID);
+
+	public static final RegistryObject<BannerPattern> SNOW_CHARGE = BANNER_PATTERNS.register("snow_charge", () -> new BannerPattern("wsc"));
+	public static final RegistryObject<BannerPattern> SNOW_GOLEM = BANNER_PATTERNS.register("snow_golem", () -> new BannerPattern("wsg"));
 		
 }

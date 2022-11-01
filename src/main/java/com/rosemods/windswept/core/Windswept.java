@@ -51,6 +51,7 @@ public class Windswept {
 		WindsweptFeatures.Placements.PLACED_FEATURES.register(bus);
 		WindsweptEnchantments.ENCHANTMENTS.register(bus);
 		WindsweptAttributes.ATTRIBUTES.register(bus);
+		WindsweptBannerPatterns.BANNER_PATTERNS.register(bus);
 
 		bus.addListener(this::commonSetup);
         bus.addListener(this::clientSetup);
@@ -69,7 +70,6 @@ public class Windswept {
 			WindsweptEffects.registerPotionRecipes();
 			WindsweptDispenseBehaviors.registerDispenseBehaviors();
 			WindsweptCauldronInteractions.registerCauldronInteractions();
-			WindsweptBannerPatterns.registerBannerPatterns();
 			//WindsweptTrunkPlacers.registerTrunkPlacers();
 		});
 	}
@@ -93,7 +93,7 @@ public class Windswept {
 		gen.addProvider(server, new WindsweptItemTagProvider(event, blockTags));
 		gen.addProvider(server, new WindsweptEntityTagProvider(event));
 		gen.addProvider(server, new WindswepBiomeTagProvider(event));
-		//gen.addProvider(server, new WindsweptBannerPatternTagProvider(event));
+		gen.addProvider(server, new WindsweptBannerPatternTagProvider(event));
 		gen.addProvider(server, new WindsweptLootTableProvider(event));
 		gen.addProvider(server, new WindsweptRecipeProvider(event));
 		gen.addProvider(server, new WindsweptAdvancementModifierProvider(event));
