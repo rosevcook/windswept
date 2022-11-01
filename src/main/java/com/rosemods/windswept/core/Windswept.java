@@ -47,6 +47,8 @@ public class Windswept {
 		WindsweptTreeDecorators.DECORATORS.register(bus);
 		WindsweptFoliagePlacers.FOLIAGE_PLACERS.register(bus);
 		WindsweptFeatures.FEATURES.register(bus);
+		WindsweptFeatures.Features.CONFIGURED_FEATURES.register(bus);
+		WindsweptFeatures.Placements.PLACED_FEATURES.register(bus);
 		WindsweptEnchantments.ENCHANTMENTS.register(bus);
 		WindsweptAttributes.ATTRIBUTES.register(bus);
 
@@ -90,12 +92,14 @@ public class Windswept {
 		gen.addProvider(server, blockTags);
 		gen.addProvider(server, new WindsweptItemTagProvider(event, blockTags));
 		gen.addProvider(server, new WindsweptEntityTagProvider(event));
+		gen.addProvider(server, new WindswepBiomeTagProvider(event));
 		//gen.addProvider(server, new WindsweptBannerPatternTagProvider(event));
 		gen.addProvider(server, new WindsweptLootTableProvider(event));
 		gen.addProvider(server, new WindsweptRecipeProvider(event));
 		gen.addProvider(server, new WindsweptAdvancementModifierProvider(event));
 		gen.addProvider(server, new WindsweptLootModifierProvider(event));
 		gen.addProvider(server, new WindsweptStructureRepaletterProvider(event));
+		gen.addProvider(server, WindsweptBiomeModifier.register(event));
 	}
     
 }

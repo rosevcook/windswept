@@ -18,7 +18,7 @@ import net.minecraftforge.common.world.MobSpawnSettingsBuilder;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
-@EventBusSubscriber(modid = Windswept.MODID)
+//@EventBusSubscriber(modid = Windswept.MODID)
 public class WindsweptGenerationEvents {
 	/*
 	@SubscribeEvent
@@ -83,7 +83,6 @@ public class WindsweptGenerationEvents {
 				withNightshades(gen);
 		}
 	}
-	*/
 		
 	private static void withWildBerryBushes(BiomeGenerationSettingsBuilder gen, boolean common) {
 		gen.addFeature(Decoration.VEGETAL_DECORATION, common ? WindsweptFeatures.Placements.WILD_BERRY_BUSH_COMMON : WindsweptFeatures.Placements.WILD_BERRY_BUSH);
@@ -124,5 +123,7 @@ public class WindsweptGenerationEvents {
 	private static <T extends LivingEntity> void addSpawn(MobSpawnSettingsBuilder spawns, EntityType<T> entity, int weight, int min, int max) {
 		spawns.addSpawn(entity.getCategory(), new SpawnerData(entity, weight, min, max));
 	}
+
+	*/
 	
 }

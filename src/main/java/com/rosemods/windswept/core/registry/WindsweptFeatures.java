@@ -10,11 +10,13 @@ import com.rosemods.windswept.common.world.gen.tree.foliage_placer.ChestnutFolia
 import com.rosemods.windswept.core.Windswept;
 
 import net.minecraft.core.Holder;
+import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.util.InclusiveRange;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -104,75 +106,73 @@ public class WindsweptFeatures {
 	}
 	
 	public static class Features {
-		public static final Holder<ConfiguredFeature<?, ?>> RED_ROSE = register("red_rose", Feature.FLOWER, Configs.RED_ROSE);
-		public static final Holder<ConfiguredFeature<?, ?>> WHITE_ROSE = register("white_rose", Feature.FLOWER, Configs.WHITE_ROSE);
-		public static final Holder<ConfiguredFeature<?, ?>> PINK_ROSE = register("white_rose", Feature.FLOWER, Configs.PINK_ROSE);
-		public static final Holder<ConfiguredFeature<?, ?>> BLUE_ROSE = register("blue_rose", Feature.FLOWER, Configs.BLUE_ROSE);
-		public static final Holder<ConfiguredFeature<?, ?>> YELLOW_ROSE = register("yellow_rose", Feature.FLOWER, Configs.YELLOW_ROSE);
-		public static final Holder<ConfiguredFeature<?, ?>> FOXGLOVE = register("foxglove", Feature.FLOWER, Configs.FOXGLOVE);
-		public static final Holder<ConfiguredFeature<?, ?>> BLUEBELLS = register("bluebells", BLUEBELL_PATCH.get(), NoneFeatureConfiguration.NONE);
-		public static final Holder<ConfiguredFeature<?, ?>> NIGHTHSADE = register("nightshades", NIGHTSHADE_PATCH.get(), NoneFeatureConfiguration.NONE);
-		public static final Holder<ConfiguredFeature<?, ?>> WILD_BERRY_BUSH = register("wild_berry_bush", Feature.FLOWER, Configs.WILD_BERRY_BUSH);
-		public static final Holder<ConfiguredFeature<?, ?>> SNOWY_SPROUTS = register("snowy_sprouts", SNOWY_SPROUTS_PATCH.get(), NoneFeatureConfiguration.NONE);
-		
-		public static final Holder<ConfiguredFeature<?, ?>> HOLLY_TREES = register("holly_trees", Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(TreePlacements.HOLLY_TREES_BEES, 0.33333334F)), TreePlacements.HOLLY_TREES_BEES));
-		public static final Holder<ConfiguredFeature<?, ?>> GROVE_HOLLY_TREES = register("grove_holly_trees", Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(TreePlacements.HOLLY_ON_SNOW, 0.33333334F)), TreePlacements.HOLLY_ON_SNOW));
-				
-		public static final Holder<ConfiguredFeature<?, ?>> CHESTNUT_TREES = register("chestnut_trees", Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(TreePlacements.CHESTNUT_TREES_BEES, 0.33333334F)), TreePlacements.HOLLY_TREES_BEES));
-		
-		public static <FC extends FeatureConfiguration, F extends Feature<FC>> Holder<ConfiguredFeature<?, ?>> register(String name, F feature, FC config) {
-			return BuiltinRegistries.register(BuiltinRegistries.CONFIGURED_FEATURE, Windswept.REGISTRY_HELPER.prefix(name), new ConfiguredFeature<>(feature, config));
-		}
+		public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES = DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, Windswept.MODID);
+
+		public static final RegistryObject<ConfiguredFeature<?, ?>> RED_ROSE = CONFIGURED_FEATURES.register("red_rose", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.RED_ROSE));
+		public static final RegistryObject<ConfiguredFeature<?, ?>> WHITE_ROSE = CONFIGURED_FEATURES.register("white_rose", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.WHITE_ROSE));
+		public static final RegistryObject<ConfiguredFeature<?, ?>> PINK_ROSE = CONFIGURED_FEATURES.register("pink_rose", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.PINK_ROSE));
+		public static final RegistryObject<ConfiguredFeature<?, ?>> BLUE_ROSE = CONFIGURED_FEATURES.register("blue_rose", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.BLUE_ROSE));
+		public static final RegistryObject<ConfiguredFeature<?, ?>> YELLOW_ROSE = CONFIGURED_FEATURES.register("yellow_rose", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.YELLOW_ROSE));
+		public static final RegistryObject<ConfiguredFeature<?, ?>> FOXGLOVE = CONFIGURED_FEATURES.register("foxglove", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.FOXGLOVE));
+		public static final RegistryObject<ConfiguredFeature<?, ?>> BLUEBELLS = CONFIGURED_FEATURES.register("bluebells", () -> new ConfiguredFeature<>(BLUEBELL_PATCH.get(), NoneFeatureConfiguration.NONE));
+		public static final RegistryObject<ConfiguredFeature<?, ?>> NIGHTHSADE = CONFIGURED_FEATURES.register("nightshades", () -> new ConfiguredFeature<>(NIGHTSHADE_PATCH.get(), NoneFeatureConfiguration.NONE));
+		public static final RegistryObject<ConfiguredFeature<?, ?>> WILD_BERRY_BUSH = CONFIGURED_FEATURES.register("wild_berry_bush", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.WILD_BERRY_BUSH));
+		public static final RegistryObject<ConfiguredFeature<?, ?>> SNOWY_SPROUTS = CONFIGURED_FEATURES.register("snowy_sprouts", () -> new ConfiguredFeature<>(SNOWY_SPROUTS_PATCH.get(), NoneFeatureConfiguration.NONE));
+		public static final RegistryObject<ConfiguredFeature<?, ?>> HOLLY_TREES = CONFIGURED_FEATURES.register("holly_trees", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature((Holder<PlacedFeature>) TreePlacements.HOLLY_TREES_BEES.getHolder().get(), 0.33333334F)), (Holder<PlacedFeature>) TreePlacements.HOLLY_TREES_BEES.getHolder().get())));
+		public static final RegistryObject<ConfiguredFeature<?, ?>> GROVE_HOLLY_TREES = CONFIGURED_FEATURES.register("grove_holly_trees", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature((Holder<PlacedFeature>) TreePlacements.HOLLY_ON_SNOW.getHolder().get(), 0.33333334F)), (Holder<PlacedFeature>) TreePlacements.HOLLY_ON_SNOW.getHolder().get())));
+		public static final RegistryObject<ConfiguredFeature<?, ?>> CHESTNUT_TREES = CONFIGURED_FEATURES.register("chestnut_trees", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature((Holder<PlacedFeature>) TreePlacements.CHESTNUT_TREES_BEES.getHolder().get(), 0.33333334F)), (Holder<PlacedFeature>) TreePlacements.HOLLY_TREES_BEES.getHolder().get())));
 		
 	}
 	
 	public static class Placements {
-		public static final Holder<PlacedFeature> RED_ROSE = createPlantPatch("red_rose", 16, Features.RED_ROSE);
-		public static final Holder<PlacedFeature> WHITE_ROSE = createPlantPatch("white_rose", 32, Features.WHITE_ROSE);
-		public static final Holder<PlacedFeature> PINK_ROSE = createPlantPatch("pink_rose", 32, Features.PINK_ROSE);
-		public static final Holder<PlacedFeature> BLUE_ROSE = createPlantPatch("blue_rose", 32, Features.BLUE_ROSE);
-		public static final Holder<PlacedFeature> YELLOW_ROSE = createPlantPatch("yellow_rose", 24, Features.YELLOW_ROSE);
-		public static final Holder<PlacedFeature> FOXGLOVE = createPlantPatch("foxglove", 6, Features.FOXGLOVE);
-		public static final Holder<PlacedFeature> BLUEBELLS = createPlantPatch("bluebells", 3, Features.BLUEBELLS);
-		public static final Holder<PlacedFeature> NIGHTHSADE = createPlantPatch("nightshade", 512, Features.NIGHTHSADE);
-		public static final Holder<PlacedFeature> WILD_BERRY_BUSH = createPlantPatch("wild_berry_bush", 32, Features.WILD_BERRY_BUSH);
-		public static final Holder<PlacedFeature> WILD_BERRY_BUSH_COMMON = createPlantPatch("wild_berry_bush_common", 5, Features.WILD_BERRY_BUSH);
-		public static final Holder<PlacedFeature> SNOWY_SPROUTS = createPlantPatch("snowy_sprouts", 1, Features.SNOWY_SPROUTS);
-		
-		public static final Holder<PlacedFeature> HOLLY_TREES = register("holly_trees", Features.HOLLY_TREES, TreePlacements.treePlacement(PlacementUtils.countExtra(3, .1f, 1)));
-		public static final Holder<PlacedFeature> GROVE_HOLLY_TREES = register("grove_holly_trees", Features.GROVE_HOLLY_TREES, TreePlacements.treePlacement(PlacementUtils.countExtra(3, .1f, 1)));
-		
-		public static final Holder<PlacedFeature> CHESTNUT_TREES = register("chestnut_trees", Features.CHESTNUT_TREES, TreePlacements.treePlacement(PlacementUtils.countExtra(3, .1f, 1)));
+		public static final DeferredRegister<PlacedFeature> PLACED_FEATURES = DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, Windswept.MODID);
 
-		private static Holder<PlacedFeature> createPlantPatch(String name, int onceEvery, Holder<ConfiguredFeature<?, ?>> feature) {
+		public static final RegistryObject<PlacedFeature> RED_ROSE = createPlantPatch("red_rose", 16, Features.RED_ROSE);
+		public static final RegistryObject<PlacedFeature> WHITE_ROSE = createPlantPatch("white_rose", 32, Features.WHITE_ROSE);
+		public static final RegistryObject<PlacedFeature> PINK_ROSE = createPlantPatch("pink_rose", 32, Features.PINK_ROSE);
+		public static final RegistryObject<PlacedFeature> BLUE_ROSE = createPlantPatch("blue_rose", 32, Features.BLUE_ROSE);
+		public static final RegistryObject<PlacedFeature> YELLOW_ROSE = createPlantPatch("yellow_rose", 24, Features.YELLOW_ROSE);
+		public static final RegistryObject<PlacedFeature> FOXGLOVE = createPlantPatch("foxglove", 6, Features.FOXGLOVE);
+		public static final RegistryObject<PlacedFeature> BLUEBELLS = createPlantPatch("bluebells", 3, Features.BLUEBELLS);
+		public static final RegistryObject<PlacedFeature> NIGHTHSADE = createPlantPatch("nightshade", 512, Features.NIGHTHSADE);
+		public static final RegistryObject<PlacedFeature> WILD_BERRY_BUSH = createPlantPatch("wild_berry_bush", 32, Features.WILD_BERRY_BUSH);
+		public static final RegistryObject<PlacedFeature> WILD_BERRY_BUSH_COMMON = createPlantPatch("wild_berry_bush_common", 5, Features.WILD_BERRY_BUSH);
+		public static final RegistryObject<PlacedFeature> SNOWY_SPROUTS = createPlantPatch("snowy_sprouts", 1, Features.SNOWY_SPROUTS);
+		
+		public static final RegistryObject<PlacedFeature> HOLLY_TREES = register("holly_trees", Features.HOLLY_TREES, TreePlacements.treePlacement(PlacementUtils.countExtra(3, .1f, 1)));
+		public static final RegistryObject<PlacedFeature> GROVE_HOLLY_TREES = register("grove_holly_trees", Features.GROVE_HOLLY_TREES, TreePlacements.treePlacement(PlacementUtils.countExtra(3, .1f, 1)));
+		
+		public static final RegistryObject<PlacedFeature> CHESTNUT_TREES = register("chestnut_trees", Features.CHESTNUT_TREES, TreePlacements.treePlacement(PlacementUtils.countExtra(3, .1f, 1)));
+
+		private static RegistryObject<PlacedFeature> createPlantPatch(String name, int onceEvery, RegistryObject<ConfiguredFeature<?, ?>> feature) {
 			return register(name, feature, RarityFilter.onAverageOnceEvery(onceEvery), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 		}
-		
-		public static Holder<PlacedFeature> register(String name, Holder<? extends ConfiguredFeature<?, ?>> configuredFeature, PlacementModifier... placementModifiers) {
+
+		public static RegistryObject<PlacedFeature> register(String name, RegistryObject<? extends ConfiguredFeature<?, ?>> configuredFeature, PlacementModifier... placementModifiers) {
 			return register(name, configuredFeature, List.of(placementModifiers));
 		}
 
-		public static Holder<PlacedFeature> register(String name, Holder<? extends ConfiguredFeature<?, ?>> configuredFeature, List<PlacementModifier> placementModifiers) {
-			return BuiltinRegistries.register(BuiltinRegistries.PLACED_FEATURE, Windswept.REGISTRY_HELPER.prefix(name), new PlacedFeature(Holder.hackyErase(configuredFeature), placementModifiers));
+		public static RegistryObject<PlacedFeature> register(String name, RegistryObject<? extends ConfiguredFeature<?, ?>> configuredFeature, List<PlacementModifier> placementModifiers) {
+			return PLACED_FEATURES.register(name, () -> new PlacedFeature((Holder<ConfiguredFeature<?, ?>>) configuredFeature.getHolder().get(), placementModifiers));
 		}
 		
 	}
 	
 	public static class TreeFeatures {
-		public static final Holder<ConfiguredFeature<?, ?>> HOLLY_TREES = Features.register("holly_trees_checked", Feature.TREE, Configs.HOLLY_TREE);
-		public static final Holder<ConfiguredFeature<?, ?>> HOLLY_TREES_BEES = Features.register("holly_trees_bees_checked", Feature.TREE, Configs.HOLLY_TREE_005);
+		public static final RegistryObject<ConfiguredFeature<?, ?>> HOLLY_TREES = Features.CONFIGURED_FEATURES.register("holly_trees_checked", () -> new ConfiguredFeature<>(Feature.TREE, Configs.HOLLY_TREE));
+		public static final RegistryObject<ConfiguredFeature<?, ?>> HOLLY_TREES_BEES = Features.CONFIGURED_FEATURES.register("holly_trees_bees_checked", () -> new ConfiguredFeature<>(Feature.TREE, Configs.HOLLY_TREE_005));
 		
-		public static final Holder<ConfiguredFeature<?, ?>> CHESTNUT_TREES = Features.register("chestnut_trees_checked", Feature.TREE, Configs.CHESTNUT_TREE);
-		public static final Holder<ConfiguredFeature<?, ?>> CHESTNUT_TREES_BEES = Features.register("chestnut_trees_bees_checked", Feature.TREE, Configs.CHESTNUT_TREE_005);
+		public static final RegistryObject<ConfiguredFeature<?, ?>> CHESTNUT_TREES = Features.CONFIGURED_FEATURES.register("chestnut_trees_checked", () -> new ConfiguredFeature<>(Feature.TREE, Configs.CHESTNUT_TREE));
+		public static final RegistryObject<ConfiguredFeature<?, ?>> CHESTNUT_TREES_BEES = Features.CONFIGURED_FEATURES.register("chestnut_trees_bees_checked", () -> new ConfiguredFeature<>(Feature.TREE, Configs.CHESTNUT_TREE_005));
 	}
 	
 	public static class TreePlacements {
-		public static final Holder<PlacedFeature> HOLLY_TREES = Placements.register("holly_trees_checked", TreeFeatures.HOLLY_TREES, PlacementUtils.filteredByBlockSurvival(WindsweptBlocks.HOLLY_SAPLING.get()));
-		public static final Holder<PlacedFeature> HOLLY_TREES_BEES = Placements.register("holly_trees_bees_checked", TreeFeatures.HOLLY_TREES_BEES, PlacementUtils.filteredByBlockSurvival(WindsweptBlocks.HOLLY_SAPLING.get()));
-		public static final Holder<PlacedFeature> HOLLY_ON_SNOW = Placements.register("holly_on_snow_checked", TreeFeatures.HOLLY_TREES, net.minecraft.data.worldgen.placement.TreePlacements.SNOW_TREE_FILTER_DECORATOR);
+		public static final RegistryObject<PlacedFeature> HOLLY_TREES = Placements.register("holly_trees_checked", TreeFeatures.HOLLY_TREES, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING));
+		public static final RegistryObject<PlacedFeature> HOLLY_TREES_BEES = Placements.register("holly_trees_bees_checked", TreeFeatures.HOLLY_TREES_BEES, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING));
+		public static final RegistryObject<PlacedFeature> HOLLY_ON_SNOW = Placements.register("holly_on_snow_checked", TreeFeatures.HOLLY_TREES, net.minecraft.data.worldgen.placement.TreePlacements.SNOW_TREE_FILTER_DECORATOR);
 		
-		public static final Holder<PlacedFeature> CHESTNUT_TREES = Placements.register("chestnut_trees_checked", TreeFeatures.CHESTNUT_TREES, PlacementUtils.filteredByBlockSurvival(WindsweptBlocks.CHESTNUT_SAPLING.get()));
-		public static final Holder<PlacedFeature> CHESTNUT_TREES_BEES = Placements.register("chestnut_trees_bees_checked", TreeFeatures.CHESTNUT_TREES_BEES, PlacementUtils.filteredByBlockSurvival(WindsweptBlocks.CHESTNUT_SAPLING.get()));
+		public static final RegistryObject<PlacedFeature> CHESTNUT_TREES = Placements.register("chestnut_trees_checked", TreeFeatures.CHESTNUT_TREES, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING));
+		public static final RegistryObject<PlacedFeature> CHESTNUT_TREES_BEES = Placements.register("chestnut_trees_bees_checked", TreeFeatures.CHESTNUT_TREES_BEES, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING));
 
 		public static List<PlacementModifier> treePlacement(PlacementModifier modifier) {
 			return ImmutableList.<PlacementModifier>builder().add(modifier).add(InSquarePlacement.spread())

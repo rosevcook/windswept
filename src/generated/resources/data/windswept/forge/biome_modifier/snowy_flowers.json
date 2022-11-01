@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#windswept:has_snowy_flowers",
+  "features": [
+    "windswept:white_rose",
+    "windswept:pink_rose",
+    "windswept:blue_rose"
+  ],
+  "step": "vegetal_decoration"
+}

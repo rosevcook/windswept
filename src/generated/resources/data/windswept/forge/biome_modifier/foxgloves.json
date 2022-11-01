@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#windswept:has_foxgloves",
+  "features": "windswept:foxglove",
+  "step": "vegetal_decoration"
+}

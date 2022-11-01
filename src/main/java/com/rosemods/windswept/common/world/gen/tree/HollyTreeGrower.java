@@ -11,7 +11,7 @@ public class HollyTreeGrower extends AbstractTreeGrower {
 
 	@Override
 	protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource rand, boolean bees) {
-		return bees ? WindsweptFeatures.TreeFeatures.HOLLY_TREES_BEES : WindsweptFeatures.TreeFeatures.HOLLY_TREES;
+		return (Holder<ConfiguredFeature<?, ?>>) (bees ? WindsweptFeatures.TreeFeatures.HOLLY_TREES_BEES : WindsweptFeatures.TreeFeatures.HOLLY_TREES).getHolder().get();
 	}
 
 }

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#windswept:has_snowy_sprouts",
+  "features": "windswept:snowy_sprouts",
+  "step": "vegetal_decoration"
+}

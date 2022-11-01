@@ -349,6 +349,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 			RegistryObject<Block> bookshelf, RegistryObject<? extends Block> chest, RegistryObject<? extends Block> trappedChest,
 			RegistryObject<Item> largeBoat, RegistryObject<Item> furnaceBoat, RegistryObject<Block> verticalPlanks,
 			Consumer<FinishedRecipe> consumer) {
+		//chest boat
 		ShapelessRecipeBuilder.shapeless(boat.getSecond().get())
 				.group("chest_boat").
 				requires(Tags.Items.CHESTS_WOODEN)
@@ -356,6 +357,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_" + getName(boat.getFirst().get()), has(boat.getFirst().get()))
 				.save(consumer, getRegistryName(boat.getSecond()));
 
+		//boat
 		ShapedRecipeBuilder.shaped(boat.getFirst().get())
 				.group("boat").
 				define('#', planks.get())
@@ -364,12 +366,14 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_" + name + "_planks", has(planks.get()))
 				.save(consumer, getRegistryName(boat.getFirst()));
 
+		//button
 		ShapelessRecipeBuilder.shapeless(button.get())
 				.group("wooden_button")
 				.requires(planks.get())
 				.unlockedBy("has_" + name + "_planks", has(planks.get()))
 				.save(consumer, getRegistryName(button));
 
+		//door
 		ShapedRecipeBuilder.shaped(door.get(), 3)
 				.group("wooden_door")
 				.define('#', planks.get())
@@ -379,6 +383,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_" + name + "_planks", has(planks.get()))
 				.save(consumer, getRegistryName(door));
 
+		//fence
 		ShapedRecipeBuilder.shaped(fence.get(), 3)
 				.group("wooden_fence")
 				.define('#', planks.get())
@@ -388,6 +393,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_" + name + "_planks", has(planks.get()))
 				.save(consumer, getRegistryName(fence));
 
+		//fence gate
 		ShapedRecipeBuilder.shaped(fenceGate.get())
 				.group("wooden_fence_gate")
 				.define('#', planks.get())
@@ -397,12 +403,14 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_" + name + "_planks", has(planks.get()))
 				.save(consumer, getRegistryName(fenceGate));
 
+		//planks
 		ShapelessRecipeBuilder.shapeless(planks.get(), 4)
 				.group("planks")
 				.requires(logs)
 				.unlockedBy("has_" + name + "_log", has(logs))
 				.save(consumer, getRegistryName(planks));
 
+		//pressure plate
 		ShapedRecipeBuilder.shaped(pressurePlate.get())
 				.group("wooden_pressure_plate").
 				define('#', planks.get())
@@ -410,6 +418,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_" + name + "_planks", has(planks.get()))
 				.save(consumer, getRegistryName(pressurePlate));
 
+		//sign
 		ShapedRecipeBuilder.shaped(signs.getFirst().get(), 3)
 				.group("wooden_sign")
 				.define('#', planks.get())
@@ -420,6 +429,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_" + name + "_planks", has(planks.get()))
 				.save(consumer, getRegistryName(signs.getFirst()));
 
+		//trapdoor
 		ShapedRecipeBuilder.shaped(trapdoor.get(), 2)
 				.group("wooden_trapdoor")
 				.define('#', planks.get())
@@ -428,6 +438,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_" + name + "_planks", has(planks.get()))
 				.save(consumer, getRegistryName(trapdoor));
 
+		//wood
 		ShapedRecipeBuilder.shaped(wood.get(), 3)
 				.group("bark")
 				.define('#', log.get())
@@ -436,6 +447,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_" + name + "_log", has(log.get()))
 				.save(consumer, getRegistryName(wood));
 
+		//stripped wood
 		ShapedRecipeBuilder.shaped(strippedWood.get(), 3)
 				.group("bark")
 				.define('#', strippedLog.get())
@@ -444,12 +456,19 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_stripped_" + name + "_log", has(strippedLog.get()))
 				.save(consumer, getRegistryName(strippedWood));
 
+		//slab
 		slab(planks.get(), slab.get(), "wooden_slab", consumer);
+
+		//stairs
 		stairs(planks.get(), stairs.get(), "wooden_stairs", consumer);
 
-		//compat
+		//veritcal slab
 		verticalSlab(verticalSlab.get(), slab.get(), consumer);
+
+		//post
 		post(post.get(), wood.get(), consumer);
+
+		//stripped post
 		post(strippedPost.get(), strippedWood.get(), consumer);
 
 		//boards
