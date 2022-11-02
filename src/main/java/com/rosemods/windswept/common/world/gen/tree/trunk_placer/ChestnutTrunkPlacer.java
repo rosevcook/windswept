@@ -72,7 +72,7 @@ public class ChestnutTrunkPlacer extends TrunkPlacer {
 						int posX = x;
 						int posZ = z;
 
-						if (rand.nextInt(5) == 0) {
+						if (rand.nextInt(3) == 0) {
 							if (rand.nextBoolean() && x > 0)
 								posX++;
 							else if (z > 0)

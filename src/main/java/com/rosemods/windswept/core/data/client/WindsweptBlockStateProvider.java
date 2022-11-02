@@ -111,6 +111,9 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 		this.post(WindsweptBlocks.STRIPPED_CHESTNUT_POST, WindsweptBlocks.STRIPPED_CHESTNUT_LOG);
 		this.chests(WindsweptBlocks.CHESTNUT_CHEST, WindsweptBlocks.CHESTNUT_TRAPPED_CHEST, WindsweptBlocks.CHESTNUT_PLANKS);
 
+		this.cubeBottomTop(WindsweptBlocks.CHESTNUT_CRATE);
+		this.cubeBottomTop(WindsweptBlocks.ROASTED_CHESTNUT_CRATE);
+
 		this.cubeAll(WindsweptBlocks.SNOW_BRICKS);
 		this.stairs(WindsweptBlocks.SNOW_BRICK_STAIRS, WindsweptBlocks.SNOW_BRICKS);
 		this.slab(WindsweptBlocks.SNOW_BRICK_SLAB, WindsweptBlocks.SNOW_BRICKS);

@@ -56,6 +56,8 @@ public class WindsweptItemModelProvider extends ItemModelProvider {
 		this.generated(WindsweptItems.LARGE_HOLLY_BOAT);
 		this.generated(WindsweptItems.CHESTNUT_FURNACE_BOAT);
 		this.generated(WindsweptItems.LARGE_CHESTNUT_BOAT);
+		this.generated(WindsweptItems.CHESTNUTS);
+		this.generated(WindsweptItems.ROASTED_CHESTNUTS);
 	}
 	
 	private void generated(RegistryObject<? extends ItemLike> item) {

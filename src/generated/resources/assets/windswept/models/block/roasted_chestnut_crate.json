@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "windswept:block/roasted_chestnut_crate_bottom",
+    "side": "windswept:block/roasted_chestnut_crate_side",
+    "top": "windswept:block/roasted_chestnut_crate_top"
+  }
+}
