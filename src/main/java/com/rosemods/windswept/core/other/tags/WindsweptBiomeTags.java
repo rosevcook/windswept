@@ -16,6 +16,8 @@ public final class WindsweptBiomeTags {
     public static final TagKey<Biome> HAS_NIGHTSHADES = TagUtil.biomeTag(Windswept.MODID, "has_nightshades");
     public static final TagKey<Biome> HAS_WILD_BERRIES = TagUtil.biomeTag(Windswept.MODID, "has_wild_berries");
     public static final TagKey<Biome> HAS_COMMON_WILD_BERRIES = TagUtil.biomeTag(Windswept.MODID, "has_common_wild_berries");
+    public static final TagKey<Biome> HAS_CHESTNUT_TREES = TagUtil.biomeTag(Windswept.MODID, "has_chestnut_trees");
+
 
 
 

@@ -6,12 +6,17 @@ import com.teamabnormals.blueprint.common.world.modification.structure.SimpleStr
 import com.teamabnormals.blueprint.common.world.modification.structure.StructureRepaletterProvider;
 import com.teamabnormals.blueprint.core.util.modification.selection.ConditionedResourceSelector;
 import com.teamabnormals.blueprint.core.util.modification.selection.selectors.NamesResourceSelector;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.structure.BuiltinStructures;
+import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
+import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.function.Supplier;
 
 public class WindsweptStructureRepaletterProvider extends StructureRepaletterProvider {
 
@@ -21,17 +26,27 @@ public class WindsweptStructureRepaletterProvider extends StructureRepaletterPro
 
     @Override
     protected void registerRepaletters() {
-        this.basicRepaletter("snow_bricks_in_igloos", BuiltinStructures.IGLOO.location(), Blocks.SNOW_BLOCK, WindsweptBlocks.SNOW_BRICKS.get());
-        this.basicRepaletter("holly_sign_in_igloo", BuiltinStructures.IGLOO.location(), Blocks.OAK_WALL_SIGN, WindsweptBlocks.HOLLY_SIGNS.getSecond().get());
-        this.basicRepaletter("roses_in_igloo", BuiltinStructures.IGLOO.location(), Blocks.POTTED_CACTUS, WindsweptBlocks.POTTED_WHITE_ROSE.get());
-        this.basicRepaletter("holly_slab_in_igloo", BuiltinStructures.IGLOO.location(), Blocks.SPRUCE_SLAB, WindsweptBlocks.HOLLY_SLAB.get());
-        this.basicRepaletter("holly_stairs_in_igloo", BuiltinStructures.IGLOO.location(), Blocks.SPRUCE_STAIRS, WindsweptBlocks.HOLLY_STAIRS.get());
-        this.basicRepaletter("holly_trapdoor_in_igloo", BuiltinStructures.IGLOO.location(), Blocks.OAK_TRAPDOOR, WindsweptBlocks.HOLLY_TRAPDOOR.get());
-        this.basicRepaletter("roses_in_taiga_villages", BuiltinStructures.VILLAGE_TAIGA.location(), Blocks.POTTED_SPRUCE_SAPLING, WindsweptBlocks.POTTED_RED_ROSE.get());
+        // Igloo //
+        this.register(BuiltinStructures.IGLOO, Blocks.SNOW_BLOCK, WindsweptBlocks.SNOW_BRICKS.get());
+        this.register(BuiltinStructures.IGLOO, Blocks.OAK_WALL_SIGN, WindsweptBlocks.HOLLY_SIGNS.getSecond().get());
+        this.register(BuiltinStructures.IGLOO, Blocks.POTTED_CACTUS, WindsweptBlocks.POTTED_WHITE_ROSE.get());
+        this.register(BuiltinStructures.IGLOO, Blocks.SPRUCE_SLAB, WindsweptBlocks.HOLLY_SLAB.get());
+        this.register(BuiltinStructures.IGLOO, Blocks.SPRUCE_STAIRS, WindsweptBlocks.HOLLY_STAIRS.get());
+        this.register(BuiltinStructures.IGLOO, Blocks.MOSSY_STONE_BRICKS, WindsweptBlocks.HOLLY_PLANKS.get());
+        this.register(BuiltinStructures.IGLOO, Blocks.INFESTED_MOSSY_STONE_BRICKS, WindsweptBlocks.HOLLY_PLANKS.get());
+        this.register(BuiltinStructures.IGLOO, Blocks.OAK_TRAPDOOR, WindsweptBlocks.HOLLY_TRAPDOOR.get());
+
+        // Villages //
+        this.register(BuiltinStructures.VILLAGE_TAIGA, Blocks.POTTED_SPRUCE_SAPLING, WindsweptBlocks.POTTED_RED_ROSE.get());
     }
 
-    private void basicRepaletter(String name, ResourceLocation structure, Block replacesBlock, Block replacesWith) {
-        this.registerRepaletter(name, new ConditionedResourceSelector(new NamesResourceSelector(structure)), EventPriority.NORMAL, new SimpleStructureRepaletter(replacesBlock, replacesWith));
+    private void register(ResourceKey<Structure> structure, Block replacesBlock, Block replacesWith) {
+        this.registerRepaletter(getName(replacesBlock) + "_replaces_" + getName(replacesWith) + "_in_" + structure.location().getPath(),
+                new ConditionedResourceSelector(new NamesResourceSelector(structure.location())), EventPriority.NORMAL, new SimpleStructureRepaletter(replacesBlock, replacesWith));
+    }
+
+    private static String getName(Block block) {
+        return ForgeRegistries.BLOCKS.getKey(block).getPath();
     }
 
 }

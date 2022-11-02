@@ -16,7 +16,8 @@
     "LivingEntityMixin",
     "SnowLayerBlockMixin",
     "TreeFeaturesMixin",
-    "TreeConfigurationBuilderMixin"
+    "TreeConfigurationBuilderMixin",
+    "TreeFeatureMixin"
   ],
   "client": [
     "client.LivingEntityRendererMixin"

@@ -33,14 +33,12 @@ public class WindsweptConfig {
 	
 	public static class Client {	
 		public final ConfigValue<Boolean> powderSnowParticles;
-		public final ConfigValue<Boolean> hideUnobtainable;
 		public final ConfigValue<Boolean> dyeableTooltip;
 
 		public Client(ForgeConfigSpec.Builder builder) {
 			builder.comment("Client tweaks");
 			builder.push("client");
 			this.powderSnowParticles = builder.comment("If Powder Snow should drop snow particles if there is no block below.").define("Powder Snow Particles", true);
-			this.hideUnobtainable = builder.comment("Hides the \"Unobtainable\" Tooltip under unobtainable items.").define("Hide Unobtainable", false);
 			this.dyeableTooltip = builder.comment("Displays \"Dyeable\" tooltip under dyeable items.").define("Dyeable Tooltip", false);
 			builder.pop();
 		}

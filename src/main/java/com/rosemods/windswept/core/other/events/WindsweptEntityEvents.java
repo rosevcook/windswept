@@ -38,6 +38,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
@@ -70,9 +71,6 @@ public class WindsweptEntityEvents {
 		ItemStack stack = event.getItemStack();
 		if (stack.getItem() == null) return;
 		ResourceLocation location = ForgeRegistries.ITEMS.getKey(stack.getItem());
-		
-		if (location.getPath().contains("chestnut") && location.getNamespace().equals(Windswept.MODID) && !WindsweptConfig.CLIENT.hideUnobtainable.get())
-			event.getToolTip().add(Component.translatable(Windswept.MODID + ".tooltip.unobtainable").withStyle(ChatFormatting.DARK_GRAY));
 		
 		if (stack.getItem() instanceof DyeableLeatherItem item && !item.hasCustomColor(stack) && WindsweptConfig.CLIENT.dyeableTooltip.get()) {
 			Deque<Component> tooltip = new LinkedList<>(event.getToolTip());
@@ -122,7 +120,7 @@ public class WindsweptEntityEvents {
 		// convert zombies in cold biomes to chilled
 		if (mob != null && level instanceof ServerLevel && event.getResult() != Result.DENY
 				&& mob.getY() > 60 && (reason == MobSpawnType.NATURAL || reason == MobSpawnType.CHUNK_GENERATION)
-				&& level.getBiome(mob.blockPosition()).value().getPrecipitation() == Biome.Precipitation.SNOW) {
+				&& level.getBiome(mob.blockPosition()).is(Tags.Biomes.IS_SNOWY)) {
 			if (mob.getType() == EntityType.ZOMBIE)
 				mob.convertTo(WindsweptEntities.CHILLED.get(), true);
 			else if (mob.getType() == EntityType.SKELETON && WindsweptConfig.COMMON.strays.get())

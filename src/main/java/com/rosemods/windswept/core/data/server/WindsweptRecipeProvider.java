@@ -104,7 +104,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 
 		
 		// roasted chestnuts
-		//cooking(WindsweptItems.CHESTNUTS.get(), WindsweptItems.ROASTED_CHESTNUTS.get(), consumer);
+		cooking(WindsweptItems.CHESTNUTS.get(), WindsweptItems.ROASTED_CHESTNUTS.get(), consumer);
 				
 		// goat
 		cooking(WindsweptItems.GOAT.get(), WindsweptItems.COOKED_GOAT.get(), consumer);
@@ -292,6 +292,36 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.requires(WindsweptBlocks.HOLLY_BERRY_CRATE.get())
 				.unlockedBy("has_holly_berry_crate", has(WindsweptBlocks.HOLLY_BERRY_CRATE.get())),
 				getQuarkCondition("berry_sack"), consumer, Windswept.REGISTRY_HELPER.prefix("holly_berry_crate_revert"));
+
+		// chestnut crate
+		conditionalRecipe(ShapedRecipeBuilder.shaped(WindsweptBlocks.CHESTNUT_CRATE.get())
+				.define('#', WindsweptItems.CHESTNUTS.get())
+				.pattern("###")
+				.pattern("###")
+				.pattern("###")
+				.unlockedBy("has_chestnuts", has(WindsweptItems.CHESTNUTS.get())),
+				getQuarkCondition("apple_crate"), consumer, Windswept.REGISTRY_HELPER.prefix("chestnut_crate"));
+
+		// chestnut crate revert
+		conditionalRecipe(ShapelessRecipeBuilder.shapeless(WindsweptItems.CHESTNUTS.get(), 9)
+				.requires(WindsweptBlocks.CHESTNUT_CRATE.get())
+				.unlockedBy("has_chestnut_crate", has(WindsweptBlocks.CHESTNUT_CRATE.get())),
+				getQuarkCondition("apple_crate"), consumer, Windswept.REGISTRY_HELPER.prefix("chestnut_crate_revert"));
+
+		// roasted chestnut crate
+		conditionalRecipe(ShapedRecipeBuilder.shaped(WindsweptBlocks.ROASTED_CHESTNUT_CRATE.get())
+				.define('#', WindsweptItems.ROASTED_CHESTNUTS.get())
+				.pattern("###")
+				.pattern("###")
+				.pattern("###")
+				.unlockedBy("has_roasted_chestnuts", has(WindsweptItems.ROASTED_CHESTNUTS.get())),
+				getQuarkCondition("apple_crate"), consumer, Windswept.REGISTRY_HELPER.prefix("roasted_chestnut_crate"));
+
+		// roasted chestnut crate revert
+		conditionalRecipe(ShapelessRecipeBuilder.shapeless(WindsweptItems.ROASTED_CHESTNUTS.get(), 9)
+				.requires(WindsweptBlocks.ROASTED_CHESTNUT_CRATE.get())
+				.unlockedBy("has_roasted_chestnut_crate", has(WindsweptBlocks.ROASTED_CHESTNUT_CRATE.get())),
+				getQuarkCondition("apple_crate"), consumer, Windswept.REGISTRY_HELPER.prefix("roasted_chestnut_crate_revert"));
 	}
 
 	// Conditional Recipe Methods //

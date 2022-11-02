@@ -7,20 +7,19 @@ import javax.annotation.Nonnull;
 import com.mojang.serialization.Codec;
 import com.rosemods.windswept.common.world.gen.tree.trunk_placer.ChestnutTrunkPlacer;
 
+import com.rosemods.windswept.core.Windswept;
 import net.minecraft.core.Registry;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class WindsweptTrunkPlacers {
-	public static final TrunkPlacerType<ChestnutTrunkPlacer> CHESTNUT_TRUNK_PLACER = createType(ChestnutTrunkPlacer.CODEC);
-	
-	public static void registerTrunkPlacers() {
-		register("chestnut_trunk_placer", CHESTNUT_TRUNK_PLACER);
-	}
-	
-	private static <P extends TrunkPlacer> TrunkPlacerType<P> register(String name, @Nonnull TrunkPlacerType<P> placer) {
-		return Registry.register(Registry.TRUNK_PLACER_TYPES, name, placer);
-	}
+	public  static  final DeferredRegister<TrunkPlacerType<?>> TRUNK_PLACERS = DeferredRegister.create(Registry.TRUNK_PLACER_TYPE_REGISTRY, Windswept.MODID);
+
+	public static final RegistryObject<TrunkPlacerType<ChestnutTrunkPlacer>> CHESTNUT_TRUNK_PLACER = TRUNK_PLACERS.register("chestnut_trunk_placer", () -> createType(ChestnutTrunkPlacer.CODEC));
+
 	
 	@SuppressWarnings("unchecked")
 	private static <P extends TrunkPlacer> TrunkPlacerType<P> createType(Codec<P> codec) {

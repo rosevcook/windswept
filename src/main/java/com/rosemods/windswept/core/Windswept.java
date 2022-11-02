@@ -8,14 +8,7 @@ import com.rosemods.windswept.core.other.WindsweptBlockInfo;
 import com.rosemods.windswept.core.other.WindsweptCauldronInteractions;
 import com.rosemods.windswept.core.other.WindsweptDataProcessors;
 import com.rosemods.windswept.core.other.WindsweptDispenseBehaviors;
-import com.rosemods.windswept.core.registry.WindsweptAttributes;
-import com.rosemods.windswept.core.registry.WindsweptBannerPatterns;
-import com.rosemods.windswept.core.registry.WindsweptEffects;
-import com.rosemods.windswept.core.registry.WindsweptEnchantments;
-import com.rosemods.windswept.core.registry.WindsweptEntities;
-import com.rosemods.windswept.core.registry.WindsweptFeatures;
-import com.rosemods.windswept.core.registry.WindsweptFoliagePlacers;
-import com.rosemods.windswept.core.registry.WindsweptTreeDecorators;
+import com.rosemods.windswept.core.registry.*;
 import com.rosemods.windswept.core.registry.util.*;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 
@@ -52,6 +45,7 @@ public class Windswept {
 		WindsweptEnchantments.ENCHANTMENTS.register(bus);
 		WindsweptAttributes.ATTRIBUTES.register(bus);
 		WindsweptBannerPatterns.BANNER_PATTERNS.register(bus);
+		WindsweptTrunkPlacers.TRUNK_PLACERS.register(bus);
 
 		bus.addListener(this::commonSetup);
         bus.addListener(this::clientSetup);
@@ -63,14 +57,12 @@ public class Windswept {
 	
 	private void commonSetup(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
-			//WindsweptBiomes.registerBiomeTypes();
 			WindsweptEntities.registerSpawns();
 			WindsweptBlockInfo.registerCompostables();
 			WindsweptBlockInfo.registerFlammables();
 			WindsweptEffects.registerPotionRecipes();
 			WindsweptDispenseBehaviors.registerDispenseBehaviors();
 			WindsweptCauldronInteractions.registerCauldronInteractions();
-			//WindsweptTrunkPlacers.registerTrunkPlacers();
 		});
 	}
 	

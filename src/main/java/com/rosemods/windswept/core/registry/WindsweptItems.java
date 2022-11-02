@@ -50,8 +50,8 @@ public class WindsweptItems {
 	public static final RegistryObject<Item> COOKED_GOAT = HELPER.createItem("cooked_goat", () -> new Item(PropertyUtil.food(Foods.COOKED_GOAT)));
 	public static final RegistryObject<Item> GOAT_STEW = HELPER.createItem("goat_stew", () -> new BowlFoodItem(PropertyUtil.food(Foods.GOAT_STEW).craftRemainder(Items.BOWL).stacksTo(1)));
 	public static final RegistryObject<Item> WILD_BERRY_PIPS = HELPER.createItem("wild_berry_pips", () -> new ItemNameBlockItem(WindsweptBlocks.WILD_BERRY_BUSH_PIPS.get(), new Item.Properties().tab(ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD) ? CreativeModeTab.TAB_MISC : null)));
-	//public static final RegistryObject<Item> CHESTNUTS = HELPER.createItem("chestnuts", () -> new Item(PropertyUtil.food(Foods.CHESTNUTS)));
-	//public static final RegistryObject<Item> ROASTED_CHESTNUTS = HELPER.createItem("roasted_chestnuts", () -> new Item(PropertyUtil.food(Foods.ROASTED_CHESTNUTS)));
+	public static final RegistryObject<Item> CHESTNUTS = HELPER.createItem("chestnuts", () -> new Item(PropertyUtil.food(Foods.CHESTNUTS)));
+	public static final RegistryObject<Item> ROASTED_CHESTNUTS = HELPER.createItem("roasted_chestnuts", () -> new Item(PropertyUtil.food(Foods.ROASTED_CHESTNUTS)));
 	
 	// Misc //
 	
@@ -94,8 +94,8 @@ public class WindsweptItems {
 		public static final FoodProperties COOKED_GOAT = new FoodProperties.Builder().nutrition(6).saturationMod(.8f).meat().build();
 		public static final FoodProperties GOAT_STEW = new FoodProperties.Builder().nutrition(9).saturationMod(.9f).build();
 		public static final FoodProperties FROZEN_FLESH = new FoodProperties.Builder().nutrition(4).saturationMod(.1f).effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), .8f).meat().build();
-		//public static final FoodProperties CHESTNUTS = new FoodProperties.Builder().nutrition(2).saturationMod(.1f).build();
-		//public static final FoodProperties ROASTED_CHESTNUTS = new FoodProperties.Builder().nutrition(2).saturationMod(.5f).build();
+		public static final FoodProperties CHESTNUTS = new FoodProperties.Builder().nutrition(2).saturationMod(.1f).build();
+		public static final FoodProperties ROASTED_CHESTNUTS = new FoodProperties.Builder().nutrition(2).saturationMod(.5f).build();
 	}
 	
 }

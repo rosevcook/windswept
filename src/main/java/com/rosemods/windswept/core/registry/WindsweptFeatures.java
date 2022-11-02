@@ -7,11 +7,11 @@ import com.rosemods.windswept.common.block.wild_berry.WildBerryBushBlock;
 import com.rosemods.windswept.common.world.gen.feature.*;
 import com.rosemods.windswept.common.world.gen.tree.decorator.*;
 import com.rosemods.windswept.common.world.gen.tree.foliage_placer.ChestnutFoliagePlacer;
+import com.rosemods.windswept.common.world.gen.tree.trunk_placer.ChestnutTrunkPlacer;
 import com.rosemods.windswept.core.Windswept;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
-import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.util.InclusiveRange;
@@ -21,7 +21,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
@@ -96,7 +95,7 @@ public class WindsweptFeatures {
 		private static TreeConfigurationBuilder createChestnutTree() {
 			return new TreeConfiguration.TreeConfigurationBuilder(
 					BlockStateProvider.simple(WindsweptBlocks.CHESTNUT_LOG.get()), 
-					new StraightTrunkPlacer(5, 2, 2),
+					new ChestnutTrunkPlacer(),
 					BlockStateProvider.simple(WindsweptBlocks.CHESTNUT_LEAVES.get()),
 					new ChestnutFoliagePlacer(ConstantInt.of(2), ConstantInt.of(2)),
 					new TwoLayersFeatureSize(1, 0, 1))
@@ -120,7 +119,7 @@ public class WindsweptFeatures {
 		public static final RegistryObject<ConfiguredFeature<?, ?>> SNOWY_SPROUTS = CONFIGURED_FEATURES.register("snowy_sprouts", () -> new ConfiguredFeature<>(SNOWY_SPROUTS_PATCH.get(), NoneFeatureConfiguration.NONE));
 		public static final RegistryObject<ConfiguredFeature<?, ?>> HOLLY_TREES = CONFIGURED_FEATURES.register("holly_trees", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature((Holder<PlacedFeature>) TreePlacements.HOLLY_TREES_BEES.getHolder().get(), 0.33333334F)), (Holder<PlacedFeature>) TreePlacements.HOLLY_TREES_BEES.getHolder().get())));
 		public static final RegistryObject<ConfiguredFeature<?, ?>> GROVE_HOLLY_TREES = CONFIGURED_FEATURES.register("grove_holly_trees", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature((Holder<PlacedFeature>) TreePlacements.HOLLY_ON_SNOW.getHolder().get(), 0.33333334F)), (Holder<PlacedFeature>) TreePlacements.HOLLY_ON_SNOW.getHolder().get())));
-		public static final RegistryObject<ConfiguredFeature<?, ?>> CHESTNUT_TREES = CONFIGURED_FEATURES.register("chestnut_trees", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature((Holder<PlacedFeature>) TreePlacements.CHESTNUT_TREES_BEES.getHolder().get(), 0.33333334F)), (Holder<PlacedFeature>) TreePlacements.HOLLY_TREES_BEES.getHolder().get())));
+		public static final RegistryObject<ConfiguredFeature<?, ?>> CHESTNUT_TREES = CONFIGURED_FEATURES.register("chestnut_trees", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature((Holder<PlacedFeature>) TreePlacements.CHESTNUT_TREES_BEES.getHolder().get(), 0.33333334F)), (Holder<PlacedFeature>) TreePlacements.CHESTNUT_TREES_BEES.getHolder().get())));
 		
 	}
 	
@@ -142,7 +141,7 @@ public class WindsweptFeatures {
 		public static final RegistryObject<PlacedFeature> HOLLY_TREES = register("holly_trees", Features.HOLLY_TREES, TreePlacements.treePlacement(PlacementUtils.countExtra(3, .1f, 1)));
 		public static final RegistryObject<PlacedFeature> GROVE_HOLLY_TREES = register("grove_holly_trees", Features.GROVE_HOLLY_TREES, TreePlacements.treePlacement(PlacementUtils.countExtra(3, .1f, 1)));
 		
-		public static final RegistryObject<PlacedFeature> CHESTNUT_TREES = register("chestnut_trees", Features.CHESTNUT_TREES, TreePlacements.treePlacement(PlacementUtils.countExtra(3, .1f, 1)));
+		public static final RegistryObject<PlacedFeature> CHESTNUT_TREES = register("chestnut_trees", Features.CHESTNUT_TREES, TreePlacements.treePlacement(PlacementUtils.countExtra(0, .1f, 1)));
 
 		private static RegistryObject<PlacedFeature> createPlantPatch(String name, int onceEvery, RegistryObject<ConfiguredFeature<?, ?>> feature) {
 			return register(name, feature, RarityFilter.onAverageOnceEvery(onceEvery), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());

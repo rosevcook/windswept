@@ -51,8 +51,8 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.translateItem(WindsweptItems.CHESTNUT_BOAT.getFirst());
 		this.add(WindsweptItems.CHESTNUT_BOAT.getSecond().get(), "Chestnut Boat with Chest");
 
-		//this.translateItem(WindsweptItems.CHESTNUTS);
-		//this.translateItem(WindsweptItems.ROASTED_CHESTNUTS);
+		this.translateItem(WindsweptItems.CHESTNUTS);
+		this.translateItem(WindsweptItems.ROASTED_CHESTNUTS);
 		this.translateItem(WindsweptItems.WOODEN_BUCKET);
 		this.translateItem(WindsweptItems.WOODEN_WATER_BUCKET);
 		this.translateItem(WindsweptItems.WOODEN_MILK_BUCKET);
@@ -103,7 +103,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.translateBlock(WindsweptBlocks.HOLLY_BEEHIVE);
 		this.add(WindsweptBlocks.HOLLY_HEDGE.get(), "Holly Leaf Hedge");
 		this.translateBlock(WindsweptBlocks.HOLLY_LEAF_CARPET);
-		this.translateBlock(WindsweptBlocks.HOLLY_LEAF_PILE);
+		this.add(WindsweptBlocks.HOLLY_LEAF_PILE.get(), "Pile of Holly Leaves");
 		this.translateBlock(WindsweptBlocks.HOLLY_LADDER);
 		this.translateBlock(WindsweptBlocks.HOLLY_BOOKSHELF);
 		this.translateBlock(WindsweptBlocks.HOLLY_BOARDS);
@@ -135,7 +135,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.translateBlock(WindsweptBlocks.CHESTNUT_BEEHIVE);
 		this.add(WindsweptBlocks.CHESTNUT_HEDGE.get(), "Chestnut Leaf Hedge");
 		this.translateBlock(WindsweptBlocks.CHESTNUT_LEAF_CARPET);
-		this.translateBlock(WindsweptBlocks.CHESTNUT_LEAF_PILE);
+		this.add(WindsweptBlocks.CHESTNUT_LEAF_PILE.get(), "Pile of Chestnut Leaves");
 		this.translateBlock(WindsweptBlocks.CHESTNUT_LADDER);
 		this.translateBlock(WindsweptBlocks.CHESTNUT_BOOKSHELF);
 		this.translateBlock(WindsweptBlocks.CHESTNUT_BOARDS);
@@ -144,8 +144,8 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.translateBlock(WindsweptBlocks.STRIPPED_CHESTNUT_POST);
 		this.translateBlock(WindsweptBlocks.CHESTNUT_CHEST);
 		this.translateBlock(WindsweptBlocks.CHESTNUT_TRAPPED_CHEST);
-		//this.translateBlock(WindsweptBlocks.CHESTNUT_CRATE);
-		//this.translateBlock(WindsweptBlocks.ROASTED_CHESTNUT_CRATE);
+		this.translateBlock(WindsweptBlocks.CHESTNUT_CRATE);
+		this.translateBlock(WindsweptBlocks.ROASTED_CHESTNUT_CRATE);
 		
 		this.translateBlock(WindsweptBlocks.SNOWY_SPROUTS);
 		
@@ -243,7 +243,6 @@ public class WindsweptLangProvider extends LanguageProvider {
 
 		// Tooltips //
 		
-		this.add(Windswept.MODID + ".tooltip.unobtainable", "Unobtainable");
 		this.add(Windswept.MODID + ".tooltip.dyeable", "Dyeable");
 
 	}

@@ -91,7 +91,7 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
 				WindsweptBlocks.CHESTNUT_BOOKSHELF.get(), WindsweptBlocks.CHESTNUT_VERTICAL_SLAB.get(),
 				WindsweptBlocks.CHESTNUT_LADDER.get(), WindsweptBlocks.CHESTNUT_HEDGE.get(),
 				WindsweptBlocks.CHESTNUT_CHEST.get(), WindsweptBlocks.CHESTNUT_TRAPPED_CHEST.get(),
-				//WindsweptBlocks.CHESTNUT_CRATE.get(), WindsweptBlocks.ROASTED_CHESTNUT_CRATE.get(),
+				WindsweptBlocks.CHESTNUT_CRATE.get(), WindsweptBlocks.ROASTED_CHESTNUT_CRATE.get(),
 				WindsweptBlocks.CHESTNUT_POST.get(), WindsweptBlocks.STRIPPED_CHESTNUT_POST.get(),
 				WindsweptBlocks.CHESTNUT_BEEHIVE.get(), WindsweptBlocks.CHESTNUT_BOARDS.get());
 		

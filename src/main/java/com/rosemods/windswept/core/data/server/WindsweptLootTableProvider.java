@@ -107,10 +107,10 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 
 			this.add(WindsweptBlocks.HOLLY_LEAVES.get(), b -> createLeavesDrops(b, WindsweptBlocks.HOLLY_SAPLING
 					.get(), .05f, .0625f, .083333336f, .1f).withPool(LootPool.lootPool()
-							.setRolls(ConstantValue.exactly(1f)).when(HAS_NO_SHEARS_OR_SILK_TOUCH)
-							.add(applyExplosionCondition(b, LootItem.lootTableItem(WindsweptItems.HOLLY_BERRIES.get()))
-									.apply(SetItemCountFunction.setCount(UniformGenerator.between(-3f, 1f)))
-									.apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));
+					.setRolls(ConstantValue.exactly(1f)).when(HAS_NO_SHEARS_OR_SILK_TOUCH)
+					.add(applyExplosionCondition(b, LootItem.lootTableItem(WindsweptItems.HOLLY_BERRIES.get()))
+							.apply(SetItemCountFunction.setCount(UniformGenerator.between(-3f, 1f)))
+							.apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));
 
 
 			this.dropSelf(WindsweptBlocks.HOLLY_HEDGE.get());
@@ -148,15 +148,20 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 			this.dropSelf(WindsweptBlocks.CHESTNUT_POST.get());
 			this.dropSelf(WindsweptBlocks.CHESTNUT_CHEST.get());
 			this.dropSelf(WindsweptBlocks.CHESTNUT_TRAPPED_CHEST.get());
-			
-			this.add(WindsweptBlocks.CHESTNUT_LEAVES.get(), b -> createLeavesDrops(b, WindsweptBlocks.CHESTNUT_SAPLING.get(), .05f, .0625f, .083333336f, .1f));
+
+			this.add(WindsweptBlocks.CHESTNUT_LEAVES.get(), b -> createLeavesDrops(b, WindsweptBlocks.CHESTNUT_SAPLING
+					.get(), .05f, .0625f, .083333336f, .1f).withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1f)).when(HAS_NO_SHEARS_OR_SILK_TOUCH)
+					.add(applyExplosionCondition(b, LootItem.lootTableItem(WindsweptItems.CHESTNUTS.get()))
+							.apply(SetItemCountFunction.setCount(UniformGenerator.between(-3f, 1f)))
+							.apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));
 			
 			this.dropSelf(WindsweptBlocks.CHESTNUT_HEDGE.get());
 			this.dropSelf(WindsweptBlocks.CHESTNUT_LEAF_CARPET.get());
 			this.dropSelf(WindsweptBlocks.CHESTNUT_LEAF_PILE.get());
 
-			//this.dropSelf(WindsweptBlocks.CHESTNUT_CRATE.get());
-			//this.dropSelf(WindsweptBlocks.ROASTED_CHESTNUT_CRATE.get());
+			this.dropSelf(WindsweptBlocks.CHESTNUT_CRATE.get());
+			this.dropSelf(WindsweptBlocks.ROASTED_CHESTNUT_CRATE.get());
 			
 			// snow bricks
 			this.dropSelf(WindsweptBlocks.SNOW_BRICKS.get());

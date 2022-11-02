@@ -98,7 +98,7 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 		this.signs(WindsweptBlocks.CHESTNUT_SIGNS, WindsweptBlocks.CHESTNUT_PLANKS);
 		this.leaves(WindsweptBlocks.CHESTNUT_LEAVES);
 		this.pottedPlant(WindsweptBlocks.CHESTNUT_SAPLING, WindsweptBlocks.POTTED_CHESTNUT_SAPLING);
-		//this.beehive(WindsweptBlocks.CHESTNUT_BEEHIVE);
+		this.beehive(WindsweptBlocks.CHESTNUT_BEEHIVE);
 		this.hedge(WindsweptBlocks.CHESTNUT_HEDGE, WindsweptBlocks.CHESTNUT_LEAVES, WindsweptBlocks.CHESTNUT_LOG);
 		this.leafCarpet(WindsweptBlocks.CHESTNUT_LEAF_CARPET, WindsweptBlocks.CHESTNUT_LEAVES);
 		this.leafPile(WindsweptBlocks.CHESTNUT_LEAF_PILE, WindsweptBlocks.CHESTNUT_LEAVES, true);

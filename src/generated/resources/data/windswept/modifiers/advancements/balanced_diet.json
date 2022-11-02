@@ -4,6 +4,16 @@
       "type": "criteria",
       "config": {
         "criteria": {
+          "windswept:chestnuts": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:chestnuts"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
           "windswept:cooked_goat": {
             "conditions": {
               "item": {
@@ -59,6 +69,16 @@
               "item": {
                 "items": [
                   "windswept:mutton_pie"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "windswept:roasted_chestnuts": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:roasted_chestnuts"
                 ]
               }
             },
@@ -129,6 +149,12 @@
           ],
           [
             "windswept:goat_stew"
+          ],
+          [
+            "windswept:chestnuts"
+          ],
+          [
+            "windswept:roasted_chestnuts"
           ],
           [
             "windswept:holly_berries"

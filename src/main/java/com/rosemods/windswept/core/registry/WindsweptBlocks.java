@@ -107,8 +107,8 @@ public class WindsweptBlocks {
 	public static final RegistryObject<Block> CHESTNUT_LEAF_CARPET = HELPER.createCompatBlock(WindsweptConstants.QUARK, "chestnut_leaf_carpet", () -> new LeafCarpetBlock(Properties.CHESTNUT.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> CHESTNUT_LEAF_PILE = HELPER.createCompatBlock(WindsweptConstants.WOODWORKS, "chestnut_leaf_pile", () -> new LeafPileBlock(Properties.CHESTNUT.leafPile()), CreativeModeTab.TAB_DECORATIONS);
 	
-	//public static final RegistryObject<Block> CHESTNUT_CRATE = HELPER.createCompatBlock(WindsweptConstants.QUARK, "chestnut_crate", () -> new Block(Properties.CHESTNUT_CRATE), CreativeModeTab.TAB_DECORATIONS);
-	//public static final RegistryObject<Block> ROASTED_CHESTNUT_CRATE = HELPER.createCompatBlock(WindsweptConstants.QUARK, "roasted_chestnut_crate", () -> new Block(Properties.CHESTNUT_CRATE), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> CHESTNUT_CRATE = HELPER.createCompatBlock(WindsweptConstants.QUARK, "chestnut_crate", () -> new Block(Properties.CHESTNUT_CRATE), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> ROASTED_CHESTNUT_CRATE = HELPER.createCompatBlock(WindsweptConstants.QUARK, "roasted_chestnut_crate", () -> new Block(Properties.CHESTNUT_CRATE), CreativeModeTab.TAB_DECORATIONS);
 
 	// Snow Bricks //
 	
@@ -192,7 +192,7 @@ public class WindsweptBlocks {
 		public static final BlockBehaviour.Properties NIGHTSHADE_POT = BlockBehaviour.Properties.of(Material.DECORATION).instabreak().noOcclusion().lightLevel(state -> 9);
 		
 		public static final BlockBehaviour.Properties HOLLY_BERRY_CRATE = BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_PURPLE).strength(1.5f).sound(SoundType.WOOD);
-		//public static final BlockBehaviour.Properties CHESTNUT_CRATE = BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN).strength(1.5f).sound(SoundType.WOOD);
+		public static final BlockBehaviour.Properties CHESTNUT_CRATE = BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN).strength(1.5f).sound(SoundType.WOOD);
 
 		public static final BlockBehaviour.Properties WILD_BERRY_BUSH = BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_PURPLE).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH);
 		public static final BlockBehaviour.Properties WILD_BERRY_SACK = BlockBehaviour.Properties.of(Material.WOOL, MaterialColor.COLOR_PINK).strength(.5f).sound(SoundType.WOOL);

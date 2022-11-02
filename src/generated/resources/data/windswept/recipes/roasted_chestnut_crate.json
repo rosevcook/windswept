@@ -1,0 +1,29 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "blueprint:quark_flag",
+          "flag": "apple_crate"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "#": {
+            "item": "windswept:roasted_chestnuts"
+          }
+        },
+        "pattern": [
+          "###",
+          "###",
+          "###"
+        ],
+        "result": {
+          "item": "windswept:roasted_chestnut_crate"
+        }
+      }
+    }
+  ]
+}

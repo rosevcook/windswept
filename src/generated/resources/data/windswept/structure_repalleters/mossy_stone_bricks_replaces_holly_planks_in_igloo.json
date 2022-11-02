@@ -1,0 +1,7 @@
+{
+  "type": "blueprint:simple",
+  "priority": "normal",
+  "replaces_block": "minecraft:mossy_stone_bricks",
+  "replaces_with": "windswept:holly_planks",
+  "selector": "minecraft:igloo"
+}
