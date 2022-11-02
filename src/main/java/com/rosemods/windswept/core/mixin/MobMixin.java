@@ -17,8 +17,11 @@ public abstract class MobMixin extends LivingEntity {
 	}
 	
 	@Override
-	public boolean canFreeze() { // they are taking damage in the snow still which is annoying
-		return super.canFreeze() || !this.getType().is(WindsweptEntityTypeTags.CONVERT_TO_CHILLED);
+	public boolean canFreeze() {
+		if (this.getType().is(WindsweptEntityTypeTags.CONVERT_TO_CHILLED))
+			return false;
+
+		return super.canFreeze();
 	}
 
 }
