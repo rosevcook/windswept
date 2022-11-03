@@ -355,7 +355,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 		wall(bricks.get(), wall.get(), consumer);
 		slab(bricks.get(), slab.get(), consumer);
 		verticalSlab(verticalSlab.get(), slab.get(), consumer);
-		conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(ingredient), verticalSlab.get(), 2).unlockedBy("has_" + getName(ingredient), has(ingredient)), getQuarkCondition("vertical_slabs"), consumer, Windswept.REGISTRY_HELPER.prefix(getName(verticalSlab.get()) + "_from_" + getName(ingredient) + "_stonecutting"));
+		conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(bricks.get()), verticalSlab.get(), 2).unlockedBy("has_" + getName(ingredient), has(ingredient)), getQuarkCondition("vertical_slabs"), consumer, Windswept.REGISTRY_HELPER.prefix(getName(verticalSlab.get()) + "_from_" + getName(ingredient) + "_stonecutting"));
 		
 		if (chiseled != null) {
 			stonecutting(bricks.get(), chiseled.get(), 1, consumer);
@@ -506,7 +506,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.pattern("#")
 				.pattern("#")
 				.pattern("#")
-				.unlockedBy("has_planks", has(planks.get())),
+				.unlockedBy("has_" + name + "_planks", has(planks.get())),
 				getModLoaded("woodworks"), consumer, getRegistryName(boards));
 
 		//beehive
@@ -517,7 +517,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.pattern("###")
 				.pattern("HHH")
 				.pattern("###")
-				.unlockedBy("has_planks", has(planks.get())),
+				.unlockedBy("has_" + name + "_planks", has(planks.get())),
 				getModLoaded("woodworks"), consumer, getRegistryName(beehive));
 
 		//ladder
@@ -528,7 +528,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.pattern("S S")
 				.pattern("S#S")
 				.pattern("S S")
-				.unlockedBy("has_planks", has(planks.get())),
+				.unlockedBy("has_" + name + "_planks", has(planks.get())),
 				or(getModLoaded("woodworks"), getQuarkCondition("variant_ladders")), consumer, getRegistryName(ladder));
 
 		//bookshelf
@@ -539,7 +539,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.pattern("###")
 				.pattern("BBB")
 				.pattern("###")
-				.unlockedBy("has_planks", has(planks.get())),
+				.unlockedBy("has_" + name + "_planks", has(planks.get())),
 				or(getModLoaded("woodworks"), getQuarkCondition("variant_bookshelves")), consumer, getRegistryName(bookshelf));
 
 		//chest
@@ -549,31 +549,31 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.pattern("###")
 				.pattern("# #")
 				.pattern("###")
-				.unlockedBy("has_planks", has(planks.get())),
+				.unlockedBy("has_" + name + "_planks", has(planks.get())),
 				or(getModLoaded("woodworks"), getQuarkCondition("variant_chests")), consumer, getRegistryName(chest));
 
-		//wood chest
+		//quark chest recipe
 		conditionalRecipe(ShapedRecipeBuilder.shaped(chest.get(), 4)
 				.group("wooden_chests")
-				.define('#', wood.get())
+				.define('#', logs)
 				.pattern("###")
 				.pattern("# #")
 				.pattern("###")
-				.unlockedBy("has_wood", has(wood.get())),
+				.unlockedBy("has_" + name + "_log", has(logs)),
 				and(getQuarkCondition("wood_to_chest_recipes"), getQuarkCondition("variant_chests")), consumer, Windswept.REGISTRY_HELPER.prefix(getName(chest.get()) + "_wood"));
 
 		//trapped chest
 		conditionalRecipe(ShapelessRecipeBuilder.shapeless(trappedChest.get())
 				.requires(chest.get())
 				.requires(Items.TRIPWIRE_HOOK)
-				.unlockedBy("has_chest", has(chest.get())),
+				.unlockedBy("has_" + name + "_chest", has(chest.get())),
 				or(getModLoaded("woodworks"), getQuarkCondition("variant_chests")), consumer, getRegistryName(trappedChest));
 
 		//furnace boat
 		conditionalRecipe(ShapelessRecipeBuilder.shapeless(furnaceBoat.get())
 				.requires(boat.getFirst().get())
 				.requires(Items.FURNACE)
-				.unlockedBy("has_boat", has(boat.getFirst().get())),
+				.unlockedBy("has_" + name + "_boat", has(boat.getFirst().get())),
 				getModLoaded("boatload"), consumer, getRegistryName(furnaceBoat));
 
 		//large boat
@@ -583,7 +583,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.define('B', boat.getFirst().get())
 				.pattern("#B#")
 				.pattern("###")
-				.unlockedBy("has_boat", has(boat.getFirst().get())),
+				.unlockedBy("has_" + name + "_boat", has(boat.getFirst().get())),
 				getModLoaded("boatload"), consumer, getRegistryName(largeBoat));
 
 		//vertical planks
@@ -592,13 +592,13 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.pattern("#")
 				.pattern("#")
 				.pattern("#")
-				.unlockedBy("has_planks", has(planks.get())),
+				.unlockedBy("has_" + name + "_planks", has(planks.get())),
 				getQuarkCondition("vertical_planks"), consumer, getRegistryName(verticalPlanks));
 
 		//vertical planks revert
 		conditionalRecipe(ShapelessRecipeBuilder.shapeless(planks.get())
 				.requires(verticalPlanks.get())
-				.unlockedBy("has_vertical_planks", has(verticalPlanks.get())),
+				.unlockedBy("has_" + name + "_vertical_planks", has(verticalPlanks.get())),
 				getQuarkCondition("vertical_planks"), consumer, Windswept.REGISTRY_HELPER.prefix(getName(verticalPlanks.get()) + "_revert"));
 	}
 
@@ -614,7 +614,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				getQuarkCondition("hedges"), consumer, getRegistryName(hedge));
 
 		//leaf carpet
-		conditionalRecipe(ShapedRecipeBuilder.shaped(leafCarpet.get(), 2)
+		conditionalRecipe(ShapedRecipeBuilder.shaped(leafCarpet.get(), 3)
 				.define('#', leaves.get())
 				.pattern("##")
 				.unlockedBy("has_leaves", has(leaves.get())),

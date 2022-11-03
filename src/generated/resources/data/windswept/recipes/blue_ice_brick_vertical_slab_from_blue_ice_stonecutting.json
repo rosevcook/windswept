@@ -12,7 +12,7 @@
         "type": "minecraft:stonecutting",
         "count": 2,
         "ingredient": {
-          "item": "minecraft:blue_ice"
+          "item": "windswept:blue_ice_bricks"
         },
         "result": "windswept:blue_ice_brick_vertical_slab"
       }

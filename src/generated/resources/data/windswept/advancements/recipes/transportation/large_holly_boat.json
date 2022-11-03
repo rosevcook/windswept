@@ -4,7 +4,7 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_boat": {
+          "has_holly_boat": {
             "conditions": {
               "items": [
                 {
@@ -25,7 +25,7 @@
         },
         "requirements": [
           [
-            "has_boat",
+            "has_holly_boat",
             "has_the_recipe"
           ]
         ],

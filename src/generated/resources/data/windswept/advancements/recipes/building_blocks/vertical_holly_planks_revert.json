@@ -4,13 +4,7 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_the_recipe": {
-            "conditions": {
-              "recipe": "windswept:vertical_holly_planks_revert"
-            },
-            "trigger": "minecraft:recipe_unlocked"
-          },
-          "has_vertical_planks": {
+          "has_holly_vertical_planks": {
             "conditions": {
               "items": [
                 {
@@ -21,11 +15,17 @@
               ]
             },
             "trigger": "minecraft:inventory_changed"
+          },
+          "has_the_recipe": {
+            "conditions": {
+              "recipe": "windswept:vertical_holly_planks_revert"
+            },
+            "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
           [
-            "has_vertical_planks",
+            "has_holly_vertical_planks",
             "has_the_recipe"
           ]
         ],

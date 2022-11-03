@@ -4,7 +4,7 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_chest": {
+          "has_chestnut_chest": {
             "conditions": {
               "items": [
                 {
@@ -25,7 +25,7 @@
         },
         "requirements": [
           [
-            "has_chest",
+            "has_chestnut_chest",
             "has_the_recipe"
           ]
         ],

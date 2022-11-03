@@ -22,7 +22,7 @@
         "group": "wooden_chests",
         "key": {
           "#": {
-            "item": "windswept:holly_wood"
+            "tag": "windswept:holly_logs"
           }
         },
         "pattern": [
