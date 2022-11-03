@@ -158,8 +158,8 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 		this.iceSheet(WindsweptBlocks.ICE_SHEET, () -> Blocks.ICE);
 	}
 
-	// Blocks // i should really make some kind of api or something this is tedious
-	
+	// Blocks //
+
 	private void wildBerryBush(RegistryObject<Block> bush) {
 		String name = ForgeRegistries.BLOCKS.getKey(bush.get()).getPath();
 		final Function<Integer, ModelFile> model = i -> this.models().cross(name + "_stage" + i, this.modLoc("block/" + name + "_stage" + i)).renderType("cutout");

@@ -95,7 +95,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 			.unlockedBy("has_wild_berry_bowl", has(WindsweptItems.SWEET_BERRY_BOWL.get()))
 			.save(consumer, Windswept.REGISTRY_HELPER.prefix("sweet_berry_bowl_revert"));
 		
-		//cake
+		// cake
 	    ShapedRecipeBuilder.shaped(Blocks.CAKE)
 	    	.define('A', WindsweptItemTags.MILK).define('B', Items.SUGAR).define('C', Tags.Items.CROPS_WHEAT).define('E', Tags.Items.EGGS)
 	    	.pattern("AAA").pattern("BEB").pattern("CCC")
@@ -188,7 +188,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 			.unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT))
 			.save(consumer, Windswept.REGISTRY_HELPER.prefix("gold_trapdoor"));
 		
-		//ice sheet
+		// ice sheet
 		ShapedRecipeBuilder.shaped(WindsweptBlocks.ICE_SHEET.get(), 12)
 			.define('#', Items.ICE)
 			.pattern("###")
@@ -196,7 +196,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 			.unlockedBy("has_ice", has(Items.ICE))
 			.save(consumer, Windswept.REGISTRY_HELPER.prefix("ice_sheet"));
 		
-		//snow boots
+		// snow boots
 		ShapedRecipeBuilder.shaped(WindsweptItems.SNOW_BOOTS.get())
 			.define('#', Items.IRON_INGOT).define('L', Items.LEATHER)
 			.pattern("L L")

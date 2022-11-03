@@ -41,7 +41,7 @@ public final class WindsweptBiomeModifier {
     private static final HashMap<ResourceLocation, BiomeModifier> modifiers = new HashMap<>();
 
     public static JsonCodecProvider<BiomeModifier> register(GatherDataEvent event) {
-        //features
+        // features
         addFeature("bluebells", WindsweptBiomeTags.HAS_BLUEBELLS, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.BLUEBELLS);
         addFeature("foxgloves", WindsweptBiomeTags.HAS_FOXGLOVES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.FOXGLOVE);
         addFeature("snowy_sprouts", WindsweptBiomeTags.HAS_SNOWY_SPROUTS, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.SNOWY_SPROUTS);
@@ -54,12 +54,13 @@ public final class WindsweptBiomeModifier {
         addFeature("nightshades", WindsweptBiomeTags.HAS_NIGHTSHADES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.NIGHTHSADE);
         addFeature("chestnut_trees", WindsweptBiomeTags.HAS_CHESTNUT_TREES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.CHESTNUT_TREES);
 
-        //spawns
+        // spawns
         addSpawn("chilled", Tags.Biomes.IS_SNOWY, WindsweptEntities.CHILLED, 5, 3, 7);
 
-        //removed features
+        // removed features
         removeFeature("remove_spruce_from_grove", WindsweptBiomeTags.HAS_GROVE_HOLLY_TREES, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_GROVE);
-        removeFeature("remove_default_flowers_from_taigas", BiomeTags.IS_TAIGA, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_DEFAULT);
+        removeFeature("remove_default_flowers_from_taiga_biomes", BiomeTags.IS_TAIGA, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_DEFAULT);
+        removeFeature("remove_default_flowers_from_snowy_biomes", Tags.Biomes.IS_SNOWY, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_DEFAULT);
 
         return JsonCodecProvider.forDatapackRegistry(event.getGenerator(), event.getExistingFileHelper(), Windswept.MODID, RegistryOps.create(JsonOps.INSTANCE, access), ForgeRegistries.Keys.BIOME_MODIFIERS, modifiers);
     }

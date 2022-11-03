@@ -33,10 +33,5 @@ public class WindsweptSoundProvider extends SoundDefinitionsProvider {
 		this.add(soundEvent.get(), definition().with(sound));
 	}
 	
-	public static String subtilte(RegistryObject<SoundEvent> soundEvent) {
-		ResourceLocation location = ForgeRegistries.SOUND_EVENTS.getKey(soundEvent.get());
-		return "subtitles." + location.getNamespace() + "." + location.getPath();
-	}
-	
 }
 

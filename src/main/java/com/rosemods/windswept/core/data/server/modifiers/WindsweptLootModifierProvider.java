@@ -33,7 +33,7 @@ public class WindsweptLootModifierProvider extends LootModifierProvider {
 
 	@Override
 	protected void registerEntries() {
-		//goat meat
+		// goat meat
 		this.entry("goat_meat").selects("entities/goat").addModifier(new LootPoolsModifier(Collections.singletonList(LootPool.lootPool().name("windswept:goat").setRolls(ConstantValue.exactly(1f))
 				.add(LootItem.lootTableItem(WindsweptItems.GOAT.get())
 					.apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3)))
@@ -42,7 +42,7 @@ public class WindsweptLootModifierProvider extends LootModifierProvider {
 						EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnFire(true).build()))))
 				).build()), false));
 		
-		//drowned rain disc
+		// drowned rain disc
 		this.entry("drowned_disc").selects("entities/drowned")
 				.addModifier(new LootPoolsModifier(
 						Collections.singletonList(LootPool.lootPool().name("windswept:rain_disc")
@@ -52,7 +52,7 @@ public class WindsweptLootModifierProvider extends LootModifierProvider {
 								.build()),
 						false));
 		
-		//chests
+		// chests
 		this.chestEntry("village_taiga_house", "chests/village/village_taiga_house", WindsweptItems.MUTTON_PIE, UniformGenerator.between(-1, 2));
 		this.chestEntry("village_snowy_house", "chests/village/village_snowy_house", WindsweptItems.MUTTON_PIE, UniformGenerator.between(-1, 2));
 		this.chestEntry("shipwreck_treasure", "chests/shipwreck_treasure", WindsweptItems.WOODEN_BUCKET, UniformGenerator.between(-1, 1));

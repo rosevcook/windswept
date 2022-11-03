@@ -12,7 +12,6 @@ import com.rosemods.windswept.core.Windswept;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
-import net.minecraft.data.worldgen.biome.OverworldBiomes;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.util.InclusiveRange;
@@ -65,7 +64,7 @@ public class WindsweptFeatures {
 		public static final TreeConfiguration HOLLY_TREE = createHollyTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.HOLLY_LOG.get(), 2))).build();
 		public static final TreeConfiguration HOLLY_TREE_005 = createHollyTree().decorators(List.of(new BeehiveDecorator(.005f), BranchDecorator.create(WindsweptBlocks.HOLLY_LOG.get(), 2))).build();
 		
-		public static final TreeConfiguration CHESTNUT_TREE = createChestnutTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.CHESTNUT_LOG.get(), 2))).build();
+		public static final TreeConfiguration CHESTNUT_TREE = createChestnutTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.CHESTNUT_LOG.get(), 4))).build();
 		public static final TreeConfiguration CHESTNUT_TREE_005 = createChestnutTree().decorators(List.of(new BeehiveDecorator(.005f), BranchDecorator.create(WindsweptBlocks.CHESTNUT_LOG.get(), 2))).build();
 
 		public static final RandomPatchConfiguration RED_ROSE = createPlantPatch(64, States.RED_ROSE);

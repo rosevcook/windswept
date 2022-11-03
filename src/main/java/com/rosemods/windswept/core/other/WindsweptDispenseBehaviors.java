@@ -40,7 +40,7 @@ public final class WindsweptDispenseBehaviors {
 		return stack;
 	}
 	
-	private static ItemStack emptybucket(Block fill, BlockSource source, ItemStack stack) {
+	private static ItemStack emptyBucket(Block fill, BlockSource source, ItemStack stack) {
 		Direction direction = source.getBlockState().getValue(DispenserBlock.FACING);
 		Level level = source.getLevel().getLevel();
 		BlockPos pos = source.getPos().relative(direction);
@@ -55,11 +55,11 @@ public final class WindsweptDispenseBehaviors {
 	}
 	
 	private static ItemStack emptyWaterBucket(BlockSource source, ItemStack stack) {
-		return emptybucket(Blocks.WATER, source, stack);
+		return emptyBucket(Blocks.WATER, source, stack);
 	}
 	
 	private static ItemStack emptyPowderSnowBucket(BlockSource source, ItemStack stack) {
-		return emptybucket(Blocks.POWDER_SNOW, source, stack);
+		return emptyBucket(Blocks.POWDER_SNOW, source, stack);
 	}
 		
 }

@@ -16,6 +16,7 @@ public class WindswepBiomeTagProvider extends BiomeTagsProvider {
 
     @Override
     protected void addTags() {
+        //windswept
         this.tag(WindsweptBiomeTags.HAS_BLUEBELLS).add(Biomes.DARK_FOREST).add(Biomes.BIRCH_FOREST).add(Biomes.OLD_GROWTH_BIRCH_FOREST);
         this.tag(WindsweptBiomeTags.HAS_FOXGLOVES).addTag(BiomeTags.IS_TAIGA);
         this.tag(WindsweptBiomeTags.HAS_TAIGA_FLOWERS).addTag(BiomeTags.IS_TAIGA);
@@ -28,5 +29,7 @@ public class WindswepBiomeTagProvider extends BiomeTagsProvider {
         this.tag(WindsweptBiomeTags.HAS_COMMON_WILD_BERRIES).add(Biomes.GROVE);
         this.tag(WindsweptBiomeTags.HAS_CHESTNUT_TREES).addTag(BiomeTags.IS_FOREST).addTag(BiomeTags.IS_TAIGA).add(Biomes.DARK_FOREST);
 
+        //minecraft
+        this.tag(BiomeTags.IS_TAIGA).add(Biomes.WINDSWEPT_FOREST);
     }
 }

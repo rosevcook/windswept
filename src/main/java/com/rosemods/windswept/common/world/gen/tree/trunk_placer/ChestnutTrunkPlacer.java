@@ -45,26 +45,30 @@ public class ChestnutTrunkPlacer extends TrunkPlacer {
 			for(int z = -1; z <= 1; z++)
 				if (x == 0 || z == 0) {
 					placeLog(level, consumer, rand, pos.offset(x, 0, z), config);
+					int grassCheck = -1;
 
-					if (level.isStateAtPosition(pos.offset(x, -1, z), state -> state.isAir()))
+					if (level.isStateAtPosition(pos.offset(x, -1, z), state -> state.getMaterial().isReplaceable())) {
 						placeLog(level, consumer, rand, pos.offset(x, -1, z), config);
+						grassCheck--;
+
+					}
 
 					if (rand.nextInt(24) == 0)
 						placeLog(level, consumer, rand, pos.offset(x, 1, z), config);
 
-					if (level.isStateAtPosition(pos.offset(x, -1, z), state -> state.is(Blocks.GRASS_BLOCK) || state.is(Blocks.PODZOL) || state.is(Blocks.MYCELIUM)))
-						setDirtAt(level, consumer, rand, pos.offset(x, -1, z), config);
+					if (level.isStateAtPosition(pos.offset(x, grassCheck, z), state -> state.is(Blocks.GRASS_BLOCK) || state.is(Blocks.PODZOL) || state.is(Blocks.MYCELIUM)))
+						setDirtAt(level, consumer, rand, pos.offset(x, grassCheck, z), config);
 
 				}
 
-		int h = rand.nextInt(5, 8);
+		int h = rand.nextInt(5, 9);
 
 		for (int y = 1; y < h; y++)
 			placeLog(level, consumer, rand, pos.offset(0, y, 0), config);
 
 		for(int x = -2; x <= 2; x++)
 			for(int z = -2; z <= 2; z++)
-				if ((x == 0 || z == 0)) {
+				if (x == 0 || z == 0) {
 					int y = h;
 					if (Math.abs(x) == 2 || Math.abs(z) == 2) {
 						y++;

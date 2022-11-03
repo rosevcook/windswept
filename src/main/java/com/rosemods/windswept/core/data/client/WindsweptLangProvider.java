@@ -216,9 +216,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 		// Enchantments //
 		
 		this.translateEnchantment(WindsweptEnchantments.SLIPPING_CURSE, "Curse of Slipping", "Slipping can only be applied to boots and causes the wearer to slide on every block they stand on while also damaging the boots.");
-		
-		// Sounds //
-		
+
 		// Damage Sources //
 		
 		this.translateDamageSource(WindsweptDamageSources.HOLLY_LEAVES, 
@@ -305,12 +303,6 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.add("item.minecraft.tipped_arrow.effect." + name, "Arrow of " + effect);
 		this.add("item.minecraft.lingering_potion.effect." + name, "Lingering Potion of " + effect);
 	}
-	
-	/*
-	private void translateSound(RegistryObject<SoundEvent> sound, String subtitle) {
-		this.add(WindsweptSoundProvider.subtilte(sound), subtitle);
-	}
-	*/
 
 	private void addDescription(RegistryObject<? extends Item> item, String desc) {
 		this.add(item.get().getDescriptionId() + ".desc", desc);
