@@ -1,0 +1,7 @@
+{
+  "type": "blueprint:simple",
+  "priority": "normal",
+  "replaces_block": "minecraft:polished_andesite",
+  "replaces_with": "minecraft:gold_block",
+  "selector": "minecraft:igloo"
+}

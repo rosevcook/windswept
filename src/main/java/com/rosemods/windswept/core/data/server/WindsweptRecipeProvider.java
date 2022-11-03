@@ -233,7 +233,6 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				WindsweptItems.LARGE_HOLLY_BOAT, WindsweptItems.HOLLY_FURNACE_BOAT,
 				WindsweptBlocks.VERTICAL_HOLLY_PLANKS, consumer);
 
-
 		// chestnut wood set
 		woodSet("chestnut", WindsweptItemTags.CHESTNUT_LOGS, WindsweptBlocks.CHESTNUT_PLANKS, WindsweptBlocks.CHESTNUT_SLAB,
 				WindsweptBlocks.CHESTNUT_STAIRS, WindsweptBlocks.CHESTNUT_LOG, WindsweptBlocks.CHESTNUT_WOOD,
@@ -255,7 +254,6 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 		// chestnut leaf set
 		leafSet(WindsweptBlocks.CHESTNUT_LOG, WindsweptBlocks.CHESTNUT_LEAVES, WindsweptBlocks.CHESTNUT_HEDGE,
 				WindsweptBlocks.CHESTNUT_LEAF_CARPET, WindsweptBlocks.CHESTNUT_LEAF_PILE, consumer);
-
 
 		// wild berry sack
 		conditionalRecipe(ShapedRecipeBuilder.shaped(WindsweptBlocks.WILD_BERRY_SACK.get())
@@ -523,7 +521,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				getModLoaded("woodworks"), consumer, getRegistryName(beehive));
 
 		//ladder
-		conditionalRecipe(ShapedRecipeBuilder.shaped(ladder.get())
+		conditionalRecipe(ShapedRecipeBuilder.shaped(ladder.get(), 4)
 				.group("wooden_ladders")
 				.define('#', planks.get())
 				.define('S', Items.STICK)
@@ -572,11 +570,9 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				or(getModLoaded("woodworks"), getQuarkCondition("variant_chests")), consumer, getRegistryName(trappedChest));
 
 		//furnace boat
-		conditionalRecipe(ShapedRecipeBuilder.shaped(furnaceBoat.get())
-				.define('#', boat.getFirst().get())
-				.define('F', Items.FURNACE)
-				.pattern("F")
-				.pattern("#")
+		conditionalRecipe(ShapelessRecipeBuilder.shapeless(furnaceBoat.get())
+				.requires(boat.getFirst().get())
+				.requires(Items.FURNACE)
 				.unlockedBy("has_boat", has(boat.getFirst().get())),
 				getModLoaded("boatload"), consumer, getRegistryName(furnaceBoat));
 
@@ -631,8 +627,8 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				getModLoaded("woodworks"), consumer, getRegistryName(leafPile));
 
 		//leaf pile revert
-		conditionalRecipe(ShapedRecipeBuilder.shaped(leaves.get(), 2)
-				.define('#', leaves.get())
+		conditionalRecipe(ShapedRecipeBuilder.shaped(leaves.get())
+				.define('#', leafPile.get())
 				.pattern("##")
 				.pattern("##")
 				.unlockedBy("has_leaf_pile", has(leafPile.get())),

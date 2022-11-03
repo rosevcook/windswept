@@ -35,6 +35,7 @@ public class WindsweptStructureRepaletterProvider extends StructureRepaletterPro
         this.register(BuiltinStructures.IGLOO, Blocks.MOSSY_STONE_BRICKS, WindsweptBlocks.HOLLY_PLANKS.get());
         this.register(BuiltinStructures.IGLOO, Blocks.INFESTED_MOSSY_STONE_BRICKS, WindsweptBlocks.HOLLY_PLANKS.get());
         this.register(BuiltinStructures.IGLOO, Blocks.OAK_TRAPDOOR, WindsweptBlocks.HOLLY_TRAPDOOR.get());
+        this.register(BuiltinStructures.IGLOO, Blocks.POLISHED_ANDESITE, Blocks.GOLD_BLOCK);
 
         // Villages //
         this.register(BuiltinStructures.VILLAGE_TAIGA, Blocks.POTTED_SPRUCE_SAPLING, WindsweptBlocks.POTTED_RED_ROSE.get());

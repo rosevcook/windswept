@@ -9,18 +9,14 @@
         }
       ],
       "recipe": {
-        "type": "minecraft:crafting_shaped",
-        "key": {
-          "#": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
             "item": "windswept:holly_boat"
           },
-          "F": {
+          {
             "item": "minecraft:furnace"
           }
-        },
-        "pattern": [
-          "F",
-          "#"
         ],
         "result": {
           "item": "windswept:holly_furnace_boat"
