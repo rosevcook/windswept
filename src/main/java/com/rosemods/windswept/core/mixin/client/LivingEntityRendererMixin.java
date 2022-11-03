@@ -17,7 +17,8 @@ public class LivingEntityRendererMixin {
 	
 	@Inject(method = "isShaking", at = @At("HEAD"), cancellable = true)
 	public <T extends LivingEntity> void isShaking(T entity, CallbackInfoReturnable<Boolean> info) {
-		info.setReturnValue((entity instanceof Mob mob && ((IDataManager) mob).getValue(WindsweptDataProcessors.IS_FREEZE_CONVERTING)) || entity.isFullyFrozen());
+		if (entity instanceof Mob && ((IDataManager) entity).getValue(WindsweptDataProcessors.IS_FREEZE_CONVERTING))
+			info.setReturnValue(true);
 	}
 
 }

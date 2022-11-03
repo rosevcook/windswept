@@ -61,8 +61,8 @@ public final class WindsweptBlockInfo {
 		DataUtil.registerFlammable(WindsweptBlocks.CHESTNUT_BOARDS.get(), 5, 20);
 
 		DataUtil.registerFlammable(WindsweptBlocks.HOLLY_BERRY_CRATE.get(), 5, 20);
-		//DataUtil.registerFlammable(WindsweptBlocks.CHESTNUT_CRATE.get(), 5, 20);
-		//DataUtil.registerFlammable(WindsweptBlocks.ROASTED_CHESTNUT_CRATE.get(), 5, 20);
+		DataUtil.registerFlammable(WindsweptBlocks.CHESTNUT_CRATE.get(), 5, 20);
+		DataUtil.registerFlammable(WindsweptBlocks.ROASTED_CHESTNUT_CRATE.get(), 5, 20);
 
 		DataUtil.registerFlammable(WindsweptBlocks.HOLLY_LEAVES.get(), 30, 60);
 		DataUtil.registerFlammable(WindsweptBlocks.CHESTNUT_LEAVES.get(), 30, 60);

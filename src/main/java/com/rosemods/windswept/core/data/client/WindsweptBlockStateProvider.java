@@ -191,7 +191,7 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 	}
 	
 	private void trapdoor(RegistryObject<? extends Block> trapdoor) {		
-		this.trapdoorBlock((TrapDoorBlock) trapdoor.get(), this.blockTexture(trapdoor.get()), true);
+		this.trapdoorBlockWithRenderType((TrapDoorBlock) trapdoor.get(), this.blockTexture(trapdoor.get()), true, "cutout");
 		this.itemModels().withExistingParent(this.getName(trapdoor), this.modLoc("block/" + this.getName(trapdoor) + "_bottom"));
 	}
 	
