@@ -8,8 +8,8 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
-public class WindsweptTrunkPlacers {
-	public  static  final DeferredRegister<TrunkPlacerType<?>> TRUNK_PLACERS = DeferredRegister.create(Registry.TRUNK_PLACER_TYPE_REGISTRY, Windswept.MODID);
+public final class WindsweptTrunkPlacers {
+	public static final DeferredRegister<TrunkPlacerType<?>> TRUNK_PLACERS = DeferredRegister.create(Registry.TRUNK_PLACER_TYPE_REGISTRY, Windswept.MODID);
 
 	public static final RegistryObject<TrunkPlacerType<ChestnutTrunkPlacer>> CHESTNUT_TRUNK_PLACER = TRUNK_PLACERS.register("chestnut_trunk_placer", () -> new TrunkPlacerType(ChestnutTrunkPlacer.CODEC));
 	

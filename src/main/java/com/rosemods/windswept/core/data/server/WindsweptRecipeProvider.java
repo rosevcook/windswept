@@ -7,6 +7,7 @@ import javax.annotation.Nullable;
 import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Pair;
 import com.rosemods.windswept.core.Windswept;
+import com.rosemods.windswept.core.other.WindsweptConstants;
 import com.rosemods.windswept.core.other.tags.WindsweptItemTags;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import com.rosemods.windswept.core.registry.WindsweptItems;
@@ -31,10 +32,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
-import net.minecraftforge.common.crafting.conditions.AndCondition;
-import net.minecraftforge.common.crafting.conditions.ICondition;
-import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
-import net.minecraftforge.common.crafting.conditions.OrCondition;
+import net.minecraftforge.common.crafting.conditions.*;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -96,11 +94,11 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 			.save(consumer, Windswept.REGISTRY_HELPER.prefix("sweet_berry_bowl_revert"));
 		
 		// cake
-	    ShapedRecipeBuilder.shaped(Blocks.CAKE)
+		conditionalRecipe(ShapedRecipeBuilder.shaped(Blocks.CAKE)
 	    	.define('A', WindsweptItemTags.MILK).define('B', Items.SUGAR).define('C', Tags.Items.CROPS_WHEAT).define('E', Tags.Items.EGGS)
 	    	.pattern("AAA").pattern("BEB").pattern("CCC")
-	    	.unlockedBy("has_egg", has(Tags.Items.EGGS))
-	    	.save(consumer, Windswept.REGISTRY_HELPER.prefix("cake"));
+	    	.unlockedBy("has_egg", has(Tags.Items.EGGS)),
+	    	not(getModLoaded("neapolitan")), consumer, Windswept.REGISTRY_HELPER.prefix("cake"));
 
 		
 		// roasted chestnuts
@@ -343,7 +341,11 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 	private static AndCondition and(ICondition first, ICondition second) {
 		return new AndCondition(first, second);
 	}
-	
+	private static NotCondition not(ICondition condition) {
+		return new NotCondition(condition);
+	}
+
+
 	// generates recipes for entire brick sets
 	private static void brickSet(ItemLike ingredient, RegistryObject<Block> bricks, @Nullable RegistryObject<Block> chiseled, RegistryObject<Block> slab, RegistryObject<Block> stairs, RegistryObject<Block> wall, RegistryObject<Block> verticalSlab, Consumer<FinishedRecipe> consumer) {
 		ShapedRecipeBuilder.shaped(bricks.get(), 4).define('#', ingredient).pattern("##").pattern("##").unlockedBy("has_" + getName(ingredient), has(ingredient)).save(consumer, getName(bricks.get()));

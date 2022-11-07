@@ -1,25 +1,41 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "key": {
-    "A": {
-      "tag": "forge:milk"
-    },
-    "B": {
-      "item": "minecraft:sugar"
-    },
-    "C": {
-      "tag": "forge:crops/wheat"
-    },
-    "E": {
-      "tag": "forge:eggs"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:mod_loaded",
+            "modid": "neapolitan"
+          }
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "A": {
+            "tag": "forge:milk"
+          },
+          "B": {
+            "item": "minecraft:sugar"
+          },
+          "C": {
+            "tag": "forge:crops/wheat"
+          },
+          "E": {
+            "tag": "forge:eggs"
+          }
+        },
+        "pattern": [
+          "AAA",
+          "BEB",
+          "CCC"
+        ],
+        "result": {
+          "item": "minecraft:cake"
+        }
+      }
     }
-  },
-  "pattern": [
-    "AAA",
-    "BEB",
-    "CCC"
-  ],
-  "result": {
-    "item": "minecraft:cake"
-  }
+  ]
 }

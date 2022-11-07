@@ -82,7 +82,8 @@ dependencies {
     compileOnly fg.deobf("mezz.jei:jei-${project.minecraft}-forge-api:${project.jei}")
     runtimeOnly fg.deobf("mezz.jei:jei-${project.minecraft}-forge:${project.jei}")
 
-    implementation fg.deobf("com.teamabnormals:boatload:${project.boatload}")
+    compileOnly fg.deobf("com.teamabnormals:boatload:${project.boatload}")
+    compileOnly fg.deobf("curse.maven:neapolitan-382016:${project.neapolitan}")
 
     annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
 }
@@ -91,6 +92,7 @@ repositories {
     maven { url "https://maven.jaackson.me" }
     maven { url "https://dvs1.progwml6.com/files/maven/" }
     maven { url "https://modmaven.k-4u.nl" }
+    maven { url "https://www.cursemaven.com" }
 }
 
 jar {

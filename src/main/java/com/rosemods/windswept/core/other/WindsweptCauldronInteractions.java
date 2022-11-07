@@ -3,6 +3,7 @@ package com.rosemods.windswept.core.other;
 import com.rosemods.windswept.common.item.wooden_bucket.WoodenBucketItem;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 
+import com.rosemods.windswept.integration.neapolitan.WindsweptMilkCauldronInteractions;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.sounds.SoundEvent;
@@ -22,6 +23,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LayeredCauldronBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraftforge.fml.ModList;
 
 public final class WindsweptCauldronInteractions {
 
@@ -43,18 +45,22 @@ public final class WindsweptCauldronInteractions {
 
 		// fill snow cauldron to max
 		CauldronInteraction.POWDER_SNOW.put(WindsweptItems.WOODEN_POWDER_SNOW_BUCKET.get(), WindsweptCauldronInteractions::fillSnowCauldron);
+
+		//neapolitan milk cauldrons
+		if (ModList.get().isLoaded(WindsweptConstants.NEAPOLITAN))
+			WindsweptMilkCauldronInteractions.registerCauldronInteractions();
 	}
 
 	// Fill //
 	
-	private static InteractionResult fillCauldron(Block filledBlock, SoundEvent sound, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, ItemStack stack) {
+	public static InteractionResult fillCauldron(Block filledBlock, SoundEvent sound, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, ItemStack stack) {
 		if (!level.isClientSide) {
 			player.setItemInHand(hand, ItemUtils.createFilledResult(stack, player, WoodenBucketItem.getEmpty(stack, player, hand)));
 			player.awardStat(Stats.FILL_CAULDRON);
 			player.awardStat(Stats.ITEM_USED.get(stack.getItem()));
 			level.setBlockAndUpdate(pos, filledBlock.defaultBlockState().setValue(LayeredCauldronBlock.LEVEL, Integer.valueOf(3)));
-			level.playSound((Player) null, pos, sound, SoundSource.BLOCKS, 1.0F, 1.0F);
-			level.gameEvent((Entity) null, GameEvent.FLUID_PLACE, pos);
+			level.playSound(null, pos, sound, SoundSource.BLOCKS, 1.0F, 1.0F);
+			level.gameEvent(null, GameEvent.FLUID_PLACE, pos);
 		}
 
 		return InteractionResult.sidedSuccess(level.isClientSide);
@@ -70,7 +76,7 @@ public final class WindsweptCauldronInteractions {
 	
 	// Empty //
 	
-	private static InteractionResult emptyCauldron(ItemLike filled, SoundEvent sound, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, ItemStack stack) {
+	public static InteractionResult emptyCauldron(ItemLike filled, SoundEvent sound, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, ItemStack stack) {
 		if (state.getValue(LayeredCauldronBlock.LEVEL) == 3) {
 			if (!level.isClientSide) {
 				player.setItemInHand(hand, ItemUtils.createFilledResult(stack, player, WoodenBucketItem.getFilled(stack, filled, player)));
