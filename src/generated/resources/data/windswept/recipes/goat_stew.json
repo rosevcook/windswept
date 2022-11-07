@@ -1,23 +1,39 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "item": "minecraft:bowl"
-    },
-    {
-      "item": "windswept:cooked_goat"
-    },
-    {
-      "item": "minecraft:baked_potato"
-    },
-    {
-      "item": "minecraft:carrot"
-    },
-    {
-      "item": "minecraft:brown_mushroom"
+      "conditions": [
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+          }
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "minecraft:bowl"
+          },
+          {
+            "item": "windswept:cooked_goat"
+          },
+          {
+            "item": "minecraft:baked_potato"
+          },
+          {
+            "item": "minecraft:carrot"
+          },
+          {
+            "item": "minecraft:brown_mushroom"
+          }
+        ],
+        "result": {
+          "item": "windswept:goat_stew"
+        }
+      }
     }
-  ],
-  "result": {
-    "item": "windswept:goat_stew"
-  }
+  ]
 }

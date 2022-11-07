@@ -4,12 +4,12 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_cooked_goat": {
+          "has_chestnut_trapdoor": {
             "conditions": {
               "items": [
                 {
                   "items": [
-                    "windswept:cooked_goat"
+                    "windswept:chestnut_trapdoor"
                   ]
                 }
               ]
@@ -18,30 +18,27 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "windswept:goat_stew"
+              "recipe": "windswept:chestnut_cabinet"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
           [
-            "has_cooked_goat",
+            "has_chestnut_trapdoor",
             "has_the_recipe"
           ]
         ],
         "rewards": {
           "recipes": [
-            "windswept:goat_stew"
+            "windswept:chestnut_cabinet"
           ]
         }
       },
       "conditions": [
         {
-          "type": "forge:not",
-          "value": {
-            "type": "forge:mod_loaded",
-            "modid": "farmersdelight"
-          }
+          "type": "forge:mod_loaded",
+          "modid": "farmersdelight"
         }
       ]
     }

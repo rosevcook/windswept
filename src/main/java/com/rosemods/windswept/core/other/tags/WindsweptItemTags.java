@@ -11,5 +11,8 @@ public final class WindsweptItemTags {
 	public static final TagKey<Item> CHESTNUT_LOGS = TagUtil.itemTag(Windswept.MODID, "chestnut_logs");
 	public static final TagKey<Item> WILD_BERRY_SEEDS = TagUtil.itemTag("forge", "seeds/wild_berry");
 	public static final TagKey<Item> MILK = TagUtil.itemTag("forge", "milk");
+	public static final TagKey<Item> RAW_GOAT = TagUtil.itemTag("forge", "raw_goat");
+	public static final TagKey<Item> COOKED_GOAT = TagUtil.itemTag("forge", "cooked_goat");
+
 
 }

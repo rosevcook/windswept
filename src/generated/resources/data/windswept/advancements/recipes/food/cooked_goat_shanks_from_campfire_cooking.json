@@ -4,12 +4,12 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_cooked_goat": {
+          "has_goat_shanks": {
             "conditions": {
               "items": [
                 {
                   "items": [
-                    "windswept:cooked_goat"
+                    "windswept:goat_shanks"
                   ]
                 }
               ]
@@ -18,30 +18,27 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "windswept:goat_stew"
+              "recipe": "windswept:cooked_goat_shanks_from_campfire_cooking"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
           [
-            "has_cooked_goat",
+            "has_goat_shanks",
             "has_the_recipe"
           ]
         ],
         "rewards": {
           "recipes": [
-            "windswept:goat_stew"
+            "windswept:cooked_goat_shanks_from_campfire_cooking"
           ]
         }
       },
       "conditions": [
         {
-          "type": "forge:not",
-          "value": {
-            "type": "forge:mod_loaded",
-            "modid": "farmersdelight"
-          }
+          "type": "forge:mod_loaded",
+          "modid": "farmersdelight"
         }
       ]
     }

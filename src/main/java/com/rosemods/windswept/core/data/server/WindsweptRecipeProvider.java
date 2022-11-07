@@ -64,10 +64,10 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 			.save(consumer, Windswept.REGISTRY_HELPER.prefix("mutton_pie"));
 		
 		// goat stew
-		ShapelessRecipeBuilder.shapeless(WindsweptItems.GOAT_STEW.get())
+		conditionalRecipe(ShapelessRecipeBuilder.shapeless(WindsweptItems.GOAT_STEW.get())
 			.requires(Items.BOWL).requires(WindsweptItems.COOKED_GOAT.get()).requires(Items.BAKED_POTATO).requires(Items.CARROT).requires(Items.BROWN_MUSHROOM)
-			.unlockedBy("has_cooked_goat", has(WindsweptItems.COOKED_GOAT.get()))
-			.save(consumer, Windswept.REGISTRY_HELPER.prefix("goat_stew"));
+			.unlockedBy("has_cooked_goat", has(WindsweptItems.COOKED_GOAT.get())),
+			not(getModLoaded("farmersdelight")), consumer, Windswept.REGISTRY_HELPER.prefix("goat_stew"));
 		
 		// bowl of wild berries
 		ShapelessRecipeBuilder.shapeless(WindsweptItems.WILD_BERRY_BOWL.get())
@@ -78,7 +78,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 		// bowl of sweet berries
 		ShapelessRecipeBuilder.shapeless(WindsweptItems.SWEET_BERRY_BOWL.get())
 			.requires(Items.BOWL).requires(Items.SWEET_BERRIES, 3)
-			.unlockedBy("has_sweet_berroes", has(Items.SWEET_BERRIES))
+			.unlockedBy("has_sweet_berries", has(Items.SWEET_BERRIES))
 			.save(consumer, Windswept.REGISTRY_HELPER.prefix("sweet_berry_bowl"));
 		
 		// bowl of wild berries revert
@@ -106,6 +106,9 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				
 		// goat
 		cooking(WindsweptItems.GOAT.get(), WindsweptItems.COOKED_GOAT.get(), consumer);
+
+		// goat shanks
+		conditionalCooking(WindsweptItems.GOAT_SHANKS.get(), WindsweptItems.COOKED_GOAT_SHANKS.get(), getModLoaded("farmersdelight"), consumer);
 				
 		// red rose
 		flowerToDye(WindsweptBlocks.RED_ROSE, Items.RED_DYE, consumer);
@@ -229,7 +232,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				WindsweptBlocks.HOLLY_LADDER, WindsweptBlocks.HOLLY_BOOKSHELF,
 				WindsweptBlocks.HOLLY_CHEST, WindsweptBlocks.HOLLY_TRAPPED_CHEST,
 				WindsweptItems.LARGE_HOLLY_BOAT, WindsweptItems.HOLLY_FURNACE_BOAT,
-				WindsweptBlocks.VERTICAL_HOLLY_PLANKS, consumer);
+				WindsweptBlocks.VERTICAL_HOLLY_PLANKS, WindsweptBlocks.HOLLY_CABINET, consumer);
 
 		// chestnut wood set
 		woodSet("chestnut", WindsweptItemTags.CHESTNUT_LOGS, WindsweptBlocks.CHESTNUT_PLANKS, WindsweptBlocks.CHESTNUT_SLAB,
@@ -243,7 +246,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				WindsweptBlocks.CHESTNUT_LADDER, WindsweptBlocks.CHESTNUT_BOOKSHELF,
 				WindsweptBlocks.CHESTNUT_CHEST, WindsweptBlocks.CHESTNUT_TRAPPED_CHEST,
 				WindsweptItems.LARGE_CHESTNUT_BOAT, WindsweptItems.CHESTNUT_FURNACE_BOAT,
-				WindsweptBlocks.VERTICAL_CHESTNUT_PLANKS, consumer);
+				WindsweptBlocks.VERTICAL_CHESTNUT_PLANKS, WindsweptBlocks.CHESTNUT_CABINET, consumer);
 
 		// holly leaf set
 		leafSet(WindsweptBlocks.HOLLY_LOG, WindsweptBlocks.HOLLY_LEAVES, WindsweptBlocks.HOLLY_HEDGE,
@@ -337,12 +340,28 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 	private static OrCondition or(ICondition first, ICondition second) {
 		return new OrCondition(first, second);
 	}
-
 	private static AndCondition and(ICondition first, ICondition second) {
 		return new AndCondition(first, second);
 	}
 	private static NotCondition not(ICondition condition) {
 		return new NotCondition(condition);
+	}
+
+	private static void conditionalCooking(ItemLike ingredient, ItemLike result, ICondition condition, Consumer<FinishedRecipe> consumer) {
+		String path = getName(ingredient);
+		String name = getName(result);
+
+		conditionalRecipe(SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), result, .35f, 200)
+				.unlockedBy("has_" + path, has(ingredient)),
+				condition, consumer, Windswept.REGISTRY_HELPER.prefix(name));
+
+		conditionalRecipe(SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ingredient), result, .35f, 600)
+				.unlockedBy("has_" + path, has(ingredient)),
+				condition, consumer, Windswept.REGISTRY_HELPER.prefix(name + "_from_campfire_cooking"));
+
+		conditionalRecipe(SimpleCookingRecipeBuilder.smoking(Ingredient.of(ingredient), result, .35f, 100)
+				.unlockedBy("has_" + path, has(ingredient)),
+				condition, consumer, Windswept.REGISTRY_HELPER.prefix(name + "_from_smoking"));
 	}
 
 
@@ -378,7 +397,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 			RegistryObject<Block> boards, RegistryObject<Block> beehive, RegistryObject<Block> ladder,
 			RegistryObject<Block> bookshelf, RegistryObject<? extends Block> chest, RegistryObject<? extends Block> trappedChest,
 			RegistryObject<Item> largeBoat, RegistryObject<Item> furnaceBoat, RegistryObject<Block> verticalPlanks,
-			Consumer<FinishedRecipe> consumer) {
+			RegistryObject<Block> cabinet, Consumer<FinishedRecipe> consumer) {
 		//chest boat
 		ShapelessRecipeBuilder.shapeless(boat.getSecond().get())
 				.group("chest_boat").
@@ -602,6 +621,17 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.requires(verticalPlanks.get())
 				.unlockedBy("has_" + name + "_vertical_planks", has(verticalPlanks.get())),
 				getQuarkCondition("vertical_planks"), consumer, Windswept.REGISTRY_HELPER.prefix(getName(verticalPlanks.get()) + "_revert"));
+
+		//cabinet
+		conditionalRecipe(ShapedRecipeBuilder.shaped(cabinet.get())
+				.define('#', slab.get())
+				.define('T', trapdoor.get())
+				.pattern("###")
+				.pattern("T T")
+				.pattern("###")
+				.unlockedBy("has_" + name + "_trapdoor", has(trapdoor.get())),
+				getModLoaded("farmersdelight"), consumer, Windswept.REGISTRY_HELPER.prefix(getName(cabinet.get())));
+
 	}
 
 	private static void leafSet(RegistryObject<Block> log, RegistryObject<Block> leaves, RegistryObject<Block> hedge,
@@ -648,10 +678,18 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 	private static void cooking(ItemLike ingredient, ItemLike result, Consumer<FinishedRecipe> consumer) {
 		String path = getName(ingredient);
 		String name = getName(result);
-		
-		SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), result, .35f, 200).unlockedBy("has_" + path, has(ingredient)).save(consumer, Windswept.REGISTRY_HELPER.prefix(name));
-		SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ingredient), result, .35f, 600).unlockedBy("has_" + path, has(ingredient)).save(consumer, Windswept.REGISTRY_HELPER.prefix(name + "_from_campfire_cooking"));
-		SimpleCookingRecipeBuilder.smoking(Ingredient.of(ingredient), result, .35f, 100).unlockedBy("has_" + path, has(ingredient)).save(consumer, Windswept.REGISTRY_HELPER.prefix(name + "_from_smoking"));
+
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), result, .35f, 200)
+				.unlockedBy("has_" + path, has(ingredient))
+				.save(consumer, Windswept.REGISTRY_HELPER.prefix(name));
+
+		SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ingredient), result, .35f, 600)
+				.unlockedBy("has_" + path, has(ingredient))
+				.save(consumer, Windswept.REGISTRY_HELPER.prefix(name + "_from_campfire_cooking"));
+
+		SimpleCookingRecipeBuilder.smoking(Ingredient.of(ingredient), result, .35f, 100)
+				.unlockedBy("has_" + path, has(ingredient))
+				.save(consumer, Windswept.REGISTRY_HELPER.prefix(name + "_from_smoking"));
 	}
 	
 	private static void stonecutting(ItemLike ingredient, ItemLike result, int amount, Consumer<FinishedRecipe> consumer) {

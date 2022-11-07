@@ -42,6 +42,8 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
 		this.tag(BlueprintItemTags.BUCKETS_WATER).add(WindsweptItems.WOODEN_WATER_BUCKET.get());
 		this.tag(WindsweptItemTags.MILK).addTag(BlueprintItemTags.BUCKETS_MILK);
 		this.tag(WindsweptItemTags.WILD_BERRY_SEEDS).add(WindsweptItems.WILD_BERRY_PIPS.get());
+		this.tag(WindsweptItemTags.RAW_GOAT).add(WindsweptItems.GOAT.get(), WindsweptItems.GOAT_SHANKS.get());
+		this.tag(WindsweptItemTags.COOKED_GOAT).add(WindsweptItems.COOKED_GOAT.get(), WindsweptItems.COOKED_GOAT_SHANKS.get());
 		this.tag(Tags.Items.BOOKSHELVES).add(WindsweptBlocks.HOLLY_BOOKSHELF.get().asItem(), WindsweptBlocks.CHESTNUT_BOOKSHELF.get().asItem());
 		this.tag(Tags.Items.SEEDS).addTag(WindsweptItemTags.WILD_BERRY_SEEDS);
 		this.copy(Tags.Blocks.CHESTS_WOODEN, Tags.Items.CHESTS_WOODEN);

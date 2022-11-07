@@ -99,6 +99,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 			this.dropSelf(WindsweptBlocks.VERTICAL_HOLLY_PLANKS.get());
 			this.bookshelf(WindsweptBlocks.HOLLY_BOOKSHELF.get());
 			this.dropSelf(WindsweptBlocks.HOLLY_BOARDS.get());
+			this.dropSelf(WindsweptBlocks.HOLLY_CABINET.get());
 			this.add(WindsweptBlocks.HOLLY_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
 			this.dropSelf(WindsweptBlocks.STRIPPED_HOLLY_POST.get());
 			this.dropSelf(WindsweptBlocks.HOLLY_POST.get());
@@ -143,6 +144,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 			this.dropSelf(WindsweptBlocks.VERTICAL_CHESTNUT_PLANKS.get());
 			this.bookshelf(WindsweptBlocks.CHESTNUT_BOOKSHELF.get());
 			this.dropSelf(WindsweptBlocks.CHESTNUT_BOARDS.get());
+			this.dropSelf(WindsweptBlocks.CHESTNUT_CABINET.get());
 			this.add(WindsweptBlocks.CHESTNUT_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
 			this.dropSelf(WindsweptBlocks.STRIPPED_CHESTNUT_POST.get());
 			this.dropSelf(WindsweptBlocks.CHESTNUT_POST.get());

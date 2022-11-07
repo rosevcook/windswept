@@ -24,6 +24,16 @@
             },
             "trigger": "minecraft:consume_item"
           },
+          "windswept:cooked_goat_shanks": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:cooked_goat_shanks"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
           "windswept:frozen_flesh": {
             "conditions": {
               "item": {
@@ -39,6 +49,16 @@
               "item": {
                 "items": [
                   "windswept:goat"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "windswept:goat_shanks": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:goat_shanks"
                 ]
               }
             },
@@ -155,6 +175,12 @@
           ],
           [
             "windswept:roasted_chestnuts"
+          ],
+          [
+            "windswept:goat_shanks"
+          ],
+          [
+            "windswept:cooked_goat_shanks"
           ],
           [
             "windswept:holly_berries"

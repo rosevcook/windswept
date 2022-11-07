@@ -93,7 +93,8 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
 				WindsweptBlocks.CHESTNUT_CHEST.get(), WindsweptBlocks.CHESTNUT_TRAPPED_CHEST.get(),
 				WindsweptBlocks.CHESTNUT_CRATE.get(), WindsweptBlocks.ROASTED_CHESTNUT_CRATE.get(),
 				WindsweptBlocks.CHESTNUT_POST.get(), WindsweptBlocks.STRIPPED_CHESTNUT_POST.get(),
-				WindsweptBlocks.CHESTNUT_BEEHIVE.get(), WindsweptBlocks.CHESTNUT_BOARDS.get());
+				WindsweptBlocks.CHESTNUT_BEEHIVE.get(), WindsweptBlocks.CHESTNUT_BOARDS.get(),
+				WindsweptBlocks.HOLLY_CABINET.get(), WindsweptBlocks.CHESTNUT_CABINET.get());
 		
 		this.tag(BlockTags.MINEABLE_WITH_HOE).addTag(WindsweptBlockTags.HOLLY_LEAVES)
 				.addTag(WindsweptBlockTags.CHESTNUT_LEAVES).add(WindsweptBlocks.HOLLY_LEAF_CARPET.get(),

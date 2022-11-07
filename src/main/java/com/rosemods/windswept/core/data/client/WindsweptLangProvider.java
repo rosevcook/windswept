@@ -63,9 +63,11 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.add(WindsweptItems.SWEET_BERRY_BOWL.get(), "Bowl of Sweet Berries");
 		this.add(WindsweptItems.WILD_BERRY_BOWL.get(), "Bowl of Wild Berries");
 		this.translateItem(WindsweptItems.MUTTON_PIE);
-		this.add(WindsweptItems.GOAT.get(), "Raw Goat");
-		this.translateItem(WindsweptItems.COOKED_GOAT);
-		this.translateItem(WindsweptItems.GOAT_STEW);
+		this.add(WindsweptItems.GOAT.get(), "Raw Chevon");
+		this.add(WindsweptItems.COOKED_GOAT.get(), "Cooked Chevon");
+		this.add(WindsweptItems.GOAT_STEW.get(), "Chevon Stew");
+		this.add(WindsweptItems.GOAT_SHANKS.get(), "Raw Chevon Shanks");
+		this.add(WindsweptItems.COOKED_GOAT_SHANKS.get(), "Cooked Chevon Shanks");
 		this.translateItem(WindsweptItems.FROZEN_FLESH);
 		this.translateItem(WindsweptItems.SNOW_BOOTS);
 		this.translateBannerPattern(WindsweptItems.SNOW_CHARGE_BANNER_PATTERN, "snow_charge");
@@ -107,6 +109,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.translateBlock(WindsweptBlocks.HOLLY_LADDER);
 		this.translateBlock(WindsweptBlocks.HOLLY_BOOKSHELF);
 		this.translateBlock(WindsweptBlocks.HOLLY_BOARDS);
+		this.translateBlock(WindsweptBlocks.HOLLY_CABINET);
 		this.translateBlock(WindsweptBlocks.HOLLY_VERTICAL_SLAB);
 		this.translateBlock(WindsweptBlocks.HOLLY_POST);
 		this.translateBlock(WindsweptBlocks.STRIPPED_HOLLY_POST);
@@ -139,6 +142,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.translateBlock(WindsweptBlocks.CHESTNUT_LADDER);
 		this.translateBlock(WindsweptBlocks.CHESTNUT_BOOKSHELF);
 		this.translateBlock(WindsweptBlocks.CHESTNUT_BOARDS);
+		this.translateBlock(WindsweptBlocks.CHESTNUT_CABINET);
 		this.translateBlock(WindsweptBlocks.CHESTNUT_VERTICAL_SLAB);
 		this.translateBlock(WindsweptBlocks.CHESTNUT_POST);
 		this.translateBlock(WindsweptBlocks.STRIPPED_CHESTNUT_POST);

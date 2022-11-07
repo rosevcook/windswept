@@ -8,6 +8,7 @@ import com.rosemods.windswept.common.block.wild_berry.*;
 import com.rosemods.windswept.common.world.gen.tree.*;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.other.WindsweptConstants;
+import com.rosemods.windswept.integration.farmers_delight.WindsweptCabinetBlock;
 import com.teamabnormals.blueprint.common.block.*;
 import com.teamabnormals.blueprint.common.block.chest.BlueprintChestBlock;
 import com.teamabnormals.blueprint.common.block.chest.BlueprintTrappedChestBlock;
@@ -58,6 +59,7 @@ public class WindsweptBlocks {
 	public static final RegistryObject<Block> HOLLY_LADDER = HELPER.createFuelBlock("holly_ladder", () -> new BlueprintLadderBlock(PropertyUtil.LADDER), 300, ModList.get().isLoaded(WindsweptConstants.QUARK) || ModList.get().isLoaded(WindsweptConstants.WOODWORKS) ? CreativeModeTab.TAB_DECORATIONS : null);
 	public static final RegistryObject<Block> HOLLY_BOOKSHELF = HELPER.createFuelBlock("holly_bookshelf", () -> new BookshelfBlock(Properties.HOLLY.bookshelf()), 300, ModList.get().isLoaded(WindsweptConstants.QUARK) || ModList.get().isLoaded(WindsweptConstants.WOODWORKS) ? CreativeModeTab.TAB_BUILDING_BLOCKS : null);
 	public static final RegistryObject<Block> HOLLY_BOARDS = HELPER.createCompatBlock(WindsweptConstants.WOODWORKS, "holly_boards", () -> new RotatedPillarBlock(Properties.HOLLY.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> HOLLY_CABINET = HELPER.createCompatFuelBlock(WindsweptConstants.FARMERS_DELIGHT, "holly_cabinet", ModList.get().isLoaded(WindsweptConstants.FARMERS_DELIGHT) ? () -> new WindsweptCabinetBlock(Properties.CABINET) : () -> new Block(Properties.CABINET), 300, CreativeModeTab.TAB_DECORATIONS);
 
 	public static final RegistryObject<Block> HOLLY_VERTICAL_SLAB = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "holly_vertical_slab", () -> new VerticalSlabBlock(Properties.HOLLY.planks()), 150, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_HOLLY_POST = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "stripped_holly_post", () -> new WoodPostBlock(Properties.HOLLY.post()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
@@ -95,6 +97,7 @@ public class WindsweptBlocks {
 	public static final RegistryObject<Block> CHESTNUT_LADDER = HELPER.createFuelBlock("chestnut_ladder", () -> new BlueprintLadderBlock(PropertyUtil.LADDER), 300, ModList.get().isLoaded(WindsweptConstants.QUARK) || ModList.get().isLoaded(WindsweptConstants.WOODWORKS) ? CreativeModeTab.TAB_DECORATIONS : null);
 	public static final RegistryObject<Block> CHESTNUT_BOOKSHELF = HELPER.createFuelBlock("chestnut_bookshelf", () -> new BookshelfBlock(Properties.CHESTNUT.bookshelf()), 300, ModList.get().isLoaded(WindsweptConstants.QUARK) || ModList.get().isLoaded(WindsweptConstants.WOODWORKS) ? CreativeModeTab.TAB_BUILDING_BLOCKS : null);
 	public static final RegistryObject<Block> CHESTNUT_BOARDS = HELPER.createCompatBlock(WindsweptConstants.WOODWORKS, "chestnut_boards", () -> new RotatedPillarBlock(Properties.HOLLY.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> CHESTNUT_CABINET = HELPER.createCompatFuelBlock(WindsweptConstants.FARMERS_DELIGHT, "chestnut_cabinet", ModList.get().isLoaded(WindsweptConstants.FARMERS_DELIGHT) ? () -> new WindsweptCabinetBlock(Properties.CABINET) : () -> new Block(Properties.CABINET), 300, CreativeModeTab.TAB_DECORATIONS);
 
 	public static final RegistryObject<Block> CHESTNUT_VERTICAL_SLAB = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "chestnut_vertical_slab", () -> new VerticalSlabBlock(Properties.CHESTNUT.planks()), 150, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> STRIPPED_CHESTNUT_POST = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "stripped_chestnut_post", () -> new WoodPostBlock(Properties.CHESTNUT.post()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
@@ -202,5 +205,7 @@ public class WindsweptBlocks {
 		
 		public static final BlockBehaviour.Properties GOLDEN_DOOR = BlockBehaviour.Properties.of(Material.METAL, MaterialColor.METAL).requiresCorrectToolForDrops().strength(5f).sound(SoundType.METAL).noOcclusion();
 		public static final BlockBehaviour.Properties GOLDEN_TRAPDOOR = BlockBehaviour.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(5f).sound(SoundType.METAL).noOcclusion().isValidSpawn(PropertyUtil::never);
+
+		public static final BlockBehaviour.Properties CABINET = BlockBehaviour.Properties.copy(Blocks.BARREL);
 	}
 }
