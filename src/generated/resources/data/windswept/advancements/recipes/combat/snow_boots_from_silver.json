@@ -18,7 +18,7 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "windswept:snow_boots"
+              "recipe": "windswept:snow_boots_from_silver"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
@@ -31,14 +31,17 @@
         ],
         "rewards": {
           "recipes": [
-            "windswept:snow_boots"
+            "windswept:snow_boots_from_silver"
           ]
         }
       },
       "conditions": [
         {
-          "type": "forge:tag_empty",
-          "tag": "forge:ingots/silver"
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "forge:ingots/silver"
+          }
         }
       ]
     }

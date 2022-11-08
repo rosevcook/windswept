@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "windswept:block/holly_cabinet_front",
+    "side": "windswept:block/holly_cabinet_side",
+    "top": "windswept:block/holly_cabinet_end"
+  }
+}

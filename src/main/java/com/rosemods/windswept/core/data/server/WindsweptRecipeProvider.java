@@ -131,7 +131,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 		// bluebell
 		flowerToDye(WindsweptBlocks.BLUEBELLS, Items.BLUE_DYE, consumer);
 		
-		// nighshade
+		// nightshade
 		flowerToDye(WindsweptBlocks.NIGHTSHADE, Items.LIGHT_BLUE_DYE, consumer);
 				
 		// snow charge banner pattern
@@ -198,14 +198,23 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 			.save(consumer, Windswept.REGISTRY_HELPER.prefix("ice_sheet"));
 		
 		// snow boots
-		ShapedRecipeBuilder.shaped(WindsweptItems.SNOW_BOOTS.get())
+		conditionalRecipe(ShapedRecipeBuilder.shaped(WindsweptItems.SNOW_BOOTS.get())
 			.define('#', Items.IRON_INGOT).define('L', Items.LEATHER)
 			.pattern("L L")
 			.pattern("L L")
 			.pattern("# #")
-			.unlockedBy("has_leather", has(Items.LEATHER))
-			.save(consumer, Windswept.REGISTRY_HELPER.prefix("snow_boots"));
-		
+			.unlockedBy("has_leather", has(Items.LEATHER)),
+			getTagEmpty(WindsweptItemTags.SILVER_INGOT), consumer, Windswept.REGISTRY_HELPER.prefix("snow_boots"));
+
+		// snow boots silver
+		conditionalRecipe(ShapedRecipeBuilder.shaped(WindsweptItems.SNOW_BOOTS.get())
+				.define('#', WindsweptItemTags.SILVER_INGOT).define('L', Items.LEATHER)
+				.pattern("L L")
+				.pattern("L L")
+				.pattern("# #")
+				.unlockedBy("has_leather", has(Items.LEATHER)),
+				not(getTagEmpty(WindsweptItemTags.SILVER_INGOT)), consumer, Windswept.REGISTRY_HELPER.prefix("snow_boots_from_silver"));
+
 		// packed ice bricks set
 		brickSet(Blocks.PACKED_ICE, WindsweptBlocks.PACKED_ICE_BRICKS, WindsweptBlocks.CHISELED_PACKED_ICE_BRICKS,
 				WindsweptBlocks.PACKED_ICE_BRICK_SLAB, WindsweptBlocks.PACKED_ICE_BRICK_STAIRS,
@@ -336,7 +345,9 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 	private static ModLoadedCondition getModLoaded(String modID) {
 		return  new ModLoadedCondition(modID);
 	}
-
+	private static TagEmptyCondition getTagEmpty(TagKey<Item> tag) {
+		return new TagEmptyCondition(tag.location());
+	}
 	private static OrCondition or(ICondition first, ICondition second) {
 		return new OrCondition(first, second);
 	}

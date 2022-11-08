@@ -76,6 +76,7 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 		this.verticalPlanks(WindsweptBlocks.VERTICAL_HOLLY_PLANKS, WindsweptBlocks.HOLLY_PLANKS);
 		this.bookshelf(WindsweptBlocks.HOLLY_BOOKSHELF, WindsweptBlocks.HOLLY_PLANKS);
 		this.boards(WindsweptBlocks.HOLLY_BOARDS);
+		this.cabinet(WindsweptBlocks.HOLLY_CABINET);
 		this.verticalSlab(WindsweptBlocks.HOLLY_VERTICAL_SLAB, WindsweptBlocks.HOLLY_PLANKS);
 		this.post(WindsweptBlocks.HOLLY_POST, WindsweptBlocks.HOLLY_LOG);
 		this.post(WindsweptBlocks.STRIPPED_HOLLY_POST, WindsweptBlocks.STRIPPED_HOLLY_LOG);
@@ -106,6 +107,7 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 		this.verticalPlanks(WindsweptBlocks.VERTICAL_CHESTNUT_PLANKS, WindsweptBlocks.CHESTNUT_PLANKS);
 		this.bookshelf(WindsweptBlocks.CHESTNUT_BOOKSHELF, WindsweptBlocks.CHESTNUT_PLANKS);
 		this.boards(WindsweptBlocks.CHESTNUT_BOARDS);
+		this.cabinet(WindsweptBlocks.CHESTNUT_CABINET);
 		this.verticalSlab(WindsweptBlocks.CHESTNUT_VERTICAL_SLAB, WindsweptBlocks.CHESTNUT_PLANKS);
 		this.post(WindsweptBlocks.CHESTNUT_POST, WindsweptBlocks.CHESTNUT_LOG);
 		this.post(WindsweptBlocks.STRIPPED_CHESTNUT_POST, WindsweptBlocks.STRIPPED_CHESTNUT_LOG);
@@ -272,7 +274,7 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 	}
 	
 	private void signs(Pair<RegistryObject<BlueprintStandingSignBlock>, RegistryObject<BlueprintWallSignBlock>> signs, Supplier<? extends Block> textureBlock) {
-		this.signBlock((StandingSignBlock) signs.getFirst().get(), (WallSignBlock) signs.getSecond().get(), this.blockTexture(textureBlock.get()));
+		this.signBlock(signs.getFirst().get(), signs.getSecond().get(), this.blockTexture(textureBlock.get()));
 	}
 
 	private void beehive(RegistryObject<? extends Block> beehive) {
@@ -282,6 +284,15 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 
 		this.horizontalBlock(beehive.get(), s -> s.getValue(BeehiveBlock.HONEY_LEVEL) == 5 ? model_honey : model);
 		this.itemModel(beehive);
+	}
+
+	private void cabinet(RegistryObject<? extends Block> cabinet) {
+		String name = this.getName(cabinet);
+		ModelFile model = this.models().orientable(name, this.modLoc("block/" + name + "_side"), this.modLoc("block/" + name + "_front"), this.modLoc("block/" + name + "_end"));
+		ModelFile model_open = this.models().orientable(name + "_open", this.modLoc("block/" + name + "_side"), this.modLoc("block/" + name + "_front_open"), this.modLoc("block/" + name + "_end"));
+
+		this.horizontalBlock(cabinet.get(), s -> s.getValue(BlockStateProperties.OPEN) ? model_open : model);
+		this.itemModel(cabinet);
 	}
 	
 	private void log(RegistryObject<? extends Block> log) {

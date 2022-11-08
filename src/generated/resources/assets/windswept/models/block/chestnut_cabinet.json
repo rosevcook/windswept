@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "windswept:block/chestnut_cabinet_front",
+    "side": "windswept:block/chestnut_cabinet_side",
+    "top": "windswept:block/chestnut_cabinet_end"
+  }
+}

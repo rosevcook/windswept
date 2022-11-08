@@ -65,7 +65,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.translateItem(WindsweptItems.MUTTON_PIE);
 		this.add(WindsweptItems.GOAT.get(), "Raw Chevon");
 		this.add(WindsweptItems.COOKED_GOAT.get(), "Cooked Chevon");
-		this.add(WindsweptItems.GOAT_STEW.get(), "Chevon Stew");
+		this.translateItem(WindsweptItems.GOAT_STEW);
 		this.add(WindsweptItems.GOAT_SHANKS.get(), "Raw Chevon Shanks");
 		this.add(WindsweptItems.COOKED_GOAT_SHANKS.get(), "Cooked Chevon Shanks");
 		this.translateItem(WindsweptItems.FROZEN_FLESH);

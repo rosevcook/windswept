@@ -4,15 +4,18 @@
     {
       "conditions": [
         {
-          "type": "forge:tag_empty",
-          "tag": "forge:ingots/silver"
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "forge:ingots/silver"
+          }
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
         "key": {
           "#": {
-            "item": "minecraft:iron_ingot"
+            "tag": "forge:ingots/silver"
           },
           "L": {
             "item": "minecraft:leather"

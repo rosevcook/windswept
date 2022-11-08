@@ -34,7 +34,10 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
 		this.copy(BlueprintBlockTags.LADDERS, BlueprintItemTags.LADDERS);
 		this.copy(BlueprintBlockTags.VERTICAL_SLABS, BlueprintItemTags.VERTICAL_SLABS);
 		this.copy(BlueprintBlockTags.WOODEN_VERTICAL_SLABS, BlueprintItemTags.WOODEN_VERTICAL_SLABS);
-		
+
+		//farmers delight
+		this.tag(WindsweptItemTags.CABBAGE_ROLL_INGREDIENTS).addTag(WindsweptItemTags.RAW_GOAT);
+
 		//forge
 		this.tag(BlueprintItemTags.BUCKETS_EMPTY).add(WindsweptItems.WOODEN_BUCKET.get());
 		this.tag(BlueprintItemTags.BUCKETS_MILK).add(WindsweptItems.WOODEN_MILK_BUCKET.get());
