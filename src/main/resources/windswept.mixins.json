@@ -11,13 +11,14 @@
     "FlowerPotBlockMixin",
     "PowderSnowBlockMixin",
     "LiquidBlockMixin",
-    "MobMixin",
     "BlockMixin",
     "LivingEntityMixin",
     "SnowLayerBlockMixin",
     "TreeFeaturesMixin",
     "TreeConfigurationBuilderMixin",
-    "TreeFeatureMixin"
+    "TreeFeatureMixin",
+    "WitherRoseBlockMixin",
+    "TallFlowerBlockMixin"
   ],
   "client": [
     "client.LivingEntityRendererMixin"

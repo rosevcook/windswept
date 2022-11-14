@@ -18,6 +18,7 @@ import com.teamabnormals.blueprint.common.block.wood.*;
 import com.teamabnormals.blueprint.core.util.PropertyUtil;
 import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
 
+import net.minecraft.util.datafix.fixes.BlockEntityKeepPacked;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Items;
@@ -152,18 +153,29 @@ public class WindsweptBlocks {
 	// Sprouts //
 	
 	public static final RegistryObject<Block> SNOWY_SPROUTS = HELPER.createInjectedBlock("snowy_sprouts", Items.DEAD_BUSH, () -> new SnowySproutsBlock(Properties.SNOWY_SPROUTS), CreativeModeTab.TAB_DECORATIONS);
-	
+
+	// Rose Bushes //
+
+	public static final RegistryObject<Block> PINK_ROSE_BUSH = HELPER.createInjectedBlock("pink_rose_bush", Items.ROSE_BUSH, () -> new BlueprintTallFlowerBlock(PropertyUtil.FLOWER), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> BLUE_ROSE_BUSH = HELPER.createInjectedBlock("blue_rose_bush", Items.ROSE_BUSH, () -> new BlueprintTallFlowerBlock(PropertyUtil.FLOWER), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> WHITE_ROSE_BUSH = HELPER.createInjectedBlock("white_rose_bush", Items.ROSE_BUSH, () -> new BlueprintTallFlowerBlock(PropertyUtil.FLOWER), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> YELLOW_ROSE_BUSH = HELPER.createInjectedBlock("yellow_rose_bush", Items.ROSE_BUSH, () -> new BlueprintTallFlowerBlock(PropertyUtil.FLOWER), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> WITHER_ROSE_BUSH = HELPER.createInjectedBlock("wither_rose_bush", Items.ROSE_BUSH, () -> new WitherRoseBushBlock(PropertyUtil.FLOWER), CreativeModeTab.TAB_DECORATIONS);
+
 	// Flowers //
 	
-	public static final RegistryObject<Block> RED_ROSE = HELPER.createBlock("red_rose", () -> new BlueprintFlowerBlock(() -> MobEffects.WITHER, 5, PropertyUtil.FLOWER), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> PINK_ROSE = HELPER.createBlock("pink_rose", () -> new BlueprintFlowerBlock(() -> MobEffects.WITHER, 5, PropertyUtil.FLOWER), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> BLUE_ROSE = HELPER.createBlock("blue_rose", () -> new BlueprintFlowerBlock(() -> MobEffects.WITHER, 5, PropertyUtil.FLOWER), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> WHITE_ROSE = HELPER.createBlock("white_rose", () -> new BlueprintFlowerBlock(() -> MobEffects.WITHER, 5, PropertyUtil.FLOWER), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> YELLOW_ROSE = HELPER.createBlock("yellow_rose", () -> new BlueprintFlowerBlock(() -> MobEffects.WITHER, 5, PropertyUtil.FLOWER), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> RED_ROSE = HELPER.createBlock("red_rose", () -> new RoseFlowerBlock(() -> Blocks.ROSE_BUSH, () -> MobEffects.WITHER, 5, PropertyUtil.FLOWER), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> PINK_ROSE = HELPER.createBlock("pink_rose", () -> new RoseFlowerBlock(PINK_ROSE_BUSH, () -> MobEffects.WITHER, 5, PropertyUtil.FLOWER), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> BLUE_ROSE = HELPER.createBlock("blue_rose", () -> new RoseFlowerBlock(BLUE_ROSE_BUSH, () -> MobEffects.WITHER, 5, PropertyUtil.FLOWER), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> WHITE_ROSE = HELPER.createBlock("white_rose", () -> new RoseFlowerBlock(WHITE_ROSE_BUSH, () -> MobEffects.WITHER, 5, PropertyUtil.FLOWER), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> YELLOW_ROSE = HELPER.createBlock("yellow_rose", () -> new RoseFlowerBlock(YELLOW_ROSE_BUSH, () -> MobEffects.WITHER, 5, PropertyUtil.FLOWER), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> FOXGLOVE = HELPER.createBlock("foxglove", () -> new BlueprintFlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 5, PropertyUtil.FLOWER), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> BLUEBELLS = HELPER.createBlock("bluebells", () -> new BluebellBlock(() -> MobEffects.SLOW_FALLING, 5, PropertyUtil.FLOWER), CreativeModeTab.TAB_DECORATIONS); 
 	public static final RegistryObject<Block> NIGHTSHADE = HELPER.createBlock("nightshade", () -> new NightshadeFlowerBlock(() -> MobEffects.NIGHT_VISION, 5, Properties.NIGHTSHADE), CreativeModeTab.TAB_DECORATIONS);
-	
+
+
+	// Potted Flowers //
+
 	public static final RegistryObject<Block> POTTED_RED_ROSE = HELPER.createBlockNoItem("potted_red_rose", () -> new FlowerPotBlock(RED_ROSE.get(), PropertyUtil.FLOWER_POT));
 	public static final RegistryObject<Block> POTTED_PINK_ROSE = HELPER.createBlockNoItem("potted_pink_rose", () -> new FlowerPotBlock(PINK_ROSE.get(), PropertyUtil.FLOWER_POT));
 	public static final RegistryObject<Block> POTTED_BLUE_ROSE = HELPER.createBlockNoItem("potted_blue_rose", () -> new FlowerPotBlock(BLUE_ROSE.get(), PropertyUtil.FLOWER_POT));

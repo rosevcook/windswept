@@ -179,6 +179,13 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.translateBlock(WindsweptBlocks.GOLDEN_DOOR);
 		this.translateBlock(WindsweptBlocks.GOLDEN_TRAPDOOR);
 
+		this.add("block.windswept.red_rose_bush", "Red Rose Bush");
+		this.translateBlock(WindsweptBlocks.PINK_ROSE_BUSH);
+		this.translateBlock(WindsweptBlocks.BLUE_ROSE_BUSH);
+		this.translateBlock(WindsweptBlocks.WHITE_ROSE_BUSH);
+		this.translateBlock(WindsweptBlocks.YELLOW_ROSE_BUSH);
+		this.translateBlock(WindsweptBlocks.WITHER_ROSE_BUSH);
+
 		this.translateBlock(WindsweptBlocks.RED_ROSE);
 		this.translateBlock(WindsweptBlocks.PINK_ROSE);
 		this.translateBlock(WindsweptBlocks.BLUE_ROSE);

@@ -27,7 +27,10 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.SweetBerryBushBlock;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -196,6 +199,14 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 			this.add(WindsweptBlocks.GOLDEN_DOOR.get(), Blocks::createDoorTable);
 			this.dropSelf(WindsweptBlocks.GOLDEN_TRAPDOOR.get());
 
+			// rose bushes
+
+			this.tallFlower(WindsweptBlocks.PINK_ROSE_BUSH.get());
+			this.tallFlower(WindsweptBlocks.BLUE_ROSE_BUSH.get());
+			this.tallFlower(WindsweptBlocks.WHITE_ROSE_BUSH.get());
+			this.tallFlower(WindsweptBlocks.YELLOW_ROSE_BUSH.get());
+			this.tallFlower(WindsweptBlocks.WITHER_ROSE_BUSH.get());
+
 			// plants
 			this.add(WindsweptBlocks.SNOWY_SPROUTS.get(), Blocks::createShearsOnlyDrop);
 			
@@ -237,6 +248,10 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 		
 		private void bookshelf(Block block) {
 			this.add(block, b -> createSingleItemTableWithSilkTouch(b, Items.BOOK, ConstantValue.exactly(3f)));
+		}
+
+		private void tallFlower(Block block) {
+			this.add(block, (b) -> createSinglePropConditionTable(b, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
 		}
 		
 		@Override

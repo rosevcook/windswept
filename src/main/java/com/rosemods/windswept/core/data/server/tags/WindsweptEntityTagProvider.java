@@ -19,6 +19,7 @@ public class WindsweptEntityTagProvider extends EntityTypeTagsProvider {
 	protected void addTags() {
 		this.tag(WindsweptEntityTypeTags.CONVERT_TO_CHILLED).add(EntityType.ZOMBIE, EntityType.HUSK, EntityType.DROWNED);
 		this.tag(EntityTypeTags.POWDER_SNOW_WALKABLE_MOBS).add(WindsweptEntities.CHILLED.get());
+		this.tag(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES).add(WindsweptEntities.CHILLED.get()).addTag(WindsweptEntityTypeTags.CONVERT_TO_CHILLED);
 	}
 	
 }

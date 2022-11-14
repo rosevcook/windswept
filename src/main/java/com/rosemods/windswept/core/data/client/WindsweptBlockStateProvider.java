@@ -18,29 +18,15 @@ import com.teamabnormals.blueprint.core.Blueprint;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.BeehiveBlock;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.ButtonBlock;
-import net.minecraft.world.level.block.CrossCollisionBlock;
-import net.minecraft.world.level.block.DoorBlock;
-import net.minecraft.world.level.block.FenceBlock;
-import net.minecraft.world.level.block.FenceGateBlock;
-import net.minecraft.world.level.block.IronBarsBlock;
-import net.minecraft.world.level.block.PressurePlateBlock;
-import net.minecraft.world.level.block.RotatedPillarBlock;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
-import net.minecraft.world.level.block.StandingSignBlock;
-import net.minecraft.world.level.block.TrapDoorBlock;
-import net.minecraft.world.level.block.WallBlock;
-import net.minecraft.world.level.block.WallSignBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -144,6 +130,12 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 		
 		this.simpleCross(WindsweptBlocks.SNOWY_SPROUTS);
 
+		this.tallFlower(WindsweptBlocks.PINK_ROSE_BUSH);
+		this.tallFlower(WindsweptBlocks.BLUE_ROSE_BUSH);
+		this.tallFlower(WindsweptBlocks.WHITE_ROSE_BUSH);
+		this.tallFlower(WindsweptBlocks.YELLOW_ROSE_BUSH);
+		this.tallFlower(WindsweptBlocks.WITHER_ROSE_BUSH);
+
 		this.pottedPlant(WindsweptBlocks.RED_ROSE, WindsweptBlocks.POTTED_RED_ROSE);
 		this.pottedPlant(WindsweptBlocks.PINK_ROSE, WindsweptBlocks.POTTED_PINK_ROSE);
 		this.pottedPlant(WindsweptBlocks.BLUE_ROSE, WindsweptBlocks.POTTED_BLUE_ROSE);
@@ -169,6 +161,17 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 			.partialState().with(WildBerryBushBlock.AGE, 0).addModels(new ConfiguredModel(model.apply(0), 0, 0, true))
 	     	.partialState().with(WildBerryBushBlock.AGE, 1).addModels(new ConfiguredModel(model.apply(1), 0, 180, true))
 	     	.partialState().with(WildBerryBushBlock.AGE, 2).addModels(new ConfiguredModel(model.apply(2), 0, 90, true));
+	}
+
+	private void tallFlower(RegistryObject<Block> flower) {
+		String name = getName(flower);
+
+		final Function<String, ModelFile> model = s -> this.models().cross(name + "_" + s, this.modLoc("block/" + name + "_" + s)).renderType("cutout");
+
+		this.itemModels().withExistingParent(name, "item/generated").texture("layer0", this.modLoc("block/" + name + "_top"));
+		this.getVariantBuilder(flower.get())
+				.partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).addModels(new ConfiguredModel(model.apply("top")))
+				.partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).addModels(new ConfiguredModel(model.apply("bottom")));
 	}
 	
 	private void pottedPlant(RegistryObject<Block> plant, RegistryObject<Block> pot, boolean pottedTexture) {
