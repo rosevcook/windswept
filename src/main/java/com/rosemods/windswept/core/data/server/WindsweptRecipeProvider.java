@@ -133,6 +133,21 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 		
 		// nightshade
 		flowerToDye(WindsweptBlocks.NIGHTSHADE, Items.LIGHT_BLUE_DYE, consumer);
+
+		// pink rose bush
+		tallFlowerToDye(WindsweptBlocks.PINK_ROSE_BUSH, Items.PINK_DYE, consumer);
+
+		// blue rose bush
+		tallFlowerToDye(WindsweptBlocks.BLUE_ROSE_BUSH, Items.BLUE_DYE, consumer);
+
+		// white rose bush
+		tallFlowerToDye(WindsweptBlocks.WHITE_ROSE_BUSH, Items.WHITE_DYE, consumer);
+
+		// yellow rose bush
+		tallFlowerToDye(WindsweptBlocks.YELLOW_ROSE_BUSH, Items.YELLOW_DYE, consumer);
+
+		// wither rose bush
+		tallFlowerToDye(WindsweptBlocks.WITHER_ROSE_BUSH, Items.BLACK_DYE, consumer);
 				
 		// snow charge banner pattern
 		ShapelessRecipeBuilder.shapeless(WindsweptItems.SNOW_CHARGE_BANNER_PATTERN.get())
@@ -684,6 +699,14 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 			.requires(flower.get())
 			.unlockedBy("has_" + getName(flower.get()), has(flower.get()))
 			.save(consumer, Windswept.REGISTRY_HELPER.prefix(getName(dye) + "_from_" + getName(flower.get())));
+	}
+
+	private static void tallFlowerToDye(RegistryObject<Block> flower, Item dye, Consumer<FinishedRecipe> consumer) {
+		ShapelessRecipeBuilder.shapeless(dye, 2)
+				.group(getName(dye))
+				.requires(flower.get())
+				.unlockedBy("has_" + getName(flower.get()), has(flower.get()))
+				.save(consumer, Windswept.REGISTRY_HELPER.prefix(getName(dye) + "_from_" + getName(flower.get())));
 	}
 	
 	private static void cooking(ItemLike ingredient, ItemLike result, Consumer<FinishedRecipe> consumer) {

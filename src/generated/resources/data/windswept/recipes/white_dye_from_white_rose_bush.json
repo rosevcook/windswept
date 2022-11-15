@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "white_dye",
+  "ingredients": [
+    {
+      "item": "windswept:white_rose_bush"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "minecraft:white_dye"
+  }
+}

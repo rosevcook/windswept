@@ -25,7 +25,7 @@ public abstract class FoxMixin extends Animal {
 	}
 	
 	@Inject(method = "populateDefaultEquipmentSlots", at = @At(value = "HEAD"))
-	private void populateDefaultEquipmentSlots(RandomSource rand, DifficultyInstance diffuculty, CallbackInfo info) {		
+	private void populateDefaultEquipmentSlots(RandomSource rand, DifficultyInstance difficulty, CallbackInfo info) {
 		if (this.random.nextInt(12) == 0)
 			this.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(WindsweptBlocks.FOXGLOVE.get()));
 		else if (((Fox) (Object) this).getFoxType() == Fox.Type.SNOW && this.random.nextInt(12) == 0)

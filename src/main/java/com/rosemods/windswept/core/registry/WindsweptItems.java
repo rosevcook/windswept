@@ -58,7 +58,7 @@ public class WindsweptItems {
 	// Misc //
 	
 	public static final RegistryObject<Item> SNOW_BOOTS = HELPER.createItem("snow_boots", () -> new SnowBootsItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
-	public static final RegistryObject<Item> HOLLY_BERRIES = HELPER.createItem("holly_berries", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_BREWING).food(Foods.HOLLY_BERIES)));
+	public static final RegistryObject<Item> HOLLY_BERRIES = HELPER.createItem("holly_berries", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_BREWING).food(Foods.HOLLY_BERRIES)));
 	public static final RegistryObject<Item> FROZEN_FLESH = HELPER.createItem("frozen_flesh", () -> new InjectedItem(Items.ROTTEN_FLESH, PropertyUtil.food(Foods.FROZEN_FLESH)));
 	
 	// Banner Patterns //
@@ -89,7 +89,7 @@ public class WindsweptItems {
 		public static final FoodProperties BERRY_BOWL = new FoodProperties.Builder().nutrition(6).saturationMod(.3f).build();
 		public static final FoodProperties WILD_BERRIES = new FoodProperties.Builder().nutrition(2).saturationMod(.1f).build();
 		public static final FoodProperties WILD_BERRY_JUICE = new FoodProperties.Builder().nutrition(4).alwaysEat().saturationMod(.1f).effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 300, 0), 1f).build();
-		public static final FoodProperties HOLLY_BERIES = new FoodProperties.Builder().nutrition(2).saturationMod(.4f).effect(() -> new MobEffectInstance(MobEffects.POISON, 100, 0), 1f).build();
+		public static final FoodProperties HOLLY_BERRIES = new FoodProperties.Builder().nutrition(2).saturationMod(.4f).effect(() -> new MobEffectInstance(MobEffects.POISON, 100, 0), 1f).build();
 		public static final FoodProperties MUTTON_PIE = new FoodProperties.Builder().nutrition(8).saturationMod(.3f).build();
 		public static final FoodProperties GOAT = new FoodProperties.Builder().nutrition(2).saturationMod(.3f).meat().build();
 		public static final FoodProperties COOKED_GOAT = new FoodProperties.Builder().nutrition(6).saturationMod(.8f).meat().build();
@@ -98,7 +98,7 @@ public class WindsweptItems {
 		public static final FoodProperties CHESTNUTS = new FoodProperties.Builder().nutrition(2).saturationMod(.1f).build();
 		public static final FoodProperties ROASTED_CHESTNUTS = new FoodProperties.Builder().nutrition(5).saturationMod(.4f).build();
 		public static final FoodProperties GOAT_SHANKS = new FoodProperties.Builder().nutrition(1).saturationMod(.1f).meat().build();
-		public static final FoodProperties COOKED_GOAT_SHANKS = new FoodProperties.Builder().nutrition(2).saturationMod(.3f).meat().build();
+		public static final FoodProperties COOKED_GOAT_SHANKS = new FoodProperties.Builder().nutrition(3).saturationMod(.3f).meat().build();
 
 	}
 	

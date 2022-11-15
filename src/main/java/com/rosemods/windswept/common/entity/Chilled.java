@@ -45,8 +45,8 @@ public class Chilled extends Zombie {
 	
 	@Override
 	public boolean doHurtTarget(Entity entity) {
-		if (super.doHurtTarget(entity) && entity instanceof LivingEntity) {
-			((LivingEntity) entity).addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 600), this);
+		if (super.doHurtTarget(entity) && entity instanceof LivingEntity livingEntity) {
+			livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 600), this);
 			return true;
 		}
 		

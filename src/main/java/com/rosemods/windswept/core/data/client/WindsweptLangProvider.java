@@ -2,7 +2,9 @@ package com.rosemods.windswept.core.data.client;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
+import net.minecraft.world.level.block.Blocks;
 import org.codehaus.plexus.util.StringUtils;
 
 import com.mojang.datafixers.util.Pair;
@@ -226,29 +228,50 @@ public class WindsweptLangProvider extends LanguageProvider {
 		
 		// Enchantments //
 		
-		this.translateEnchantment(WindsweptEnchantments.SLIPPING_CURSE, "Curse of Slipping", "Slipping can only be applied to boots and causes the wearer to slide on every block they stand on while also damaging the boots.");
+		this.translateEnchantment(WindsweptEnchantments.SLIPPING_CURSE, "Curse of Slipping", "The Curse of Slipping causes the wearer to slip on any block as if it was ice whilst damaging the boots in the process.");
 
 		// Damage Sources //
 		
 		this.translateDamageSource(WindsweptDamageSources.HOLLY_LEAVES, 
 				player -> player + " was ripped to death by holly leaves", 
-				(player, entity) -> player + " was ripped to death by holly leaves whilst trying to escape " + entity
-		);
+				(player, entity) -> player + " was ripped to death by holly leaves whilst trying to escape " + entity);
 		
 		this.translateDamageSource(WindsweptDamageSources.HOLLY_SAPLING, 
 				player -> player + " was ripped to death by holly sapling", 
-				(player, entity) -> player + " was ripped to death by holly sapling whilst trying to escape " + entity
-		);
+				(player, entity) -> player + " was ripped to death by holly sapling whilst trying to escape " + entity);
 		
 		this.translateDamageSource(WindsweptDamageSources.HOLLY_HEDGE, 
 				player -> player + " was ripped to death by holly leaf hedge", 
-				(player, entity) -> player + " was ripped to death by holly leaf hedge whilst trying to escape " + entity
-		);
+				(player, entity) -> player + " was ripped to death by holly leaf hedge whilst trying to escape " + entity);
 		
 		// JEI Info
 		
 		this.jeiInfo(WindsweptItems.MUSIC_DISC_RAIN, "Dropped by a Drowned if killed by a Skeleton.");
 		this.jeiInfo(WindsweptItems.MUSIC_DISC_SNOW, "Dropped by a Chilled if killed by a Skeleton.");
+
+		this.jeiInfo(() -> Blocks.ROSE_BUSH, "Bonemeal a Red Rose and it will grow into a Red Rose Bush!");
+		this.jeiInfo(WindsweptBlocks.PINK_ROSE_BUSH, "Bonemeal a Pink Rose and it will grow into a Pink Rose Bush!");
+		this.jeiInfo(WindsweptBlocks.BLUE_ROSE_BUSH, "Bonemeal a Blue Rose and it will grow into a Blue Rose Bush!");
+		this.jeiInfo(WindsweptBlocks.WHITE_ROSE_BUSH, "Bonemeal a White Rose and it will grow into a White Rose Bush!");
+		this.jeiInfo(WindsweptBlocks.YELLOW_ROSE_BUSH, "Bonemeal a Yellow Rose and it will grow into a Yellow Rose Bush!");
+		this.jeiInfo(WindsweptBlocks.WITHER_ROSE_BUSH, "Bonemeal a Wither Rose and it will grow into a Wither Rose Bush!");
+
+		this.jeiInfo(WindsweptItems.WILD_BERRIES, "Wild Berries can be found growing in snowy biomes but are more commonly found in Groves.");
+		this.jeiInfo(WindsweptBlocks.NIGHTSHADE, "Nightshades can be found very rarely growing in large patches under trees.");
+		this.jeiInfo(WindsweptBlocks.BLUEBELLS, "Bluebells are small flowers that grow in patches in Dark Oak and Birch Forests.");
+		this.jeiInfo(WindsweptBlocks.FOXGLOVE, "Foxgloves are found in any Taiga biome. Foxes can sometimes be found holding them in their mouths.");
+		this.jeiInfo(WindsweptBlocks.SNOWY_SPROUTS, "Snowy sprouts are small plants that grow in round patches in snowy areas. They only grow on snow blocks but when collected with shears, can also be placed on grass and dirt.");
+
+		this.jeiInfo(WindsweptBlocks.RED_ROSE, "Red Roses can be found in Taiga biomes. They can also be bonemealed into Red Rose Bushes.");
+		this.jeiInfo(WindsweptBlocks.PINK_ROSE, "Pink Roses can be found in Snowy biomes. They can also be bonemealed into Pink Rose Bushes.");
+		this.jeiInfo(WindsweptBlocks.BLUE_ROSE, "Blue Roses can be found in Snowy biomes. They can also be bonemealed into Blue Rose Bushes.");
+		this.jeiInfo(WindsweptBlocks.WHITE_ROSE, "White Roses can be found in Snowy biomes. They can also be bonemealed into White Rose Bushes.");
+		this.jeiInfo(WindsweptBlocks.YELLOW_ROSE, "Yellow Roses can be found in Taiga biomes. They can also be bonemealed into Yellow Rose Bushes.");
+
+		this.jeiInfo(WindsweptItems.WOODEN_BUCKET, "Wooden buckets are cheap buckets with a durability of 24. Durability is taken when a fluid exits the bucket.");
+		this.jeiInfo(WindsweptItems.SNOW_BOOTS, "Snow boots allow you to walk faster on any snowy block. They can be dyed any colour you like. They also allow you to walk on Powder Snow.");
+		this.jeiInfo(WindsweptItems.WILD_BERRY_BOWL, "Wild Berry bowls condense 3 Wild Berries into a single item. They can be stacked to 64 and are exactly 3 times the saturation and hunger of Wild Berries.");
+		this.jeiInfo(WindsweptItems.SWEET_BERRY_BOWL, "Sweet Berry bowls condense 3 Sweet Berries into a single item. They can be stacked to 64 and are exactly 3 times the saturation and hunger of Sweet Berries.");
 
 		// Tooltips //
 		
@@ -297,7 +320,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 			this.add("block.minecraft.banner." + Windswept.MODID + "." + name + "." + dye.getName(), StringUtils.capitaliseAllWords(dye.getName().replace('_', ' ')) + " " + desc);
 	}
 	
-	private void jeiInfo(RegistryObject<? extends ItemLike> item, String desc) {
+	private void jeiInfo(Supplier<? extends ItemLike> item, String desc) {
 		this.add(WindsweptPlugin.getDesc(item), desc);
 	}
 	

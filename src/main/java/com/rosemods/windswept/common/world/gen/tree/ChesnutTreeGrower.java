@@ -13,7 +13,7 @@ public class ChesnutTreeGrower extends AbstractTreeGrower {
 
 	@Override
 	protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource rand, boolean bees) {
-		return (Holder<ConfiguredFeature<?, ?>>) (bees ? WindsweptFeatures.TreeFeatures.CHESTNUT_TREES_BEES : WindsweptFeatures.TreeFeatures.CHESTNUT_TREES).getHolder().get();
+		return (bees ? WindsweptFeatures.TreeFeatures.CHESTNUT_TREES_BEES : WindsweptFeatures.TreeFeatures.CHESTNUT_TREES).getHolder().get();
 	}
 
 }
