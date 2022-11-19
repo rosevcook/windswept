@@ -71,6 +71,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.add(WindsweptItems.GOAT_SHANKS.get(), "Raw Chevon Shanks");
 		this.add(WindsweptItems.COOKED_GOAT_SHANKS.get(), "Cooked Chevon Shanks");
 		this.translateItem(WindsweptItems.FROZEN_FLESH);
+		this.translateItem(WindsweptItems.STINGING_NETTLE_TEA);
 		this.translateItem(WindsweptItems.SNOW_BOOTS);
 		this.translateBannerPattern(WindsweptItems.SNOW_CHARGE_BANNER_PATTERN, "snow_charge");
 		this.translateBannerPattern(WindsweptItems.SNOW_GOLEM_BANNER_PATTERN, "snow_golem");
@@ -211,6 +212,14 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.translateBlock(WindsweptBlocks.WILD_BERRY_SACK);
 
 		this.translateBlock(WindsweptBlocks.ICE_SHEET);
+
+		this.translateBlock(WindsweptBlocks.TALL_STINGING_NETTLES);
+		this.translateBlock(WindsweptBlocks.STINGING_NETTLES);
+
+		this.translateBlock(WindsweptBlocks.NETTLE_THATCH);
+		this.translateBlock(WindsweptBlocks.NETTLE_THATCH_SLAB);
+		this.translateBlock(WindsweptBlocks.NETTLE_THATCH_STAIRS);
+		this.translateBlock(WindsweptBlocks.NETTLE_THATCH_VERTICAL_SLAB);
 
 		// Entities //
 		

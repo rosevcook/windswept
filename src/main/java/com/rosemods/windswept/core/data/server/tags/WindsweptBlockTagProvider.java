@@ -33,7 +33,9 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
 		this.tag(BlueprintBlockTags.LADDERS).add(WindsweptBlocks.HOLLY_LADDER.get(), WindsweptBlocks.CHESTNUT_LADDER.get());
 		this.tag(BlueprintBlockTags.VERTICAL_SLABS).add(WindsweptBlocks.BLUE_ICE_BRICK_VERTICAL_SLAB.get(),
 				WindsweptBlocks.HOLLY_VERTICAL_SLAB.get(), WindsweptBlocks.SNOW_BRICK_VERTICAL_SLAB.get(),
-				WindsweptBlocks.CHESTNUT_VERTICAL_SLAB.get(), WindsweptBlocks.PACKED_ICE_BRICK_VERTICAL_SLAB.get());
+				WindsweptBlocks.CHESTNUT_VERTICAL_SLAB.get(), WindsweptBlocks.PACKED_ICE_BRICK_VERTICAL_SLAB.get(),
+				WindsweptBlocks.NETTLE_THATCH_VERTICAL_SLAB.get());
+
 		this.tag(BlueprintBlockTags.WOODEN_VERTICAL_SLABS).add(WindsweptBlocks.HOLLY_VERTICAL_SLAB.get(),
 				WindsweptBlocks.CHESTNUT_VERTICAL_SLAB.get());
 		
@@ -41,12 +43,13 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
 		this.tag(Tags.Blocks.CHESTS_WOODEN).add(WindsweptBlocks.HOLLY_CHEST.get(),
 				WindsweptBlocks.HOLLY_TRAPPED_CHEST.get(), WindsweptBlocks.CHESTNUT_CHEST.get(),
 				WindsweptBlocks.CHESTNUT_TRAPPED_CHEST.get());
+
 		this.tag(Tags.Blocks.CHESTS_TRAPPED).add(WindsweptBlocks.HOLLY_TRAPPED_CHEST.get(),
 				WindsweptBlocks.CHESTNUT_TRAPPED_CHEST.get());
 		
 		//vanilla
 		this.tag(BlockTags.WALLS).add(WindsweptBlocks.BLUE_ICE_BRICK_WALL.get(), WindsweptBlocks.SNOW_BRICK_WALL.get(), WindsweptBlocks.PACKED_ICE_BRICK_WALL.get());
-		this.tag(BlockTags.SLABS).add(WindsweptBlocks.BLUE_ICE_BRICK_SLAB.get(), WindsweptBlocks.SNOW_BRICK_SLAB.get(), WindsweptBlocks.PACKED_ICE_BRICK_SLAB.get());
+		this.tag(BlockTags.SLABS).add(WindsweptBlocks.BLUE_ICE_BRICK_SLAB.get(), WindsweptBlocks.SNOW_BRICK_SLAB.get(), WindsweptBlocks.PACKED_ICE_BRICK_SLAB.get(), WindsweptBlocks.NETTLE_THATCH_SLAB.get());
 		this.tag(BlockTags.STAIRS).add(WindsweptBlocks.BLUE_ICE_BRICK_STAIRS.get(), WindsweptBlocks.SNOW_BRICK_STAIRS.get(), WindsweptBlocks.PACKED_ICE_BRICK_STAIRS.get());
 		this.tag(BlockTags.BEEHIVES).add(WindsweptBlocks.HOLLY_BEEHIVE.get(), WindsweptBlocks.CHESTNUT_BEEHIVE.get());
 		this.tag(BlockTags.BUTTONS).add(WindsweptBlocks.POLISHED_DEEPSLATE_BUTTON.get());
@@ -73,7 +76,8 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
 				WindsweptBlocks.WHITE_ROSE_BUSH.get(), WindsweptBlocks.YELLOW_ROSE_BUSH.get(), WindsweptBlocks.WITHER_ROSE_BUSH.get());
 
 		this.tag(BlockTags.REPLACEABLE_PLANTS).add(WindsweptBlocks.PINK_ROSE_BUSH.get(), WindsweptBlocks.BLUE_ROSE_BUSH.get(),
-				WindsweptBlocks.WHITE_ROSE_BUSH.get(), WindsweptBlocks.YELLOW_ROSE_BUSH.get(), WindsweptBlocks.WITHER_ROSE_BUSH.get());
+				WindsweptBlocks.WHITE_ROSE_BUSH.get(), WindsweptBlocks.YELLOW_ROSE_BUSH.get(), WindsweptBlocks.WITHER_ROSE_BUSH.get(),
+				WindsweptBlocks.SNOWY_SPROUTS.get());
 		
 		this.tag(BlockTags.SMALL_FLOWERS).add(WindsweptBlocks.RED_ROSE.get(),
 				WindsweptBlocks.PINK_ROSE.get(), WindsweptBlocks.BLUE_ROSE.get(),
@@ -104,7 +108,10 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
 		
 		this.tag(BlockTags.MINEABLE_WITH_HOE).addTag(WindsweptBlockTags.HOLLY_LEAVES)
 				.addTag(WindsweptBlockTags.CHESTNUT_LEAVES).add(WindsweptBlocks.HOLLY_LEAF_CARPET.get(),
-						WindsweptBlocks.CHESTNUT_LEAF_CARPET.get());
+						WindsweptBlocks.CHESTNUT_LEAF_CARPET.get(), WindsweptBlocks.NETTLE_THATCH.get(),
+						WindsweptBlocks.NETTLE_THATCH_SLAB.get(), WindsweptBlocks.NETTLE_THATCH_STAIRS.get(),
+						WindsweptBlocks.NETTLE_THATCH_VERTICAL_SLAB.get(), WindsweptBlocks.STINGING_NETTLES.get(),
+						WindsweptBlocks.TALL_STINGING_NETTLES.get());
 		
 		this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(WindsweptBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE.get(),
 				WindsweptBlocks.BLUE_ICE_BRICKS.get(), WindsweptBlocks.CHISELED_BLUE_ICE_BRICKS.get(),

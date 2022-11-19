@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "windswept:block/tall_stinging_nettles_top"
+  }
+}

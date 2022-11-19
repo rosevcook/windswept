@@ -27,7 +27,7 @@ public class DrinkableBottleItem extends HoneyBottleItem {
 	private final Supplier<SoundEvent> drinkSound;
 
 	public DrinkableBottleItem(Supplier<SoundEvent> drinkSound, FoodProperties food) {
-		super(PropertyUtil.food(food).stacksTo(16));
+		super(PropertyUtil.food(food).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE));
 		this.drinkSound = drinkSound;
 	}
 	

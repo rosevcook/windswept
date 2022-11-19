@@ -48,7 +48,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 		// wild berry juice
 		ShapelessRecipeBuilder.shapeless(WindsweptItems.WILD_BERRY_JUICE.get())
 			.requires(Items.GLASS_BOTTLE).requires(WindsweptItems.WILD_BERRIES.get(), 3)
-			.unlockedBy("has_dune_berries", has(WindsweptItems.WILD_BERRIES.get()))
+			.unlockedBy("has_wild_berries", has(WindsweptItems.WILD_BERRIES.get()))
 			.save(consumer, Windswept.REGISTRY_HELPER.prefix("wild_berry_juice"));
 
 		// wild berry juice to sugar
@@ -56,6 +56,12 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 			.requires(WindsweptItems.WILD_BERRY_JUICE.get())
 			.unlockedBy("has_sugar", has(WindsweptItems.WILD_BERRY_JUICE.get()))
 			.save(consumer, Windswept.REGISTRY_HELPER.prefix("wild_berry_juice_to_sugar"));
+
+		// stinging nettle tea
+		ShapelessRecipeBuilder.shapeless(WindsweptItems.STINGING_NETTLE_TEA.get())
+				.requires(Items.GLASS_BOTTLE).requires(WindsweptBlocks.STINGING_NETTLES.get(), 3)
+				.unlockedBy("has_stinging_nettles", has(WindsweptItems.WILD_BERRIES.get()))
+				.save(consumer, Windswept.REGISTRY_HELPER.prefix("stinging_nettle_tea"));
 		
 		// mutton pie
 		ShapelessRecipeBuilder.shapeless(WindsweptItems.MUTTON_PIE.get())
@@ -243,6 +249,24 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 		// snow bricks set 
 		brickSet(Blocks.SNOW_BLOCK, WindsweptBlocks.SNOW_BRICKS, null, WindsweptBlocks.SNOW_BRICK_SLAB,
 				WindsweptBlocks.SNOW_BRICK_STAIRS, WindsweptBlocks.SNOW_BRICK_WALL, WindsweptBlocks.SNOW_BRICK_VERTICAL_SLAB, consumer);
+
+		// nettle thatch
+		ShapedRecipeBuilder.shaped(WindsweptBlocks.NETTLE_THATCH.get(), 4)
+				.define('#', WindsweptBlocks.STINGING_NETTLES.get())
+				.pattern("##")
+				.pattern("##")
+				.unlockedBy("has_stinging_nettles", has(WindsweptBlocks.STINGING_NETTLES.get()))
+				.save(consumer, Windswept.REGISTRY_HELPER.prefix("nettle_thatch"));
+
+		// nettle thatch slab
+		slab(WindsweptBlocks.NETTLE_THATCH.get(), WindsweptBlocks.NETTLE_THATCH_SLAB.get(), consumer);
+
+		// nettle thatch stairs
+		stairs(WindsweptBlocks.NETTLE_THATCH.get(), WindsweptBlocks.NETTLE_THATCH_STAIRS.get(), consumer);
+
+		// nettle thatch vertical slab
+		verticalSlab(WindsweptBlocks.NETTLE_THATCH_VERTICAL_SLAB.get(), WindsweptBlocks.NETTLE_THATCH_SLAB.get(), consumer);
+
 		
 		// holly wood set
 		woodSet("holly", WindsweptItemTags.HOLLY_LOGS, WindsweptBlocks.HOLLY_PLANKS, WindsweptBlocks.HOLLY_SLAB,

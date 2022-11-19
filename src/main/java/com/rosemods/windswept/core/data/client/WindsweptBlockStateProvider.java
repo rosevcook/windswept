@@ -19,14 +19,11 @@ import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.block.state.properties.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -130,11 +127,11 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 		
 		this.simpleCross(WindsweptBlocks.SNOWY_SPROUTS);
 
-		this.tallFlower(WindsweptBlocks.PINK_ROSE_BUSH);
-		this.tallFlower(WindsweptBlocks.BLUE_ROSE_BUSH);
-		this.tallFlower(WindsweptBlocks.WHITE_ROSE_BUSH);
-		this.tallFlower(WindsweptBlocks.YELLOW_ROSE_BUSH);
-		this.tallFlower(WindsweptBlocks.WITHER_ROSE_BUSH);
+		this.tallPlant(WindsweptBlocks.PINK_ROSE_BUSH);
+		this.tallPlant(WindsweptBlocks.BLUE_ROSE_BUSH);
+		this.tallPlant(WindsweptBlocks.WHITE_ROSE_BUSH);
+		this.tallPlant(WindsweptBlocks.YELLOW_ROSE_BUSH);
+		this.tallPlant(WindsweptBlocks.WITHER_ROSE_BUSH);
 
 		this.pottedPlant(WindsweptBlocks.RED_ROSE, WindsweptBlocks.POTTED_RED_ROSE);
 		this.pottedPlant(WindsweptBlocks.PINK_ROSE, WindsweptBlocks.POTTED_PINK_ROSE);
@@ -148,6 +145,15 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 		this.wildBerryBush(WindsweptBlocks.WILD_BERRY_BUSH);
 		this.cubeBottomTop(WindsweptBlocks.WILD_BERRY_SACK);
 		this.simpleCross(WindsweptBlocks.WILD_BERRY_BUSH_PIPS);
+
+		this.simpleCross(WindsweptBlocks.STINGING_NETTLES);
+		this.generatedItem(WindsweptBlocks.STINGING_NETTLES);
+		this.tallPlant(WindsweptBlocks.TALL_STINGING_NETTLES);
+
+		this.thatch(WindsweptBlocks.NETTLE_THATCH);
+		this.thatchSlab(WindsweptBlocks.NETTLE_THATCH_SLAB, WindsweptBlocks.NETTLE_THATCH);
+		this.thatchStairs(WindsweptBlocks.NETTLE_THATCH_STAIRS, WindsweptBlocks.NETTLE_THATCH);
+		this.thatchVerticalSlab(WindsweptBlocks.NETTLE_THATCH_VERTICAL_SLAB, WindsweptBlocks.NETTLE_THATCH);
 		
 		this.iceSheet(WindsweptBlocks.ICE_SHEET, () -> Blocks.ICE);
 	}
@@ -163,7 +169,7 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 	     	.partialState().with(WildBerryBushBlock.AGE, 2).addModels(new ConfiguredModel(model.apply(2), 0, 90, true));
 	}
 
-	private void tallFlower(RegistryObject<Block> flower) {
+	private void tallPlant(RegistryObject<Block> flower) {
 		String name = getName(flower);
 
 		final Function<String, ModelFile> model = s -> this.models().cross(name + "_" + s, this.modLoc("block/" + name + "_" + s)).renderType("cutout");
@@ -401,6 +407,86 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 				.partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.Y).modelForState().modelFile(boardsModel).addModel()
 				.partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.Z).modelForState().modelFile(boardsHorizontalModel).addModel()
 				.partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.X).modelForState().modelFile(boardsHorizontalModel).rotationY(270).addModel();
+	}
+
+	private void thatch(RegistryObject<? extends Block> thatch) {
+		ResourceLocation texture = this.blockTexture(thatch.get());
+		ResourceLocation extrudes = this.modLoc("block/" +  this.getName(thatch) + "_extrudes");
+
+		this.simpleBlock(thatch.get(), this.models().withExistingParent(getName(thatch), "blueprint:block/thatch/thatch")
+				.texture("thatch", texture).texture("extrudes", extrudes).renderType("cutout"));
+
+		this.itemModel(thatch);
+	}
+
+	private void thatchSlab(RegistryObject<? extends Block> thatch, Supplier<? extends Block> textureBlock) {
+		ResourceLocation texture = this.blockTexture(textureBlock.get());
+		ResourceLocation extrudes = this.modLoc("block/" +  this.getName(textureBlock) + "_extrudes");
+
+		ModelFile bottom = this.models().withExistingParent(getName(thatch), "blueprint:block/thatch/thatch_slab")
+				.texture("thatch", texture).texture("extrudes", extrudes).renderType("cutout");
+		ModelFile top = this.models().withExistingParent(getName(thatch) + "_top", "blueprint:block/thatch/thatch_slab_top")
+				.texture("thatch", texture).texture("extrudes", extrudes).renderType("cutout");
+
+		this.slabBlock((SlabBlock) thatch.get(), bottom, top, this.models().getExistingFile(ForgeRegistries.BLOCKS.getKey(textureBlock.get())));
+		this.itemModel(thatch);
+	}
+
+	private void thatchStairs(RegistryObject<? extends Block> thatch, Supplier<? extends Block> textureBlock) {
+		ResourceLocation texture = this.blockTexture(textureBlock.get());
+		ResourceLocation extrudes = this.modLoc("block/" +  this.getName(textureBlock) + "_extrudes");
+
+		ModelFile stairs = this.models().withExistingParent(getName(thatch), "blueprint:block/thatch/thatch_stairs").texture("thatch", texture).texture("extrudes", extrudes).renderType("cutout");
+		ModelFile inner = this.models().withExistingParent(getName(thatch) + "_inner", "blueprint:block/thatch/thatch_stairs_inner").texture("thatch", texture).texture("extrudes", extrudes).renderType("cutout");
+		ModelFile outer = this.models().withExistingParent(getName(thatch) + "_outer", "blueprint:block/thatch/thatch_stairs_outer").texture("thatch", texture).texture("extrudes", extrudes).renderType("cutout");
+		ModelFile inner_top = this.models().withExistingParent(getName(thatch) + "_inner_top", "blueprint:block/thatch/thatch_stairs_inner_top").texture("thatch", texture).texture("extrudes", extrudes).renderType("cutout");
+		ModelFile outer_top = this.models().withExistingParent(getName(thatch) + "_outer_top", "blueprint:block/thatch/thatch_stairs_outer_top").texture("thatch", texture).texture("extrudes", extrudes).renderType("cutout");
+		ModelFile top = this.models().withExistingParent(getName(thatch) + "_top", "blueprint:block/thatch/thatch_stairs_top").texture("thatch", texture).texture("extrudes", extrudes).renderType("cutout");
+
+		//brain damage
+		getVariantBuilder(thatch.get())
+				.forAllStatesExcept(state -> {
+					Direction facing = state.getValue(StairBlock.FACING);
+					Half half = state.getValue(StairBlock.HALF);
+					StairsShape shape = state.getValue(StairBlock.SHAPE);
+
+					int yRot = (int) facing.getClockWise().toYRot();
+
+					if (shape == StairsShape.INNER_LEFT || shape == StairsShape.OUTER_LEFT)
+						yRot += 270;
+
+					if (half == Half.TOP && shape == StairsShape.STRAIGHT)
+						yRot += 180;
+
+					if (half == Half.TOP && (shape == StairsShape.INNER_LEFT || shape == StairsShape.INNER_RIGHT))
+						yRot += 90;
+
+					yRot %= 360;
+
+					return ConfiguredModel.builder()
+							.modelFile(shape == StairsShape.STRAIGHT ? (half == Half.BOTTOM ? stairs : top)
+									: shape == StairsShape.INNER_LEFT || shape == StairsShape.INNER_RIGHT ? (half == Half.BOTTOM ? inner : inner_top) : (half == Half.BOTTOM ? outer : outer_top))
+							.rotationY(yRot)
+							.uvLock(true)
+							.build();
+				}, StairBlock.WATERLOGGED);
+
+		this.itemModel(thatch);
+	}
+
+	private void thatchVerticalSlab(RegistryObject<? extends Block> thatch, Supplier<? extends Block> textureBlock) {
+		ResourceLocation texture = this.blockTexture(textureBlock.get());
+		ResourceLocation extrudes = this.modLoc("block/" +  this.getName(textureBlock) + "_extrudes");
+
+		ModelFile model = this.models().withExistingParent(getName(thatch), "blueprint:block/thatch/thatch_vertical_slab").texture("thatch", texture).texture("extrudes", extrudes).renderType("cutout");
+
+		this.itemModel(thatch);
+		this.getVariantBuilder(thatch.get())
+				.partialState().with(VerticalSlabBlock.TYPE, VerticalSlabType.NORTH).addModels(new ConfiguredModel(model, 0, 0, true))
+				.partialState().with(VerticalSlabBlock.TYPE, VerticalSlabType.SOUTH).addModels(new ConfiguredModel(model, 0, 180, true))
+				.partialState().with(VerticalSlabBlock.TYPE, VerticalSlabType.EAST).addModels(new ConfiguredModel(model, 0, 90, true))
+				.partialState().with(VerticalSlabBlock.TYPE, VerticalSlabType.WEST).addModels(new ConfiguredModel(model, 0, 270, true))
+				.partialState().with(VerticalSlabBlock.TYPE, VerticalSlabType.DOUBLE).addModels(new ConfiguredModel(this.models().getExistingFile(texture)));
 	}
 
 	// Misc //

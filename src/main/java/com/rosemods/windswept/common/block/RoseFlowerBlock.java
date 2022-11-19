@@ -9,6 +9,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BonemealableBlock;
+import net.minecraft.world.level.block.TallFlowerBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.function.Supplier;
@@ -22,7 +23,7 @@ public class RoseFlowerBlock extends BlueprintFlowerBlock implements Bonemealabl
     }
 
     public static void grow(ServerLevel level, BlockPos pos, Block tallFlower) {
-        WitherRoseBushBlock.placeAt(level, tallFlower.defaultBlockState(), pos, 2);
+        TallFlowerBlock.placeAt(level, tallFlower.defaultBlockState(), pos, 2);
     }
 
     @Override

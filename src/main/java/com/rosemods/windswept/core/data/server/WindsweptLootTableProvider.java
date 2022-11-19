@@ -200,7 +200,6 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 			this.dropSelf(WindsweptBlocks.GOLDEN_TRAPDOOR.get());
 
 			// rose bushes
-
 			this.tallFlower(WindsweptBlocks.PINK_ROSE_BUSH.get());
 			this.tallFlower(WindsweptBlocks.BLUE_ROSE_BUSH.get());
 			this.tallFlower(WindsweptBlocks.WHITE_ROSE_BUSH.get());
@@ -240,7 +239,17 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 							.apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));
 			this.dropSelf(WindsweptBlocks.WILD_BERRY_SACK.get());
 			this.dropOther(WindsweptBlocks.WILD_BERRY_BUSH_PIPS.get(), WindsweptItems.WILD_BERRY_PIPS::get);
-			
+
+			// nettles
+
+			this.add(WindsweptBlocks.STINGING_NETTLES.get(), Blocks::createShearsOnlyDrop);
+			this.add(WindsweptBlocks.TALL_STINGING_NETTLES.get(), b -> createDoublePlantShearsDrop(WindsweptBlocks.STINGING_NETTLES.get()));
+
+			this.dropSelf(WindsweptBlocks.NETTLE_THATCH.get());
+			this.add(WindsweptBlocks.NETTLE_THATCH_SLAB.get(),  Blocks::createSlabItemTable);
+			this.dropSelf(WindsweptBlocks.NETTLE_THATCH_STAIRS.get());
+			this.add(WindsweptBlocks.NETTLE_THATCH_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+
 			// misc
 			this.dropSelf(WindsweptBlocks.ICE_SHEET.get());
 		}
@@ -259,7 +268,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 			return getContent(ForgeRegistries.BLOCKS);
 		}
 		
-		protected static LootTable.Builder createVerticalSlabItemTable(Block block) {
+		private static LootTable.Builder createVerticalSlabItemTable(Block block) {
 			return LootTable.lootTable()
 					.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1f))
 							.add(applyExplosionDecay(block, LootItem.lootTableItem(block)

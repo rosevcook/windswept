@@ -7,6 +7,7 @@ import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.other.WindsweptConstants;
 import com.rosemods.windswept.core.other.tags.WindsweptBannerPatternTags;
 import com.rosemods.windswept.integration.boatload.WindsweptBoatTypes;
+import com.rosemods.windswept.integration.farmers_delight.WindsweptFDCompat;
 import com.teamabnormals.blueprint.common.item.BlueprintBannerPatternItem;
 import com.teamabnormals.blueprint.common.item.BlueprintRecordItem;
 import com.teamabnormals.blueprint.common.item.InjectedItem;
@@ -24,6 +25,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.ForgeSpawnEggItem;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.registries.RegistryObject;
@@ -48,12 +50,13 @@ public class WindsweptItems {
 	public static final RegistryObject<Item> MUTTON_PIE = HELPER.createItem("mutton_pie", () -> new InjectedItem(Items.COOKED_MUTTON, PropertyUtil.food(Foods.MUTTON_PIE)));
 	public static final RegistryObject<Item> GOAT = HELPER.createItem("goat", () -> new Item( PropertyUtil.food(Foods.GOAT)));
 	public static final RegistryObject<Item> COOKED_GOAT = HELPER.createItem("cooked_goat", () -> new Item(PropertyUtil.food(Foods.COOKED_GOAT)));
-	public static final RegistryObject<Item> GOAT_STEW = HELPER.createItem("goat_stew", () -> new BowlFoodItem(PropertyUtil.food(Foods.GOAT_STEW).craftRemainder(Items.BOWL).stacksTo(1)));
+	public static final RegistryObject<Item> GOAT_STEW = HELPER.createItem("goat_stew", () -> new BowlFoodItem(PropertyUtil.food(ModList.get().isLoaded(WindsweptConstants.FARMERS_DELIGHT) ? WindsweptFDCompat.GOAT_STEW : Foods.GOAT_STEW).craftRemainder(Items.BOWL).stacksTo(1)));
 	public static final RegistryObject<Item> WILD_BERRY_PIPS = HELPER.createItem("wild_berry_pips", () -> new ItemNameBlockItem(WindsweptBlocks.WILD_BERRY_BUSH_PIPS.get(), new Item.Properties().tab(ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD) ? CreativeModeTab.TAB_MISC : null)));
 	public static final RegistryObject<Item> CHESTNUTS = HELPER.createItem("chestnuts", () -> new Item(PropertyUtil.food(Foods.CHESTNUTS)));
 	public static final RegistryObject<Item> ROASTED_CHESTNUTS = HELPER.createItem("roasted_chestnuts", () -> new Item(PropertyUtil.food(Foods.ROASTED_CHESTNUTS)));
 	public static final RegistryObject<Item> GOAT_SHANKS = HELPER.createCompatItem(WindsweptConstants.FARMERS_DELIGHT, "goat_shanks", new Item.Properties().food(Foods.GOAT_SHANKS), CreativeModeTab.TAB_FOOD);
 	public static final RegistryObject<Item> COOKED_GOAT_SHANKS = HELPER.createCompatItem(WindsweptConstants.FARMERS_DELIGHT, "cooked_goat_shanks", new Item.Properties().food(Foods.COOKED_GOAT_SHANKS), CreativeModeTab.TAB_FOOD);
+	public static final RegistryObject<Item> STINGING_NETTLE_TEA = HELPER.createItem("stinging_nettle_tea", () -> new DrinkableBottleItem(Foods.STINGING_NETTLE_TEA));
 
 	// Misc //
 	
@@ -99,6 +102,7 @@ public class WindsweptItems {
 		public static final FoodProperties ROASTED_CHESTNUTS = new FoodProperties.Builder().nutrition(5).saturationMod(.4f).build();
 		public static final FoodProperties GOAT_SHANKS = new FoodProperties.Builder().nutrition(1).saturationMod(.1f).meat().build();
 		public static final FoodProperties COOKED_GOAT_SHANKS = new FoodProperties.Builder().nutrition(3).saturationMod(.3f).meat().build();
+		public static final FoodProperties STINGING_NETTLE_TEA = new FoodProperties.Builder().nutrition(4).alwaysEat().saturationMod(.1f).effect(() -> new MobEffectInstance(MobEffects.LUCK, 300, 0), 1f).build();
 
 	}
 	

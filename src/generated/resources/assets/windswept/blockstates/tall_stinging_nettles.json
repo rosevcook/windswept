@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "windswept:block/tall_stinging_nettles_bottom"
+    },
+    "half=upper": {
+      "model": "windswept:block/tall_stinging_nettles_top"
+    }
+  }
+}
