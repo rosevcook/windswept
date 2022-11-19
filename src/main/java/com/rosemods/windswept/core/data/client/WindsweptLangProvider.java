@@ -155,12 +155,17 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.translateBlock(WindsweptBlocks.ROASTED_CHESTNUT_CRATE);
 		
 		this.translateBlock(WindsweptBlocks.SNOWY_SPROUTS);
-		
-		this.translateBlock(WindsweptBlocks.SNOW_BRICKS);
-		this.translateBlock(WindsweptBlocks.SNOW_BRICK_STAIRS);
-		this.translateBlock(WindsweptBlocks.SNOW_BRICK_SLAB);
-		this.translateBlock(WindsweptBlocks.SNOW_BRICK_WALL);
-		this.translateBlock(WindsweptBlocks.SNOW_BRICK_VERTICAL_SLAB);
+
+		this.translateBlock(WindsweptBlocks.PACKED_SNOW);
+		this.translateBlock(WindsweptBlocks.PACKED_SNOW_STAIRS);
+		this.translateBlock(WindsweptBlocks.PACKED_SNOW_SLAB);
+		this.translateBlock(WindsweptBlocks.PACKED_SNOW_VERTICAL_SLAB);
+
+		this.add(WindsweptBlocks.SNOW_BRICKS.get(), "Packed Snow Bricks");
+		this.add(WindsweptBlocks.SNOW_BRICK_STAIRS.get(), "Packed Snow Brick Stairs");
+		this.add(WindsweptBlocks.SNOW_BRICK_SLAB.get(), "Packed Snow Brick Slab");
+		this.add(WindsweptBlocks.SNOW_BRICK_WALL.get(), "Packed Snow Brick Wall");
+		this.add(WindsweptBlocks.SNOW_BRICK_VERTICAL_SLAB.get(), "Packed Snow Brick Vertical Slab");
 		
 		this.translateBlock(WindsweptBlocks.PACKED_ICE_BRICKS);
 		this.translateBlock(WindsweptBlocks.CHISELED_PACKED_ICE_BRICKS);

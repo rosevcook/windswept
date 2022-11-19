@@ -119,13 +119,20 @@ public class WindsweptBlocks {
 	public static final RegistryObject<Block> CHESTNUT_CRATE = HELPER.createCompatBlock(WindsweptConstants.QUARK, "chestnut_crate", () -> new Block(Properties.CHESTNUT_CRATE), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> ROASTED_CHESTNUT_CRATE = HELPER.createCompatBlock(WindsweptConstants.QUARK, "roasted_chestnut_crate", () -> new Block(Properties.CHESTNUT_CRATE), CreativeModeTab.TAB_DECORATIONS);
 
-	// Snow Bricks //
+	// Packed Snow //
+
+	public static final RegistryObject<Block> PACKED_SNOW = HELPER.createBlock("packed_snow", () -> new Block(Properties.PACKED_SNOW), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PACKED_SNOW_STAIRS = HELPER.createBlock("packed_snow_stairs", () -> new StairBlock(PACKED_SNOW.get()::defaultBlockState, Properties.PACKED_SNOW), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PACKED_SNOW_SLAB = HELPER.createBlock("packed_snow_slab", () -> new SlabBlock(Properties.PACKED_SNOW), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> PACKED_SNOW_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "packed_snow_vertical_slab", () -> new VerticalSlabBlock(Properties.PACKED_SNOW), CreativeModeTab.TAB_BUILDING_BLOCKS);
+
+	// Packed Snow Bricks //
 	
-	public static final RegistryObject<Block> SNOW_BRICKS = HELPER.createBlock("snow_bricks", () -> new Block(Properties.SNOW_BRICKS), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> SNOW_BRICK_STAIRS = HELPER.createBlock("snow_brick_stairs", () -> new StairBlock(SNOW_BRICKS.get()::defaultBlockState, Properties.SNOW_BRICKS), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> SNOW_BRICK_SLAB = HELPER.createBlock("snow_brick_slab", () -> new SlabBlock(Properties.SNOW_BRICKS), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> SNOW_BRICK_WALL = HELPER.createBlock("snow_brick_wall", () -> new WallBlock(Properties.SNOW_BRICKS), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> SNOW_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "snow_brick_vertical_slab", () -> new VerticalSlabBlock(Properties.SNOW_BRICKS), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> SNOW_BRICKS = HELPER.createBlock("snow_bricks", () -> new Block(Properties.PACKED_SNOW), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> SNOW_BRICK_STAIRS = HELPER.createBlock("snow_brick_stairs", () -> new StairBlock(SNOW_BRICKS.get()::defaultBlockState, Properties.PACKED_SNOW), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> SNOW_BRICK_SLAB = HELPER.createBlock("snow_brick_slab", () -> new SlabBlock(Properties.PACKED_SNOW), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> SNOW_BRICK_WALL = HELPER.createBlock("snow_brick_wall", () -> new WallBlock(Properties.PACKED_SNOW), CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Block> SNOW_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "snow_brick_vertical_slab", () -> new VerticalSlabBlock(Properties.PACKED_SNOW), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	
 	// Packed Ice Bricks //
 	
@@ -219,7 +226,7 @@ public class WindsweptBlocks {
 		public static final PropertyUtil.WoodSetProperties HOLLY = PropertyUtil.WoodSetProperties.builder(MaterialColor.COLOR_PURPLE).build();
 		public static final PropertyUtil.WoodSetProperties CHESTNUT = PropertyUtil.WoodSetProperties.builder(MaterialColor.COLOR_BROWN).build();
 		
-		public static final BlockBehaviour.Properties SNOW_BRICKS = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.SNOW).strength(.85f).sound(SoundType.SNOW);
+		public static final BlockBehaviour.Properties PACKED_SNOW = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.SNOW).strength(.85f).sound(SoundType.SNOW);
 		public static final BlockBehaviour.Properties ICE_BRICKS = BlockBehaviour.Properties.of(Material.ICE_SOLID, MaterialColor.COLOR_BLUE).requiresCorrectToolForDrops().strength(2.8f).sound(SoundType.STONE);	
 		
 		public static final BlockBehaviour.Properties SNOWY_SPROUTS = BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XZ);

@@ -4,12 +4,12 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_snow_block": {
+          "has_packed_snow": {
             "conditions": {
               "items": [
                 {
                   "items": [
-                    "minecraft:snow_block"
+                    "windswept:packed_snow"
                   ]
                 }
               ]
@@ -18,20 +18,20 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "windswept:snow_brick_vertical_slab_from_snow_block_stonecutting"
+              "recipe": "windswept:snow_brick_vertical_slab_from_packed_snow_stonecutting"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
           [
-            "has_snow_block",
+            "has_packed_snow",
             "has_the_recipe"
           ]
         ],
         "rewards": {
           "recipes": [
-            "windswept:snow_brick_vertical_slab_from_snow_block_stonecutting"
+            "windswept:snow_brick_vertical_slab_from_packed_snow_stonecutting"
           ]
         }
       },

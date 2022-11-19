@@ -14,9 +14,9 @@ import net.minecraftforge.registries.RegistryObject;
 public class WindsweptAttributes {
 	public static final DeferredRegister<Attribute> ATTRIBUTES = DeferredRegister.create(ForgeRegistries.ATTRIBUTES, Windswept.MODID);
 	
-	public static final RegistryObject<Attribute> SNOW_SPEED = ATTRIBUTES.register("snow_speed", () -> new RangedAttribute(createDecriptionId("snow_speed"), 0d, 0d, 1d));
+	public static final RegistryObject<Attribute> SNOW_SPEED = ATTRIBUTES.register("snow_speed", () -> new RangedAttribute(createDescriptionId("snow_speed"), 0d, 0d, 1d));
 	
-	private static String createDecriptionId(String name) {
+	private static String createDescriptionId(String name) {
 		return "attribute." + Windswept.MODID + ".name.generic." + name; 
 	}
 	

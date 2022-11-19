@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:snow_bricks"
+        "recipe": "windswept:packed_snow_from_snow_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:snow_bricks"
+      "windswept:packed_snow_from_snow_bricks_stonecutting"
     ]
   }
 }

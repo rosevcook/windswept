@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "windswept:block/packed_snow_slab"
+    },
+    "type=double": {
+      "model": "windswept:block/packed_snow"
+    },
+    "type=top": {
+      "model": "windswept:block/packed_snow_slab_top"
+    }
+  }
+}

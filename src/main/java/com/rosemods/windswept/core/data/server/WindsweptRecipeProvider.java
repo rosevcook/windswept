@@ -4,20 +4,15 @@ import java.util.function.Consumer;
 
 import javax.annotation.Nullable;
 
-import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Pair;
 import com.rosemods.windswept.core.Windswept;
-import com.rosemods.windswept.core.other.WindsweptConstants;
 import com.rosemods.windswept.core.other.tags.WindsweptItemTags;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintStandingSignBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintWallSignBlock;
-import com.teamabnormals.blueprint.core.BlueprintConfig;
-import com.teamabnormals.blueprint.core.api.conditions.ConfigValueCondition;
 import com.teamabnormals.blueprint.core.api.conditions.QuarkFlagRecipeCondition;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintItemTags;
-
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
@@ -25,11 +20,9 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.*;
@@ -246,9 +239,13 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				WindsweptBlocks.BLUE_ICE_BRICK_SLAB, WindsweptBlocks.BLUE_ICE_BRICK_STAIRS,
 				WindsweptBlocks.BLUE_ICE_BRICK_WALL, WindsweptBlocks.BLUE_ICE_BRICK_VERTICAL_SLAB, consumer);
 		
-		// snow bricks set 
-		brickSet(Blocks.SNOW_BLOCK, WindsweptBlocks.SNOW_BRICKS, null, WindsweptBlocks.SNOW_BRICK_SLAB,
+		// packed snow bricks set
+		brickSet(WindsweptBlocks.PACKED_SNOW.get(), WindsweptBlocks.SNOW_BRICKS, null, WindsweptBlocks.SNOW_BRICK_SLAB,
 				WindsweptBlocks.SNOW_BRICK_STAIRS, WindsweptBlocks.SNOW_BRICK_WALL, WindsweptBlocks.SNOW_BRICK_VERTICAL_SLAB, consumer);
+
+		// packed snow block set
+		blockSet(Blocks.SNOW_BLOCK, WindsweptBlocks.PACKED_SNOW, WindsweptBlocks.PACKED_SNOW_SLAB,
+				WindsweptBlocks.PACKED_SNOW_STAIRS, WindsweptBlocks.PACKED_SNOW_VERTICAL_SLAB, consumer);
 
 		// nettle thatch
 		ShapedRecipeBuilder.shaped(WindsweptBlocks.NETTLE_THATCH.get(), 4)
@@ -414,25 +411,30 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				condition, consumer, Windswept.REGISTRY_HELPER.prefix(name + "_from_smoking"));
 	}
 
-
-	// generates recipes for entire brick sets
-	private static void brickSet(ItemLike ingredient, RegistryObject<Block> bricks, @Nullable RegistryObject<Block> chiseled, RegistryObject<Block> slab, RegistryObject<Block> stairs, RegistryObject<Block> wall, RegistryObject<Block> verticalSlab, Consumer<FinishedRecipe> consumer) {
-		ShapedRecipeBuilder.shaped(bricks.get(), 4).define('#', ingredient).pattern("##").pattern("##").unlockedBy("has_" + getName(ingredient), has(ingredient)).save(consumer, getName(bricks.get()));
-		stonecutting(ingredient.asItem(), bricks.get(), 1, consumer);
-		stonecutting(bricks.get(), slab.get(), 2, consumer);
-		stonecutting(bricks.get(), stairs.get(), 1, consumer);
-		stonecutting(bricks.get(), wall.get(), 1, consumer);
-		stairs(bricks.get(), stairs.get(), consumer);
-		wall(bricks.get(), wall.get(), consumer);
-		slab(bricks.get(), slab.get(), consumer);
+	private static void brickSet(ItemLike ingredient, RegistryObject<Block> block, @Nullable RegistryObject<Block> chiseled, RegistryObject<Block> slab, RegistryObject<Block> stairs, RegistryObject<Block> wall, RegistryObject<Block> verticalSlab, Consumer<FinishedRecipe> consumer) {
+		ShapedRecipeBuilder.shaped(block.get(), 4).define('#', ingredient).pattern("##").pattern("##").unlockedBy("has_" + getName(ingredient), has(ingredient)).save(consumer, getName(block.get()));
+		stonecutting(ingredient.asItem(), block.get(), 1, consumer);
+		stonecutting(block.get(), slab.get(), 2, consumer);
+		stonecutting(block.get(), stairs.get(), 1, consumer);
+		stairs(block.get(), stairs.get(), consumer);
+		slab(block.get(), slab.get(), consumer);
 		verticalSlab(verticalSlab.get(), slab.get(), consumer);
-		conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(bricks.get()), verticalSlab.get(), 2).unlockedBy("has_" + getName(ingredient), has(ingredient)), getQuarkCondition("vertical_slabs"), consumer, Windswept.REGISTRY_HELPER.prefix(getName(verticalSlab.get()) + "_from_" + getName(ingredient) + "_stonecutting"));
-		
+		conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(block.get()), verticalSlab.get(), 2).unlockedBy("has_" + getName(ingredient), has(ingredient)), getQuarkCondition("vertical_slabs"), consumer, Windswept.REGISTRY_HELPER.prefix(getName(verticalSlab.get()) + "_from_" + getName(ingredient) + "_stonecutting"));
+		stonecutting(block.get(), wall.get(), 1, consumer);
+		wall(block.get(), wall.get(), consumer);
+
 		if (chiseled != null) {
-			stonecutting(bricks.get(), chiseled.get(), 1, consumer);
-			ShapedRecipeBuilder.shaped(chiseled.get()).define('#', slab.get()).pattern("#").pattern("#").unlockedBy("has_" + getName(bricks.get()), has(bricks.get())).save(consumer, getName(chiseled.get()));
+			stonecutting(block.get(), chiseled.get(), 1, consumer);
+			ShapedRecipeBuilder.shaped(chiseled.get()).define('#', slab.get()).pattern("#").pattern("#").unlockedBy("has_" + getName(block.get()), has(block.get())).save(consumer, getName(chiseled.get()));
 		}
 
+	}
+
+	private static void blockSet(ItemLike ingredient, RegistryObject<Block> block, RegistryObject<Block> slab, RegistryObject<Block> stairs, RegistryObject<Block> verticalSlab, Consumer<FinishedRecipe> consumer) {
+		ShapedRecipeBuilder.shaped(block.get(), 4).define('#', ingredient).pattern("##").pattern("##").unlockedBy("has_" + getName(ingredient), has(ingredient)).save(consumer, getName(block.get()));
+		stairs(block.get(), stairs.get(), consumer);
+		slab(block.get(), slab.get(), consumer);
+		verticalSlab(verticalSlab.get(), slab.get(), consumer);
 	}
 	
 	// generates recipes for all items in a wood set

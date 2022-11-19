@@ -43,7 +43,7 @@ public class StingingNettleBlock extends BushBlock implements IForgeShearable, B
     public static void entityInside(BlockState state, Level level, Entity entity) {
         if (entity instanceof LivingEntity livingEntity) {
             if (entity.getType() != EntityType.FOX && entity.getType() != EntityType.BEE)
-                entity.makeStuckInBlock(state, new Vec3(.5f, .5f, .5f));
+                entity.makeStuckInBlock(state, new Vec3(.95f, .95f, .95f));
 
             if (!level.isClientSide && level.getDifficulty() != Difficulty.PEACEFUL)
                 livingEntity.addEffect(new MobEffectInstance(MobEffects.POISON, 40));

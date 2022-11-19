@@ -6,11 +6,12 @@
     }
   },
   "pattern": [
-    "##",
-    "##"
+    "#  ",
+    "## ",
+    "###"
   ],
   "result": {
     "count": 4,
-    "item": "windswept:snow_bricks"
+    "item": "windswept:packed_snow_stairs"
   }
 }
