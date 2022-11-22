@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_snow_block": {
+    "has_packed_snow": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:snow_block"
+              "windswept:packed_snow"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:packed_snow"
+        "recipe": "windswept:snow_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_snow_block",
+      "has_packed_snow",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:packed_snow"
+      "windswept:snow_bricks"
     ]
   }
 }

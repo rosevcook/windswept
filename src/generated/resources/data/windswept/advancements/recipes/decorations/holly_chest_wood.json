@@ -4,13 +4,13 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_holly_log": {
+          "has_lots_of_items": {
             "conditions": {
-              "items": [
-                {
-                  "tag": "windswept:holly_logs"
+              "slots": {
+                "occupied": {
+                  "min": 10
                 }
-              ]
+              }
             },
             "trigger": "minecraft:inventory_changed"
           },
@@ -23,7 +23,7 @@
         },
         "requirements": [
           [
-            "has_holly_log",
+            "has_lots_of_items",
             "has_the_recipe"
           ]
         ],

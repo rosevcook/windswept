@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_packed_snow": {
+    "has_blue_ice_bricks": {
       "conditions": {
         "items": [
           {
             "items": [
-              "windswept:packed_snow"
+              "windswept:blue_ice_bricks"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:snow_bricks"
+        "recipe": "windswept:chiseled_blue_ice_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_packed_snow",
+      "has_blue_ice_bricks",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:snow_bricks"
+      "windswept:chiseled_blue_ice_bricks"
     ]
   }
 }

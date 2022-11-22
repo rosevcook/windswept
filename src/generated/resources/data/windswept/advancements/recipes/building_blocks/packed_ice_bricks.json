@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_blue_ice": {
+    "has_packed_ice": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:blue_ice"
+              "minecraft:packed_ice"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:blue_ice_bricks"
+        "recipe": "windswept:packed_ice_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_blue_ice",
+      "has_packed_ice",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:blue_ice_bricks"
+      "windswept:packed_ice_bricks"
     ]
   }
 }

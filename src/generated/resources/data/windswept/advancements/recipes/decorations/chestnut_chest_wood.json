@@ -4,13 +4,13 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_chestnut_log": {
+          "has_lots_of_items": {
             "conditions": {
-              "items": [
-                {
-                  "tag": "windswept:chestnut_logs"
+              "slots": {
+                "occupied": {
+                  "min": 10
                 }
-              ]
+              }
             },
             "trigger": "minecraft:inventory_changed"
           },
@@ -23,7 +23,7 @@
         },
         "requirements": [
           [
-            "has_chestnut_log",
+            "has_lots_of_items",
             "has_the_recipe"
           ]
         ],

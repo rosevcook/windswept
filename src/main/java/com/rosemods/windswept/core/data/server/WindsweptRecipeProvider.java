@@ -13,6 +13,10 @@ import com.teamabnormals.blueprint.common.block.sign.BlueprintStandingSignBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintWallSignBlock;
 import com.teamabnormals.blueprint.core.api.conditions.QuarkFlagRecipeCondition;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintItemTags;
+import net.minecraft.advancements.critereon.EntityPredicate;
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.advancements.critereon.ItemPredicate;
+import net.minecraft.advancements.critereon.MinMaxBounds;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
@@ -412,7 +416,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 	}
 
 	private static void brickSet(ItemLike ingredient, RegistryObject<Block> block, @Nullable RegistryObject<Block> chiseled, RegistryObject<Block> slab, RegistryObject<Block> stairs, RegistryObject<Block> wall, RegistryObject<Block> verticalSlab, Consumer<FinishedRecipe> consumer) {
-		ShapedRecipeBuilder.shaped(block.get(), 4).define('#', ingredient).pattern("##").pattern("##").unlockedBy("has_" + getName(ingredient), has(ingredient)).save(consumer, getName(block.get()));
+		ShapedRecipeBuilder.shaped(block.get(), 4).define('#', ingredient).pattern("##").pattern("##").unlockedBy("has_" + getName(ingredient), has(ingredient)).save(consumer, Windswept.REGISTRY_HELPER.prefix(getName(block.get())));
 		stonecutting(ingredient.asItem(), block.get(), 1, consumer);
 		stonecutting(block.get(), slab.get(), 2, consumer);
 		stonecutting(block.get(), stairs.get(), 1, consumer);
@@ -425,13 +429,13 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 
 		if (chiseled != null) {
 			stonecutting(block.get(), chiseled.get(), 1, consumer);
-			ShapedRecipeBuilder.shaped(chiseled.get()).define('#', slab.get()).pattern("#").pattern("#").unlockedBy("has_" + getName(block.get()), has(block.get())).save(consumer, getName(chiseled.get()));
+			ShapedRecipeBuilder.shaped(chiseled.get()).define('#', slab.get()).pattern("#").pattern("#").unlockedBy("has_" + getName(block.get()), has(block.get())).save(consumer, Windswept.REGISTRY_HELPER.prefix(getName(chiseled.get())));
 		}
 
 	}
 
 	private static void blockSet(ItemLike ingredient, RegistryObject<Block> block, RegistryObject<Block> slab, RegistryObject<Block> stairs, RegistryObject<Block> verticalSlab, Consumer<FinishedRecipe> consumer) {
-		ShapedRecipeBuilder.shaped(block.get(), 4).define('#', ingredient).pattern("##").pattern("##").unlockedBy("has_" + getName(ingredient), has(ingredient)).save(consumer, getName(block.get()));
+		ShapedRecipeBuilder.shaped(block.get(), 4).define('#', ingredient).pattern("##").pattern("##").unlockedBy("has_" + getName(ingredient), has(ingredient)).save(consumer, Windswept.REGISTRY_HELPER.prefix(getName(block.get())));
 		stairs(block.get(), stairs.get(), consumer);
 		slab(block.get(), slab.get(), consumer);
 		verticalSlab(verticalSlab.get(), slab.get(), consumer);
@@ -632,14 +636,14 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.pattern("###")
 				.pattern("# #")
 				.pattern("###")
-				.unlockedBy("has_" + name + "_log", has(logs)),
+				.unlockedBy("has_lots_of_items", new InventoryChangeTrigger.TriggerInstance(EntityPredicate.Composite.ANY, MinMaxBounds.Ints.atLeast(10), MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY, new ItemPredicate[0])),
 				and(getQuarkCondition("wood_to_chest_recipes"), getQuarkCondition("variant_chests")), consumer, Windswept.REGISTRY_HELPER.prefix(getName(chest.get()) + "_wood"));
 
 		//trapped chest
 		conditionalRecipe(ShapelessRecipeBuilder.shapeless(trappedChest.get())
 				.requires(chest.get())
 				.requires(Items.TRIPWIRE_HOOK)
-				.unlockedBy("has_" + name + "_chest", has(chest.get())),
+				.unlockedBy("has_lots_of_items", new InventoryChangeTrigger.TriggerInstance(EntityPredicate.Composite.ANY, MinMaxBounds.Ints.atLeast(10), MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY, new ItemPredicate[0])),
 				or(getModLoaded("woodworks"), getQuarkCondition("variant_chests")), consumer, getRegistryName(trappedChest));
 
 		//furnace boat

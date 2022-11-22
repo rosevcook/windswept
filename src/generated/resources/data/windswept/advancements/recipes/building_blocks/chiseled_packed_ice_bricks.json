@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:chiseled_packed_ice_bricks"
+        "recipe": "windswept:chiseled_packed_ice_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:chiseled_packed_ice_bricks"
+      "windswept:chiseled_packed_ice_bricks"
     ]
   }
 }
