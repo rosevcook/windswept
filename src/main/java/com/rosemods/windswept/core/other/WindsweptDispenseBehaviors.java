@@ -28,14 +28,14 @@ public final class WindsweptDispenseBehaviors {
 		BlockPos pos = source.getPos().relative(direction);
 		BlockState state = level.getBlockState(pos);
 		
-		if (state.getBlock() instanceof IWoodenBucketPickupBlock && ((IWoodenBucketPickupBlock) state.getBlock()).canPickup(level, pos, state)) {
+		if (state.getBlock() instanceof IWoodenBucketPickupBlock pickupBlock && pickupBlock.canPickup(level, pos, state)) {
 			level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
 			
-			ItemStack filled = ((IWoodenBucketPickupBlock) state.getBlock()).getWoodenBucketItem().getDefaultInstance();
+			ItemStack filled = pickupBlock.getWoodenBucketItem().getDefaultInstance();
 			filled.setDamageValue(stack.getDamageValue());
 			
 			return filled;
-		};
+		}
 		
 		return stack;
 	}

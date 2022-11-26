@@ -17,6 +17,7 @@ public class WindsweptBannerPatternTagProvider extends BannerPatternTagsProvider
 	protected void addTags() {
 		this.tag(WindsweptBannerPatternTags.SNOW_CHARGE).add(WindsweptBannerPatterns.SNOW_CHARGE.get());
 		this.tag(WindsweptBannerPatternTags.SNOW_GOLEM).add(WindsweptBannerPatterns.SNOW_GOLEM.get());
+		this.tag(WindsweptBannerPatternTags.ROSE_FLOWER).add(WindsweptBannerPatterns.ROSE_FLOWER.get());
 	}
 
 }

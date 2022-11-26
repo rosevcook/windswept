@@ -75,6 +75,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.translateItem(WindsweptItems.SNOW_BOOTS);
 		this.translateBannerPattern(WindsweptItems.SNOW_CHARGE_BANNER_PATTERN, "snow_charge");
 		this.translateBannerPattern(WindsweptItems.SNOW_GOLEM_BANNER_PATTERN, "snow_golem");
+		this.translateBannerPattern(WindsweptItems.ROSE_FLOWER_BANNER_PATTERN, "rose_flower");
 		this.translateMusicDisc(WindsweptItems.MUSIC_DISC_RAIN, "rose - rain");
 		this.translateMusicDisc(WindsweptItems.MUSIC_DISC_SNOW, "rose - snow");
 		this.translateItem(WindsweptItems.CHILLED_SPAWN_EGG);

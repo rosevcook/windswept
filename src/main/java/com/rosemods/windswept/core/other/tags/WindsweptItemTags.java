@@ -17,5 +17,6 @@ public final class WindsweptItemTags {
 	public static final TagKey<Item> SILVER_INGOT = TagUtil.itemTag("forge", "ingots/silver");
 	public static final TagKey<Item> BERRIES = TagUtil.itemTag("forge", "berries");
 
+	public static final TagKey<Item> ROSES = TagUtil.itemTag(Windswept.MODID, "roses");
 
 }

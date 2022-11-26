@@ -12,7 +12,7 @@ import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.data.event.GatherDataEvent;
 
@@ -25,6 +25,12 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
 	@Override
 	protected void addTags() {
 		//windswept
+		this.tag(WindsweptItemTags.ROSES).add(WindsweptBlocks.RED_ROSE.get().asItem(), WindsweptBlocks.PINK_ROSE.get().asItem(),
+				WindsweptBlocks.BLUE_ROSE.get().asItem(), WindsweptBlocks.WHITE_ROSE.get().asItem(), WindsweptBlocks.YELLOW_ROSE.get().asItem(),
+				Items.WITHER_ROSE, Items.ROSE_BUSH, WindsweptBlocks.PINK_ROSE_BUSH.get().asItem(),
+				WindsweptBlocks.BLUE_ROSE_BUSH.get().asItem(), WindsweptBlocks.WHITE_ROSE_BUSH.get().asItem(), WindsweptBlocks.YELLOW_ROSE_BUSH.get().asItem(),
+				WindsweptBlocks.WITHER_ROSE_BUSH.get().asItem());
+
 		this.copy(WindsweptBlockTags.HOLLY_LOGS, WindsweptItemTags.HOLLY_LOGS);
 		this.copy(WindsweptBlockTags.CHESTNUT_LOGS, WindsweptItemTags.CHESTNUT_LOGS);
 		

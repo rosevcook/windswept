@@ -14,5 +14,6 @@ public class WindsweptBannerPatterns {
 
 	public static final RegistryObject<BannerPattern> SNOW_CHARGE = BANNER_PATTERNS.register("snow_charge", () -> new BannerPattern("wsc"));
 	public static final RegistryObject<BannerPattern> SNOW_GOLEM = BANNER_PATTERNS.register("snow_golem", () -> new BannerPattern("wsg"));
-		
+	public static final RegistryObject<BannerPattern> ROSE_FLOWER = BANNER_PATTERNS.register("rose_flower", () -> new BannerPattern("wrf"));
+
 }

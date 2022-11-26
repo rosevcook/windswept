@@ -163,6 +163,12 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 			.requires(Items.PAPER).requires(Items.GOLDEN_CARROT)
 			.unlockedBy("has_golden_carrot", has(Items.GOLDEN_CARROT))
 			.save(consumer, Windswept.REGISTRY_HELPER.prefix("snow_golem_banner_pattern"));
+
+		// rose flower banner pattern
+		ShapelessRecipeBuilder.shapeless(WindsweptItems.ROSE_FLOWER_BANNER_PATTERN.get())
+				.requires(Items.PAPER).requires(WindsweptItemTags.ROSES)
+				.unlockedBy("has_roses", has(WindsweptItemTags.ROSES))
+				.save(consumer, Windswept.REGISTRY_HELPER.prefix("rose_flower_banner_pattern"));
 		
 		// leather from frozen flesh
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(WindsweptItems.FROZEN_FLESH.get()), Items.LEATHER, .35f, 400)
@@ -181,7 +187,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 		ShapelessRecipeBuilder.shapeless(WindsweptBlocks.POLISHED_DEEPSLATE_BUTTON.get())
 			.requires(Items.POLISHED_DEEPSLATE)
 			.unlockedBy("has_polished_deepslate", has(Items.POLISHED_DEEPSLATE))
-			.save(consumer, Windswept.REGISTRY_HELPER.prefix("polsihed_deepslate_button"));
+			.save(consumer, Windswept.REGISTRY_HELPER.prefix("polished_deepslate_button"));
 		
 		// polished deepslate pressure plate
 		ShapedRecipeBuilder.shaped(WindsweptBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE.get())
@@ -843,6 +849,6 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 	private static ResourceLocation getRegistryName(RegistryObject<? extends ItemLike> item) {
 		return ForgeRegistries.ITEMS.getKey(item.get().asItem());
 	}
-	
+
 }
 
