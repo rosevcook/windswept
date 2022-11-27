@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#windswept:has_chestnut_trees",
+  "biomes": "#windswept:has_feature/chestnut_trees",
   "features": "windswept:chestnut_trees",
   "step": "vegetal_decoration"
 }

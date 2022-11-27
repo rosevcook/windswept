@@ -1,6 +1,6 @@
 {
   "values": [
-    "minecraft:windswept_forest",
+    "#minecraft:is_taiga",
     "windswept:chestnut_forest"
   ]
 }
