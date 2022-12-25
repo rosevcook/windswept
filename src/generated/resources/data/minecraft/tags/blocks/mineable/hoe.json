@@ -3,12 +3,6 @@
     "#windswept:holly_leaves",
     "#windswept:chestnut_leaves",
     "windswept:holly_leaf_carpet",
-    "windswept:chestnut_leaf_carpet",
-    "windswept:nettle_thatch",
-    "windswept:nettle_thatch_slab",
-    "windswept:nettle_thatch_stairs",
-    "windswept:nettle_thatch_vertical_slab",
-    "windswept:stinging_nettles",
-    "windswept:tall_stinging_nettles"
+    "windswept:chestnut_leaf_carpet"
   ]
 }

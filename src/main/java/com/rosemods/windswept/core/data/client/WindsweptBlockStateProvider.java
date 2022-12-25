@@ -99,11 +99,6 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 		this.cubeBottomTop(WindsweptBlocks.CHESTNUT_CRATE);
 		this.cubeBottomTop(WindsweptBlocks.ROASTED_CHESTNUT_CRATE);
 
-		this.cubeAll(WindsweptBlocks.PACKED_SNOW);
-		this.stairs(WindsweptBlocks.PACKED_SNOW_STAIRS, WindsweptBlocks.PACKED_SNOW);
-		this.slab(WindsweptBlocks.PACKED_SNOW_SLAB, WindsweptBlocks.PACKED_SNOW);
-		this.verticalSlab(WindsweptBlocks.PACKED_SNOW_VERTICAL_SLAB, WindsweptBlocks.PACKED_SNOW);
-
 		this.cubeAll(WindsweptBlocks.SNOW_BRICKS);
 		this.stairs(WindsweptBlocks.SNOW_BRICK_STAIRS, WindsweptBlocks.SNOW_BRICKS);
 		this.slab(WindsweptBlocks.SNOW_BRICK_SLAB, WindsweptBlocks.SNOW_BRICKS);
@@ -127,9 +122,6 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 		this.pressurePlate(WindsweptBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE, () -> Blocks.POLISHED_DEEPSLATE);
 		this.button(WindsweptBlocks.POLISHED_DEEPSLATE_BUTTON, () -> Blocks.POLISHED_DEEPSLATE);
 		
-		this.door(WindsweptBlocks.GOLDEN_DOOR);
-		this.trapdoor(WindsweptBlocks.GOLDEN_TRAPDOOR);
-		
 		this.simpleCross(WindsweptBlocks.SNOWY_SPROUTS);
 
 		this.tallPlant(WindsweptBlocks.PINK_ROSE_BUSH);
@@ -150,15 +142,6 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 		this.wildBerryBush(WindsweptBlocks.WILD_BERRY_BUSH);
 		this.cubeBottomTop(WindsweptBlocks.WILD_BERRY_SACK);
 		this.simpleCross(WindsweptBlocks.WILD_BERRY_BUSH_PIPS);
-
-		this.simpleCross(WindsweptBlocks.STINGING_NETTLES);
-		this.generatedItem(WindsweptBlocks.STINGING_NETTLES);
-		this.tallPlant(WindsweptBlocks.TALL_STINGING_NETTLES);
-
-		this.thatch(WindsweptBlocks.NETTLE_THATCH);
-		this.thatchSlab(WindsweptBlocks.NETTLE_THATCH_SLAB, WindsweptBlocks.NETTLE_THATCH);
-		this.thatchStairs(WindsweptBlocks.NETTLE_THATCH_STAIRS, WindsweptBlocks.NETTLE_THATCH);
-		this.thatchVerticalSlab(WindsweptBlocks.NETTLE_THATCH_VERTICAL_SLAB, WindsweptBlocks.NETTLE_THATCH);
 		
 		this.iceSheet(WindsweptBlocks.ICE_SHEET, () -> Blocks.ICE);
 	}
@@ -414,6 +397,8 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 				.partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.X).modelForState().modelFile(boardsHorizontalModel).rotationY(270).addModel();
 	}
 
+	/*
+
 	private void thatch(RegistryObject<? extends Block> thatch) {
 		ResourceLocation texture = this.blockTexture(thatch.get());
 		ResourceLocation extrudes = this.modLoc("block/" +  this.getName(thatch) + "_extrudes");
@@ -493,6 +478,8 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 				.partialState().with(VerticalSlabBlock.TYPE, VerticalSlabType.WEST).addModels(new ConfiguredModel(model, 0, 270, true))
 				.partialState().with(VerticalSlabBlock.TYPE, VerticalSlabType.DOUBLE).addModels(new ConfiguredModel(this.models().getExistingFile(texture)));
 	}
+
+	*/
 
 	// Misc //
 			

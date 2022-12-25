@@ -36,7 +36,7 @@ import net.minecraftforge.common.ForgeHooks;
 
 public class WildBerryBushBlock extends BushBlock implements BonemealableBlock {
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_2;
-	private static final TargetedItemCategoryFiller FILLER = new TargetedItemCategoryFiller(Items.GLOW_BERRIES::asItem);
+      private static final TargetedItemCategoryFiller FILLER = new TargetedItemCategoryFiller(() -> Items.GLOW_BERRIES);
 	private static final VoxelShape SMALL_SHAPE = Block.box(3f, 0f, 3f, 13f, 5f, 13f);
 	private static final VoxelShape GROWN_SHAPE = Block.box(2f, 0f, 2f, 14f, 14f, 14f);
 
@@ -56,15 +56,15 @@ public class WildBerryBushBlock extends BushBlock implements BonemealableBlock {
 	}
 	
 	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter gettter, BlockPos pos, CollisionContext context) {
+	public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
 		return state.getValue(AGE) == 0 ? SMALL_SHAPE : GROWN_SHAPE;
 	}
 	
 	@Override
 	public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource rand) {
 		int i = state.getValue(AGE);
-		if (i < 3 && level.getRawBrightness(pos.above(), 0) >= 9 && ForgeHooks.onCropsGrowPre(level, pos, state, rand.nextInt(5) == 0)) {
-			level.setBlock(pos, state.setValue(AGE, Integer.valueOf(i + 1)), 2);
+		if (i < 2 && level.getRawBrightness(pos.above(), 0) >= 9 && ForgeHooks.onCropsGrowPre(level, pos, state, rand.nextInt(5) == 0)) {
+			level.setBlock(pos, state.setValue(AGE, i + 1), 2);
 			ForgeHooks.onCropsGrowPost(level, pos, state);
 		}
 	}
@@ -80,8 +80,8 @@ public class WildBerryBushBlock extends BushBlock implements BonemealableBlock {
 		if (state.getValue(AGE) == 2) {
 			popResourceFromFace(level, pos, result.getDirection(), new ItemStack(WindsweptItems.WILD_BERRIES.get(), level.random.nextInt(2) + 1));
 			
-			level.playSound((Player) null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
-			level.setBlock(pos, state.setValue(AGE, Integer.valueOf(1)), 2);
+			level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
+			level.setBlock(pos, state.setValue(AGE, 1), 2);
 			
 			return InteractionResult.sidedSuccess(level.isClientSide);
 		}
@@ -112,7 +112,7 @@ public class WildBerryBushBlock extends BushBlock implements BonemealableBlock {
 	@Override
 	public void performBonemeal(ServerLevel level, RandomSource rand, BlockPos pos, BlockState state) {
 	      int i = Math.min(2, state.getValue(AGE) + 1);
-	      level.setBlock(pos, state.setValue(AGE, Integer.valueOf(i)), 2);
+	      level.setBlock(pos, state.setValue(AGE, i), 2);
 	}
 	
 	@Override

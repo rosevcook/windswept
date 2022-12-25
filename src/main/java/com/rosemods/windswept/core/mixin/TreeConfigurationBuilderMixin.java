@@ -24,8 +24,8 @@ public class TreeConfigurationBuilderMixin {
 	@Inject(method = "decorators", at = @At("HEAD"), cancellable = true)
 	private void decorators(List<TreeDecorator> list, CallbackInfoReturnable<TreeConfigurationBuilder> info) {
 		if (this.decorators.stream().anyMatch(s -> s instanceof BranchDecorator)) {
-			this.decorators = new LinkedList<TreeDecorator>(this.decorators);
-			list.forEach(this.decorators::add);
+			this.decorators = new LinkedList(this.decorators);
+			this.decorators.addAll(list);
 			this.decorators = ImmutableList.copyOf(this.decorators);
 			info.setReturnValue((TreeConfigurationBuilder) (Object) this);
 		}

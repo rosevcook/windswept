@@ -84,7 +84,7 @@ public class Windswept {
 		gen.addProvider(server, blockTags);
 		gen.addProvider(server, new WindsweptItemTagProvider(event, blockTags));
 		gen.addProvider(server, new WindsweptEntityTagProvider(event));
-		gen.addProvider(server, new WindswepBiomeTagProvider(event));
+		gen.addProvider(server, new WindsweptBiomeTagProvider(event));
 		gen.addProvider(server, new WindsweptBannerPatternTagProvider(event));
 		gen.addProvider(server, new WindsweptLootTableProvider(event));
 		gen.addProvider(server, new WindsweptRecipeProvider(event));
@@ -92,7 +92,6 @@ public class Windswept {
 		gen.addProvider(server, new WindsweptLootModifierProvider(event));
 		gen.addProvider(server, new WindsweptStructureRepaletterProvider(event));
 		gen.addProvider(server, WindsweptBiomeModifier.register(event));
-		gen.addProvider(server, new WindsweptModdedBiomeSliceProvider(event));
 	}
     
 }

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_sweet_berry_bowl": {
+    "has_snow_block": {
       "conditions": {
         "items": [
           {
             "items": [
-              "windswept:sweet_berry_bowl"
+              "minecraft:snow_block"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "windswept:sweet_berry_bowl_revert"
+        "recipe": "windswept:snow_block_from_snow_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_sweet_berry_bowl",
+      "has_snow_block",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "windswept:sweet_berry_bowl_revert"
+      "windswept:snow_block_from_snow_bricks_stonecutting"
     ]
   }
 }

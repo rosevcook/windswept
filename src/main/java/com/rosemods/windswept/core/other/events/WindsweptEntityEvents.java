@@ -1,8 +1,5 @@
 package com.rosemods.windswept.core.other.events;
 
-import java.util.Deque;
-import java.util.LinkedList;
-
 import com.rosemods.windswept.common.effect.ThornsEffect;
 import com.rosemods.windswept.common.item.SnowBootsItem;
 import com.rosemods.windswept.common.item.wooden_bucket.WoodenMilkBucketItem;
@@ -19,9 +16,6 @@ import com.teamabnormals.blueprint.common.world.storage.tracking.TrackedData;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintEntityTypeTags;
 import com.teamabnormals.blueprint.core.util.registry.ItemSubRegistryHelper;
 
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -33,7 +27,6 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.DyeableLeatherItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -41,12 +34,10 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
-import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.Event.Result;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.registries.ForgeRegistries;
 
 @EventBusSubscriber(modid = Windswept.MODID)
 public class WindsweptEntityEvents {
@@ -63,25 +54,6 @@ public class WindsweptEntityEvents {
 		// thorns damage
 		if (entity.hasEffect(WindsweptEffects.THORNS.get())) 
 			ThornsEffect.doThornsDamage(entity, attacker);
-	}
-	
-	@SubscribeEvent
-	public static void onTooltipEvent(ItemTooltipEvent event) {
-		ItemStack stack = event.getItemStack();
-		if (stack.getItem() == null) return;
-		ResourceLocation location = ForgeRegistries.ITEMS.getKey(stack.getItem());
-		
-		if (stack.getItem() instanceof DyeableLeatherItem item && !item.hasCustomColor(stack) && WindsweptConfig.CLIENT.dyeableTooltip.get()) {
-			Deque<Component> tooltip = new LinkedList<>(event.getToolTip());
-			Component first = tooltip.peekFirst();
-			
-			tooltip.removeFirst();
-			tooltip.addFirst(Component.translatable(Windswept.MODID + ".tooltip.dyeable").withStyle(ChatFormatting.GRAY));
-			tooltip.addFirst(first);
-			
-			event.getToolTip().removeAll(event.getToolTip());
-			event.getToolTip().addAll(tooltip);
-		}
 	}
 
 	@SubscribeEvent
@@ -135,7 +107,7 @@ public class WindsweptEntityEvents {
 			return;
 		
 		// snow speed particles
-		if (entity instanceof LivingEntity livingEntity && SnowBootsItem.canSpawnSpeedSpeedParticle(livingEntity))		
+		if (entity instanceof LivingEntity livingEntity && SnowBootsItem.canSpawnSnowSpeedParticle(livingEntity))		
 			SnowBootsItem.spawnSnowSpeedParticle(livingEntity);
 		
 		// chilled conversion in powder snow

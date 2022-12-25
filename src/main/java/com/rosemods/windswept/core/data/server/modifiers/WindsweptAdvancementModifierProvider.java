@@ -55,7 +55,6 @@ public class WindsweptAdvancementModifierProvider extends AdvancementModifierPro
 		return names;
 	}
 	
-	@SuppressWarnings("deprecation")
 	private CriteriaModifier.Builder food() {
 		CriteriaModifier.Builder food = this.builder();
 		WindsweptItems.HELPER.getDeferredRegister().getEntries().forEach(i -> {

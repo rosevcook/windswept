@@ -56,7 +56,6 @@ public class WindsweptItems {
 	public static final RegistryObject<Item> ROASTED_CHESTNUTS = HELPER.createItem("roasted_chestnuts", () -> new Item(PropertyUtil.food(Foods.ROASTED_CHESTNUTS)));
 	public static final RegistryObject<Item> GOAT_SHANKS = HELPER.createCompatItem(WindsweptConstants.FARMERS_DELIGHT, "goat_shanks", new Item.Properties().food(Foods.GOAT_SHANKS), CreativeModeTab.TAB_FOOD);
 	public static final RegistryObject<Item> COOKED_GOAT_SHANKS = HELPER.createCompatItem(WindsweptConstants.FARMERS_DELIGHT, "cooked_goat_shanks", new Item.Properties().food(Foods.COOKED_GOAT_SHANKS), CreativeModeTab.TAB_FOOD);
-	public static final RegistryObject<Item> STINGING_NETTLE_TEA = HELPER.createItem("stinging_nettle_tea", () -> new DrinkableBottleItem(Foods.STINGING_NETTLE_TEA));
 
 	// Misc //
 	
@@ -103,7 +102,6 @@ public class WindsweptItems {
 		public static final FoodProperties ROASTED_CHESTNUTS = new FoodProperties.Builder().nutrition(5).saturationMod(.4f).build();
 		public static final FoodProperties GOAT_SHANKS = new FoodProperties.Builder().nutrition(1).saturationMod(.1f).meat().build();
 		public static final FoodProperties COOKED_GOAT_SHANKS = new FoodProperties.Builder().nutrition(3).saturationMod(.3f).meat().build();
-		public static final FoodProperties STINGING_NETTLE_TEA = new FoodProperties.Builder().nutrition(4).alwaysEat().saturationMod(.1f).effect(() -> new MobEffectInstance(MobEffects.LUCK, 300, 0), 1f).build();
 
 	}
 	

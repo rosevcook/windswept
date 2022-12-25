@@ -59,7 +59,7 @@ public class SnowBootsItem extends DyeableArmorItem {
 				|| entity.level.getBlockState(entity.getBlockPosBelowThatAffectsMyMovement().above()).is(WindsweptBlockTags.SNOW_BOOTS_BLOCKS);
 	}
 	
-	public static boolean canSpawnSpeedSpeedParticle(LivingEntity entity) {
+	public static boolean canSpawnSnowSpeedParticle(LivingEntity entity) {
 		return entity.tickCount % 5 == 0 && entity.getDeltaMovement().x != 0d && entity.getDeltaMovement().z != 0d
 				&& !entity.isSpectator() && onSnowBlock(entity)
 				&& entity.getItemBySlot(EquipmentSlot.FEET).is(WindsweptItems.SNOW_BOOTS.get());

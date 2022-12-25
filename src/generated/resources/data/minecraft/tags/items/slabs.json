@@ -2,8 +2,6 @@
   "values": [
     "windswept:blue_ice_brick_slab",
     "windswept:snow_brick_slab",
-    "windswept:packed_ice_brick_slab",
-    "windswept:nettle_thatch_slab",
-    "windswept:packed_snow_slab"
+    "windswept:packed_ice_brick_slab"
   ]
 }

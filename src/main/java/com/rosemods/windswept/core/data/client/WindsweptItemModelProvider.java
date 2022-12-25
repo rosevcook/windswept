@@ -24,7 +24,6 @@ public class WindsweptItemModelProvider extends ItemModelProvider {
 		this.generated(WindsweptBlocks.SNOWY_SPROUTS);
 		this.generated(WindsweptBlocks.HOLLY_SIGNS.getFirst());
 		this.generated(WindsweptBlocks.HOLLY_DOOR);
-		this.generated(WindsweptBlocks.GOLDEN_DOOR);
 		this.generated(WindsweptItems.HOLLY_BOAT.getFirst());
 		this.generated(WindsweptItems.HOLLY_BOAT.getSecond());
 		this.generated(WindsweptItems.HOLLY_BERRIES);
@@ -46,7 +45,6 @@ public class WindsweptItemModelProvider extends ItemModelProvider {
 		this.generated(WindsweptItems.GOAT_STEW);
 		this.generated(WindsweptItems.GOAT_SHANKS);
 		this.generated(WindsweptItems.COOKED_GOAT_SHANKS);
-		this.generated(WindsweptItems.STINGING_NETTLE_TEA);
 		this.generated(WindsweptItems.WILD_BERRY_PIPS);
 		this.generatedWithOverlay(WindsweptItems.SNOW_BOOTS);
 		this.generated(WindsweptItems.FROZEN_FLESH);

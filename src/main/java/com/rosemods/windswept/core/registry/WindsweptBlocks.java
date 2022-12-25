@@ -4,8 +4,6 @@ import com.mojang.datafixers.util.Pair;
 import com.rosemods.windswept.common.block.*;
 import com.rosemods.windswept.common.block.holly.*;
 import com.rosemods.windswept.common.block.nightshade.*;
-import com.rosemods.windswept.common.block.stinging_nettles.StingingNettleBlock;
-import com.rosemods.windswept.common.block.stinging_nettles.TallStingingNettleBlock;
 import com.rosemods.windswept.common.block.wild_berry.*;
 import com.rosemods.windswept.common.world.gen.tree.*;
 import com.rosemods.windswept.core.Windswept;
@@ -16,15 +14,10 @@ import com.teamabnormals.blueprint.common.block.chest.BlueprintChestBlock;
 import com.teamabnormals.blueprint.common.block.chest.BlueprintTrappedChestBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintStandingSignBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintWallSignBlock;
-import com.teamabnormals.blueprint.common.block.thatch.ThatchBlock;
-import com.teamabnormals.blueprint.common.block.thatch.ThatchSlabBlock;
-import com.teamabnormals.blueprint.common.block.thatch.ThatchStairBlock;
-import com.teamabnormals.blueprint.common.block.thatch.ThatchVerticalSlabBlock;
 import com.teamabnormals.blueprint.common.block.wood.*;
 import com.teamabnormals.blueprint.core.util.PropertyUtil;
 import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
 
-import net.minecraft.util.datafix.fixes.BlockEntityKeepPacked;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Items;
@@ -119,14 +112,7 @@ public class WindsweptBlocks {
 	public static final RegistryObject<Block> CHESTNUT_CRATE = HELPER.createCompatBlock(WindsweptConstants.QUARK, "chestnut_crate", () -> new Block(Properties.CHESTNUT_CRATE), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> ROASTED_CHESTNUT_CRATE = HELPER.createCompatBlock(WindsweptConstants.QUARK, "roasted_chestnut_crate", () -> new Block(Properties.CHESTNUT_CRATE), CreativeModeTab.TAB_DECORATIONS);
 
-	// Packed Snow //
-
-	public static final RegistryObject<Block> PACKED_SNOW = HELPER.createBlock("packed_snow", () -> new Block(Properties.PACKED_SNOW), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> PACKED_SNOW_STAIRS = HELPER.createBlock("packed_snow_stairs", () -> new StairBlock(PACKED_SNOW.get()::defaultBlockState, Properties.PACKED_SNOW), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> PACKED_SNOW_SLAB = HELPER.createBlock("packed_snow_slab", () -> new SlabBlock(Properties.PACKED_SNOW), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> PACKED_SNOW_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "packed_snow_vertical_slab", () -> new VerticalSlabBlock(Properties.PACKED_SNOW), CreativeModeTab.TAB_BUILDING_BLOCKS);
-
-	// Packed Snow Bricks //
+	// Snow Bricks //
 	
 	public static final RegistryObject<Block> SNOW_BRICKS = HELPER.createBlock("snow_bricks", () -> new Block(Properties.PACKED_SNOW), CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Block> SNOW_BRICK_STAIRS = HELPER.createBlock("snow_brick_stairs", () -> new StairBlock(SNOW_BRICKS.get()::defaultBlockState, Properties.PACKED_SNOW), CreativeModeTab.TAB_BUILDING_BLOCKS);
@@ -156,15 +142,10 @@ public class WindsweptBlocks {
 	
 	public static final RegistryObject<Block> POLISHED_DEEPSLATE_PRESSURE_PLATE = HELPER.createInjectedBlock("polished_deepslate_pressure_plate", Items.STONE_PRESSURE_PLATE, () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, Properties.POLISHED_DEEPSLATE_PRESSURE_PLATE), CreativeModeTab.TAB_REDSTONE);
 	public static final RegistryObject<Block> POLISHED_DEEPSLATE_BUTTON = HELPER.createInjectedBlock("polished_deepslate_button", Items.STONE_BUTTON, () -> new StoneButtonBlock(Properties.POLISHED_DEEPSLATE_BUTTON), CreativeModeTab.TAB_REDSTONE);
-	
-	// Gold //
-	
-	public static final RegistryObject<Block> GOLDEN_DOOR = HELPER.createInjectedBlock("golden_door", Items.IRON_DOOR, () -> new DoorBlock(Properties.GOLDEN_DOOR), CreativeModeTab.TAB_REDSTONE);
-	public static final RegistryObject<Block> GOLDEN_TRAPDOOR = HELPER.createInjectedBlock("golden_trapdoor", Items.IRON_TRAPDOOR, () -> new TrapDoorBlock(Properties.GOLDEN_TRAPDOOR), CreativeModeTab.TAB_REDSTONE);
 
 	// Sprouts //
 	
-	public static final RegistryObject<Block> SNOWY_SPROUTS = HELPER.createInjectedBlock("snowy_sprouts", Items.DEAD_BUSH, () -> new SnowySproutsBlock(Properties.SNOWY_SPROUTS), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> SNOWY_SPROUTS = HELPER.createInjectedBlock("snowy_sprouts", Items.GRASS, () -> new SnowySproutsBlock(Properties.SNOWY_SPROUTS), CreativeModeTab.TAB_DECORATIONS);
 
 	// Rose Bushes //
 
@@ -185,9 +166,6 @@ public class WindsweptBlocks {
 	public static final RegistryObject<Block> BLUEBELLS = HELPER.createBlock("bluebells", () -> new BluebellBlock(() -> MobEffects.SLOW_FALLING, 5, PropertyUtil.FLOWER), CreativeModeTab.TAB_DECORATIONS); 
 	public static final RegistryObject<Block> NIGHTSHADE = HELPER.createBlock("nightshade", () -> new NightshadeFlowerBlock(() -> MobEffects.NIGHT_VISION, 5, Properties.NIGHTSHADE), CreativeModeTab.TAB_DECORATIONS);
 
-
-	// Potted Flowers //
-
 	public static final RegistryObject<Block> POTTED_RED_ROSE = HELPER.createBlockNoItem("potted_red_rose", () -> new FlowerPotBlock(RED_ROSE.get(), PropertyUtil.FLOWER_POT));
 	public static final RegistryObject<Block> POTTED_PINK_ROSE = HELPER.createBlockNoItem("potted_pink_rose", () -> new FlowerPotBlock(PINK_ROSE.get(), PropertyUtil.FLOWER_POT));
 	public static final RegistryObject<Block> POTTED_BLUE_ROSE = HELPER.createBlockNoItem("potted_blue_rose", () -> new FlowerPotBlock(BLUE_ROSE.get(), PropertyUtil.FLOWER_POT));
@@ -202,16 +180,6 @@ public class WindsweptBlocks {
 	public static final RegistryObject<Block> WILD_BERRY_BUSH = HELPER.createBlockNoItem("wild_berry_bush", () -> new WildBerryBushBlock(Properties.WILD_BERRY_BUSH)); 
 	public static final RegistryObject<Block> WILD_BERRY_SACK = HELPER.createCompatBlock(WindsweptConstants.QUARK, "wild_berry_sack", () -> new Block(Properties.WILD_BERRY_SACK), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> WILD_BERRY_BUSH_PIPS = HELPER.createBlockNoItem("wild_berry_bush_pips", () -> new WildBerryBushPipsBlock(Properties.WILD_BERRY_BUSH));
-
-	// Stinging Nettles //
-
-	public static final RegistryObject<Block> TALL_STINGING_NETTLES = HELPER.createBlock("tall_stinging_nettles", () -> new TallStingingNettleBlock(Properties.STINGING_NETTLES), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> STINGING_NETTLES = HELPER.createBlock("stinging_nettles", () -> new StingingNettleBlock(TALL_STINGING_NETTLES, Properties.STINGING_NETTLES), CreativeModeTab.TAB_DECORATIONS);
-
-	public static final RegistryObject<Block> NETTLE_THATCH = HELPER.createBlock("nettle_thatch", () -> new ThatchBlock(Properties.NETTLE_THATCH), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> NETTLE_THATCH_SLAB = HELPER.createBlock("nettle_thatch_slab", () -> new ThatchSlabBlock(Properties.NETTLE_THATCH), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> NETTLE_THATCH_STAIRS = HELPER.createBlock("nettle_thatch_stairs", () -> new ThatchStairBlock(NETTLE_THATCH.get().defaultBlockState(), Properties.NETTLE_THATCH), CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Block> NETTLE_THATCH_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "nettle_thatch_vertical_slab", () -> new ThatchVerticalSlabBlock(Properties.NETTLE_THATCH), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
 	// Misc //
 	
@@ -241,14 +209,6 @@ public class WindsweptBlocks {
 		
 		public static final BlockBehaviour.Properties POLISHED_DEEPSLATE_PRESSURE_PLATE = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).requiresCorrectToolForDrops().noCollission().strength(.5f).sound(SoundType.POLISHED_DEEPSLATE);
 		public static final BlockBehaviour.Properties POLISHED_DEEPSLATE_BUTTON = BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(.5f).sound(SoundType.POLISHED_DEEPSLATE);
-
-		//change
-		public static final BlockBehaviour.Properties NETTLE_THATCH = BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.COLOR_GREEN).strength(0.5F).sound(SoundType.NETHER_SPROUTS);
-		public static final BlockBehaviour.Properties STINGING_NETTLES = BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XZ);
-
-
-		public static final BlockBehaviour.Properties GOLDEN_DOOR = BlockBehaviour.Properties.of(Material.METAL, MaterialColor.METAL).requiresCorrectToolForDrops().strength(5f).sound(SoundType.METAL).noOcclusion();
-		public static final BlockBehaviour.Properties GOLDEN_TRAPDOOR = BlockBehaviour.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(5f).sound(SoundType.METAL).noOcclusion().isValidSpawn(PropertyUtil::never);
 
 	}
 }

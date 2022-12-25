@@ -121,8 +121,11 @@ public class WoodenBucketItem extends BucketItem {
 		bucket.setDamageValue(handStack.getDamageValue());
 		
 		if (player != null)
-			bucket.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(hand));
-		else if (bucket.hurt(1, RandomSource.create(), (ServerPlayer) null))
+			bucket.hurtAndBreak(1, player, p -> {
+				assert hand != null;
+				p.broadcastBreakEvent(hand);
+			});
+		else if (bucket.hurt(1, RandomSource.create(), null))
 			bucket.setCount(0);
 		
 		return player != null && player.getAbilities().instabuild ? handStack : bucket;

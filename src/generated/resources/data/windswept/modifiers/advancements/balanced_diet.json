@@ -104,16 +104,6 @@
             },
             "trigger": "minecraft:consume_item"
           },
-          "windswept:stinging_nettle_tea": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "windswept:stinging_nettle_tea"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
           "windswept:sweet_berry_bowl": {
             "conditions": {
               "item": {
@@ -191,9 +181,6 @@
           ],
           [
             "windswept:cooked_goat_shanks"
-          ],
-          [
-            "windswept:stinging_nettle_tea"
           ],
           [
             "windswept:holly_berries"

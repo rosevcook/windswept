@@ -1,5 +1,6 @@
 package com.rosemods.windswept.integration.jei;
 
+import java.util.Objects;
 import java.util.function.Supplier;
 
 import com.rosemods.windswept.core.Windswept;
@@ -62,7 +63,7 @@ public class WindsweptPlugin implements IModPlugin {
 
 	
 	public static String getDesc(Supplier<? extends ItemLike> item) {
-		return Windswept.MODID + ".jei.info." + ForgeRegistries.ITEMS.getKey(item.get().asItem()).getPath();
+		return Windswept.MODID + ".jei.info." + Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item.get().asItem())).getPath();
 	}
 	
 	@Override

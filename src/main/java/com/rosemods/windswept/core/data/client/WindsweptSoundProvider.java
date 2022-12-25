@@ -21,8 +21,8 @@ public class WindsweptSoundProvider extends SoundDefinitionsProvider {
 
 	@Override
 	public void registerSounds() {
-		this.register(WindsweptSounds.MUSIC_DISC_RAIN, "records/rain", s -> s.stream());
-		this.register(WindsweptSounds.MUSIC_DISC_SNOW, "records/snow", s -> s.stream());
+		this.register(WindsweptSounds.MUSIC_DISC_RAIN, "records/rain", Sound::stream);
+		this.register(WindsweptSounds.MUSIC_DISC_SNOW, "records/snow", Sound::stream);
 	}
 	
 	private void register(RegistryObject<SoundEvent> soundEvent, String location, Consumer<Sound> consumer) {

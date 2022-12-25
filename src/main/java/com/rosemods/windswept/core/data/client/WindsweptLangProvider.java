@@ -71,7 +71,6 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.add(WindsweptItems.GOAT_SHANKS.get(), "Raw Chevon Shanks");
 		this.add(WindsweptItems.COOKED_GOAT_SHANKS.get(), "Cooked Chevon Shanks");
 		this.translateItem(WindsweptItems.FROZEN_FLESH);
-		this.translateItem(WindsweptItems.STINGING_NETTLE_TEA);
 		this.translateItem(WindsweptItems.SNOW_BOOTS);
 		this.translateBannerPattern(WindsweptItems.SNOW_CHARGE_BANNER_PATTERN, "snow_charge");
 		this.translateBannerPattern(WindsweptItems.SNOW_GOLEM_BANNER_PATTERN, "snow_golem");
@@ -157,16 +156,11 @@ public class WindsweptLangProvider extends LanguageProvider {
 		
 		this.translateBlock(WindsweptBlocks.SNOWY_SPROUTS);
 
-		this.translateBlock(WindsweptBlocks.PACKED_SNOW);
-		this.translateBlock(WindsweptBlocks.PACKED_SNOW_STAIRS);
-		this.translateBlock(WindsweptBlocks.PACKED_SNOW_SLAB);
-		this.translateBlock(WindsweptBlocks.PACKED_SNOW_VERTICAL_SLAB);
-
-		this.add(WindsweptBlocks.SNOW_BRICKS.get(), "Packed Snow Bricks");
-		this.add(WindsweptBlocks.SNOW_BRICK_STAIRS.get(), "Packed Snow Brick Stairs");
-		this.add(WindsweptBlocks.SNOW_BRICK_SLAB.get(), "Packed Snow Brick Slab");
-		this.add(WindsweptBlocks.SNOW_BRICK_WALL.get(), "Packed Snow Brick Wall");
-		this.add(WindsweptBlocks.SNOW_BRICK_VERTICAL_SLAB.get(), "Packed Snow Brick Vertical Slab");
+		this.translateBlock(WindsweptBlocks.SNOW_BRICKS);
+		this.translateBlock(WindsweptBlocks.SNOW_BRICK_STAIRS);
+		this.translateBlock(WindsweptBlocks.SNOW_BRICK_SLAB);
+		this.translateBlock(WindsweptBlocks.SNOW_BRICK_WALL);
+		this.translateBlock(WindsweptBlocks.SNOW_BRICK_VERTICAL_SLAB);
 		
 		this.translateBlock(WindsweptBlocks.PACKED_ICE_BRICKS);
 		this.translateBlock(WindsweptBlocks.CHISELED_PACKED_ICE_BRICKS);
@@ -184,9 +178,6 @@ public class WindsweptLangProvider extends LanguageProvider {
 		
 		this.translateBlock(WindsweptBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE);
 		this.translateBlock(WindsweptBlocks.POLISHED_DEEPSLATE_BUTTON);
-		
-		this.translateBlock(WindsweptBlocks.GOLDEN_DOOR);
-		this.translateBlock(WindsweptBlocks.GOLDEN_TRAPDOOR);
 
 		this.add("block.windswept.red_rose_bush", "Red Rose Bush");
 		this.translateBlock(WindsweptBlocks.PINK_ROSE_BUSH);
@@ -218,14 +209,6 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.translateBlock(WindsweptBlocks.WILD_BERRY_SACK);
 
 		this.translateBlock(WindsweptBlocks.ICE_SHEET);
-
-		this.translateBlock(WindsweptBlocks.TALL_STINGING_NETTLES);
-		this.translateBlock(WindsweptBlocks.STINGING_NETTLES);
-
-		this.translateBlock(WindsweptBlocks.NETTLE_THATCH);
-		this.translateBlock(WindsweptBlocks.NETTLE_THATCH_SLAB);
-		this.translateBlock(WindsweptBlocks.NETTLE_THATCH_STAIRS);
-		this.translateBlock(WindsweptBlocks.NETTLE_THATCH_VERTICAL_SLAB);
 
 		// Entities //
 		

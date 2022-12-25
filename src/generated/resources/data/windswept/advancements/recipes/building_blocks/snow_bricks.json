@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_packed_snow": {
+    "has_snow_block": {
       "conditions": {
         "items": [
           {
             "items": [
-              "windswept:packed_snow"
+              "minecraft:snow_block"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_packed_snow",
+      "has_snow_block",
       "has_the_recipe"
     ]
   ],

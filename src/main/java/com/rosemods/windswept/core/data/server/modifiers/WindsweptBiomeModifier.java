@@ -53,15 +53,14 @@ public final class WindsweptBiomeModifier {
         addFeature("common_wild_berries", WindsweptBiomeTags.HAS_COMMON_WILD_BERRIES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.WILD_BERRY_BUSH_COMMON);
         addFeature("nightshades", WindsweptBiomeTags.HAS_NIGHTSHADES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.NIGHTHSADE);
         addFeature("chestnut_trees", WindsweptBiomeTags.HAS_CHESTNUT_TREES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.CHESTNUT_TREES);
-        addFeature("common_chestnut_trees", WindsweptBiomeTags.HAS_COMMON_CHESTNUT_TREES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.CHESTNUT_TREES_COMMON);
 
         // spawns
         addSpawn("chilled", Tags.Biomes.IS_SNOWY, WindsweptEntities.CHILLED, 5, 3, 7);
 
         // removed features
-        removeFeature("remove_spruce_from_grove", WindsweptBiomeTags.HAS_GROVE_HOLLY_TREES, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_GROVE);
-        removeFeature("remove_default_flowers_from_taiga_biomes", BiomeTags.IS_TAIGA, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_DEFAULT);
-        removeFeature("remove_default_flowers_from_snowy_biomes", Tags.Biomes.IS_SNOWY, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_DEFAULT);
+        removeFeature("grove_spruces", WindsweptBiomeTags.HAS_GROVE_HOLLY_TREES, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_GROVE);
+        removeFeature("taiga_default_flowers", BiomeTags.IS_TAIGA, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_DEFAULT);
+        removeFeature("snowy_default_flowers", Tags.Biomes.IS_SNOWY, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_DEFAULT);
 
         return JsonCodecProvider.forDatapackRegistry(event.getGenerator(), event.getExistingFileHelper(), Windswept.MODID, RegistryOps.create(JsonOps.INSTANCE, access), ForgeRegistries.Keys.BIOME_MODIFIERS, modifiers);
     }
@@ -83,13 +82,14 @@ public final class WindsweptBiomeModifier {
     }
 
     @SafeVarargs
-    @SuppressWarnings("ConstantConditions")
     private static HolderSet<PlacedFeature> featureSet(RegistryObject<PlacedFeature>... features) {
-        return HolderSet.direct(Stream.of(features).map(registryObject -> placedFeatures.getOrCreateHolderOrThrow(registryObject.getKey())).collect(Collectors.toList()));
+        return HolderSet.direct(Stream.of(features).map(registryObject -> {
+            assert registryObject.getKey() != null;
+            return placedFeatures.getOrCreateHolderOrThrow(registryObject.getKey());
+        }).collect(Collectors.toList()));
     }
 
     @SafeVarargs
-    @SuppressWarnings("ConstantConditions")
     private static HolderSet<PlacedFeature> featureSet(Holder<PlacedFeature>... features) {
         return HolderSet.direct(Stream.of(features).map(holder -> placedFeatures.getOrCreateHolderOrThrow(holder.unwrapKey().get())).collect(Collectors.toList()));
     }

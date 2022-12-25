@@ -168,13 +168,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 			this.dropSelf(WindsweptBlocks.CHESTNUT_CRATE.get());
 			this.dropSelf(WindsweptBlocks.ROASTED_CHESTNUT_CRATE.get());
 
-			// packed snow
-			this.dropSelf(WindsweptBlocks.PACKED_SNOW.get());
-			this.dropSelf(WindsweptBlocks.PACKED_SNOW_STAIRS.get());
-			this.add(WindsweptBlocks.PACKED_SNOW_SLAB.get(), Blocks::createSlabItemTable);
-			this.add(WindsweptBlocks.PACKED_SNOW_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
-
-			// packed snow bricks
+			// snow bricks
 			this.dropSelf(WindsweptBlocks.SNOW_BRICKS.get());
 			this.dropSelf(WindsweptBlocks.SNOW_BRICK_STAIRS.get());
 			this.add(WindsweptBlocks.SNOW_BRICK_SLAB.get(), Blocks::createSlabItemTable);
@@ -200,10 +194,6 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 			// deepslate
 			this.dropSelf(WindsweptBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE.get());
 			this.dropSelf(WindsweptBlocks.POLISHED_DEEPSLATE_BUTTON.get());
-			
-			// gold
-			this.add(WindsweptBlocks.GOLDEN_DOOR.get(), Blocks::createDoorTable);
-			this.dropSelf(WindsweptBlocks.GOLDEN_TRAPDOOR.get());
 
 			// rose bushes
 			this.tallFlower(WindsweptBlocks.PINK_ROSE_BUSH.get());
@@ -244,17 +234,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 							.apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 2f)))
 							.apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));
 			this.dropSelf(WindsweptBlocks.WILD_BERRY_SACK.get());
-			this.dropOther(WindsweptBlocks.WILD_BERRY_BUSH_PIPS.get(), WindsweptItems.WILD_BERRY_PIPS::get);
-
-			// nettles
-
-			this.add(WindsweptBlocks.STINGING_NETTLES.get(), Blocks::createShearsOnlyDrop);
-			this.add(WindsweptBlocks.TALL_STINGING_NETTLES.get(), b -> createDoublePlantShearsDrop(WindsweptBlocks.STINGING_NETTLES.get()));
-
-			this.dropSelf(WindsweptBlocks.NETTLE_THATCH.get());
-			this.add(WindsweptBlocks.NETTLE_THATCH_SLAB.get(),  Blocks::createSlabItemTable);
-			this.dropSelf(WindsweptBlocks.NETTLE_THATCH_STAIRS.get());
-			this.add(WindsweptBlocks.NETTLE_THATCH_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+			this.dropOther(WindsweptBlocks.WILD_BERRY_BUSH_PIPS.get(), WindsweptItems.WILD_BERRY_PIPS.get());
 
 			// misc
 			this.dropSelf(WindsweptBlocks.ICE_SHEET.get());

@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "windswept:packed_snow"
+      "item": "minecraft:snow_block"
     }
   },
   "pattern": [

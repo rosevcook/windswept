@@ -44,7 +44,7 @@ public class SlippingCurseEnchantment extends Enchantment {
 	// Util //
 	
 	public static float getFriction(Entity entity, float friction) {
-		return entity != null && entity instanceof LivingEntity livingEntity && Blocks.ICE.getFriction() > friction && hasSlipping(livingEntity) ? Blocks.ICE.getFriction() : friction;
+		return entity instanceof LivingEntity livingEntity && Blocks.ICE.getFriction() > friction && hasSlipping(livingEntity) ? Blocks.ICE.getFriction() : friction;
 	}
 	
 	public static void attemptDamageBoots(LivingEntity entity) {

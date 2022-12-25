@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "windswept:block/packed_snow",
-    "side": "windswept:block/packed_snow",
-    "top": "windswept:block/packed_snow"
-  }
-}

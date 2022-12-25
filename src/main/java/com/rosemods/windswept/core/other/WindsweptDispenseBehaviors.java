@@ -17,9 +17,9 @@ import net.minecraft.world.level.block.state.BlockState;
 public final class WindsweptDispenseBehaviors {
 	
 	public static void registerDispenseBehaviors() {
-		DispenserBlock.registerBehavior(WindsweptItems.WOODEN_BUCKET::get, WindsweptDispenseBehaviors::fillBucket);
-		DispenserBlock.registerBehavior(WindsweptItems.WOODEN_WATER_BUCKET::get, WindsweptDispenseBehaviors::emptyWaterBucket);
-		DispenserBlock.registerBehavior(WindsweptItems.WOODEN_POWDER_SNOW_BUCKET::get, WindsweptDispenseBehaviors::emptyPowderSnowBucket);
+		DispenserBlock.registerBehavior(WindsweptItems.WOODEN_BUCKET.get(), WindsweptDispenseBehaviors::fillBucket);
+		DispenserBlock.registerBehavior(WindsweptItems.WOODEN_WATER_BUCKET.get(), WindsweptDispenseBehaviors::emptyWaterBucket);
+		DispenserBlock.registerBehavior(WindsweptItems.WOODEN_POWDER_SNOW_BUCKET.get(), WindsweptDispenseBehaviors::emptyPowderSnowBucket);
 	}
 	
 	private static ItemStack fillBucket(BlockSource source, ItemStack stack) {

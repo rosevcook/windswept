@@ -56,6 +56,7 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
 		this.tag(WindsweptItemTags.BERRIES).add(WindsweptItems.WILD_BERRIES.get());
 		this.tag(Tags.Items.BOOKSHELVES).add(WindsweptBlocks.HOLLY_BOOKSHELF.get().asItem(), WindsweptBlocks.CHESTNUT_BOOKSHELF.get().asItem());
 		this.tag(Tags.Items.SEEDS).addTag(WindsweptItemTags.WILD_BERRY_SEEDS);
+		this.tag(Tags.Items.ARMORS_BOOTS).add(WindsweptItems.SNOW_BOOTS.get());
 		this.copy(Tags.Blocks.CHESTS_WOODEN, Tags.Items.CHESTS_WOODEN);
 		this.copy(Tags.Blocks.CHESTS_TRAPPED, Tags.Items.CHESTS_TRAPPED);
 		
@@ -82,8 +83,6 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
 		this.copy(BlockTags.WOODEN_PRESSURE_PLATES, ItemTags.WOODEN_PRESSURE_PLATES);
 		this.copy(BlockTags.WOODEN_SLABS, ItemTags.WOODEN_SLABS);
 		this.copy(BlockTags.WOODEN_STAIRS, ItemTags.WOODEN_STAIRS);
-		this.copy(BlockTags.DOORS, ItemTags.DOORS);
-		this.copy(BlockTags.TRAPDOORS, ItemTags.TRAPDOORS);
 	}
 
 }

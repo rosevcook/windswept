@@ -15,7 +15,8 @@ public class TallFlowerBlockMixin extends Block {
 
     @Override
     public String getDescriptionId() {
-        return this == Blocks.ROSE_BUSH && WindsweptConfig.COMMON.renameRoseBushes.get() ? "block.windswept.red_rose_bush" : super.getDescriptionId();
+        return this == Blocks.ROSE_BUSH && WindsweptConfig.COMMON.renameRoseBushes.get()
+                ? "block.windswept.red_rose_bush" : super.getDescriptionId();
     }
 
 }

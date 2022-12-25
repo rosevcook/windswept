@@ -11,6 +11,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.item.enchantment.ThornsEnchantment;
 
+import java.util.Objects;
+
 public class ThornsEffect extends MobEffect {
 
 	public ThornsEffect(MobEffectCategory effectType, int liquidColor) {
@@ -23,7 +25,7 @@ public class ThornsEffect extends MobEffect {
 	}
 	
 	public static void doThornsDamage(LivingEntity entity, Entity attacker) {
-		int amplifier = entity.getEffect(WindsweptEffects.THORNS.get()).getAmplifier() + 1;
+		int amplifier = Objects.requireNonNull(entity.getEffect(WindsweptEffects.THORNS.get())).getAmplifier() + 1;
 		RandomSource rand = entity.getRandom();
 		
 		if (ThornsEnchantment.shouldHit(amplifier, rand) && attacker != null)

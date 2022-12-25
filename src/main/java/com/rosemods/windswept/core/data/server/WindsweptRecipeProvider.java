@@ -51,14 +51,8 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 		// wild berry juice to sugar
 		ShapelessRecipeBuilder.shapeless(Items.SUGAR, 3)
 			.requires(WindsweptItems.WILD_BERRY_JUICE.get())
-			.unlockedBy("has_sugar", has(WindsweptItems.WILD_BERRY_JUICE.get()))
+			.unlockedBy("has_wild_berry_juice", has(WindsweptItems.WILD_BERRY_JUICE.get()))
 			.save(consumer, Windswept.REGISTRY_HELPER.prefix("wild_berry_juice_to_sugar"));
-
-		// stinging nettle tea
-		ShapelessRecipeBuilder.shapeless(WindsweptItems.STINGING_NETTLE_TEA.get())
-				.requires(Items.GLASS_BOTTLE).requires(WindsweptBlocks.STINGING_NETTLES.get(), 3)
-				.unlockedBy("has_stinging_nettles", has(WindsweptItems.WILD_BERRIES.get()))
-				.save(consumer, Windswept.REGISTRY_HELPER.prefix("stinging_nettle_tea"));
 		
 		// mutton pie
 		ShapelessRecipeBuilder.shapeless(WindsweptItems.MUTTON_PIE.get())
@@ -93,7 +87,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 		// bowl of sweet berries revert
 		ShapelessRecipeBuilder.shapeless(Items.SWEET_BERRIES, 3)
 			.requires(WindsweptItems.SWEET_BERRY_BOWL.get())
-			.unlockedBy("has_wild_berry_bowl", has(WindsweptItems.SWEET_BERRY_BOWL.get()))
+			.unlockedBy("has_sweet_berry_bowl", has(WindsweptItems.SWEET_BERRY_BOWL.get()))
 			.save(consumer, Windswept.REGISTRY_HELPER.prefix("sweet_berry_bowl_revert"));
 		
 		// cake
@@ -196,23 +190,6 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 			.unlockedBy("has_polished_deepslate", has(Items.POLISHED_DEEPSLATE))
 			.save(consumer, Windswept.REGISTRY_HELPER.prefix("polished_deepslate_pressure_plate"));
 		
-		// gold door
-		ShapedRecipeBuilder.shaped(WindsweptBlocks.GOLDEN_DOOR.get(), 3)
-			.define('#', Items.GOLD_INGOT)
-			.pattern("##")
-			.pattern("##")
-			.pattern("##")
-			.unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT))
-			.save(consumer, Windswept.REGISTRY_HELPER.prefix("gold_door"));
-		
-		// gold trapdoor
-		ShapedRecipeBuilder.shaped(WindsweptBlocks.GOLDEN_TRAPDOOR.get())
-			.define('#', Items.GOLD_INGOT)
-			.pattern("##")
-			.pattern("##")
-			.unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT))
-			.save(consumer, Windswept.REGISTRY_HELPER.prefix("gold_trapdoor"));
-		
 		// ice sheet
 		ShapedRecipeBuilder.shaped(WindsweptBlocks.ICE_SHEET.get(), 12)
 			.define('#', Items.ICE)
@@ -248,31 +225,10 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 		brickSet(Blocks.BLUE_ICE, WindsweptBlocks.BLUE_ICE_BRICKS, WindsweptBlocks.CHISELED_BLUE_ICE_BRICKS,
 				WindsweptBlocks.BLUE_ICE_BRICK_SLAB, WindsweptBlocks.BLUE_ICE_BRICK_STAIRS,
 				WindsweptBlocks.BLUE_ICE_BRICK_WALL, WindsweptBlocks.BLUE_ICE_BRICK_VERTICAL_SLAB, consumer);
-		
-		// packed snow bricks set
-		brickSet(WindsweptBlocks.PACKED_SNOW.get(), WindsweptBlocks.SNOW_BRICKS, null, WindsweptBlocks.SNOW_BRICK_SLAB,
+
+		// snow bricks set
+		brickSet(Blocks.SNOW_BLOCK, WindsweptBlocks.SNOW_BRICKS, null, WindsweptBlocks.SNOW_BRICK_SLAB,
 				WindsweptBlocks.SNOW_BRICK_STAIRS, WindsweptBlocks.SNOW_BRICK_WALL, WindsweptBlocks.SNOW_BRICK_VERTICAL_SLAB, consumer);
-
-		// packed snow block set
-		blockSet(Blocks.SNOW_BLOCK, WindsweptBlocks.PACKED_SNOW, WindsweptBlocks.PACKED_SNOW_SLAB,
-				WindsweptBlocks.PACKED_SNOW_STAIRS, WindsweptBlocks.PACKED_SNOW_VERTICAL_SLAB, consumer);
-
-		// nettle thatch
-		ShapedRecipeBuilder.shaped(WindsweptBlocks.NETTLE_THATCH.get(), 4)
-				.define('#', WindsweptBlocks.STINGING_NETTLES.get())
-				.pattern("##")
-				.pattern("##")
-				.unlockedBy("has_stinging_nettles", has(WindsweptBlocks.STINGING_NETTLES.get()))
-				.save(consumer, Windswept.REGISTRY_HELPER.prefix("nettle_thatch"));
-
-		// nettle thatch slab
-		slab(WindsweptBlocks.NETTLE_THATCH.get(), WindsweptBlocks.NETTLE_THATCH_SLAB.get(), consumer);
-
-		// nettle thatch stairs
-		stairs(WindsweptBlocks.NETTLE_THATCH.get(), WindsweptBlocks.NETTLE_THATCH_STAIRS.get(), consumer);
-
-		// nettle thatch vertical slab
-		verticalSlab(WindsweptBlocks.NETTLE_THATCH_VERTICAL_SLAB.get(), WindsweptBlocks.NETTLE_THATCH_SLAB.get(), consumer);
 
 		
 		// holly wood set
@@ -429,7 +385,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 		stairs(block.get(), stairs.get(), consumer);
 		slab(block.get(), slab.get(), consumer);
 		verticalSlab(verticalSlab.get(), slab.get(), consumer);
-		conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(block.get()), verticalSlab.get(), 2).unlockedBy("has_" + getName(ingredient), has(ingredient)), getQuarkCondition("vertical_slabs"), consumer, Windswept.REGISTRY_HELPER.prefix(getName(verticalSlab.get()) + "_from_" + getName(ingredient) + "_stonecutting"));
+		conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(block.get()), verticalSlab.get(), 2).unlockedBy("has_" + getName(block.get()), has(block.get())), getQuarkCondition("vertical_slabs"), consumer, Windswept.REGISTRY_HELPER.prefix(getName(verticalSlab.get()) + "_from_" + getName(block.get()) + "_stonecutting"));
 		stonecutting(block.get(), wall.get(), 1, consumer);
 		wall(block.get(), wall.get(), consumer);
 

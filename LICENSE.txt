@@ -1,6 +1,6 @@
 ----- WINDSWEPT LICENSE October 2022 -----
 
-Copyright (c) 2022 Rose V. Cook. All Rights Reserved.
+Copyright (c) 2022 Rose Cook. All Rights Reserved.
 
 Permissions are hereby granted below to any person having a copy of
 this software and/or its associated files:

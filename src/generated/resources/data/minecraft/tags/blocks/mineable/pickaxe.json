@@ -18,12 +18,6 @@
     "windswept:snow_brick_stairs",
     "windswept:snow_brick_vertical_slab",
     "windswept:snow_brick_wall",
-    "windswept:golden_door",
-    "windswept:golden_trapdoor",
-    "windswept:ice_sheet",
-    "windswept:packed_snow",
-    "windswept:packed_snow_slab",
-    "windswept:packed_snow_stairs",
-    "windswept:packed_snow_vertical_slab"
+    "windswept:ice_sheet"
   ]
 }
