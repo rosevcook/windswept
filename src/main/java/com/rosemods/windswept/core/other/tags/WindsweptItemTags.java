@@ -16,7 +16,7 @@ public final class WindsweptItemTags {
 	public static final TagKey<Item> CABBAGE_ROLL_INGREDIENTS = TagUtil.itemTag("farmersdelight", "cabbage_roll_ingredients");
 	public static final TagKey<Item> SILVER_INGOT = TagUtil.itemTag("forge", "ingots/silver");
 	public static final TagKey<Item> BERRIES = TagUtil.itemTag("forge", "berries");
-
 	public static final TagKey<Item> ROSES = TagUtil.itemTag(Windswept.MODID, "roses");
+	public static final TagKey<Item> WOODEN_CABINETS = TagUtil.itemTag("farmersdelight", "cabinets/wooden");
 
 }

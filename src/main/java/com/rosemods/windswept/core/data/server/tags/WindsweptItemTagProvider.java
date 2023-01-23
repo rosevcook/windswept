@@ -43,6 +43,7 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
 
 		//farmers delight
 		this.tag(WindsweptItemTags.CABBAGE_ROLL_INGREDIENTS).addTag(WindsweptItemTags.RAW_GOAT);
+		this.tag(WindsweptItemTags.WOODEN_CABINETS).add(WindsweptBlocks.HOLLY_CABINET.get().asItem(), WindsweptBlocks.CHESTNUT_CABINET.get().asItem());
 
 		//forge
 		this.tag(BlueprintItemTags.BUCKETS_EMPTY).add(WindsweptItems.WOODEN_BUCKET.get());
