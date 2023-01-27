@@ -11,6 +11,7 @@ import com.rosemods.windswept.core.WindsweptConfig;
 import com.rosemods.windswept.core.registry.WindsweptTreeDecorators;
 import com.teamabnormals.blueprint.common.block.wood.LogBlock;
 
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
@@ -42,7 +43,7 @@ public class BranchDecorator extends TreeDecorator {
 	@Override
 	public void place(Context context) {
 		RandomSource rand = context.random();
-		List<BlockPos> positions = context.logs();
+		ObjectArrayList<BlockPos> positions = context.logs();
 		
 		if (rand.nextFloat() <= .25f)
 			return;
@@ -77,6 +78,8 @@ public class BranchDecorator extends TreeDecorator {
 					}
 				}
 			}
+
+
 	}
 	
 	public static BranchDecorator create(Block block, int minHeight) {
