@@ -49,7 +49,7 @@ public class BranchDecorator extends TreeDecorator {
 			return;
 		
 		int i = positions.get(0).getY();
-		final List<Direction> logs = new LinkedList();
+		final List<Direction> logs = new LinkedList<>();
 
 		for (BlockPos pos : positions)
 			if (pos.getY() - i >= this.minHeight && rand.nextFloat() <= .25f) {
