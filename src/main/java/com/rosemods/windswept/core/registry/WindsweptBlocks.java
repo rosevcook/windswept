@@ -166,6 +166,8 @@ public class WindsweptBlocks {
 	public static final RegistryObject<Block> BLUEBELLS = HELPER.createBlock("bluebells", () -> new BluebellBlock(() -> MobEffects.SLOW_FALLING, 5, Properties.FLOWER), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> NIGHTSHADE = HELPER.createBlock("nightshade", () -> new NightshadeFlowerBlock(() -> MobEffects.NIGHT_VISION, 5, Properties.NIGHTSHADE), CreativeModeTab.TAB_DECORATIONS);
 
+	// Pots //
+
 	public static final RegistryObject<Block> POTTED_RED_ROSE = HELPER.createBlockNoItem("potted_red_rose", () -> new FlowerPotBlock(RED_ROSE.get(), PropertyUtil.FLOWER_POT));
 	public static final RegistryObject<Block> POTTED_PINK_ROSE = HELPER.createBlockNoItem("potted_pink_rose", () -> new FlowerPotBlock(PINK_ROSE.get(), PropertyUtil.FLOWER_POT));
 	public static final RegistryObject<Block> POTTED_BLUE_ROSE = HELPER.createBlockNoItem("potted_blue_rose", () -> new FlowerPotBlock(BLUE_ROSE.get(), PropertyUtil.FLOWER_POT));
@@ -174,6 +176,7 @@ public class WindsweptBlocks {
 	public static final RegistryObject<Block> POTTED_FOXGLOVE = HELPER.createBlockNoItem("potted_foxglove", () -> new FlowerPotBlock(FOXGLOVE.get(), PropertyUtil.FLOWER_POT));
 	public static final RegistryObject<Block> POTTED_BLUEBELLS = HELPER.createBlockNoItem("potted_bluebells", () -> new FlowerPotBlock(BLUEBELLS.get(), PropertyUtil.FLOWER_POT));
 	public static final RegistryObject<Block> POTTED_NIGHTSHADE = HELPER.createBlockNoItem("potted_nightshade", () -> new NightShadeFlowerPotBlock(NIGHTSHADE.get(), Properties.NIGHTSHADE_POT));
+	public static final RegistryObject<Block> POTTED_SNOWY_SPROUTS = HELPER.createBlockNoItem("potted_snowy_sprouts", () -> new FlowerPotBlock(SNOWY_SPROUTS.get(), PropertyUtil.FLOWER_POT));
 
 	// Wild Berries //
 	

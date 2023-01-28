@@ -92,7 +92,7 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
 				WindsweptBlocks.POTTED_WHITE_ROSE.get(), WindsweptBlocks.POTTED_YELLOW_ROSE.get(),
 				WindsweptBlocks.POTTED_FOXGLOVE.get(), WindsweptBlocks.POTTED_BLUEBELLS.get(),
 				WindsweptBlocks.POTTED_NIGHTSHADE.get(), WindsweptBlocks.POTTED_HOLLY_SAPLING.get(),
-				WindsweptBlocks.POTTED_CHESTNUT_SAPLING.get());
+				WindsweptBlocks.POTTED_CHESTNUT_SAPLING.get(), WindsweptBlocks.POTTED_SNOWY_SPROUTS.get());
 				
 		this.tag(BlockTags.MINEABLE_WITH_AXE).add(WindsweptBlocks.HOLLY_BOOKSHELF.get(),
 				WindsweptBlocks.HOLLY_VERTICAL_SLAB.get(), WindsweptBlocks.HOLLY_LADDER.get(), 

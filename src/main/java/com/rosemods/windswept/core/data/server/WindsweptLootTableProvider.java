@@ -224,7 +224,8 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 			this.dropPottedContents(WindsweptBlocks.POTTED_FOXGLOVE.get());
 			this.dropPottedContents(WindsweptBlocks.POTTED_BLUEBELLS.get());
 			this.dropPottedContents(WindsweptBlocks.POTTED_NIGHTSHADE.get());
-			
+			this.dropPottedContents(WindsweptBlocks.POTTED_SNOWY_SPROUTS.get());
+
 			// wild berry
 			this.add(WindsweptBlocks.WILD_BERRY_BUSH.get(), b -> applyExplosionDecay(b, LootTable.lootTable()
 					.withPool(LootPool.lootPool()
