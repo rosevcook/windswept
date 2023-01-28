@@ -33,7 +33,7 @@ public class RoseFlowerBlock extends BlueprintFlowerBlock implements Bonemealabl
 
     @Override
     public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state) {
-        return random.nextInt(5) == 0;
+        return random.nextInt(2) == 0;
     }
 
     @Override
