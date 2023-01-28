@@ -17,6 +17,7 @@ import com.teamabnormals.blueprint.common.block.VerticalSlabBlock;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock.VerticalSlabType;
 
 import net.minecraft.advancements.critereon.EntityPredicate;
+import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.data.loot.EntityLoot;
@@ -43,12 +44,10 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.functions.SmeltItemFunction;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemKilledByPlayerCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceWithLootingCondition;
+import net.minecraft.world.level.storage.loot.predicates.*;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -119,7 +118,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 
 			this.dropSelf(WindsweptBlocks.HOLLY_HEDGE.get());
 			this.dropSelf(WindsweptBlocks.HOLLY_LEAF_CARPET.get());
-			this.dropSelf(WindsweptBlocks.HOLLY_LEAF_PILE.get());
+			this.leafPile(WindsweptBlocks.HOLLY_LEAF_PILE.get());
 			
 			this.dropSelf(WindsweptBlocks.HOLLY_BERRY_CRATE.get());
 					
@@ -163,11 +162,12 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 			
 			this.dropSelf(WindsweptBlocks.CHESTNUT_HEDGE.get());
 			this.dropSelf(WindsweptBlocks.CHESTNUT_LEAF_CARPET.get());
-			this.dropSelf(WindsweptBlocks.CHESTNUT_LEAF_PILE.get());
+			this.leafPile(WindsweptBlocks.CHESTNUT_LEAF_PILE.get());
 
 			this.dropSelf(WindsweptBlocks.CHESTNUT_CRATE.get());
 			this.dropSelf(WindsweptBlocks.ROASTED_CHESTNUT_CRATE.get());
 
+			// snow bricks
 			// snow bricks
 			this.dropSelf(WindsweptBlocks.SNOW_BRICKS.get());
 			this.dropSelf(WindsweptBlocks.SNOW_BRICK_STAIRS.get());
@@ -247,6 +247,10 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 
 		private void tallFlower(Block block) {
 			this.add(block, (b) -> createSinglePropConditionTable(b, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
+		}
+
+		private void leafPile(Block block) {
+			this.add(block, (b) -> createMultifaceBlockDrops(b, MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.SHEARS))));
 		}
 		
 		@Override
