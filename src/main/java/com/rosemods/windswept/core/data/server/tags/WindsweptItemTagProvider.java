@@ -27,7 +27,7 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
 		//windswept
 		this.tag(WindsweptItemTags.ROSES).add(WindsweptBlocks.RED_ROSE.get().asItem(), WindsweptBlocks.PINK_ROSE.get().asItem(),
 				WindsweptBlocks.BLUE_ROSE.get().asItem(), WindsweptBlocks.WHITE_ROSE.get().asItem(), WindsweptBlocks.YELLOW_ROSE.get().asItem(),
-				Items.WITHER_ROSE, Items.ROSE_BUSH, WindsweptBlocks.PINK_ROSE_BUSH.get().asItem(),
+				Items.WITHER_ROSE, Items.ROSE_BUSH, WindsweptBlocks.RED_ROSE_BUSH.get().asItem(), WindsweptBlocks.PINK_ROSE_BUSH.get().asItem(),
 				WindsweptBlocks.BLUE_ROSE_BUSH.get().asItem(), WindsweptBlocks.WHITE_ROSE_BUSH.get().asItem(), WindsweptBlocks.YELLOW_ROSE_BUSH.get().asItem(),
 				WindsweptBlocks.WITHER_ROSE_BUSH.get().asItem());
 

@@ -247,7 +247,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.jeiInfo(WindsweptItems.MUSIC_DISC_RAIN, "Dropped by a Drowned if killed by a Skeleton.");
 		this.jeiInfo(WindsweptItems.MUSIC_DISC_SNOW, "Dropped by a Chilled if killed by a Skeleton.");
 
-		this.jeiInfo(() -> Blocks.ROSE_BUSH, "Bonemeal a Red Rose and it will grow into a Red Rose Bush!");
+		this.jeiInfo(WindsweptBlocks.RED_ROSE_BUSH, "Bonemeal a Red Rose and it will grow into a Red Rose Bush!");
 		this.jeiInfo(WindsweptBlocks.PINK_ROSE_BUSH, "Bonemeal a Pink Rose and it will grow into a Pink Rose Bush!");
 		this.jeiInfo(WindsweptBlocks.BLUE_ROSE_BUSH, "Bonemeal a Blue Rose and it will grow into a Blue Rose Bush!");
 		this.jeiInfo(WindsweptBlocks.WHITE_ROSE_BUSH, "Bonemeal a White Rose and it will grow into a White Rose Bush!");
@@ -255,7 +255,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.jeiInfo(WindsweptBlocks.WITHER_ROSE_BUSH, "Bonemeal a Wither Rose and it will grow into a Wither Rose Bush!");
 
 		this.jeiInfo(WindsweptItems.WILD_BERRIES, "Wild Berries can be found growing in snowy biomes but are more commonly found in Groves.");
-		this.jeiInfo(WindsweptBlocks.NIGHTSHADE, "Nightshades can be found very rarely growing in large patches under trees.");
+		this.jeiInfo(WindsweptBlocks.NIGHTSHADE, "Nightshades can be found very rarely growing in large patches under trees. They can also be brewing into Night Vision potions.");
 		this.jeiInfo(WindsweptBlocks.BLUEBELLS, "Bluebells are small flowers that grow in patches in Dark Oak and Birch Forests.");
 		this.jeiInfo(WindsweptBlocks.FOXGLOVE, "Foxgloves are found in any Taiga biome. Foxes can sometimes be found holding them in their mouths.");
 		this.jeiInfo(WindsweptBlocks.SNOWY_SPROUTS, "Snowy sprouts are small plants that grow in round patches in snowy areas. They only grow on snow blocks but when collected with shears, can also be placed on grass and dirt.");
@@ -270,11 +270,6 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.jeiInfo(WindsweptItems.SNOW_BOOTS, "Snow boots allow you to walk faster on any snowy block. They can be dyed any colour you like. They also allow you to walk on Powder Snow.");
 		this.jeiInfo(WindsweptItems.WILD_BERRY_BOWL, "Wild Berry bowls condense 3 Wild Berries into a single item. They can be stacked to 64 and are exactly 3 times the saturation and hunger of Wild Berries.");
 		this.jeiInfo(WindsweptItems.SWEET_BERRY_BOWL, "Sweet Berry bowls condense 3 Sweet Berries into a single item. They can be stacked to 64 and are exactly 3 times the saturation and hunger of Sweet Berries.");
-
-		// Tooltips //
-		
-		this.add(Windswept.MODID + ".tooltip.dyeable", "Dyeable");
-
 	}
 
 	private void translateItem(RegistryObject<? extends Item> item) {
