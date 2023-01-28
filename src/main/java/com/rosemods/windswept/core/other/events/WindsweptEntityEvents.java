@@ -28,6 +28,7 @@ import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraftforge.common.Tags;
@@ -94,21 +95,23 @@ public class WindsweptEntityEvents {
 				&& level.getBiome(mob.blockPosition()).is(Tags.Biomes.IS_SNOWY)) {
 			if (mob.getType() == EntityType.ZOMBIE)
 				mob.convertTo(WindsweptEntities.CHILLED.get(), true);
-			else if (mob.getType() == EntityType.SKELETON && WindsweptConfig.COMMON.strays.get())
+			else if (mob.getType() == EntityType.SKELETON && WindsweptConfig.COMMON.strays.get()) {
 				mob.convertTo(EntityType.STRAY, true);
+				mob.setItemInHand(InteractionHand.MAIN_HAND, Items.BOW.getDefaultInstance());
+			}
 		}
 	}
 
 	@SubscribeEvent
 	public static void onEntityTick(LivingEvent.LivingTickEvent event) {
-		Entity entity = event.getEntity();
+		LivingEntity entity = event.getEntity();
 		
 		if (entity == null)
 			return;
 		
 		// snow speed particles
-		if (entity instanceof LivingEntity livingEntity && SnowBootsItem.canSpawnSnowSpeedParticle(livingEntity))		
-			SnowBootsItem.spawnSnowSpeedParticle(livingEntity);
+		if (SnowBootsItem.canSpawnSnowSpeedParticle(entity))
+			SnowBootsItem.spawnSnowSpeedParticle(entity);
 		
 		// chilled conversion in powder snow
 		if (entity.getType().is(WindsweptEntityTypeTags.CONVERT_TO_CHILLED) && entity instanceof Mob mob) {
