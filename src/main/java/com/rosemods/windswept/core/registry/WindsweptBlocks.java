@@ -70,7 +70,7 @@ public class WindsweptBlocks {
 	public static final RegistryObject<Block> HOLLY_LEAF_CARPET = HELPER.createCompatBlock(WindsweptConstants.QUARK, "holly_leaf_carpet", () -> new LeafCarpetBlock(Properties.HOLLY.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> HOLLY_LEAF_PILE = HELPER.createCompatBlock(WindsweptConstants.WOODWORKS, "holly_leaf_pile", () -> new LeafPileBlock(Properties.HOLLY.leafPile()), CreativeModeTab.TAB_DECORATIONS);
 
-	public static final RegistryObject<Block> HOLLY_BERRY_CRATE = HELPER.createCompatBlock(WindsweptConstants.QUARK, "holly_berry_crate", () -> new Block(Properties.HOLLY_BERRY_CRATE), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> HOLLY_BERRY_CRATE = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "holly_berry_crate", () -> new Block(Properties.HOLLY_BERRY_CRATE), 300, CreativeModeTab.TAB_DECORATIONS);
 	
 	// Chestnut // 
 	
@@ -109,8 +109,8 @@ public class WindsweptBlocks {
 	public static final RegistryObject<Block> CHESTNUT_LEAF_CARPET = HELPER.createCompatBlock(WindsweptConstants.QUARK, "chestnut_leaf_carpet", () -> new LeafCarpetBlock(Properties.CHESTNUT.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> CHESTNUT_LEAF_PILE = HELPER.createCompatBlock(WindsweptConstants.WOODWORKS, "chestnut_leaf_pile", () -> new LeafPileBlock(Properties.CHESTNUT.leafPile()), CreativeModeTab.TAB_DECORATIONS);
 	
-	public static final RegistryObject<Block> CHESTNUT_CRATE = HELPER.createCompatBlock(WindsweptConstants.QUARK, "chestnut_crate", () -> new Block(Properties.CHESTNUT_CRATE), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> ROASTED_CHESTNUT_CRATE = HELPER.createCompatBlock(WindsweptConstants.QUARK, "roasted_chestnut_crate", () -> new Block(Properties.CHESTNUT_CRATE), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> CHESTNUT_CRATE = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "chestnut_crate", () -> new Block(Properties.CHESTNUT_CRATE), 300, CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> ROASTED_CHESTNUT_CRATE = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "roasted_chestnut_crate", () -> new Block(Properties.CHESTNUT_CRATE), 300, CreativeModeTab.TAB_DECORATIONS);
 
 	// Snow Bricks //
 	
@@ -178,7 +178,7 @@ public class WindsweptBlocks {
 	// Wild Berries //
 	
 	public static final RegistryObject<Block> WILD_BERRY_BUSH = HELPER.createBlockNoItem("wild_berry_bush", () -> new WildBerryBushBlock(Properties.WILD_BERRY_BUSH)); 
-	public static final RegistryObject<Block> WILD_BERRY_SACK = HELPER.createCompatBlock(WindsweptConstants.QUARK, "wild_berry_sack", () -> new Block(Properties.WILD_BERRY_SACK), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> WILD_BERRY_SACK = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "wild_berry_sack", () -> new Block(Properties.WILD_BERRY_SACK), 300, CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> WILD_BERRY_BUSH_PIPS = HELPER.createBlockNoItem("wild_berry_bush_pips", () -> new WildBerryBushPipsBlock(Properties.WILD_BERRY_BUSH));
 
 	// Misc //
