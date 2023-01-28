@@ -20,6 +20,7 @@ import net.minecraft.advancements.critereon.EntityPredicate;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLoot;
+import net.minecraft.data.loot.ChestLoot;
 import net.minecraft.data.loot.EntityLoot;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.resources.ResourceLocation;
@@ -55,6 +56,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 public class WindsweptLootTableProvider extends LootTableProvider {
 	private final Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet> blockTables = Pair.of(Blocks::new, LootContextParamSets.BLOCK);
 	private final Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet> entityTables = Pair.of(Entities::new, LootContextParamSets.ENTITY);
+	private final Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet> chestTables = Pair.of(Chests::new, LootContextParamSets.BLOCK);
 
 	public WindsweptLootTableProvider(GatherDataEvent event) {
 		super(event.getGenerator());
@@ -62,7 +64,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 	
 	@Override
 	protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, Builder>>>, LootContextParamSet>> getTables() {
-		return ImmutableList.of(this.blockTables, this.entityTables);
+		return ImmutableList.of(this.blockTables, this.entityTables, this.chestTables);
 	}
 	
 	@Override
@@ -296,12 +298,33 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 													LootContext.EntityTarget.KILLER,
 													EntityPredicate.Builder.entity().of(EntityTypeTags.SKELETONS)))));
 
-			//this.add(WindsweptEntities.SQUIRREL.get(), LootTable.lootTable());
 		}
 		
 		@Override
 		protected Iterable<EntityType<?>> getKnownEntities() {
 			return getContent(ForgeRegistries.ENTITY_TYPES);
+		}
+	}
+
+	private static class Chests extends ChestLoot {
+
+		@Override
+		public void accept(BiConsumer<ResourceLocation, Builder> builder) {
+			register("grove_weathered_house", LootTable.lootTable().withPool(LootPool.lootPool().setRolls(UniformGenerator.between(1f, 5f))
+					.add(LootItem.lootTableItem(Items.GOLD_INGOT).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
+					.add(LootItem.lootTableItem(WindsweptBlocks.SNOWY_SPROUTS.get()).setWeight(4).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 4f))))
+					.add(LootItem.lootTableItem(WindsweptItems.SNOW_BOOTS.get()).setWeight(1))
+					.add(LootItem.lootTableItem(WindsweptItems.WOODEN_BUCKET.get()).setWeight(1))
+					.add(LootItem.lootTableItem(WindsweptItems.WOODEN_POWDER_SNOW_BUCKET.get()).setWeight(1))
+					.add(LootItem.lootTableItem(WindsweptItems.WILD_BERRIES.get()).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
+					.add(LootItem.lootTableItem(Items.SNOW_BLOCK).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
+					.add(LootItem.lootTableItem(Items.COBWEB).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
+					.add(LootItem.lootTableItem(WindsweptBlocks.HOLLY_SAPLING.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
+			), builder);
+		}
+
+		private static void register(String name, LootTable.Builder lootTable, BiConsumer<ResourceLocation, Builder> builder) {
+			builder.accept(Windswept.REGISTRY_HELPER.prefix("chests/" + name), lootTable);
 		}
 	}
 }
