@@ -10,6 +10,7 @@ public final class WindsweptBlockInfo {
 		DataUtil.registerCompostable(WindsweptItems.WILD_BERRIES.get(), .3f);
 		DataUtil.registerCompostable(WindsweptItems.WILD_BERRY_PIPS.get(), .3f);
 		DataUtil.registerCompostable(WindsweptItems.HOLLY_BERRIES.get(), .3f);
+		DataUtil.registerCompostable(WindsweptItems.CHESTNUTS.get(), .3f);
 
 		DataUtil.registerCompostable(WindsweptBlocks.RED_ROSE.get(), .65f);
 		DataUtil.registerCompostable(WindsweptBlocks.PINK_ROSE.get(), .65f);
@@ -32,7 +33,6 @@ public final class WindsweptBlockInfo {
 		DataUtil.registerCompostable(WindsweptBlocks.SNOWY_SPROUTS.get(), .5f);
 		
 		DataUtil.registerCompostable(WindsweptBlocks.WILD_BERRY_SACK.get(), 1f);
-
 	}
 	
 	public static void registerFlammables() {
