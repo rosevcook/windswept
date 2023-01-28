@@ -131,6 +131,9 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 		// nightshade
 		flowerToDye(WindsweptBlocks.NIGHTSHADE, Items.LIGHT_BLUE_DYE, consumer);
 
+		// red rose bush
+		tallFlowerToDye(WindsweptBlocks.RED_ROSE_BUSH, Items.RED_DYE, consumer);
+
 		// pink rose bush
 		tallFlowerToDye(WindsweptBlocks.PINK_ROSE_BUSH, Items.PINK_DYE, consumer);
 

@@ -196,6 +196,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 			this.dropSelf(WindsweptBlocks.POLISHED_DEEPSLATE_BUTTON.get());
 
 			// rose bushes
+			this.tallFlower(WindsweptBlocks.RED_ROSE_BUSH.get());
 			this.tallFlower(WindsweptBlocks.PINK_ROSE_BUSH.get());
 			this.tallFlower(WindsweptBlocks.BLUE_ROSE_BUSH.get());
 			this.tallFlower(WindsweptBlocks.WHITE_ROSE_BUSH.get());

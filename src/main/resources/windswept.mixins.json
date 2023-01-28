@@ -17,7 +17,6 @@
     "TreeConfigurationBuilderMixin",
     "TreeFeatureMixin",
     "WitherRoseBlockMixin",
-    "TallFlowerBlockMixin",
     "FoxEatBerriesGoalMixin"
   ],
   "client": [

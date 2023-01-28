@@ -124,6 +124,7 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 		
 		this.simpleCross(WindsweptBlocks.SNOWY_SPROUTS);
 
+		this.tallPlant(WindsweptBlocks.RED_ROSE_BUSH);
 		this.tallPlant(WindsweptBlocks.PINK_ROSE_BUSH);
 		this.tallPlant(WindsweptBlocks.BLUE_ROSE_BUSH);
 		this.tallPlant(WindsweptBlocks.WHITE_ROSE_BUSH);

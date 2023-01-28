@@ -16,7 +16,6 @@ public class WindsweptConfig {
 		public final ConfigValue<Boolean> iceBoatNerf;
 		public final ConfigValue<Boolean> birchBranches;
 		public final ConfigValue<Boolean> strays;
-		public final ConfigValue<Boolean> renameRoseBushes;
 
 		private Common(ForgeConfigSpec.Builder builder) {
 			builder.comment("Vanilla gameplay tweaks");
@@ -24,7 +23,6 @@ public class WindsweptConfig {
 			this.iceBoatNerf = builder.comment("Nerfs Boats ability to go extremely fast when on ice and other splippery blocks (off by default).").define("Ice Boat Nerf", false);
 			this.birchBranches = builder.comment("Tall Birch Trees will generate branches growing out the side of the tree.").define("Birch Branches", true);
 			this.strays = builder.comment("All skeletons that spawn in snowy biomes are replaced with strays").define("Strays Only", true);
-			this.renameRoseBushes = builder.comment("Should Rose Bushes be renamed to \"Red Rose Bush\".").define("Rename Rose Bushes", true);
 			builder.pop();
 		}
 

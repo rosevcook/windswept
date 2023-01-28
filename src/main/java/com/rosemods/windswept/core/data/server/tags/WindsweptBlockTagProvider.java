@@ -74,10 +74,10 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
 		this.tag(BlockTags.STAIRS).add(WindsweptBlocks.BLUE_ICE_BRICK_STAIRS.get(), WindsweptBlocks.SNOW_BRICK_STAIRS.get(),
 				WindsweptBlocks.PACKED_ICE_BRICK_STAIRS.get());
 
-		this.tag(BlockTags.TALL_FLOWERS).add(WindsweptBlocks.PINK_ROSE_BUSH.get(), WindsweptBlocks.BLUE_ROSE_BUSH.get(),
+		this.tag(BlockTags.TALL_FLOWERS).add(WindsweptBlocks.RED_ROSE_BUSH.get(), WindsweptBlocks.PINK_ROSE_BUSH.get(), WindsweptBlocks.BLUE_ROSE_BUSH.get(),
 				WindsweptBlocks.WHITE_ROSE_BUSH.get(), WindsweptBlocks.YELLOW_ROSE_BUSH.get(), WindsweptBlocks.WITHER_ROSE_BUSH.get());
 
-		this.tag(BlockTags.REPLACEABLE_PLANTS).add(WindsweptBlocks.PINK_ROSE_BUSH.get(), WindsweptBlocks.BLUE_ROSE_BUSH.get(),
+		this.tag(BlockTags.REPLACEABLE_PLANTS).add(WindsweptBlocks.RED_ROSE_BUSH.get(), WindsweptBlocks.PINK_ROSE_BUSH.get(), WindsweptBlocks.BLUE_ROSE_BUSH.get(),
 				WindsweptBlocks.WHITE_ROSE_BUSH.get(), WindsweptBlocks.YELLOW_ROSE_BUSH.get(), WindsweptBlocks.WITHER_ROSE_BUSH.get(),
 				WindsweptBlocks.SNOWY_SPROUTS.get());
 		

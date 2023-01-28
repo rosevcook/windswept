@@ -97,7 +97,9 @@ public class WindsweptEntityEvents {
 				mob.convertTo(WindsweptEntities.CHILLED.get(), true);
 			else if (mob.getType() == EntityType.SKELETON && WindsweptConfig.COMMON.strays.get()) {
 				mob = mob.convertTo(EntityType.STRAY, true);
-				mob.setItemInHand(InteractionHand.MAIN_HAND, Items.BOW.getDefaultInstance());
+
+				if (mob != null)
+					mob.setItemInHand(InteractionHand.MAIN_HAND, Items.BOW.getDefaultInstance());
 			}
 		}
 	}
