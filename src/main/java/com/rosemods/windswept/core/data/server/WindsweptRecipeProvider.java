@@ -1,5 +1,6 @@
 package com.rosemods.windswept.core.data.server;
 
+import java.util.Objects;
 import java.util.function.Consumer;
 
 import javax.annotation.Nullable;
@@ -42,198 +43,54 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 
 	@Override
 	protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {		
-		// wild berry juice
-		ShapelessRecipeBuilder.shapeless(WindsweptItems.WILD_BERRY_JUICE.get())
-			.requires(Items.GLASS_BOTTLE).requires(WindsweptItems.WILD_BERRIES.get(), 3)
-			.unlockedBy("has_wild_berries", has(WindsweptItems.WILD_BERRIES.get()))
-			.save(consumer, Windswept.REGISTRY_HELPER.prefix("wild_berry_juice"));
-
-		// wild berry juice to sugar
-		ShapelessRecipeBuilder.shapeless(Items.SUGAR, 3)
-			.requires(WindsweptItems.WILD_BERRY_JUICE.get())
-			.unlockedBy("has_wild_berry_juice", has(WindsweptItems.WILD_BERRY_JUICE.get()))
-			.save(consumer, Windswept.REGISTRY_HELPER.prefix("wild_berry_juice_to_sugar"));
+		ShapelessRecipeBuilder.shapeless(WindsweptItems.WILD_BERRY_JUICE.get()).requires(Items.GLASS_BOTTLE).requires(WindsweptItems.WILD_BERRIES.get(), 3).unlockedBy("has_wild_berries", has(WindsweptItems.WILD_BERRIES.get())).save(consumer, Windswept.REGISTRY_HELPER.prefix("wild_berry_juice"));
+		ShapelessRecipeBuilder.shapeless(Items.SUGAR, 3).requires(WindsweptItems.WILD_BERRY_JUICE.get()).unlockedBy("has_wild_berry_juice", has(WindsweptItems.WILD_BERRY_JUICE.get())).save(consumer, Windswept.REGISTRY_HELPER.prefix("wild_berry_juice_to_sugar"));
+		ShapelessRecipeBuilder.shapeless(WindsweptItems.WILD_BERRY_BOWL.get()).requires(Items.BOWL).requires(WindsweptItems.WILD_BERRIES.get(), 3).unlockedBy("has_wild_berries", has(WindsweptItems.WILD_BERRIES.get())).save(consumer, Windswept.REGISTRY_HELPER.prefix("wild_berry_bowl"));
+		ShapelessRecipeBuilder.shapeless(WindsweptItems.SWEET_BERRY_BOWL.get()).requires(Items.BOWL).requires(Items.SWEET_BERRIES, 3).unlockedBy("has_sweet_berries", has(Items.SWEET_BERRIES)).save(consumer, Windswept.REGISTRY_HELPER.prefix("sweet_berry_bowl"));
+		ShapelessRecipeBuilder.shapeless(WindsweptItems.WILD_BERRIES.get(), 3).requires(WindsweptItems.WILD_BERRY_BOWL.get()).unlockedBy("has_wild_berry_bowl", has(WindsweptItems.WILD_BERRY_BOWL.get())).save(consumer, Windswept.REGISTRY_HELPER.prefix("wild_berry_bowl_revert"));
+		ShapelessRecipeBuilder.shapeless(Items.SWEET_BERRIES, 3).requires(WindsweptItems.SWEET_BERRY_BOWL.get()).unlockedBy("has_sweet_berry_bowl", has(WindsweptItems.SWEET_BERRY_BOWL.get())).save(consumer, Windswept.REGISTRY_HELPER.prefix("sweet_berry_bowl_revert"));
 		
-		// mutton pie
-		ShapelessRecipeBuilder.shapeless(WindsweptItems.MUTTON_PIE.get())
-			.requires(Items.COOKED_MUTTON).requires(Items.WHEAT).requires(Items.SUGAR).requires(Items.EGG)
-			.unlockedBy("has_cooked_mutton", has(Items.COOKED_MUTTON))
-			.save(consumer, Windswept.REGISTRY_HELPER.prefix("mutton_pie"));
-		
-		// goat stew
-		conditionalRecipe(ShapelessRecipeBuilder.shapeless(WindsweptItems.GOAT_STEW.get())
-			.requires(Items.BOWL).requires(WindsweptItems.COOKED_GOAT.get()).requires(Items.BAKED_POTATO).requires(Items.CARROT).requires(Items.BROWN_MUSHROOM)
-			.unlockedBy("has_cooked_goat", has(WindsweptItems.COOKED_GOAT.get())),
-			not(getModLoaded("farmersdelight")), consumer, Windswept.REGISTRY_HELPER.prefix("goat_stew"));
-		
-		// bowl of wild berries
-		ShapelessRecipeBuilder.shapeless(WindsweptItems.WILD_BERRY_BOWL.get())
-			.requires(Items.BOWL).requires(WindsweptItems.WILD_BERRIES.get(), 3)
-			.unlockedBy("has_wild_berries", has(WindsweptItems.WILD_BERRIES.get()))
-			.save(consumer, Windswept.REGISTRY_HELPER.prefix("wild_berry_bowl"));
-		
-		// bowl of sweet berries
-		ShapelessRecipeBuilder.shapeless(WindsweptItems.SWEET_BERRY_BOWL.get())
-			.requires(Items.BOWL).requires(Items.SWEET_BERRIES, 3)
-			.unlockedBy("has_sweet_berries", has(Items.SWEET_BERRIES))
-			.save(consumer, Windswept.REGISTRY_HELPER.prefix("sweet_berry_bowl"));
-		
-		// bowl of wild berries revert
-		ShapelessRecipeBuilder.shapeless(WindsweptItems.WILD_BERRIES.get(), 3)
-			.requires(WindsweptItems.WILD_BERRY_BOWL.get())
-			.unlockedBy("has_wild_berry_bowl", has(WindsweptItems.WILD_BERRY_BOWL.get()))
-			.save(consumer, Windswept.REGISTRY_HELPER.prefix("wild_berry_bowl_revert"));
-		
-		// bowl of sweet berries revert
-		ShapelessRecipeBuilder.shapeless(Items.SWEET_BERRIES, 3)
-			.requires(WindsweptItems.SWEET_BERRY_BOWL.get())
-			.unlockedBy("has_sweet_berry_bowl", has(WindsweptItems.SWEET_BERRY_BOWL.get()))
-			.save(consumer, Windswept.REGISTRY_HELPER.prefix("sweet_berry_bowl_revert"));
-		
-		// cake
-		conditionalRecipe(ShapedRecipeBuilder.shaped(Blocks.CAKE)
-	    	.define('A', WindsweptItemTags.MILK).define('B', Items.SUGAR).define('C', Tags.Items.CROPS_WHEAT).define('E', Tags.Items.EGGS)
-	    	.pattern("AAA").pattern("BEB").pattern("CCC")
-	    	.unlockedBy("has_egg", has(Tags.Items.EGGS)),
-	    	not(getModLoaded("neapolitan")), consumer, Windswept.REGISTRY_HELPER.prefix("cake"));
-
-		
-		// roasted chestnuts
+		conditionalRecipe(ShapedRecipeBuilder.shaped(Blocks.CAKE).pattern("AAA").pattern("BEB").pattern("CCC").unlockedBy("has_egg", has(Tags.Items.EGGS)), new NotCondition(new ModLoadedCondition("neapolitan")), consumer, Windswept.REGISTRY_HELPER.prefix("cake"));
 		cooking(WindsweptItems.CHESTNUTS.get(), WindsweptItems.ROASTED_CHESTNUTS.get(), consumer);
-				
-		// goat
 		cooking(WindsweptItems.GOAT.get(), WindsweptItems.COOKED_GOAT.get(), consumer);
+		conditionalCooking(WindsweptItems.GOAT_SHANKS.get(), WindsweptItems.COOKED_GOAT_SHANKS.get(), new ModLoadedCondition("farmersdelight"), consumer);
+		conditionalRecipe(ShapelessRecipeBuilder.shapeless(WindsweptItems.GOAT_STEW.get()).requires(Items.BOWL).requires(WindsweptItems.COOKED_GOAT.get()).requires(Items.BAKED_POTATO).requires(Items.CARROT).requires(Items.BROWN_MUSHROOM).unlockedBy("has_cooked_goat", has(WindsweptItems.COOKED_GOAT.get())), new NotCondition(new ModLoadedCondition("farmersdelight")), consumer, Windswept.REGISTRY_HELPER.prefix("goat_stew"));
+		ShapelessRecipeBuilder.shapeless(WindsweptItems.MUTTON_PIE.get()).requires(Items.COOKED_MUTTON).requires(Items.WHEAT).requires(Items.SUGAR).requires(Items.EGG).unlockedBy("has_cooked_mutton", has(Items.COOKED_MUTTON)).save(consumer, Windswept.REGISTRY_HELPER.prefix("mutton_pie"));
 
-		// goat shanks
-		conditionalCooking(WindsweptItems.GOAT_SHANKS.get(), WindsweptItems.COOKED_GOAT_SHANKS.get(), getModLoaded("farmersdelight"), consumer);
-				
-		// red rose
 		flowerToDye(WindsweptBlocks.RED_ROSE, Items.RED_DYE, consumer);
-		
-		// pink rose
 		flowerToDye(WindsweptBlocks.PINK_ROSE, Items.PINK_DYE, consumer);
-		
-		// blue rose
 		flowerToDye(WindsweptBlocks.BLUE_ROSE, Items.BLUE_DYE, consumer);
-		
-		// white rose
 		flowerToDye(WindsweptBlocks.WHITE_ROSE, Items.WHITE_DYE, consumer);
-		
-		// yellow rose
 		flowerToDye(WindsweptBlocks.YELLOW_ROSE, Items.YELLOW_DYE, consumer);
-		
-		// foxglove
 		flowerToDye(WindsweptBlocks.FOXGLOVE, Items.PINK_DYE, consumer);
-		
-		// bluebell
 		flowerToDye(WindsweptBlocks.BLUEBELLS, Items.BLUE_DYE, consumer);
-		
-		// nightshade
 		flowerToDye(WindsweptBlocks.NIGHTSHADE, Items.LIGHT_BLUE_DYE, consumer);
-
-		// red rose bush
 		tallFlowerToDye(WindsweptBlocks.RED_ROSE_BUSH, Items.RED_DYE, consumer);
-
-		// pink rose bush
 		tallFlowerToDye(WindsweptBlocks.PINK_ROSE_BUSH, Items.PINK_DYE, consumer);
-
-		// blue rose bush
 		tallFlowerToDye(WindsweptBlocks.BLUE_ROSE_BUSH, Items.BLUE_DYE, consumer);
-
-		// white rose bush
 		tallFlowerToDye(WindsweptBlocks.WHITE_ROSE_BUSH, Items.WHITE_DYE, consumer);
-
-		// yellow rose bush
 		tallFlowerToDye(WindsweptBlocks.YELLOW_ROSE_BUSH, Items.YELLOW_DYE, consumer);
-
-		// wither rose bush
 		tallFlowerToDye(WindsweptBlocks.WITHER_ROSE_BUSH, Items.BLACK_DYE, consumer);
 				
-		// snow charge banner pattern
-		ShapelessRecipeBuilder.shapeless(WindsweptItems.SNOW_CHARGE_BANNER_PATTERN.get())
-			.requires(Items.PAPER).requires(BlueprintItemTags.BUCKETS_POWDER_SNOW)
-			.unlockedBy("has_powder_snow_bucket", has(BlueprintItemTags.BUCKETS_POWDER_SNOW))
-			.save(consumer, Windswept.REGISTRY_HELPER.prefix("snow_charge_banner_pattern"));
+		ShapelessRecipeBuilder.shapeless(WindsweptItems.SNOW_CHARGE_BANNER_PATTERN.get()).requires(Items.PAPER).requires(BlueprintItemTags.BUCKETS_POWDER_SNOW).unlockedBy("has_powder_snow_bucket", has(BlueprintItemTags.BUCKETS_POWDER_SNOW)).save(consumer, Windswept.REGISTRY_HELPER.prefix("snow_charge_banner_pattern"));
+		ShapelessRecipeBuilder.shapeless(WindsweptItems.SNOW_GOLEM_BANNER_PATTERN.get()).requires(Items.PAPER).requires(Items.GOLDEN_CARROT).unlockedBy("has_golden_carrot", has(Items.GOLDEN_CARROT)).save(consumer, Windswept.REGISTRY_HELPER.prefix("snow_golem_banner_pattern"));
+		ShapelessRecipeBuilder.shapeless(WindsweptItems.ROSE_FLOWER_BANNER_PATTERN.get()).requires(Items.PAPER).requires(WindsweptItemTags.ROSES).unlockedBy("has_roses", has(WindsweptItemTags.ROSES)).save(consumer, Windswept.REGISTRY_HELPER.prefix("rose_flower_banner_pattern"));
 		
-		// snow golem banner pattern
-		ShapelessRecipeBuilder.shapeless(WindsweptItems.SNOW_GOLEM_BANNER_PATTERN.get())
-			.requires(Items.PAPER).requires(Items.GOLDEN_CARROT)
-			.unlockedBy("has_golden_carrot", has(Items.GOLDEN_CARROT))
-			.save(consumer, Windswept.REGISTRY_HELPER.prefix("snow_golem_banner_pattern"));
-
-		// rose flower banner pattern
-		ShapelessRecipeBuilder.shapeless(WindsweptItems.ROSE_FLOWER_BANNER_PATTERN.get())
-				.requires(Items.PAPER).requires(WindsweptItemTags.ROSES)
-				.unlockedBy("has_roses", has(WindsweptItemTags.ROSES))
-				.save(consumer, Windswept.REGISTRY_HELPER.prefix("rose_flower_banner_pattern"));
-		
-		// leather from frozen flesh
-		SimpleCookingRecipeBuilder.smelting(Ingredient.of(WindsweptItems.FROZEN_FLESH.get()), Items.LEATHER, .35f, 400)
-			.unlockedBy("has_frozen_flesh", has(WindsweptItems.FROZEN_FLESH.get()))
-			.save(consumer, Windswept.REGISTRY_HELPER.prefix("leather_from_frozen_flesh"));
-		
-		// wooden bucket
-		ShapedRecipeBuilder.shaped(WindsweptItems.WOODEN_BUCKET.get())
-			.define('#', ItemTags.LOGS)
-			.pattern("# #")
-			.pattern(" # ")
-			.unlockedBy("has_log", has(ItemTags.LOGS))
-			.save(consumer, Windswept.REGISTRY_HELPER.prefix("wooden_bucket"));
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(WindsweptItems.FROZEN_FLESH.get()), Items.LEATHER, .35f, 400).unlockedBy("has_frozen_flesh", has(WindsweptItems.FROZEN_FLESH.get())).save(consumer, Windswept.REGISTRY_HELPER.prefix("leather_from_frozen_flesh"));
+		ShapedRecipeBuilder.shaped(WindsweptItems.WOODEN_BUCKET.get()).define('#', ItemTags.LOGS).pattern("# #").pattern(" # ").unlockedBy("has_log", has(ItemTags.LOGS)).save(consumer, Windswept.REGISTRY_HELPER.prefix("wooden_bucket"));
 				
-		// polished deepslate button
-		ShapelessRecipeBuilder.shapeless(WindsweptBlocks.POLISHED_DEEPSLATE_BUTTON.get())
-			.requires(Items.POLISHED_DEEPSLATE)
-			.unlockedBy("has_polished_deepslate", has(Items.POLISHED_DEEPSLATE))
-			.save(consumer, Windswept.REGISTRY_HELPER.prefix("polished_deepslate_button"));
+		ShapelessRecipeBuilder.shapeless(WindsweptBlocks.POLISHED_DEEPSLATE_BUTTON.get()).requires(Items.POLISHED_DEEPSLATE).unlockedBy("has_polished_deepslate", has(Items.POLISHED_DEEPSLATE)).save(consumer, Windswept.REGISTRY_HELPER.prefix("polished_deepslate_button"));
+		ShapedRecipeBuilder.shaped(WindsweptBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE.get()).define('#', Items.POLISHED_DEEPSLATE).pattern("##").unlockedBy("has_polished_deepslate", has(Items.POLISHED_DEEPSLATE)).save(consumer, Windswept.REGISTRY_HELPER.prefix("polished_deepslate_pressure_plate"));
 		
-		// polished deepslate pressure plate
-		ShapedRecipeBuilder.shaped(WindsweptBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE.get())
-			.define('#', Items.POLISHED_DEEPSLATE)
-			.pattern("##")
-			.unlockedBy("has_polished_deepslate", has(Items.POLISHED_DEEPSLATE))
-			.save(consumer, Windswept.REGISTRY_HELPER.prefix("polished_deepslate_pressure_plate"));
+		ShapedRecipeBuilder.shaped(WindsweptBlocks.ICE_SHEET.get(), 12).define('#', Items.ICE).pattern("###").pattern("###").unlockedBy("has_ice", has(Items.ICE)).save(consumer, Windswept.REGISTRY_HELPER.prefix("ice_sheet"));
 		
-		// ice sheet
-		ShapedRecipeBuilder.shaped(WindsweptBlocks.ICE_SHEET.get(), 12)
-			.define('#', Items.ICE)
-			.pattern("###")
-			.pattern("###")
-			.unlockedBy("has_ice", has(Items.ICE))
-			.save(consumer, Windswept.REGISTRY_HELPER.prefix("ice_sheet"));
-		
-		// snow boots
-		conditionalRecipe(ShapedRecipeBuilder.shaped(WindsweptItems.SNOW_BOOTS.get())
-			.define('#', Items.IRON_INGOT).define('L', Items.LEATHER)
-			.pattern("L L")
-			.pattern("L L")
-			.pattern("# #")
-			.unlockedBy("has_leather", has(Items.LEATHER)),
-			getTagEmpty(WindsweptItemTags.SILVER_INGOT), consumer, Windswept.REGISTRY_HELPER.prefix("snow_boots"));
+		conditionalRecipe(ShapedRecipeBuilder.shaped(WindsweptItems.SNOW_BOOTS.get()).define('#', Items.IRON_INGOT).define('L', Items.LEATHER).pattern("L L").pattern("L L").pattern("# #").unlockedBy("has_leather", has(Items.LEATHER)), new TagEmptyCondition(WindsweptItemTags.SILVER_INGOT.location()), consumer, Windswept.REGISTRY_HELPER.prefix("snow_boots"));
+		conditionalRecipe(ShapedRecipeBuilder.shaped(WindsweptItems.SNOW_BOOTS.get()).define('#', WindsweptItemTags.SILVER_INGOT).define('L', Items.LEATHER).pattern("L L").pattern("L L").pattern("# #").unlockedBy("has_leather", has(Items.LEATHER)), new NotCondition(new TagEmptyCondition(WindsweptItemTags.SILVER_INGOT.location())), consumer, Windswept.REGISTRY_HELPER.prefix("snow_boots_from_silver"));
 
-		// snow boots silver
-		conditionalRecipe(ShapedRecipeBuilder.shaped(WindsweptItems.SNOW_BOOTS.get())
-				.define('#', WindsweptItemTags.SILVER_INGOT).define('L', Items.LEATHER)
-				.pattern("L L")
-				.pattern("L L")
-				.pattern("# #")
-				.unlockedBy("has_leather", has(Items.LEATHER)),
-				not(getTagEmpty(WindsweptItemTags.SILVER_INGOT)), consumer, Windswept.REGISTRY_HELPER.prefix("snow_boots_from_silver"));
+		brickSet(Blocks.PACKED_ICE, WindsweptBlocks.PACKED_ICE_BRICKS, WindsweptBlocks.CHISELED_PACKED_ICE_BRICKS, WindsweptBlocks.PACKED_ICE_BRICK_SLAB, WindsweptBlocks.PACKED_ICE_BRICK_STAIRS, WindsweptBlocks.PACKED_ICE_BRICK_WALL, WindsweptBlocks.PACKED_ICE_BRICK_VERTICAL_SLAB, consumer);
+		brickSet(Blocks.BLUE_ICE, WindsweptBlocks.BLUE_ICE_BRICKS, WindsweptBlocks.CHISELED_BLUE_ICE_BRICKS, WindsweptBlocks.BLUE_ICE_BRICK_SLAB, WindsweptBlocks.BLUE_ICE_BRICK_STAIRS, WindsweptBlocks.BLUE_ICE_BRICK_WALL, WindsweptBlocks.BLUE_ICE_BRICK_VERTICAL_SLAB, consumer);
+		brickSet(Blocks.SNOW_BLOCK, WindsweptBlocks.SNOW_BRICKS, null, WindsweptBlocks.SNOW_BRICK_SLAB, WindsweptBlocks.SNOW_BRICK_STAIRS, WindsweptBlocks.SNOW_BRICK_WALL, WindsweptBlocks.SNOW_BRICK_VERTICAL_SLAB, consumer);
 
-		// packed ice bricks set
-		brickSet(Blocks.PACKED_ICE, WindsweptBlocks.PACKED_ICE_BRICKS, WindsweptBlocks.CHISELED_PACKED_ICE_BRICKS,
-				WindsweptBlocks.PACKED_ICE_BRICK_SLAB, WindsweptBlocks.PACKED_ICE_BRICK_STAIRS,
-				WindsweptBlocks.PACKED_ICE_BRICK_WALL, WindsweptBlocks.PACKED_ICE_BRICK_VERTICAL_SLAB, consumer);
-		
-		// blue ice bricks set
-		brickSet(Blocks.BLUE_ICE, WindsweptBlocks.BLUE_ICE_BRICKS, WindsweptBlocks.CHISELED_BLUE_ICE_BRICKS,
-				WindsweptBlocks.BLUE_ICE_BRICK_SLAB, WindsweptBlocks.BLUE_ICE_BRICK_STAIRS,
-				WindsweptBlocks.BLUE_ICE_BRICK_WALL, WindsweptBlocks.BLUE_ICE_BRICK_VERTICAL_SLAB, consumer);
-
-		// snow bricks set
-		brickSet(Blocks.SNOW_BLOCK, WindsweptBlocks.SNOW_BRICKS, null, WindsweptBlocks.SNOW_BRICK_SLAB,
-				WindsweptBlocks.SNOW_BRICK_STAIRS, WindsweptBlocks.SNOW_BRICK_WALL, WindsweptBlocks.SNOW_BRICK_VERTICAL_SLAB, consumer);
-
-		
 		// holly wood set
 		woodSet("holly", WindsweptItemTags.HOLLY_LOGS, WindsweptBlocks.HOLLY_PLANKS, WindsweptBlocks.HOLLY_SLAB,
 				WindsweptBlocks.HOLLY_STAIRS, WindsweptBlocks.HOLLY_LOG, WindsweptBlocks.HOLLY_WOOD,
@@ -262,13 +119,8 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				WindsweptItems.LARGE_CHESTNUT_BOAT, WindsweptItems.CHESTNUT_FURNACE_BOAT,
 				WindsweptBlocks.VERTICAL_CHESTNUT_PLANKS, WindsweptBlocks.CHESTNUT_CABINET, consumer);
 
-		// holly leaf set
-		leafSet(WindsweptBlocks.HOLLY_LOG, WindsweptBlocks.HOLLY_LEAVES, WindsweptBlocks.HOLLY_HEDGE,
-				WindsweptBlocks.HOLLY_LEAF_CARPET, WindsweptBlocks.HOLLY_LEAF_PILE, consumer);
-
-		// chestnut leaf set
-		leafSet(WindsweptBlocks.CHESTNUT_LOG, WindsweptBlocks.CHESTNUT_LEAVES, WindsweptBlocks.CHESTNUT_HEDGE,
-				WindsweptBlocks.CHESTNUT_LEAF_CARPET, WindsweptBlocks.CHESTNUT_LEAF_PILE, consumer);
+		leafSet(WindsweptBlocks.HOLLY_LOG, WindsweptBlocks.HOLLY_LEAVES, WindsweptBlocks.HOLLY_HEDGE, WindsweptBlocks.HOLLY_LEAF_CARPET, WindsweptBlocks.HOLLY_LEAF_PILE, consumer);
+		leafSet(WindsweptBlocks.CHESTNUT_LOG, WindsweptBlocks.CHESTNUT_LEAVES, WindsweptBlocks.CHESTNUT_HEDGE, WindsweptBlocks.CHESTNUT_LEAF_CARPET, WindsweptBlocks.CHESTNUT_LEAF_PILE, consumer);
 
 		// wild berry sack
 		conditionalRecipe(ShapedRecipeBuilder.shaped(WindsweptBlocks.WILD_BERRY_SACK.get())
@@ -289,7 +141,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 		conditionalRecipe(ShapelessRecipeBuilder.shapeless(WindsweptItems.WILD_BERRY_PIPS.get())
 				.requires(WindsweptItems.WILD_BERRIES.get())
 				.unlockedBy("has_wild_berries", has(WindsweptItems.WILD_BERRIES.get())),
-				getModLoaded("berry_good"), consumer, Windswept.REGISTRY_HELPER.prefix("wild_berry_pips"));
+				new ModLoadedCondition("berry_good"), consumer, Windswept.REGISTRY_HELPER.prefix("wild_berry_pips"));
 
 		// holly berry crate
 		conditionalRecipe(ShapedRecipeBuilder.shaped(WindsweptBlocks.HOLLY_BERRY_CRATE.get())
@@ -347,37 +199,13 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 		return new QuarkFlagRecipeCondition(new ResourceLocation("blueprint", "quark_flag"), flag);
 	}
 
-	private static ModLoadedCondition getModLoaded(String modID) {
-		return  new ModLoadedCondition(modID);
-	}
-	private static TagEmptyCondition getTagEmpty(TagKey<Item> tag) {
-		return new TagEmptyCondition(tag.location());
-	}
-	private static OrCondition or(ICondition first, ICondition second) {
-		return new OrCondition(first, second);
-	}
-	private static AndCondition and(ICondition first, ICondition second) {
-		return new AndCondition(first, second);
-	}
-	private static NotCondition not(ICondition condition) {
-		return new NotCondition(condition);
-	}
-
 	private static void conditionalCooking(ItemLike ingredient, ItemLike result, ICondition condition, Consumer<FinishedRecipe> consumer) {
 		String path = getName(ingredient);
 		String name = getName(result);
 
-		conditionalRecipe(SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), result, .35f, 200)
-				.unlockedBy("has_" + path, has(ingredient)),
-				condition, consumer, Windswept.REGISTRY_HELPER.prefix(name));
-
-		conditionalRecipe(SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ingredient), result, .35f, 600)
-				.unlockedBy("has_" + path, has(ingredient)),
-				condition, consumer, Windswept.REGISTRY_HELPER.prefix(name + "_from_campfire_cooking"));
-
-		conditionalRecipe(SimpleCookingRecipeBuilder.smoking(Ingredient.of(ingredient), result, .35f, 100)
-				.unlockedBy("has_" + path, has(ingredient)),
-				condition, consumer, Windswept.REGISTRY_HELPER.prefix(name + "_from_smoking"));
+		conditionalRecipe(SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), result, .35f, 200).unlockedBy("has_" + path, has(ingredient)), condition, consumer, Windswept.REGISTRY_HELPER.prefix(name));
+		conditionalRecipe(SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ingredient), result, .35f, 600).unlockedBy("has_" + path, has(ingredient)), condition, consumer, Windswept.REGISTRY_HELPER.prefix(name + "_from_campfire_cooking"));
+		conditionalRecipe(SimpleCookingRecipeBuilder.smoking(Ingredient.of(ingredient), result, .35f, 100).unlockedBy("has_" + path, has(ingredient)), condition, consumer, Windswept.REGISTRY_HELPER.prefix(name + "_from_smoking"));
 	}
 
 	private static void brickSet(ItemLike ingredient, RegistryObject<Block> block, @Nullable RegistryObject<Block> chiseled, RegistryObject<Block> slab, RegistryObject<Block> stairs, RegistryObject<Block> wall, RegistryObject<Block> verticalSlab, Consumer<FinishedRecipe> consumer) {
@@ -412,16 +240,13 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 			RegistryObject<Block> bookshelf, RegistryObject<? extends Block> chest, RegistryObject<? extends Block> trappedChest,
 			RegistryObject<Item> largeBoat, RegistryObject<Item> furnaceBoat, RegistryObject<Block> verticalPlanks,
 			RegistryObject<Block> cabinet, Consumer<FinishedRecipe> consumer) {
-		//chest boat
+		woodenBoat(consumer, boat.getFirst().get(), planks.get());
 		ShapelessRecipeBuilder.shapeless(boat.getSecond().get())
-				.group("chest_boat").
-				requires(Tags.Items.CHESTS_WOODEN)
+				.group("chest_boat")
+				.requires(Tags.Items.CHESTS_WOODEN)
 				.requires(boat.getFirst().get())
 				.unlockedBy("has_" + getName(boat.getFirst().get()), has(boat.getFirst().get()))
 				.save(consumer, getRegistryName(boat.getSecond()));
-
-		//boat
-		woodenBoat(consumer, boat.getFirst().get(), planks.get());
 
 		//button
 		ShapelessRecipeBuilder.shapeless(button.get())
@@ -460,13 +285,6 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_" + name + "_planks", has(planks.get()))
 				.save(consumer, getRegistryName(fenceGate));
 
-		//planks
-		ShapelessRecipeBuilder.shapeless(planks.get(), 4)
-				.group("planks")
-				.requires(logs)
-				.unlockedBy("has_" + name + "_log", has(logs))
-				.save(consumer, getRegistryName(planks));
-
 		//pressure plate
 		ShapedRecipeBuilder.shaped(pressurePlate.get())
 				.group("wooden_pressure_plate").
@@ -495,37 +313,13 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_" + name + "_planks", has(planks.get()))
 				.save(consumer, getRegistryName(trapdoor));
 
-		//wood
-		ShapedRecipeBuilder.shaped(wood.get(), 3)
-				.group("bark")
-				.define('#', log.get())
-				.pattern("##")
-				.pattern("##")
-				.unlockedBy("has_" + name + "_log", has(log.get()))
-				.save(consumer, getRegistryName(wood));
-
-		//stripped wood
-		ShapedRecipeBuilder.shaped(strippedWood.get(), 3)
-				.group("bark")
-				.define('#', strippedLog.get())
-				.pattern("##")
-				.pattern("##")
-				.unlockedBy("has_stripped_" + name + "_log", has(strippedLog.get()))
-				.save(consumer, getRegistryName(strippedWood));
-
-		//slab
+		planksFromLogs(consumer, planks.get(), logs);
+		woodFromLogs(consumer, wood.get(), log.get());
+		woodFromLogs(consumer, strippedWood.get(), strippedLog.get());
 		slab(planks.get(), slab.get(), "wooden_slab", consumer);
-
-		//stairs
 		stairs(planks.get(), stairs.get(), "wooden_stairs", consumer);
-
-		//veritcal slab
 		verticalSlab(verticalSlab.get(), slab.get(), consumer);
-
-		//post
 		post(post.get(), wood.get(), consumer);
-
-		//stripped post
 		post(strippedPost.get(), strippedWood.get(), consumer);
 
 		//boards
@@ -536,7 +330,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.pattern("#")
 				.pattern("#")
 				.unlockedBy("has_" + name + "_planks", has(planks.get())),
-				getModLoaded("woodworks"), consumer, getRegistryName(boards));
+				new ModLoadedCondition("woodworks"), consumer, getRegistryName(boards));
 
 		//beehive
 		conditionalRecipe(ShapedRecipeBuilder.shaped(beehive.get())
@@ -547,7 +341,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.pattern("HHH")
 				.pattern("###")
 				.unlockedBy("has_" + name + "_planks", has(planks.get())),
-				getModLoaded("woodworks"), consumer, getRegistryName(beehive));
+				new ModLoadedCondition("woodworks"), consumer, getRegistryName(beehive));
 
 		//ladder
 		conditionalRecipe(ShapedRecipeBuilder.shaped(ladder.get(), 4)
@@ -558,7 +352,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.pattern("S#S")
 				.pattern("S S")
 				.unlockedBy("has_" + name + "_planks", has(planks.get())),
-				or(getModLoaded("woodworks"), getQuarkCondition("variant_ladders")), consumer, getRegistryName(ladder));
+				new OrCondition(new ModLoadedCondition("woodworks"), getQuarkCondition("variant_ladders")), consumer, getRegistryName(ladder));
 
 		//bookshelf
 		conditionalRecipe(ShapedRecipeBuilder.shaped(bookshelf.get())
@@ -569,7 +363,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.pattern("BBB")
 				.pattern("###")
 				.unlockedBy("has_" + name + "_planks", has(planks.get())),
-				or(getModLoaded("woodworks"), getQuarkCondition("variant_bookshelves")), consumer, getRegistryName(bookshelf));
+				new OrCondition(new ModLoadedCondition("woodworks"), getQuarkCondition("variant_bookshelves")), consumer, getRegistryName(bookshelf));
 
 		//chest
 		conditionalRecipe(ShapedRecipeBuilder.shaped(chest.get())
@@ -579,7 +373,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.pattern("# #")
 				.pattern("###")
 				.unlockedBy("has_" + name + "_planks", has(planks.get())),
-				or(getModLoaded("woodworks"), getQuarkCondition("variant_chests")), consumer, getRegistryName(chest));
+				new OrCondition(new ModLoadedCondition("woodworks"), getQuarkCondition("variant_chests")), consumer, getRegistryName(chest));
 
 		//quark chest recipe
 		conditionalRecipe(ShapedRecipeBuilder.shaped(chest.get(), 4)
@@ -589,21 +383,21 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.pattern("# #")
 				.pattern("###")
 				.unlockedBy("has_lots_of_items", new InventoryChangeTrigger.TriggerInstance(EntityPredicate.Composite.ANY, MinMaxBounds.Ints.atLeast(10), MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY, new ItemPredicate[0])),
-				and(getQuarkCondition("wood_to_chest_recipes"), getQuarkCondition("variant_chests")), consumer, Windswept.REGISTRY_HELPER.prefix(getName(chest.get()) + "_wood"));
+				new AndCondition(getQuarkCondition("wood_to_chest_recipes"), getQuarkCondition("variant_chests")), consumer, Windswept.REGISTRY_HELPER.prefix(getName(chest.get()) + "_wood"));
 
 		//trapped chest
 		conditionalRecipe(ShapelessRecipeBuilder.shapeless(trappedChest.get())
 				.requires(chest.get())
 				.requires(Items.TRIPWIRE_HOOK)
 				.unlockedBy("has_lots_of_items", new InventoryChangeTrigger.TriggerInstance(EntityPredicate.Composite.ANY, MinMaxBounds.Ints.atLeast(10), MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY, new ItemPredicate[0])),
-				or(getModLoaded("woodworks"), getQuarkCondition("variant_chests")), consumer, getRegistryName(trappedChest));
+				new OrCondition(new ModLoadedCondition("woodworks"), getQuarkCondition("variant_chests")), consumer, getRegistryName(trappedChest));
 
 		//furnace boat
 		conditionalRecipe(ShapelessRecipeBuilder.shapeless(furnaceBoat.get())
 				.requires(boat.getFirst().get())
 				.requires(Items.FURNACE)
 				.unlockedBy("has_" + name + "_boat", has(boat.getFirst().get())),
-				getModLoaded("boatload"), consumer, getRegistryName(furnaceBoat));
+				new ModLoadedCondition("boatload"), consumer, getRegistryName(furnaceBoat));
 
 		//large boat
 		conditionalRecipe(ShapedRecipeBuilder.shaped(largeBoat.get())
@@ -613,7 +407,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.pattern("#B#")
 				.pattern("###")
 				.unlockedBy("has_" + name + "_boat", has(boat.getFirst().get())),
-				getModLoaded("boatload"), consumer, getRegistryName(largeBoat));
+				new ModLoadedCondition("boatload"), consumer, getRegistryName(largeBoat));
 
 		//vertical planks
 		conditionalRecipe(ShapedRecipeBuilder.shaped(verticalPlanks.get(), 3)
@@ -638,7 +432,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.pattern("T T")
 				.pattern("###")
 				.unlockedBy("has_" + name + "_trapdoor", has(trapdoor.get())),
-				getModLoaded("farmersdelight"), consumer, Windswept.REGISTRY_HELPER.prefix(getName(cabinet.get())));
+				new ModLoadedCondition("farmersdelight"), consumer, Windswept.REGISTRY_HELPER.prefix(getName(cabinet.get())));
 
 	}
 
@@ -664,7 +458,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 		conditionalRecipe(ShapelessRecipeBuilder.shapeless(leafPile.get(), 4)
 				.requires(leaves.get())
 				.unlockedBy("has_leaves", has(leaves.get())),
-				getModLoaded("woodworks"), consumer, getRegistryName(leafPile));
+				new ModLoadedCondition("woodworks"), consumer, getRegistryName(leafPile));
 
 		//leaf pile revert
 		conditionalRecipe(ShapedRecipeBuilder.shaped(leaves.get())
@@ -672,7 +466,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.pattern("##")
 				.pattern("##")
 				.unlockedBy("has_leaf_pile", has(leafPile.get())),
-				getModLoaded("woodworks"), consumer, Windswept.REGISTRY_HELPER.prefix(getName(leaves.get()) + "_from_leaf_pile"));
+				new ModLoadedCondition("woodworks"), consumer, Windswept.REGISTRY_HELPER.prefix(getName(leaves.get()) + "_from_leaf_pile"));
 	}
 
 	private static void flowerToDye(RegistryObject<Block> flower, Item dye, Consumer<FinishedRecipe> consumer) {
@@ -786,10 +580,9 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 			.unlockedBy("has_wood", has(wood)),
 			getQuarkCondition("wooden_posts"), consumer, Windswept.REGISTRY_HELPER.prefix(getName(post)));
 	}
-
 	
 	private static String getName(ItemLike object) {
-		return ForgeRegistries.ITEMS.getKey(object.asItem()).getPath();
+		return Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(object.asItem())).getPath();
 	}
 	
 	private static ResourceLocation getRegistryName(RegistryObject<? extends ItemLike> item) {
