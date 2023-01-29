@@ -11,9 +11,11 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.data.event.GatherDataEvent;
 
 public class WindsweptBlockTagProvider extends BlockTagsProvider {
+	public static WindsweptBlockTagProvider INSTANCE;
 
 	public WindsweptBlockTagProvider(GatherDataEvent event) {
 		super(event.getGenerator(), Windswept.MODID, event.getExistingFileHelper());
+		INSTANCE = this;
 	}
 
 	@Override

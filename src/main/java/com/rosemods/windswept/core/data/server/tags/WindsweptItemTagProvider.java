@@ -18,8 +18,8 @@ import net.minecraftforge.data.event.GatherDataEvent;
 
 public class WindsweptItemTagProvider extends ItemTagsProvider {
 
-	public WindsweptItemTagProvider(GatherDataEvent event, BlockTagsProvider blockTags) {
-		super(event.getGenerator(), blockTags, Windswept.MODID, event.getExistingFileHelper());
+	public WindsweptItemTagProvider(GatherDataEvent event) {
+		super(event.getGenerator(), WindsweptBlockTagProvider.INSTANCE, Windswept.MODID, event.getExistingFileHelper());
 	}
 	
 	@Override

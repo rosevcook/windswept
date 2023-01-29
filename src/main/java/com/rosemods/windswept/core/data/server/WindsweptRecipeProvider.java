@@ -398,13 +398,6 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 		}
 
 	}
-
-	private static void blockSet(ItemLike ingredient, RegistryObject<Block> block, RegistryObject<Block> slab, RegistryObject<Block> stairs, RegistryObject<Block> verticalSlab, Consumer<FinishedRecipe> consumer) {
-		ShapedRecipeBuilder.shaped(block.get(), 4).define('#', ingredient).pattern("##").pattern("##").unlockedBy("has_" + getName(ingredient), has(ingredient)).save(consumer, Windswept.REGISTRY_HELPER.prefix(getName(block.get())));
-		stairs(block.get(), stairs.get(), consumer);
-		slab(block.get(), slab.get(), consumer);
-		verticalSlab(verticalSlab.get(), slab.get(), consumer);
-	}
 	
 	// generates recipes for all items in a wood set
 	private static void woodSet(String name, TagKey<Item> logs, RegistryObject<Block> planks,
@@ -428,13 +421,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				.save(consumer, getRegistryName(boat.getSecond()));
 
 		//boat
-		ShapedRecipeBuilder.shaped(boat.getFirst().get())
-				.group("boat").
-				define('#', planks.get())
-				.pattern("# #")
-				.pattern("###")
-				.unlockedBy("has_" + name + "_planks", has(planks.get()))
-				.save(consumer, getRegistryName(boat.getFirst()));
+		woodenBoat(consumer, boat.getFirst().get(), planks.get());
 
 		//button
 		ShapelessRecipeBuilder.shapeless(button.get())

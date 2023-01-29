@@ -1,5 +1,6 @@
 package com.rosemods.windswept.core.data.client;
 
+import java.util.Objects;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -151,7 +152,7 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 	// Blocks //
 
 	private void wildBerryBush(RegistryObject<Block> bush) {
-		String name = ForgeRegistries.BLOCKS.getKey(bush.get()).getPath();
+		String name = Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(bush.get())).getPath();
 		final Function<Integer, ModelFile> model = i -> this.models().cross(name + "_stage" + i, this.modLoc("block/" + name + "_stage" + i)).renderType("cutout");
 		this.getVariantBuilder(bush.get())
 			.partialState().with(WildBerryBushBlock.AGE, 0).addModels(new ConfiguredModel(model.apply(0), 0, 0, true))
@@ -176,7 +177,7 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 	}
 
 	private void pot(RegistryObject<Block> pot, ResourceLocation texture) {
-		ModelFile model = this.models().withExistingParent(ForgeRegistries.BLOCKS.getKey(pot.get()).getPath(), "block/flower_pot_cross").texture("plant", texture).renderType("cutout");
+		ModelFile model = this.models().withExistingParent(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(pot.get())).getPath(), "block/flower_pot_cross").texture("plant", texture).renderType("cutout");
 		this.simpleBlock(pot.get(), model);
 	}
 	
@@ -494,7 +495,7 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 	}
 
 	private String getName(Supplier<? extends ItemLike> object) {
-		return ForgeRegistries.ITEMS.getKey(object.get().asItem()).getPath();
+		return Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(object.get().asItem())).getPath();
 	}
 
 }
