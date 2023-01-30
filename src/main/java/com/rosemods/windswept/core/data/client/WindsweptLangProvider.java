@@ -225,6 +225,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 
 		this.translateBiome(WindsweptBiomes.CHESTNUT_FOREST);
 		this.translateBiome(WindsweptBiomes.SNOWY_CHESTNUT_FOREST);
+		this.translateBiome(WindsweptBiomes.BLUEBELL_WOODS);
 
 		// Enchantments //
 		

@@ -30,6 +30,7 @@ public class WindsweptConfig {
 	
 	public static class Client {	
 		public final ConfigValue<Boolean> powderSnowParticles;
+
 		public Client(ForgeConfigSpec.Builder builder) {
 			builder.comment("Client tweaks");
 			builder.push("client");

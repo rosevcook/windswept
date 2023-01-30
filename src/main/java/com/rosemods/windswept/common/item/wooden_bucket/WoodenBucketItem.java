@@ -57,8 +57,7 @@ public class WoodenBucketItem extends BucketItem {
 				if (this.getFluid() == Fluids.EMPTY) {
 					BlockState state = level.getBlockState(blockpos);
 					
-					if (state.getBlock() instanceof IWoodenBucketPickupBlock && ((IWoodenBucketPickupBlock) state.getBlock()).canPickup(level, blockpos, state)) {
-						IWoodenBucketPickupBlock pickup = (IWoodenBucketPickupBlock) state.getBlock();
+					if (state.getBlock() instanceof IWoodenBucketPickupBlock pickup && pickup.canPickup(level, blockpos, state)) {
 						ItemStack filledBucket = getFilled(itemstack, pickup.getWoodenBucketItem(), player);
 
 						pickup.getWoodenBucketPickupSound().ifPresent(soundevent -> player.playSound(soundevent, 1f, 1f));

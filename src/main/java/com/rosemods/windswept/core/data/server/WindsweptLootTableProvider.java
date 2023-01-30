@@ -331,6 +331,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 					.add(LootItem.lootTableItem(Items.COBWEB).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
 					.add(LootItem.lootTableItem(WindsweptBlocks.CHESTNUT_SAPLING.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
 					.add(LootItem.lootTableItem(Items.BIRCH_SAPLING).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
+					.add(LootItem.lootTableItem(WindsweptItems.WOODEN_BUCKET.get()).setWeight(1))
 			), builder);
 		}
 

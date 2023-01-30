@@ -2,6 +2,7 @@ package com.rosemods.windswept.core.data.server.modifiers;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
@@ -34,8 +35,8 @@ public class WindsweptAdvancementModifierProvider extends AdvancementModifierPro
 
 	@Override
 	protected void registerEntries() {
-		final List<Block> seedsBlocks = Arrays.asList(WindsweptBlocks.WILD_BERRY_BUSH_PIPS.get());
-		final List<EntityType<?>> killedMobs = Arrays.asList(WindsweptEntities.CHILLED.get());
+		final List<Block> seedsBlocks = List.of(WindsweptBlocks.WILD_BERRY_BUSH_PIPS.get());
+		final List<EntityType<?>> killedMobs = List.of(WindsweptEntities.CHILLED.get());
 
 		this.entry("balanced_diet").selects("husbandry/balanced_diet").addModifier(this.food().requirements(RequirementsStrategy.AND).build());
 		this.entry("all_effects").selects("nether/all_effects").addModifier(new EffectsChangedModifier("all_effects", false, this.effects()));
@@ -59,7 +60,7 @@ public class WindsweptAdvancementModifierProvider extends AdvancementModifierPro
 		CriteriaModifier.Builder food = this.builder();
 		WindsweptItems.HELPER.getDeferredRegister().getEntries().forEach(i -> {
 			if (i.get().getFoodProperties() != null)
-				food.addCriterion(ForgeRegistries.ITEMS.getKey(i.get()).getPath(), ConsumeItemTrigger.TriggerInstance.usedItem(i.get()));
+				food.addCriterion(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(i.get())).getPath(), ConsumeItemTrigger.TriggerInstance.usedItem(i.get()));
 		});
 		return food;
 	}

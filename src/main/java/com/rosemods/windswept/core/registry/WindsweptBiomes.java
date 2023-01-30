@@ -4,6 +4,7 @@ import com.rosemods.windswept.core.Windswept;
 import com.teamabnormals.blueprint.core.util.registry.BiomeSubRegistryHelper;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.biome.OverworldBiomes;
+import net.minecraft.data.worldgen.placement.TreePlacements;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
@@ -18,6 +19,7 @@ public class WindsweptBiomes {
 
     public static final BiomeSubRegistryHelper.KeyedBiome CHESTNUT_FOREST = HELPER.createBiome("chestnut_forest", () -> chestnutForest(false));
     public static final BiomeSubRegistryHelper.KeyedBiome SNOWY_CHESTNUT_FOREST = HELPER.createBiome("snowy_chestnut_forest", () -> chestnutForest(true));
+    public static final BiomeSubRegistryHelper.KeyedBiome BLUEBELL_WOODS = HELPER.createBiome("bluebell_woods", WindsweptBiomes::bluebellWoods);
 
     private static Biome chestnutForest(boolean snowy) {
         MobSpawnSettings.Builder spawns = baseChestnutSpawns();
@@ -33,6 +35,8 @@ public class WindsweptBiomes {
         BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
         BiomeDefaultFeatures.addCommonBerryBushes(generation);
         BiomeDefaultFeatures.addMossyStoneBlock(generation);
+
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.TALL_FERNS.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.CHESTNUT_TREES_COMMON.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.TALL_BIRCH.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, (snowy ? WindsweptFeatures.Placements.WHITE_ROSE_BUSH : WindsweptFeatures.Placements.BLUE_ROSE_BUSH).getHolder().get());
@@ -40,14 +44,33 @@ public class WindsweptBiomes {
         return new Biome.BiomeBuilder().precipitation(snowy ? Biome.Precipitation.SNOW : Biome.Precipitation.RAIN).temperature(temp).downfall(.4f).specialEffects((new BiomeSpecialEffects.Builder()).waterColor(4159204).waterFogColor(329011).fogColor(12638463).skyColor(calculateSkyColor(temp)).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).backgroundMusic(OverworldBiomes.NORMAL_MUSIC).build()).mobSpawnSettings(spawns.build()).generationSettings(generation.build()).build();
     }
 
+    private static Biome bluebellWoods() {
+        MobSpawnSettings.Builder spawns = baseChestnutSpawns();
+        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.ALLAY, 8, 4, 4));
+
+        BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder();
+        BiomeDefaultFeatures.addPlainGrass(generation);
+        BiomeDefaultFeatures.addDefaultOres(generation);
+        BiomeDefaultFeatures.addDefaultSoftDisks(generation);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
+        BiomeDefaultFeatures.addDefaultMushrooms(generation);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
+        BiomeDefaultFeatures.addCommonBerryBushes(generation);
+        BiomeDefaultFeatures.addMossyStoneBlock(generation);
+
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.LARGE_BLUEBELLS.getHolder().get());
+
+        return new Biome.BiomeBuilder().precipitation(Biome.Precipitation.RAIN).temperature(.45f).downfall(.8f).specialEffects((new BiomeSpecialEffects.Builder()).waterColor(4159204).waterFogColor(329011).fogColor(12638463).skyColor(calculateSkyColor(-.4f)).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).backgroundMusic(OverworldBiomes.NORMAL_MUSIC).build()).mobSpawnSettings(spawns.build()).generationSettings(generation.build()).build();
+    }
+
     private static MobSpawnSettings.Builder baseChestnutSpawns() {
         MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
+
         BiomeDefaultFeatures.commonSpawns(spawns);
         spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 12, 4, 4));
         spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.PIG, 10, 4, 4));
         spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 8, 4, 4));
         spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FOX, 12, 4, 4));
-        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.LLAMA, 8, 4, 4));
 
         return spawns;
     }

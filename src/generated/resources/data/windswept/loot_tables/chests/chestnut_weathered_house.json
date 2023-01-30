@@ -114,6 +114,10 @@
           ],
           "name": "minecraft:birch_sapling",
           "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "windswept:wooden_bucket"
         }
       ],
       "rolls": {

@@ -36,7 +36,7 @@ import net.minecraftforge.common.ForgeHooks;
 
 public class WildBerryBushBlock extends BushBlock implements BonemealableBlock {
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_2;
-      private static final TargetedItemCategoryFiller FILLER = new TargetedItemCategoryFiller(() -> Items.GLOW_BERRIES);
+	private static final TargetedItemCategoryFiller FILLER = new TargetedItemCategoryFiller(() -> Items.GLOW_BERRIES);
 	private static final VoxelShape SMALL_SHAPE = Block.box(3f, 0f, 3f, 13f, 5f, 13f);
 	private static final VoxelShape GROWN_SHAPE = Block.box(2f, 0f, 2f, 14f, 14f, 14f);
 

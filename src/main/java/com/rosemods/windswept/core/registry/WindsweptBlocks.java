@@ -88,7 +88,7 @@ public class WindsweptBlocks {
 	public static final RegistryObject<Block> CHESTNUT_TRAPDOOR = HELPER.createBlock("chestnut_trapdoor", () -> new WoodTrapDoorBlock(Properties.CHESTNUT.trapdoor()), CreativeModeTab.TAB_REDSTONE);
 	public static final RegistryObject<Block> CHESTNUT_BUTTON = HELPER.createBlock("chestnut_button", () -> new BlueprintWoodButtonBlock(Properties.CHESTNUT.button()), CreativeModeTab.TAB_REDSTONE);
 	public static final Pair<RegistryObject<BlueprintStandingSignBlock>, RegistryObject<BlueprintWallSignBlock>> CHESTNUT_SIGNS = HELPER.createSignBlock("chestnut", MaterialColor.COLOR_BROWN);
-	public static final RegistryObject<Block> CHESTNUT_SAPLING = HELPER.createBlock("chestnut_sapling", () -> new BlueprintSaplingBlock(new ChesnutTreeGrower(), PropertyUtil.SAPLING), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> CHESTNUT_SAPLING = HELPER.createBlock("chestnut_sapling", () -> new BlueprintSaplingBlock(new ChestnutTreeGrower(), PropertyUtil.SAPLING), CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> POTTED_CHESTNUT_SAPLING = HELPER.createBlockNoItem("potted_chestnut_sapling", () -> new FlowerPotBlock(CHESTNUT_SAPLING.get(), PropertyUtil.FLOWER_POT));
 
 	public static final RegistryObject<Block> VERTICAL_CHESTNUT_PLANKS = HELPER.createCompatBlock(WindsweptConstants.QUARK, "vertical_chestnut_planks", () -> new Block(Properties.CHESTNUT.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);

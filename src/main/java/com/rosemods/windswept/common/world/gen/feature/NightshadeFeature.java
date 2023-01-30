@@ -41,7 +41,7 @@ public class NightshadeFeature extends Feature<NoneFeatureConfiguration> {
 		return generated;
 	}
 	
-	private static boolean nextToLog(WorldGenLevel level, BlockPos pos) {
+	public static boolean nextToLog(WorldGenLevel level, BlockPos pos) {
 		for (Direction dir : Direction.Plane.HORIZONTAL) 
 			if (level.getBlockState(pos.relative(dir)).is(BlockTags.LOGS))
 				return true;
