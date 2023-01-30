@@ -28,6 +28,7 @@ public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
         this.tag(WindsweptBiomeTags.HAS_COMMON_WILD_BERRIES).add(Biomes.GROVE);
         this.tag(WindsweptBiomeTags.HAS_CHESTNUT_TREES).addTag(BiomeTags.IS_FOREST).addTag(BiomeTags.IS_TAIGA).add(Biomes.DARK_FOREST);
         this.tag(WindsweptBiomeTags.HAS_GROVE_WEATHERED_HOUSE).add(Biomes.GROVE);
+        this.tag(WindsweptBiomeTags.HAS_CHESTNUT_WEATHERED_HOUSE).add(Biomes.OLD_GROWTH_BIRCH_FOREST);
     }
 
 }

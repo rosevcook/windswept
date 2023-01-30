@@ -50,7 +50,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 		ShapelessRecipeBuilder.shapeless(WindsweptItems.WILD_BERRIES.get(), 3).requires(WindsweptItems.WILD_BERRY_BOWL.get()).unlockedBy("has_wild_berry_bowl", has(WindsweptItems.WILD_BERRY_BOWL.get())).save(consumer, Windswept.REGISTRY_HELPER.prefix("wild_berry_bowl_revert"));
 		ShapelessRecipeBuilder.shapeless(Items.SWEET_BERRIES, 3).requires(WindsweptItems.SWEET_BERRY_BOWL.get()).unlockedBy("has_sweet_berry_bowl", has(WindsweptItems.SWEET_BERRY_BOWL.get())).save(consumer, Windswept.REGISTRY_HELPER.prefix("sweet_berry_bowl_revert"));
 		
-		conditionalRecipe(ShapedRecipeBuilder.shaped(Blocks.CAKE).pattern("AAA").pattern("BEB").pattern("CCC").unlockedBy("has_egg", has(Tags.Items.EGGS)), new NotCondition(new ModLoadedCondition("neapolitan")), consumer, Windswept.REGISTRY_HELPER.prefix("cake"));
+		conditionalRecipe(ShapedRecipeBuilder.shaped(Blocks.CAKE).define('A', WindsweptItemTags.MILK).define('B', Items.SUGAR).define('C', Tags.Items.CROPS_WHEAT).define('E', Tags.Items.EGGS).pattern("AAA").pattern("BEB").pattern("CCC").unlockedBy("has_egg", has(Tags.Items.EGGS)), new NotCondition(new ModLoadedCondition("neapolitan")), consumer, Windswept.REGISTRY_HELPER.prefix("cake"));
 		cooking(WindsweptItems.CHESTNUTS.get(), WindsweptItems.ROASTED_CHESTNUTS.get(), consumer);
 		cooking(WindsweptItems.GOAT.get(), WindsweptItems.COOKED_GOAT.get(), consumer);
 		conditionalCooking(WindsweptItems.GOAT_SHANKS.get(), WindsweptItems.COOKED_GOAT_SHANKS.get(), new ModLoadedCondition("farmersdelight"), consumer);

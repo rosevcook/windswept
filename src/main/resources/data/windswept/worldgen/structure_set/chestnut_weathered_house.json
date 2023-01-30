@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "windswept:chestnut_weathered_house",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 1691337232,
+    "spacing": 24,
+    "separation": 6
+  }
+}
