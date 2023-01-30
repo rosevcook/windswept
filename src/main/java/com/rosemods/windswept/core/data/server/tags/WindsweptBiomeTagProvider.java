@@ -2,6 +2,7 @@ package com.rosemods.windswept.core.data.server.tags;
 
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.other.tags.WindsweptBiomeTags;
+import com.rosemods.windswept.core.registry.WindsweptBiomes;
 import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biomes;
@@ -16,7 +17,7 @@ public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
 
     @Override
     protected void addTags() {
-        this.tag(WindsweptBiomeTags.HAS_BLUEBELLS).add(Biomes.DARK_FOREST).add(Biomes.BIRCH_FOREST).add(Biomes.OLD_GROWTH_BIRCH_FOREST);
+        this.tag(WindsweptBiomeTags.HAS_BLUEBELLS).add(Biomes.DARK_FOREST).add(Biomes.BIRCH_FOREST).add(Biomes.OLD_GROWTH_BIRCH_FOREST).add(WindsweptBiomes.CHESTNUT_FOREST.get()).add(WindsweptBiomes.SNOWY_CHESTNUT_FOREST.get());
         this.tag(WindsweptBiomeTags.HAS_FOXGLOVES).addTag(BiomeTags.IS_TAIGA);
         this.tag(WindsweptBiomeTags.HAS_TAIGA_FLOWERS).addTag(BiomeTags.IS_TAIGA);
         this.tag(WindsweptBiomeTags.HAS_SNOWY_FLOWERS).addTag(Tags.Biomes.IS_SNOWY);
@@ -28,7 +29,14 @@ public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
         this.tag(WindsweptBiomeTags.HAS_COMMON_WILD_BERRIES).add(Biomes.GROVE);
         this.tag(WindsweptBiomeTags.HAS_CHESTNUT_TREES).addTag(BiomeTags.IS_FOREST).addTag(BiomeTags.IS_TAIGA).add(Biomes.DARK_FOREST);
         this.tag(WindsweptBiomeTags.HAS_GROVE_WEATHERED_HOUSE).add(Biomes.GROVE);
-        this.tag(WindsweptBiomeTags.HAS_CHESTNUT_WEATHERED_HOUSE).add(Biomes.OLD_GROWTH_BIRCH_FOREST);
+        this.tag(WindsweptBiomeTags.HAS_CHESTNUT_WEATHERED_HOUSE).add(WindsweptBiomes.CHESTNUT_FOREST.get()).add(WindsweptBiomes.SNOWY_CHESTNUT_FOREST.get());
+
+        this.tag(BiomeTags.IS_FOREST).add(WindsweptBiomes.CHESTNUT_FOREST.get()).add(WindsweptBiomes.SNOWY_CHESTNUT_FOREST.get());
+        this.tag(BiomeTags.IS_TAIGA).add(WindsweptBiomes.CHESTNUT_FOREST.get()).add(WindsweptBiomes.SNOWY_CHESTNUT_FOREST.get());
+        this.tag(BiomeTags.HAS_RUINED_PORTAL_STANDARD).add(WindsweptBiomes.CHESTNUT_FOREST.get()).add(WindsweptBiomes.SNOWY_CHESTNUT_FOREST.get());
+        this.tag(BiomeTags.HAS_MINESHAFT).add(WindsweptBiomes.CHESTNUT_FOREST.get()).add(WindsweptBiomes.SNOWY_CHESTNUT_FOREST.get());
+        this.tag(BiomeTags.STRONGHOLD_BIASED_TO).add(WindsweptBiomes.CHESTNUT_FOREST.get()).add(WindsweptBiomes.SNOWY_CHESTNUT_FOREST.get());
+        this.tag(Tags.Biomes.IS_SNOWY).add(WindsweptBiomes.SNOWY_CHESTNUT_FOREST.get());
     }
 
 }

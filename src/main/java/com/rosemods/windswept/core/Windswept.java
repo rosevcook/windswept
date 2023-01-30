@@ -90,6 +90,7 @@ public class Windswept {
 		gen.addProvider(server, new WindsweptAdvancementModifierProvider(event));
 		gen.addProvider(server, new WindsweptLootModifierProvider(event));
 		gen.addProvider(server, new WindsweptStructureRepaletterProvider(event));
+		gen.addProvider(server, new WindsweptModdedBiomeSliceProvider(event));
 		gen.addProvider(server, WindsweptBiomeModifier.register(event));
 	}
     

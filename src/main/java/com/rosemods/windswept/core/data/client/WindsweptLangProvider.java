@@ -4,18 +4,14 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
+import com.rosemods.windswept.core.registry.*;
+import com.teamabnormals.blueprint.core.util.registry.BiomeSubRegistryHelper;
 import net.minecraft.world.level.block.Blocks;
 import org.codehaus.plexus.util.StringUtils;
 
 import com.mojang.datafixers.util.Pair;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.other.WindsweptDamageSources;
-import com.rosemods.windswept.core.registry.WindsweptAttributes;
-import com.rosemods.windswept.core.registry.WindsweptBlocks;
-import com.rosemods.windswept.core.registry.WindsweptEffects;
-import com.rosemods.windswept.core.registry.WindsweptEnchantments;
-import com.rosemods.windswept.core.registry.WindsweptEntities;
-import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.rosemods.windswept.integration.jei.WindsweptPlugin;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintStandingSignBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintWallSignBlock;
@@ -224,7 +220,12 @@ public class WindsweptLangProvider extends LanguageProvider {
 		// Attributes
 		
 		this.translateAttribute(WindsweptAttributes.SNOW_SPEED);
-		
+
+		// Biomes //
+
+		this.translateBiome(WindsweptBiomes.CHESTNUT_FOREST);
+		this.translateBiome(WindsweptBiomes.SNOWY_CHESTNUT_FOREST);
+
 		// Enchantments //
 		
 		this.translateEnchantment(WindsweptEnchantments.SLIPPING_CURSE, "Curse of Slipping", "The Curse of Slipping causes the wearer to slip on any block as if it was ice whilst damaging the boots in the process.");
@@ -283,6 +284,10 @@ public class WindsweptLangProvider extends LanguageProvider {
 
 	private void translateEntity(RegistryObject<? extends EntityType<?>> entity) {
 		this.add(entity.get(), this.toUpper(ForgeRegistries.ENTITY_TYPES, entity));
+	}
+
+	private void translateBiome(BiomeSubRegistryHelper.KeyedBiome biome) {
+		//this.add(biome.get().., this.toUpper(ForgeRegistries.BIOMES, biome.getObject()));
 	}
 	
 	private void translateEnchantment(RegistryObject<? extends Enchantment> enchantment, String name, String desc) {

@@ -20,8 +20,8 @@
             "Name": "minecraft:air"
           },
           "input_predicate": {
-            "block": "windswept:potted_bluebells",
-            "probability": 0.8,
+            "block": "windswept:potted_nightshade",
+            "probability": 0.5,
             "predicate_type": "minecraft:random_block_match"
           },
           "location_predicate": {

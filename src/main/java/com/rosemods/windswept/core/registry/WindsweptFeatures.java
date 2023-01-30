@@ -142,6 +142,7 @@ public class WindsweptFeatures {
 		public static final RegistryObject<PlacedFeature> GROVE_HOLLY_TREES = register("grove_holly_trees", Features.GROVE_HOLLY_TREES, TreePlacements.treePlacement(PlacementUtils.countExtra(9, .1f, 1)));
 		
 		public static final RegistryObject<PlacedFeature> CHESTNUT_TREES = register("chestnut_trees", Features.CHESTNUT_TREES, TreePlacements.treePlacement(PlacementUtils.countExtra(0, .1f, 1)));
+		public static final RegistryObject<PlacedFeature> CHESTNUT_TREES_COMMON = register("chestnut_trees_common", Features.CHESTNUT_TREES, TreePlacements.treePlacement(PlacementUtils.countExtra(9, .1f, 1)));
 
 		private static RegistryObject<PlacedFeature> createPlantPatch(String name, int onceEvery, RegistryObject<ConfiguredFeature<?, ?>> feature) {
 			return register(name, feature, RarityFilter.onAverageOnceEvery(onceEvery), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
