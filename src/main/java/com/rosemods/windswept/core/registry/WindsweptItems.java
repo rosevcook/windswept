@@ -50,12 +50,12 @@ public class WindsweptItems {
 	public static final RegistryObject<Item> MUTTON_PIE = HELPER.createItem("mutton_pie", () -> new InjectedItem(Items.COOKED_MUTTON, PropertyUtil.food(Foods.MUTTON_PIE)));
 	public static final RegistryObject<Item> GOAT = HELPER.createItem("goat", () -> new Item( PropertyUtil.food(Foods.GOAT)));
 	public static final RegistryObject<Item> COOKED_GOAT = HELPER.createItem("cooked_goat", () -> new Item(PropertyUtil.food(Foods.COOKED_GOAT)));
-	public static final RegistryObject<Item> GOAT_STEW = HELPER.createItem("goat_stew", () -> new BowlFoodItem(PropertyUtil.food(ModList.get().isLoaded(WindsweptConstants.FARMERS_DELIGHT) ? WindsweptFDCompat.GOAT_STEW : Foods.GOAT_STEW).craftRemainder(Items.BOWL).stacksTo(1)));
+	public static final RegistryObject<Item> GOAT_STEW = HELPER.createItem("goat_stew", () -> new BowlFoodItem(PropertyUtil.food(ModList.get().isLoaded(WindsweptConstants.FARMERSDELIGHT) ? WindsweptFDCompat.GOAT_STEW : Foods.GOAT_STEW).craftRemainder(Items.BOWL).stacksTo(1)));
 	public static final RegistryObject<Item> WILD_BERRY_PIPS = HELPER.createItem("wild_berry_pips", () -> new ItemNameBlockItem(WindsweptBlocks.WILD_BERRY_BUSH_PIPS.get(), new Item.Properties().tab(ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD) ? CreativeModeTab.TAB_MISC : null)));
 	public static final RegistryObject<Item> CHESTNUTS = HELPER.createItem("chestnuts", () -> new Item(PropertyUtil.food(Foods.CHESTNUTS)));
 	public static final RegistryObject<Item> ROASTED_CHESTNUTS = HELPER.createItem("roasted_chestnuts", () -> new Item(PropertyUtil.food(Foods.ROASTED_CHESTNUTS)));
-	public static final RegistryObject<Item> GOAT_SHANKS = HELPER.createCompatItem(WindsweptConstants.FARMERS_DELIGHT, "goat_shanks", new Item.Properties().food(Foods.GOAT_SHANKS), CreativeModeTab.TAB_FOOD);
-	public static final RegistryObject<Item> COOKED_GOAT_SHANKS = HELPER.createCompatItem(WindsweptConstants.FARMERS_DELIGHT, "cooked_goat_shanks", new Item.Properties().food(Foods.COOKED_GOAT_SHANKS), CreativeModeTab.TAB_FOOD);
+	public static final RegistryObject<Item> GOAT_SHANKS = HELPER.createCompatItem(WindsweptConstants.FARMERSDELIGHT, "goat_shanks", new Item.Properties().food(Foods.GOAT_SHANKS), CreativeModeTab.TAB_FOOD);
+	public static final RegistryObject<Item> COOKED_GOAT_SHANKS = HELPER.createCompatItem(WindsweptConstants.FARMERSDELIGHT, "cooked_goat_shanks", new Item.Properties().food(Foods.COOKED_GOAT_SHANKS), CreativeModeTab.TAB_FOOD);
 
 	// Misc //
 	

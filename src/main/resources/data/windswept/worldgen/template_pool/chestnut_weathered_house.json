@@ -1,0 +1,15 @@
+{
+  "name": "windswept:chestnut_weathered_house",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "windswept:chestnut_weathered_house",
+        "processors": "windswept:chestnut_weathered_house",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

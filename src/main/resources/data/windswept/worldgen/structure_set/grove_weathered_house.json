@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "windswept:grove_weathered_house",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 1691237232,
+    "spacing": 24,
+    "separation": 6
+  }
+}
