@@ -12,6 +12,7 @@ import com.rosemods.windswept.core.Windswept;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
+import net.minecraft.data.worldgen.features.VegetationFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.util.InclusiveRange;
@@ -58,6 +59,9 @@ public class WindsweptFeatures {
 		public static final BlockState YELLOW_ROSE = WindsweptBlocks.YELLOW_ROSE.get().defaultBlockState();
 		public static final BlockState FOXGLOVE = WindsweptBlocks.FOXGLOVE.get().defaultBlockState();
 		public static final BlockState WILD_BERRY_BUSH = WindsweptBlocks.WILD_BERRY_BUSH.get().defaultBlockState().setValue(WildBerryBushBlock.AGE, Integer.valueOf(2));
+		public static final BlockState WHITE_ROSE_BUSH = WindsweptBlocks.WHITE_ROSE_BUSH.get().defaultBlockState();
+		public static final BlockState BLUE_ROSE_BUSH = WindsweptBlocks.BLUE_ROSE_BUSH.get().defaultBlockState();
+
 	}
 	
 	public static class Configs {
@@ -74,7 +78,9 @@ public class WindsweptFeatures {
 		public static final RandomPatchConfiguration YELLOW_ROSE = createPlantPatch(64, States.YELLOW_ROSE);
 		public static final RandomPatchConfiguration FOXGLOVE = createPlantPatch(64, States.FOXGLOVE);
 		public static final RandomPatchConfiguration WILD_BERRY_BUSH = createPlantPatch(32, States.WILD_BERRY_BUSH);
-		
+		public static final RandomPatchConfiguration WHITE_ROSE_BUSH = createPlantPatch(32, States.WHITE_ROSE_BUSH);
+		public static final RandomPatchConfiguration BLUE_ROSE_BUSH = createPlantPatch(32, States.BLUE_ROSE_BUSH);
+
 		private static RandomPatchConfiguration createPlantPatch(int tries, BlockState state) {
 			return new RandomPatchConfiguration(tries, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
 							new SimpleBlockConfiguration(new DualNoiseProvider(new InclusiveRange<Integer>(1, 3),
@@ -113,6 +119,9 @@ public class WindsweptFeatures {
 		public static final RegistryObject<ConfiguredFeature<?, ?>> BLUE_ROSE = CONFIGURED_FEATURES.register("blue_rose", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.BLUE_ROSE));
 		public static final RegistryObject<ConfiguredFeature<?, ?>> YELLOW_ROSE = CONFIGURED_FEATURES.register("yellow_rose", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.YELLOW_ROSE));
 		public static final RegistryObject<ConfiguredFeature<?, ?>> FOXGLOVE = CONFIGURED_FEATURES.register("foxglove", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.FOXGLOVE));
+
+		public static final RegistryObject<ConfiguredFeature<?, ?>> WHITE_ROSE_BUSH = CONFIGURED_FEATURES.register("white_rose_bush", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.WHITE_ROSE_BUSH));
+		public static final RegistryObject<ConfiguredFeature<?, ?>> BLUE_ROSE_BUSH = CONFIGURED_FEATURES.register("blue_rose_bush", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.BLUE_ROSE_BUSH));
 		public static final RegistryObject<ConfiguredFeature<?, ?>> BLUEBELLS = CONFIGURED_FEATURES.register("bluebells", () -> new ConfiguredFeature<>(BLUEBELL_PATCH.get(), NoneFeatureConfiguration.NONE));
 		public static final RegistryObject<ConfiguredFeature<?, ?>> NIGHTHSADE = CONFIGURED_FEATURES.register("nightshades", () -> new ConfiguredFeature<>(NIGHTSHADE_PATCH.get(), NoneFeatureConfiguration.NONE));
 		public static final RegistryObject<ConfiguredFeature<?, ?>> WILD_BERRY_BUSH = CONFIGURED_FEATURES.register("wild_berry_bush", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.WILD_BERRY_BUSH));
@@ -133,6 +142,8 @@ public class WindsweptFeatures {
 		public static final RegistryObject<PlacedFeature> YELLOW_ROSE = createPlantPatch("yellow_rose", 24, Features.YELLOW_ROSE);
 		public static final RegistryObject<PlacedFeature> FOXGLOVE = createPlantPatch("foxglove", 6, Features.FOXGLOVE);
 		public static final RegistryObject<PlacedFeature> BLUEBELLS = createPlantPatch("bluebells", 3, Features.BLUEBELLS);
+		public static final RegistryObject<PlacedFeature> WHITE_ROSE_BUSH = createPlantPatch("white_rose_bush", 16, Features.WHITE_ROSE_BUSH);
+		public static final RegistryObject<PlacedFeature> BLUE_ROSE_BUSH = createPlantPatch("blue_rose_bush", 16, Features.BLUE_ROSE_BUSH);
 		public static final RegistryObject<PlacedFeature> NIGHTHSADE = createPlantPatch("nightshade", 360, Features.NIGHTHSADE);
 		public static final RegistryObject<PlacedFeature> WILD_BERRY_BUSH = createPlantPatch("wild_berry_bush", 32, Features.WILD_BERRY_BUSH);
 		public static final RegistryObject<PlacedFeature> WILD_BERRY_BUSH_COMMON = createPlantPatch("wild_berry_bush_common", 5, Features.WILD_BERRY_BUSH);
@@ -143,6 +154,7 @@ public class WindsweptFeatures {
 		
 		public static final RegistryObject<PlacedFeature> CHESTNUT_TREES = register("chestnut_trees", Features.CHESTNUT_TREES, TreePlacements.treePlacement(PlacementUtils.countExtra(0, .1f, 1)));
 		public static final RegistryObject<PlacedFeature> CHESTNUT_TREES_COMMON = register("chestnut_trees_common", Features.CHESTNUT_TREES, TreePlacements.treePlacement(PlacementUtils.countExtra(9, .1f, 1)));
+		public static final RegistryObject<PlacedFeature> TALL_BIRCH = register("tall_birch", VegetationFeatures.BIRCH_TALL, TreePlacements.treePlacement(PlacementUtils.countExtra(5, .1f, 1)));
 
 		private static RegistryObject<PlacedFeature> createPlantPatch(String name, int onceEvery, RegistryObject<ConfiguredFeature<?, ?>> feature) {
 			return register(name, feature, RarityFilter.onAverageOnceEvery(onceEvery), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
@@ -154,6 +166,10 @@ public class WindsweptFeatures {
 
 		public static RegistryObject<PlacedFeature> register(String name, RegistryObject<? extends ConfiguredFeature<?, ?>> configuredFeature, List<PlacementModifier> placementModifiers) {
 			return PLACED_FEATURES.register(name, () -> new PlacedFeature((Holder<ConfiguredFeature<?, ?>>) configuredFeature.getHolder().get(), placementModifiers));
+		}
+
+		public static RegistryObject<PlacedFeature> register(String name, Holder<? extends ConfiguredFeature<?, ?>> configuredFeature, List<PlacementModifier> placementModifiers) {
+			return PLACED_FEATURES.register(name, () -> new PlacedFeature((Holder<ConfiguredFeature<?, ?>>) configuredFeature, placementModifiers));
 		}
 		
 	}

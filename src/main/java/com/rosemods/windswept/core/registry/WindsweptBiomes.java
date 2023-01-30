@@ -22,7 +22,7 @@ public class WindsweptBiomes {
     private static Biome chestnutForest(boolean snowy) {
         MobSpawnSettings.Builder spawns = baseChestnutSpawns();
         BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder();
-        float temp = snowy ? -.5f : .25f;
+        float temp = snowy ? -.3f : .3f;
 
         OverworldBiomes.globalOverworldGeneration(generation);
         BiomeDefaultFeatures.addPlainGrass(generation);
@@ -34,8 +34,10 @@ public class WindsweptBiomes {
         BiomeDefaultFeatures.addCommonBerryBushes(generation);
         BiomeDefaultFeatures.addMossyStoneBlock(generation);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.CHESTNUT_TREES_COMMON.getHolder().get());
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.TALL_BIRCH.getHolder().get());
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, (snowy ? WindsweptFeatures.Placements.WHITE_ROSE_BUSH : WindsweptFeatures.Placements.BLUE_ROSE_BUSH).getHolder().get());
 
-        return (new Biome.BiomeBuilder()).precipitation(Biome.Precipitation.RAIN).temperature(temp).downfall(.4f).specialEffects((new BiomeSpecialEffects.Builder()).waterColor(4159204).waterFogColor(329011).fogColor(12638463).skyColor(calculateSkyColor(temp)).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).backgroundMusic(OverworldBiomes.NORMAL_MUSIC).build()).mobSpawnSettings(spawns.build()).generationSettings(generation.build()).build();
+        return new Biome.BiomeBuilder().precipitation(snowy ? Biome.Precipitation.SNOW : Biome.Precipitation.RAIN).temperature(temp).downfall(.4f).specialEffects((new BiomeSpecialEffects.Builder()).waterColor(4159204).waterFogColor(329011).fogColor(12638463).skyColor(calculateSkyColor(temp)).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).backgroundMusic(OverworldBiomes.NORMAL_MUSIC).build()).mobSpawnSettings(spawns.build()).generationSettings(generation.build()).build();
     }
 
     private static MobSpawnSettings.Builder baseChestnutSpawns() {
@@ -44,6 +46,8 @@ public class WindsweptBiomes {
         spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 12, 4, 4));
         spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.PIG, 10, 4, 4));
         spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 8, 4, 4));
+        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FOX, 12, 4, 4));
+        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.LLAMA, 8, 4, 4));
 
         return spawns;
     }
