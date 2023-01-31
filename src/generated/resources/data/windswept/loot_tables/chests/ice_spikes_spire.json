@@ -17,7 +17,40 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:emerald"
+          "name": "minecraft:gold_ingot",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 3.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:arrow",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 3.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:bone",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
@@ -32,7 +65,12 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:fern",
+          "name": "windswept:snowy_sprouts",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "windswept:snow_boots",
           "weight": 3
         },
         {
@@ -48,7 +86,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:sweet_berries",
+          "name": "windswept:wild_berries",
           "weight": 3
         },
         {
@@ -64,39 +102,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "windswept:chestnut_log",
-          "weight": 3
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:cobweb",
-          "weight": 3
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "windswept:chestnut_sapling",
+          "name": "windswept:holly_sapling",
           "weight": 2
         },
         {
@@ -112,18 +118,14 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:birch_sapling",
+          "name": "windswept:cooked_goat",
           "weight": 2
-        },
-        {
-          "type": "minecraft:item",
-          "name": "windswept:wooden_bucket"
         }
       ],
       "rolls": {
         "type": "minecraft:uniform",
-        "max": 5.0,
-        "min": 2.0
+        "max": 7.0,
+        "min": 3.0
       }
     }
   ]
