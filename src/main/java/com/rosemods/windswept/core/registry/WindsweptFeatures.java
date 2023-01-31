@@ -50,7 +50,6 @@ public class WindsweptFeatures {
 	public static final RegistryObject<Feature<NoneFeatureConfiguration>> SNOWY_SPROUTS_PATCH = FEATURES.register("snowy_sprouts_patch", SnowySproutsFeature::new);
 	public static final RegistryObject<Feature<NoneFeatureConfiguration>> NIGHTSHADE_PATCH = FEATURES.register("nightshade_patch", NightshadeFeature::new);
 	public static final RegistryObject<Feature<NoneFeatureConfiguration>> BLUEBELL_PATCH = FEATURES.register("bluebell_patch", BluebellsFeature::new);
-	public static final RegistryObject<Feature<NoneFeatureConfiguration>> LARGE_BLUEBELL_PATCH = FEATURES.register("large_bluebell_patch", LargeBluebellsFeature::new);
 
 	private static class States {
 		public static final BlockState RED_ROSE = WindsweptBlocks.RED_ROSE.get().defaultBlockState();
@@ -124,7 +123,6 @@ public class WindsweptFeatures {
 		public static final RegistryObject<ConfiguredFeature<?, ?>> WHITE_ROSE_BUSH = CONFIGURED_FEATURES.register("white_rose_bush", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.WHITE_ROSE_BUSH));
 		public static final RegistryObject<ConfiguredFeature<?, ?>> BLUE_ROSE_BUSH = CONFIGURED_FEATURES.register("blue_rose_bush", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.BLUE_ROSE_BUSH));
 		public static final RegistryObject<ConfiguredFeature<?, ?>> BLUEBELLS = CONFIGURED_FEATURES.register("bluebells", () -> new ConfiguredFeature<>(BLUEBELL_PATCH.get(), NoneFeatureConfiguration.NONE));
-		public static final RegistryObject<ConfiguredFeature<?, ?>> LARGE_BLUEBELLS = CONFIGURED_FEATURES.register("large_bluebells", () -> new ConfiguredFeature<>(LARGE_BLUEBELL_PATCH.get(), NoneFeatureConfiguration.NONE));
 		public static final RegistryObject<ConfiguredFeature<?, ?>> NIGHTHSADE = CONFIGURED_FEATURES.register("nightshades", () -> new ConfiguredFeature<>(NIGHTSHADE_PATCH.get(), NoneFeatureConfiguration.NONE));
 		public static final RegistryObject<ConfiguredFeature<?, ?>> WILD_BERRY_BUSH = CONFIGURED_FEATURES.register("wild_berry_bush", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.WILD_BERRY_BUSH));
 		public static final RegistryObject<ConfiguredFeature<?, ?>> SNOWY_SPROUTS = CONFIGURED_FEATURES.register("snowy_sprouts", () -> new ConfiguredFeature<>(SNOWY_SPROUTS_PATCH.get(), NoneFeatureConfiguration.NONE));
@@ -144,7 +142,6 @@ public class WindsweptFeatures {
 		public static final RegistryObject<PlacedFeature> YELLOW_ROSE = createPlantPatch("yellow_rose", 24, Features.YELLOW_ROSE);
 		public static final RegistryObject<PlacedFeature> FOXGLOVE = createPlantPatch("foxglove", 6, Features.FOXGLOVE);
 		public static final RegistryObject<PlacedFeature> BLUEBELLS = createPlantPatch("bluebells", 3, Features.BLUEBELLS);
-		public static final RegistryObject<PlacedFeature> LARGE_BLUEBELLS = createPlantPatch("large_bluebells", 1, Features.LARGE_BLUEBELLS);
 		public static final RegistryObject<PlacedFeature> WHITE_ROSE_BUSH = createPlantPatch("white_rose_bush", 16, Features.WHITE_ROSE_BUSH);
 		public static final RegistryObject<PlacedFeature> BLUE_ROSE_BUSH = createPlantPatch("blue_rose_bush", 16, Features.BLUE_ROSE_BUSH);
 		public static final RegistryObject<PlacedFeature> NIGHTHSADE = createPlantPatch("nightshade", 360, Features.NIGHTHSADE);

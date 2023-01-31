@@ -21,7 +21,7 @@ public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
         this.tag(WindsweptBiomeTags.HAS_FOXGLOVES).addTag(BiomeTags.IS_TAIGA);
         this.tag(WindsweptBiomeTags.HAS_TAIGA_FLOWERS).addTag(BiomeTags.IS_TAIGA);
         this.tag(WindsweptBiomeTags.HAS_SNOWY_FLOWERS).addTag(Tags.Biomes.IS_SNOWY);
-        this.tag(WindsweptBiomeTags.HAS_HOLLY_TREES).add(Biomes.OLD_GROWTH_PINE_TAIGA, Biomes.OLD_GROWTH_SPRUCE_TAIGA, WindsweptBiomes.BLUEBELL_WOODS.getKey());
+        this.tag(WindsweptBiomeTags.HAS_HOLLY_TREES).add(Biomes.OLD_GROWTH_PINE_TAIGA, Biomes.OLD_GROWTH_SPRUCE_TAIGA);
         this.tag(WindsweptBiomeTags.HAS_GROVE_HOLLY_TREES).add(Biomes.GROVE);
         this.tag(WindsweptBiomeTags.HAS_SNOWY_SPROUTS).addTag(Tags.Biomes.IS_SNOWY);
         this.tag(WindsweptBiomeTags.HAS_NIGHTSHADES).addTag(BiomeTags.IS_FOREST).addTag(BiomeTags.IS_TAIGA).add(Biomes.DARK_FOREST);
@@ -32,20 +32,18 @@ public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
         this.tag(WindsweptBiomeTags.HAS_CHESTNUT_WEATHERED_HOUSE).add(WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey());
         this.tag(WindsweptBiomeTags.HAS_ICE_SPIKES_SPIRE).add(Biomes.ICE_SPIKES);
 
-        this.tag(BiomeTags.IS_FOREST).add(WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey(), WindsweptBiomes.BLUEBELL_WOODS.getKey());
+        this.tag(BiomeTags.IS_FOREST).add(WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey());
         this.tag(BiomeTags.HAS_IGLOO).add(WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey());
-        this.tag(BiomeTags.IS_TAIGA).add(WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey(), WindsweptBiomes.BLUEBELL_WOODS.getKey());
-        this.tag(BiomeTags.HAS_RUINED_PORTAL_STANDARD).add(WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey(), WindsweptBiomes.BLUEBELL_WOODS.getKey());
-        this.tag(BiomeTags.HAS_MINESHAFT).add(WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey(), WindsweptBiomes.BLUEBELL_WOODS.getKey());
-        this.tag(BiomeTags.STRONGHOLD_BIASED_TO).add(WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey(), WindsweptBiomes.BLUEBELL_WOODS.getKey());
+        this.tag(BiomeTags.IS_TAIGA).add(WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey());
+        this.tag(BiomeTags.HAS_RUINED_PORTAL_STANDARD).add(WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey());
+        this.tag(BiomeTags.HAS_MINESHAFT).add(WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey());
+        this.tag(BiomeTags.STRONGHOLD_BIASED_TO).add(WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey());
         this.tag(BiomeTags.HAS_PILLAGER_OUTPOST).add(WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey());
         this.tag(Tags.Biomes.IS_SNOWY).add(WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey());
         this.tag(Tags.Biomes.IS_COLD).add(WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey());
-        this.tag(Tags.Biomes.IS_CONIFEROUS).add(WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey(), WindsweptBiomes.BLUEBELL_WOODS.getKey());
-        this.tag(Tags.Biomes.IS_DENSE).add(WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey(), WindsweptBiomes.BLUEBELL_WOODS.getKey());
-        this.tag(Tags.Biomes.IS_DENSE_OVERWORLD).add(WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey(), WindsweptBiomes.BLUEBELL_WOODS.getKey());
-        this.tag(Tags.Biomes.IS_MAGICAL).add(WindsweptBiomes.BLUEBELL_WOODS.getKey());
-        this.tag(Tags.Biomes.IS_RARE).add(WindsweptBiomes.BLUEBELL_WOODS.getKey());
+        this.tag(Tags.Biomes.IS_CONIFEROUS).add(WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey());
+        this.tag(Tags.Biomes.IS_DENSE).add(WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey());
+        this.tag(Tags.Biomes.IS_DENSE_OVERWORLD).add(WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey());
     }
 
 }

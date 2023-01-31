@@ -225,7 +225,6 @@ public class WindsweptLangProvider extends LanguageProvider {
 
 		this.translateBiome(WindsweptBiomes.CHESTNUT_FOREST);
 		this.translateBiome(WindsweptBiomes.SNOWY_CHESTNUT_FOREST);
-		this.translateBiome(WindsweptBiomes.BLUEBELL_WOODS);
 
 		// Enchantments //
 		
@@ -288,7 +287,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 	}
 
 	private void translateBiome(BiomeSubRegistryHelper.KeyedBiome biome) {
-		//this.add(biome.get().., this.toUpper(ForgeRegistries.BIOMES, biome.getObject()));
+		this.add("biome." + Windswept.MODID + "." + ForgeRegistries.BIOMES.getKey(biome.get()).getPath(), this.toUpper(ForgeRegistries.BIOMES, biome.getObject()));
 	}
 	
 	private void translateEnchantment(RegistryObject<? extends Enchantment> enchantment, String name, String desc) {
