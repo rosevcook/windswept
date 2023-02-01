@@ -151,7 +151,8 @@ public class WindsweptFeatures {
 		public static final RegistryObject<PlacedFeature> TALL_FERNS = register("tall_ferns", VegetationFeatures.PATCH_LARGE_FERN, List.of(RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		public static final RegistryObject<PlacedFeature> HOLLY_TREES = register("holly_trees", Features.HOLLY_TREES, TreePlacements.treePlacement(PlacementUtils.countExtra(3, .1f, 1)));
 		public static final RegistryObject<PlacedFeature> GROVE_HOLLY_TREES = register("grove_holly_trees", Features.GROVE_HOLLY_TREES, TreePlacements.treePlacement(PlacementUtils.countExtra(9, .1f, 1)));
-		
+		public static final RegistryObject<PlacedFeature> GROVE_SPRUCE_TREES = register("grove_spruce_trees", VegetationFeatures.TREES_GROVE, TreePlacements.treePlacement(PlacementUtils.countExtra(1, .1f, 1)));
+
 		public static final RegistryObject<PlacedFeature> CHESTNUT_TREES = register("chestnut_trees", Features.CHESTNUT_TREES, TreePlacements.treePlacement(PlacementUtils.countExtra(0, .1f, 1)));
 		public static final RegistryObject<PlacedFeature> CHESTNUT_TREES_COMMON = register("chestnut_trees_common", Features.CHESTNUT_TREES, TreePlacements.treePlacement(PlacementUtils.countExtra(9, .1f, 1)));
 		public static final RegistryObject<PlacedFeature> TALL_BIRCH = register("tall_birch", VegetationFeatures.BIRCH_TALL, TreePlacements.treePlacement(PlacementUtils.countExtra(5, .1f, 1)));

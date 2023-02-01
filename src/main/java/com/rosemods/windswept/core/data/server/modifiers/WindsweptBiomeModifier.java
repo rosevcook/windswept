@@ -48,7 +48,7 @@ public final class WindsweptBiomeModifier {
         addFeature("snowy_flowers", WindsweptBiomeTags.HAS_SNOWY_FLOWERS, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.WHITE_ROSE, WindsweptFeatures.Placements.PINK_ROSE, WindsweptFeatures.Placements.BLUE_ROSE);
         addFeature("taiga_flowers", WindsweptBiomeTags.HAS_TAIGA_FLOWERS, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.RED_ROSE, WindsweptFeatures.Placements.YELLOW_ROSE);
         addFeature("holly_trees", WindsweptBiomeTags.HAS_HOLLY_TREES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.HOLLY_TREES);
-        addFeature("grove_holly_trees", WindsweptBiomeTags.HAS_GROVE_HOLLY_TREES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.GROVE_HOLLY_TREES);
+        addFeature("grove_holly_trees", WindsweptBiomeTags.HAS_GROVE_HOLLY_TREES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.GROVE_HOLLY_TREES, WindsweptFeatures.Placements.GROVE_SPRUCE_TREES);
         addFeature("wild_berries", WindsweptBiomeTags.HAS_WILD_BERRIES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.WILD_BERRY_BUSH);
         addFeature("common_wild_berries", WindsweptBiomeTags.HAS_COMMON_WILD_BERRIES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.WILD_BERRY_BUSH_COMMON);
         addFeature("nightshades", WindsweptBiomeTags.HAS_NIGHTSHADES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.NIGHTHSADE);
