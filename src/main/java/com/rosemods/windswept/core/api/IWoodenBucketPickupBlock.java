@@ -22,9 +22,8 @@ public interface IWoodenBucketPickupBlock {
 			pickup.pickupBlock(level, pos, state);
 	}
 	
-	@SuppressWarnings("deprecation")
 	default Optional<SoundEvent> getWoodenBucketPickupSound() {
-		return this instanceof BucketPickup pickup ? pickup.getPickupSound() : null;
+		return this instanceof BucketPickup pickup ? pickup.getPickupSound() : Optional.empty();
 	}
 	
 	default boolean canPickup(LevelAccessor level, BlockPos pos, BlockState state) {
