@@ -51,6 +51,8 @@ public class ChestnutTrunkPlacer extends TrunkPlacer {
 						placeLog(level, consumer, rand, pos.offset(x, -1, z), config);
 						grassCheck--;
 
+						if (level.isStateAtPosition(pos.offset(x, -2, z), state -> state.getMaterial().isReplaceable()))
+							consumer.accept(pos.offset(x, -2, z), Blocks.HANGING_ROOTS.defaultBlockState());
 					}
 
 					if (rand.nextInt(24) == 0)
@@ -61,7 +63,7 @@ public class ChestnutTrunkPlacer extends TrunkPlacer {
 
 				}
 
-		int h = rand.nextInt(5, 9);
+		int h = rand.nextInt(4, 9);
 		list.add(new FoliagePlacer.FoliageAttachment(pos.offset(0, h + 2, 0), 0, false));
 
 		for (int y = 1; y < h; y++)

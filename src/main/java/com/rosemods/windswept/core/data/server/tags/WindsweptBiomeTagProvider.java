@@ -5,6 +5,7 @@ import com.rosemods.windswept.core.other.tags.WindsweptBiomeTags;
 import com.rosemods.windswept.core.registry.WindsweptBiomes;
 import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.tags.BiomeTags;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -28,6 +29,8 @@ public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
         this.tag(WindsweptBiomeTags.HAS_WILD_BERRIES).addTag(Tags.Biomes.IS_SNOWY);
         this.tag(WindsweptBiomeTags.HAS_COMMON_WILD_BERRIES).add(Biomes.GROVE);
         this.tag(WindsweptBiomeTags.HAS_CHESTNUT_TREES).addTag(BiomeTags.IS_FOREST).addTag(BiomeTags.IS_TAIGA).add(Biomes.DARK_FOREST);
+        this.tag(WindsweptBiomeTags.HAS_RARE_SNOWY_HOLLY_TREES).add(Biomes.FROZEN_PEAKS, Biomes.JAGGED_PEAKS);
+
         this.tag(WindsweptBiomeTags.HAS_GROVE_WEATHERED_HOUSE).add(Biomes.GROVE, Biomes.FROZEN_PEAKS, Biomes.JAGGED_PEAKS);
         this.tag(WindsweptBiomeTags.HAS_CHESTNUT_WEATHERED_HOUSE).add(WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey());
         this.tag(WindsweptBiomeTags.HAS_ICE_SPIKES_SPIRE).add(Biomes.ICE_SPIKES);
