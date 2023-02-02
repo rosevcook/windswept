@@ -1,5 +1,7 @@
 {
   "values": [
-    "minecraft:grove"
+    "minecraft:grove",
+    "minecraft:frozen_peaks",
+    "minecraft:jagged_peaks"
   ]
 }
