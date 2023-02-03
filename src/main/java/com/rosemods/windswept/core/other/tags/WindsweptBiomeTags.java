@@ -21,6 +21,5 @@ public final class WindsweptBiomeTags {
 
     public static final TagKey<Biome> HAS_GROVE_WEATHERED_HOUSE = TagUtil.biomeTag(Windswept.MODID, "has_structure/grove_weathered_house");
     public static final TagKey<Biome> HAS_CHESTNUT_WEATHERED_HOUSE = TagUtil.biomeTag(Windswept.MODID, "has_structure/chestnut_weathered_house");
-    public static final TagKey<Biome> HAS_ICE_SPIKES_SPIRE = TagUtil.biomeTag(Windswept.MODID, "has_structure/ice_spikes_spire");
 
 }

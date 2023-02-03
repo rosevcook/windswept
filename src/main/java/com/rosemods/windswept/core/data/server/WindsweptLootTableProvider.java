@@ -335,17 +335,6 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 					.add(LootItem.lootTableItem(Items.BIRCH_SAPLING).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
 					.add(LootItem.lootTableItem(WindsweptItems.WOODEN_BUCKET.get()).setWeight(1))
 			), builder);
-
-			register("ice_spikes_spire", LootTable.lootTable().withPool(LootPool.lootPool().setRolls(UniformGenerator.between(3f, 7f))
-					.add(LootItem.lootTableItem(Items.GOLD_INGOT).setWeight(6).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
-					.add(LootItem.lootTableItem(Items.ARROW).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
-					.add(LootItem.lootTableItem(Items.BONE).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
-					.add(LootItem.lootTableItem(WindsweptBlocks.SNOWY_SPROUTS.get()).setWeight(4).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 4f))))
-					.add(LootItem.lootTableItem(WindsweptItems.SNOW_BOOTS.get()).setWeight(3))
-					.add(LootItem.lootTableItem(WindsweptItems.WILD_BERRIES.get()).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
-					.add(LootItem.lootTableItem(WindsweptBlocks.HOLLY_SAPLING.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
-					.add(LootItem.lootTableItem(WindsweptItems.COOKED_GOAT.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
-			), builder);
 		}
 
 		private static void register(String name, LootTable.Builder lootTable, BiConsumer<ResourceLocation, Builder> builder) {
