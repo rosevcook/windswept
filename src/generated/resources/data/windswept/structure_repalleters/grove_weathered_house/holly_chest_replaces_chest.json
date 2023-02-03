@@ -1,0 +1,27 @@
+{
+  "type": "blueprint:simple",
+  "priority": "normal",
+  "replaces_block": "minecraft:chest",
+  "replaces_with": "windswept:holly_chest",
+  "selector": {
+    "type": "names",
+    "conditions": [
+      {
+        "type": "forge:or",
+        "values": [
+          {
+            "type": "forge:mod_loaded",
+            "modid": "quark"
+          },
+          {
+            "type": "forge:mod_loaded",
+            "modid": "woodworks"
+          }
+        ]
+      }
+    ],
+    "config": [
+      "windswept:grove_weathered_house"
+    ]
+  }
+}

@@ -6,12 +6,16 @@ import com.teamabnormals.blueprint.common.world.modification.structure.SimpleStr
 import com.teamabnormals.blueprint.common.world.modification.structure.StructureRepaletterProvider;
 import com.teamabnormals.blueprint.core.util.modification.selection.ConditionedResourceSelector;
 import com.teamabnormals.blueprint.core.util.modification.selection.selectors.NamesResourceSelector;
+import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.structure.BuiltinStructures;
 import net.minecraft.world.level.levelgen.structure.Structure;
+import net.minecraftforge.common.crafting.conditions.ICondition;
+import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
+import net.minecraftforge.common.crafting.conditions.OrCondition;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -39,11 +43,22 @@ public class WindsweptStructureRepaletterProvider extends StructureRepaletterPro
 
         // Villages //
         this.register(BuiltinStructures.VILLAGE_TAIGA, Blocks.POTTED_SPRUCE_SAPLING, WindsweptBlocks.POTTED_RED_ROSE.get());
+
+        // Mod Compat //
+        ICondition quarkOrWoodworks = new OrCondition(new ModLoadedCondition("quark"), new ModLoadedCondition(("woodworks")));
+
+        this.register(getLocalKey("grove_weathered_house"), Blocks.BOOKSHELF, WindsweptBlocks.HOLLY_BOOKSHELF.get(), quarkOrWoodworks);
+        this.register(getLocalKey("grove_weathered_house"), Blocks.CHEST, WindsweptBlocks.HOLLY_CHEST.get(), quarkOrWoodworks);
+        this.register(getLocalKey("chestnut_weathered_house"), Blocks.CHEST, WindsweptBlocks.CHESTNUT_CHEST.get(), quarkOrWoodworks);
     }
 
-    private void register(ResourceKey<Structure> structure, Block replacesBlock, Block replacesWith) {
+    private void register(ResourceKey<Structure> structure, Block replacesBlock, Block replacesWith, ICondition... conditions) {
         this.registerRepaletter(structure.location().getPath() + "/" + getName(replacesWith) + "_replaces_" + getName(replacesBlock),
-                new ConditionedResourceSelector(new NamesResourceSelector(structure.location())), EventPriority.NORMAL, new SimpleStructureRepaletter(replacesBlock, replacesWith));
+                new ConditionedResourceSelector(new NamesResourceSelector(structure.location()), conditions), EventPriority.NORMAL, new SimpleStructureRepaletter(replacesBlock, replacesWith));
+    }
+
+    private static ResourceKey getLocalKey(String name) {
+        return ResourceKey.create(Registry.STRUCTURE_REGISTRY, Windswept.REGISTRY_HELPER.prefix(name));
     }
 
     private static String getName(Block block) {
