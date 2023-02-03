@@ -35,6 +35,7 @@ public class WindsweptBiomes {
         BiomeDefaultFeatures.addMossyStoneBlock(generation);
 
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.TALL_FERNS.getHolder().get());
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.CHESTNUT_FERNS.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.CHESTNUT_TREES_COMMON.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.TALL_BIRCH.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, (snowy ? WindsweptFeatures.Placements.WHITE_ROSE_BUSH : WindsweptFeatures.Placements.BLUE_ROSE_BUSH).getHolder().get());
