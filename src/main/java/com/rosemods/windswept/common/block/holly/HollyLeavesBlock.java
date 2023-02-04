@@ -1,5 +1,6 @@
 package com.rosemods.windswept.common.block.holly;
 
+import com.rosemods.windswept.core.other.tags.WindsweptEntityTypeTags;
 import org.jetbrains.annotations.Nullable;
 
 import com.rosemods.windswept.core.other.WindsweptDamageSources;
@@ -49,7 +50,7 @@ public class HollyLeavesBlock extends BlueprintLeavesBlock {
 	}
 
 	public static void entityInside(float damage, DamageSource source, Entity entity, Level level) {
-		if (!level.isClientSide && (entity.xOld != entity.getX() || entity.zOld != entity.getZ()) && entity instanceof LivingEntity && entity.getType() != EntityType.BEE) {
+		if (!level.isClientSide && (entity.xOld != entity.getX() || entity.zOld != entity.getZ()) && entity instanceof LivingEntity && !entity.getType().is(WindsweptEntityTypeTags.HOLLY_IMMUNE)) {
 			double d0 = Math.abs(entity.getX() - entity.xOld);
 			double d1 = Math.abs(entity.getZ() - entity.zOld);
 			if (d0 >= .003d || d1 >= .003d)
