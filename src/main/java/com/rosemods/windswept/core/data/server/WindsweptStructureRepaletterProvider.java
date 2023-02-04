@@ -57,7 +57,7 @@ public class WindsweptStructureRepaletterProvider extends StructureRepaletterPro
                 new ConditionedResourceSelector(new NamesResourceSelector(structure.location()), conditions), EventPriority.NORMAL, new SimpleStructureRepaletter(replacesBlock, replacesWith));
     }
 
-    private static ResourceKey getLocalKey(String name) {
+    private static ResourceKey<Structure> getLocalKey(String name) {
         return ResourceKey.create(Registry.STRUCTURE_REGISTRY, Windswept.REGISTRY_HELPER.prefix(name));
     }
 
