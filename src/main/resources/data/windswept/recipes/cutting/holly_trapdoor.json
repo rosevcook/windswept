@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "windswet:holly_trapdoor"
+      "item": "windswept:holly_trapdoor"
     }
   ],
   "tool": {
@@ -11,7 +11,7 @@
   },
   "result": [
     {
-      "item": "windswet:holly_planks"
+      "item": "windswept:holly_planks"
     }
   ]
 }

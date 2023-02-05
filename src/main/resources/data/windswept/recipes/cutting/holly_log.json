@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "windswet:holly_log"
+      "item": "windswept:holly_log"
     }
   ],
   "tool": {
@@ -11,7 +11,7 @@
   },
   "result": [
     {
-      "item": "windswet:stripped_holly_log"
+      "item": "windswept:stripped_holly_log"
     },
     {
       "item": "farmersdelight:tree_bark"

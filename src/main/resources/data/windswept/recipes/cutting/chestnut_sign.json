@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "windswet:chestnut_sign"
+      "item": "windswept:chestnut_sign"
     }
   ],
   "tool": {
@@ -11,7 +11,7 @@
   },
   "result": [
     {
-      "item": "windswet:chestnut_planks"
+      "item": "windswept:chestnut_planks"
     }
   ]
 }
