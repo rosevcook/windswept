@@ -118,11 +118,10 @@ public class WindsweptFeatures {
 		public static final RegistryObject<ConfiguredFeature<?, ?>> BLUE_ROSE = CONFIGURED_FEATURES.register("blue_rose", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.BLUE_ROSE));
 		public static final RegistryObject<ConfiguredFeature<?, ?>> YELLOW_ROSE = CONFIGURED_FEATURES.register("yellow_rose", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.YELLOW_ROSE));
 		public static final RegistryObject<ConfiguredFeature<?, ?>> FOXGLOVE = CONFIGURED_FEATURES.register("foxglove", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.FOXGLOVE));
-		public static final RegistryObject<ConfiguredFeature<?, ?>> CHESTNUT_FERNS = CONFIGURED_FEATURES.register("chestnut_ferns", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, Configs.CHESTNUT_FERNS));
+		public static final RegistryObject<ConfiguredFeature<?, ?>> CHESTNUT_FERNS = CONFIGURED_FEATURES.register("chestnut_ferns", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.CHESTNUT_FERNS));
 
-
-		public static final RegistryObject<ConfiguredFeature<?, ?>> WHITE_ROSE_BUSH = CONFIGURED_FEATURES.register("white_rose_bush", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.WHITE_ROSE_BUSH));
-		public static final RegistryObject<ConfiguredFeature<?, ?>> BLUE_ROSE_BUSH = CONFIGURED_FEATURES.register("blue_rose_bush", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.BLUE_ROSE_BUSH));
+		public static final RegistryObject<ConfiguredFeature<?, ?>> WHITE_ROSE_BUSH = CONFIGURED_FEATURES.register("white_rose_bush", () -> new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.WHITE_ROSE_BUSH));
+		public static final RegistryObject<ConfiguredFeature<?, ?>> BLUE_ROSE_BUSH = CONFIGURED_FEATURES.register("blue_rose_bush", () -> new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.BLUE_ROSE_BUSH));
 		public static final RegistryObject<ConfiguredFeature<?, ?>> BLUEBELLS = CONFIGURED_FEATURES.register("bluebells", () -> new ConfiguredFeature<>(BLUEBELL_PATCH.get(), NoneFeatureConfiguration.NONE));
 		public static final RegistryObject<ConfiguredFeature<?, ?>> NIGHTHSADE = CONFIGURED_FEATURES.register("nightshades", () -> new ConfiguredFeature<>(NIGHTSHADE_PATCH.get(), NoneFeatureConfiguration.NONE));
 		public static final RegistryObject<ConfiguredFeature<?, ?>> WILD_BERRY_BUSH = CONFIGURED_FEATURES.register("wild_berry_bush", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.WILD_BERRY_BUSH));
