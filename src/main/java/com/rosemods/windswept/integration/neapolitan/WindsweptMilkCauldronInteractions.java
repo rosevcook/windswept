@@ -3,6 +3,7 @@ package com.rosemods.windswept.integration.neapolitan;
 import com.rosemods.windswept.core.other.WindsweptCauldronInteractions;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.teamabnormals.neapolitan.common.block.MilkCauldronBlock;
+import com.teamabnormals.neapolitan.core.NeapolitanConfig;
 import com.teamabnormals.neapolitan.core.registry.NeapolitanBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.cauldron.CauldronInteraction;
@@ -21,11 +22,17 @@ public final class WindsweptMilkCauldronInteractions {
     }
 
     private static InteractionResult fillMilkCauldron(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, ItemStack stack) {
-        return WindsweptCauldronInteractions.fillCauldron(NeapolitanBlocks.MILK_CAULDRON.get(), SoundEvents.BUCKET_EMPTY, state, level, pos, player, hand, stack);
+        if (NeapolitanConfig.COMMON.milkCauldron.get())
+            return WindsweptCauldronInteractions.fillCauldron(NeapolitanBlocks.MILK_CAULDRON.get(), SoundEvents.BUCKET_EMPTY, state, level, pos, player, hand, stack);
+
+        return InteractionResult.FAIL;
     }
 
     private static InteractionResult emptyMilkCauldron(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, ItemStack stack) {
-        return WindsweptCauldronInteractions.emptyCauldron(WindsweptItems.WOODEN_MILK_BUCKET::get, SoundEvents.BUCKET_FILL, state, level, pos, player, hand, stack);
+        if (NeapolitanConfig.COMMON.milkCauldron.get())
+            return WindsweptCauldronInteractions.emptyCauldron(WindsweptItems.WOODEN_MILK_BUCKET::get, SoundEvents.BUCKET_FILL, state, level, pos, player, hand, stack);
+
+        return InteractionResult.FAIL;
     }
 
 }
