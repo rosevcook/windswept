@@ -1,7 +1,7 @@
 modLoader = "javafml"
 loaderVersion = "[32,)"
 issueTrackerURL = "https://github.com/rosevcook/windswept/issues"
-license = "https://github.com/rosevcook/windswept/blob/main/LICENSE.txt"
+license = "All Rights Reserved"
 
 [[mods]]
     modId = "windswept"
@@ -12,9 +12,7 @@ license = "https://github.com/rosevcook/windswept/blob/main/LICENSE.txt"
     configBackground = "windswept:textures/block/holly_log.png"
     displayURL = "https://www.curseforge.com/minecraft/mc-mods/windsweptmod"
     authors = "Rose"
-    description = '''
-    A general expansion to snowy and forest areas of the game, incentivising players to explore and build in the new expanded areas
-    '''
+    description = '''A general expansion to snowy and forest areas of the game, incentivising players to explore and build in the new expanded areas'''
 
 [[dependencies.windswept]]
     modId = "forge"
