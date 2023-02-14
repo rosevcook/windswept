@@ -17,7 +17,8 @@
     "TreeConfigurationBuilderMixin",
     "TreeFeatureMixin",
     "WitherRoseBlockMixin",
-    "FoxEatBerriesGoalMixin"
+    "FoxEatBerriesGoalMixin",
+    "TrunkPlacerMixin"
   ],
   "client": [
     "client.LivingEntityRendererMixin"
