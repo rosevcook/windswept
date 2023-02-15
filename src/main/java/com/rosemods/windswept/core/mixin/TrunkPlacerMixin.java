@@ -1,5 +1,6 @@
 package com.rosemods.windswept.core.mixin;
 
+import com.rosemods.windswept.core.WindsweptConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelReader;
@@ -25,7 +26,7 @@ public class TrunkPlacerMixin {
                 || ! level.isStateAtPosition(pos, (state) -> Feature.isDirt(state) && !state.is(Blocks.GRASS_BLOCK) && !state.is(Blocks.MYCELIUM)))) {
             states.accept(pos, config.dirtProvider.getState(random, pos));
 
-            if (((LevelReader) level).isEmptyBlock(pos.below()))
+            if (((LevelReader) level).isEmptyBlock(pos.below()) && WindsweptConfig.COMMON.roots.get())
                 states.accept(pos.below(), Blocks.HANGING_ROOTS.defaultBlockState());
         }
 

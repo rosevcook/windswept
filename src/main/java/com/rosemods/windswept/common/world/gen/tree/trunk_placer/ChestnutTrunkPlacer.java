@@ -7,6 +7,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import com.rosemods.windswept.core.WindsweptConfig;
 import com.rosemods.windswept.core.registry.WindsweptTrunkPlacers;
 
 import net.minecraft.core.BlockPos;
@@ -51,7 +52,7 @@ public class ChestnutTrunkPlacer extends TrunkPlacer {
 						placeLog(level, consumer, rand, pos.offset(x, -1, z), config);
 						grassCheck--;
 
-						if (level.isStateAtPosition(pos.offset(x, -2, z), state -> state.getMaterial().isReplaceable()))
+						if (level.isStateAtPosition(pos.offset(x, -2, z), state -> state.getMaterial().isReplaceable()) && WindsweptConfig.COMMON.roots.get())
 							consumer.accept(pos.offset(x, -2, z), Blocks.HANGING_ROOTS.defaultBlockState());
 					}
 
