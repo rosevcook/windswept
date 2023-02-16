@@ -28,7 +28,7 @@ public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
         this.tag(WindsweptBiomeTags.HAS_NIGHTSHADES).addTag(BiomeTags.IS_FOREST).addTag(BiomeTags.IS_TAIGA).add(Biomes.DARK_FOREST);
         this.tag(WindsweptBiomeTags.HAS_WILD_BERRIES).addTag(Tags.Biomes.IS_SNOWY);
         this.tag(WindsweptBiomeTags.HAS_COMMON_WILD_BERRIES).add(Biomes.GROVE);
-        this.tag(WindsweptBiomeTags.HAS_CHESTNUT_TREES).addTag(BiomeTags.IS_FOREST).addTag(BiomeTags.IS_TAIGA).add(Biomes.DARK_FOREST);
+        this.tag(WindsweptBiomeTags.HAS_CHESTNUT_TREES).add(Biomes.DARK_FOREST, Biomes.TAIGA, Biomes.FOREST, Biomes.WINDSWEPT_FOREST, Biomes.OLD_GROWTH_BIRCH_FOREST, Biomes.OLD_GROWTH_SPRUCE_TAIGA, Biomes.OLD_GROWTH_PINE_TAIGA, Biomes.SNOWY_TAIGA);
         this.tag(WindsweptBiomeTags.HAS_RARE_SNOWY_HOLLY_TREES).add(Biomes.FROZEN_PEAKS, Biomes.JAGGED_PEAKS);
 
         this.tag(WindsweptBiomeTags.HAS_GROVE_WEATHERED_HOUSE).add(Biomes.GROVE, Biomes.FROZEN_PEAKS, Biomes.JAGGED_PEAKS);
