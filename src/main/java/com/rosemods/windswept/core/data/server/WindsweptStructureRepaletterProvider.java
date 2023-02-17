@@ -43,6 +43,7 @@ public class WindsweptStructureRepaletterProvider extends StructureRepaletterPro
 
         // Villages //
         this.register(BuiltinStructures.VILLAGE_TAIGA, Blocks.POTTED_SPRUCE_SAPLING, WindsweptBlocks.POTTED_RED_ROSE.get());
+        this.register(BuiltinStructures.VILLAGE_TAIGA, Blocks.POPPY, WindsweptBlocks.RED_ROSE.get());
 
         // Mod Compat //
         ICondition quarkOrWoodworks = new OrCondition(new ModLoadedCondition("quark"), new ModLoadedCondition(("woodworks")));
