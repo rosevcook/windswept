@@ -46,6 +46,7 @@ public class Windswept {
 		WindsweptAttributes.ATTRIBUTES.register(bus);
 		WindsweptBannerPatterns.BANNER_PATTERNS.register(bus);
 		WindsweptTrunkPlacers.TRUNK_PLACERS.register(bus);
+		WindsweptPaintingVariants.PAINTING_VARIANTS.register(bus);
 
 		bus.addListener(this::commonSetup);
         bus.addListener(this::clientSetup);
@@ -91,6 +92,7 @@ public class Windswept {
 		gen.addProvider(server, new WindsweptLootModifierProvider(event));
 		gen.addProvider(server, new WindsweptStructureRepaletterProvider(event));
 		gen.addProvider(server, new WindsweptModdedBiomeSliceProvider(event));
+		gen.addProvider(server, new WindsweptPaintingVariantTagsProvider(event));
 		gen.addProvider(server, WindsweptBiomeModifier.register(event));
 	}
     
