@@ -14,7 +14,7 @@ public class WindsweptPaintingVariantTagsProvider extends PaintingVariantTagsPro
 
     @Override
     public void addTags() {
-        this.tag(PaintingVariantTags.PLACEABLE).add(WindsweptPaintingVariants.CLIFFSIDE.get());
+        this.tag(PaintingVariantTags.PLACEABLE).add(WindsweptPaintingVariants.CLIFFSIDE.get(), WindsweptPaintingVariants.BLOOM.get());
     }
 
 }
