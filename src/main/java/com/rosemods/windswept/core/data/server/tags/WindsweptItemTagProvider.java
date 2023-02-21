@@ -46,6 +46,8 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
 		this.tag(WindsweptItemTags.WOODEN_CABINETS).add(WindsweptBlocks.HOLLY_CABINET.get().asItem(), WindsweptBlocks.CHESTNUT_CABINET.get().asItem());
 
 		//forge
+		this.tag(WindsweptItemTags.STRIPPED_LOGS).add(WindsweptBlocks.STRIPPED_HOLLY_LOG.get().asItem(), WindsweptBlocks.STRIPPED_CHESTNUT_LOG.get().asItem());
+		this.tag(WindsweptItemTags.STRIPPED_WOOD).add(WindsweptBlocks.STRIPPED_HOLLY_WOOD.get().asItem(), WindsweptBlocks.STRIPPED_CHESTNUT_WOOD.get().asItem());
 		this.tag(BlueprintItemTags.BUCKETS_EMPTY).add(WindsweptItems.WOODEN_BUCKET.get());
 		this.tag(BlueprintItemTags.BUCKETS_MILK).add(WindsweptItems.WOODEN_MILK_BUCKET.get());
 		this.tag(BlueprintItemTags.BUCKETS_POWDER_SNOW).add(WindsweptItems.WOODEN_POWDER_SNOW_BUCKET.get());
