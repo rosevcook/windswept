@@ -11,6 +11,12 @@ public final class WindsweptBlockInfo {
 		DataUtil.registerCompostable(WindsweptItems.WILD_BERRY_PIPS.get(), .3f);
 		DataUtil.registerCompostable(WindsweptItems.HOLLY_BERRIES.get(), .3f);
 		DataUtil.registerCompostable(WindsweptItems.CHESTNUTS.get(), .3f);
+		DataUtil.registerCompostable(WindsweptItems.ROASTED_CHESTNUTS.get(), .3f);
+
+		DataUtil.registerCompostable(WindsweptBlocks.CHESTNUT_CRATE.get(), 1f);
+		DataUtil.registerCompostable(WindsweptBlocks.ROASTED_CHESTNUT_CRATE.get(), 1f);
+		DataUtil.registerCompostable(WindsweptBlocks.HOLLY_BERRY_CRATE.get(), 1f);
+		DataUtil.registerCompostable(WindsweptBlocks.WILD_BERRY_SACK.get(), 1f);
 
 		DataUtil.registerCompostable(WindsweptBlocks.RED_ROSE.get(), .65f);
 		DataUtil.registerCompostable(WindsweptBlocks.PINK_ROSE.get(), .65f);
@@ -38,8 +44,9 @@ public final class WindsweptBlockInfo {
 		DataUtil.registerCompostable(WindsweptBlocks.CHESTNUT_LEAF_CARPET.get(), .3f);
 
 		DataUtil.registerCompostable(WindsweptBlocks.SNOWY_SPROUTS.get(), .5f);
-		
-		DataUtil.registerCompostable(WindsweptBlocks.WILD_BERRY_SACK.get(), 1f);
+
+		DataUtil.registerCompostable(WindsweptItems.WILD_BERRY_COOKIE.get(), .85f);
+		DataUtil.registerCompostable(WindsweptItems.MUTTON_PIE.get(), 1f);
 	}
 	
 	public static void registerFlammables() {
