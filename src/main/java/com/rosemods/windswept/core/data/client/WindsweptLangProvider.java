@@ -56,6 +56,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.translateItem(WindsweptItems.WOODEN_MILK_BUCKET);
 		this.translateItem(WindsweptItems.WOODEN_POWDER_SNOW_BUCKET);
 		this.translateItem(WindsweptItems.WILD_BERRIES);
+		this.translateItem(WindsweptItems.WILD_BERRY_COOKIE);
 		this.translateItem(WindsweptItems.WILD_BERRY_JUICE);
 		this.translateItem(WindsweptItems.WILD_BERRY_PIPS);
 		this.add(WindsweptItems.SWEET_BERRY_BOWL.get(), "Bowl of Sweet Berries");

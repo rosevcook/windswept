@@ -45,6 +45,7 @@ public class WindsweptItems {
 	
 	public static final RegistryObject<Item> WILD_BERRIES = HELPER.createItem("wild_berries", () -> new ItemNameBlockItem(WindsweptBlocks.WILD_BERRY_BUSH.get(), PropertyUtil.food(Foods.WILD_BERRIES)));
 	public static final RegistryObject<Item> WILD_BERRY_JUICE = HELPER.createItem("wild_berry_juice", () -> new DrinkableBottleItem(Foods.WILD_BERRY_JUICE));
+	public static final RegistryObject<Item> WILD_BERRY_COOKIE = HELPER.createItem("wild_berry_cookie", () -> new Item(PropertyUtil.food(Foods.WILD_BERRY_COOKIE)));
 	public static final RegistryObject<Item> WILD_BERRY_BOWL = HELPER.createItem("wild_berry_bowl", () -> new BerryBowlItem(WILD_BERRIES.get(), Foods.BERRY_BOWL));
 	public static final RegistryObject<Item> SWEET_BERRY_BOWL = HELPER.createItem("sweet_berry_bowl", () -> new BerryBowlItem(Items.SWEET_BERRIES, Foods.BERRY_BOWL));
 	public static final RegistryObject<Item> MUTTON_PIE = HELPER.createItem("mutton_pie", () -> new InjectedItem(Items.COOKED_MUTTON, PropertyUtil.food(Foods.MUTTON_PIE)));
@@ -102,6 +103,7 @@ public class WindsweptItems {
 		public static final FoodProperties ROASTED_CHESTNUTS = new FoodProperties.Builder().nutrition(5).saturationMod(.4f).build();
 		public static final FoodProperties GOAT_SHANKS = new FoodProperties.Builder().nutrition(1).saturationMod(.1f).meat().build();
 		public static final FoodProperties COOKED_GOAT_SHANKS = new FoodProperties.Builder().nutrition(3).saturationMod(.3f).meat().build();
+		public static final FoodProperties WILD_BERRY_COOKIE = new FoodProperties.Builder().nutrition(2).saturationMod(.1f).build();
 
 	}
 	

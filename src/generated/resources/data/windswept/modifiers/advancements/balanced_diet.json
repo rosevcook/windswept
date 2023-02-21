@@ -134,6 +134,16 @@
             },
             "trigger": "minecraft:consume_item"
           },
+          "windswept:wild_berry_cookie": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:wild_berry_cookie"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
           "windswept:wild_berry_juice": {
             "conditions": {
               "item": {
@@ -151,6 +161,9 @@
           ],
           [
             "windswept:wild_berry_juice"
+          ],
+          [
+            "windswept:wild_berry_cookie"
           ],
           [
             "windswept:wild_berry_bowl"
