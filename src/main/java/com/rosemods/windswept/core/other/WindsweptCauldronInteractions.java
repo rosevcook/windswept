@@ -46,6 +46,9 @@ public final class WindsweptCauldronInteractions {
 		// fill snow cauldron to max
 		CauldronInteraction.POWDER_SNOW.put(WindsweptItems.WOODEN_POWDER_SNOW_BUCKET.get(), WindsweptCauldronInteractions::fillSnowCauldron);
 
+		// snow boots
+		CauldronInteraction.WATER.put(WindsweptItems.SNOW_BOOTS.get(), CauldronInteraction.DYED_ITEM);
+
 		//neapolitan milk cauldrons
 		if (ModList.get().isLoaded(WindsweptConstants.NEAPOLITAN))
 			WindsweptMilkCauldronInteractions.registerCauldronInteractions();
