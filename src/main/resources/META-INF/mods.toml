@@ -5,7 +5,7 @@ license = "All Rights Reserved"
 
 [[mods]]
     modId = "windswept"
-    version = "2.2.1"
+    version = "2.2.2"
     displayName = "Windswept"
     logoFile = "logo.png"
     itemIcon = "windswept:holly_berries"
