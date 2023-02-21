@@ -178,7 +178,7 @@
               "count": {
                 "type": "minecraft:uniform",
                 "max": 1.0,
-                "min": -3.0
+                "min": -4.0
               },
               "function": "minecraft:set_count"
             },
