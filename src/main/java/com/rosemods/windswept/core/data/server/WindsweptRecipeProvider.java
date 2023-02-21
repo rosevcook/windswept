@@ -56,7 +56,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 		cooking(WindsweptItems.GOAT.get(), WindsweptItems.COOKED_GOAT.get(), consumer);
 		conditionalCooking(WindsweptItems.GOAT_SHANKS.get(), WindsweptItems.COOKED_GOAT_SHANKS.get(), new ModLoadedCondition("farmersdelight"), consumer);
 		conditionalRecipe(ShapelessRecipeBuilder.shapeless(WindsweptItems.GOAT_STEW.get()).requires(Items.BOWL).requires(WindsweptItems.COOKED_GOAT.get()).requires(Items.BAKED_POTATO).requires(Items.CARROT).requires(Items.BROWN_MUSHROOM).unlockedBy("has_cooked_goat", has(WindsweptItems.COOKED_GOAT.get())), new NotCondition(new ModLoadedCondition("farmersdelight")), consumer, Windswept.REGISTRY_HELPER.prefix("goat_stew"));
-		ShapelessRecipeBuilder.shapeless(WindsweptItems.MUTTON_PIE.get()).requires(Items.COOKED_MUTTON).requires(Items.WHEAT).requires(Items.SUGAR).requires(Tags.Items.EGGS).unlockedBy("has_cooked_mutton", has(Items.COOKED_MUTTON)).save(consumer, Windswept.REGISTRY_HELPER.prefix("mutton_pie"));
+		ShapelessRecipeBuilder.shapeless(WindsweptItems.MUTTON_PIE.get()).requires(WindsweptItemTags.COOKED_MUTTON).requires(Items.WHEAT).requires(Items.SUGAR).requires(Tags.Items.EGGS).unlockedBy("has_cooked_mutton", has(Items.COOKED_MUTTON)).save(consumer, Windswept.REGISTRY_HELPER.prefix("mutton_pie"));
 
 		flowerToDye(WindsweptBlocks.RED_ROSE, Items.RED_DYE, consumer);
 		flowerToDye(WindsweptBlocks.PINK_ROSE, Items.PINK_DYE, consumer);

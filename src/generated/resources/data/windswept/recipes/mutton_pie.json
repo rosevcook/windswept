@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:cooked_mutton"
+      "tag": "forge:cooked_mutton"
     },
     {
       "item": "minecraft:wheat"
