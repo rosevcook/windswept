@@ -6,9 +6,6 @@
       "tag": "forge:raw_goat"
     },
     {
-      "item": "farmersdelight:tomato_sauce"
-    },
-    {
       "item": "minecraft:potato"
     },
     {
@@ -19,5 +16,8 @@
     "item": "windswept:goat_stew"
   },
   "experience": 1.0,
-  "cookingtime": 200
+  "cookingtime": 200,
+  "container": {
+    "item": "farmersdelight:tomato_sauce"
+  }
 }

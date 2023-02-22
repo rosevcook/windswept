@@ -4,6 +4,16 @@
       "type": "criteria",
       "config": {
         "criteria": {
+          "windswept:chestnut_soup": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:chestnut_soup"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
           "windswept:chestnuts": {
             "conditions": {
               "item": {
@@ -188,6 +198,9 @@
           ],
           [
             "windswept:roasted_chestnuts"
+          ],
+          [
+            "windswept:chestnut_soup"
           ],
           [
             "windswept:goat_shanks"
