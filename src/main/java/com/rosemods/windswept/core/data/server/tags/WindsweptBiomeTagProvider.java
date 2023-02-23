@@ -5,7 +5,6 @@ import com.rosemods.windswept.core.other.tags.WindsweptBiomeTags;
 import com.rosemods.windswept.core.registry.WindsweptBiomes;
 import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.tags.BiomeTags;
-import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.data.event.GatherDataEvent;

@@ -1,6 +1,5 @@
 package com.rosemods.windswept.core.data.server.modifiers;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 

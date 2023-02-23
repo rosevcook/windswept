@@ -12,10 +12,10 @@
         "type": "minecraft:crafting_shapeless",
         "ingredients": [
           {
-            "item": "windswept:chestnut_boat"
+            "item": "minecraft:furnace"
           },
           {
-            "item": "minecraft:furnace"
+            "item": "windswept:chestnut_boat"
           }
         ],
         "result": {
