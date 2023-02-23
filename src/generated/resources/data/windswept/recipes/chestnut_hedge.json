@@ -12,7 +12,7 @@
         "type": "minecraft:crafting_shaped",
         "key": {
           "#": {
-            "item": "windswept:chestnut_log"
+            "tag": "windswept:chestnut_logs"
           },
           "L": {
             "item": "windswept:chestnut_leaves"

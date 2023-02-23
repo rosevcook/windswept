@@ -121,8 +121,8 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 				WindsweptItems.LARGE_CHESTNUT_BOAT, WindsweptItems.CHESTNUT_FURNACE_BOAT,
 				WindsweptBlocks.VERTICAL_CHESTNUT_PLANKS, WindsweptBlocks.CHESTNUT_CABINET, consumer);
 
-		leafSet(WindsweptBlocks.HOLLY_LOG, WindsweptBlocks.HOLLY_LEAVES, WindsweptBlocks.HOLLY_HEDGE, WindsweptBlocks.HOLLY_LEAF_CARPET, WindsweptBlocks.HOLLY_LEAF_PILE, consumer);
-		leafSet(WindsweptBlocks.CHESTNUT_LOG, WindsweptBlocks.CHESTNUT_LEAVES, WindsweptBlocks.CHESTNUT_HEDGE, WindsweptBlocks.CHESTNUT_LEAF_CARPET, WindsweptBlocks.CHESTNUT_LEAF_PILE, consumer);
+		leafSet(WindsweptItemTags.HOLLY_LOGS, WindsweptBlocks.HOLLY_LEAVES, WindsweptBlocks.HOLLY_HEDGE, WindsweptBlocks.HOLLY_LEAF_CARPET, WindsweptBlocks.HOLLY_LEAF_PILE, consumer);
+		leafSet(WindsweptItemTags.CHESTNUT_LOGS, WindsweptBlocks.CHESTNUT_LEAVES, WindsweptBlocks.CHESTNUT_HEDGE, WindsweptBlocks.CHESTNUT_LEAF_CARPET, WindsweptBlocks.CHESTNUT_LEAF_PILE, consumer);
 
 		// wild berry sack
 		conditionalRecipe(ShapedRecipeBuilder.shaped(WindsweptBlocks.WILD_BERRY_SACK.get())
@@ -438,11 +438,11 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 
 	}
 
-	private static void leafSet(RegistryObject<Block> log, RegistryObject<Block> leaves, RegistryObject<Block> hedge,
+	private static void leafSet(TagKey<Item> log, RegistryObject<Block> leaves, RegistryObject<Block> hedge,
 			RegistryObject<Block> leafCarpet, RegistryObject<Block> leafPile, Consumer<FinishedRecipe> consumer) {
 		//hedge
 		conditionalRecipe(ShapedRecipeBuilder.shaped(hedge.get(), 2)
-				.define('#', log.get())
+				.define('#', log)
 				.define('L', leaves.get())
 				.pattern("L")
 				.pattern("#")

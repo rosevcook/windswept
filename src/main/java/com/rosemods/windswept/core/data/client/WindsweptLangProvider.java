@@ -52,6 +52,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.translateItem(WindsweptItems.CHESTNUTS);
 		this.translateItem(WindsweptItems.ROASTED_CHESTNUTS);
 		this.translateItem(WindsweptItems.CHESTNUT_SOUP);
+		this.translateItem(WindsweptItems.CHESTNUT_RISOTTO);
 		this.translateItem(WindsweptItems.WOODEN_BUCKET);
 		this.translateItem(WindsweptItems.WOODEN_WATER_BUCKET);
 		this.translateItem(WindsweptItems.WOODEN_MILK_BUCKET);

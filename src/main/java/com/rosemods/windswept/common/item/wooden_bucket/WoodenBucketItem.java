@@ -107,7 +107,12 @@ public class WoodenBucketItem extends BucketItem {
 	public int getBurnTime(ItemStack stack, RecipeType<?> recipeType) {
 		return this.getFluid() == Fluids.EMPTY ? 600 : super.getBurnTime(stack, recipeType);
 	}
-	
+
+	@Override
+	public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
+		return this.getFluid() == Fluids.WATER ? getEmpty(itemStack, null, null) : super.getCraftingRemainingItem(itemStack);
+	}
+
 	@Override
 	public void fillItemCategory(CreativeModeTab group, NonNullList<ItemStack> items) {
 		FILLER.fillItem(this, group, items);

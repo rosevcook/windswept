@@ -58,6 +58,7 @@ public class WindsweptItems {
 	public static final RegistryObject<Item> CHESTNUT_SOUP = HELPER.createItem("chestnut_soup", () -> new BowlFoodItem(PropertyUtil.food(ModList.get().isLoaded(WindsweptConstants.FARMERSDELIGHT) ? WindsweptFDCompat.CHESTNUT_SOUP : Foods.CHESTNUT_SOUP).craftRemainder(Items.BOWL).stacksTo(1)));
 	public static final RegistryObject<Item> GOAT_SHANKS = HELPER.createCompatItem(WindsweptConstants.FARMERSDELIGHT, "goat_shanks", new Item.Properties().food(Foods.GOAT_SHANKS), CreativeModeTab.TAB_FOOD);
 	public static final RegistryObject<Item> COOKED_GOAT_SHANKS = HELPER.createCompatItem(WindsweptConstants.FARMERSDELIGHT, "cooked_goat_shanks", new Item.Properties().food(Foods.COOKED_GOAT_SHANKS), CreativeModeTab.TAB_FOOD);
+	public static final RegistryObject<Item> CHESTNUT_RISOTTO = HELPER.createItem("chestnut_risotto", () -> new BowlFoodItem((ModList.get().isLoaded(WindsweptConstants.FARMERSDELIGHT) ? PropertyUtil.food(WindsweptFDCompat.CHESTNUT_RISOTTO) : new Item.Properties()).craftRemainder(Items.BOWL).stacksTo(1)));
 
 	// Misc //
 	

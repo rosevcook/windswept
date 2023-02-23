@@ -44,6 +44,11 @@ public class WoodenPowderSnowBucketItem extends SolidBucketItem {
 		
 		return result;
 	}
+
+	@Override
+	public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
+		return WoodenBucketItem.getEmpty(itemStack, null, null);
+	}
 	
 	@Override
 	public boolean isRepairable(ItemStack stack) {

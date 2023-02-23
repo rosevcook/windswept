@@ -12,7 +12,7 @@
         "type": "minecraft:crafting_shaped",
         "key": {
           "#": {
-            "item": "windswept:holly_log"
+            "tag": "windswept:holly_logs"
           },
           "L": {
             "item": "windswept:holly_leaves"
