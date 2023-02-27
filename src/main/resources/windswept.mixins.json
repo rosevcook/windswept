@@ -21,7 +21,8 @@
     "TrunkPlacerMixin"
   ],
   "client": [
-    "client.LivingEntityRendererMixin"
+    "client.LivingEntityRendererMixin",
+    "client.RabbitRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
