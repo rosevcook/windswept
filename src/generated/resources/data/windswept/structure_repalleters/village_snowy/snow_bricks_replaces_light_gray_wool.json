@@ -1,0 +1,7 @@
+{
+  "type": "blueprint:simple",
+  "priority": "normal",
+  "replaces_block": "minecraft:light_gray_wool",
+  "replaces_with": "windswept:snow_bricks",
+  "selector": "minecraft:village_snowy"
+}
