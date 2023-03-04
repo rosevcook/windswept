@@ -1,6 +1,7 @@
 package com.rosemods.windswept.core.data.server.modifiers;
 
 import java.util.Collections;
+import java.util.function.Consumer;
 
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.registry.WindsweptItems;
@@ -11,9 +12,11 @@ import net.minecraft.advancements.critereon.EntityFlagsPredicate;
 import net.minecraft.advancements.critereon.EntityPredicate;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
 import net.minecraft.world.level.storage.loot.functions.LootingEnchantFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemDamageFunction;
@@ -49,22 +52,22 @@ public class WindsweptLootModifierProvider extends LootModifierProvider {
 								.add(LootItem.lootTableItem(WindsweptItems.MUSIC_DISC_RAIN::get))
 								.when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.KILLER,
 										EntityPredicate.Builder.entity().of(EntityTypeTags.SKELETONS)))
-								.build()),
-						false));
+								.build()), false));
 		
 		// chests
-		this.chestEntry("village_taiga_house", "chests/village/village_taiga_house", WindsweptItems.MUTTON_PIE, UniformGenerator.between(-1, 2));
-		this.chestEntry("village_snowy_house", "chests/village/village_snowy_house", WindsweptItems.MUTTON_PIE, UniformGenerator.between(-1, 2));
-		this.chestEntry("shipwreck_treasure", "chests/shipwreck_treasure", WindsweptItems.WOODEN_BUCKET, UniformGenerator.between(-1, 1));
-		this.chestEntry("underwater_ruin_small", "chests/underwater_ruin_small", WindsweptItems.WOODEN_BUCKET, UniformGenerator.between(-1, 1));
-		this.chestEntry("village_fisher", "chests/village/village_fisher", WindsweptItems.WOODEN_BUCKET, UniformGenerator.between(-1, 1));
-
+		this.chestEntry("village_taiga_house", "chests/village/village_taiga_house", WindsweptItems.MUTTON_PIE, b -> b.setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(-1, 2))));
+		this.chestEntry("village_snowy_house", "chests/village/village_snowy_house", WindsweptItems.MUTTON_PIE, b -> b.setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(-1, 2))));
+		this.chestEntry("shipwreck_treasure", "chests/shipwreck_treasure", WindsweptItems.WOODEN_BUCKET, b -> b.setWeight(2).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))));
+		this.chestEntry("underwater_ruin_small", "chests/underwater_ruin_small", WindsweptItems.WOODEN_BUCKET, b -> b.setWeight(2).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))));
+		this.chestEntry("village_fisher", "chests/village/village_fisher", WindsweptItems.WOODEN_WATER_BUCKET, b -> b.setWeight(2).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))));
 	}
-	
-	private void chestEntry(String name, String target, RegistryObject<Item> item, NumberProvider count) {
-		this.entry(name).selects(target).addModifier(new LootPoolsModifier(Collections.singletonList(LootPool.lootPool().name("windswept:" + name).setRolls(ConstantValue.exactly(1f))
-				.add(LootItem.lootTableItem(item.get())
-						.apply(SetItemCountFunction.setCount(count))).apply(SetItemDamageFunction.setDamage(count)).build()), false));
+
+	private void chestEntry(String name, String target, RegistryObject<? extends ItemLike> item, Consumer<LootPoolSingletonContainer.Builder<?>> b) {
+		LootPoolSingletonContainer.Builder<?> builder = LootItem.lootTableItem(item.get());
+		b.accept(builder);
+
+		this.entry(name).selects(target).addModifier(new LootPoolsModifier(Collections.singletonList(
+				LootPool.lootPool().name(this.modId + ":" + name).setRolls(ConstantValue.exactly(1f)).add(builder).build()), false));
 	}
 
 }

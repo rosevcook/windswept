@@ -38,10 +38,7 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.ValidationContext;
 import net.minecraft.world.level.storage.loot.LootTable.Builder;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
-import net.minecraft.world.level.storage.loot.functions.LootingEnchantFunction;
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.functions.SmeltItemFunction;
+import net.minecraft.world.level.storage.loot.functions.*;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.predicates.*;
@@ -311,11 +308,11 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 			register("grove_weathered_house", LootTable.lootTable().withPool(LootPool.lootPool().setRolls(UniformGenerator.between(4f, 8f))
 					.add(LootItem.lootTableItem(Items.GOLD_INGOT).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
 					.add(LootItem.lootTableItem(WindsweptBlocks.SNOWY_SPROUTS.get()).setWeight(4).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 4f))))
-					.add(LootItem.lootTableItem(WindsweptItems.SNOW_BOOTS.get()).setWeight(1))
+					.add(LootItem.lootTableItem(WindsweptItems.SNOW_BOOTS.get()).setWeight(1).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))))
 					.add(LootItem.lootTableItem(Items.DIAMOND).setWeight(1))
 					.add(LootItem.lootTableItem(Items.BOOK).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
-					.add(LootItem.lootTableItem(WindsweptItems.WOODEN_BUCKET.get()).setWeight(1))
-					.add(LootItem.lootTableItem(WindsweptItems.WOODEN_POWDER_SNOW_BUCKET.get()).setWeight(1))
+					.add(LootItem.lootTableItem(WindsweptItems.WOODEN_BUCKET.get()).setWeight(1).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))))
+					.add(LootItem.lootTableItem(WindsweptItems.WOODEN_POWDER_SNOW_BUCKET.get()).setWeight(1).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))))
 					.add(LootItem.lootTableItem(WindsweptItems.WILD_BERRIES.get()).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(2f, 3f))))
 					.add(LootItem.lootTableItem(Items.SNOW_BLOCK).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
 					.add(LootItem.lootTableItem(Items.COBWEB).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
@@ -331,7 +328,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 					.add(LootItem.lootTableItem(Items.COBWEB).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
 					.add(LootItem.lootTableItem(WindsweptBlocks.CHESTNUT_SAPLING.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
 					.add(LootItem.lootTableItem(Items.BIRCH_SAPLING).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
-					.add(LootItem.lootTableItem(WindsweptItems.WOODEN_BUCKET.get()).setWeight(1))
+					.add(LootItem.lootTableItem(WindsweptItems.WOODEN_BUCKET.get()).setWeight(1).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))))
 			), builder);
 		}
 

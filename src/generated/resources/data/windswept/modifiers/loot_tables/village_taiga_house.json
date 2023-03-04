@@ -20,18 +20,8 @@
                     "function": "minecraft:set_count"
                   }
                 ],
-                "name": "windswept:mutton_pie"
-              }
-            ],
-            "functions": [
-              {
-                "add": false,
-                "damage": {
-                  "type": "minecraft:uniform",
-                  "max": 2.0,
-                  "min": -1.0
-                },
-                "function": "minecraft:set_damage"
+                "name": "windswept:mutton_pie",
+                "weight": 3
               }
             ],
             "name": "windswept:village_taiga_house",

@@ -117,6 +117,17 @@
         },
         {
           "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 20.0,
+                "min": 3.0
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
           "name": "windswept:wooden_bucket"
         }
       ],
