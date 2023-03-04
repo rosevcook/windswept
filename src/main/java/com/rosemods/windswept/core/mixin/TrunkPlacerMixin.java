@@ -20,15 +20,9 @@ import java.util.function.BiConsumer;
 @Mixin(TrunkPlacer.class)
 public class TrunkPlacerMixin {
 
-    @Inject(method = "setDirtAt", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "setDirtAt", at = @At("TAIL"))
     private static void setDirtAt(LevelSimulatedReader level, BiConsumer<BlockPos, BlockState> states, RandomSource random, BlockPos pos, TreeConfiguration config, CallbackInfo info) {
-        if (!(((LevelReader) level).getBlockState(pos).onTreeGrow((LevelReader) level, states, random, pos, config)) && (config.forceDirt || level.isStateAtPosition(pos, Feature::isDirt))) {
-            states.accept(pos, config.dirtProvider.getState(random, pos));
-
-            if (((LevelReader) level).isEmptyBlock(pos.below()) && WindsweptConfig.COMMON.roots.get())
+        if (((LevelReader) level).isEmptyBlock(pos.below()) && WindsweptConfig.COMMON.roots.get() && (config.forceDirt || level.isStateAtPosition(pos, Feature::isDirt)))
                 states.accept(pos.below(), Blocks.HANGING_ROOTS.defaultBlockState());
-        }
-
-        info.cancel();
     }
 }
