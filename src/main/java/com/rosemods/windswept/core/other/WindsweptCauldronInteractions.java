@@ -61,7 +61,7 @@ public final class WindsweptCauldronInteractions {
 			player.setItemInHand(hand, ItemUtils.createFilledResult(stack, player, WoodenBucketItem.getEmpty(stack, player, hand)));
 			player.awardStat(Stats.FILL_CAULDRON);
 			player.awardStat(Stats.ITEM_USED.get(stack.getItem()));
-			level.setBlockAndUpdate(pos, filledBlock.defaultBlockState().setValue(LayeredCauldronBlock.LEVEL, Integer.valueOf(3)));
+			level.setBlockAndUpdate(pos, filledBlock.defaultBlockState().setValue(LayeredCauldronBlock.LEVEL, 3));
 			level.playSound(null, pos, sound, SoundSource.BLOCKS, 1f, 1f);
 			level.gameEvent(null, GameEvent.FLUID_PLACE, pos);
 		}
