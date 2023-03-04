@@ -21,14 +21,14 @@ public class WindsweptConfig {
 		private Common(ForgeConfigSpec.Builder builder) {
 			builder.comment("Vanilla Gameplay Tweaks");
 			builder.push("tweaks");
-			this.birchBranches = builder.comment("Tall Birch Trees will generate branches growing out the side of the tree.").define("birch-branches", true);
+			this.birchBranches = builder.comment("Tall Birch Trees will generate branches growing out the side of the tree.").define("Birch Branches", true);
 			this.strays = builder.comment("All skeletons that spawn in snowy biomes are replaced with strays").define("strays-only", true);
-			this.iceBoatNerf = builder.comment("Nerfs Boats ability to go extremely fast when on ice and other slippery blocks; default: false").define("boat-nerf", false);
+			this.iceBoatNerf = builder.comment("Nerfs Boats ability to go extremely fast when on ice and other slippery blocks; default: false").define("Ice Boat Nerf", false);
 			builder.pop();
 
 			builder.comment("Tweaks to Windswept Worldgen");
 			builder.push("worldgen");
-			this.roots = builder.comment("Roots will grow under the dirt block below a tree, chestnut trees overhanging logs will grow roots").define("roots", true);
+			this.roots = builder.comment("Roots will grow under the dirt block below a tree, chestnut trees overhanging logs will grow roots").define("Tree Roots", true);
 			builder.pop();
 		}
 
@@ -40,11 +40,11 @@ public class WindsweptConfig {
 
 		public Client(ForgeConfigSpec.Builder builder) {
 			builder.push("particles");
-			this.powderSnowParticles = builder.comment("If Powder Snow should drop snow particles if there is no block below.").define("powder-snow", true);
+			this.powderSnowParticles = builder.comment("If Powder Snow should drop snow particles if there is no block below.").define("Powder Snow Particles", true);
 			builder.pop();
 
 			builder.push("entity-renderers");
-			this.largerRabbits = builder.comment("Rabbits will be 20% larger").define("larger-rabbits", true);
+			this.largerRabbits = builder.comment("Rabbits will be 20% larger").define("Larger Rabbits", true);
 			builder.pop();
 		}
 		
