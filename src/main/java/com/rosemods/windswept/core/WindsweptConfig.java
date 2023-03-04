@@ -17,13 +17,15 @@ public class WindsweptConfig {
 		public final ConfigValue<Boolean> birchBranches;
 		public final ConfigValue<Boolean> strays;
 		public final ConfigValue<Boolean> roots;
+		public final ConfigValue<Boolean> biggerFlowerHitbox;
 
 		private Common(ForgeConfigSpec.Builder builder) {
 			builder.comment("Vanilla Gameplay Tweaks");
 			builder.push("tweaks");
-			this.birchBranches = builder.comment("Tall Birch Trees will generate branches growing out the side of the tree.").define("Birch Branches", true);
-			this.strays = builder.comment("All skeletons that spawn in snowy biomes are replaced with strays").define("strays-only", true);
+			this.birchBranches = builder.comment("Tall Birch Trees will generate branches growing out the side of the tree").define("Birch Branches", true);
+			this.strays = builder.comment("All skeletons that spawn in snowy biomes are replaced with strays").define("Strays Only", true);
 			this.iceBoatNerf = builder.comment("Nerfs Boats ability to go extremely fast when on ice and other slippery blocks; default: false").define("Ice Boat Nerf", false);
+			this.biggerFlowerHitbox = builder.comment("If the Hitbox for Flowers should be Larger").define("Larger Flower Hitbox", true);
 			builder.pop();
 
 			builder.comment("Tweaks to Windswept Worldgen");
@@ -40,7 +42,7 @@ public class WindsweptConfig {
 
 		public Client(ForgeConfigSpec.Builder builder) {
 			builder.push("particles");
-			this.powderSnowParticles = builder.comment("If Powder Snow should drop snow particles if there is no block below.").define("Powder Snow Particles", true);
+			this.powderSnowParticles = builder.comment("If Powder Snow should drop snow Particles if there is no block below").define("Powder Snow Particles", true);
 			builder.pop();
 
 			builder.push("entity-renderers");
