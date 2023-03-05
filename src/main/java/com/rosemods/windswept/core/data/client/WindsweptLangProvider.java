@@ -246,8 +246,13 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.translateDamageSource(WindsweptDamageSources.HOLLY_HEDGE, 
 				player -> player + " was ripped to death by holly leaf hedge", 
 				(player, entity) -> player + " was ripped to death by holly leaf hedge whilst trying to escape " + entity);
-		
-		// JEI Info
+
+		// Slabfish //
+
+		this.add("entity.environmental.slabfish.type.chestnut", "Chestnut");
+		this.add("entity.environmental.slabfish.type.grove", "Grove");
+
+		// JEI Info //
 		
 		this.jeiInfo(WindsweptItems.MUSIC_DISC_RAIN, "Dropped by a Drowned if killed by a Skeleton.");
 		this.jeiInfo(WindsweptItems.MUSIC_DISC_SNOW, "Dropped by a Chilled if killed by a Skeleton.");

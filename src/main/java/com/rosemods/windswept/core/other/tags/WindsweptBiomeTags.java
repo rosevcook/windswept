@@ -22,7 +22,11 @@ public final class WindsweptBiomeTags {
     public static final TagKey<Biome> HAS_GROVE_WEATHERED_HOUSE = TagUtil.biomeTag(Windswept.MODID, "has_structure/grove_weathered_house");
     public static final TagKey<Biome> HAS_CHESTNUT_WEATHERED_HOUSE = TagUtil.biomeTag(Windswept.MODID, "has_structure/chestnut_weathered_house");
 
+    public static final TagKey<Biome> IS_CHESTNUT_FOREST = TagUtil.biomeTag(Windswept.MODID, "is_chestnut_forest");
+
     public static final TagKey<Biome> HAS_SPOTTED_ORANGE_MAPLE_TREES = TagUtil.biomeTag("autumnity", "has_feature/spotted_maple_tree/orange");
     public static final TagKey<Biome> HAS_SPOTTED_RED_MAPLE_TREES = TagUtil.biomeTag("autumnity", "has_feature/spotted_maple_tree/red");
+
+
 
 }

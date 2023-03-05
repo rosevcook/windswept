@@ -1,0 +1,19 @@
+{
+  "rarity": "rare",
+  "displayName": {
+    "translate": "entity.environmental.slabfish.type.grove"
+  },
+  "conditions": [
+    {
+      "type": "environmental:event",
+      "events": [
+        "spawn",
+        "breed"
+      ]
+    },
+    {
+      "type": "environmental:biome",
+      "biome": "minecraft:grove"
+    }
+  ]
+}
