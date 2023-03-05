@@ -1,7 +1,3 @@
 {
-  "parent": "minecraft:block/cross",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "cross": "windswept:block/bluebells"
-  }
+  "parent": "windswept:block/bluebells_template"
 }

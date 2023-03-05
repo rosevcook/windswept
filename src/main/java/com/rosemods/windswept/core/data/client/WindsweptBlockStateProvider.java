@@ -139,8 +139,9 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 		this.pottedPlant(WindsweptBlocks.WHITE_ROSE, WindsweptBlocks.POTTED_WHITE_ROSE);
 		this.pottedPlant(WindsweptBlocks.YELLOW_ROSE, WindsweptBlocks.POTTED_YELLOW_ROSE);
 		this.pottedPlant(WindsweptBlocks.FOXGLOVE, WindsweptBlocks.POTTED_FOXGLOVE);
-		this.pottedPlant(WindsweptBlocks.BLUEBELLS, WindsweptBlocks.POTTED_BLUEBELLS, true);
 		this.pottedPlant(WindsweptBlocks.NIGHTSHADE, WindsweptBlocks.POTTED_NIGHTSHADE);
+
+		this.blubells(WindsweptBlocks.BLUEBELLS, WindsweptBlocks.POTTED_BLUEBELLS);
 
 		this.wildBerryBush(WindsweptBlocks.WILD_BERRY_BUSH);
 		this.cubeBottomTop(WindsweptBlocks.WILD_BERRY_SACK);
@@ -160,6 +161,12 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 	     	.partialState().with(WildBerryBushBlock.AGE, 2).addModels(new ConfiguredModel(model.apply(2), 0, 90, true));
 	}
 
+	private void blubells(RegistryObject<Block> bluebells, RegistryObject<Block> pot) {
+		this.pot(pot, this.modLoc("block/potted_" + this.getName(bluebells)));
+		this.simpleBlock(bluebells.get(), this.models().withExistingParent(this.getName(bluebells), Windswept.REGISTRY_HELPER.prefix("bluebells_template")));
+		this.generatedItem(bluebells);
+	}
+
 	private void tallPlant(RegistryObject<Block> flower) {
 		String name = getName(flower);
 		Function<String, ModelFile> model = s -> this.models().cross(name + "_" + s, this.modLoc("block/" + name + "_" + s)).renderType("cutout");
@@ -170,8 +177,8 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 				.partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).addModels(new ConfiguredModel(model.apply("bottom")));
 	}
 	
-	private void pottedPlant(RegistryObject<Block> plant, RegistryObject<Block> pot, boolean pottedTexture) {
-		this.pot(pot, pottedTexture ? this.modLoc("block/potted_" + this.getName(plant)) : this.blockTexture(plant.get()));
+	private void pottedPlant(RegistryObject<Block> plant, RegistryObject<Block> pot) {
+		this.pot(pot, this.blockTexture(plant.get()));
 		this.simpleCross(plant);
 		this.generatedItem(plant);
 	}
@@ -180,10 +187,7 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 		ModelFile model = this.models().withExistingParent(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(pot.get())).getPath(), "block/flower_pot_cross").texture("plant", texture).renderType("cutout");
 		this.simpleBlock(pot.get(), model);
 	}
-	
-	private void pottedPlant(RegistryObject<Block> plant, RegistryObject<Block> pot) {
-		this.pottedPlant(plant, pot, false);
-	}
+
 	
 	private void iceSheet(RegistryObject<Block> block, Supplier<Block> textureBlock) {
 		ResourceLocation texture = this.blockTexture(textureBlock.get());
