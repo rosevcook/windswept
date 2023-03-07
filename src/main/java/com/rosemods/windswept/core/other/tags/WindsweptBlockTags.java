@@ -12,4 +12,5 @@ public final class WindsweptBlockTags {
 	public static final TagKey<Block> HOLLY_LEAVES = TagUtil.blockTag(Windswept.MODID, "holly_leaves");
 	public static final TagKey<Block> CHESTNUT_LEAVES = TagUtil.blockTag(Windswept.MODID, "chestnut_leaves");
 	public static final TagKey<Block> SNOW_BOOTS_BLOCKS = TagUtil.blockTag(Windswept.MODID, "snow_boots_blocks");
+	public static final TagKey<Block> DEFAULT_WHITE_TEXT = TagUtil.blockTag(Windswept.MODID, "default_white_text");
 }

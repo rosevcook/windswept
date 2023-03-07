@@ -126,8 +126,8 @@ public class WoodenBucketItem extends BucketItem {
 		
 		if (player != null)
 			bucket.hurtAndBreak(1, player, p -> {
-				assert hand != null;
-				p.broadcastBreakEvent(hand);
+				if (hand != null)
+					p.broadcastBreakEvent(hand);
 			});
 		else if (bucket.hurt(1, RandomSource.create(), null))
 			bucket.setCount(0);

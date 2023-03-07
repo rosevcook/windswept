@@ -7,12 +7,12 @@ import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.WindsweptConfig;
 import com.rosemods.windswept.core.other.WindsweptConstants;
 import com.rosemods.windswept.core.other.WindsweptDataProcessors;
+import com.rosemods.windswept.core.other.tags.WindsweptBlockTags;
 import com.rosemods.windswept.core.other.tags.WindsweptEntityTypeTags;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import com.rosemods.windswept.core.registry.WindsweptEffects;
 import com.rosemods.windswept.core.registry.WindsweptEntities;
 import com.rosemods.windswept.core.registry.WindsweptItems;
-import com.teamabnormals.blueprint.common.block.entity.BlueprintSignBlockEntity;
 import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
 import com.teamabnormals.blueprint.common.world.storage.tracking.TrackedData;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintEntityTypeTags;
@@ -34,8 +34,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.SignBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.entity.living.LivingEvent;
@@ -55,12 +55,9 @@ public class WindsweptEntityEvents {
 		LivingEntity entity = event.getEntity();
 		DamageSource source = event.getSource();
 		Entity attacker = source.getEntity();
-		
-		if (attacker == null || entity == null)
-			return;
 
 		// thorns damage
-		if (entity.hasEffect(WindsweptEffects.THORNS.get())) 
+		if (attacker != null && entity != null && entity.hasEffect(WindsweptEffects.THORNS.get()))
 			ThornsEffect.doThornsDamage(entity, attacker);
 	}
 
@@ -88,9 +85,8 @@ public class WindsweptEntityEvents {
 	public static void onBlockPace(BlockEvent.EntityPlaceEvent event) {
 		BlockState state = event.getPlacedBlock();
 
-		if (state.is(WindsweptBlocks.HOLLY_SIGNS.getFirst().get()) || state.is(WindsweptBlocks.HOLLY_SIGNS.getSecond().get())
-				|| state.is(Blocks.DARK_OAK_SIGN) || state.is(Blocks.DARK_OAK_WALL_SIGN)) {
-			BlueprintSignBlockEntity sign = (BlueprintSignBlockEntity) event.getLevel().getBlockEntity(event.getPos());
+		if (state.is(WindsweptBlockTags.DEFAULT_WHITE_TEXT)) {
+			SignBlockEntity sign = (SignBlockEntity) event.getLevel().getBlockEntity(event.getPos());
 
 			if (sign != null)
 				sign.setColor(DyeColor.WHITE);

@@ -11,6 +11,7 @@ import com.rosemods.windswept.core.registry.WindsweptAttributes;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.teamabnormals.blueprint.core.util.item.filling.TargetedItemCategoryFiller;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -55,8 +56,9 @@ public class SnowBootsItem extends DyeableArmorItem {
 	// Util //
 	
 	public static boolean onSnowBlock(LivingEntity entity) {
-		return entity.level.getBlockState(entity.getBlockPosBelowThatAffectsMyMovement()).is(WindsweptBlockTags.SNOW_BOOTS_BLOCKS) 
-				|| entity.level.getBlockState(entity.getBlockPosBelowThatAffectsMyMovement().above()).is(WindsweptBlockTags.SNOW_BOOTS_BLOCKS);
+		BlockPos below = entity.getBlockPosBelowThatAffectsMyMovement();
+
+		return entity.level.getBlockState(below).is(WindsweptBlockTags.SNOW_BOOTS_BLOCKS) || entity.level.getBlockState(below.above()).is(WindsweptBlockTags.SNOW_BOOTS_BLOCKS);
 	}
 	
 	public static boolean canSpawnSnowSpeedParticle(LivingEntity entity) {
