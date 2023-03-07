@@ -71,6 +71,15 @@ public class WindsweptEntityEvents {
 		Level level = event.getLevel();
 		InteractionHand hand = event.getHand();
 
+		//jumbo rabbit
+		if (stack.is(Items.GOLDEN_CARROT) && stack.getCount() == 64 && !((IDataManager) target).getValue(WindsweptDataProcessors.JUMBO_RABBIT)) {
+			((IDataManager) target).setValue(WindsweptDataProcessors.JUMBO_RABBIT, true);
+			stack.setCount(0);
+			event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide));
+			event.setCanceled(true);
+			return;
+		}
+
 		// milk animal with wooden bucket
 		if (stack.is(WindsweptItems.WOODEN_BUCKET.get()) && target.getType().is(BlueprintEntityTypeTags.MILKABLE)) {
 			if (target instanceof Animal animal && animal.isBaby()) 
@@ -80,7 +89,7 @@ public class WindsweptEntityEvents {
 			event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide));
 			event.setCanceled(true);
 		}
-		
+
 	}
 
 	@SubscribeEvent
