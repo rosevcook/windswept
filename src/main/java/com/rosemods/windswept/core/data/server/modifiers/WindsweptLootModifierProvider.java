@@ -57,7 +57,6 @@ public class WindsweptLootModifierProvider extends LootModifierProvider {
 		// chests
 		this.chestEntry("village_taiga_house", "chests/village/village_taiga_house", WindsweptItems.MUTTON_PIE, b -> b.setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(-1, 2))));
 		this.chestEntry("village_snowy_house", "chests/village/village_snowy_house", WindsweptItems.MUTTON_PIE, b -> b.setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(-1, 2))));
-		this.chestEntry("shipwreck_treasure", "chests/shipwreck_treasure", WindsweptItems.WOODEN_BUCKET, b -> b.setWeight(2).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))));
 		this.chestEntry("underwater_ruin_small", "chests/underwater_ruin_small", WindsweptItems.WOODEN_BUCKET, b -> b.setWeight(2).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))));
 		this.chestEntry("village_fisher", "chests/village/village_fisher", WindsweptItems.WOODEN_WATER_BUCKET, b -> b.setWeight(2).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))));
 	}
