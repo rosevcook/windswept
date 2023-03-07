@@ -19,7 +19,7 @@ public abstract class RabbitRendererMixin extends MobRenderer<Rabbit, RabbitMode
     @Override
     public void render(Rabbit rabbit, float p_115456_, float p_115457_, PoseStack pose, MultiBufferSource source, int p_115460_) {
         if (WindsweptConfig.CLIENT.largerRabbits.get())
-            pose.scale(1.2f, 1.2f,  1.2f);
+            pose.scale(1.25f, 1.25f,  1.25f);
 
         super.render(rabbit, p_115456_, p_115457_, pose, source, p_115460_);
     }

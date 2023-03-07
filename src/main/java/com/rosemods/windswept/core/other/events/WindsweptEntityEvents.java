@@ -28,6 +28,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.Rabbit;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
@@ -38,6 +39,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.SignBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.event.entity.living.BabyEntitySpawnEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
@@ -93,6 +95,23 @@ public class WindsweptEntityEvents {
 		}
 	}
 
+	@SubscribeEvent
+	public static void onBabySpawn(BabyEntitySpawnEvent event) {
+		if (WindsweptConfig.COMMON.rabbitLitters.get() && event.getParentA() instanceof Rabbit parent && event.getParentB() instanceof Rabbit parentB) {
+			Level level = parent.getCommandSenderWorld();
+			int litter = level.random.nextInt(3);
+
+			for (int i = 0; i < litter; i++) {
+				Rabbit baby = EntityType.RABBIT.create(level);
+				if (baby != null) {
+					baby.setBaby(true);
+					baby.setRabbitType(level.random.nextBoolean() ? parent.getRabbitType() : parentB.getRabbitType());
+					baby.moveTo(parent.getX(), parent.getY(), parent.getZ(), 0f, 0f);
+					level.addFreshEntity(baby);
+				}
+			}
+		}
+	}
 	@SubscribeEvent
 	public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
 		if (event.getItemStack().is(WindsweptItems.WILD_BERRIES.get()) && ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD))

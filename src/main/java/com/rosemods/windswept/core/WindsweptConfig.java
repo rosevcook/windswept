@@ -18,6 +18,7 @@ public class WindsweptConfig {
 		public final ConfigValue<Boolean> strays;
 		public final ConfigValue<Boolean> roots;
 		public final ConfigValue<Boolean> biggerFlowerHitbox;
+		public final ConfigValue<Boolean> rabbitLitters;
 
 		private Common(ForgeConfigSpec.Builder builder) {
 			builder.comment("Vanilla Gameplay Tweaks");
@@ -26,6 +27,7 @@ public class WindsweptConfig {
 			this.strays = builder.comment("All skeletons that spawn in snowy biomes are replaced with strays").define("Strays Only", true);
 			this.iceBoatNerf = builder.comment("Nerfs Boats ability to go extremely fast when on ice and other slippery blocks; default: false").define("Ice Boat Nerf", false);
 			this.biggerFlowerHitbox = builder.comment("If the Hitbox for Flowers should be Larger").define("Larger Flower Hitbox", true);
+			this.rabbitLitters = builder.comment("If Rabbits should have litters of 1-3").define("Rabbit Litters", true);
 			builder.pop();
 
 			builder.comment("Tweaks to Windswept Worldgen");
@@ -46,7 +48,7 @@ public class WindsweptConfig {
 			builder.pop();
 
 			builder.push("entity-renderers");
-			this.largerRabbits = builder.comment("Rabbits will be 20% larger").define("Larger Rabbits", true);
+			this.largerRabbits = builder.comment("Rabbits will be 25% larger").define("Larger Rabbits", true);
 			builder.pop();
 		}
 		
