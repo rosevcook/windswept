@@ -119,7 +119,6 @@ public final class WindsweptBlockInfo {
 		DataUtil.registerFlammable(WindsweptBlocks.WHITE_ROSE_BUSH.get(), 60, 100);
 		DataUtil.registerFlammable(WindsweptBlocks.YELLOW_ROSE_BUSH.get(), 60, 100);
 		DataUtil.registerFlammable(WindsweptBlocks.WITHER_ROSE_BUSH.get(), 60, 100);
-
 	}
 
 }

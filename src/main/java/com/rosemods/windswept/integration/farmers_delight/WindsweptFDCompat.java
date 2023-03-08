@@ -1,6 +1,5 @@
 package com.rosemods.windswept.integration.farmers_delight;
 
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.level.block.Block;

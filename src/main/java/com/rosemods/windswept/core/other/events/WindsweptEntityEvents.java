@@ -82,7 +82,7 @@ public class WindsweptEntityEvents {
 	}
 
 	@SubscribeEvent
-	public static void onBlockPace(BlockEvent.EntityPlaceEvent event) {
+	public static void onBlockPlace(BlockEvent.EntityPlaceEvent event) {
 		BlockState state = event.getPlacedBlock();
 
 		if (state.is(WindsweptBlockTags.DEFAULT_WHITE_TEXT)) {
@@ -122,7 +122,7 @@ public class WindsweptEntityEvents {
 		LevelAccessor level = event.getLevel();
 		MobSpawnType reason = event.getSpawnReason();
 		
-		// convert zombies in cold biomes to chilled
+		// convert zombies in cold biomes to chilled && skeletons to strays
 		if (mob != null && level instanceof ServerLevel && event.getResult() != Result.DENY
 				&& mob.getY() > 60 && (reason == MobSpawnType.NATURAL || reason == MobSpawnType.CHUNK_GENERATION)
 				&& level.getBiome(mob.blockPosition()).is(Tags.Biomes.IS_SNOWY)) {
