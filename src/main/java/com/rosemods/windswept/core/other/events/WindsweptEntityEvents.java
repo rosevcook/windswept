@@ -9,7 +9,6 @@ import com.rosemods.windswept.core.other.WindsweptConstants;
 import com.rosemods.windswept.core.other.WindsweptDataProcessors;
 import com.rosemods.windswept.core.other.tags.WindsweptBlockTags;
 import com.rosemods.windswept.core.other.tags.WindsweptEntityTypeTags;
-import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import com.rosemods.windswept.core.registry.WindsweptEffects;
 import com.rosemods.windswept.core.registry.WindsweptEntities;
 import com.rosemods.windswept.core.registry.WindsweptItems;
@@ -35,7 +34,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.SignBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.Tags;
@@ -70,15 +68,6 @@ public class WindsweptEntityEvents {
 		Player player = event.getEntity();
 		Level level = event.getLevel();
 		InteractionHand hand = event.getHand();
-
-		//jumbo rabbit
-		if (stack.is(Items.GOLDEN_CARROT) && stack.getCount() == 64 && !((IDataManager) target).getValue(WindsweptDataProcessors.JUMBO_RABBIT)) {
-			((IDataManager) target).setValue(WindsweptDataProcessors.JUMBO_RABBIT, true);
-			stack.setCount(0);
-			event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide));
-			event.setCanceled(true);
-			return;
-		}
 
 		// milk animal with wooden bucket
 		if (stack.is(WindsweptItems.WOODEN_BUCKET.get()) && target.getType().is(BlueprintEntityTypeTags.MILKABLE)) {
