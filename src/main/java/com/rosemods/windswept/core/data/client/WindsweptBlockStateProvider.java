@@ -188,7 +188,6 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 		this.simpleBlock(pot.get(), model);
 	}
 
-	
 	private void iceSheet(RegistryObject<Block> block, Supplier<Block> textureBlock) {
 		ResourceLocation texture = this.blockTexture(textureBlock.get());
 

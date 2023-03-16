@@ -31,6 +31,6 @@ license = "All Rights Reserved"
 [[dependencies.windswept]]
     modId = "blueprint"
     mandatory = true
-    versionRange = "[6.1.0,)"
+    versionRange = "[6.1.1,)"
     ordering = "BEFORE"
     side = "BOTH"

@@ -259,8 +259,8 @@ public class WindsweptLangProvider extends LanguageProvider {
 
 		this.jeiInfo(WindsweptBlocks.RED_ROSE_BUSH, "Bonemeal a Red Rose and it will grow into a Red Rose Bush!");
 		this.jeiInfo(WindsweptBlocks.PINK_ROSE_BUSH, "Bonemeal a Pink Rose and it will grow into a Pink Rose Bush!");
-		this.jeiInfo(WindsweptBlocks.BLUE_ROSE_BUSH, "Bonemeal a Blue Rose and it will grow into a Blue Rose Bush!");
-		this.jeiInfo(WindsweptBlocks.WHITE_ROSE_BUSH, "Bonemeal a White Rose and it will grow into a White Rose Bush!");
+		this.jeiInfo(WindsweptBlocks.BLUE_ROSE_BUSH, "Bonemeal a Blue Rose and it will grow into a Blue Rose Bush! This can also be found in Chestnut Forests");
+		this.jeiInfo(WindsweptBlocks.WHITE_ROSE_BUSH, "Bonemeal a White Rose and it will grow into a White Rose Bush! This can also be found in Snowy Chestnut Forests");
 		this.jeiInfo(WindsweptBlocks.YELLOW_ROSE_BUSH, "Bonemeal a Yellow Rose and it will grow into a Yellow Rose Bush!");
 		this.jeiInfo(WindsweptBlocks.WITHER_ROSE_BUSH, "Bonemeal a Wither Rose and it will grow into a Wither Rose Bush!");
 
