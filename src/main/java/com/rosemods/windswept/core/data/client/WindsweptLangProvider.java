@@ -283,19 +283,19 @@ public class WindsweptLangProvider extends LanguageProvider {
 	}
 
 	private void translateItem(RegistryObject<? extends Item> item) {
-		this.add(item.get(), this.toUpper(ForgeRegistries.ITEMS, item));
+		this.add(item.get(), toUpper(ForgeRegistries.ITEMS, item));
 	}
 
 	private void translateBlock(RegistryObject<? extends Block> block) {
-		this.add(block.get(), this.toUpper(ForgeRegistries.BLOCKS, block));
+		this.add(block.get(), toUpper(ForgeRegistries.BLOCKS, block));
 	}
 
 	private void translateEntity(RegistryObject<? extends EntityType<?>> entity) {
-		this.add(entity.get(), this.toUpper(ForgeRegistries.ENTITY_TYPES, entity));
+		this.add(entity.get(), toUpper(ForgeRegistries.ENTITY_TYPES, entity));
 	}
 
 	private void translateBiome(BiomeSubRegistryHelper.KeyedBiome biome) {
-		this.add("biome." + Windswept.MODID + "." + ForgeRegistries.BIOMES.getKey(biome.get()).getPath(), this.toUpper(ForgeRegistries.BIOMES, biome.getObject()));
+		this.add("biome." + Windswept.MODID + "." + ForgeRegistries.BIOMES.getKey(biome.get()).getPath(), toUpper(ForgeRegistries.BIOMES, biome.getObject()));
 	}
 	
 	private void translateEnchantment(RegistryObject<? extends Enchantment> enchantment, String name, String desc) {
@@ -311,11 +311,11 @@ public class WindsweptLangProvider extends LanguageProvider {
 	
 	private void translateSign(Pair<RegistryObject<BlueprintStandingSignBlock>, RegistryObject<BlueprintWallSignBlock>> sign, String name) {
 		this.translateBlock(sign.getFirst());
-		this.add(sign.getFirst().get().getDescriptionId().replace(name, name + "_wall"), this.toUpper(ForgeRegistries.BLOCKS, sign.getSecond()));
+		this.add(sign.getFirst().get().getDescriptionId().replace(name, name + "_wall"), toUpper(ForgeRegistries.BLOCKS, sign.getSecond()));
 	}
 	
 	private void translateAttribute(RegistryObject<? extends Attribute> attribute) {
-		this.add(attribute.get().getDescriptionId(), this.toUpper(ForgeRegistries.ATTRIBUTES, attribute));
+		this.add(attribute.get().getDescriptionId(), toUpper(ForgeRegistries.ATTRIBUTES, attribute));
 	}
 	
 	private void translateBannerPattern(RegistryObject<? extends Item> item, String name) {
@@ -349,7 +349,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.add(item.get().getDescriptionId() + ".desc", desc);
 	}
 	
-	private <T> String toUpper(IForgeRegistry<T> entry, RegistryObject<? extends T> object) {
+	private static <T> String toUpper(IForgeRegistry<T> entry, RegistryObject<? extends T> object) {
 		return StringUtils.capitaliseAllWords(entry.getKey(object.get()).getPath().replace('_', ' '));
 	}
 

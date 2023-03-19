@@ -62,7 +62,11 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
 		this.tag(Tags.Items.ARMORS_BOOTS).add(WindsweptItems.SNOW_BOOTS.get());
 		this.copy(Tags.Blocks.CHESTS_WOODEN, Tags.Items.CHESTS_WOODEN);
 		this.copy(Tags.Blocks.CHESTS_TRAPPED, Tags.Items.CHESTS_TRAPPED);
-		
+
+		//boatload
+		this.tag(BlueprintItemTags.FURNACE_BOATS).add(WindsweptItems.HOLLY_FURNACE_BOAT.get(), WindsweptItems.CHESTNUT_FURNACE_BOAT.get());
+		this.tag(BlueprintItemTags.LARGE_BOATS).add(WindsweptItems.LARGE_HOLLY_BOAT.get(), WindsweptItems.LARGE_CHESTNUT_BOAT.get());
+
 		//vanilla
 		this.tag(ItemTags.NON_FLAMMABLE_WOOD).add(WindsweptBlocks.HOLLY_BOARDS.get().asItem(), WindsweptBlocks.CHESTNUT_BOARDS.get().asItem());
 		this.tag(ItemTags.BOATS).add(WindsweptItems.HOLLY_BOAT.getFirst().get(), WindsweptItems.CHESTNUT_BOAT.getFirst().get());

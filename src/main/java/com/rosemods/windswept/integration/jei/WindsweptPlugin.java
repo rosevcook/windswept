@@ -14,7 +14,6 @@ import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.registries.ForgeRegistries;
 
 @JeiPlugin
@@ -41,7 +40,6 @@ public class WindsweptPlugin implements IModPlugin {
 				WindsweptBlocks.BLUEBELLS.get(),
 				WindsweptBlocks.FOXGLOVE.get(),
 				WindsweptBlocks.SNOWY_SPROUTS.get(),
-
 				WindsweptBlocks.RED_ROSE.get(),
 				WindsweptBlocks.PINK_ROSE.get(),
 				WindsweptBlocks.BLUE_ROSE.get(),
