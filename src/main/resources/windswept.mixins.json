@@ -19,7 +19,8 @@
     "WitherRoseBlockMixin",
     "FoxEatBerriesGoalMixin",
     "TrunkPlacerMixin",
-    "FlowerBlockMixin"
+    "FlowerBlockMixin",
+    "BeehiveBlockMixin"
   ],
   "client": [
     "client.LivingEntityRendererMixin",

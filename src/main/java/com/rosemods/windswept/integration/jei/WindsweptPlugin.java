@@ -25,6 +25,7 @@ public class WindsweptPlugin implements IModPlugin {
 				// music discs
 				WindsweptItems.MUSIC_DISC_RAIN.get(),
 				WindsweptItems.MUSIC_DISC_SNOW.get(),
+				WindsweptItems.MUSIC_DISC_BUMBLEBEE.get(),
 
 				// rose bushes
 				WindsweptBlocks.RED_ROSE_BUSH.get(),

@@ -14,5 +14,6 @@ public class WindsweptSounds {
 
 	public static final RegistryObject<SoundEvent> MUSIC_DISC_RAIN = HELPER.createSoundEvent("music_disc.rain");
 	public static final RegistryObject<SoundEvent> MUSIC_DISC_SNOW = HELPER.createSoundEvent("music_disc.snow");
+	public static final RegistryObject<SoundEvent> MUSIC_DISC_BUMBLEBEE = HELPER.createSoundEvent("music_disc.bumblebee");
 
 }

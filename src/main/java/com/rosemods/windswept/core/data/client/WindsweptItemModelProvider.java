@@ -54,6 +54,7 @@ public class WindsweptItemModelProvider extends ItemModelProvider {
 		this.generated(WindsweptItems.ROSE_FLOWER_BANNER_PATTERN);
 		this.generated(WindsweptItems.MUSIC_DISC_RAIN);
 		this.generated(WindsweptItems.MUSIC_DISC_SNOW);
+		this.generated(WindsweptItems.MUSIC_DISC_BUMBLEBEE);
 		this.spawnEgg(WindsweptItems.CHILLED_SPAWN_EGG);
 		this.generated(WindsweptItems.HOLLY_FURNACE_BOAT);
 		this.generated(WindsweptItems.LARGE_HOLLY_BOAT);

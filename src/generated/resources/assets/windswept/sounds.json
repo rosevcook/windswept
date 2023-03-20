@@ -1,4 +1,12 @@
 {
+  "music_disc.bumblebee": {
+    "sounds": [
+      {
+        "name": "windswept:records/bumblebee",
+        "stream": true
+      }
+    ]
+  },
   "music_disc.rain": {
     "sounds": [
       {

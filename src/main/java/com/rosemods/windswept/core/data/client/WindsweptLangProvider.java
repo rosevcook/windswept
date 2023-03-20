@@ -76,6 +76,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.translateBannerPattern(WindsweptItems.ROSE_FLOWER_BANNER_PATTERN, "rose_flower");
 		this.translateMusicDisc(WindsweptItems.MUSIC_DISC_RAIN, "rose - rain");
 		this.translateMusicDisc(WindsweptItems.MUSIC_DISC_SNOW, "rose - snow");
+		this.translateMusicDisc(WindsweptItems.MUSIC_DISC_BUMBLEBEE, "rose - bumblebee");
 		this.translateItem(WindsweptItems.CHILLED_SPAWN_EGG);
 		
 		this.add(WindsweptItems.HOLLY_FURNACE_BOAT.get(), "Holly Boat with Furnace");
@@ -256,6 +257,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 		
 		this.jeiInfo(WindsweptItems.MUSIC_DISC_RAIN, "Dropped by a Drowned if killed by a Skeleton.");
 		this.jeiInfo(WindsweptItems.MUSIC_DISC_SNOW, "Dropped by a Chilled if killed by a Skeleton.");
+		this.jeiInfo(WindsweptItems.MUSIC_DISC_BUMBLEBEE, "Sometimes dropped when shearing a Beehive for Honeycombs.");
 
 		this.jeiInfo(WindsweptBlocks.RED_ROSE_BUSH, "Bonemeal a Red Rose and it will grow into a Red Rose Bush!");
 		this.jeiInfo(WindsweptBlocks.PINK_ROSE_BUSH, "Bonemeal a Pink Rose and it will grow into a Pink Rose Bush!");
