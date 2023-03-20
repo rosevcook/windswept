@@ -43,15 +43,14 @@ public class BranchDecorator extends TreeDecorator {
 	@Override
 	public void place(Context context) {
 		RandomSource rand = context.random();
-		ObjectArrayList<BlockPos> positions = context.logs();
-		
+
 		if (rand.nextFloat() <= .25f)
 			return;
 		
-		int i = positions.get(0).getY();
+		int i = context.logs().get(0).getY();
 		final List<Direction> logs = new LinkedList<>();
 
-		for (BlockPos pos : positions)
+		for (BlockPos pos : context.logs())
 			if (pos.getY() - i >= this.minHeight && rand.nextFloat() <= .25f) {
 				final List<Direction> directions = new LinkedList<Direction>(List.of(Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST));
 				logs.forEach(directions::remove);
