@@ -27,7 +27,7 @@ public class WindsweptEffects {
 	
 	public static final RegistryObject<Potion> THORNS_POTION = HELPER.createPotion("thorns", THORNS, 3600, 0);
 	public static final RegistryObject<Potion> LONG_THORNS_POTION = HELPER.createPotion("long_thorns", THORNS, 9600, 0);
-	public static final RegistryObject<Potion> STRONG_THORNS_POTION = HELPER.createPotion("strong_thorns", THORNS, 3600, 1);
+	public static final RegistryObject<Potion> STRONG_THORNS_POTION = HELPER.createPotion("strong_thorns", THORNS, 1800, 1);
 	
 	public static void registerPotionRecipes() {
 		DataUtil.addMix(Potions.AWKWARD, WindsweptItems.HOLLY_BERRIES.get(), THORNS_POTION.get());
