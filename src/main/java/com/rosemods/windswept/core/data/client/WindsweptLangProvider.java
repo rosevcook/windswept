@@ -232,7 +232,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 
 		// Enchantments //
 		
-		this.translateEnchantment(WindsweptEnchantments.SLIPPING_CURSE, "Curse of Slipping", "The Curse of Slipping causes the wearer to slip on any block as if it was ice whilst damaging the boots in the process.");
+		this.translateEnchantment(WindsweptEnchantments.SLIPPING_CURSE, "Curse of Slipping", "Causes the wearer to slip on any block as if it was ice whilst damaging the boots.");
 
 		// Damage Sources //
 		

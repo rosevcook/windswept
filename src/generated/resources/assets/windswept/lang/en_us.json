@@ -171,7 +171,7 @@
   "death.attack.windswept.holly_sapling": "%1$s was ripped to death by holly sapling",
   "death.attack.windswept.holly_sapling.player": "%1$s was ripped to death by holly sapling whilst trying to escape %2$s",
   "enchantment.windswept.slipping_curse": "Curse of Slipping",
-  "enchantment.windswept.slipping_curse.desc": "The Curse of Slipping causes the wearer to slip on any block as if it was ice whilst damaging the boots in the process.",
+  "enchantment.windswept.slipping_curse.desc": "Causes the wearer to slip on any block as if it was ice whilst damaging the boots.",
   "entity.environmental.slabfish.type.chestnut": "Chestnut",
   "entity.environmental.slabfish.type.grove": "Grove",
   "entity.windswept.chilled": "Chilled",
