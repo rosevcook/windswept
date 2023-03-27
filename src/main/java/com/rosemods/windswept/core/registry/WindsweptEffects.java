@@ -21,7 +21,7 @@ public class WindsweptEffects {
 	
 	// Effects //
 	
-	public static final RegistryObject<MobEffect> THORNS = HELPER.createEffect("thorns", () -> new ThornsEffect(MobEffectCategory.BENEFICIAL, 0x295230));
+	public static final RegistryObject<MobEffect> THORNS = HELPER.createEffect("thorns", ThornsEffect::new);
 	
 	// Potions //
 	

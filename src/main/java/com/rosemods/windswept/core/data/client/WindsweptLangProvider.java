@@ -6,6 +6,7 @@ import java.util.function.Supplier;
 
 import com.rosemods.windswept.core.registry.*;
 import com.teamabnormals.blueprint.core.util.registry.BiomeSubRegistryHelper;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.level.block.Blocks;
 import org.codehaus.plexus.util.StringUtils;
 
@@ -216,6 +217,8 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.translateEntity(WindsweptEntities.CHILLED);
 
 		// Effects //
+
+		this.translateEffect(WindsweptEffects.THORNS, "Causes damage to enemies when they attack you.");
 				
 		this.translatePotion(WindsweptEffects.THORNS_POTION, "Prickling");
 		this.translatePotion(WindsweptEffects.LONG_THORNS_POTION, "Prickling");
@@ -318,6 +321,11 @@ public class WindsweptLangProvider extends LanguageProvider {
 	
 	private void translateAttribute(RegistryObject<? extends Attribute> attribute) {
 		this.add(attribute.get().getDescriptionId(), toUpper(ForgeRegistries.ATTRIBUTES, attribute));
+	}
+
+	private void translateEffect(RegistryObject<? extends MobEffect> effect, String desc) {
+		this.add(effect.get(), toUpper(ForgeRegistries.MOB_EFFECTS, effect));
+		this.add(effect.get().getDescriptionId() + ".description", desc);
 	}
 	
 	private void translateBannerPattern(RegistryObject<? extends Item> item, String name) {

@@ -170,6 +170,8 @@
   "death.attack.windswept.holly_leaves.player": "%1$s was ripped to death by holly leaves whilst trying to escape %2$s",
   "death.attack.windswept.holly_sapling": "%1$s was ripped to death by holly sapling",
   "death.attack.windswept.holly_sapling.player": "%1$s was ripped to death by holly sapling whilst trying to escape %2$s",
+  "effect.windswept.thorns": "Thorns",
+  "effect.windswept.thorns.description": "Causes damage to enemies when they attack you.",
   "enchantment.windswept.slipping_curse": "Curse of Slipping",
   "enchantment.windswept.slipping_curse.desc": "Causes the wearer to slip on any block as if it was ice whilst damaging the boots.",
   "entity.environmental.slabfish.type.chestnut": "Chestnut",
