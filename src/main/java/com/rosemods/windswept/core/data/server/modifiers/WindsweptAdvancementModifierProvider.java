@@ -59,7 +59,7 @@ public class WindsweptAdvancementModifierProvider extends AdvancementModifierPro
 		CriteriaModifier.Builder food = this.builder();
 		WindsweptItems.HELPER.getDeferredRegister().getEntries().forEach(i -> {
 			if (i.get().getFoodProperties() != null)
-				food.addCriterion(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(i.get())).getPath(), ConsumeItemTrigger.TriggerInstance.usedItem(i.get()));
+				food.addCriterion(ForgeRegistries.ITEMS.getKey(i.get()).getPath(), ConsumeItemTrigger.TriggerInstance.usedItem(i.get()));
 		});
 		return food;
 	}
