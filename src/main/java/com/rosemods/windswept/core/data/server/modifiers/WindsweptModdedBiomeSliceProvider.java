@@ -26,7 +26,7 @@ public class WindsweptModdedBiomeSliceProvider extends ModdedBiomeSliceProvider 
     protected void registerSlices() {
         List<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> entries = new ArrayList<>();
         new ChestnutBiomeBuilder().addBiomesToSlice(entries::add);
-        this.registerSlice("chestnut", 3, new BiomeUtil.MultiNoiseModdedBiomeProvider(new Climate.ParameterList<>(entries)), LevelStem.OVERWORLD.location());
+        this.registerSlice("chestnut", 4, new BiomeUtil.MultiNoiseModdedBiomeProvider(new Climate.ParameterList<>(entries)), LevelStem.OVERWORLD.location());
     }
 
     @SuppressWarnings("unchecked")
