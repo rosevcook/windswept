@@ -113,7 +113,7 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
 		
 		this.tag(BlockTags.MINEABLE_WITH_HOE).addTag(WindsweptBlockTags.HOLLY_LEAVES)
 				.addTag(WindsweptBlockTags.CHESTNUT_LEAVES).add(WindsweptBlocks.HOLLY_LEAF_CARPET.get(),
-						WindsweptBlocks.CHESTNUT_LEAF_CARPET.get());
+						WindsweptBlocks.CHESTNUT_LEAF_CARPET.get(), WindsweptBlocks.WILD_BERRY_SACK.get());
 		
 		this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(WindsweptBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE.get(),
 				WindsweptBlocks.BLUE_ICE_BRICKS.get(), WindsweptBlocks.CHISELED_BLUE_ICE_BRICKS.get(),
