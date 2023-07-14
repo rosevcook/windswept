@@ -42,7 +42,7 @@ public class SnowBootsItem extends DyeableArmorItem {
 		builder.putAll(super.getDefaultAttributeModifiers(slot));
 		if (this.slot == slot)
 			builder.put(WindsweptAttributes.SNOW_SPEED.get(), new AttributeModifier(SNOW_SPEED_UUID,
-					"Snow speed modifier", 1, AttributeModifier.Operation.ADDITION));
+					"Snow speed modifier", .25f, AttributeModifier.Operation.MULTIPLY_BASE));
 		
 		return builder.build();
 
@@ -93,7 +93,7 @@ public class SnowBootsItem extends DyeableArmorItem {
 			AttributeInstance speed = entity.getAttribute(Attributes.MOVEMENT_SPEED);
 
 			if (speed != null) {
-				speed.addTransientModifier(new AttributeModifier(SPEED_MODIFIER_SNOW_SPEED_UUID, "Snow speed boost", (double) (.03f * (1f + .35f)) / 1.75d, AttributeModifier.Operation.ADDITION));
+				speed.addTransientModifier(new AttributeModifier(SPEED_MODIFIER_SNOW_SPEED_UUID, "Snow speed boost", .025d, AttributeModifier.Operation.ADDITION));
 
 				if (entity.level.random.nextFloat() < .02f)
 					entity.getItemBySlot(EquipmentSlot.FEET).hurtAndBreak(1, entity,
