@@ -24,6 +24,7 @@ public final class WindsweptProperties {
     public static final BlockBehaviour.Properties NIGHTSHADE_POT = BlockBehaviour.Properties.of(Material.DECORATION).instabreak().noOcclusion().lightLevel(state -> 9);
 
     public static final BlockBehaviour.Properties CRATE = BlockBehaviour.Properties.of(Material.WOOD).strength(1.5f).sound(SoundType.WOOD);
+    public static final BlockBehaviour.Properties GLOW_SHROOM_CRATE = BlockBehaviour.Properties.of(Material.WOOD).strength(1.5f).sound(SoundType.WOOD).lightLevel(s -> 9);
 
     public static final BlockBehaviour.Properties WILD_BERRY_BUSH = BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_PURPLE).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH).offsetType(BlockBehaviour.OffsetType.XZ);
     public static final BlockBehaviour.Properties WILD_BERRY_SACK = BlockBehaviour.Properties.of(Material.WOOL, MaterialColor.COLOR_PINK).strength(.5f).sound(SoundType.WOOL);

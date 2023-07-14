@@ -185,6 +185,12 @@ public class WindsweptBlocks {
 	public static final RegistryObject<Block> WILD_BERRY_SACK = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "wild_berry_sack", () -> new Block(WindsweptProperties.WILD_BERRY_SACK), 300, CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> WILD_BERRY_BUSH_PIPS = HELPER.createBlockNoItem("wild_berry_bush_pips", () -> new WildBerryBushPipsBlock(WindsweptProperties.WILD_BERRY_BUSH));
 
+	// Mushroom Crates //
+
+	public static final RegistryObject<Block> RED_MUSHROOM_CRATE = HELPER.createCompatBlock(WindsweptConstants.QUARK, "red_mushroom_crate", () -> new Block(WindsweptProperties.CRATE), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> BROWN_MUSHROOM_CRATE = HELPER.createCompatBlock(WindsweptConstants.QUARK, "brown_mushroom_crate", () -> new Block(WindsweptProperties.CRATE), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> GLOW_SHROOM_CRATE = HELPER.createCompatBlock(WindsweptConstants.QUARK, "glow_shroom_crate", () -> new Block(WindsweptProperties.GLOW_SHROOM_CRATE), CreativeModeTab.TAB_DECORATIONS);
+
 	// Misc //
 	
 	public static final RegistryObject<Block> ICE_SHEET = HELPER.createBlock("ice_sheet", () -> new IceSheetBlock(BlockBehaviour.Properties.copy(Blocks.ICE)), CreativeModeTab.TAB_DECORATIONS);

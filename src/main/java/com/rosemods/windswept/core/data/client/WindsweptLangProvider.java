@@ -211,6 +211,10 @@ public class WindsweptLangProvider extends LanguageProvider {
 		this.translateBlock(WindsweptBlocks.WILD_BERRY_BUSH_PIPS);
 		this.translateBlock(WindsweptBlocks.WILD_BERRY_SACK);
 
+		this.translateBlock(WindsweptBlocks.RED_MUSHROOM_CRATE);
+		this.translateBlock(WindsweptBlocks.BROWN_MUSHROOM_CRATE);
+		this.translateBlock(WindsweptBlocks.GLOW_SHROOM_CRATE);
+
 		this.translateBlock(WindsweptBlocks.ICE_SHEET);
 
 		// Entities //
