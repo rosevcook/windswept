@@ -37,9 +37,9 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 	@Override
 	protected void registerStatesAndModels() {
 		this.log(WindsweptBlocks.STRIPPED_HOLLY_LOG);
-		this.cubeAll(WindsweptBlocks.STRIPPED_HOLLY_WOOD, this.blockTexture(WindsweptBlocks.STRIPPED_HOLLY_LOG.get()));
+		this.wood(WindsweptBlocks.STRIPPED_HOLLY_WOOD, this.blockTexture(WindsweptBlocks.STRIPPED_HOLLY_LOG.get()));
 		this.log(WindsweptBlocks.HOLLY_LOG);
-		this.cubeAll(WindsweptBlocks.HOLLY_WOOD, this.blockTexture(WindsweptBlocks.HOLLY_LOG.get()));
+		this.wood(WindsweptBlocks.HOLLY_WOOD, this.blockTexture(WindsweptBlocks.HOLLY_LOG.get()));
 		this.cubeAll(WindsweptBlocks.HOLLY_PLANKS);
 		this.slab(WindsweptBlocks.HOLLY_SLAB, WindsweptBlocks.HOLLY_PLANKS);
 		this.stairs(WindsweptBlocks.HOLLY_STAIRS, WindsweptBlocks.HOLLY_PLANKS);
@@ -68,9 +68,9 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 		this.cubeBottomTop(WindsweptBlocks.HOLLY_BERRY_CRATE);
 		
 		this.log(WindsweptBlocks.STRIPPED_CHESTNUT_LOG);
-		this.cubeAll(WindsweptBlocks.STRIPPED_CHESTNUT_WOOD, this.blockTexture(WindsweptBlocks.STRIPPED_CHESTNUT_LOG.get()));
+		this.wood(WindsweptBlocks.STRIPPED_CHESTNUT_WOOD, this.blockTexture(WindsweptBlocks.STRIPPED_CHESTNUT_LOG.get()));
 		this.log(WindsweptBlocks.CHESTNUT_LOG);
-		this.cubeAll(WindsweptBlocks.CHESTNUT_WOOD, this.blockTexture(WindsweptBlocks.CHESTNUT_LOG.get()));
+		this.wood(WindsweptBlocks.CHESTNUT_WOOD, this.blockTexture(WindsweptBlocks.CHESTNUT_LOG.get()));
 		this.cubeAll(WindsweptBlocks.CHESTNUT_PLANKS);
 		this.slab(WindsweptBlocks.CHESTNUT_SLAB, WindsweptBlocks.CHESTNUT_PLANKS);
 		this.stairs(WindsweptBlocks.CHESTNUT_STAIRS, WindsweptBlocks.CHESTNUT_PLANKS);
@@ -300,6 +300,11 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 	
 	private void log(RegistryObject<? extends Block> log) {
 		this.axisBlock((RotatedPillarBlock)log.get(), this.blockTexture(log.get()), this.modLoc("block/" + this.getName(log) + "_top"));
+		this.itemModel(log);
+	}
+
+	private void wood(RegistryObject<? extends Block> log, ResourceLocation texture) {
+		this.axisBlock((RotatedPillarBlock)log.get(), texture, texture);
 		this.itemModel(log);
 	}
 	

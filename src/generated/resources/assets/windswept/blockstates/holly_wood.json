@@ -1,7 +1,16 @@
 {
   "variants": {
-    "": {
+    "axis=x": {
+      "model": "windswept:block/holly_wood_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
       "model": "windswept:block/holly_wood"
+    },
+    "axis=z": {
+      "model": "windswept:block/holly_wood_horizontal",
+      "x": 90
     }
   }
 }
