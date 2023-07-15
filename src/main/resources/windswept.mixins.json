@@ -13,6 +13,7 @@
     "FoxMixin",
     "LiquidBlockMixin",
     "LivingEntityMixin",
+    "MushroomBlockMixin",
     "PowderSnowBlockMixin",
     "SnowLayerBlockMixin",
     "SolidBucketItemMixin",
