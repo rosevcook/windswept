@@ -12,55 +12,54 @@ import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 @JeiPlugin
 public class WindsweptPlugin implements IModPlugin {
 
-	@Override
-	public void registerRecipes(IRecipeRegistration registration) {
-		addInfo(registration,
-				WindsweptItems.MUSIC_DISC_RAIN.get(),
-				WindsweptItems.MUSIC_DISC_SNOW.get(),
-				WindsweptItems.MUSIC_DISC_BUMBLEBEE.get(),
-				WindsweptBlocks.RED_ROSE_BUSH.get(),
-				WindsweptBlocks.PINK_ROSE_BUSH.get(),
-				WindsweptBlocks.BLUE_ROSE_BUSH.get(),
-				WindsweptBlocks.WHITE_ROSE_BUSH.get(),
-				WindsweptBlocks.YELLOW_ROSE_BUSH.get(),
-				WindsweptBlocks.WITHER_ROSE_BUSH.get(),
-				WindsweptItems.WILD_BERRIES.get(),
-				WindsweptBlocks.NIGHTSHADE.get(),
-				WindsweptBlocks.BLUEBELLS.get(),
-				WindsweptBlocks.FOXGLOVE.get(),
-				WindsweptBlocks.SNOWY_SPROUTS.get(),
-				WindsweptBlocks.RED_ROSE.get(),
-				WindsweptBlocks.PINK_ROSE.get(),
-				WindsweptBlocks.BLUE_ROSE.get(),
-				WindsweptBlocks.WHITE_ROSE.get(),
-				WindsweptBlocks.YELLOW_ROSE.get(),
-				WindsweptItems.WOODEN_BUCKET.get(),
-				WindsweptItems.SNOW_BOOTS.get(),
-				WindsweptItems.WILD_BERRY_BOWL.get(),
-				WindsweptItems.SWEET_BERRY_BOWL.get(),
-				WindsweptItems.FOUL_BERRY_BOWL.get()
-		);
-	}
-	
-	private static void addInfo(IRecipeRegistration registration, ItemLike... items) {
-		for (ItemLike item : items)
-			registration.addIngredientInfo(item.asItem().getDefaultInstance(), VanillaTypes.ITEM_STACK, Component.translatable(getDesc(item::asItem)));
-	}
+    @Override
+    public void registerRecipes(IRecipeRegistration registration) {
+        addInfo(registration, WindsweptItems.MUSIC_DISC_RAIN);
+        addInfo(registration, WindsweptItems.MUSIC_DISC_SNOW);
+        addInfo(registration, WindsweptItems.MUSIC_DISC_BUMBLEBEE);
+        addInfo(registration, WindsweptBlocks.RED_ROSE_BUSH);
+        addInfo(registration, WindsweptBlocks.PINK_ROSE_BUSH);
+        addInfo(registration, WindsweptBlocks.BLUE_ROSE_BUSH);
+        addInfo(registration, WindsweptBlocks.WHITE_ROSE_BUSH);
+        addInfo(registration, WindsweptBlocks.YELLOW_ROSE_BUSH);
+        addInfo(registration, WindsweptBlocks.WITHER_ROSE_BUSH);
+        addInfo(registration, WindsweptItems.WILD_BERRIES);
+        addInfo(registration, WindsweptBlocks.NIGHTSHADE);
+        addInfo(registration, WindsweptBlocks.BLUEBELLS);
+        addInfo(registration, WindsweptBlocks.FOXGLOVE);
+        addInfo(registration, WindsweptBlocks.SNOWY_SPROUTS);
+        addInfo(registration, WindsweptBlocks.RED_ROSE);
+        addInfo(registration, WindsweptBlocks.PINK_ROSE);
+        addInfo(registration, WindsweptBlocks.BLUE_ROSE);
+        addInfo(registration, WindsweptBlocks.WHITE_ROSE);
+        addInfo(registration, WindsweptBlocks.YELLOW_ROSE);
+        addInfo(registration, WindsweptItems.WOODEN_BUCKET);
+        addInfo(registration, WindsweptItems.SNOW_BOOTS);
+        addInfo(registration, WindsweptItems.WILD_BERRY_BOWL);
+        addInfo(registration, WindsweptItems.SWEET_BERRY_BOWL);
+        addInfo(registration, WindsweptItems.FOUL_BERRY_BOWL);
+    }
 
-	
-	public static String getDesc(Supplier<? extends ItemLike> item) {
-		return Windswept.MODID + ".jei.info." + ForgeRegistries.ITEMS.getKey(item.get().asItem()).getPath();
-	}
-	
-	@Override
-	public ResourceLocation getPluginUid() {
-		return Windswept.REGISTRY_HELPER.prefix("jei_plugin");
-	}
-	
+    private static void addInfo(IRecipeRegistration registration, RegistryObject<? extends ItemLike> item) {
+        registration.addIngredientInfo(new ItemStack(item.get()), VanillaTypes.ITEM_STACK, Component.translatable(getDesc(item)));
+    }
+
+
+    public static String getDesc(Supplier<? extends ItemLike> item) {
+        return Windswept.MODID + ".jei.info." + ForgeRegistries.ITEMS.getKey(item.get().asItem()).getPath();
+    }
+
+    @Override
+    public ResourceLocation getPluginUid() {
+        return Windswept.REGISTRY_HELPER.prefix("jei_plugin");
+    }
+
 }

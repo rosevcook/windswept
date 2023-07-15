@@ -13,6 +13,7 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
@@ -28,14 +29,16 @@ public class WindsweptEntities {
 	public static void registerAttributes(EntityAttributeCreationEvent event) {
 		event.put(CHILLED.get(), Zombie.createAttributes().build());
 	}
+
+	@SubscribeEvent
+	public static void registerSpawns(SpawnPlacementRegisterEvent event) {
+		event.register(CHILLED.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.AND);
+	}
 	
 	@OnlyIn(Dist.CLIENT)
 	public static void registerClient() {
 		EntityRenderers.register(CHILLED.get(), ChilledRenderer::new);
 	}
-	
-	public static void registerSpawns() {
-		SpawnPlacements.register(CHILLED.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules);
-	}
+
 	
 }
