@@ -187,8 +187,8 @@ public class WindsweptBlocks {
 
 	// Mushroom Crates //
 
-	public static final RegistryObject<Block> RED_MUSHROOM_CRATE = HELPER.createCompatBlock(WindsweptConstants.QUARK, "red_mushroom_crate", () -> new Block(WindsweptProperties.CRATE), CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Block> BROWN_MUSHROOM_CRATE = HELPER.createCompatBlock(WindsweptConstants.QUARK, "brown_mushroom_crate", () -> new Block(WindsweptProperties.CRATE), CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> RED_MUSHROOM_CRATE = HELPER.createBlock("red_mushroom_crate", () -> new Block(WindsweptProperties.CRATE), ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) ? CreativeModeTab.TAB_DECORATIONS : null);
+	public static final RegistryObject<Block> BROWN_MUSHROOM_CRATE = HELPER.createBlock("brown_mushroom_crate", () -> new Block(WindsweptProperties.CRATE), ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) ? CreativeModeTab.TAB_DECORATIONS : null);
 	public static final RegistryObject<Block> GLOW_SHROOM_CRATE = HELPER.createCompatBlock(WindsweptConstants.QUARK, "glow_shroom_crate", () -> new Block(WindsweptProperties.GLOW_SHROOM_CRATE), CreativeModeTab.TAB_DECORATIONS);
 
 	// Misc //
