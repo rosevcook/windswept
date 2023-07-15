@@ -85,6 +85,7 @@ dependencies {
     implementation fg.deobf("com.teamabnormals:boatload:${project.boatload}")
     implementation fg.deobf("curse.maven:neapolitan-382016:${project.neapolitan}")
     implementation fg.deobf("curse.maven:farmers_delight-398521:${project.farmersDelight}")
+    implementation fg.deobf("curse.maven:autumnity-365045:${project.autumnity}")
 
     annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
 }

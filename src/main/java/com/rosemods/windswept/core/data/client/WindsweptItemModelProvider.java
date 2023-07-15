@@ -46,6 +46,7 @@ public class WindsweptItemModelProvider extends ItemModelProvider {
 		this.generated(WindsweptItems.GOAT_STEW);
 		this.generated(WindsweptItems.GOAT_SHANKS);
 		this.generated(WindsweptItems.COOKED_GOAT_SHANKS);
+		this.generated(WindsweptItems.FOUL_BERRY_BOWL);
 		this.generated(WindsweptItems.WILD_BERRY_PIPS);
 		this.generatedWithOverlay(WindsweptItems.SNOW_BOOTS);
 		this.generated(WindsweptItems.FROZEN_FLESH);

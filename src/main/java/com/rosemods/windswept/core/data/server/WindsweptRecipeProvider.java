@@ -7,6 +7,7 @@ import javax.annotation.Nullable;
 
 import com.mojang.datafixers.util.Pair;
 import com.rosemods.windswept.core.Windswept;
+import com.rosemods.windswept.core.other.WindsweptConstants;
 import com.rosemods.windswept.core.other.tags.WindsweptItemTags;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import com.rosemods.windswept.core.registry.WindsweptItems;
@@ -102,6 +103,8 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 		conditionalRecipe(ShapelessRecipeBuilder.shapeless(Items.RED_MUSHROOM, 9).requires(WindsweptBlocks.RED_MUSHROOM_CRATE.get()).unlockedBy("has_red_mushroom_crate", has(WindsweptBlocks.RED_MUSHROOM_CRATE.get())), new OrCondition(new ModLoadedCondition("farmersdelight"), getQuarkCondition("apple_crate")), consumer, Windswept.REGISTRY_HELPER.prefix("red_mushroom_crate_revert"));
 		conditionalRecipe(ShapedRecipeBuilder.shaped(WindsweptBlocks.BROWN_MUSHROOM_CRATE.get()).define('#', Items.BROWN_MUSHROOM).pattern("###").pattern("###").pattern("###").unlockedBy("has_brown_mushroom", has(Items.BROWN_MUSHROOM)), new OrCondition(new ModLoadedCondition("farmersdelight"), getQuarkCondition("apple_crate")), consumer, Windswept.REGISTRY_HELPER.prefix("brown_mushroom_crate"));
 		conditionalRecipe(ShapelessRecipeBuilder.shapeless(Items.BROWN_MUSHROOM, 9).requires(WindsweptBlocks.BROWN_MUSHROOM_CRATE.get()).unlockedBy("has_brown_mushroom_crate", has(WindsweptBlocks.BROWN_MUSHROOM_CRATE.get())), new OrCondition(new ModLoadedCondition("farmersdelight"), getQuarkCondition("apple_crate")), consumer, Windswept.REGISTRY_HELPER.prefix("brown_mushroom_crate_revert"));
+		conditionalRecipe(ShapelessRecipeBuilder.shapeless(WindsweptItems.FOUL_BERRY_BOWL.get()).requires(Items.BOWL).requires(WindsweptConstants.FOUL_BERRIES.get(), 3).unlockedBy("has_foul_berries", has(WindsweptConstants.FOUL_BERRIES.get())), new ModLoadedCondition("autumnity"), consumer, Windswept.REGISTRY_HELPER.prefix("foul_berry_bowl"));
+		conditionalRecipe(ShapelessRecipeBuilder.shapeless(WindsweptConstants.FOUL_BERRIES.get(), 3).requires(WindsweptItems.FOUL_BERRY_BOWL.get()).unlockedBy("has_foul_berry_bowl", has(WindsweptItems.FOUL_BERRY_BOWL.get())), new ModLoadedCondition("autumnity"), consumer, Windswept.REGISTRY_HELPER.prefix("foul_berry_bowl_revert"));
 	}
 
 	private static void conditionalRecipe(RecipeBuilder recipe, ICondition condition, Consumer<FinishedRecipe> consumer, ResourceLocation id) {
