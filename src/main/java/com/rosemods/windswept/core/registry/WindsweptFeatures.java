@@ -47,19 +47,6 @@ public final class WindsweptFeatures {
 	public static final RegistryObject<Feature<NoneFeatureConfiguration>> SNOWY_SPROUTS_PATCH = FEATURES.register("snowy_sprouts_patch", SnowySproutsFeature::new);
 	public static final RegistryObject<Feature<NoneFeatureConfiguration>> NIGHTSHADE_PATCH = FEATURES.register("nightshade_patch", NightshadeFeature::new);
 	public static final RegistryObject<Feature<NoneFeatureConfiguration>> BLUEBELL_PATCH = FEATURES.register("bluebell_patch", BluebellsFeature::new);
-
-	private static class States {
-		public static final BlockState RED_ROSE = WindsweptBlocks.RED_ROSE.get().defaultBlockState();
-		public static final BlockState PINK_ROSE = WindsweptBlocks.PINK_ROSE.get().defaultBlockState();
-		public static final BlockState BLUE_ROSE = WindsweptBlocks.BLUE_ROSE.get().defaultBlockState();
-		public static final BlockState WHITE_ROSE = WindsweptBlocks.WHITE_ROSE.get().defaultBlockState();
-		public static final BlockState YELLOW_ROSE = WindsweptBlocks.YELLOW_ROSE.get().defaultBlockState();
-		public static final BlockState FOXGLOVE = WindsweptBlocks.FOXGLOVE.get().defaultBlockState();
-		public static final BlockState WILD_BERRY_BUSH = WindsweptBlocks.WILD_BERRY_BUSH.get().defaultBlockState().setValue(WildBerryBushBlock.AGE, Integer.valueOf(2));
-		public static final BlockState WHITE_ROSE_BUSH = WindsweptBlocks.WHITE_ROSE_BUSH.get().defaultBlockState();
-		public static final BlockState BLUE_ROSE_BUSH = WindsweptBlocks.BLUE_ROSE_BUSH.get().defaultBlockState();
-
-	}
 	
 	public static class Configs {
 		public static final TreeConfiguration HOLLY_TREE = createHollyTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.HOLLY_LOG.get(), 2))).build();
@@ -68,15 +55,16 @@ public final class WindsweptFeatures {
 		public static final TreeConfiguration CHESTNUT_TREE = createChestnutTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.CHESTNUT_LOG.get(), 4))).build();
 		public static final TreeConfiguration CHESTNUT_TREE_BEES = createChestnutTree().decorators(List.of(new BeehiveDecorator(.005f), BranchDecorator.create(WindsweptBlocks.CHESTNUT_LOG.get(), 4))).build();
 
-		public static final RandomPatchConfiguration RED_ROSE = createPlantPatch(64, States.RED_ROSE);
-		public static final RandomPatchConfiguration WHITE_ROSE = createPlantPatch(64, States.WHITE_ROSE);
-		public static final RandomPatchConfiguration PINK_ROSE = createPlantPatch(64, States.PINK_ROSE);
-		public static final RandomPatchConfiguration BLUE_ROSE = createPlantPatch(64, States.BLUE_ROSE);
-		public static final RandomPatchConfiguration YELLOW_ROSE = createPlantPatch(64, States.YELLOW_ROSE);
-		public static final RandomPatchConfiguration FOXGLOVE = createPlantPatch(64, States.FOXGLOVE);
-		public static final RandomPatchConfiguration WILD_BERRY_BUSH = createPlantPatch(32, States.WILD_BERRY_BUSH);
-		public static final RandomPatchConfiguration WHITE_ROSE_BUSH = createPlantPatch(32, States.WHITE_ROSE_BUSH);
-		public static final RandomPatchConfiguration BLUE_ROSE_BUSH = createPlantPatch(32, States.BLUE_ROSE_BUSH);
+		public static final RandomPatchConfiguration RED_ROSE = createPlantPatch(64, WindsweptBlocks.RED_ROSE.get().defaultBlockState());
+		public static final RandomPatchConfiguration WHITE_ROSE = createPlantPatch(64, WindsweptBlocks.WHITE_ROSE.get().defaultBlockState());
+		public static final RandomPatchConfiguration PINK_ROSE = createPlantPatch(64, WindsweptBlocks.PINK_ROSE.get().defaultBlockState());
+		public static final RandomPatchConfiguration BLUE_ROSE = createPlantPatch(64, WindsweptBlocks.BLUE_ROSE.get().defaultBlockState());
+		public static final RandomPatchConfiguration YELLOW_ROSE = createPlantPatch(64, WindsweptBlocks.YELLOW_ROSE.get().defaultBlockState());
+		public static final RandomPatchConfiguration FOXGLOVE = createPlantPatch(64,  WindsweptBlocks.FOXGLOVE.get().defaultBlockState());
+		public static final RandomPatchConfiguration WILD_BERRY_BUSH = createPlantPatch(32, WindsweptBlocks.WILD_BERRY_BUSH.get().defaultBlockState().setValue(WildBerryBushBlock.AGE, 2));
+		public static final RandomPatchConfiguration WHITE_ROSE_BUSH = createPlantPatch(32, WindsweptBlocks.WHITE_ROSE_BUSH.get().defaultBlockState());
+		public static final RandomPatchConfiguration BLUE_ROSE_BUSH = createPlantPatch(32, WindsweptBlocks.BLUE_ROSE_BUSH.get().defaultBlockState());
+		public static final RandomPatchConfiguration YELLOW_ROSE_BUSH = createPlantPatch(32, WindsweptBlocks.YELLOW_ROSE_BUSH.get().defaultBlockState());
 		public static final RandomPatchConfiguration CHESTNUT_FERNS = FeatureUtils.simpleRandomPatchConfiguration(4, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.FERN))));
 
 
