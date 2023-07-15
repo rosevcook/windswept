@@ -8,6 +8,7 @@ import net.minecraft.world.level.biome.Biome;
 public final class WindsweptBiomeTags {
     public static final TagKey<Biome> HAS_BLUEBELLS = TagUtil.biomeTag(Windswept.MODID, "has_feature/bluebells");
     public static final TagKey<Biome> HAS_FOXGLOVES = TagUtil.biomeTag(Windswept.MODID, "has_feature/foxgloves");
+    public static final TagKey<Biome> HAS_YELLOW_ROSE_BUSHES = TagUtil.biomeTag(Windswept.MODID, "has_feature/yellow_rose_bushes");
     public static final TagKey<Biome> HAS_SNOWY_FLOWERS = TagUtil.biomeTag(Windswept.MODID, "has_feature/snowy_flowers");
     public static final TagKey<Biome> HAS_TAIGA_FLOWERS = TagUtil.biomeTag(Windswept.MODID, "has_feature/taiga_flowers");
     public static final TagKey<Biome> HAS_HOLLY_TREES = TagUtil.biomeTag(Windswept.MODID, "has_feature/holly_trees");
