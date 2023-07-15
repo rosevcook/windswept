@@ -1,7 +1,6 @@
 package com.rosemods.windswept.core.data.server.modifiers;
 
 import java.util.List;
-import java.util.Objects;
 
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;

@@ -8,7 +8,6 @@ import com.teamabnormals.blueprint.core.util.modification.selection.ConditionedR
 import com.teamabnormals.blueprint.core.util.modification.selection.selectors.NamesResourceSelector;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.structure.BuiltinStructures;
@@ -19,8 +18,6 @@ import net.minecraftforge.common.crafting.conditions.OrCondition;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.registries.ForgeRegistries;
-
-import java.util.function.Supplier;
 
 public class WindsweptStructureRepaletterProvider extends StructureRepaletterProvider {
 

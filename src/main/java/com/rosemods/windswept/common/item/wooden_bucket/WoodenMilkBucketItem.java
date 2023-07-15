@@ -16,7 +16,6 @@ import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.MilkBucketItem;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.material.Fluids;
 
 public class WoodenMilkBucketItem extends MilkBucketItem {
 	

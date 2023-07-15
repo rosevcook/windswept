@@ -2,7 +2,6 @@ package com.rosemods.windswept.core.mixin;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelSimulatedReader;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

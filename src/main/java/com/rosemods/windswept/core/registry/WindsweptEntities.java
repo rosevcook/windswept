@@ -7,7 +7,6 @@ import com.teamabnormals.blueprint.core.util.registry.EntitySubRegistryHelper;
 
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.animal.allay.Allay;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.level.levelgen.Heightmap;

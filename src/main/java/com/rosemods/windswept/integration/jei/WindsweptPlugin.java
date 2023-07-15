@@ -1,6 +1,5 @@
 package com.rosemods.windswept.integration.jei;
 
-import java.util.Objects;
 import java.util.function.Supplier;
 
 import com.rosemods.windswept.core.Windswept;

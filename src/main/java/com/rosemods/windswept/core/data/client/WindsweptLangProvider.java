@@ -7,7 +7,6 @@ import java.util.function.Supplier;
 import com.rosemods.windswept.core.registry.*;
 import com.teamabnormals.blueprint.core.util.registry.BiomeSubRegistryHelper;
 import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.level.block.Blocks;
 import org.codehaus.plexus.util.StringUtils;
 
 import com.mojang.datafixers.util.Pair;
