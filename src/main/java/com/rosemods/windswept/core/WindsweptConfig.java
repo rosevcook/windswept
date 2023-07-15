@@ -13,6 +13,7 @@ public class WindsweptConfig {
 	public static final ForgeConfigSpec CLIENT_SPEC;
 	
 	public static class Common {
+		public final ConfigValue<Integer> woodenBucketDurabilty;
 		public final ConfigValue<Boolean> iceBoatNerf;
 		public final ConfigValue<Boolean> birchBranches;
 		public final ConfigValue<Boolean> strays;
@@ -22,8 +23,11 @@ public class WindsweptConfig {
 		public final ConfigValue<Boolean> mushroomFix;
 
 		private Common(ForgeConfigSpec.Builder builder) {
-			builder.comment("Vanilla Gameplay Tweaks");
-			builder.push("tweaks");
+			builder.comment("Windswept Content Tweaks").push("content");
+			this.woodenBucketDurabilty = builder.comment("How much durability Wooden Buckets should have").defineInRange("Wooden Bucket Durability", 24, 1, 1000);
+			builder.pop();
+
+			builder.comment("Vanilla Gameplay Tweaks").push("tweaks");
 			this.birchBranches = builder.comment("Tall Birch Trees will generate branches growing out the side of the tree").define("Birch Branches", true);
 			this.strays = builder.comment("All skeletons that spawn in snowy biomes are replaced with strays").define("Strays Only", true);
 			this.iceBoatNerf = builder.comment("Nerfs Boats ability to go extremely fast when on ice and other slippery blocks; default: false").define("Ice Boat Nerf", false);
@@ -32,8 +36,7 @@ public class WindsweptConfig {
 			this.mushroomFix = builder.comment("If mushrooms are able to be placed at any light level").define("Mushroom Fix", true);
 			builder.pop();
 
-			builder.comment("Tweaks to Windswept Worldgen");
-			builder.push("worldgen");
+			builder.comment("Tweaks to Windswept Worldgen").push("worldgen");
 			this.roots = builder.comment("Roots will grow under the dirt block below a tree, chestnut trees overhanging logs will grow roots").define("Tree Roots", true);
 			builder.pop();
 		}

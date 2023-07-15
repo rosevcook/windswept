@@ -288,8 +288,9 @@ public class WindsweptLangProvider extends LanguageProvider {
 
 		this.jeiInfo(WindsweptItems.WOODEN_BUCKET, "Wooden buckets are cheap buckets with a durability of 24. Durability is taken when a fluid exits the bucket.");
 		this.jeiInfo(WindsweptItems.SNOW_BOOTS, "Snow boots allow you to walk faster on any snowy block. They can be dyed any colour you like. They also allow you to walk on Powder Snow.");
-		this.jeiInfo(WindsweptItems.WILD_BERRY_BOWL, "Wild Berry bowls condense 3 Wild Berries into a single item. They can be stacked to 64 and are exactly 3 times the saturation and hunger of Wild Berries.");
-		this.jeiInfo(WindsweptItems.SWEET_BERRY_BOWL, "Sweet Berry bowls condense 3 Sweet Berries into a single item. They can be stacked to 64 and are exactly 3 times the saturation and hunger of Sweet Berries.");
+		this.jeiInfo(WindsweptItems.WILD_BERRY_BOWL, "Wild Berry bowls condense 3 Wild Berries into a single item. They are exactly 3 times the saturation and hunger of Wild Berries.");
+		this.jeiInfo(WindsweptItems.SWEET_BERRY_BOWL, "Sweet Berry bowls condense 3 Sweet Berries into a single item. They are exactly 3 times the saturation and hunger of Sweet Berries.");
+		this.jeiInfo(WindsweptItems.FOUL_BERRY_BOWL, "Foul Berry bowls condense 3 Foul Berries into a single item. They are exactly 3 times the saturation and hunger of Foul Berries.");
 	}
 
 	private void translateItem(RegistryObject<? extends Item> item) {

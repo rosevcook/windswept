@@ -1,5 +1,6 @@
 package com.rosemods.windswept.common.item.wooden_bucket;
 
+import com.rosemods.windswept.core.WindsweptConfig;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 
 import net.minecraft.advancements.CriteriaTriggers;
@@ -35,7 +36,12 @@ public class WoodenMilkBucketItem extends MilkBucketItem {
 		
 		return entity instanceof Player player ? WoodenBucketItem.getEmpty(stack, player, player.getUsedItemHand()) : stack;
 	}
-	
+
+	@Override
+	public int getMaxDamage(ItemStack stack) {
+		return WindsweptConfig.COMMON.woodenBucketDurabilty.get();
+	}
+
 	@Override
 	public boolean isRepairable(ItemStack stack) {
 		return false;

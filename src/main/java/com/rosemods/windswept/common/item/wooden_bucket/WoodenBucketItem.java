@@ -4,6 +4,7 @@ import java.util.function.Supplier;
 
 import javax.annotation.Nullable;
 
+import com.rosemods.windswept.core.WindsweptConfig;
 import com.rosemods.windswept.core.api.IWoodenBucketPickupBlock;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.teamabnormals.blueprint.core.util.item.filling.TargetedItemCategoryFiller;
@@ -88,7 +89,12 @@ public class WoodenBucketItem extends BucketItem {
 	         return InteractionResultHolder.fail(itemstack);
 	      }
 	}
-	
+
+	@Override
+	public int getMaxDamage(ItemStack stack) {
+		return WindsweptConfig.COMMON.woodenBucketDurabilty.get();
+	}
+
 	private boolean canBlockContainFluid(Level level, BlockPos pos, BlockState state) {
 		return state.getBlock() instanceof LiquidBlockContainer container && container.canPlaceLiquid(level, pos, state, this.getFluid());
 	}

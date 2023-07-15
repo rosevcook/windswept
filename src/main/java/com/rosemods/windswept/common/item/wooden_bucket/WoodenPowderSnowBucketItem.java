@@ -1,5 +1,6 @@
 package com.rosemods.windswept.common.item.wooden_bucket;
 
+import com.rosemods.windswept.core.WindsweptConfig;
 import net.minecraft.core.NonNullList;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
@@ -43,6 +44,11 @@ public class WoodenPowderSnowBucketItem extends SolidBucketItem {
 			stack.grow(1);
 		
 		return result;
+	}
+
+	@Override
+	public int getMaxDamage(ItemStack stack) {
+		return WindsweptConfig.COMMON.woodenBucketDurabilty.get();
 	}
 
 	@Override

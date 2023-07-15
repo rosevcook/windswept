@@ -21,20 +21,15 @@ public class WindsweptPlugin implements IModPlugin {
 	@Override
 	public void registerRecipes(IRecipeRegistration registration) {
 		addInfo(registration,
-				// music discs
 				WindsweptItems.MUSIC_DISC_RAIN.get(),
 				WindsweptItems.MUSIC_DISC_SNOW.get(),
 				WindsweptItems.MUSIC_DISC_BUMBLEBEE.get(),
-
-				// rose bushes
 				WindsweptBlocks.RED_ROSE_BUSH.get(),
 				WindsweptBlocks.PINK_ROSE_BUSH.get(),
 				WindsweptBlocks.BLUE_ROSE_BUSH.get(),
 				WindsweptBlocks.WHITE_ROSE_BUSH.get(),
 				WindsweptBlocks.YELLOW_ROSE_BUSH.get(),
 				WindsweptBlocks.WITHER_ROSE_BUSH.get(),
-
-				// plants
 				WindsweptItems.WILD_BERRIES.get(),
 				WindsweptBlocks.NIGHTSHADE.get(),
 				WindsweptBlocks.BLUEBELLS.get(),
@@ -45,12 +40,11 @@ public class WindsweptPlugin implements IModPlugin {
 				WindsweptBlocks.BLUE_ROSE.get(),
 				WindsweptBlocks.WHITE_ROSE.get(),
 				WindsweptBlocks.YELLOW_ROSE.get(),
-
-				// misc
 				WindsweptItems.WOODEN_BUCKET.get(),
 				WindsweptItems.SNOW_BOOTS.get(),
 				WindsweptItems.WILD_BERRY_BOWL.get(),
-				WindsweptItems.SWEET_BERRY_BOWL.get()
+				WindsweptItems.SWEET_BERRY_BOWL.get(),
+				WindsweptItems.FOUL_BERRY_BOWL.get()
 		);
 	}
 	
