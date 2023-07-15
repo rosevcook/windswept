@@ -40,5 +40,4 @@ public class WindsweptEntities {
 		EntityRenderers.register(CHILLED.get(), ChilledRenderer::new);
 	}
 
-	
 }

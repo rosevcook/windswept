@@ -51,28 +51,26 @@ public class BranchDecorator extends TreeDecorator {
 
 		for (BlockPos pos : context.logs())
 			if (pos.getY() - i >= this.minHeight && rand.nextFloat() <= .25f) {
-				final List<Direction> directions = new LinkedList<Direction>(List.of(Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST));
+				final List<Direction> directions = new LinkedList<>(List.of(Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST));
 				logs.forEach(directions::remove);
 				Collections.shuffle(directions, new Random(rand.nextInt()));
 				for (Direction direction : directions) {
 					BlockPos blockpos = pos.offset(direction.getOpposite().getStepX(), 0, direction.getOpposite().getStepZ());
 					
 					if (context.isAir(blockpos) && context.isAir(blockpos.below()) && context.isAir(blockpos.above())) {
-						BlockState blockState = this.state.getState(rand, blockpos); 
-						
-						if (blockState.hasProperty(LogBlock.AXIS))
-							blockState = blockState.setValue(LogBlock.AXIS, direction.getAxis());
-						
+						BlockState blockState = this.state.getState(rand, blockpos);
+
 						if (blockState.is(Blocks.BIRCH_LOG) && !WindsweptConfig.COMMON.birchBranches.get())
 							return;
-						
+
+						if (blockState.hasProperty(LogBlock.AXIS))
+							blockState = blockState.setValue(LogBlock.AXIS, direction.getAxis());
+
 						context.setBlock(blockpos, blockState);
 						logs.add(direction);
 						
-						if (rand.nextBoolean()) 
-							break; 
-						else 
-							return;
+						if (rand.nextBoolean()) break;
+						else return;
 					}
 				}
 			}
