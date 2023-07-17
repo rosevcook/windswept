@@ -4,11 +4,9 @@ import com.rosemods.windswept.core.Windswept;
 
 import net.minecraft.core.Registry;
 import net.minecraft.world.level.block.entity.BannerPattern;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class WindsweptBannerPatterns {
 	public static final DeferredRegister<BannerPattern> BANNER_PATTERNS = DeferredRegister.create(Registry.BANNER_PATTERN_REGISTRY, Windswept.MODID);
 

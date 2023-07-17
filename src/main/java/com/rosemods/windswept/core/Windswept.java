@@ -18,24 +18,24 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 
-@Mod(value = Windswept.MODID)
+@Mod(Windswept.MODID)
 public class Windswept {
 	public static final String MODID = "windswept";
 	public static final RegistryHelper REGISTRY_HELPER = RegistryHelper.create(MODID, h -> h.putSubHelper(ForgeRegistries.MOB_EFFECTS, new EffectSubRegistryHelper(h)));
 	
 	public Windswept() {
-		final IEventBus bus = Bus.MOD.bus().get();
+		final IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		final ModLoadingContext context = ModLoadingContext.get();
 		
 		WindsweptDataProcessors.registerData();
 		MinecraftForge.EVENT_BUS.register(this);
-		
+
 		REGISTRY_HELPER.register(bus);
 		WindsweptTreeDecorators.DECORATORS.register(bus);
 		WindsweptFoliagePlacers.FOLIAGE_PLACERS.register(bus);

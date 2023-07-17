@@ -9,12 +9,11 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.Potions;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-@EventBusSubscriber(modid = Windswept.MODID, bus = Bus.MOD)
+@Mod.EventBusSubscriber(modid = Windswept.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class WindsweptEffects {
 	public static final EffectSubRegistryHelper HELPER = Windswept.REGISTRY_HELPER.getSubHelper(ForgeRegistries.MOB_EFFECTS);
 	

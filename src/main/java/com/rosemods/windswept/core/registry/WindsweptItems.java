@@ -24,11 +24,10 @@ import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.ForgeSpawnEggItem;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 
-@EventBusSubscriber(modid = Windswept.MODID, bus = Bus.MOD)
+@Mod.EventBusSubscriber(modid = Windswept.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class WindsweptItems {
 	public static final ItemSubRegistryHelper HELPER = Windswept.REGISTRY_HELPER.getItemSubHelper();
 	
