@@ -9,19 +9,19 @@ import net.minecraft.world.phys.BlockHitResult;
 
 public class IceSheetBlock extends IronBarsBlock {
 
-	public IceSheetBlock(Properties properties) {
-		super(properties);
-	}
-	
-	@Override
-	public boolean skipRendering(BlockState state, BlockState nextState, Direction direction) {
-		return nextState.is(this);
-	}
-	
-	@Override
-	public void onProjectileHit(Level level, BlockState state, BlockHitResult result, Projectile projectile) {
-		if (!level.isClientSide)
-			level.destroyBlock(result.getBlockPos(), true);
-	}
+    public IceSheetBlock(Properties properties) {
+        super(properties);
+    }
+
+    @Override
+    public boolean skipRendering(BlockState state, BlockState nextState, Direction direction) {
+        return nextState.is(this);
+    }
+
+    @Override
+    public void onProjectileHit(Level level, BlockState state, BlockHitResult result, Projectile projectile) {
+        if (!level.isClientSide)
+            level.destroyBlock(result.getBlockPos(), true);
+    }
 
 }

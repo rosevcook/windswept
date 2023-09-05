@@ -11,20 +11,20 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.IForgeShearable;
 
 public class SnowySproutsBlock extends BushBlock implements IForgeShearable {
-	protected static final VoxelShape SHAPE = Block.box(2f, 0f, 2f, 14f, 3f, 14f);
+    protected static final VoxelShape SHAPE = Block.box(2f, 0f, 2f, 14f, 3f, 14f);
 
-	public SnowySproutsBlock(Properties properties) {
-		super(properties);
-	}
-	
-	@Override
-	protected boolean mayPlaceOn(BlockState state, BlockGetter getter, BlockPos pos) {
-		return super.mayPlaceOn(state, getter, pos) || state.is(Blocks.SNOW_BLOCK);
-	}
+    public SnowySproutsBlock(Properties properties) {
+        super(properties);
+    }
 
-	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter blockGetter, BlockPos blockpos, CollisionContext context) {
-		return SHAPE;
-	}
-	
+    @Override
+    protected boolean mayPlaceOn(BlockState state, BlockGetter getter, BlockPos pos) {
+        return super.mayPlaceOn(state, getter, pos) || state.is(Blocks.SNOW_BLOCK);
+    }
+
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter blockGetter, BlockPos blockpos, CollisionContext context) {
+        return SHAPE;
+    }
+
 }
