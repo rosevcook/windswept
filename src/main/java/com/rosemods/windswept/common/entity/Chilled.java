@@ -57,8 +57,6 @@ public class Chilled extends Zombie {
 
     @Override
     protected void populateDefaultEquipmentSlots(RandomSource rand, DifficultyInstance difficulty) {
-        super.populateDefaultEquipmentSlots(rand, difficulty);
-
         if (ModList.get().isLoaded(WindsweptConstants.CAVERNS_AND_CHASMS))
             cncCompat(rand);
 
@@ -66,7 +64,7 @@ public class Chilled extends Zombie {
             this.setItemSlot(EquipmentSlot.FEET, rand.nextBoolean() ? Items.LEATHER_BOOTS.getDefaultInstance() : WindsweptItems.SNOW_BOOTS.get().getDefaultInstance());
     }
 
-    private void cncCompat(RandomSource random) {
+    public void cncCompat(RandomSource random) {
         if (random.nextFloat() < .075f)
             this.setItemSlot(EquipmentSlot.MAINHAND, randomDurability(random, random.nextBoolean() ? WindsweptConstants.SILVER_SWORD.get() : WindsweptConstants.SILVER_SHOVEL.get()));
         else if (random.nextFloat() < .05f) {

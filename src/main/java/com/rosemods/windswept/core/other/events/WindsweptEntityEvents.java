@@ -1,6 +1,7 @@
 package com.rosemods.windswept.core.other.events;
 
 import com.rosemods.windswept.common.effect.ThornsEffect;
+import com.rosemods.windswept.common.entity.Chilled;
 import com.rosemods.windswept.common.item.SnowBootsItem;
 import com.rosemods.windswept.common.item.wooden_bucket.WoodenMilkBucketItem;
 import com.rosemods.windswept.core.Windswept;
@@ -122,9 +123,12 @@ public class WindsweptEntityEvents {
         if (mob != null && level instanceof ServerLevel && event.getResult() != Result.DENY
                 && mob.getY() > 60 && (reason == MobSpawnType.NATURAL || reason == MobSpawnType.CHUNK_GENERATION)
                 && level.getBiome(mob.blockPosition()).is(Tags.Biomes.IS_SNOWY)) {
-            if (mob.getType() == EntityType.ZOMBIE)
-                mob.convertTo(WindsweptEntities.CHILLED.get(), true);
-            else if (mob.getType() == EntityType.SKELETON && WindsweptConfig.COMMON.strays.get()) {
+            if (mob.getType() == EntityType.ZOMBIE) {
+                mob = mob.convertTo(WindsweptEntities.CHILLED.get(), true);
+
+                if (mob instanceof Chilled chilled)
+                    chilled.cncCompat(level.getRandom());
+            } else if (mob.getType() == EntityType.SKELETON && WindsweptConfig.COMMON.strays.get()) {
                 mob = mob.convertTo(EntityType.STRAY, true);
 
                 if (mob != null)
