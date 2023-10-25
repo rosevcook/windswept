@@ -148,9 +148,9 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
         this.compressedBlock(WindsweptBlocks.WILD_BERRY_BASKET);
         this.simpleCross(WindsweptBlocks.WILD_BERRY_BUSH_PIPS);
 
-        this.compressedBlock(WindsweptBlocks.RED_MUSHROOM_CRATE);
-        this.compressedBlock(WindsweptBlocks.BROWN_MUSHROOM_CRATE);
-        this.compressedBlock(WindsweptBlocks.GLOW_SHROOM_CRATE);
+        this.compressedBlock(WindsweptBlocks.RED_MUSHROOM_BASKET);
+        this.compressedBlock(WindsweptBlocks.BROWN_MUSHROOM_BASKET);
+        this.compressedBlock(WindsweptBlocks.GLOW_SHROOM_BASKET);
 
         this.iceSheet(WindsweptBlocks.ICE_SHEET, () -> Blocks.ICE);
         this.cubeAll(WindsweptBlocks.FROZEN_FLESH_BLOCK);

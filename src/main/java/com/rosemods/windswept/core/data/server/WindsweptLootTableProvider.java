@@ -236,9 +236,9 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropOther(WindsweptBlocks.WILD_BERRY_BUSH_PIPS.get(), WindsweptItems.WILD_BERRY_PIPS.get());
 
             // mushroom crates
-            this.dropSelf(WindsweptBlocks.RED_MUSHROOM_CRATE.get());
-            this.dropSelf(WindsweptBlocks.BROWN_MUSHROOM_CRATE.get());
-            this.dropSelf(WindsweptBlocks.GLOW_SHROOM_CRATE.get());
+            this.dropSelf(WindsweptBlocks.RED_MUSHROOM_BASKET.get());
+            this.dropSelf(WindsweptBlocks.BROWN_MUSHROOM_BASKET.get());
+            this.dropSelf(WindsweptBlocks.GLOW_SHROOM_BASKET.get());
 
             // misc
             this.dropSelf(WindsweptBlocks.ICE_SHEET.get());

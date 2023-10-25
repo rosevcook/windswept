@@ -17,9 +17,9 @@ public final class WindsweptBlockInfo {
         DataUtil.registerCompostable(WindsweptBlocks.ROASTED_CHESTNUT_CRATE.get(), 1f);
         DataUtil.registerCompostable(WindsweptBlocks.HOLLY_BERRY_BASKET.get(), 1f);
         DataUtil.registerCompostable(WindsweptBlocks.WILD_BERRY_BASKET.get(), 1f);
-        DataUtil.registerCompostable(WindsweptBlocks.RED_MUSHROOM_CRATE.get(), 1f);
-        DataUtil.registerCompostable(WindsweptBlocks.BROWN_MUSHROOM_CRATE.get(), 1f);
-        DataUtil.registerCompostable(WindsweptBlocks.GLOW_SHROOM_CRATE.get(), 1f);
+        DataUtil.registerCompostable(WindsweptBlocks.RED_MUSHROOM_BASKET.get(), 1f);
+        DataUtil.registerCompostable(WindsweptBlocks.BROWN_MUSHROOM_BASKET.get(), 1f);
+        DataUtil.registerCompostable(WindsweptBlocks.GLOW_SHROOM_BASKET.get(), 1f);
 
         DataUtil.registerCompostable(WindsweptBlocks.RED_ROSE.get(), .65f);
         DataUtil.registerCompostable(WindsweptBlocks.PINK_ROSE.get(), .65f);
@@ -80,9 +80,9 @@ public final class WindsweptBlockInfo {
         DataUtil.registerFlammable(WindsweptBlocks.HOLLY_BERRY_BASKET.get(), 5, 20);
         DataUtil.registerFlammable(WindsweptBlocks.CHESTNUT_CRATE.get(), 5, 20);
         DataUtil.registerFlammable(WindsweptBlocks.ROASTED_CHESTNUT_CRATE.get(), 5, 20);
-        DataUtil.registerFlammable(WindsweptBlocks.RED_MUSHROOM_CRATE.get(), 5, 20);
-        DataUtil.registerFlammable(WindsweptBlocks.BROWN_MUSHROOM_CRATE.get(), 5, 20);
-        DataUtil.registerFlammable(WindsweptBlocks.GLOW_SHROOM_CRATE.get(), 5, 20);
+        DataUtil.registerFlammable(WindsweptBlocks.RED_MUSHROOM_BASKET.get(), 5, 20);
+        DataUtil.registerFlammable(WindsweptBlocks.BROWN_MUSHROOM_BASKET.get(), 5, 20);
+        DataUtil.registerFlammable(WindsweptBlocks.GLOW_SHROOM_BASKET.get(), 5, 20);
 
         DataUtil.registerFlammable(WindsweptBlocks.HOLLY_LEAVES.get(), 30, 60);
         DataUtil.registerFlammable(WindsweptBlocks.CHESTNUT_LEAVES.get(), 30, 60);

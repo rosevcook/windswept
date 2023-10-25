@@ -7,8 +7,17 @@
           "type": "forge:or",
           "values": [
             {
-              "type": "forge:mod_loaded",
-              "modid": "farmersdelight"
+              "type": "forge:or",
+              "values": [
+                {
+                  "type": "forge:mod_loaded",
+                  "modid": "berry_good"
+                },
+                {
+                  "type": "forge:mod_loaded",
+                  "modid": "farmersdelight"
+                }
+              ]
             },
             {
               "type": "blueprint:quark_flag",
@@ -21,7 +30,7 @@
         "type": "minecraft:crafting_shapeless",
         "ingredients": [
           {
-            "item": "windswept:red_mushroom_crate"
+            "item": "windswept:red_mushroom_basket"
           }
         ],
         "result": {

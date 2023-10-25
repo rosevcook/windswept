@@ -209,9 +209,9 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(WindsweptBlocks.WILD_BERRY_BUSH_PIPS);
         this.add(WindsweptBlocks.WILD_BERRY_BASKET.get(), "Basket of Wild Berries");
 
-        this.add(WindsweptBlocks.RED_MUSHROOM_CRATE.get(), "Crate of Red Mushrooms");
-        this.add(WindsweptBlocks.BROWN_MUSHROOM_CRATE.get(), "Crate of Brown Mushrooms");
-        this.add(WindsweptBlocks.GLOW_SHROOM_CRATE.get(), "Crate of Glow Shrooms");
+        this.add(WindsweptBlocks.RED_MUSHROOM_BASKET.get(), "Basket of Red Mushrooms");
+        this.add(WindsweptBlocks.BROWN_MUSHROOM_BASKET.get(), "Basket of Brown Mushrooms");
+        this.add(WindsweptBlocks.GLOW_SHROOM_BASKET.get(), "Basket of Glow Shrooms");
 
         this.translateBlock(WindsweptBlocks.ICE_SHEET);
         this.translateBlock(WindsweptBlocks.FROZEN_FLESH_BLOCK);

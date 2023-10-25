@@ -186,11 +186,11 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> WILD_BERRY_BASKET = HELPER.createFuelBlock("wild_berry_basket", () -> new BlueprintDirectionalBlock(WindsweptProperties.CRATE), 300, ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD) ? CreativeModeTab.TAB_DECORATIONS : null);
     public static final RegistryObject<Block> WILD_BERRY_BUSH_PIPS = HELPER.createBlockNoItem("wild_berry_bush_pips", () -> new WildBerryBushPipsBlock(WindsweptProperties.WILD_BERRY_BUSH));
 
-    // Mushroom Crates //
+    // Mushroom Baskets //
 
-    public static final RegistryObject<Block> RED_MUSHROOM_CRATE = HELPER.createFuelBlock("red_mushroom_crate", () -> new BlueprintDirectionalBlock(WindsweptProperties.CRATE), 300, ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) ? CreativeModeTab.TAB_DECORATIONS : null);
-    public static final RegistryObject<Block> BROWN_MUSHROOM_CRATE = HELPER.createFuelBlock("brown_mushroom_crate", () -> new BlueprintDirectionalBlock(WindsweptProperties.CRATE), 300, ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) ? CreativeModeTab.TAB_DECORATIONS : null);
-    public static final RegistryObject<Block> GLOW_SHROOM_CRATE = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "glow_shroom_crate", () -> new BlueprintDirectionalBlock(WindsweptProperties.GLOW_SHROOM_CRATE), 300, CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> RED_MUSHROOM_BASKET = HELPER.createFuelBlock("red_mushroom_basket", () -> new BlueprintDirectionalBlock(WindsweptProperties.CRATE), 300, ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD) ? CreativeModeTab.TAB_DECORATIONS : null);
+    public static final RegistryObject<Block> BROWN_MUSHROOM_BASKET = HELPER.createFuelBlock("brown_mushroom_basket", () -> new BlueprintDirectionalBlock(WindsweptProperties.CRATE), 300, ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD)  ? CreativeModeTab.TAB_DECORATIONS : null);
+    public static final RegistryObject<Block> GLOW_SHROOM_BASKET = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "glow_shroom_basket", () -> new BlueprintDirectionalBlock(WindsweptProperties.GLOW_SHROOM_BASKET), 300, CreativeModeTab.TAB_DECORATIONS);
 
     // Misc //
 

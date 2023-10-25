@@ -4,12 +4,12 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_brown_mushroom": {
+          "has_brown_mushroom_basket": {
             "conditions": {
               "items": [
                 {
                   "items": [
-                    "minecraft:brown_mushroom"
+                    "windswept:brown_mushroom_basket"
                   ]
                 }
               ]
@@ -18,20 +18,20 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "windswept:brown_mushroom_crate"
+              "recipe": "windswept:brown_mushroom_basket_revert"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
           [
-            "has_brown_mushroom",
+            "has_brown_mushroom_basket",
             "has_the_recipe"
           ]
         ],
         "rewards": {
           "recipes": [
-            "windswept:brown_mushroom_crate"
+            "windswept:brown_mushroom_basket_revert"
           ]
         }
       },
@@ -40,8 +40,17 @@
           "type": "forge:or",
           "values": [
             {
-              "type": "forge:mod_loaded",
-              "modid": "farmersdelight"
+              "type": "forge:or",
+              "values": [
+                {
+                  "type": "forge:mod_loaded",
+                  "modid": "berry_good"
+                },
+                {
+                  "type": "forge:mod_loaded",
+                  "modid": "farmersdelight"
+                }
+              ]
             },
             {
               "type": "blueprint:quark_flag",

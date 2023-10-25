@@ -12,7 +12,7 @@
         "type": "minecraft:crafting_shapeless",
         "ingredients": [
           {
-            "item": "windswept:glow_shroom_crate"
+            "item": "windswept:glow_shroom_basket"
           }
         ],
         "result": {
