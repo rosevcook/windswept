@@ -118,7 +118,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(WindsweptBlocks.STRIPPED_HOLLY_POST);
         this.translateBlock(WindsweptBlocks.HOLLY_CHEST);
         this.translateBlock(WindsweptBlocks.HOLLY_TRAPPED_CHEST);
-        this.translateBlock(WindsweptBlocks.HOLLY_BERRY_CRATE);
+        this.add(WindsweptBlocks.HOLLY_BERRY_CRATE.get(), "Crate of Holly Berries");
 
         this.translateBlock(WindsweptBlocks.STRIPPED_CHESTNUT_LOG);
         this.translateBlock(WindsweptBlocks.STRIPPED_CHESTNUT_WOOD);
@@ -151,8 +151,8 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(WindsweptBlocks.STRIPPED_CHESTNUT_POST);
         this.translateBlock(WindsweptBlocks.CHESTNUT_CHEST);
         this.translateBlock(WindsweptBlocks.CHESTNUT_TRAPPED_CHEST);
-        this.translateBlock(WindsweptBlocks.CHESTNUT_CRATE);
-        this.translateBlock(WindsweptBlocks.ROASTED_CHESTNUT_CRATE);
+        this.add(WindsweptBlocks.CHESTNUT_CRATE.get(), "Crate of Chestnuts");
+        this.add(WindsweptBlocks.ROASTED_CHESTNUT_CRATE.get(), "Crate of Roasted Chestnuts");
 
         this.translateBlock(WindsweptBlocks.SNOWY_SPROUTS);
 
@@ -207,11 +207,11 @@ public class WindsweptLangProvider extends LanguageProvider {
 
         this.translateBlock(WindsweptBlocks.WILD_BERRY_BUSH);
         this.translateBlock(WindsweptBlocks.WILD_BERRY_BUSH_PIPS);
-        this.translateBlock(WindsweptBlocks.WILD_BERRY_SACK);
+        this.add(WindsweptBlocks.WILD_BERRY_SACK.get(), "Basket of Wild Berries");
 
-        this.translateBlock(WindsweptBlocks.RED_MUSHROOM_CRATE);
-        this.translateBlock(WindsweptBlocks.BROWN_MUSHROOM_CRATE);
-        this.translateBlock(WindsweptBlocks.GLOW_SHROOM_CRATE);
+        this.add(WindsweptBlocks.RED_MUSHROOM_CRATE.get(), "Crate of Red Mushrooms");
+        this.add(WindsweptBlocks.BROWN_MUSHROOM_CRATE.get(), "Crate of Brown Mushrooms");
+        this.add(WindsweptBlocks.GLOW_SHROOM_CRATE.get(), "Crate of Glow Shrooms");
 
         this.translateBlock(WindsweptBlocks.ICE_SHEET);
         this.translateBlock(WindsweptBlocks.FROZEN_FLESH_BLOCK);
