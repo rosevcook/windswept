@@ -72,7 +72,7 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> HOLLY_LEAF_CARPET = HELPER.createCompatBlock(WindsweptConstants.QUARK, "holly_leaf_carpet", () -> new LeafCarpetBlock(WindsweptProperties.HOLLY.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> HOLLY_LEAF_PILE = HELPER.createCompatBlock(WindsweptConstants.WOODWORKS, "holly_leaf_pile", () -> new LeafPileBlock(WindsweptProperties.HOLLY.leafPile()), CreativeModeTab.TAB_DECORATIONS);
 
-    public static final RegistryObject<Block> HOLLY_BERRY_CRATE = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "holly_berry_crate", () -> new Block(WindsweptProperties.CRATE), 300, CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> HOLLY_BERRY_BASKET = HELPER.createFuelBlock("holly_berry_basket", () -> new Block(WindsweptProperties.CRATE), 300, ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD) ? CreativeModeTab.TAB_DECORATIONS : null);
 
     // Chestnut //
 
@@ -183,14 +183,14 @@ public class WindsweptBlocks {
     // Wild Berries //
 
     public static final RegistryObject<Block> WILD_BERRY_BUSH = HELPER.createBlockNoItem("wild_berry_bush", () -> new WildBerryBushBlock(WindsweptProperties.WILD_BERRY_BUSH));
-    public static final RegistryObject<Block> WILD_BERRY_SACK = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "wild_berry_sack", () -> new Block(WindsweptProperties.WILD_BERRY_SACK), 300, CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> WILD_BERRY_BASKET = HELPER.createFuelBlock("wild_berry_basket", () -> new Block(WindsweptProperties.CRATE), 300, ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD) ? CreativeModeTab.TAB_DECORATIONS : null);
     public static final RegistryObject<Block> WILD_BERRY_BUSH_PIPS = HELPER.createBlockNoItem("wild_berry_bush_pips", () -> new WildBerryBushPipsBlock(WindsweptProperties.WILD_BERRY_BUSH));
 
     // Mushroom Crates //
 
-    public static final RegistryObject<Block> RED_MUSHROOM_CRATE = HELPER.createBlock("red_mushroom_crate", () -> new Block(WindsweptProperties.CRATE), ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) ? CreativeModeTab.TAB_DECORATIONS : null);
-    public static final RegistryObject<Block> BROWN_MUSHROOM_CRATE = HELPER.createBlock("brown_mushroom_crate", () -> new Block(WindsweptProperties.CRATE), ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) ? CreativeModeTab.TAB_DECORATIONS : null);
-    public static final RegistryObject<Block> GLOW_SHROOM_CRATE = HELPER.createCompatBlock(WindsweptConstants.QUARK, "glow_shroom_crate", () -> new Block(WindsweptProperties.GLOW_SHROOM_CRATE), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> RED_MUSHROOM_CRATE = HELPER.createFuelBlock("red_mushroom_crate", () -> new Block(WindsweptProperties.CRATE), 300, ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) ? CreativeModeTab.TAB_DECORATIONS : null);
+    public static final RegistryObject<Block> BROWN_MUSHROOM_CRATE = HELPER.createFuelBlock("brown_mushroom_crate", () -> new Block(WindsweptProperties.CRATE), 300, ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) ? CreativeModeTab.TAB_DECORATIONS : null);
+    public static final RegistryObject<Block> GLOW_SHROOM_CRATE = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "glow_shroom_crate", () -> new Block(WindsweptProperties.GLOW_SHROOM_CRATE), 300, CreativeModeTab.TAB_DECORATIONS);
 
     // Misc //
 

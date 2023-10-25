@@ -4,8 +4,17 @@
     {
       "conditions": [
         {
-          "type": "blueprint:quark_flag",
-          "flag": "berry_sack"
+          "type": "forge:or",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "berry_good"
+            },
+            {
+              "type": "blueprint:quark_flag",
+              "flag": "berry_sack"
+            }
+          ]
         }
       ],
       "recipe": {
@@ -21,7 +30,7 @@
           "###"
         ],
         "result": {
-          "item": "windswept:wild_berry_sack"
+          "item": "windswept:wild_berry_basket"
         }
       }
     }

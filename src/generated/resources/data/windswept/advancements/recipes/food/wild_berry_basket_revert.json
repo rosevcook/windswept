@@ -4,12 +4,12 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_berries": {
+          "has_WILD_BERRY_BASKET": {
             "conditions": {
               "items": [
                 {
                   "items": [
-                    "windswept:holly_berries"
+                    "windswept:wild_berry_basket"
                   ]
                 }
               ]
@@ -18,27 +18,36 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "windswept:holly_berry_crate"
+              "recipe": "windswept:wild_berry_basket_revert"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
           [
-            "has_berries",
+            "has_WILD_BERRY_BASKET",
             "has_the_recipe"
           ]
         ],
         "rewards": {
           "recipes": [
-            "windswept:holly_berry_crate"
+            "windswept:wild_berry_basket_revert"
           ]
         }
       },
       "conditions": [
         {
-          "type": "blueprint:quark_flag",
-          "flag": "berry_sack"
+          "type": "forge:or",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "berry_good"
+            },
+            {
+              "type": "blueprint:quark_flag",
+              "flag": "berry_sack"
+            }
+          ]
         }
       ]
     }

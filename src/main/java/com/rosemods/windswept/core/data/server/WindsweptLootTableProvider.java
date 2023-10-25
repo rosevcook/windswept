@@ -118,7 +118,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(WindsweptBlocks.HOLLY_LEAF_CARPET.get());
             this.leafPile(WindsweptBlocks.HOLLY_LEAF_PILE.get());
 
-            this.dropSelf(WindsweptBlocks.HOLLY_BERRY_CRATE.get());
+            this.dropSelf(WindsweptBlocks.HOLLY_BERRY_BASKET.get());
 
             // chestnut
             this.dropSelf(WindsweptBlocks.STRIPPED_CHESTNUT_LOG.get());
@@ -232,7 +232,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
                             .add(LootItem.lootTableItem(WindsweptItems.WILD_BERRIES.get()))
                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 2f)))
                             .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));
-            this.dropSelf(WindsweptBlocks.WILD_BERRY_SACK.get());
+            this.dropSelf(WindsweptBlocks.WILD_BERRY_BASKET.get());
             this.dropOther(WindsweptBlocks.WILD_BERRY_BUSH_PIPS.get(), WindsweptItems.WILD_BERRY_PIPS.get());
 
             // mushroom crates

@@ -66,7 +66,7 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
         this.post(WindsweptBlocks.HOLLY_POST, WindsweptBlocks.HOLLY_LOG);
         this.post(WindsweptBlocks.STRIPPED_HOLLY_POST, WindsweptBlocks.STRIPPED_HOLLY_LOG);
         this.chests(WindsweptBlocks.HOLLY_CHEST, WindsweptBlocks.HOLLY_TRAPPED_CHEST, WindsweptBlocks.HOLLY_PLANKS);
-        this.cubeBottomTop(WindsweptBlocks.HOLLY_BERRY_CRATE);
+        this.cubeBottomTop(WindsweptBlocks.HOLLY_BERRY_BASKET);
 
         this.log(WindsweptBlocks.STRIPPED_CHESTNUT_LOG);
         this.wood(WindsweptBlocks.STRIPPED_CHESTNUT_WOOD, this.blockTexture(WindsweptBlocks.STRIPPED_CHESTNUT_LOG.get()));
@@ -145,7 +145,7 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
         this.blubells(WindsweptBlocks.BLUEBELLS, WindsweptBlocks.POTTED_BLUEBELLS);
 
         this.wildBerryBush(WindsweptBlocks.WILD_BERRY_BUSH);
-        this.cubeBottomTop(WindsweptBlocks.WILD_BERRY_SACK);
+        this.cubeBottomTop(WindsweptBlocks.WILD_BERRY_BASKET);
         this.simpleCross(WindsweptBlocks.WILD_BERRY_BUSH_PIPS);
 
         this.cubeBottomTop(WindsweptBlocks.RED_MUSHROOM_CRATE);
