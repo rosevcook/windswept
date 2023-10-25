@@ -66,7 +66,7 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
         this.post(WindsweptBlocks.HOLLY_POST, WindsweptBlocks.HOLLY_LOG);
         this.post(WindsweptBlocks.STRIPPED_HOLLY_POST, WindsweptBlocks.STRIPPED_HOLLY_LOG);
         this.chests(WindsweptBlocks.HOLLY_CHEST, WindsweptBlocks.HOLLY_TRAPPED_CHEST, WindsweptBlocks.HOLLY_PLANKS);
-        this.cubeBottomTop(WindsweptBlocks.HOLLY_BERRY_BASKET);
+        this.compressedBlock(WindsweptBlocks.HOLLY_BERRY_BASKET);
 
         this.log(WindsweptBlocks.STRIPPED_CHESTNUT_LOG);
         this.wood(WindsweptBlocks.STRIPPED_CHESTNUT_WOOD, this.blockTexture(WindsweptBlocks.STRIPPED_CHESTNUT_LOG.get()));
@@ -98,8 +98,8 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
         this.post(WindsweptBlocks.STRIPPED_CHESTNUT_POST, WindsweptBlocks.STRIPPED_CHESTNUT_LOG);
         this.chests(WindsweptBlocks.CHESTNUT_CHEST, WindsweptBlocks.CHESTNUT_TRAPPED_CHEST, WindsweptBlocks.CHESTNUT_PLANKS);
 
-        this.cubeBottomTop(WindsweptBlocks.CHESTNUT_CRATE);
-        this.cubeBottomTop(WindsweptBlocks.ROASTED_CHESTNUT_CRATE);
+        this.compressedBlock(WindsweptBlocks.CHESTNUT_CRATE);
+        this.compressedBlock(WindsweptBlocks.ROASTED_CHESTNUT_CRATE);
 
         this.cubeAll(WindsweptBlocks.SNOW_BRICKS);
         this.stairs(WindsweptBlocks.SNOW_BRICK_STAIRS, WindsweptBlocks.SNOW_BRICKS);
@@ -145,12 +145,12 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
         this.blubells(WindsweptBlocks.BLUEBELLS, WindsweptBlocks.POTTED_BLUEBELLS);
 
         this.wildBerryBush(WindsweptBlocks.WILD_BERRY_BUSH);
-        this.cubeBottomTop(WindsweptBlocks.WILD_BERRY_BASKET);
+        this.compressedBlock(WindsweptBlocks.WILD_BERRY_BASKET);
         this.simpleCross(WindsweptBlocks.WILD_BERRY_BUSH_PIPS);
 
-        this.cubeBottomTop(WindsweptBlocks.RED_MUSHROOM_CRATE);
-        this.cubeBottomTop(WindsweptBlocks.BROWN_MUSHROOM_CRATE);
-        this.cubeBottomTop(WindsweptBlocks.GLOW_SHROOM_CRATE);
+        this.compressedBlock(WindsweptBlocks.RED_MUSHROOM_CRATE);
+        this.compressedBlock(WindsweptBlocks.BROWN_MUSHROOM_CRATE);
+        this.compressedBlock(WindsweptBlocks.GLOW_SHROOM_CRATE);
 
         this.iceSheet(WindsweptBlocks.ICE_SHEET, () -> Blocks.ICE);
         this.cubeAll(WindsweptBlocks.FROZEN_FLESH_BLOCK);
@@ -262,20 +262,15 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
         this.itemModel(block);
     }
 
-    private void cubeAll(RegistryObject<? extends Block> block, ResourceLocation texture) {
-        this.simpleBlock(block.get(), this.models().cubeAll(this.getName(block), texture));
+    private void compressedBlock(RegistryObject<? extends Block> block) {
+        String name = this.getName(block);
+        this.directionalBlock(block.get(), models().cubeBottomTop(name, this.modLoc("block/" + name + "_side"), this.modLoc("block/" + name + "_bottom"), this.modLoc("block/" + name + "_top")));
         this.itemModel(block);
     }
 
     private void leaves(RegistryObject<? extends Block> leaves) {
         this.simpleBlock(leaves.get(), this.models().withExistingParent(this.getName(leaves), "block/leaves").texture("all", this.blockTexture(leaves.get())).renderType("cutout"));
         this.itemModel(leaves);
-    }
-
-    private void cubeBottomTop(RegistryObject<? extends Block> block) {
-        String name = this.getName(block);
-        this.simpleBlock(block.get(), this.models().cubeBottomTop(name, this.modLoc("block/" + name + "_side"), this.modLoc("block/" + name + "_bottom"), this.modLoc("block/" + name + "_top")));
-        this.itemModel(block);
     }
 
     private void simpleCross(RegistryObject<? extends Block> block) {

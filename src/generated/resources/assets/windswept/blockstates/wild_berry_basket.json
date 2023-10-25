@@ -1,7 +1,30 @@
 {
   "variants": {
-    "": {
+    "facing=down": {
+      "model": "windswept:block/wild_berry_basket",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "windswept:block/wild_berry_basket",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "windswept:block/wild_berry_basket",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "windswept:block/wild_berry_basket",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
       "model": "windswept:block/wild_berry_basket"
+    },
+    "facing=west": {
+      "model": "windswept:block/wild_berry_basket",
+      "x": 90,
+      "y": 270
     }
   }
 }
