@@ -153,6 +153,7 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
         this.cubeBottomTop(WindsweptBlocks.GLOW_SHROOM_CRATE);
 
         this.iceSheet(WindsweptBlocks.ICE_SHEET, () -> Blocks.ICE);
+        this.cubeAll(WindsweptBlocks.FROZEN_FLESH_BLOCK);
     }
 
     // Blocks //

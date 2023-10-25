@@ -22,6 +22,7 @@ public final class WindsweptProperties {
     public static final BlockBehaviour.Properties SNOWY_SPROUTS = BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XZ);
     public static final BlockBehaviour.Properties NIGHTSHADE = BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).lightLevel(state -> 9);
     public static final BlockBehaviour.Properties NIGHTSHADE_POT = BlockBehaviour.Properties.of(Material.DECORATION).instabreak().noOcclusion().lightLevel(state -> 9);
+    public static final BlockBehaviour.Properties FROZEN_FLESH_BLOCK = BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.COLOR_BLUE).strength(.8f).sound(SoundType.CORAL_BLOCK);
 
     public static final BlockBehaviour.Properties CRATE = BlockBehaviour.Properties.of(Material.WOOD).strength(1.5f).sound(SoundType.WOOD);
     public static final BlockBehaviour.Properties GLOW_SHROOM_CRATE = BlockBehaviour.Properties.of(Material.WOOD).strength(1.5f).sound(SoundType.WOOD).lightLevel(s -> 12);

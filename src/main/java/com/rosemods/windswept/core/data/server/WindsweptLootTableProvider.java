@@ -242,6 +242,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 
             // misc
             this.dropSelf(WindsweptBlocks.ICE_SHEET.get());
+            this.dropSelf(WindsweptBlocks.FROZEN_FLESH_BLOCK.get());
         }
 
 

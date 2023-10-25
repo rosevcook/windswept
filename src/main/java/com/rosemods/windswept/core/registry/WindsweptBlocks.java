@@ -195,5 +195,6 @@ public class WindsweptBlocks {
     // Misc //
 
     public static final RegistryObject<Block> ICE_SHEET = HELPER.createBlock("ice_sheet", () -> new IceSheetBlock(BlockBehaviour.Properties.copy(Blocks.ICE)), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> FROZEN_FLESH_BLOCK = HELPER.createCompatBlock("frozen_flesh_block", () -> new Block(WindsweptProperties.FROZEN_FLESH_BLOCK), CreativeModeTab.TAB_DECORATIONS, WindsweptConstants.CAVERNS_AND_CHASMS);
 
 }
