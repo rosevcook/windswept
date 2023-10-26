@@ -57,25 +57,30 @@ public class Chilled extends Zombie {
 
     @Override
     protected void populateDefaultEquipmentSlots(RandomSource rand, DifficultyInstance difficulty) {
-        if (ModList.get().isLoaded(WindsweptConstants.CAVERNS_AND_CHASMS))
-            cncCompat(rand);
+        cncCompat(rand);
 
         if (rand.nextFloat() < (this.level.getDifficulty() == Difficulty.HARD ? .5f : .33f))
             this.setItemSlot(EquipmentSlot.FEET, rand.nextBoolean() ? Items.LEATHER_BOOTS.getDefaultInstance() : WindsweptItems.SNOW_BOOTS.get().getDefaultInstance());
     }
 
     public void cncCompat(RandomSource random) {
-        if (random.nextFloat() < .075f)
-            this.setItemSlot(EquipmentSlot.MAINHAND, randomDurability(random, random.nextBoolean() ? WindsweptConstants.SILVER_SWORD.get() : WindsweptConstants.SILVER_SHOVEL.get()));
-        else if (random.nextFloat() < .05f) {
-            this.setItemSlot(EquipmentSlot.MAINHAND, randomDurability(random, WindsweptConstants.SILVER_AXE.get()));
-            this.setItemSlot(EquipmentSlot.OFFHAND, randomDurability(random, WindsweptConstants.SILVER_AXE.get()));
-        }
+        if (ModList.get().isLoaded(WindsweptConstants.CAVERNS_AND_CHASMS)) {
+            if (random.nextFloat() < .075f)
+                this.setItemSlot(EquipmentSlot.MAINHAND, randomDurability(random, random.nextBoolean() ? WindsweptConstants.SILVER_SWORD.get() : WindsweptConstants.SILVER_SHOVEL.get()));
+            else if (random.nextFloat() < .05f) {
+                this.setItemSlot(EquipmentSlot.MAINHAND, randomDurability(random, WindsweptConstants.SILVER_AXE.get()));
+                this.setItemSlot(EquipmentSlot.OFFHAND, randomDurability(random, WindsweptConstants.SILVER_AXE.get()));
+            }
 
-        if (random.nextFloat() < .05f) this.setItemSlot(EquipmentSlot.HEAD, randomDurability(random, WindsweptConstants.SILVER_HELMET.get()));
-        if (random.nextFloat() < .05f) this.setItemSlot(EquipmentSlot.CHEST, randomDurability(random, WindsweptConstants.SILVER_CHESTPLATE.get()));
-        if (random.nextFloat() < .05f) this.setItemSlot(EquipmentSlot.LEGS, randomDurability(random, WindsweptConstants.SILVER_LEGGINGS.get()));
-        if (random.nextFloat() < .05f) this.setItemSlot(EquipmentSlot.FEET, randomDurability(random, WindsweptConstants.SILVER_BOOTS.get()));
+            if (random.nextFloat() < .05f)
+                this.setItemSlot(EquipmentSlot.HEAD, randomDurability(random, WindsweptConstants.SILVER_HELMET.get()));
+            if (random.nextFloat() < .05f)
+                this.setItemSlot(EquipmentSlot.CHEST, randomDurability(random, WindsweptConstants.SILVER_CHESTPLATE.get()));
+            if (random.nextFloat() < .05f)
+                this.setItemSlot(EquipmentSlot.LEGS, randomDurability(random, WindsweptConstants.SILVER_LEGGINGS.get()));
+            if (random.nextFloat() < .05f)
+                this.setItemSlot(EquipmentSlot.FEET, randomDurability(random, WindsweptConstants.SILVER_BOOTS.get()));
+        }
     }
 
     private static ItemStack randomDurability(RandomSource random, Item item) {
