@@ -26,7 +26,7 @@ public class WitherRoseBushBlock extends BlueprintTallFlowerBlock {
         double d0 = pos.getX() + vec3.x;
         double d1 = pos.getZ() + vec3.z;
 
-        for(int i = 0; i < 3; i++)
+        for (int i = 0; i < 3; i++)
             if (random.nextBoolean())
                 level.addParticle(ParticleTypes.SMOKE, d0 + random.nextDouble() / 5d,
                         pos.getY() + (.5d - random.nextDouble()),

@@ -23,6 +23,6 @@ public class TrunkPlacerMixin {
     @Inject(method = "setDirtAt", at = @At("TAIL"))
     private static void setDirtAt(LevelSimulatedReader level, BiConsumer<BlockPos, BlockState> states, RandomSource random, BlockPos pos, TreeConfiguration config, CallbackInfo info) {
         if (((LevelReader) level).isEmptyBlock(pos.below()) && WindsweptConfig.COMMON.roots.get() && (config.forceDirt || level.isStateAtPosition(pos, Feature::isDirt)))
-                states.accept(pos.below(), Blocks.HANGING_ROOTS.defaultBlockState());
+            states.accept(pos.below(), Blocks.HANGING_ROOTS.defaultBlockState());
     }
 }

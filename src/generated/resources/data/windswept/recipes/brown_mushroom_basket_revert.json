@@ -1,0 +1,43 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:or",
+          "values": [
+            {
+              "type": "forge:or",
+              "values": [
+                {
+                  "type": "forge:mod_loaded",
+                  "modid": "berry_good"
+                },
+                {
+                  "type": "forge:mod_loaded",
+                  "modid": "farmersdelight"
+                }
+              ]
+            },
+            {
+              "type": "blueprint:quark_flag",
+              "flag": "apple_crate"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "windswept:brown_mushroom_basket"
+          }
+        ],
+        "result": {
+          "count": 9,
+          "item": "minecraft:brown_mushroom"
+        }
+      }
+    }
+  ]
+}

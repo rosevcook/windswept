@@ -6,7 +6,7 @@
     "windswept:holly_hedge",
     "windswept:holly_chest",
     "windswept:holly_trapped_chest",
-    "windswept:holly_berry_crate",
+    "windswept:holly_berry_basket",
     "windswept:holly_post",
     "windswept:stripped_holly_post",
     "windswept:holly_beehive",
@@ -25,8 +25,9 @@
     "windswept:chestnut_boards",
     "windswept:holly_cabinet",
     "windswept:chestnut_cabinet",
-    "windswept:red_mushroom_crate",
-    "windswept:brown_mushroom_crate",
-    "windswept:glow_shroom_crate"
+    "windswept:red_mushroom_basket",
+    "windswept:brown_mushroom_basket",
+    "windswept:glow_shroom_basket",
+    "windswept:wild_berry_basket"
   ]
 }

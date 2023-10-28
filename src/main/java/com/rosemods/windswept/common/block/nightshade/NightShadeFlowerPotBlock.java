@@ -11,14 +11,14 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class NightShadeFlowerPotBlock extends FlowerPotBlock {
 
-	public NightShadeFlowerPotBlock(Block block, Properties properties) {
-		super(block, properties);
-	}
-	
-	@OnlyIn(Dist.CLIENT)
-	@Override
-	public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource rand) {
-		NightshadeFlowerBlock.particles(level, pos, rand);
-	}
+    public NightShadeFlowerPotBlock(Block block, Properties properties) {
+        super(block, properties);
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    @Override
+    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource rand) {
+        NightshadeFlowerBlock.particles(level, pos, rand);
+    }
 
 }
