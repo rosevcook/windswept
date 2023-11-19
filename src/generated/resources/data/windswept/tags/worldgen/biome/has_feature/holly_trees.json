@@ -1,6 +1,14 @@
 {
   "values": [
     "minecraft:old_growth_pine_taiga",
-    "minecraft:old_growth_spruce_taiga"
+    "minecraft:old_growth_spruce_taiga",
+    {
+      "id": "environmental:pine_barrens",
+      "required": false
+    },
+    {
+      "id": "atmospheric:kousa_jungle",
+      "required": false
+    }
   ]
 }
