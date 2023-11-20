@@ -2,6 +2,7 @@ package com.rosemods.windswept.common.world.gen.feature;
 
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
@@ -23,10 +24,10 @@ public class BluebellsFeature extends Feature<NoneFeatureConfiguration> {
         RandomSource rand = context.random();
         boolean generated = false;
 
-        for (int x = -1; x <= 1; ++x)
-            for (int z = -1; z <= 1; ++z)
-                for (int y = -2; y <= 2; ++y)
-                    if (x == 0 || z == 0 || rand.nextInt(8) == 0)
+        for (int x = -5; x <= 5; ++x)
+            for (int z = -5; z <= 5; ++z)
+                for (int y = -3; y <= 3; ++y)
+                    if (x == 0 && z == 0 || (x + z == 0 || x - z == 0 ? rand.nextBoolean() : (Mth.abs(x + z) < 5 && Mth.abs(x - z) < 5) ? rand.nextInt(3) > 0 : rand.nextInt(8) == 0))
                         generated = place(level, origin.offset(x, y, z), state);
 
         return generated;

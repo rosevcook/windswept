@@ -127,7 +127,7 @@ public final class WindsweptFeatures {
         public static final RegistryObject<PlacedFeature> BLUE_ROSE = createPlantPatch("blue_rose", 32, Features.BLUE_ROSE);
         public static final RegistryObject<PlacedFeature> YELLOW_ROSE = createPlantPatch("yellow_rose", 24, Features.YELLOW_ROSE);
         public static final RegistryObject<PlacedFeature> FOXGLOVE = createPlantPatch("foxglove", 6, Features.FOXGLOVE);
-        public static final RegistryObject<PlacedFeature> BLUEBELLS = createPlantPatch("bluebells", 3, Features.BLUEBELLS);
+        public static final RegistryObject<PlacedFeature> BLUEBELLS = createPlantPatch("bluebells", 4, Features.BLUEBELLS);
         public static final RegistryObject<PlacedFeature> WHITE_ROSE_BUSH = createPlantPatch("white_rose_bush", 12, Features.WHITE_ROSE_BUSH);
         public static final RegistryObject<PlacedFeature> BLUE_ROSE_BUSH = createPlantPatch("blue_rose_bush", 12, Features.BLUE_ROSE_BUSH);
         public static final RegistryObject<PlacedFeature> YELLOW_ROSE_BUSH = createPlantPatch("yellow_rose_bush", 12, Features.YELLOW_ROSE_BUSH);
