@@ -58,7 +58,7 @@ public class DrinkableBottleItem extends HoneyBottleItem {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        return Objects.requireNonNull(this.getFoodProperties(player.getItemInHand(hand), player)).canAlwaysEat() || player.canEat(false) ? super.use(level, player, hand)
+        return this.getFoodProperties(player.getItemInHand(hand), player).canAlwaysEat() || player.canEat(false) ? super.use(level, player, hand)
                 : InteractionResultHolder.fail(player.getItemInHand(hand));
     }
 
