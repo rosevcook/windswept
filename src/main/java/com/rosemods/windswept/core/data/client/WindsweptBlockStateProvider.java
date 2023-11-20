@@ -166,7 +166,7 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 
     private void blubells(RegistryObject<Block> bluebells, RegistryObject<Block> pot) {
         this.pot(pot, this.modLoc("block/potted_" + this.getName(bluebells)));
-        this.simpleBlock(bluebells.get(), this.models().withExistingParent(this.getName(bluebells), Windswept.REGISTRY_HELPER.prefix("bluebells_template")));
+        this.simpleCross(bluebells);
         this.generatedItem(bluebells);
     }
 
