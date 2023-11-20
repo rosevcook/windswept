@@ -140,6 +140,12 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> BLUE_ICE_BRICK_WALL = HELPER.createBlock("blue_ice_brick_wall", () -> new WallBlock(WindsweptProperties.ICE_BRICKS), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> BLUE_ICE_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "blue_ice_brick_vertical_slab", () -> new VerticalSlabBlock(WindsweptProperties.ICE_BRICKS), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
+    // Ice Blocks //
+
+    public static final RegistryObject<Block> CUT_ICE = HELPER.createBlock("cut_ice", () -> new IceBlock(BlockBehaviour.Properties.copy(Blocks.ICE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> ICE_SHEET = HELPER.createBlock("ice_sheet", () -> new IceSheetBlock(BlockBehaviour.Properties.copy(Blocks.ICE)), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> CUT_ICE_SHEET = HELPER.createBlock("cut_ice_sheet", () -> new IceSheetBlock(BlockBehaviour.Properties.copy(Blocks.ICE)), CreativeModeTab.TAB_DECORATIONS);
+
     // Sprouts //
 
     public static final RegistryObject<Block> SNOWY_SPROUTS = HELPER.createInjectedBlock("snowy_sprouts", Items.GRASS, () -> new SnowySproutsBlock(WindsweptProperties.SNOWY_SPROUTS), CreativeModeTab.TAB_DECORATIONS);
@@ -189,7 +195,6 @@ public class WindsweptBlocks {
 
     // Misc //
 
-    public static final RegistryObject<Block> ICE_SHEET = HELPER.createBlock("ice_sheet", () -> new IceSheetBlock(BlockBehaviour.Properties.copy(Blocks.ICE)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> FROZEN_FLESH_BLOCK = HELPER.createCompatBlock("frozen_flesh_block", () -> new Block(WindsweptProperties.FROZEN_FLESH_BLOCK), CreativeModeTab.TAB_DECORATIONS, WindsweptConstants.CAVERNS_AND_CHASMS);
 
 }

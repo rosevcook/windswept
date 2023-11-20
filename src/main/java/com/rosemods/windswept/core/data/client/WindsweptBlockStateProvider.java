@@ -121,6 +121,10 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
         this.wall(WindsweptBlocks.BLUE_ICE_BRICK_WALL, WindsweptBlocks.BLUE_ICE_BRICKS);
         this.verticalSlab(WindsweptBlocks.BLUE_ICE_BRICK_VERTICAL_SLAB, WindsweptBlocks.BLUE_ICE_BRICKS);
 
+        this.ice(WindsweptBlocks.CUT_ICE);
+        this.iceSheet(WindsweptBlocks.ICE_SHEET, () -> Blocks.ICE);
+        this.iceSheet(WindsweptBlocks.CUT_ICE_SHEET, WindsweptBlocks.CUT_ICE);
+
         this.simpleCross(WindsweptBlocks.SNOWY_SPROUTS);
         this.pot(WindsweptBlocks.POTTED_SNOWY_SPROUTS, this.modLoc("block/potted_snowy_sprouts"));
 
@@ -149,7 +153,6 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
         this.compressedBlock(WindsweptBlocks.BROWN_MUSHROOM_BASKET);
         this.compressedBlock(WindsweptBlocks.GLOW_SHROOM_BASKET);
 
-        this.iceSheet(WindsweptBlocks.ICE_SHEET, () -> Blocks.ICE);
         this.cubeAll(WindsweptBlocks.FROZEN_FLESH_BLOCK);
     }
 
@@ -189,6 +192,11 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
     private void pot(RegistryObject<Block> pot, ResourceLocation texture) {
         ModelFile model = this.models().withExistingParent(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(pot.get())).getPath(), "block/flower_pot_cross").texture("plant", texture).renderType("cutout");
         this.simpleBlock(pot.get(), model);
+    }
+
+    private void ice(RegistryObject<? extends Block> block) {
+        this.simpleBlock(block.get(), this.models().cubeAll(this.getName(block), this.blockTexture(block.get())).renderType("translucent"));
+        this.itemModel(block);
     }
 
     private void iceSheet(RegistryObject<Block> block, Supplier<Block> textureBlock) {

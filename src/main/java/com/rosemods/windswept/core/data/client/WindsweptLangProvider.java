@@ -176,6 +176,10 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(WindsweptBlocks.BLUE_ICE_BRICK_WALL);
         this.translateBlock(WindsweptBlocks.BLUE_ICE_BRICK_VERTICAL_SLAB);
 
+        this.translateBlock(WindsweptBlocks.CUT_ICE);
+        this.translateBlock(WindsweptBlocks.ICE_SHEET);
+        this.translateBlock(WindsweptBlocks.CUT_ICE_SHEET);
+
         this.translateBlock(WindsweptBlocks.RED_ROSE_BUSH);
         this.translateBlock(WindsweptBlocks.PINK_ROSE_BUSH);
         this.translateBlock(WindsweptBlocks.BLUE_ROSE_BUSH);
@@ -210,7 +214,6 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.add(WindsweptBlocks.BROWN_MUSHROOM_BASKET.get(), "Basket of Brown Mushrooms");
         this.add(WindsweptBlocks.GLOW_SHROOM_BASKET.get(), "Basket of Glow Shrooms");
 
-        this.translateBlock(WindsweptBlocks.ICE_SHEET);
         this.translateBlock(WindsweptBlocks.FROZEN_FLESH_BLOCK);
 
         // Entities //

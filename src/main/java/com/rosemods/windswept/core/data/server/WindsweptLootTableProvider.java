@@ -188,6 +188,11 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(WindsweptBlocks.BLUE_ICE_BRICK_WALL.get());
             this.add(WindsweptBlocks.BLUE_ICE_BRICK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
 
+            // ice blocks
+            this.dropSelf(WindsweptBlocks.CUT_ICE.get());
+            this.dropSelf(WindsweptBlocks.ICE_SHEET.get());
+            this.dropSelf(WindsweptBlocks.CUT_ICE_SHEET.get());
+
             // rose bushes
             this.tallFlower(WindsweptBlocks.RED_ROSE_BUSH.get());
             this.tallFlower(WindsweptBlocks.PINK_ROSE_BUSH.get());
@@ -237,7 +242,6 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(WindsweptBlocks.GLOW_SHROOM_BASKET.get());
 
             // misc
-            this.dropSelf(WindsweptBlocks.ICE_SHEET.get());
             this.dropSelf(WindsweptBlocks.FROZEN_FLESH_BLOCK.get());
         }
 

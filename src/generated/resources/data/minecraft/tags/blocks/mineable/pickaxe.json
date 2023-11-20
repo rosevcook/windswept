@@ -17,6 +17,8 @@
     "windswept:snow_brick_stairs",
     "windswept:snow_brick_vertical_slab",
     "windswept:snow_brick_wall",
-    "windswept:ice_sheet"
+    "windswept:cut_ice",
+    "windswept:ice_sheet",
+    "windswept:cut_ice_sheet"
   ]
 }
