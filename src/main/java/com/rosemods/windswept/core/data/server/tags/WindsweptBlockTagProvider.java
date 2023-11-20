@@ -52,9 +52,7 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
         //vanilla
         this.tag(BlockTags.WALLS).add(WindsweptBlocks.BLUE_ICE_BRICK_WALL.get(), WindsweptBlocks.SNOW_BRICK_WALL.get(), WindsweptBlocks.PACKED_ICE_BRICK_WALL.get());
         this.tag(BlockTags.BEEHIVES).add(WindsweptBlocks.HOLLY_BEEHIVE.get(), WindsweptBlocks.CHESTNUT_BEEHIVE.get());
-        this.tag(BlockTags.BUTTONS).add(WindsweptBlocks.POLISHED_DEEPSLATE_BUTTON.get());
         this.tag(BlockTags.WOODEN_BUTTONS).add(WindsweptBlocks.HOLLY_BUTTON.get(), WindsweptBlocks.CHESTNUT_BUTTON.get());
-        this.tag(BlockTags.STONE_PRESSURE_PLATES).add(WindsweptBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE.get());
         this.tag(BlockTags.WOODEN_PRESSURE_PLATES).add(WindsweptBlocks.HOLLY_PRESSURE_PLATE.get(), WindsweptBlocks.CHESTNUT_PRESSURE_PLATE.get());
         this.tag(BlockTags.PLANKS).add(WindsweptBlocks.HOLLY_PLANKS.get(), WindsweptBlocks.CHESTNUT_PLANKS.get(), WindsweptBlocks.VERTICAL_HOLLY_PLANKS.get(), WindsweptBlocks.VERTICAL_CHESTNUT_PLANKS.get());
         this.tag(BlockTags.WOODEN_DOORS).add(WindsweptBlocks.HOLLY_DOOR.get(), WindsweptBlocks.CHESTNUT_DOOR.get());
@@ -116,8 +114,7 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
                 .addTag(WindsweptBlockTags.CHESTNUT_LEAVES).add(WindsweptBlocks.HOLLY_LEAF_CARPET.get(),
                         WindsweptBlocks.CHESTNUT_LEAF_CARPET.get(), WindsweptBlocks.FROZEN_FLESH_BLOCK.get());
 
-        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(WindsweptBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE.get(),
-                WindsweptBlocks.BLUE_ICE_BRICKS.get(), WindsweptBlocks.CHISELED_BLUE_ICE_BRICKS.get(),
+        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(WindsweptBlocks.BLUE_ICE_BRICKS.get(), WindsweptBlocks.CHISELED_BLUE_ICE_BRICKS.get(),
                 WindsweptBlocks.BLUE_ICE_BRICK_SLAB.get(), WindsweptBlocks.BLUE_ICE_BRICK_STAIRS.get(),
                 WindsweptBlocks.BLUE_ICE_BRICK_VERTICAL_SLAB.get(), WindsweptBlocks.BLUE_ICE_BRICK_WALL.get(),
                 WindsweptBlocks.PACKED_ICE_BRICKS.get(), WindsweptBlocks.CHISELED_PACKED_ICE_BRICKS.get(),

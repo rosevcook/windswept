@@ -188,10 +188,6 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(WindsweptBlocks.BLUE_ICE_BRICK_WALL.get());
             this.add(WindsweptBlocks.BLUE_ICE_BRICK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
 
-            // deepslate
-            this.dropSelf(WindsweptBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE.get());
-            this.dropSelf(WindsweptBlocks.POLISHED_DEEPSLATE_BUTTON.get());
-
             // rose bushes
             this.tallFlower(WindsweptBlocks.RED_ROSE_BUSH.get());
             this.tallFlower(WindsweptBlocks.PINK_ROSE_BUSH.get());

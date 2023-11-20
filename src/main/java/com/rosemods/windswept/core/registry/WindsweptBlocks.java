@@ -140,11 +140,6 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> BLUE_ICE_BRICK_WALL = HELPER.createBlock("blue_ice_brick_wall", () -> new WallBlock(WindsweptProperties.ICE_BRICKS), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> BLUE_ICE_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "blue_ice_brick_vertical_slab", () -> new VerticalSlabBlock(WindsweptProperties.ICE_BRICKS), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
-    // Deepslate //
-
-    public static final RegistryObject<Block> POLISHED_DEEPSLATE_PRESSURE_PLATE = HELPER.createInjectedBlock("polished_deepslate_pressure_plate", Items.STONE_PRESSURE_PLATE, () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, WindsweptProperties.POLISHED_DEEPSLATE_PRESSURE_PLATE), CreativeModeTab.TAB_REDSTONE);
-    public static final RegistryObject<Block> POLISHED_DEEPSLATE_BUTTON = HELPER.createInjectedBlock("polished_deepslate_button", Items.STONE_BUTTON, () -> new StoneButtonBlock(WindsweptProperties.POLISHED_DEEPSLATE_BUTTON), CreativeModeTab.TAB_REDSTONE);
-
     // Sprouts //
 
     public static final RegistryObject<Block> SNOWY_SPROUTS = HELPER.createInjectedBlock("snowy_sprouts", Items.GRASS, () -> new SnowySproutsBlock(WindsweptProperties.SNOWY_SPROUTS), CreativeModeTab.TAB_DECORATIONS);

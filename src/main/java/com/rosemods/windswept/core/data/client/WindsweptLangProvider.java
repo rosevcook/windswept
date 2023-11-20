@@ -176,9 +176,6 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(WindsweptBlocks.BLUE_ICE_BRICK_WALL);
         this.translateBlock(WindsweptBlocks.BLUE_ICE_BRICK_VERTICAL_SLAB);
 
-        this.translateBlock(WindsweptBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE);
-        this.translateBlock(WindsweptBlocks.POLISHED_DEEPSLATE_BUTTON);
-
         this.translateBlock(WindsweptBlocks.RED_ROSE_BUSH);
         this.translateBlock(WindsweptBlocks.PINK_ROSE_BUSH);
         this.translateBlock(WindsweptBlocks.BLUE_ROSE_BUSH);

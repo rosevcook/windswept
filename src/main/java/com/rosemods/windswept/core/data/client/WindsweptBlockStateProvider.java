@@ -121,9 +121,6 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
         this.wall(WindsweptBlocks.BLUE_ICE_BRICK_WALL, WindsweptBlocks.BLUE_ICE_BRICKS);
         this.verticalSlab(WindsweptBlocks.BLUE_ICE_BRICK_VERTICAL_SLAB, WindsweptBlocks.BLUE_ICE_BRICKS);
 
-        this.pressurePlate(WindsweptBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE, () -> Blocks.POLISHED_DEEPSLATE);
-        this.button(WindsweptBlocks.POLISHED_DEEPSLATE_BUTTON, () -> Blocks.POLISHED_DEEPSLATE);
-
         this.simpleCross(WindsweptBlocks.SNOWY_SPROUTS);
         this.pot(WindsweptBlocks.POTTED_SNOWY_SPROUTS, this.modLoc("block/potted_snowy_sprouts"));
 
