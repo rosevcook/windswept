@@ -34,7 +34,6 @@ public class NightshadeFeature extends Feature<NoneFeatureConfiguration> {
                         level.setBlock(blockpos, state, 2);
                         generated = true;
                     }
-
                 }
 
         return generated;

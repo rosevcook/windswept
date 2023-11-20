@@ -18,7 +18,7 @@ public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
 
     @Override
     protected void addTags() {
-        this.tag(WindsweptBiomeTags.HAS_BLUEBELLS).add(Biomes.DARK_FOREST).add(Biomes.BIRCH_FOREST, Biomes.OLD_GROWTH_BIRCH_FOREST, WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey());
+        this.tag(WindsweptBiomeTags.HAS_BLUEBELLS).add(Biomes.DARK_FOREST).add(Biomes.BIRCH_FOREST, Biomes.OLD_GROWTH_BIRCH_FOREST, Biomes.OLD_GROWTH_BIRCH_FOREST, Biomes.OLD_GROWTH_SPRUCE_TAIGA, WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey()).addOptional(new ResourceLocation("environmental", "pine_barrens"));
         this.tag(WindsweptBiomeTags.HAS_FOXGLOVES).addTag(BiomeTags.IS_TAIGA);
         this.tag(WindsweptBiomeTags.HAS_TAIGA_FLOWERS).addTag(BiomeTags.IS_TAIGA);
         this.tag(WindsweptBiomeTags.HAS_SNOWY_FLOWERS).addTag(Tags.Biomes.IS_SNOWY);
