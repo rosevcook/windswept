@@ -50,7 +50,6 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
                 WindsweptBlocks.CHESTNUT_TRAPPED_CHEST.get());
 
         //vanilla
-        this.tag(BlockTags.ICE).add(WindsweptBlocks.CUT_ICE.get(), WindsweptBlocks.ICE_SHEET.get(), WindsweptBlocks.CUT_ICE_SHEET.get());
         this.tag(BlockTags.WALLS).add(WindsweptBlocks.BLUE_ICE_BRICK_WALL.get(), WindsweptBlocks.SNOW_BRICK_WALL.get(), WindsweptBlocks.PACKED_ICE_BRICK_WALL.get());
         this.tag(BlockTags.BEEHIVES).add(WindsweptBlocks.HOLLY_BEEHIVE.get(), WindsweptBlocks.CHESTNUT_BEEHIVE.get());
         this.tag(BlockTags.WOODEN_BUTTONS).add(WindsweptBlocks.HOLLY_BUTTON.get(), WindsweptBlocks.CHESTNUT_BUTTON.get());
@@ -95,6 +94,10 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
                 WindsweptBlocks.POTTED_NIGHTSHADE.get(), WindsweptBlocks.POTTED_HOLLY_SAPLING.get(),
                 WindsweptBlocks.POTTED_CHESTNUT_SAPLING.get(), WindsweptBlocks.POTTED_SNOWY_SPROUTS.get());
 
+        this.tag(BlockTags.ICE).add(WindsweptBlocks.PACKED_ICE_STAIRS.get(), WindsweptBlocks.PACKED_ICE_SLAB.get(), WindsweptBlocks.PACKED_ICE_VERTICAL_SLAB.get(),
+                WindsweptBlocks.BLUE_ICE_STAIRS.get(), WindsweptBlocks.BLUE_ICE_SLAB.get(), WindsweptBlocks.BLUE_ICE_VERTICAL_SLAB.get(),
+                WindsweptBlocks.CUT_ICE.get(), WindsweptBlocks.ICE_SHEET.get(), WindsweptBlocks.CUT_ICE_SHEET.get());
+
         this.tag(BlockTags.MINEABLE_WITH_AXE).add(WindsweptBlocks.HOLLY_BOOKSHELF.get(),
                 WindsweptBlocks.HOLLY_VERTICAL_SLAB.get(), WindsweptBlocks.HOLLY_LADDER.get(),
                 WindsweptBlocks.HOLLY_HEDGE.get(), WindsweptBlocks.HOLLY_CHEST.get(),
@@ -124,7 +127,9 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
                 WindsweptBlocks.SNOW_BRICKS.get(), WindsweptBlocks.SNOW_BRICK_SLAB.get(),
                 WindsweptBlocks.SNOW_BRICK_STAIRS.get(), WindsweptBlocks.SNOW_BRICK_VERTICAL_SLAB.get(),
                 WindsweptBlocks.SNOW_BRICK_WALL.get(), WindsweptBlocks.CUT_ICE.get(),
-                WindsweptBlocks.ICE_SHEET.get(), WindsweptBlocks.CUT_ICE_SHEET.get());
+                WindsweptBlocks.ICE_SHEET.get(), WindsweptBlocks.CUT_ICE_SHEET.get(),
+                WindsweptBlocks.PACKED_ICE_STAIRS.get(), WindsweptBlocks.PACKED_ICE_SLAB.get(), WindsweptBlocks.PACKED_ICE_VERTICAL_SLAB.get(),
+                WindsweptBlocks.BLUE_ICE_STAIRS.get(), WindsweptBlocks.BLUE_ICE_SLAB.get(), WindsweptBlocks.BLUE_ICE_VERTICAL_SLAB.get());
 
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(WindsweptBlocks.SNOW_BRICKS.get(),
                 WindsweptBlocks.SNOW_BRICK_SLAB.get(), WindsweptBlocks.SNOW_BRICK_STAIRS.get(),

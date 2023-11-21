@@ -172,7 +172,10 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(WindsweptBlocks.SNOW_BRICK_WALL.get());
             this.add(WindsweptBlocks.SNOW_BRICK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
 
-            // packed ice bricks
+            // packed ice blocks
+            this.dropSelf(WindsweptBlocks.PACKED_ICE_STAIRS.get());
+            this.add(WindsweptBlocks.PACKED_ICE_SLAB.get(), Blocks::createSlabItemTable);
+            this.add(WindsweptBlocks.PACKED_ICE_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
             this.dropSelf(WindsweptBlocks.PACKED_ICE_BRICKS.get());
             this.dropSelf(WindsweptBlocks.CHISELED_PACKED_ICE_BRICKS.get());
             this.dropSelf(WindsweptBlocks.PACKED_ICE_BRICK_STAIRS.get());
@@ -180,7 +183,10 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(WindsweptBlocks.PACKED_ICE_BRICK_WALL.get());
             this.add(WindsweptBlocks.PACKED_ICE_BRICK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
 
-            // blue ice bricks
+            // blue ice blocks
+            this.dropSelf(WindsweptBlocks.BLUE_ICE_STAIRS.get());
+            this.add(WindsweptBlocks.BLUE_ICE_SLAB.get(), Blocks::createSlabItemTable);
+            this.add(WindsweptBlocks.BLUE_ICE_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
             this.dropSelf(WindsweptBlocks.BLUE_ICE_BRICKS.get());
             this.dropSelf(WindsweptBlocks.CHISELED_BLUE_ICE_BRICKS.get());
             this.dropSelf(WindsweptBlocks.BLUE_ICE_BRICK_STAIRS.get());

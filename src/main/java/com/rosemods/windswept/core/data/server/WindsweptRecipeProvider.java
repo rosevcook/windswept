@@ -43,6 +43,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
+        // foods
         ShapelessRecipeBuilder.shapeless(WindsweptItems.WILD_BERRY_JUICE.get()).requires(Items.GLASS_BOTTLE).requires(WindsweptItems.WILD_BERRIES.get(), 3).unlockedBy("has_wild_berries", has(WindsweptItems.WILD_BERRIES.get())).save(consumer, Windswept.REGISTRY_HELPER.prefix("wild_berry_juice"));
         ShapelessRecipeBuilder.shapeless(Items.SUGAR, 3).requires(WindsweptItems.WILD_BERRY_JUICE.get()).unlockedBy("has_wild_berry_juice", has(WindsweptItems.WILD_BERRY_JUICE.get())).save(consumer, Windswept.REGISTRY_HELPER.prefix("wild_berry_juice_to_sugar"));
         ShapelessRecipeBuilder.shapeless(WindsweptItems.WILD_BERRY_BOWL.get()).requires(Items.BOWL).requires(WindsweptItems.WILD_BERRIES.get(), 3).unlockedBy("has_wild_berries", has(WindsweptItems.WILD_BERRIES.get())).save(consumer, Windswept.REGISTRY_HELPER.prefix("wild_berry_bowl"));
@@ -58,6 +59,8 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         conditionalCooking(WindsweptItems.GOAT_SHANKS.get(), WindsweptItems.COOKED_GOAT_SHANKS.get(), new ModLoadedCondition("farmersdelight"), consumer);
         conditionalRecipe(ShapelessRecipeBuilder.shapeless(WindsweptItems.GOAT_STEW.get()).requires(Items.BOWL).requires(WindsweptItems.COOKED_GOAT.get()).requires(Items.BAKED_POTATO).requires(Items.CARROT).requires(Items.BROWN_MUSHROOM).unlockedBy("has_cooked_goat", has(WindsweptItems.COOKED_GOAT.get())), new NotCondition(new ModLoadedCondition("farmersdelight")), consumer, Windswept.REGISTRY_HELPER.prefix("goat_stew"));
         ShapelessRecipeBuilder.shapeless(WindsweptItems.MUTTON_PIE.get()).requires(WindsweptItemTags.COOKED_MUTTON).requires(Items.WHEAT).requires(Items.SUGAR).requires(Tags.Items.EGGS).unlockedBy("has_cooked_mutton", has(Items.COOKED_MUTTON)).save(consumer, Windswept.REGISTRY_HELPER.prefix("mutton_pie"));
+
+        // dyes
         flowerToDye(WindsweptBlocks.RED_ROSE, Items.RED_DYE, consumer);
         flowerToDye(WindsweptBlocks.PINK_ROSE, Items.PINK_DYE, consumer);
         flowerToDye(WindsweptBlocks.BLUE_ROSE, Items.BLUE_DYE, consumer);
@@ -72,23 +75,56 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         tallFlowerToDye(WindsweptBlocks.WHITE_ROSE_BUSH, Items.WHITE_DYE, consumer);
         tallFlowerToDye(WindsweptBlocks.YELLOW_ROSE_BUSH, Items.YELLOW_DYE, consumer);
         tallFlowerToDye(WindsweptBlocks.WITHER_ROSE_BUSH, Items.BLACK_DYE, consumer);
+
+        // other items
         ShapelessRecipeBuilder.shapeless(WindsweptItems.SNOW_CHARGE_BANNER_PATTERN.get()).requires(Items.PAPER).requires(BlueprintItemTags.BUCKETS_POWDER_SNOW).unlockedBy("has_powder_snow_bucket", has(BlueprintItemTags.BUCKETS_POWDER_SNOW)).save(consumer, Windswept.REGISTRY_HELPER.prefix("snow_charge_banner_pattern"));
         ShapelessRecipeBuilder.shapeless(WindsweptItems.SNOW_GOLEM_BANNER_PATTERN.get()).requires(Items.PAPER).requires(Items.GOLDEN_CARROT).unlockedBy("has_golden_carrot", has(Items.GOLDEN_CARROT)).save(consumer, Windswept.REGISTRY_HELPER.prefix("snow_golem_banner_pattern"));
         ShapelessRecipeBuilder.shapeless(WindsweptItems.ROSE_FLOWER_BANNER_PATTERN.get()).requires(Items.PAPER).requires(WindsweptItemTags.ROSES).unlockedBy("has_roses", has(WindsweptItemTags.ROSES)).save(consumer, Windswept.REGISTRY_HELPER.prefix("rose_flower_banner_pattern"));
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(WindsweptItems.FROZEN_FLESH.get()), Items.LEATHER, .35f, 400).unlockedBy("has_frozen_flesh", has(WindsweptItems.FROZEN_FLESH.get())).save(consumer, Windswept.REGISTRY_HELPER.prefix("leather_from_frozen_flesh"));
         ShapedRecipeBuilder.shaped(WindsweptItems.WOODEN_BUCKET.get()).define('#', ItemTags.LOGS).pattern("# #").pattern(" # ").unlockedBy("has_log", has(ItemTags.LOGS)).save(consumer, Windswept.REGISTRY_HELPER.prefix("wooden_bucket"));
+        conditionalRecipe(ShapedRecipeBuilder.shaped(WindsweptItems.SNOW_BOOTS.get()).define('#', Items.IRON_INGOT).define('L', Items.LEATHER).pattern("L L").pattern("L L").pattern("# #").unlockedBy("has_leather", has(Items.LEATHER)), new TagEmptyCondition(WindsweptItemTags.SILVER_INGOT.location()), consumer, Windswept.REGISTRY_HELPER.prefix("snow_boots"));
+        conditionalRecipe(ShapedRecipeBuilder.shaped(WindsweptItems.SNOW_BOOTS.get()).define('#', WindsweptItemTags.SILVER_INGOT).define('L', Items.LEATHER).pattern("L L").pattern("L L").pattern("# #").unlockedBy("has_leather", has(Items.LEATHER)), new NotCondition(new TagEmptyCondition(WindsweptItemTags.SILVER_INGOT.location())), consumer, Windswept.REGISTRY_HELPER.prefix("snow_boots_from_silver"));
+
+        // building blocks
         ShapedRecipeBuilder.shaped(WindsweptBlocks.CUT_ICE.get(), 4).define('#', Items.ICE).pattern("##").pattern("##").unlockedBy("has_ice", has(Items.ICE)).save(consumer, Windswept.REGISTRY_HELPER.prefix("cut_ice"));
         ShapedRecipeBuilder.shaped(WindsweptBlocks.ICE_SHEET.get(), 12).define('#', Items.ICE).pattern("###").pattern("###").unlockedBy("has_ice", has(Items.ICE)).save(consumer, Windswept.REGISTRY_HELPER.prefix("ice_sheet"));
         ShapedRecipeBuilder.shaped(WindsweptBlocks.CUT_ICE_SHEET.get(), 12).define('#', WindsweptBlocks.CUT_ICE.get()).pattern("###").pattern("###").unlockedBy("has_cut_ice", has(WindsweptBlocks.CUT_ICE.get())).save(consumer, Windswept.REGISTRY_HELPER.prefix("cut_ice_sheet"));
-        conditionalRecipe(ShapedRecipeBuilder.shaped(WindsweptItems.SNOW_BOOTS.get()).define('#', Items.IRON_INGOT).define('L', Items.LEATHER).pattern("L L").pattern("L L").pattern("# #").unlockedBy("has_leather", has(Items.LEATHER)), new TagEmptyCondition(WindsweptItemTags.SILVER_INGOT.location()), consumer, Windswept.REGISTRY_HELPER.prefix("snow_boots"));
-        conditionalRecipe(ShapedRecipeBuilder.shaped(WindsweptItems.SNOW_BOOTS.get()).define('#', WindsweptItemTags.SILVER_INGOT).define('L', Items.LEATHER).pattern("L L").pattern("L L").pattern("# #").unlockedBy("has_leather", has(Items.LEATHER)), new NotCondition(new TagEmptyCondition(WindsweptItemTags.SILVER_INGOT.location())), consumer, Windswept.REGISTRY_HELPER.prefix("snow_boots_from_silver"));
+
+        stairs(Blocks.PACKED_ICE, WindsweptBlocks.PACKED_ICE_STAIRS.get(), consumer);
+        slab(Blocks.PACKED_ICE, WindsweptBlocks.PACKED_ICE_SLAB.get(), consumer);
+        verticalSlab(Blocks.PACKED_ICE, WindsweptBlocks.PACKED_ICE_VERTICAL_SLAB.get(), consumer);
+        stonecutting(Blocks.PACKED_ICE, WindsweptBlocks.PACKED_ICE_SLAB.get(), 2, consumer);
+        stonecutting(Blocks.PACKED_ICE, WindsweptBlocks.PACKED_ICE_STAIRS.get(), 1, consumer);
+        conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.PACKED_ICE), WindsweptBlocks.PACKED_ICE_VERTICAL_SLAB.get(), 2).unlockedBy("has_packed_ice", has(Blocks.PACKED_ICE)), getQuarkCondition("vertical_slabs"), consumer, Windswept.REGISTRY_HELPER.prefix( "packed_ice_vertical_slab_from_packed_ice_stonecutting"));
+        stonecutting(Blocks.PACKED_ICE, WindsweptBlocks.CHISELED_PACKED_ICE_BRICKS.get(), 1, consumer);
+        stonecutting(Blocks.PACKED_ICE, WindsweptBlocks.PACKED_ICE_BRICK_SLAB.get(), 2, consumer);
+        stonecutting(Blocks.PACKED_ICE, WindsweptBlocks.PACKED_ICE_BRICK_STAIRS.get(), 1, consumer);
+        stonecutting(Blocks.PACKED_ICE, WindsweptBlocks.PACKED_ICE_BRICK_WALL.get(), 1, consumer);
+        conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.PACKED_ICE), WindsweptBlocks.PACKED_ICE_BRICK_VERTICAL_SLAB.get(), 2).unlockedBy("has_packed_ice", has(Blocks.PACKED_ICE)), getQuarkCondition("vertical_slabs"), consumer, Windswept.REGISTRY_HELPER.prefix( "packed_ice_brick_vertical_slab_from_packed_ice_stonecutting"));
+
+        stairs(Blocks.BLUE_ICE, WindsweptBlocks.BLUE_ICE_STAIRS.get(), consumer);
+        slab(Blocks.BLUE_ICE, WindsweptBlocks.BLUE_ICE_SLAB.get(), consumer);
+        verticalSlab(Blocks.BLUE_ICE, WindsweptBlocks.BLUE_ICE_VERTICAL_SLAB.get(), consumer);
+        stonecutting(Blocks.BLUE_ICE, WindsweptBlocks.BLUE_ICE_SLAB.get(), 2, consumer);
+        stonecutting(Blocks.BLUE_ICE, WindsweptBlocks.BLUE_ICE_STAIRS.get(), 1, consumer);
+        conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.BLUE_ICE), WindsweptBlocks.BLUE_ICE_VERTICAL_SLAB.get(), 2).unlockedBy("has_blue_ice", has(Blocks.BLUE_ICE)), getQuarkCondition("vertical_slabs"), consumer, Windswept.REGISTRY_HELPER.prefix( "blue_ice_vertical_slab_from_blue_ice_stonecutting"));
+        stonecutting(Blocks.BLUE_ICE, WindsweptBlocks.CHISELED_BLUE_ICE_BRICKS.get(), 1, consumer);
+        stonecutting(Blocks.BLUE_ICE, WindsweptBlocks.BLUE_ICE_BRICK_SLAB.get(), 2, consumer);
+        stonecutting(Blocks.BLUE_ICE, WindsweptBlocks.BLUE_ICE_BRICK_STAIRS.get(), 1, consumer);
+        stonecutting(Blocks.BLUE_ICE, WindsweptBlocks.BLUE_ICE_BRICK_WALL.get(), 1, consumer);
+        conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.BLUE_ICE), WindsweptBlocks.BLUE_ICE_BRICK_VERTICAL_SLAB.get(), 2).unlockedBy("has_blue_ice", has(Blocks.BLUE_ICE)), getQuarkCondition("vertical_slabs"), consumer, Windswept.REGISTRY_HELPER.prefix( "blue_ice_brick_vertical_slab_from_blue_ice_stonecutting"));
+        
         brickSet(Blocks.PACKED_ICE, WindsweptBlocks.PACKED_ICE_BRICKS, WindsweptBlocks.CHISELED_PACKED_ICE_BRICKS, WindsweptBlocks.PACKED_ICE_BRICK_SLAB, WindsweptBlocks.PACKED_ICE_BRICK_STAIRS, WindsweptBlocks.PACKED_ICE_BRICK_WALL, WindsweptBlocks.PACKED_ICE_BRICK_VERTICAL_SLAB, consumer);
         brickSet(Blocks.BLUE_ICE, WindsweptBlocks.BLUE_ICE_BRICKS, WindsweptBlocks.CHISELED_BLUE_ICE_BRICKS, WindsweptBlocks.BLUE_ICE_BRICK_SLAB, WindsweptBlocks.BLUE_ICE_BRICK_STAIRS, WindsweptBlocks.BLUE_ICE_BRICK_WALL, WindsweptBlocks.BLUE_ICE_BRICK_VERTICAL_SLAB, consumer);
         brickSet(Blocks.SNOW_BLOCK, WindsweptBlocks.SNOW_BRICKS, null, WindsweptBlocks.SNOW_BRICK_SLAB, WindsweptBlocks.SNOW_BRICK_STAIRS, WindsweptBlocks.SNOW_BRICK_WALL, WindsweptBlocks.SNOW_BRICK_VERTICAL_SLAB, consumer);
+
+        // wood sets
         woodSet("holly", WindsweptItemTags.HOLLY_LOGS, WindsweptBlocks.HOLLY_PLANKS, WindsweptBlocks.HOLLY_SLAB, WindsweptBlocks.HOLLY_STAIRS, WindsweptBlocks.HOLLY_LOG, WindsweptBlocks.HOLLY_WOOD, WindsweptBlocks.STRIPPED_HOLLY_LOG, WindsweptBlocks.STRIPPED_HOLLY_WOOD, WindsweptItems.HOLLY_BOAT, WindsweptBlocks.HOLLY_BUTTON, WindsweptBlocks.HOLLY_DOOR, WindsweptBlocks.HOLLY_TRAPDOOR, WindsweptBlocks.HOLLY_FENCE, WindsweptBlocks.HOLLY_FENCE_GATE, WindsweptBlocks.HOLLY_PRESSURE_PLATE, WindsweptBlocks.HOLLY_SIGNS, WindsweptBlocks.HOLLY_VERTICAL_SLAB, WindsweptBlocks.HOLLY_POST, WindsweptBlocks.STRIPPED_HOLLY_POST, WindsweptBlocks.HOLLY_BOARDS, WindsweptBlocks.HOLLY_BEEHIVE, WindsweptBlocks.HOLLY_LADDER, WindsweptBlocks.HOLLY_BOOKSHELF, WindsweptBlocks.HOLLY_CHEST, WindsweptBlocks.HOLLY_TRAPPED_CHEST, WindsweptItems.LARGE_HOLLY_BOAT, WindsweptItems.HOLLY_FURNACE_BOAT, WindsweptBlocks.VERTICAL_HOLLY_PLANKS, WindsweptBlocks.HOLLY_CABINET, consumer);
         woodSet("chestnut", WindsweptItemTags.CHESTNUT_LOGS, WindsweptBlocks.CHESTNUT_PLANKS, WindsweptBlocks.CHESTNUT_SLAB, WindsweptBlocks.CHESTNUT_STAIRS, WindsweptBlocks.CHESTNUT_LOG, WindsweptBlocks.CHESTNUT_WOOD, WindsweptBlocks.STRIPPED_CHESTNUT_LOG, WindsweptBlocks.STRIPPED_CHESTNUT_WOOD, WindsweptItems.CHESTNUT_BOAT, WindsweptBlocks.CHESTNUT_BUTTON, WindsweptBlocks.CHESTNUT_DOOR, WindsweptBlocks.CHESTNUT_TRAPDOOR, WindsweptBlocks.CHESTNUT_FENCE, WindsweptBlocks.CHESTNUT_FENCE_GATE, WindsweptBlocks.CHESTNUT_PRESSURE_PLATE, WindsweptBlocks.CHESTNUT_SIGNS, WindsweptBlocks.CHESTNUT_VERTICAL_SLAB, WindsweptBlocks.CHESTNUT_POST, WindsweptBlocks.STRIPPED_CHESTNUT_POST, WindsweptBlocks.CHESTNUT_BOARDS, WindsweptBlocks.CHESTNUT_BEEHIVE, WindsweptBlocks.CHESTNUT_LADDER, WindsweptBlocks.CHESTNUT_BOOKSHELF, WindsweptBlocks.CHESTNUT_CHEST, WindsweptBlocks.CHESTNUT_TRAPPED_CHEST, WindsweptItems.LARGE_CHESTNUT_BOAT, WindsweptItems.CHESTNUT_FURNACE_BOAT, WindsweptBlocks.VERTICAL_CHESTNUT_PLANKS, WindsweptBlocks.CHESTNUT_CABINET, consumer);
         leafSet(WindsweptItemTags.HOLLY_LOGS, WindsweptBlocks.HOLLY_LEAVES, WindsweptBlocks.HOLLY_HEDGE, WindsweptBlocks.HOLLY_LEAF_CARPET, WindsweptBlocks.HOLLY_LEAF_PILE, consumer);
         leafSet(WindsweptItemTags.CHESTNUT_LOGS, WindsweptBlocks.CHESTNUT_LEAVES, WindsweptBlocks.CHESTNUT_HEDGE, WindsweptBlocks.CHESTNUT_LEAF_CARPET, WindsweptBlocks.CHESTNUT_LEAF_PILE, consumer);
+
+        // compressed blocks
         conditionalRecipe(ShapedRecipeBuilder.shaped(WindsweptBlocks.WILD_BERRY_BASKET.get()).define('#', WindsweptItems.WILD_BERRIES.get()).pattern("###").pattern("###").pattern("###").unlockedBy("has_berries", has(WindsweptItems.WILD_BERRIES.get())), new OrCondition(new ModLoadedCondition("berry_good"), getQuarkCondition("berry_sack")), consumer, Windswept.REGISTRY_HELPER.prefix("wild_berry_basket"));
         conditionalRecipe(ShapelessRecipeBuilder.shapeless(WindsweptItems.WILD_BERRIES.get(), 9).requires(WindsweptBlocks.WILD_BERRY_BASKET.get()).unlockedBy("has_WILD_BERRY_BASKET", has(WindsweptBlocks.WILD_BERRY_BASKET.get())), new OrCondition(new ModLoadedCondition("berry_good"), getQuarkCondition("berry_sack")), consumer, Windswept.REGISTRY_HELPER.prefix("wild_berry_basket_revert"));
         conditionalRecipe(ShapelessRecipeBuilder.shapeless(WindsweptItems.WILD_BERRY_PIPS.get()).requires(WindsweptItems.WILD_BERRIES.get()).unlockedBy("has_wild_berries", has(WindsweptItems.WILD_BERRIES.get())), new ModLoadedCondition("berry_good"), consumer, Windswept.REGISTRY_HELPER.prefix("wild_berry_pips"));

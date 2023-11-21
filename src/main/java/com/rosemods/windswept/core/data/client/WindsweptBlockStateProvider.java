@@ -107,6 +107,9 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
         this.wall(WindsweptBlocks.SNOW_BRICK_WALL, WindsweptBlocks.SNOW_BRICKS);
         this.verticalSlab(WindsweptBlocks.SNOW_BRICK_VERTICAL_SLAB, WindsweptBlocks.SNOW_BRICKS);
 
+        this.stairs(WindsweptBlocks.PACKED_ICE_STAIRS, () -> Blocks.PACKED_ICE);
+        this.slab(WindsweptBlocks.PACKED_ICE_SLAB, () -> Blocks.PACKED_ICE);
+        this.verticalSlab(WindsweptBlocks.PACKED_ICE_VERTICAL_SLAB, () -> Blocks.PACKED_ICE);
         this.cubeAll(WindsweptBlocks.PACKED_ICE_BRICKS);
         this.cubeAll(WindsweptBlocks.CHISELED_PACKED_ICE_BRICKS);
         this.stairs(WindsweptBlocks.PACKED_ICE_BRICK_STAIRS, WindsweptBlocks.PACKED_ICE_BRICKS);
@@ -114,6 +117,9 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
         this.wall(WindsweptBlocks.PACKED_ICE_BRICK_WALL, WindsweptBlocks.PACKED_ICE_BRICKS);
         this.verticalSlab(WindsweptBlocks.PACKED_ICE_BRICK_VERTICAL_SLAB, WindsweptBlocks.PACKED_ICE_BRICKS);
 
+        this.stairs(WindsweptBlocks.BLUE_ICE_STAIRS, () -> Blocks.BLUE_ICE);
+        this.slab(WindsweptBlocks.BLUE_ICE_SLAB, () -> Blocks.BLUE_ICE);
+        this.verticalSlab(WindsweptBlocks.BLUE_ICE_VERTICAL_SLAB, () -> Blocks.BLUE_ICE);
         this.cubeAll(WindsweptBlocks.BLUE_ICE_BRICKS);
         this.cubeAll(WindsweptBlocks.CHISELED_BLUE_ICE_BRICKS);
         this.stairs(WindsweptBlocks.BLUE_ICE_BRICK_STAIRS, WindsweptBlocks.BLUE_ICE_BRICKS);

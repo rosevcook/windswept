@@ -1,5 +1,11 @@
 {
   "values": [
+    "windswept:packed_ice_stairs",
+    "windswept:packed_ice_slab",
+    "windswept:packed_ice_vertical_slab",
+    "windswept:blue_ice_stairs",
+    "windswept:blue_ice_slab",
+    "windswept:blue_ice_vertical_slab",
     "windswept:cut_ice",
     "windswept:ice_sheet",
     "windswept:cut_ice_sheet"

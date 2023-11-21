@@ -162,6 +162,9 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(WindsweptBlocks.SNOW_BRICK_WALL);
         this.translateBlock(WindsweptBlocks.SNOW_BRICK_VERTICAL_SLAB);
 
+        this.translateBlock(WindsweptBlocks.PACKED_ICE_STAIRS);
+        this.translateBlock(WindsweptBlocks.PACKED_ICE_SLAB);
+        this.translateBlock(WindsweptBlocks.PACKED_ICE_VERTICAL_SLAB);
         this.translateBlock(WindsweptBlocks.PACKED_ICE_BRICKS);
         this.translateBlock(WindsweptBlocks.CHISELED_PACKED_ICE_BRICKS);
         this.translateBlock(WindsweptBlocks.PACKED_ICE_BRICK_STAIRS);
@@ -169,6 +172,9 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(WindsweptBlocks.PACKED_ICE_BRICK_WALL);
         this.translateBlock(WindsweptBlocks.PACKED_ICE_BRICK_VERTICAL_SLAB);
 
+        this.translateBlock(WindsweptBlocks.BLUE_ICE_STAIRS);
+        this.translateBlock(WindsweptBlocks.BLUE_ICE_SLAB);
+        this.translateBlock(WindsweptBlocks.BLUE_ICE_VERTICAL_SLAB);
         this.translateBlock(WindsweptBlocks.BLUE_ICE_BRICKS);
         this.translateBlock(WindsweptBlocks.CHISELED_BLUE_ICE_BRICKS);
         this.translateBlock(WindsweptBlocks.BLUE_ICE_BRICK_STAIRS);
