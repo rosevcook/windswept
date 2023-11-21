@@ -19,7 +19,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 
-import java.util.Objects;
 import java.util.function.Supplier;
 
 public class DrinkableBottleItem extends HoneyBottleItem {

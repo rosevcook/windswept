@@ -7,7 +7,6 @@ import com.rosemods.windswept.common.block.holly.HollyLeavesBlock;
 import com.rosemods.windswept.common.block.holly.HollySaplingBlock;
 import com.rosemods.windswept.common.block.nightshade.NightShadeFlowerPotBlock;
 import com.rosemods.windswept.common.block.nightshade.NightshadeFlowerBlock;
-import com.rosemods.windswept.common.block.WildBerryBushBlock;
 import com.rosemods.windswept.common.world.gen.tree.ChestnutTreeGrower;
 import com.rosemods.windswept.common.world.gen.tree.HollyTreeGrower;
 import com.rosemods.windswept.core.Windswept;
@@ -188,7 +187,7 @@ public class WindsweptBlocks {
     // Mushroom Baskets //
 
     public static final RegistryObject<Block> RED_MUSHROOM_BASKET = HELPER.createFuelBlock("red_mushroom_basket", () -> new BlueprintDirectionalBlock(WindsweptProperties.CRATE), 300, ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD) ? CreativeModeTab.TAB_DECORATIONS : null);
-    public static final RegistryObject<Block> BROWN_MUSHROOM_BASKET = HELPER.createFuelBlock("brown_mushroom_basket", () -> new BlueprintDirectionalBlock(WindsweptProperties.CRATE), 300, ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD)  ? CreativeModeTab.TAB_DECORATIONS : null);
+    public static final RegistryObject<Block> BROWN_MUSHROOM_BASKET = HELPER.createFuelBlock("brown_mushroom_basket", () -> new BlueprintDirectionalBlock(WindsweptProperties.CRATE), 300, ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD) ? CreativeModeTab.TAB_DECORATIONS : null);
     public static final RegistryObject<Block> GLOW_SHROOM_BASKET = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "glow_shroom_basket", () -> new BlueprintDirectionalBlock(WindsweptProperties.GLOW_SHROOM_BASKET), 300, CreativeModeTab.TAB_DECORATIONS);
 
     // Misc //
