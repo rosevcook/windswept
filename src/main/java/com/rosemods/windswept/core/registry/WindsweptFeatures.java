@@ -1,7 +1,7 @@
 package com.rosemods.windswept.core.registry;
 
 import com.google.common.collect.ImmutableList;
-import com.rosemods.windswept.common.block.wild_berry.WildBerryBushBlock;
+import com.rosemods.windswept.common.block.WildBerryBushBlock;
 import com.rosemods.windswept.common.world.gen.feature.BluebellsFeature;
 import com.rosemods.windswept.common.world.gen.feature.NightshadeFeature;
 import com.rosemods.windswept.common.world.gen.feature.SnowySproutsFeature;

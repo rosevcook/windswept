@@ -1,4 +1,4 @@
-package com.rosemods.windswept.common.block.wild_berry;
+package com.rosemods.windswept.common.block;
 
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.teamabnormals.blueprint.core.util.item.filling.TargetedItemCategoryFiller;
@@ -42,11 +42,6 @@ public class WildBerryBushBlock extends BushBlock implements BonemealableBlock {
     public WildBerryBushBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(AGE, Integer.valueOf(0)));
-    }
-
-    @Override
-    public ItemStack getCloneItemStack(BlockGetter level, BlockPos pos, BlockState state) {
-        return WindsweptItems.WILD_BERRIES.get().getDefaultInstance();
     }
 
     @Override

@@ -7,8 +7,7 @@ import com.rosemods.windswept.common.block.holly.HollyLeavesBlock;
 import com.rosemods.windswept.common.block.holly.HollySaplingBlock;
 import com.rosemods.windswept.common.block.nightshade.NightShadeFlowerPotBlock;
 import com.rosemods.windswept.common.block.nightshade.NightshadeFlowerBlock;
-import com.rosemods.windswept.common.block.wild_berry.WildBerryBushBlock;
-import com.rosemods.windswept.common.block.wild_berry.WildBerryBushPipsBlock;
+import com.rosemods.windswept.common.block.WildBerryBushBlock;
 import com.rosemods.windswept.common.world.gen.tree.ChestnutTreeGrower;
 import com.rosemods.windswept.common.world.gen.tree.HollyTreeGrower;
 import com.rosemods.windswept.core.Windswept;
@@ -185,7 +184,6 @@ public class WindsweptBlocks {
 
     public static final RegistryObject<Block> WILD_BERRY_BUSH = HELPER.createBlockNoItem("wild_berry_bush", () -> new WildBerryBushBlock(WindsweptProperties.WILD_BERRY_BUSH));
     public static final RegistryObject<Block> WILD_BERRY_BASKET = HELPER.createFuelBlock("wild_berry_basket", () -> new BlueprintDirectionalBlock(WindsweptProperties.CRATE), 300, ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD) ? CreativeModeTab.TAB_DECORATIONS : null);
-    public static final RegistryObject<Block> WILD_BERRY_BUSH_PIPS = HELPER.createBlockNoItem("wild_berry_bush_pips", () -> new WildBerryBushPipsBlock(WindsweptProperties.WILD_BERRY_BUSH));
 
     // Mushroom Baskets //
 

@@ -1,7 +1,7 @@
 package com.rosemods.windswept.core.data.client;
 
 import com.mojang.datafixers.util.Pair;
-import com.rosemods.windswept.common.block.wild_berry.WildBerryBushBlock;
+import com.rosemods.windswept.common.block.WildBerryBushBlock;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock;
@@ -147,7 +147,6 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
 
         this.wildBerryBush(WindsweptBlocks.WILD_BERRY_BUSH);
         this.compressedBlock(WindsweptBlocks.WILD_BERRY_BASKET);
-        this.simpleCross(WindsweptBlocks.WILD_BERRY_BUSH_PIPS);
 
         this.compressedBlock(WindsweptBlocks.RED_MUSHROOM_BASKET);
         this.compressedBlock(WindsweptBlocks.BROWN_MUSHROOM_BASKET);

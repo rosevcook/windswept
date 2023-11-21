@@ -105,7 +105,6 @@ public final class WindsweptBlockInfo {
         DataUtil.registerFlammable(WindsweptBlocks.CHESTNUT_HEDGE.get(), 5, 20);
         DataUtil.registerFlammable(WindsweptBlocks.CHESTNUT_LEAF_PILE.get(), 30, 60);
 
-        DataUtil.registerFlammable(WindsweptBlocks.WILD_BERRY_BUSH_PIPS.get(), 60, 100);
         DataUtil.registerFlammable(WindsweptBlocks.WILD_BERRY_BUSH.get(), 60, 100);
 
         DataUtil.registerFlammable(WindsweptBlocks.SNOWY_SPROUTS.get(), 60, 100);

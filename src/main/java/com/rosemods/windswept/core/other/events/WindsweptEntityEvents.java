@@ -108,12 +108,6 @@ public class WindsweptEntityEvents {
     }
 
     @SubscribeEvent
-    public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
-        if (event.getItemStack().is(WindsweptItems.WILD_BERRIES.get()) && ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD))
-            event.setUseItem(Result.DENY);
-    }
-
-    @SubscribeEvent
     public static void onLivingSpawn(LivingSpawnEvent.CheckSpawn event) {
         Mob mob = event.getEntity();
         LevelAccessor level = event.getLevel();

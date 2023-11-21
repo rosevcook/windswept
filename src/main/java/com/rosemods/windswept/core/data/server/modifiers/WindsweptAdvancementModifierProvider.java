@@ -27,7 +27,7 @@ public class WindsweptAdvancementModifierProvider extends AdvancementModifierPro
 
     @Override
     protected void registerEntries() {
-        final List<Block> seedsBlocks = List.of(WindsweptBlocks.WILD_BERRY_BUSH_PIPS.get());
+        final List<Block> seedsBlocks = List.of(WindsweptBlocks.WILD_BERRY_BUSH.get());
         final List<EntityType<?>> killedMobs = List.of(WindsweptEntities.CHILLED.get());
 
         this.entry("balanced_diet").selects("husbandry/balanced_diet").addModifier(this.food().requirements(RequirementsStrategy.AND).build());

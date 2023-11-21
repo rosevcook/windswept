@@ -234,7 +234,6 @@ public class WindsweptLootTableProvider extends LootTableProvider {
                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 2f)))
                             .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));
             this.dropSelf(WindsweptBlocks.WILD_BERRY_BASKET.get());
-            this.dropOther(WindsweptBlocks.WILD_BERRY_BUSH_PIPS.get(), WindsweptItems.WILD_BERRY_PIPS.get());
 
             // mushroom crates
             this.dropSelf(WindsweptBlocks.RED_MUSHROOM_BASKET.get());
