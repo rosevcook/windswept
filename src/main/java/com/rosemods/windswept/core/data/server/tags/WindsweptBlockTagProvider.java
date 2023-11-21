@@ -5,6 +5,7 @@ import com.rosemods.windswept.core.other.tags.WindsweptBlockTags;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintBlockTags;
 import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
@@ -26,7 +27,13 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
         this.tag(WindsweptBlockTags.CHESTNUT_LOGS).add(WindsweptBlocks.CHESTNUT_LOG.get(), WindsweptBlocks.CHESTNUT_WOOD.get(), WindsweptBlocks.STRIPPED_CHESTNUT_LOG.get(), WindsweptBlocks.STRIPPED_CHESTNUT_WOOD.get());
         this.tag(WindsweptBlockTags.CHESTNUT_LEAVES).add(WindsweptBlocks.CHESTNUT_LEAVES.get());
         this.tag(WindsweptBlockTags.SNOW_BOOTS_BLOCKS).addTag(BlockTags.SNOW).add(WindsweptBlocks.SNOW_BRICKS.get(), WindsweptBlocks.SNOW_BRICK_SLAB.get(), WindsweptBlocks.SNOW_BRICK_WALL.get(), WindsweptBlocks.SNOW_BRICK_VERTICAL_SLAB.get());
-        this.tag(WindsweptBlockTags.DEFAULT_WHITE_TEXT).add(WindsweptBlocks.HOLLY_SIGNS.getFirst().get(), WindsweptBlocks.HOLLY_SIGNS.getSecond().get(), Blocks.DARK_OAK_SIGN, Blocks.DARK_OAK_WALL_SIGN);
+        this.tag(WindsweptBlockTags.DEFAULT_WHITE_TEXT).add(WindsweptBlocks.HOLLY_SIGNS.getFirst().get(), WindsweptBlocks.HOLLY_SIGNS.getSecond().get(), Blocks.DARK_OAK_SIGN, Blocks.DARK_OAK_WALL_SIGN)
+                .addOptional(new ResourceLocation("environmental", "cherry_sign"))
+                .addOptional(new ResourceLocation("environmental", "cherry_wall_sign"))
+                .addOptional(new ResourceLocation("atmospheric", "grimwood_sign"))
+                .addOptional(new ResourceLocation("atmospheric", "grimwood_wall_sign"))
+                .addOptional(new ResourceLocation("caverns_and_chasms", "azalea_sign"))
+                .addOptional(new ResourceLocation("caverns_and_chasms", "azalea_wall_sign"));
 
         //woodworks
         this.tag(BlueprintBlockTags.LEAF_PILES).add(WindsweptBlocks.HOLLY_LEAF_PILE.get(), WindsweptBlocks.CHESTNUT_LEAF_PILE.get());
