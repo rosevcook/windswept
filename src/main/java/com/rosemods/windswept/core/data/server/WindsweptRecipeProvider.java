@@ -96,6 +96,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         stonecutting(Blocks.PACKED_ICE, WindsweptBlocks.PACKED_ICE_SLAB.get(), 2, consumer);
         stonecutting(Blocks.PACKED_ICE, WindsweptBlocks.PACKED_ICE_STAIRS.get(), 1, consumer);
         conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.PACKED_ICE), WindsweptBlocks.PACKED_ICE_VERTICAL_SLAB.get(), 2).unlockedBy("has_packed_ice", has(Blocks.PACKED_ICE)), getQuarkCondition("vertical_slabs"), consumer, Windswept.REGISTRY_HELPER.prefix( "packed_ice_vertical_slab_from_packed_ice_stonecutting"));
+        stonecutting(Blocks.PACKED_ICE, WindsweptBlocks.PACKED_ICE_BRICKS.get(), 1, consumer);
         stonecutting(Blocks.PACKED_ICE, WindsweptBlocks.CHISELED_PACKED_ICE_BRICKS.get(), 1, consumer);
         stonecutting(Blocks.PACKED_ICE, WindsweptBlocks.PACKED_ICE_BRICK_SLAB.get(), 2, consumer);
         stonecutting(Blocks.PACKED_ICE, WindsweptBlocks.PACKED_ICE_BRICK_STAIRS.get(), 1, consumer);
@@ -108,6 +109,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         stonecutting(Blocks.BLUE_ICE, WindsweptBlocks.BLUE_ICE_SLAB.get(), 2, consumer);
         stonecutting(Blocks.BLUE_ICE, WindsweptBlocks.BLUE_ICE_STAIRS.get(), 1, consumer);
         conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.BLUE_ICE), WindsweptBlocks.BLUE_ICE_VERTICAL_SLAB.get(), 2).unlockedBy("has_blue_ice", has(Blocks.BLUE_ICE)), getQuarkCondition("vertical_slabs"), consumer, Windswept.REGISTRY_HELPER.prefix( "blue_ice_vertical_slab_from_blue_ice_stonecutting"));
+        stonecutting(Blocks.BLUE_ICE, WindsweptBlocks.BLUE_ICE_BRICKS.get(), 1, consumer);
         stonecutting(Blocks.BLUE_ICE, WindsweptBlocks.CHISELED_BLUE_ICE_BRICKS.get(), 1, consumer);
         stonecutting(Blocks.BLUE_ICE, WindsweptBlocks.BLUE_ICE_BRICK_SLAB.get(), 2, consumer);
         stonecutting(Blocks.BLUE_ICE, WindsweptBlocks.BLUE_ICE_BRICK_STAIRS.get(), 1, consumer);
@@ -163,7 +165,6 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 
     private static void brickSet(ItemLike ingredient, RegistryObject<Block> block, @Nullable RegistryObject<Block> chiseled, RegistryObject<Block> slab, RegistryObject<Block> stairs, RegistryObject<Block> wall, RegistryObject<Block> verticalSlab, Consumer<FinishedRecipe> consumer) {
         ShapedRecipeBuilder.shaped(block.get(), 4).define('#', ingredient).pattern("##").pattern("##").unlockedBy("has_" + getName(ingredient), has(ingredient)).save(consumer, Windswept.REGISTRY_HELPER.prefix(getName(block.get())));
-        stonecutting(ingredient.asItem(), block.get(), 1, consumer);
         stonecutting(block.get(), slab.get(), 2, consumer);
         stonecutting(block.get(), stairs.get(), 1, consumer);
         stairs(block.get(), stairs.get(), consumer);
