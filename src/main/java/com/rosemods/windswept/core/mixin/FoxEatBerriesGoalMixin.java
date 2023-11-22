@@ -27,7 +27,7 @@ public abstract class FoxEatBerriesGoalMixin extends MoveToBlockGoal {
         super(mob, speedModifier, searchRange);
     }
 
-    @Inject(at = @At("HEAD"), method = "onReachedTarget")
+    @Inject(method = "onReachedTarget", at = @At("HEAD"))
     private void onReachedTarget(CallbackInfo ci) {
         BlockState state = this.mob.level.getBlockState(this.blockPos);
 

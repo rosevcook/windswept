@@ -28,12 +28,12 @@ public class RoseFlowerBlock extends BlueprintFlowerBlock implements Bonemealabl
 
     @Override
     public boolean isValidBonemealTarget(BlockGetter getter, BlockPos pos, BlockState state, boolean isClient) {
-        return true;
+        return getter.getBlockState(pos.above()).getMaterial().isReplaceable();
     }
 
     @Override
     public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state) {
-        return random.nextInt(2) == 0;
+        return true;
     }
 
     @Override
