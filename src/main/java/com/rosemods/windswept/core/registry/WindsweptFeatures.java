@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.rosemods.windswept.common.block.WildBerryBushBlock;
 import com.rosemods.windswept.common.world.gen.feature.BluebellsFeature;
 import com.rosemods.windswept.common.world.gen.feature.NightshadeFeature;
+import com.rosemods.windswept.common.world.gen.feature.RoseFeature;
 import com.rosemods.windswept.common.world.gen.feature.SnowySproutsFeature;
 import com.rosemods.windswept.common.world.gen.tree.decorator.BranchDecorator;
 import com.rosemods.windswept.common.world.gen.tree.foliage_placer.ChestnutFoliagePlacer;
@@ -44,6 +45,7 @@ public final class WindsweptFeatures {
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> SNOWY_SPROUTS_PATCH = FEATURES.register("snowy_sprouts_patch", SnowySproutsFeature::new);
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> NIGHTSHADE_PATCH = FEATURES.register("nightshade_patch", NightshadeFeature::new);
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> BLUEBELL_PATCH = FEATURES.register("bluebell_patch", BluebellsFeature::new);
+    public static final RegistryObject<Feature<RoseFeature.RoseFeatureConfiguration>> ROSE_PATCH = FEATURES.register("rose_patch", RoseFeature::new);
 
     public static class Configs {
         public static final TreeConfiguration HOLLY_TREE = createHollyTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.HOLLY_LOG.get(), 2))).build();
@@ -52,18 +54,12 @@ public final class WindsweptFeatures {
         public static final TreeConfiguration CHESTNUT_TREE = createChestnutTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.CHESTNUT_LOG.get(), 4))).build();
         public static final TreeConfiguration CHESTNUT_TREE_BEES = createChestnutTree().decorators(List.of(new BeehiveDecorator(.005f), BranchDecorator.create(WindsweptBlocks.CHESTNUT_LOG.get(), 4))).build();
 
-        public static final RandomPatchConfiguration RED_ROSE = createPlantPatch(64, WindsweptBlocks.RED_ROSE.get().defaultBlockState());
-        public static final RandomPatchConfiguration WHITE_ROSE = createPlantPatch(64, WindsweptBlocks.WHITE_ROSE.get().defaultBlockState());
-        public static final RandomPatchConfiguration PINK_ROSE = createPlantPatch(64, WindsweptBlocks.PINK_ROSE.get().defaultBlockState());
-        public static final RandomPatchConfiguration BLUE_ROSE = createPlantPatch(64, WindsweptBlocks.BLUE_ROSE.get().defaultBlockState());
-        public static final RandomPatchConfiguration YELLOW_ROSE = createPlantPatch(64, WindsweptBlocks.YELLOW_ROSE.get().defaultBlockState());
         public static final RandomPatchConfiguration FOXGLOVE = createPlantPatch(64, WindsweptBlocks.FOXGLOVE.get().defaultBlockState());
         public static final RandomPatchConfiguration WILD_BERRY_BUSH = createPlantPatch(32, WindsweptBlocks.WILD_BERRY_BUSH.get().defaultBlockState().setValue(WildBerryBushBlock.AGE, 2));
         public static final RandomPatchConfiguration WHITE_ROSE_BUSH = createPlantPatch(32, WindsweptBlocks.WHITE_ROSE_BUSH.get().defaultBlockState());
         public static final RandomPatchConfiguration BLUE_ROSE_BUSH = createPlantPatch(32, WindsweptBlocks.BLUE_ROSE_BUSH.get().defaultBlockState());
         public static final RandomPatchConfiguration YELLOW_ROSE_BUSH = createPlantPatch(32, WindsweptBlocks.YELLOW_ROSE_BUSH.get().defaultBlockState());
         public static final RandomPatchConfiguration CHESTNUT_FERNS = FeatureUtils.simpleRandomPatchConfiguration(4, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.FERN))));
-
 
         private static RandomPatchConfiguration createPlantPatch(int tries, BlockState state) {
             return new RandomPatchConfiguration(tries, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
@@ -97,11 +93,12 @@ public final class WindsweptFeatures {
     public static class Features {
         public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES = DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, Windswept.MODID);
 
-        public static final RegistryObject<ConfiguredFeature<?, ?>> RED_ROSE = CONFIGURED_FEATURES.register("red_rose", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.RED_ROSE));
-        public static final RegistryObject<ConfiguredFeature<?, ?>> WHITE_ROSE = CONFIGURED_FEATURES.register("white_rose", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.WHITE_ROSE));
-        public static final RegistryObject<ConfiguredFeature<?, ?>> PINK_ROSE = CONFIGURED_FEATURES.register("pink_rose", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.PINK_ROSE));
-        public static final RegistryObject<ConfiguredFeature<?, ?>> BLUE_ROSE = CONFIGURED_FEATURES.register("blue_rose", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.BLUE_ROSE));
-        public static final RegistryObject<ConfiguredFeature<?, ?>> YELLOW_ROSE = CONFIGURED_FEATURES.register("yellow_rose", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.YELLOW_ROSE));
+        public static final RegistryObject<ConfiguredFeature<?, ?>> RED_ROSE = CONFIGURED_FEATURES.register("red_rose", () -> new ConfiguredFeature<>(ROSE_PATCH.get(), RoseFeature.config(WindsweptBlocks.RED_ROSE)));
+        public static final RegistryObject<ConfiguredFeature<?, ?>> WHITE_ROSE = CONFIGURED_FEATURES.register("white_rose", () -> new ConfiguredFeature<>(ROSE_PATCH.get(), RoseFeature.config(WindsweptBlocks.WHITE_ROSE)));
+        public static final RegistryObject<ConfiguredFeature<?, ?>> PINK_ROSE = CONFIGURED_FEATURES.register("pink_rose", () -> new ConfiguredFeature<>(ROSE_PATCH.get(), RoseFeature.config(WindsweptBlocks.PINK_ROSE)));
+        public static final RegistryObject<ConfiguredFeature<?, ?>> BLUE_ROSE = CONFIGURED_FEATURES.register("blue_rose", () -> new ConfiguredFeature<>(ROSE_PATCH.get(), RoseFeature.config(WindsweptBlocks.BLUE_ROSE)));
+        public static final RegistryObject<ConfiguredFeature<?, ?>> YELLOW_ROSE = CONFIGURED_FEATURES.register("yellow_rose", () -> new ConfiguredFeature<>(ROSE_PATCH.get(), RoseFeature.config(WindsweptBlocks.YELLOW_ROSE)));
+
         public static final RegistryObject<ConfiguredFeature<?, ?>> FOXGLOVE = CONFIGURED_FEATURES.register("foxglove", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.FOXGLOVE));
         public static final RegistryObject<ConfiguredFeature<?, ?>> CHESTNUT_FERNS = CONFIGURED_FEATURES.register("chestnut_ferns", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.CHESTNUT_FERNS));
 
