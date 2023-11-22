@@ -31,7 +31,7 @@ public class ChestnutFoliagePlacer extends FoliagePlacer {
         for (int x = -1; x <= 1; x++)
             for (int y = -1; y <= 1; y++)
                 for (int z = -1; z <= 1; z++)
-                    if (x == 0 || y == 0 || z == 0)
+                    if (x == 0 || y == 0 || z == 0 || rand.nextInt(10) == 0)
                         tryPlaceLeaf(level, consumer, rand, config, foliage.pos().offset(x, y, z));
     }
 

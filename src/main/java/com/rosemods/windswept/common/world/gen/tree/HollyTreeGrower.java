@@ -14,4 +14,3 @@ public class HollyTreeGrower extends AbstractTreeGrower {
     }
 
 }
-

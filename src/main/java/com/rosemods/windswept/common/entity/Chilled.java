@@ -57,7 +57,7 @@ public class Chilled extends Zombie {
 
     @Override
     protected void populateDefaultEquipmentSlots(RandomSource rand, DifficultyInstance difficulty) {
-        cncCompat(rand);
+        this.cncCompat(rand);
 
         if (rand.nextFloat() < (this.level.getDifficulty() == Difficulty.HARD ? .5f : .33f))
             this.setItemSlot(EquipmentSlot.FEET, rand.nextBoolean() ? Items.LEATHER_BOOTS.getDefaultInstance() : WindsweptItems.SNOW_BOOTS.get().getDefaultInstance());
