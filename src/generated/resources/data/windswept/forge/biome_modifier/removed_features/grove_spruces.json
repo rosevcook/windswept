@@ -1,6 +1,6 @@
 {
   "type": "forge:remove_features",
-  "biomes": "#windswept:has_feature/grove_holly_trees",
+  "biomes": "minecraft:grove",
   "features": "minecraft:trees_grove",
   "steps": "vegetal_decoration"
 }

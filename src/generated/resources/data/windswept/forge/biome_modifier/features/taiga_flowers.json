@@ -1,7 +1,8 @@
 {
   "type": "forge:add_features",
-  "biomes": "#windswept:has_feature/taiga_flowers",
+  "biomes": "#minecraft:is_taiga",
   "features": [
+    "windswept:foxglove",
     "windswept:red_rose",
     "windswept:yellow_rose"
   ],
