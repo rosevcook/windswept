@@ -14,6 +14,7 @@ public class WindsweptConfig {
 
     public static class Common {
         public final ConfigValue<Integer> woodenBucketDurabilty;
+        public final ConfigValue<Double> bumblebeeDiscChance;
         public final ConfigValue<Boolean> iceBoatNerf;
         public final ConfigValue<Boolean> birchBranches;
         public final ConfigValue<Boolean> strays;
@@ -24,6 +25,7 @@ public class WindsweptConfig {
         private Common(ForgeConfigSpec.Builder builder) {
             builder.comment("Windswept Content Tweaks").push("content");
             this.woodenBucketDurabilty = builder.comment("How much durability Wooden Buckets should have").defineInRange("Wooden Bucket Durability", 24, 1, 1000);
+            this.bumblebeeDiscChance = builder.comment("The chance that the Bumblebee Music Disc should drop from Beehives and Bee Nests").defineInRange("Bumblebee Disc Chance", .01d, 0d, 1d);
             builder.pop();
 
             builder.comment("Vanilla Gameplay Tweaks").push("tweaks");
