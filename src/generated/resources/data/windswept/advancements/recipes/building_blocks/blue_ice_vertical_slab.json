@@ -4,34 +4,34 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_the_recipe": {
-            "conditions": {
-              "recipe": "windswept:blue_ice_revert"
-            },
-            "trigger": "minecraft:recipe_unlocked"
-          },
-          "has_vertical_slab": {
+          "has_slab": {
             "conditions": {
               "items": [
                 {
                   "items": [
-                    "minecraft:blue_ice"
+                    "windswept:blue_ice_slab"
                   ]
                 }
               ]
             },
             "trigger": "minecraft:inventory_changed"
+          },
+          "has_the_recipe": {
+            "conditions": {
+              "recipe": "windswept:blue_ice_vertical_slab"
+            },
+            "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
           [
-            "has_vertical_slab",
+            "has_slab",
             "has_the_recipe"
           ]
         ],
         "rewards": {
           "recipes": [
-            "windswept:blue_ice_revert"
+            "windswept:blue_ice_vertical_slab"
           ]
         }
       },

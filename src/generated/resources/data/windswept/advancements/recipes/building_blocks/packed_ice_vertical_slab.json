@@ -9,7 +9,7 @@
               "items": [
                 {
                   "items": [
-                    "windswept:packed_ice_vertical_slab"
+                    "windswept:packed_ice_slab"
                   ]
                 }
               ]
@@ -18,7 +18,7 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "windswept:packed_ice"
+              "recipe": "windswept:packed_ice_vertical_slab"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
@@ -31,7 +31,7 @@
         ],
         "rewards": {
           "recipes": [
-            "windswept:packed_ice"
+            "windswept:packed_ice_vertical_slab"
           ]
         }
       },

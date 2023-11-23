@@ -1,0 +1,46 @@
+{
+  "advancements": [
+    {
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "criteria": {
+          "has_the_recipe": {
+            "conditions": {
+              "recipe": "windswept:blue_ice_vertical_slab_revert"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+          },
+          "has_vertical_slab": {
+            "conditions": {
+              "items": [
+                {
+                  "items": [
+                    "windswept:blue_ice_vertical_slab"
+                  ]
+                }
+              ]
+            },
+            "trigger": "minecraft:inventory_changed"
+          }
+        },
+        "requirements": [
+          [
+            "has_vertical_slab",
+            "has_the_recipe"
+          ]
+        ],
+        "rewards": {
+          "recipes": [
+            "windswept:blue_ice_vertical_slab_revert"
+          ]
+        }
+      },
+      "conditions": [
+        {
+          "type": "blueprint:quark_flag",
+          "flag": "vertical_slabs"
+        }
+      ]
+    }
+  ]
+}

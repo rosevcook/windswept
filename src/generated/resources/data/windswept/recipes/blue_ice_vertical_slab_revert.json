@@ -12,11 +12,11 @@
         "type": "minecraft:crafting_shapeless",
         "ingredients": [
           {
-            "item": "minecraft:blue_ice"
+            "item": "windswept:blue_ice_vertical_slab"
           }
         ],
         "result": {
-          "item": "windswept:blue_ice_vertical_slab"
+          "item": "windswept:blue_ice_slab"
         }
       }
     }

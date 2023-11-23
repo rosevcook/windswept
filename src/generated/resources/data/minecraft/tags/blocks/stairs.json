@@ -2,6 +2,9 @@
   "values": [
     "windswept:blue_ice_brick_stairs",
     "windswept:snow_brick_stairs",
-    "windswept:packed_ice_brick_stairs"
+    "windswept:packed_ice_brick_stairs",
+    "windswept:packed_ice_stairs",
+    "windswept:blue_ice_stairs",
+    "windswept:snow_stairs"
   ]
 }

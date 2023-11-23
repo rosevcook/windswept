@@ -12,11 +12,11 @@
         "type": "minecraft:crafting_shapeless",
         "ingredients": [
           {
-            "item": "minecraft:packed_ice"
+            "item": "windswept:snow_vertical_slab"
           }
         ],
         "result": {
-          "item": "windswept:packed_ice_vertical_slab"
+          "item": "windswept:snow_slab"
         }
       }
     }

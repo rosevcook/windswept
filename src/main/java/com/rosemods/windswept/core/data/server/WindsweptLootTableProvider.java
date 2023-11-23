@@ -165,7 +165,10 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(WindsweptBlocks.CHESTNUT_CRATE.get());
             this.dropSelf(WindsweptBlocks.ROASTED_CHESTNUT_CRATE.get());
 
-            // snow bricks
+            // snow blocks
+            this.dropSelf(WindsweptBlocks.SNOW_STAIRS.get());
+            this.add(WindsweptBlocks.SNOW_SLAB.get(), Blocks::createSlabItemTable);
+            this.add(WindsweptBlocks.SNOW_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
             this.dropSelf(WindsweptBlocks.SNOW_BRICKS.get());
             this.dropSelf(WindsweptBlocks.SNOW_BRICK_STAIRS.get());
             this.add(WindsweptBlocks.SNOW_BRICK_SLAB.get(), Blocks::createSlabItemTable);

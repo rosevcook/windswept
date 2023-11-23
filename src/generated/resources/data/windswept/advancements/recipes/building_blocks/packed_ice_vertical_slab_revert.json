@@ -6,7 +6,7 @@
         "criteria": {
           "has_the_recipe": {
             "conditions": {
-              "recipe": "windswept:packed_ice_revert"
+              "recipe": "windswept:packed_ice_vertical_slab_revert"
             },
             "trigger": "minecraft:recipe_unlocked"
           },
@@ -15,7 +15,7 @@
               "items": [
                 {
                   "items": [
-                    "minecraft:packed_ice"
+                    "windswept:packed_ice_vertical_slab"
                   ]
                 }
               ]
@@ -31,7 +31,7 @@
         ],
         "rewards": {
           "recipes": [
-            "windswept:packed_ice_revert"
+            "windswept:packed_ice_vertical_slab_revert"
           ]
         }
       },
