@@ -279,7 +279,7 @@ public class WindsweptBlockStateProvider extends BlockStateProvider {
     }
 
     private void leaves(RegistryObject<? extends Block> leaves) {
-        this.simpleBlock(leaves.get(), this.models().withExistingParent(this.getName(leaves), "block/leaves").texture("all", this.blockTexture(leaves.get())).renderType("cutout"));
+        this.simpleBlock(leaves.get(), this.models().withExistingParent(this.getName(leaves), "block/leaves").texture("all", this.blockTexture(leaves.get())));
         this.itemModel(leaves);
     }
 
