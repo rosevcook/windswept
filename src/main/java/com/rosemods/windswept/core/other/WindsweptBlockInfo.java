@@ -1,10 +1,19 @@
 package com.rosemods.windswept.core.other;
 
+import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.teamabnormals.blueprint.core.util.DataUtil;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 
 public final class WindsweptBlockInfo {
+
+    public static void changeLocalisation() {
+        DataUtil.changeBlockLocalization(Blocks.SNOW, Windswept.MODID, "snow_carpet");
+        DataUtil.changeBlockLocalization(Blocks.SNOW_BLOCK, "minecraft", "snow");
+    }
 
     public static void registerCompostables() {
         DataUtil.registerCompostable(WindsweptItems.WILD_BERRIES.get(), .3f);

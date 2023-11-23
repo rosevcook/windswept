@@ -64,6 +64,7 @@ public class Windswept {
 
     private void commonSetup(FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
+            WindsweptBlockInfo.changeLocalisation();
             WindsweptBlockInfo.registerCompostables();
             WindsweptBlockInfo.registerFlammables();
             WindsweptEffects.registerPotionRecipes();

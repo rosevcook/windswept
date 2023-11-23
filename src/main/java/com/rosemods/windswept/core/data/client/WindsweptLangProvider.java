@@ -156,6 +156,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 
         this.translateBlock(WindsweptBlocks.SNOWY_SPROUTS);
 
+        this.add("block.windswept.snow_carpet", "Snow Carpet");
         this.translateBlock(WindsweptBlocks.SNOW_STAIRS);
         this.translateBlock(WindsweptBlocks.SNOW_SLAB);
         this.translateBlock(WindsweptBlocks.SNOW_VERTICAL_SLAB);
