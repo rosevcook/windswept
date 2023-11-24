@@ -21,6 +21,7 @@ public class WindsweptConfig {
         public final ConfigValue<Boolean> roots;
         public final ConfigValue<Boolean> biggerFlowerHitbox;
         public final ConfigValue<Boolean> rabbitLitters;
+        public final ConfigValue<Boolean> rainWashSnow;
 
         private Common(ForgeConfigSpec.Builder builder) {
             builder.comment("Windswept Content Tweaks").push("content");
@@ -34,6 +35,7 @@ public class WindsweptConfig {
             this.iceBoatNerf = builder.comment("Nerfs Boats ability to go extremely fast when on ice and other slippery blocks; default: false").define("Ice Boat Nerf", false);
             this.biggerFlowerHitbox = builder.comment("If the Hitbox for Flowers should be Larger").define("Larger Flower Hitbox", true);
             this.rabbitLitters = builder.comment("If Rabbits should have litters of 1-3").define("Rabbit Litters", true);
+            this.rainWashSnow = builder.comment("If Rain should wash away Snow Layers").define("Rain Wash Away Snow", true);
             builder.pop();
 
             builder.comment("Tweaks to Windswept Worldgen").push("worldgen");
