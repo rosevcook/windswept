@@ -44,7 +44,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
         // foods
-        ShapelessRecipeBuilder.shapeless(WindsweptItems.WILD_BERRY_JUICE.get()).requires(Items.GLASS_BOTTLE).requires(WindsweptItems.WILD_BERRIES.get(), 3).unlockedBy("has_wild_berries", has(WindsweptItems.WILD_BERRIES.get())).save(consumer, Windswept.REGISTRY_HELPER.prefix("wild_berry_juice"));
+        ShapelessRecipeBuilder.shapeless(WindsweptItems.WILD_BERRY_JUICE.get()).requires(Items.GLASS_BOTTLE).requires(WindsweptItems.WILD_BERRIES.get(), 4).unlockedBy("has_wild_berries", has(WindsweptItems.WILD_BERRIES.get())).save(consumer, Windswept.REGISTRY_HELPER.prefix("wild_berry_juice"));
         ShapelessRecipeBuilder.shapeless(Items.SUGAR, 3).requires(WindsweptItems.WILD_BERRY_JUICE.get()).unlockedBy("has_wild_berry_juice", has(WindsweptItems.WILD_BERRY_JUICE.get())).save(consumer, Windswept.REGISTRY_HELPER.prefix("wild_berry_juice_to_sugar"));
         ShapelessRecipeBuilder.shapeless(WindsweptItems.WILD_BERRY_BOWL.get()).requires(Items.BOWL).requires(WindsweptItems.WILD_BERRIES.get(), 3).unlockedBy("has_wild_berries", has(WindsweptItems.WILD_BERRIES.get())).save(consumer, Windswept.REGISTRY_HELPER.prefix("wild_berry_bowl"));
         ShapelessRecipeBuilder.shapeless(WindsweptItems.SWEET_BERRY_BOWL.get()).requires(Items.BOWL).requires(Items.SWEET_BERRIES, 3).unlockedBy("has_sweet_berries", has(Items.SWEET_BERRIES)).save(consumer, Windswept.REGISTRY_HELPER.prefix("sweet_berry_bowl"));
