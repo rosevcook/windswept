@@ -2,6 +2,7 @@ package com.rosemods.windswept.core.data.server.tags;
 
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.other.tags.WindsweptBlockTags;
+import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintBlockTags;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.resources.ResourceLocation;
@@ -48,6 +49,7 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
         this.tag(Tags.Blocks.CHESTS_TRAPPED).add(HOLLY_TRAPPED_CHEST.get(), CHESTNUT_TRAPPED_CHEST.get());
 
         //vanilla
+        this.tag(BlockTags.SNOW_LAYER_CAN_SURVIVE_ON).add(HOLLY_LEAVES.get());
         this.tag(BlockTags.WALLS).add(BLUE_ICE_BRICK_WALL.get(), SNOW_BRICK_WALL.get(), PACKED_ICE_BRICK_WALL.get());
         this.tag(BlockTags.BEEHIVES).add(HOLLY_BEEHIVE.get(), CHESTNUT_BEEHIVE.get());
         this.tag(BlockTags.WOODEN_BUTTONS).add(HOLLY_BUTTON.get(), CHESTNUT_BUTTON.get());
