@@ -44,12 +44,10 @@ public class WindsweptLangProvider extends LanguageProvider {
         // Items //
 
         this.translateItem(HOLLY_BERRIES);
-
         this.translateItem(HOLLY_BOATS.getFirst());
         this.add(HOLLY_BOATS.getSecond().get(), "Holly Boat with Chest");
         this.translateItem(CHESTNUT_BOATS.getFirst());
         this.add(CHESTNUT_BOATS.getSecond().get(), "Chestnut Boat with Chest");
-
         this.translateItem(CHESTNUTS);
         this.translateItem(ROASTED_CHESTNUTS);
         this.translateItem(CHESTNUT_SOUP);
