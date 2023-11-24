@@ -29,6 +29,9 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
+import static com.rosemods.windswept.core.registry.WindsweptBlocks.*;
+import static com.rosemods.windswept.core.registry.WindsweptItems.*;
+
 public class WindsweptLangProvider extends LanguageProvider {
 
     public WindsweptLangProvider(GatherDataEvent event) {
@@ -40,190 +43,190 @@ public class WindsweptLangProvider extends LanguageProvider {
 
         // Items //
 
-        this.translateItem(WindsweptItems.HOLLY_BERRIES);
+        this.translateItem(HOLLY_BERRIES);
 
-        this.translateItem(WindsweptItems.HOLLY_BOATS.getFirst());
-        this.add(WindsweptItems.HOLLY_BOATS.getSecond().get(), "Holly Boat with Chest");
-        this.translateItem(WindsweptItems.CHESTNUT_BOATS.getFirst());
-        this.add(WindsweptItems.CHESTNUT_BOATS.getSecond().get(), "Chestnut Boat with Chest");
+        this.translateItem(HOLLY_BOATS.getFirst());
+        this.add(HOLLY_BOATS.getSecond().get(), "Holly Boat with Chest");
+        this.translateItem(CHESTNUT_BOATS.getFirst());
+        this.add(CHESTNUT_BOATS.getSecond().get(), "Chestnut Boat with Chest");
 
-        this.translateItem(WindsweptItems.CHESTNUTS);
-        this.translateItem(WindsweptItems.ROASTED_CHESTNUTS);
-        this.translateItem(WindsweptItems.CHESTNUT_SOUP);
-        this.translateItem(WindsweptItems.CHESTNUT_RISOTTO);
-        this.translateItem(WindsweptItems.CHESTNUT_CHICKEN_PLATTER);
-        this.translateItem(WindsweptItems.WOODEN_BUCKET);
-        this.translateItem(WindsweptItems.WOODEN_WATER_BUCKET);
-        this.translateItem(WindsweptItems.WOODEN_MILK_BUCKET);
-        this.translateItem(WindsweptItems.WOODEN_POWDER_SNOW_BUCKET);
-        this.translateItem(WindsweptItems.WILD_BERRIES);
-        this.translateItem(WindsweptItems.WILD_BERRY_COOKIE);
-        this.translateItem(WindsweptItems.WILD_BERRY_JUICE);
-        this.translateItem(WindsweptItems.WILD_BERRY_PIPS);
-        this.add(WindsweptItems.SWEET_BERRY_BOWL.get(), "Bowl of Sweet Berries");
-        this.add(WindsweptItems.WILD_BERRY_BOWL.get(), "Bowl of Wild Berries");
-        this.translateItem(WindsweptItems.MUTTON_PIE);
-        this.add(WindsweptItems.GOAT.get(), "Raw Chevon");
-        this.add(WindsweptItems.COOKED_GOAT.get(), "Cooked Chevon");
-        this.translateItem(WindsweptItems.GOAT_STEW);
-        this.add(WindsweptItems.GOAT_SHANKS.get(), "Raw Chevon Shanks");
-        this.add(WindsweptItems.COOKED_GOAT_SHANKS.get(), "Cooked Chevon Shanks");
-        this.add(WindsweptItems.FOUL_BERRY_BOWL.get(), "Bowl of Foul Berries");
-        this.translateItem(WindsweptItems.FROZEN_FLESH);
-        this.translateItem(WindsweptItems.SNOW_BOOTS);
-        this.translateBannerPattern(WindsweptItems.SNOW_CHARGE_BANNER_PATTERN, "snow_charge");
-        this.translateBannerPattern(WindsweptItems.SNOW_GOLEM_BANNER_PATTERN, "snow_golem");
-        this.translateBannerPattern(WindsweptItems.ROSE_FLOWER_BANNER_PATTERN, "rose_flower");
-        this.translateMusicDisc(WindsweptItems.MUSIC_DISC_RAIN, "rose - rain");
-        this.translateMusicDisc(WindsweptItems.MUSIC_DISC_SNOW, "rose - snow");
-        this.translateMusicDisc(WindsweptItems.MUSIC_DISC_BUMBLEBEE, "rose - bumblebee");
-        this.translateItem(WindsweptItems.CHILLED_SPAWN_EGG);
+        this.translateItem(CHESTNUTS);
+        this.translateItem(ROASTED_CHESTNUTS);
+        this.translateItem(CHESTNUT_SOUP);
+        this.translateItem(CHESTNUT_RISOTTO);
+        this.translateItem(CHESTNUT_CHICKEN_PLATTER);
+        this.translateItem(WOODEN_BUCKET);
+        this.translateItem(WOODEN_WATER_BUCKET);
+        this.translateItem(WOODEN_MILK_BUCKET);
+        this.translateItem(WOODEN_POWDER_SNOW_BUCKET);
+        this.translateItem(WILD_BERRIES);
+        this.translateItem(WILD_BERRY_COOKIE);
+        this.translateItem(WILD_BERRY_JUICE);
+        this.translateItem(WILD_BERRY_PIPS);
+        this.add(SWEET_BERRY_BOWL.get(), "Bowl of Sweet Berries");
+        this.add(WILD_BERRY_BOWL.get(), "Bowl of Wild Berries");
+        this.translateItem(MUTTON_PIE);
+        this.add(GOAT.get(), "Raw Chevon");
+        this.add(COOKED_GOAT.get(), "Cooked Chevon");
+        this.translateItem(GOAT_STEW);
+        this.add(GOAT_SHANKS.get(), "Raw Chevon Shanks");
+        this.add(COOKED_GOAT_SHANKS.get(), "Cooked Chevon Shanks");
+        this.add(FOUL_BERRY_BOWL.get(), "Bowl of Foul Berries");
+        this.translateItem(FROZEN_FLESH);
+        this.translateItem(SNOW_BOOTS);
+        this.translateBannerPattern(SNOW_CHARGE_BANNER_PATTERN, "snow_charge");
+        this.translateBannerPattern(SNOW_GOLEM_BANNER_PATTERN, "snow_golem");
+        this.translateBannerPattern(ROSE_FLOWER_BANNER_PATTERN, "rose_flower");
+        this.translateMusicDisc(MUSIC_DISC_RAIN, "rose - rain");
+        this.translateMusicDisc(MUSIC_DISC_SNOW, "rose - snow");
+        this.translateMusicDisc(MUSIC_DISC_BUMBLEBEE, "rose - bumblebee");
+        this.translateItem(CHILLED_SPAWN_EGG);
 
-        this.add(WindsweptItems.HOLLY_FURNACE_BOAT.get(), "Holly Boat with Furnace");
-        this.translateItem(WindsweptItems.LARGE_HOLLY_BOAT);
+        this.add(HOLLY_FURNACE_BOAT.get(), "Holly Boat with Furnace");
+        this.translateItem(LARGE_HOLLY_BOAT);
 
-        this.add(WindsweptItems.CHESTNUT_FURNACE_BOAT.get(), "Chestnut Boat with Furnace");
-        this.translateItem(WindsweptItems.LARGE_CHESTNUT_BOAT);
+        this.add(CHESTNUT_FURNACE_BOAT.get(), "Chestnut Boat with Furnace");
+        this.translateItem(LARGE_CHESTNUT_BOAT);
 
         // Blocks //
 
-        this.translateBlock(WindsweptBlocks.STRIPPED_HOLLY_LOG);
-        this.translateBlock(WindsweptBlocks.STRIPPED_HOLLY_WOOD);
-        this.translateBlock(WindsweptBlocks.HOLLY_LOG);
-        this.translateBlock(WindsweptBlocks.HOLLY_WOOD);
-        this.translateBlock(WindsweptBlocks.HOLLY_PLANKS);
-        this.translateBlock(WindsweptBlocks.VERTICAL_HOLLY_PLANKS);
-        this.translateBlock(WindsweptBlocks.HOLLY_SLAB);
-        this.translateBlock(WindsweptBlocks.HOLLY_STAIRS);
-        this.translateBlock(WindsweptBlocks.HOLLY_FENCE);
-        this.translateBlock(WindsweptBlocks.HOLLY_FENCE_GATE);
-        this.translateBlock(WindsweptBlocks.HOLLY_PRESSURE_PLATE);
-        this.translateBlock(WindsweptBlocks.HOLLY_DOOR);
-        this.translateBlock(WindsweptBlocks.HOLLY_TRAPDOOR);
-        this.translateBlock(WindsweptBlocks.HOLLY_BUTTON);
-        this.translateSign(WindsweptBlocks.HOLLY_SIGNS, "holly");
-        this.translateBlock(WindsweptBlocks.HOLLY_LEAVES);
-        this.translateBlock(WindsweptBlocks.HOLLY_SAPLING);
-        this.translateBlock(WindsweptBlocks.POTTED_HOLLY_SAPLING);
-        this.translateBlock(WindsweptBlocks.HOLLY_BEEHIVE);
-        this.add(WindsweptBlocks.HOLLY_HEDGE.get(), "Holly Leaf Hedge");
-        this.translateBlock(WindsweptBlocks.HOLLY_LEAF_CARPET);
-        this.add(WindsweptBlocks.HOLLY_LEAF_PILE.get(), "Pile of Holly Leaves");
-        this.translateBlock(WindsweptBlocks.HOLLY_LADDER);
-        this.translateBlock(WindsweptBlocks.HOLLY_BOOKSHELF);
-        this.translateBlock(WindsweptBlocks.HOLLY_BOARDS);
-        this.translateBlock(WindsweptBlocks.HOLLY_CABINET);
-        this.translateBlock(WindsweptBlocks.HOLLY_VERTICAL_SLAB);
-        this.translateBlock(WindsweptBlocks.HOLLY_POST);
-        this.translateBlock(WindsweptBlocks.STRIPPED_HOLLY_POST);
-        this.translateBlock(WindsweptBlocks.HOLLY_CHEST);
-        this.translateBlock(WindsweptBlocks.HOLLY_TRAPPED_CHEST);
-        this.add(WindsweptBlocks.HOLLY_BERRY_BASKET.get(), "Basket of Holly Berries");
+        this.translateBlock(STRIPPED_HOLLY_LOG);
+        this.translateBlock(STRIPPED_HOLLY_WOOD);
+        this.translateBlock(HOLLY_LOG);
+        this.translateBlock(HOLLY_WOOD);
+        this.translateBlock(HOLLY_PLANKS);
+        this.translateBlock(VERTICAL_HOLLY_PLANKS);
+        this.translateBlock(HOLLY_SLAB);
+        this.translateBlock(HOLLY_STAIRS);
+        this.translateBlock(HOLLY_FENCE);
+        this.translateBlock(HOLLY_FENCE_GATE);
+        this.translateBlock(HOLLY_PRESSURE_PLATE);
+        this.translateBlock(HOLLY_DOOR);
+        this.translateBlock(HOLLY_TRAPDOOR);
+        this.translateBlock(HOLLY_BUTTON);
+        this.translateSign(HOLLY_SIGNS, "holly");
+        this.translateBlock(HOLLY_LEAVES);
+        this.translateBlock(HOLLY_SAPLING);
+        this.translateBlock(POTTED_HOLLY_SAPLING);
+        this.translateBlock(HOLLY_BEEHIVE);
+        this.add(HOLLY_HEDGE.get(), "Holly Leaf Hedge");
+        this.translateBlock(HOLLY_LEAF_CARPET);
+        this.add(HOLLY_LEAF_PILE.get(), "Pile of Holly Leaves");
+        this.translateBlock(HOLLY_LADDER);
+        this.translateBlock(HOLLY_BOOKSHELF);
+        this.translateBlock(HOLLY_BOARDS);
+        this.translateBlock(HOLLY_CABINET);
+        this.translateBlock(HOLLY_VERTICAL_SLAB);
+        this.translateBlock(HOLLY_POST);
+        this.translateBlock(STRIPPED_HOLLY_POST);
+        this.translateBlock(HOLLY_CHEST);
+        this.translateBlock(HOLLY_TRAPPED_CHEST);
+        this.add(HOLLY_BERRY_BASKET.get(), "Basket of Holly Berries");
 
-        this.translateBlock(WindsweptBlocks.STRIPPED_CHESTNUT_LOG);
-        this.translateBlock(WindsweptBlocks.STRIPPED_CHESTNUT_WOOD);
-        this.translateBlock(WindsweptBlocks.CHESTNUT_LOG);
-        this.translateBlock(WindsweptBlocks.CHESTNUT_WOOD);
-        this.translateBlock(WindsweptBlocks.CHESTNUT_PLANKS);
-        this.translateBlock(WindsweptBlocks.VERTICAL_CHESTNUT_PLANKS);
-        this.translateBlock(WindsweptBlocks.CHESTNUT_SLAB);
-        this.translateBlock(WindsweptBlocks.CHESTNUT_STAIRS);
-        this.translateBlock(WindsweptBlocks.CHESTNUT_FENCE);
-        this.translateBlock(WindsweptBlocks.CHESTNUT_FENCE_GATE);
-        this.translateBlock(WindsweptBlocks.CHESTNUT_PRESSURE_PLATE);
-        this.translateBlock(WindsweptBlocks.CHESTNUT_DOOR);
-        this.translateBlock(WindsweptBlocks.CHESTNUT_TRAPDOOR);
-        this.translateBlock(WindsweptBlocks.CHESTNUT_BUTTON);
-        this.translateSign(WindsweptBlocks.CHESTNUT_SIGNS, "chestnut");
-        this.translateBlock(WindsweptBlocks.CHESTNUT_LEAVES);
-        this.translateBlock(WindsweptBlocks.CHESTNUT_SAPLING);
-        this.translateBlock(WindsweptBlocks.POTTED_CHESTNUT_SAPLING);
-        this.translateBlock(WindsweptBlocks.CHESTNUT_BEEHIVE);
-        this.add(WindsweptBlocks.CHESTNUT_HEDGE.get(), "Chestnut Leaf Hedge");
-        this.translateBlock(WindsweptBlocks.CHESTNUT_LEAF_CARPET);
-        this.add(WindsweptBlocks.CHESTNUT_LEAF_PILE.get(), "Pile of Chestnut Leaves");
-        this.translateBlock(WindsweptBlocks.CHESTNUT_LADDER);
-        this.translateBlock(WindsweptBlocks.CHESTNUT_BOOKSHELF);
-        this.translateBlock(WindsweptBlocks.CHESTNUT_BOARDS);
-        this.translateBlock(WindsweptBlocks.CHESTNUT_CABINET);
-        this.translateBlock(WindsweptBlocks.CHESTNUT_VERTICAL_SLAB);
-        this.translateBlock(WindsweptBlocks.CHESTNUT_POST);
-        this.translateBlock(WindsweptBlocks.STRIPPED_CHESTNUT_POST);
-        this.translateBlock(WindsweptBlocks.CHESTNUT_CHEST);
-        this.translateBlock(WindsweptBlocks.CHESTNUT_TRAPPED_CHEST);
-        this.add(WindsweptBlocks.CHESTNUT_CRATE.get(), "Crate of Chestnuts");
-        this.add(WindsweptBlocks.ROASTED_CHESTNUT_CRATE.get(), "Crate of Roasted Chestnuts");
+        this.translateBlock(STRIPPED_CHESTNUT_LOG);
+        this.translateBlock(STRIPPED_CHESTNUT_WOOD);
+        this.translateBlock(CHESTNUT_LOG);
+        this.translateBlock(CHESTNUT_WOOD);
+        this.translateBlock(CHESTNUT_PLANKS);
+        this.translateBlock(VERTICAL_CHESTNUT_PLANKS);
+        this.translateBlock(CHESTNUT_SLAB);
+        this.translateBlock(CHESTNUT_STAIRS);
+        this.translateBlock(CHESTNUT_FENCE);
+        this.translateBlock(CHESTNUT_FENCE_GATE);
+        this.translateBlock(CHESTNUT_PRESSURE_PLATE);
+        this.translateBlock(CHESTNUT_DOOR);
+        this.translateBlock(CHESTNUT_TRAPDOOR);
+        this.translateBlock(CHESTNUT_BUTTON);
+        this.translateSign(CHESTNUT_SIGNS, "chestnut");
+        this.translateBlock(CHESTNUT_LEAVES);
+        this.translateBlock(CHESTNUT_SAPLING);
+        this.translateBlock(POTTED_CHESTNUT_SAPLING);
+        this.translateBlock(CHESTNUT_BEEHIVE);
+        this.add(CHESTNUT_HEDGE.get(), "Chestnut Leaf Hedge");
+        this.translateBlock(CHESTNUT_LEAF_CARPET);
+        this.add(CHESTNUT_LEAF_PILE.get(), "Pile of Chestnut Leaves");
+        this.translateBlock(CHESTNUT_LADDER);
+        this.translateBlock(CHESTNUT_BOOKSHELF);
+        this.translateBlock(CHESTNUT_BOARDS);
+        this.translateBlock(CHESTNUT_CABINET);
+        this.translateBlock(CHESTNUT_VERTICAL_SLAB);
+        this.translateBlock(CHESTNUT_POST);
+        this.translateBlock(STRIPPED_CHESTNUT_POST);
+        this.translateBlock(CHESTNUT_CHEST);
+        this.translateBlock(CHESTNUT_TRAPPED_CHEST);
+        this.add(CHESTNUT_CRATE.get(), "Crate of Chestnuts");
+        this.add(ROASTED_CHESTNUT_CRATE.get(), "Crate of Roasted Chestnuts");
 
-        this.translateBlock(WindsweptBlocks.SNOWY_SPROUTS);
+        this.translateBlock(SNOWY_SPROUTS);
 
         this.add("block.windswept.snow_carpet", "Snow Carpet");
-        this.translateBlock(WindsweptBlocks.SNOW_STAIRS);
-        this.translateBlock(WindsweptBlocks.SNOW_SLAB);
-        this.translateBlock(WindsweptBlocks.SNOW_VERTICAL_SLAB);
-        this.translateBlock(WindsweptBlocks.SNOW_BRICKS);
-        this.translateBlock(WindsweptBlocks.SNOW_BRICK_STAIRS);
-        this.translateBlock(WindsweptBlocks.SNOW_BRICK_SLAB);
-        this.translateBlock(WindsweptBlocks.SNOW_BRICK_WALL);
-        this.translateBlock(WindsweptBlocks.SNOW_BRICK_VERTICAL_SLAB);
+        this.translateBlock(SNOW_STAIRS);
+        this.translateBlock(SNOW_SLAB);
+        this.translateBlock(SNOW_VERTICAL_SLAB);
+        this.translateBlock(SNOW_BRICKS);
+        this.translateBlock(SNOW_BRICK_STAIRS);
+        this.translateBlock(SNOW_BRICK_SLAB);
+        this.translateBlock(SNOW_BRICK_WALL);
+        this.translateBlock(SNOW_BRICK_VERTICAL_SLAB);
 
-        this.translateBlock(WindsweptBlocks.PACKED_ICE_STAIRS);
-        this.translateBlock(WindsweptBlocks.PACKED_ICE_SLAB);
-        this.translateBlock(WindsweptBlocks.PACKED_ICE_VERTICAL_SLAB);
-        this.translateBlock(WindsweptBlocks.PACKED_ICE_BRICKS);
-        this.translateBlock(WindsweptBlocks.CHISELED_PACKED_ICE_BRICKS);
-        this.translateBlock(WindsweptBlocks.PACKED_ICE_BRICK_STAIRS);
-        this.translateBlock(WindsweptBlocks.PACKED_ICE_BRICK_SLAB);
-        this.translateBlock(WindsweptBlocks.PACKED_ICE_BRICK_WALL);
-        this.translateBlock(WindsweptBlocks.PACKED_ICE_BRICK_VERTICAL_SLAB);
+        this.translateBlock(PACKED_ICE_STAIRS);
+        this.translateBlock(PACKED_ICE_SLAB);
+        this.translateBlock(PACKED_ICE_VERTICAL_SLAB);
+        this.translateBlock(PACKED_ICE_BRICKS);
+        this.translateBlock(CHISELED_PACKED_ICE_BRICKS);
+        this.translateBlock(PACKED_ICE_BRICK_STAIRS);
+        this.translateBlock(PACKED_ICE_BRICK_SLAB);
+        this.translateBlock(PACKED_ICE_BRICK_WALL);
+        this.translateBlock(PACKED_ICE_BRICK_VERTICAL_SLAB);
 
-        this.translateBlock(WindsweptBlocks.BLUE_ICE_STAIRS);
-        this.translateBlock(WindsweptBlocks.BLUE_ICE_SLAB);
-        this.translateBlock(WindsweptBlocks.BLUE_ICE_VERTICAL_SLAB);
-        this.translateBlock(WindsweptBlocks.BLUE_ICE_BRICKS);
-        this.translateBlock(WindsweptBlocks.CHISELED_BLUE_ICE_BRICKS);
-        this.translateBlock(WindsweptBlocks.BLUE_ICE_BRICK_STAIRS);
-        this.translateBlock(WindsweptBlocks.BLUE_ICE_BRICK_SLAB);
-        this.translateBlock(WindsweptBlocks.BLUE_ICE_BRICK_WALL);
-        this.translateBlock(WindsweptBlocks.BLUE_ICE_BRICK_VERTICAL_SLAB);
+        this.translateBlock(BLUE_ICE_STAIRS);
+        this.translateBlock(BLUE_ICE_SLAB);
+        this.translateBlock(BLUE_ICE_VERTICAL_SLAB);
+        this.translateBlock(BLUE_ICE_BRICKS);
+        this.translateBlock(CHISELED_BLUE_ICE_BRICKS);
+        this.translateBlock(BLUE_ICE_BRICK_STAIRS);
+        this.translateBlock(BLUE_ICE_BRICK_SLAB);
+        this.translateBlock(BLUE_ICE_BRICK_WALL);
+        this.translateBlock(BLUE_ICE_BRICK_VERTICAL_SLAB);
 
-        this.translateBlock(WindsweptBlocks.CUT_ICE);
-        this.translateBlock(WindsweptBlocks.ICE_SHEET);
-        this.translateBlock(WindsweptBlocks.CUT_ICE_SHEET);
+        this.translateBlock(CUT_ICE);
+        this.translateBlock(ICE_SHEET);
+        this.translateBlock(CUT_ICE_SHEET);
 
-        this.translateBlock(WindsweptBlocks.RED_ROSE_BUSH);
-        this.translateBlock(WindsweptBlocks.PINK_ROSE_BUSH);
-        this.translateBlock(WindsweptBlocks.BLUE_ROSE_BUSH);
-        this.translateBlock(WindsweptBlocks.WHITE_ROSE_BUSH);
-        this.translateBlock(WindsweptBlocks.YELLOW_ROSE_BUSH);
-        this.translateBlock(WindsweptBlocks.WITHER_ROSE_BUSH);
+        this.translateBlock(RED_ROSE_BUSH);
+        this.translateBlock(PINK_ROSE_BUSH);
+        this.translateBlock(BLUE_ROSE_BUSH);
+        this.translateBlock(WHITE_ROSE_BUSH);
+        this.translateBlock(YELLOW_ROSE_BUSH);
+        this.translateBlock(WITHER_ROSE_BUSH);
 
-        this.translateBlock(WindsweptBlocks.RED_ROSE);
-        this.translateBlock(WindsweptBlocks.PINK_ROSE);
-        this.translateBlock(WindsweptBlocks.BLUE_ROSE);
-        this.translateBlock(WindsweptBlocks.WHITE_ROSE);
-        this.translateBlock(WindsweptBlocks.YELLOW_ROSE);
-        this.translateBlock(WindsweptBlocks.FOXGLOVE);
-        this.translateBlock(WindsweptBlocks.BLUEBELLS);
-        this.translateBlock(WindsweptBlocks.NIGHTSHADE);
+        this.translateBlock(RED_ROSE);
+        this.translateBlock(PINK_ROSE);
+        this.translateBlock(BLUE_ROSE);
+        this.translateBlock(WHITE_ROSE);
+        this.translateBlock(YELLOW_ROSE);
+        this.translateBlock(FOXGLOVE);
+        this.translateBlock(BLUEBELLS);
+        this.translateBlock(NIGHTSHADE);
 
-        this.translateBlock(WindsweptBlocks.POTTED_RED_ROSE);
-        this.translateBlock(WindsweptBlocks.POTTED_PINK_ROSE);
-        this.translateBlock(WindsweptBlocks.POTTED_BLUE_ROSE);
-        this.translateBlock(WindsweptBlocks.POTTED_WHITE_ROSE);
-        this.translateBlock(WindsweptBlocks.POTTED_YELLOW_ROSE);
-        this.translateBlock(WindsweptBlocks.POTTED_FOXGLOVE);
-        this.translateBlock(WindsweptBlocks.POTTED_BLUEBELLS);
-        this.translateBlock(WindsweptBlocks.POTTED_NIGHTSHADE);
-        this.translateBlock(WindsweptBlocks.POTTED_SNOWY_SPROUTS);
+        this.translateBlock(POTTED_RED_ROSE);
+        this.translateBlock(POTTED_PINK_ROSE);
+        this.translateBlock(POTTED_BLUE_ROSE);
+        this.translateBlock(POTTED_WHITE_ROSE);
+        this.translateBlock(POTTED_YELLOW_ROSE);
+        this.translateBlock(POTTED_FOXGLOVE);
+        this.translateBlock(POTTED_BLUEBELLS);
+        this.translateBlock(POTTED_NIGHTSHADE);
+        this.translateBlock(POTTED_SNOWY_SPROUTS);
 
-        this.translateBlock(WindsweptBlocks.WILD_BERRY_BUSH);
-        this.add(WindsweptBlocks.WILD_BERRY_BASKET.get(), "Basket of Wild Berries");
+        this.translateBlock(WILD_BERRY_BUSH);
+        this.add(WILD_BERRY_BASKET.get(), "Basket of Wild Berries");
 
-        this.add(WindsweptBlocks.RED_MUSHROOM_BASKET.get(), "Basket of Red Mushrooms");
-        this.add(WindsweptBlocks.BROWN_MUSHROOM_BASKET.get(), "Basket of Brown Mushrooms");
-        this.add(WindsweptBlocks.GLOW_SHROOM_BASKET.get(), "Basket of Glow Shrooms");
+        this.add(RED_MUSHROOM_BASKET.get(), "Basket of Red Mushrooms");
+        this.add(BROWN_MUSHROOM_BASKET.get(), "Basket of Brown Mushrooms");
+        this.add(GLOW_SHROOM_BASKET.get(), "Basket of Glow Shrooms");
 
-        this.translateBlock(WindsweptBlocks.FROZEN_FLESH_BLOCK);
+        this.translateBlock(FROZEN_FLESH_BLOCK);
 
         // Entities //
 
@@ -271,34 +274,34 @@ public class WindsweptLangProvider extends LanguageProvider {
 
         // JEI Info //
 
-        this.jeiInfo(WindsweptItems.MUSIC_DISC_RAIN, "Dropped by a Drowned if killed by a Skeleton.");
-        this.jeiInfo(WindsweptItems.MUSIC_DISC_SNOW, "Dropped by a Chilled if killed by a Skeleton.");
-        this.jeiInfo(WindsweptItems.MUSIC_DISC_BUMBLEBEE, "Sometimes dropped when shearing a Beehive for Honeycombs.");
+        this.jeiInfo(MUSIC_DISC_RAIN, "Dropped by a Drowned if killed by a Skeleton.");
+        this.jeiInfo(MUSIC_DISC_SNOW, "Dropped by a Chilled if killed by a Skeleton.");
+        this.jeiInfo(MUSIC_DISC_BUMBLEBEE, "Sometimes dropped when shearing a Beehive for Honeycombs.");
 
-        this.jeiInfo(WindsweptBlocks.RED_ROSE_BUSH, "Bonemeal a Red Rose and it will grow into a Red Rose Bush!");
-        this.jeiInfo(WindsweptBlocks.PINK_ROSE_BUSH, "Bonemeal a Pink Rose and it will grow into a Pink Rose Bush!");
-        this.jeiInfo(WindsweptBlocks.BLUE_ROSE_BUSH, "Bonemeal a Blue Rose and it will grow into a Blue Rose Bush! This can also be found in Chestnut Forests");
-        this.jeiInfo(WindsweptBlocks.WHITE_ROSE_BUSH, "Bonemeal a White Rose and it will grow into a White Rose Bush! This can also be found in Snowy Chestnut Forests");
-        this.jeiInfo(WindsweptBlocks.YELLOW_ROSE_BUSH, "Bonemeal a Yellow Rose and it will grow into a Yellow Rose Bush!");
-        this.jeiInfo(WindsweptBlocks.WITHER_ROSE_BUSH, "Bonemeal a Wither Rose and it will grow into a Wither Rose Bush!");
+        this.jeiInfo(RED_ROSE_BUSH, "Bonemeal a Red Rose and it will grow into a Red Rose Bush!");
+        this.jeiInfo(PINK_ROSE_BUSH, "Bonemeal a Pink Rose and it will grow into a Pink Rose Bush!");
+        this.jeiInfo(BLUE_ROSE_BUSH, "Bonemeal a Blue Rose and it will grow into a Blue Rose Bush! This can also be found in Chestnut Forests");
+        this.jeiInfo(WHITE_ROSE_BUSH, "Bonemeal a White Rose and it will grow into a White Rose Bush! This can also be found in Snowy Chestnut Forests");
+        this.jeiInfo(YELLOW_ROSE_BUSH, "Bonemeal a Yellow Rose and it will grow into a Yellow Rose Bush!");
+        this.jeiInfo(WITHER_ROSE_BUSH, "Bonemeal a Wither Rose and it will grow into a Wither Rose Bush!");
 
-        this.jeiInfo(WindsweptItems.WILD_BERRIES, "Wild Berries can be found growing in snowy biomes but are more commonly found in Groves.");
-        this.jeiInfo(WindsweptBlocks.NIGHTSHADE, "Nightshades can be found very rarely growing in large patches under trees. They can also be brewing into Night Vision potions.");
-        this.jeiInfo(WindsweptBlocks.BLUEBELLS, "Bluebells are small flowers that grow in patches in Dark Oak and Birch Forests.");
-        this.jeiInfo(WindsweptBlocks.FOXGLOVE, "Foxgloves are found in any Taiga biome. Foxes can sometimes be found holding them in their mouths.");
-        this.jeiInfo(WindsweptBlocks.SNOWY_SPROUTS, "Snowy sprouts are small plants that grow in round patches in snowy areas. They only grow on snow blocks but when collected with shears, can also be placed on grass and dirt.");
+        this.jeiInfo(WILD_BERRIES, "Wild Berries can be found growing in snowy biomes but are more commonly found in Groves.");
+        this.jeiInfo(NIGHTSHADE, "Nightshades can be found very rarely growing in large patches under trees. They can also be brewing into Night Vision potions.");
+        this.jeiInfo(BLUEBELLS, "Bluebells are small flowers that grow in patches in Dark Oak and Birch Forests.");
+        this.jeiInfo(FOXGLOVE, "Foxgloves are found in any Taiga biome. Foxes can sometimes be found holding them in their mouths.");
+        this.jeiInfo(SNOWY_SPROUTS, "Snowy sprouts are small plants that grow in round patches in snowy areas. They only grow on snow blocks but when collected with shears, can also be placed on grass and dirt.");
 
-        this.jeiInfo(WindsweptBlocks.RED_ROSE, "Red Roses can be found in Taiga biomes. They can also be bonemealed into Red Rose Bushes.");
-        this.jeiInfo(WindsweptBlocks.PINK_ROSE, "Pink Roses can be found in Snowy biomes. They can also be bonemealed into Pink Rose Bushes.");
-        this.jeiInfo(WindsweptBlocks.BLUE_ROSE, "Blue Roses can be found in Snowy biomes. They can also be bonemealed into Blue Rose Bushes.");
-        this.jeiInfo(WindsweptBlocks.WHITE_ROSE, "White Roses can be found in Snowy biomes. They can also be bonemealed into White Rose Bushes.");
-        this.jeiInfo(WindsweptBlocks.YELLOW_ROSE, "Yellow Roses can be found in Taiga biomes. They can also be bonemealed into Yellow Rose Bushes.");
+        this.jeiInfo(RED_ROSE, "Red Roses can be found in Taiga biomes. They can also be bonemealed into Red Rose Bushes.");
+        this.jeiInfo(PINK_ROSE, "Pink Roses can be found in Snowy biomes. They can also be bonemealed into Pink Rose Bushes.");
+        this.jeiInfo(BLUE_ROSE, "Blue Roses can be found in Snowy biomes. They can also be bonemealed into Blue Rose Bushes.");
+        this.jeiInfo(WHITE_ROSE, "White Roses can be found in Snowy biomes. They can also be bonemealed into White Rose Bushes.");
+        this.jeiInfo(YELLOW_ROSE, "Yellow Roses can be found in Taiga biomes. They can also be bonemealed into Yellow Rose Bushes.");
 
-        this.jeiInfo(WindsweptItems.WOODEN_BUCKET, "Wooden buckets are cheap buckets with a durability of 24. Durability is taken when a fluid exits the bucket.");
-        this.jeiInfo(WindsweptItems.SNOW_BOOTS, "Snow boots allow you to walk faster on any snowy block. They can be dyed any colour you like. They also allow you to walk on Powder Snow.");
-        this.jeiInfo(WindsweptItems.WILD_BERRY_BOWL, "Wild Berry bowls condense 3 Wild Berries into a single item. They are exactly 3 times the saturation and hunger of Wild Berries.");
-        this.jeiInfo(WindsweptItems.SWEET_BERRY_BOWL, "Sweet Berry bowls condense 3 Sweet Berries into a single item. They are exactly 3 times the saturation and hunger of Sweet Berries.");
-        this.jeiInfo(WindsweptItems.FOUL_BERRY_BOWL, "Foul Berry bowls condense 3 Foul Berries into a single item. They are exactly 3 times the saturation and hunger of Foul Berries.");
+        this.jeiInfo(WOODEN_BUCKET, "Wooden buckets are cheap buckets with a durability of 24. Durability is taken when a fluid exits the bucket.");
+        this.jeiInfo(SNOW_BOOTS, "Snow boots allow you to walk faster on any snowy block. They can be dyed any colour you like. They also allow you to walk on Powder Snow.");
+        this.jeiInfo(WILD_BERRY_BOWL, "Wild Berry bowls condense 3 Wild Berries into a single item. They are exactly 3 times the saturation and hunger of Wild Berries.");
+        this.jeiInfo(SWEET_BERRY_BOWL, "Sweet Berry bowls condense 3 Sweet Berries into a single item. They are exactly 3 times the saturation and hunger of Sweet Berries.");
+        this.jeiInfo(FOUL_BERRY_BOWL, "Foul Berry bowls condense 3 Foul Berries into a single item. They are exactly 3 times the saturation and hunger of Foul Berries.");
     }
 
     private void translateItem(RegistryObject<? extends Item> item) {

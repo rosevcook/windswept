@@ -86,8 +86,9 @@ public class Windswept {
         gen.addProvider(client, new WindsweptLangProvider(event));
         gen.addProvider(client, new WindsweptModelProvider(event));
 
-        gen.addProvider(server, new WindsweptBlockTagProvider(event));
-        gen.addProvider(server, new WindsweptItemTagProvider(event));
+        var blockTags = new WindsweptBlockTagProvider(event);
+        gen.addProvider(server, blockTags);
+        gen.addProvider(server, new WindsweptItemTagProvider(event, blockTags));
         gen.addProvider(server, new WindsweptEntityTagProvider(event));
         gen.addProvider(server, new WindsweptBiomeTagProvider(event));
         gen.addProvider(server, new WindsweptBannerPatternTagProvider(event));

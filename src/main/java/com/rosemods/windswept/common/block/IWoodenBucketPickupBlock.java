@@ -1,4 +1,4 @@
-package com.rosemods.windswept.core.api;
+package com.rosemods.windswept.common.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
@@ -9,11 +9,6 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.Optional;
 
-/*
- * If you want to have a block that is able to be picked up by wooden buckets, you can copy
- * and paste this file into your directory at the same location and inherit the interface.
- * This can be for custom wooden buckets or adding compatibility to Windswepts wooden buckets.
- */
 public interface IWoodenBucketPickupBlock {
     Item getWoodenBucketItem();
 
