@@ -3,6 +3,7 @@ package com.rosemods.windswept.core.data.server.tags;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.other.tags.WindsweptBlockTags;
 import com.rosemods.windswept.core.other.tags.WindsweptItemTags;
+import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintBlockTags;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintItemTags;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -66,7 +67,7 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
         this.tag(ItemTags.BOATS).add(HOLLY_BOATS.getFirst().get(), CHESTNUT_BOATS.getFirst().get());
         this.tag(ItemTags.CHEST_BOATS).add(HOLLY_BOATS.getSecond().get(), CHESTNUT_BOATS.getSecond().get());
         this.tag(ItemTags.SIGNS).add(HOLLY_SIGNS.getFirst().get().asItem(), CHESTNUT_SIGNS.getFirst().get().asItem());
-        this.tag(ItemTags.MUSIC_DISCS).add(MUSIC_DISC_RAIN.get(), MUSIC_DISC_SNOW.get());
+        this.tag(ItemTags.MUSIC_DISCS).add(MUSIC_DISC_RAIN.get(), MUSIC_DISC_SNOW.get(), MUSIC_DISC_BUMBLEBEE.get());
         this.copy(WindsweptBlockTags.HOLLY_LEAVES, ItemTags.LEAVES);
         this.copy(WindsweptBlockTags.CHESTNUT_LEAVES, ItemTags.LEAVES);
         this.copy(BlockTags.LOGS_THAT_BURN, ItemTags.LOGS_THAT_BURN);
