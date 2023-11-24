@@ -64,8 +64,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
     }
 
     @Override
-    protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext validationtracker) {
-    }
+    protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext validationtracker) { }
 
     private static <T> Iterable<T> getContent(IForgeRegistry<T> entry) {
         return entry.getValues().stream().filter(i -> entry.getKey(i) != null

@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Rabbit.class)
 public abstract class RabbitMixin extends Animal {
-    protected RabbitMixin(EntityType<? extends Animal> entity, Level level) {
+    private RabbitMixin(EntityType<? extends Animal> entity, Level level) {
         super(entity, level);
     }
 

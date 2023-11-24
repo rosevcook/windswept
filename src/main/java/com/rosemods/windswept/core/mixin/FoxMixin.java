@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(Fox.class)
 public abstract class FoxMixin extends Animal {
 
-    protected FoxMixin(EntityType<? extends Fox> entity, Level level) {
+    private FoxMixin(EntityType<? extends Fox> entity, Level level) {
         super(entity, level);
     }
 

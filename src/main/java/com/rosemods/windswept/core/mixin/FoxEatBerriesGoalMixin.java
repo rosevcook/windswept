@@ -23,7 +23,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(Fox.FoxEatBerriesGoal.class)
 public abstract class FoxEatBerriesGoalMixin extends MoveToBlockGoal {
 
-    protected FoxEatBerriesGoalMixin(PathfinderMob mob, double speedModifier, int searchRange) {
+    private FoxEatBerriesGoalMixin(PathfinderMob mob, double speedModifier, int searchRange) {
         super(mob, speedModifier, searchRange);
     }
 
