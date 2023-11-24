@@ -8,7 +8,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public final class WindsweptTreeDecorators {
-    public static final DeferredRegister<TreeDecoratorType<?>> DECORATORS = DeferredRegister.create(ForgeRegistries.TREE_DECORATOR_TYPES, Windswept.MODID);
+    public static final DeferredRegister<TreeDecoratorType<?>> DECORATORS = DeferredRegister.create(ForgeRegistries.TREE_DECORATOR_TYPES, Windswept.MOD_ID);
 
     public static final RegistryObject<TreeDecoratorType<?>> BRANCH_DECORATOR = DECORATORS.register("branch", () -> new TreeDecoratorType<>(BranchDecorator.CODEC));
 }

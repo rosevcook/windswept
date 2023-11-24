@@ -30,10 +30,10 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 
-@Mod(Windswept.MODID)
+@Mod(Windswept.MOD_ID)
 public class Windswept {
-    public static final String MODID = "windswept";
-    public static final RegistryHelper REGISTRY_HELPER = RegistryHelper.create(MODID, h -> h.putSubHelper(ForgeRegistries.MOB_EFFECTS, new EffectSubRegistryHelper(h)));
+    public static final String MOD_ID = "windswept";
+    public static final RegistryHelper REGISTRY_HELPER = RegistryHelper.create(MOD_ID, h -> h.putSubHelper(ForgeRegistries.MOB_EFFECTS, new EffectSubRegistryHelper(h)));
 
     public Windswept() {
         final IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();

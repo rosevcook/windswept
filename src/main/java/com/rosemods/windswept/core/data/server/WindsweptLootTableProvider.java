@@ -68,7 +68,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 
     private static <T> Iterable<T> getContent(IForgeRegistry<T> entry) {
         return entry.getValues().stream().filter(i -> entry.getKey(i) != null
-                && Windswept.MODID.equals(entry.getKey(i).getNamespace())).collect(Collectors.toSet());
+                && Windswept.MOD_ID.equals(entry.getKey(i).getNamespace())).collect(Collectors.toSet());
     }
 
     private static class Blocks extends BlockLoot {

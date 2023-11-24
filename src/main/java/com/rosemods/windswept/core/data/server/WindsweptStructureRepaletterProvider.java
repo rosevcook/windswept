@@ -22,7 +22,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class WindsweptStructureRepaletterProvider extends StructureRepaletterProvider {
 
     public WindsweptStructureRepaletterProvider(GatherDataEvent event) {
-        super(event.getGenerator(), Windswept.MODID);
+        super(event.getGenerator(), Windswept.MOD_ID);
     }
 
     @Override

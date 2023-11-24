@@ -34,7 +34,7 @@ import static com.rosemods.windswept.core.registry.WindsweptItems.*;
 public class WindsweptModelProvider extends BlockStateProvider {
 
     public WindsweptModelProvider(GatherDataEvent event) {
-        super(event.getGenerator(), Windswept.MODID, event.getExistingFileHelper());
+        super(event.getGenerator(), Windswept.MOD_ID, event.getExistingFileHelper());
     }
 
     @Override

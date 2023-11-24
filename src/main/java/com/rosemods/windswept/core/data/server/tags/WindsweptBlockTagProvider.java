@@ -16,7 +16,7 @@ import static com.rosemods.windswept.core.registry.WindsweptBlocks.*;
 public class WindsweptBlockTagProvider extends BlockTagsProvider {
 
     public WindsweptBlockTagProvider(GatherDataEvent event) {
-        super(event.getGenerator(), Windswept.MODID, event.getExistingFileHelper());
+        super(event.getGenerator(), Windswept.MOD_ID, event.getExistingFileHelper());
     }
 
     @Override

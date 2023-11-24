@@ -10,7 +10,7 @@ import static com.rosemods.windswept.core.registry.WindsweptItems.*;
 public final class WindsweptBlockInfo {
 
     public static void changeLocalisation() {
-        DataUtil.changeBlockLocalization(Blocks.SNOW, Windswept.MODID, "snow_carpet");
+        DataUtil.changeBlockLocalization(Blocks.SNOW, Windswept.MOD_ID, "snow_carpet");
         DataUtil.changeBlockLocalization(Blocks.SNOW_BLOCK, "minecraft", "snow");
     }
 

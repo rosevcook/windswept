@@ -9,7 +9,7 @@ public final class WindsweptDamageSources {
     public static final DamageSource HOLLY_HEDGE = create("holly_hedge");
 
     private static DamageSource create(String name) {
-        return new DamageSource(Windswept.MODID + "." + name);
+        return new DamageSource(Windswept.MOD_ID + "." + name);
     }
 
 }

@@ -40,7 +40,7 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.List;
 
 public final class WindsweptFeatures {
-    public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(ForgeRegistries.FEATURES, Windswept.MODID);
+    public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(ForgeRegistries.FEATURES, Windswept.MOD_ID);
 
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> SNOWY_SPROUTS_PATCH = FEATURES.register("snowy_sprouts_patch", SnowySproutsFeature::new);
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> NIGHTSHADE_PATCH = FEATURES.register("nightshade_patch", NightshadeFeature::new);
@@ -91,7 +91,7 @@ public final class WindsweptFeatures {
     }
 
     public static class Features {
-        public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES = DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, Windswept.MODID);
+        public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES = DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, Windswept.MOD_ID);
 
         public static final RegistryObject<ConfiguredFeature<?, ?>> RED_ROSE = CONFIGURED_FEATURES.register("red_rose", () -> new ConfiguredFeature<>(ROSE_PATCH.get(), RoseFeature.config(WindsweptBlocks.RED_ROSE)));
         public static final RegistryObject<ConfiguredFeature<?, ?>> WHITE_ROSE = CONFIGURED_FEATURES.register("white_rose", () -> new ConfiguredFeature<>(ROSE_PATCH.get(), RoseFeature.config(WindsweptBlocks.WHITE_ROSE)));
@@ -116,7 +116,7 @@ public final class WindsweptFeatures {
     }
 
     public static class Placements {
-        public static final DeferredRegister<PlacedFeature> PLACED_FEATURES = DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, Windswept.MODID);
+        public static final DeferredRegister<PlacedFeature> PLACED_FEATURES = DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, Windswept.MOD_ID);
 
         public static final RegistryObject<PlacedFeature> RED_ROSE = createPlantPatch("red_rose", 16, Features.RED_ROSE);
         public static final RegistryObject<PlacedFeature> WHITE_ROSE = createPlantPatch("white_rose", 32, Features.WHITE_ROSE);

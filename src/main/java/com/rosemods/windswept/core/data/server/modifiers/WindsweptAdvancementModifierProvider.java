@@ -22,7 +22,7 @@ import java.util.List;
 public class WindsweptAdvancementModifierProvider extends AdvancementModifierProvider {
 
     public WindsweptAdvancementModifierProvider(GatherDataEvent event) {
-        super(event.getGenerator(), Windswept.MODID);
+        super(event.getGenerator(), Windswept.MOD_ID);
     }
 
     @Override

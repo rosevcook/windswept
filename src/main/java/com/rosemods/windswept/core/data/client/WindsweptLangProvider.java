@@ -35,7 +35,7 @@ import static com.rosemods.windswept.core.registry.WindsweptItems.*;
 public class WindsweptLangProvider extends LanguageProvider {
 
     public WindsweptLangProvider(GatherDataEvent event) {
-        super(event.getGenerator(), Windswept.MODID, "en_us");
+        super(event.getGenerator(), Windswept.MOD_ID, "en_us");
     }
 
     @Override
@@ -315,7 +315,7 @@ public class WindsweptLangProvider extends LanguageProvider {
     }
 
     private void translateBiome(BiomeSubRegistryHelper.KeyedBiome biome) {
-        this.add("biome." + Windswept.MODID + "." + ForgeRegistries.BIOMES.getKey(biome.get()).getPath(), toUpper(ForgeRegistries.BIOMES, biome.getObject()));
+        this.add("biome." + Windswept.MOD_ID + "." + ForgeRegistries.BIOMES.getKey(biome.get()).getPath(), toUpper(ForgeRegistries.BIOMES, biome.getObject()));
     }
 
     private void translateEnchantment(RegistryObject<? extends Enchantment> enchantment, String name, String desc) {
@@ -349,7 +349,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.addDescription(item, desc);
 
         for (DyeColor dye : DyeColor.values())
-            this.add("block.minecraft.banner." + Windswept.MODID + "." + name + "." + dye.getName(), StringUtils.capitaliseAllWords(dye.getName().replace('_', ' ')) + " " + desc);
+            this.add("block.minecraft.banner." + Windswept.MOD_ID + "." + name + "." + dye.getName(), StringUtils.capitaliseAllWords(dye.getName().replace('_', ' ')) + " " + desc);
     }
 
     private void jeiInfo(Supplier<? extends ItemLike> item, String desc) {

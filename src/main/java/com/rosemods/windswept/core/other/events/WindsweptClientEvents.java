@@ -19,7 +19,7 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.Arrays;
 import java.util.List;
 
-@EventBusSubscriber(modid = Windswept.MODID, bus = Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(modid = Windswept.MOD_ID, bus = Bus.MOD, value = Dist.CLIENT)
 public class WindsweptClientEvents {
     private static final List<RegistryObject<Block>> FOLIAGE_COLOR_BLOCKS = Arrays.asList(WindsweptBlocks.CHESTNUT_LEAVES, WindsweptBlocks.CHESTNUT_LEAF_CARPET, WindsweptBlocks.CHESTNUT_HEDGE, WindsweptBlocks.CHESTNUT_LEAF_PILE);
 

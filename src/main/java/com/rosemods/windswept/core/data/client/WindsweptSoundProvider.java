@@ -13,7 +13,7 @@ import java.util.function.Consumer;
 public class WindsweptSoundProvider extends SoundDefinitionsProvider {
 
     public WindsweptSoundProvider(GatherDataEvent event) {
-        super(event.getGenerator(), Windswept.MODID, event.getExistingFileHelper());
+        super(event.getGenerator(), Windswept.MOD_ID, event.getExistingFileHelper());
     }
 
     @Override

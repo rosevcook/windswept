@@ -9,7 +9,7 @@ import net.minecraftforge.data.event.GatherDataEvent;
 public class WindsweptPaintingVariantTagsProvider extends PaintingVariantTagsProvider {
 
     public WindsweptPaintingVariantTagsProvider(GatherDataEvent event) {
-        super(event.getGenerator(), Windswept.MODID, event.getExistingFileHelper());
+        super(event.getGenerator(), Windswept.MOD_ID, event.getExistingFileHelper());
     }
 
     @Override

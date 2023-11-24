@@ -14,7 +14,7 @@ import static com.rosemods.windswept.core.registry.WindsweptBiomes.*;
 public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
 
     public WindsweptBiomeTagProvider(GatherDataEvent event) {
-        super(event.getGenerator(), Windswept.MODID, event.getExistingFileHelper());
+        super(event.getGenerator(), Windswept.MOD_ID, event.getExistingFileHelper());
     }
 
     @Override
