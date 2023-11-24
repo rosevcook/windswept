@@ -3,7 +3,6 @@ package com.rosemods.windswept.core.data.server.tags;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.other.tags.WindsweptBlockTags;
 import com.rosemods.windswept.core.other.tags.WindsweptItemTags;
-import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintBlockTags;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintItemTags;
 import net.minecraft.data.tags.ItemTagsProvider;

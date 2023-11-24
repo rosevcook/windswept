@@ -123,8 +123,8 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.fence(CHESTNUT_FENCE, this.blockTexture(CHESTNUT_PLANKS.get()));
         this.fenceGate(CHESTNUT_FENCE_GATE, this.blockTexture(CHESTNUT_PLANKS.get()));
         this.pressurePlate(CHESTNUT_PRESSURE_PLATE, this.blockTexture(CHESTNUT_PLANKS.get()));
-        this.door(CHESTNUT_DOOR);
-        this.trapdoor(CHESTNUT_TRAPDOOR);
+        this.doorCutout(CHESTNUT_DOOR);
+        this.trapdoorCutout(CHESTNUT_TRAPDOOR);
         this.button(CHESTNUT_BUTTON, this.blockTexture(CHESTNUT_PLANKS.get()));
         this.signs(CHESTNUT_SIGNS, CHESTNUT_PLANKS);
         this.leaves(CHESTNUT_LEAVES);
@@ -211,6 +211,26 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.cubeAll(FROZEN_FLESH_BLOCK);
     }
 
+    // Items //
+
+    private void itemModel(RegistryObject<Block> block) {
+        this.itemModels().withExistingParent(getItemName(block.get()), this.blockTexture(block.get()));
+    }
+
+    private void generatedItem(ItemLike item, TextureFolder folder) {
+        String name = getItemName(item);
+        this.itemModels().withExistingParent(name, "item/generated").texture("layer0", this.modLoc(folder.format(name)));
+    }
+
+    private void generatedItemWithOverlay(ItemLike item) {
+        String name = getItemName(item);
+        this.itemModels().withExistingParent(name, "item/generated").texture("layer0", this.modLoc("item/" + name)).texture("layer1", this.modLoc("item/" + name + "_overlay"));
+    }
+
+    private void spawnEgg(RegistryObject<? extends Item> egg) {
+        this.itemModels().withExistingParent(getItemName(egg.get()), "item/template_spawn_egg");
+    }
+
     // Blocks //
 
     private void wildBerryBush(RegistryObject<Block> bush) {
@@ -226,6 +246,16 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.pot(pot, this.modLoc("block/potted_" + getItemName(bluebells.get())));
         this.simpleCross(bluebells);
         this.generatedItem(bluebells.get(), TextureFolder.Block);
+    }
+
+    private void iceSheet(RegistryObject<Block> block, ResourceLocation texture) {
+        this.paneBlockWithRenderType((IronBarsBlock) block.get(), texture, texture, "translucent");
+        this.itemModels().withExistingParent(getItemName(block.get()), "item/generated").texture("layer0", texture).renderType("translucent");
+    }
+
+    private void ice(RegistryObject<Block> block) {
+        this.simpleBlock(block.get(), this.models().cubeAll(getItemName(block.get()), this.blockTexture(block.get())).renderType("translucent"));
+        this.itemModel(block);
     }
 
     private void tallPlant(RegistryObject<Block> flower) {
@@ -249,24 +279,25 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.simpleBlock(pot.get(), model);
     }
 
-    private void ice(RegistryObject<Block> block) {
-        this.simpleBlock(block.get(), this.models().cubeAll(getItemName(block.get()), this.blockTexture(block.get())).renderType("translucent"));
-        this.itemModel(block);
-    }
-
-    private void iceSheet(RegistryObject<Block> block, ResourceLocation texture) {
-        this.paneBlockWithRenderType((IronBarsBlock) block.get(), texture, texture, "translucent");
-        this.itemModels().withExistingParent(getItemName(block.get()), "item/generated").texture("layer0", texture).renderType("translucent");
-    }
-
     private void trapdoor(RegistryObject<Block> trapdoor) {
+        this.trapdoorBlock((TrapDoorBlock) trapdoor.get(), this.blockTexture(trapdoor.get()), true);
+        this.itemModels().withExistingParent(getItemName(trapdoor.get()), this.modLoc("block/" + getItemName(trapdoor.get()) + "_bottom"));
+    }
+
+    private void trapdoorCutout(RegistryObject<Block> trapdoor) {
         this.trapdoorBlockWithRenderType((TrapDoorBlock) trapdoor.get(), this.blockTexture(trapdoor.get()), true, "cutout");
         this.itemModels().withExistingParent(getItemName(trapdoor.get()), this.modLoc("block/" + getItemName(trapdoor.get()) + "_bottom"));
     }
 
     private void door(RegistryObject<Block> door) {
-        String name = "block/" + getItemName(door.get());
-        this.doorBlockWithRenderType((DoorBlock) door.get(), getItemName(door.get()).replace("_door", ""), this.modLoc(name + "_bottom"), this.modLoc(name + "_top"), "cutout");
+        String name = getItemName(door.get());
+        this.doorBlock((DoorBlock) door.get(), name.replace("_door", ""), this.modLoc("block/" + name + "_bottom"), this.modLoc("block/" + name + "_top"));
+        this.generatedItem(door.get(), TextureFolder.Item);
+    }
+
+    private void doorCutout(RegistryObject<Block> door) {
+        String name = getItemName(door.get());
+        this.doorBlockWithRenderType((DoorBlock) door.get(), name.replace("_door", ""), this.modLoc("block/" + name + "_bottom"), this.modLoc("block/" + name + "_top"), "cutout");
         this.generatedItem(door.get(), TextureFolder.Item);
     }
 
@@ -472,16 +503,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
                 .partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.X).modelForState().modelFile(boardsHorizontalModel).rotationY(270).addModel();
     }
 
-    // Misc Util //
-
-    private void itemModel(RegistryObject<Block> block) {
-        this.itemModels().withExistingParent(getItemName(block.get()), this.blockTexture(block.get()));
-    }
-
-    private void generatedItem(ItemLike item, TextureFolder folder) {
-        String name = getItemName(item);
-        this.itemModels().withExistingParent(name, "item/generated").texture("layer0", this.modLoc(folder.format(name)));
-    }
+    // Util //
 
     private static String getItemName(ItemLike item) {
         return ForgeRegistries.ITEMS.getKey(item.asItem()).getPath();
@@ -489,15 +511,6 @@ public class WindsweptModelProvider extends BlockStateProvider {
 
     private static String getBlockName(Block block) {
         return ForgeRegistries.BLOCKS.getKey(block).getPath();
-    }
-
-    private void generatedItemWithOverlay(ItemLike item) {
-        String name = getItemName(item);
-        this.itemModels().withExistingParent(name, "item/generated").texture("layer0", this.modLoc("item/" + name)).texture("layer1", this.modLoc("item/" + name + "_overlay"));
-    }
-
-    private void spawnEgg(RegistryObject<? extends Item> egg) {
-        this.itemModels().withExistingParent(getItemName(egg.get()), "item/template_spawn_egg");
     }
 
     private enum TextureFolder {
