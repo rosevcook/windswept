@@ -16,7 +16,7 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "windswept:cake"
+              "recipe": "minecraft:cake"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
@@ -29,7 +29,7 @@
         ],
         "rewards": {
           "recipes": [
-            "windswept:cake"
+            "minecraft:cake"
           ]
         }
       },

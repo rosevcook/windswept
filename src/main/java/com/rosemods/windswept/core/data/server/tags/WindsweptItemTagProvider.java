@@ -67,8 +67,8 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
         this.tag(BlueprintItemTags.LARGE_BOATS).add(WindsweptItems.LARGE_HOLLY_BOAT.get(), WindsweptItems.LARGE_CHESTNUT_BOAT.get());
 
         //vanilla
-        this.tag(ItemTags.BOATS).add(WindsweptItems.HOLLY_BOAT.getFirst().get(), WindsweptItems.CHESTNUT_BOAT.getFirst().get());
-        this.tag(ItemTags.CHEST_BOATS).add(WindsweptItems.HOLLY_BOAT.getSecond().get(), WindsweptItems.CHESTNUT_BOAT.getSecond().get());
+        this.tag(ItemTags.BOATS).add(WindsweptItems.HOLLY_BOATS.getFirst().get(), WindsweptItems.CHESTNUT_BOATS.getFirst().get());
+        this.tag(ItemTags.CHEST_BOATS).add(WindsweptItems.HOLLY_BOATS.getSecond().get(), WindsweptItems.CHESTNUT_BOATS.getSecond().get());
         this.tag(ItemTags.SIGNS).add(WindsweptBlocks.HOLLY_SIGNS.getFirst().get().asItem(), WindsweptBlocks.CHESTNUT_SIGNS.getFirst().get().asItem());
         this.tag(ItemTags.MUSIC_DISCS).add(WindsweptItems.MUSIC_DISC_RAIN.get(), WindsweptItems.MUSIC_DISC_SNOW.get());
         this.copy(WindsweptBlockTags.HOLLY_LEAVES, ItemTags.LEAVES);

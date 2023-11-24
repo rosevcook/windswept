@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:cooked_mutton"
-            ]
+            "tag": "forge:cooked_mutton"
           }
         ]
       },

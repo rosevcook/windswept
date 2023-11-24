@@ -27,7 +27,6 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.Objects;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -40,10 +39,10 @@ public class WindsweptModelProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         //item models
-        this.generatedItem(WindsweptItems.HOLLY_BOAT.getFirst().get(), TextureFolder.Item);
-        this.generatedItem(WindsweptItems.HOLLY_BOAT.getSecond().get(), TextureFolder.Item);
-        this.generatedItem(WindsweptItems.CHESTNUT_BOAT.getFirst().get(), TextureFolder.Item);
-        this.generatedItem(WindsweptItems.CHESTNUT_BOAT.getSecond().get(), TextureFolder.Item);
+        this.generatedItem(WindsweptItems.HOLLY_BOATS.getFirst().get(), TextureFolder.Item);
+        this.generatedItem(WindsweptItems.HOLLY_BOATS.getSecond().get(), TextureFolder.Item);
+        this.generatedItem(WindsweptItems.CHESTNUT_BOATS.getFirst().get(), TextureFolder.Item);
+        this.generatedItem(WindsweptItems.CHESTNUT_BOATS.getSecond().get(), TextureFolder.Item);
         this.generatedItem(WindsweptItems.HOLLY_BERRIES.get(), TextureFolder.Item);
         this.generatedItem(WindsweptItems.WOODEN_BUCKET.get(), TextureFolder.Item);
         this.generatedItem(WindsweptItems.WOODEN_MILK_BUCKET.get(), TextureFolder.Item);
@@ -214,7 +213,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
     // Blocks //
 
     private void wildBerryBush(RegistryObject<Block> bush) {
-        String name = Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(bush.get())).getPath();
+        String name = getBlockName(bush.get());
         final Function<Integer, ModelFile> model = i -> this.models().cross(name + "_stage" + i, this.modLoc("block/" + name + "_stage" + i)).renderType("cutout");
         this.getVariantBuilder(bush.get())
                 .partialState().with(WildBerryBushBlock.AGE, 0).addModels(new ConfiguredModel(model.apply(0), 0, 0, true))
@@ -245,7 +244,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
     }
 
     private void pot(RegistryObject<Block> pot, ResourceLocation texture) {
-        ModelFile model = this.models().withExistingParent(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(pot.get())).getPath(), "block/flower_pot_cross").texture("plant", texture).renderType("cutout");
+        ModelFile model = this.models().withExistingParent(getBlockName(pot.get()), "block/flower_pot_cross").texture("plant", texture).renderType("cutout");
         this.simpleBlock(pot.get(), model);
     }
 
