@@ -79,6 +79,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateMusicDisc(MUSIC_DISC_SNOW, "rose - snow");
         this.translateMusicDisc(MUSIC_DISC_BUMBLEBEE, "rose - bumblebee");
         this.translateItem(CHILLED_SPAWN_EGG);
+        this.translateItem(FROSTBITER_SPAWN_EGG);
 
         this.add(HOLLY_FURNACE_BOAT.get(), "Holly Boat with Furnace");
         this.translateItem(LARGE_HOLLY_BOAT);
@@ -229,6 +230,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         // Entities //
 
         this.translateEntity(WindsweptEntities.CHILLED);
+        this.translateEntity(WindsweptEntities.FROSTBITER);
 
         // Effects //
 

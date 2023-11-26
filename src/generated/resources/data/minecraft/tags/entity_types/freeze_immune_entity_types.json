@@ -1,6 +1,7 @@
 {
   "values": [
     "windswept:chilled",
+    "windswept:frostbiter",
     "#windswept:convert_to_chilled"
   ]
 }

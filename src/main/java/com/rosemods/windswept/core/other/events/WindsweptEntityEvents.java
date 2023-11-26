@@ -143,8 +143,8 @@ public class WindsweptEntityEvents {
             return;
 
         // snow speed particles
-        if (SnowBootsItem.canSpawnSnowSpeedParticle(entity))
-            SnowBootsItem.spawnSnowSpeedParticle(entity);
+        if (SnowBootsItem.canSpawnSnowParticle(entity))
+            SnowBootsItem.spawnSnowParticle(entity);
 
         // chilled conversion in powder snow
         if (entity.getType().is(WindsweptEntityTypeTags.CONVERT_TO_CHILLED) && entity instanceof Mob mob) {

@@ -2,6 +2,7 @@ package com.rosemods.windswept.common.item;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
+import com.rosemods.windswept.common.entity.Frostbiter;
 import com.rosemods.windswept.core.other.WindsweptTiers;
 import com.rosemods.windswept.core.other.tags.WindsweptBlockTags;
 import com.rosemods.windswept.core.registry.WindsweptAttributes;
@@ -59,17 +60,17 @@ public class SnowBootsItem extends DyeableArmorItem {
         return entity.level.getBlockState(below).is(WindsweptBlockTags.SNOW_BOOTS_BLOCKS) || entity.level.getBlockState(below.above()).is(WindsweptBlockTags.SNOW_BOOTS_BLOCKS);
     }
 
-    public static boolean canSpawnSnowSpeedParticle(LivingEntity entity) {
+    public static boolean canSpawnSnowParticle(LivingEntity entity) {
         return entity.tickCount % 5 == 0 && entity.getDeltaMovement().x != 0d && entity.getDeltaMovement().z != 0d
                 && !entity.isSpectator() && onSnowBlock(entity)
-                && entity.getItemBySlot(EquipmentSlot.FEET).is(WindsweptItems.SNOW_BOOTS.get());
+                && (entity.getItemBySlot(EquipmentSlot.FEET).is(WindsweptItems.SNOW_BOOTS.get()) || entity instanceof Frostbiter);
     }
 
     public static boolean shouldRemoveSnowSpeed(BlockState state, LivingEntity entity) {
         return !state.isAir() || entity.isFallFlying();
     }
 
-    public static void spawnSnowSpeedParticle(LivingEntity entity) {
+    public static void spawnSnowParticle(LivingEntity entity) {
         Vec3 vec3 = entity.getDeltaMovement();
         entity.level.addParticle(ParticleTypes.SNOWFLAKE,
                 entity.getX() + (entity.level.random.nextDouble() - .5d) * (double) entity.getBbWidth(),

@@ -71,6 +71,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.generatedItem(MUSIC_DISC_SNOW.get(), TextureFolder.Item);
         this.generatedItem(MUSIC_DISC_BUMBLEBEE.get(), TextureFolder.Item);
         this.spawnEgg(CHILLED_SPAWN_EGG);
+        this.spawnEgg(FROSTBITER_SPAWN_EGG);
         this.generatedItem(HOLLY_FURNACE_BOAT.get(), TextureFolder.Item);
         this.generatedItem(LARGE_HOLLY_BOAT.get(), TextureFolder.Item);
         this.generatedItem(CHESTNUT_FURNACE_BOAT.get(), TextureFolder.Item);

@@ -306,6 +306,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
                                             .when(LootItemEntityPropertyCondition.hasProperties(
                                                     LootContext.EntityTarget.KILLER,
                                                     EntityPredicate.Builder.entity().of(EntityTypeTags.SKELETONS)))));
+            this.add(WindsweptEntities.FROSTBITER.get(), LootTable.lootTable());
 
         }
 

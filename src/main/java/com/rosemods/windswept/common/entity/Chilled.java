@@ -22,10 +22,6 @@ import net.minecraftforge.fml.ModList;
 
 public class Chilled extends Zombie {
 
-    public Chilled(Level level) {
-        super(WindsweptEntities.CHILLED.get(), level);
-    }
-
     public Chilled(EntityType<? extends Zombie> type, Level level) {
         super(type, level);
     }
