@@ -71,6 +71,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.add(COOKED_GOAT_SHANKS.get(), "Cooked Chevon Shanks");
         this.add(FOUL_BERRY_BOWL.get(), "Bowl of Foul Berries");
         this.translateItem(FROZEN_FLESH);
+        this.translateItem(FROZEN_BRANCH);
         this.translateItem(SNOW_BOOTS);
         this.translateBannerPattern(SNOW_CHARGE_BANNER_PATTERN, "snow_charge");
         this.translateBannerPattern(SNOW_GOLEM_BANNER_PATTERN, "snow_golem");

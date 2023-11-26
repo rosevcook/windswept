@@ -64,6 +64,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.generatedItem(WILD_BERRY_PIPS.get(), TextureFolder.Item);
         this.generatedItemWithOverlay(SNOW_BOOTS.get());
         this.generatedItem(FROZEN_FLESH.get(), TextureFolder.Item);
+        this.generatedItem(FROZEN_BRANCH.get(), TextureFolder.Item);
         this.generatedItem(SNOW_GOLEM_BANNER_PATTERN.get(), TextureFolder.Item);
         this.generatedItem(SNOW_CHARGE_BANNER_PATTERN.get(), TextureFolder.Item);
         this.generatedItem(ROSE_FLOWER_BANNER_PATTERN.get(), TextureFolder.Item);
