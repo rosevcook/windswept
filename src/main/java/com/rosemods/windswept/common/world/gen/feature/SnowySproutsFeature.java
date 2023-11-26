@@ -22,7 +22,7 @@ public class SnowySproutsFeature extends Feature<NoneFeatureConfiguration> {
         BlockPos origin = context.origin();
         WorldGenLevel level = context.level();
         BlockState state = WindsweptBlocks.SNOWY_SPROUTS.get().defaultBlockState();
-        BlockState wildBerries = WindsweptBlocks.WILD_BERRY_BUSH.get().defaultBlockState().setValue(WildBerryBushBlock.AGE, Integer.valueOf(2));
+        BlockState wildBerries = WindsweptBlocks.WILD_BERRY_BUSH.get().defaultBlockState().setValue(WildBerryBushBlock.AGE, 3);
         RandomSource rand = context.random();
         boolean generated = false;
 

@@ -6,13 +6,15 @@
     },
     "age=1": {
       "model": "windswept:block/wild_berry_bush_stage1",
-      "uvlock": true,
-      "y": 180
+      "uvlock": true
     },
     "age=2": {
       "model": "windswept:block/wild_berry_bush_stage2",
-      "uvlock": true,
-      "y": 90
+      "uvlock": true
+    },
+    "age=3": {
+      "model": "windswept:block/wild_berry_bush_stage3",
+      "uvlock": true
     }
   }
 }
