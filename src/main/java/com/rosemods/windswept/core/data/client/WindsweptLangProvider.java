@@ -121,6 +121,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(STRIPPED_HOLLY_POST);
         this.translateBlock(HOLLY_CHEST);
         this.translateBlock(HOLLY_TRAPPED_CHEST);
+        this.translateBlock(HOLLY_WREATH);
         this.add(HOLLY_BERRY_BASKET.get(), "Basket of Holly Berries");
 
         this.translateBlock(STRIPPED_CHESTNUT_LOG);

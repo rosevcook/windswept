@@ -113,6 +113,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.post(HOLLY_POST, this.blockTexture(HOLLY_LOG.get()));
         this.post(STRIPPED_HOLLY_POST, this.blockTexture(STRIPPED_HOLLY_LOG.get()));
         this.chests(HOLLY_CHEST, HOLLY_TRAPPED_CHEST, this.blockTexture(HOLLY_PLANKS.get()));
+        this.ladder(HOLLY_WREATH);
         this.compressedBlock(HOLLY_BERRY_BASKET);
 
         this.log(STRIPPED_CHESTNUT_LOG);

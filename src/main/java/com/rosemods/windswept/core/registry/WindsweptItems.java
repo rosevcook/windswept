@@ -83,7 +83,7 @@ public class WindsweptItems {
 
     // Spawn Eggs //
 
-    public static final RegistryObject<ForgeSpawnEggItem> CHILLED_SPAWN_EGG = HELPER.createSpawnEggItem("chilled", WindsweptEntities.CHILLED::get, 0x98c4df, 0xf1f8f9);
+    public static final RegistryObject<ForgeSpawnEggItem> CHILLED_SPAWN_EGG = HELPER.createSpawnEggItem("chilled", WindsweptEntities.CHILLED::get, 0xaec2d4, 0x98654a);
     public static final RegistryObject<ForgeSpawnEggItem> FROSTBITER_SPAWN_EGG = HELPER.createSpawnEggItem("frostbiter", WindsweptEntities.FROSTBITER::get, 0xe2e2e2, 0x8fb5ff);
 
     // Boats //

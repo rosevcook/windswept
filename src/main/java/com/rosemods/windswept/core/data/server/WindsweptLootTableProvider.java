@@ -118,6 +118,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(HOLLY_LEAF_CARPET.get());
             this.leafPile(HOLLY_LEAF_PILE.get());
 
+            this.dropSelf(HOLLY_WREATH.get());
             this.dropSelf(HOLLY_BERRY_BASKET.get());
 
             // chestnut
