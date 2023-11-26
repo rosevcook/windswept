@@ -1,7 +1,7 @@
 package com.rosemods.windswept.core.other.events;
 
-import com.rosemods.windswept.client.model.FrostbiterModel;
 import com.rosemods.windswept.core.Windswept;
+import com.rosemods.windswept.core.other.WindsweptModelLayers;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.teamabnormals.blueprint.core.util.DataUtil;
@@ -38,7 +38,8 @@ public class WindsweptClientEvents {
 
     @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
-        event.registerLayerDefinition(FrostbiterModel.LAYER_LOCATION, FrostbiterModel::createBodyLayer);
+        event.registerLayerDefinition(WindsweptModelLayers.CHILLED, WindsweptModelLayers::createChilledBodyLayer);
+        event.registerLayerDefinition(WindsweptModelLayers.FROSTBITER, WindsweptModelLayers::createFrostbiterBodyLayer);
     }
 
 }
