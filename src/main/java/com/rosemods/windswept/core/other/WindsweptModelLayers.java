@@ -34,20 +34,29 @@ public final class WindsweptModelLayers {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
 
-        PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 0).addBox(-10.0F, -8.0F, 0.0F, 20.0F, 19.0F, 25.0F, new CubeDeformation(0.0F))
-                .texOffs(90, 0).addBox(-10.0F, -9.0F, 0.0F, 20.0F, 19.0F, 25.0F, new CubeDeformation(0.5F)), PartPose.offset(0.0F, 3.0F, -15.0F));
+        PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 0).addBox(-10.0F, -8.0F, -26.0F, 20.0F, 19.0F, 25.0F, new CubeDeformation(0.0F))
+                .texOffs(90, 0).addBox(-10.0F, -9.0F, -26.0F, 20.0F, 19.0F, 25.0F, new CubeDeformation(0.5F)), PartPose.offset(0.0F, 3.0F, 11.0F));
 
-        PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(64, 86).addBox(-8.0F, -4.0F, -20.0F, 16.0F, 12.0F, 16.0F, new CubeDeformation(0.0F))
-                .texOffs(84, 114).addBox(-8.0F, -4.0F, -4.0F, 16.0F, 12.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, -14.0F, 0.4363F, 0.0F, 0.0F));
+        PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(84, 114).addBox(-8.0F, -4.0F, -4.0F, 16.0F, 12.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, -14.0F, 0.4363F, 0.0F, 0.0F));
+
+        PartDefinition front = head.addOrReplaceChild("front", CubeListBuilder.create().texOffs(64, 86).addBox(-8.0F, -4.0F, -20.0F, 16.0F, 12.0F, 16.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+
+        PartDefinition front_eyes_closed = head.addOrReplaceChild("front_eyes_closed", CubeListBuilder.create().texOffs(128, 86).addBox(-8.0F, -4.0F, -20.0F, 16.0F, 12.0F, 16.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
         PartDefinition leash = head.addOrReplaceChild("leash", CubeListBuilder.create().texOffs(0, 118).addBox(-10.0F, -7.6906F, -0.8419F, 20.0F, 20.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 1.0F, -2.0F, -0.4363F, 0.0F, 0.0F));
 
         PartDefinition bell = leash.addOrReplaceChild("bell", CubeListBuilder.create().texOffs(0, 138).addBox(-2.5F, -6.0F, -2.0F, 5.0F, 6.0F, 5.0F, new CubeDeformation(0.0F))
                 .texOffs(0, 149).addBox(-3.5F, -8.0F, -3.0F, 7.0F, 2.0F, 7.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 12.3094F, -0.8419F, 3.1416F, 0.0F, 0.0F));
 
-        PartDefinition left_antler = head.addOrReplaceChild("left_antler", CubeListBuilder.create().texOffs(29, 118).addBox(-8.0F, -20.0F, 0.0F, 16.0F, 20.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-8.0F, -1.0F, -4.0F, 0.0F, 0.6981F, 0.0F));
+        PartDefinition left_antler = head.addOrReplaceChild("left_antler", CubeListBuilder.create().texOffs(40, 119).addBox(-8.0F, -20.0F, 0.0F, 16.0F, 20.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-8.0F, -1.0F, -4.0F, 0.0F, 0.6981F, 0.0F));
 
-        PartDefinition right_antler = head.addOrReplaceChild("right_antler", CubeListBuilder.create().texOffs(28, 138).addBox(-8.0F, -20.0F, 0.0F, 16.0F, 20.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(8.0F, -1.0F, -4.0F, 0.0F, -0.6981F, 0.0F));
+        PartDefinition broken_left_antler = head.addOrReplaceChild("broken_left_antler", CubeListBuilder.create().texOffs(1, 158).addBox(-8.0F, -20.0F, 0.0F, 16.0F, 20.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-8.0F, -1.0F, -4.0F, 0.0F, 0.6981F, 0.0F));
+
+        PartDefinition right_antler = head.addOrReplaceChild("right_antler", CubeListBuilder.create().texOffs(39, 139).addBox(-8.0F, -20.0F, 0.0F, 16.0F, 20.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(8.0F, -1.0F, -4.0F, 0.0F, -0.6981F, 0.0F));
+
+        PartDefinition broken_right_antler = head.addOrReplaceChild("broken_right_antler", CubeListBuilder.create().texOffs(0, 178).addBox(-8.0F, -20.0F, 0.0F, 16.0F, 20.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(8.0F, -1.0F, -4.0F, 0.0F, -0.6981F, 0.0F));
+
+        PartDefinition leaves = head.addOrReplaceChild("leaves", CubeListBuilder.create().texOffs(58, 144).addBox(-8.0F, -4.1F, -20.0F, 16.0F, 0.0F, 22.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
         PartDefinition tail = partdefinition.addOrReplaceChild("tail", CubeListBuilder.create().texOffs(76, 44).addBox(-7.0F, 0.0F, 1.0F, 14.0F, 11.0F, 24.0F, new CubeDeformation(0.5F))
                 .texOffs(0, 44).addBox(-7.0F, 0.0F, 0.6F, 14.0F, 18.0F, 24.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -1.0F, 10.0F, -0.1745F, 0.0F, 0.0F));

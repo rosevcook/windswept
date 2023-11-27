@@ -25,8 +25,8 @@ import net.minecraftforge.registries.RegistryObject;
 public class WindsweptEntities {
     public static final EntitySubRegistryHelper HELPER = Windswept.REGISTRY_HELPER.getEntitySubHelper();
 
-    public static final RegistryObject<EntityType<Chilled>> CHILLED = HELPER.createLivingEntity("chilled", Chilled::new, MobCategory.MONSTER, .6f, 1.95f);
-    public static final RegistryObject<EntityType<Frostbiter>> FROSTBITER = HELPER.createLivingEntity("frostbiter", Frostbiter::new, MobCategory.CREATURE, 1.6f, 1.6f);
+    public static final RegistryObject<EntityType<Chilled>> CHILLED = HELPER.createLivingEntity("chilled", Chilled::new, MobCategory.MONSTER, .6f, 2f);
+    public static final RegistryObject<EntityType<Frostbiter>> FROSTBITER = HELPER.createLivingEntity("frostbiter", Frostbiter::new, MobCategory.CREATURE, 2f, 1.8f);
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {

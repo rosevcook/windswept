@@ -8,7 +8,7 @@ import com.teamabnormals.blueprint.core.endimator.entity.EndimatorEntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.util.Mth;
 
-public class FrostbiterModel<T extends Frostbiter> extends EndimatorEntityModel<T> {
+public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> {
     private final ModelPart body;
     private final ModelPart head;
     private final ModelPart tail;
@@ -17,10 +17,15 @@ public class FrostbiterModel<T extends Frostbiter> extends EndimatorEntityModel<
     private final ModelPart leftLeg;
     private final ModelPart rightLeg;
 
+    private final ModelPart front;
+    private final ModelPart frontEyesClosed;
+    private final ModelPart leaves;
     private final ModelPart leash;
     private final ModelPart bell;
     private final ModelPart leftAntler;
     private final ModelPart rightAntler;
+    private final ModelPart brokenLeftAntler;
+    private final ModelPart brokenRightAntler;
 
 
     public FrostbiterModel(ModelPart root) {
@@ -32,24 +37,40 @@ public class FrostbiterModel<T extends Frostbiter> extends EndimatorEntityModel<
         this.leftLeg = root.getChild("left_leg");
         this.rightLeg = root.getChild("right_leg");
 
+        this.front = this.head.getChild("front");
+        this.frontEyesClosed = this.head.getChild("front_eyes_closed");
+        this.leaves = this.head.getChild("leaves");
         this.leash = this.head.getChild("leash");
         this.bell = this.leash.getChild("bell");
         this.leftAntler = this.head.getChild("left_antler");
         this.rightAntler = this.head.getChild("right_antler");
+        this.brokenLeftAntler = this.head.getChild("broken_left_antler");
+        this.brokenRightAntler = this.head.getChild("broken_right_antler");
 
         this.endimator = Endimator.compile(root);
     }
 
     @Override
-    public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-        this.rightLeg.xRot = Mth.cos(limbSwing * .6662f) * 1.2f * limbSwingAmount;
-        this.leftLeg.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * 1.2f * limbSwingAmount;
-        this.rightArm.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * 1.2f * limbSwingAmount;
-        this.leftArm.xRot = Mth.cos(limbSwing * .6662f) * 1.2f * limbSwingAmount;
+    public void setupAnim(Frostbiter frostbiter, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+        super.setupAnim(frostbiter, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+        this.rightLeg.xRot = Mth.cos(limbSwing * .6662f) * .9f * limbSwingAmount;
+        this.leftLeg.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f  * limbSwingAmount;
+        this.rightArm.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * limbSwingAmount;
+        this.leftArm.xRot = Mth.cos(limbSwing * .6662f) * .9f  * limbSwingAmount;
 
         this.tail.yRot = Mth.cos(limbSwing * .6662f + Mth.PI) * limbSwingAmount;
+        this.tail.zRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .1f * limbSwingAmount;
         this.body.zRot = Mth.cos(limbSwing * .6662f) * .2f * limbSwingAmount;
         this.bell.zRot = Mth.cos(limbSwing * .6662f) * .6f * limbSwingAmount;
+
+        this.frontEyesClosed.visible = frostbiter.hasEyesClosed();
+        this.front.visible = !this.frontEyesClosed.visible;
+        this.leaves.visible = frostbiter.hasAntlers();
+        this.leash.visible = frostbiter.isTame();
+        this.leftAntler.visible = frostbiter.hasLeftAntler() && !frostbiter.isBaby();
+        this.rightAntler.visible = frostbiter.hasRightAntler() && !frostbiter.isBaby();
+        this.brokenLeftAntler.visible = !this.leftAntler.visible;
+        this.brokenRightAntler.visible = !this.rightAntler.visible;
     }
 
     @Override
@@ -57,11 +78,12 @@ public class FrostbiterModel<T extends Frostbiter> extends EndimatorEntityModel<
         if (this.young) {
             poseStack.pushPose();
             poseStack.scale(.55f, .55f, .55f);
-            poseStack.translate(0f, 1.5f, 0f);
+            poseStack.translate(0f, 1.3f, 0f);
             head.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
             poseStack.popPose();
+
             poseStack.pushPose();
-            poseStack.scale(.5f, .5f, .5f);
+            poseStack.scale(.45f, .45f, .45f);
             poseStack.translate(0f, 1.5f, 0f);
             this.renderBody(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
             poseStack.popPose();

@@ -9,11 +9,11 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
 
-public class FrostbiterRenderer extends MobRenderer<Frostbiter, EntityModel<Frostbiter>> {
+public class FrostbiterRenderer extends MobRenderer<Frostbiter, FrostbiterModel> {
     private static final ResourceLocation FROSTBITER_LOCATION = Windswept.REGISTRY_HELPER.prefix("textures/entity/frostbiter.png");
 
     public FrostbiterRenderer(EntityRendererProvider.Context context) {
-        super(context, new FrostbiterModel<>(context.bakeLayer(WindsweptModelLayers.FROSTBITER)), 1.25f);
+        super(context, new FrostbiterModel(context.bakeLayer(WindsweptModelLayers.FROSTBITER)), 1.25f);
     }
 
     @Override
