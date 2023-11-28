@@ -73,6 +73,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateItem(FROZEN_FLESH);
         this.translateItem(FROZEN_BRANCH);
         this.translateItem(SNOW_BOOTS);
+        this.translateItem(FROST_ARROW);
         this.translateBannerPattern(SNOW_CHARGE_BANNER_PATTERN, "snow_charge");
         this.translateBannerPattern(SNOW_GOLEM_BANNER_PATTERN, "snow_golem");
         this.translateBannerPattern(ROSE_FLOWER_BANNER_PATTERN, "rose_flower");
@@ -208,6 +209,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(YELLOW_ROSE);
         this.translateBlock(FOXGLOVE);
         this.translateBlock(BLUEBELLS);
+        this.translateBlock(SNOWDROP);
         this.translateBlock(NIGHTSHADE);
 
         this.translateBlock(POTTED_RED_ROSE);
@@ -218,6 +220,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(POTTED_FOXGLOVE);
         this.translateBlock(POTTED_BLUEBELLS);
         this.translateBlock(POTTED_NIGHTSHADE);
+        this.translateBlock(POTTED_SNOWDROP);
         this.translateBlock(POTTED_SNOWY_SPROUTS);
 
         this.translateBlock(WILD_BERRY_BUSH);

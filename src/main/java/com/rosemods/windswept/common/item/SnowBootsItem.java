@@ -29,7 +29,7 @@ import java.util.UUID;
 public class SnowBootsItem extends DyeableArmorItem {
     private static final UUID SNOW_SPEED_UUID = UUID.fromString("713d8671-29b8-4600-ba51-580b91cc24cf"); //uuid for snow speed
     private static final UUID SPEED_MODIFIER_SNOW_SPEED_UUID = UUID.fromString("c51348dc-85bf-4ac5-8428-deefefec04aa"); //uuid for speed modifier
-    private static final TargetedItemCategoryFiller FILLER = new TargetedItemCategoryFiller(Items.TURTLE_HELMET::asItem);
+    private static final TargetedItemCategoryFiller FILLER = new TargetedItemCategoryFiller(() -> Items.TURTLE_HELMET);
 
     public SnowBootsItem(Properties properties) {
         super(WindsweptTiers.SNOW_BOOTS, EquipmentSlot.FEET, properties);

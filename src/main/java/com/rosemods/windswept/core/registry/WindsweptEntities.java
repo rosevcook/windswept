@@ -1,8 +1,10 @@
 package com.rosemods.windswept.core.registry;
 
 import com.rosemods.windswept.client.render.ChilledRenderer;
+import com.rosemods.windswept.client.render.FrostArrowRenderer;
 import com.rosemods.windswept.client.render.FrostbiterRenderer;
 import com.rosemods.windswept.common.entity.Chilled;
+import com.rosemods.windswept.common.entity.FrostArrow;
 import com.rosemods.windswept.common.entity.Frostbiter;
 import com.rosemods.windswept.core.Windswept;
 import com.teamabnormals.blueprint.core.util.registry.EntitySubRegistryHelper;
@@ -27,6 +29,7 @@ public class WindsweptEntities {
 
     public static final RegistryObject<EntityType<Chilled>> CHILLED = HELPER.createLivingEntity("chilled", Chilled::new, MobCategory.MONSTER, .6f, 2f);
     public static final RegistryObject<EntityType<Frostbiter>> FROSTBITER = HELPER.createLivingEntity("frostbiter", Frostbiter::new, MobCategory.CREATURE, 2f, 1.8f);
+    public static final RegistryObject<EntityType<FrostArrow>> FROST_ARROW = HELPER.createEntity("blunt_arrow", FrostArrow::new, FrostArrow::new, MobCategory.MISC, .5f, .5f);
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
@@ -43,6 +46,7 @@ public class WindsweptEntities {
     public static void registerClient() {
         EntityRenderers.register(CHILLED.get(), ChilledRenderer::new);
         EntityRenderers.register(FROSTBITER.get(), FrostbiterRenderer::new);
+        EntityRenderers.register(FROST_ARROW.get(), FrostArrowRenderer::new);
     }
 
 }

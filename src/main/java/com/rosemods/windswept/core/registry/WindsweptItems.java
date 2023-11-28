@@ -3,6 +3,7 @@ package com.rosemods.windswept.core.registry;
 import com.mojang.datafixers.util.Pair;
 import com.rosemods.windswept.common.item.BerryBowlItem;
 import com.rosemods.windswept.common.item.DrinkableBottleItem;
+import com.rosemods.windswept.common.item.FrostArrowItem;
 import com.rosemods.windswept.common.item.SnowBootsItem;
 import com.rosemods.windswept.common.item.wooden_bucket.WoodenBucketItem;
 import com.rosemods.windswept.common.item.wooden_bucket.WoodenMilkBucketItem;
@@ -10,7 +11,6 @@ import com.rosemods.windswept.common.item.wooden_bucket.WoodenPowderSnowBucketIt
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.other.WindsweptConstants;
 import com.rosemods.windswept.core.other.WindsweptFoods;
-import com.rosemods.windswept.core.other.WindsweptProperties;
 import com.rosemods.windswept.core.other.tags.WindsweptBannerPatternTags;
 import com.rosemods.windswept.integration.autumnity.WindsweptAutumnityCompat;
 import com.rosemods.windswept.integration.boatload.WindsweptBoatTypes;
@@ -63,9 +63,7 @@ public class WindsweptItems {
 
     public static final RegistryObject<Item> SNOW_BOOTS = HELPER.createItem("snow_boots", () -> new SnowBootsItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
     public static final RegistryObject<Item> HOLLY_BERRIES = HELPER.createItem("holly_berries", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_BREWING).food(WindsweptFoods.HOLLY_BERRIES)));
-
-
-    // Mob Drops //
+    public static final RegistryObject<Item> FROST_ARROW = HELPER.createItem("frost_arrow", () -> new FrostArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
     public static final RegistryObject<Item> FROZEN_FLESH = HELPER.createItem("frozen_flesh", () -> new InjectedItem(Items.ROTTEN_FLESH, PropertyUtil.food(WindsweptFoods.FROZEN_FLESH)));
     public static final RegistryObject<Item> FROZEN_BRANCH = HELPER.createItem("frozen_branch", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 

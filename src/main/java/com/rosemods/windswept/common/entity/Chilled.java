@@ -2,7 +2,6 @@ package com.rosemods.windswept.common.entity;
 
 import com.rosemods.windswept.core.other.WindsweptConstants;
 import com.rosemods.windswept.core.registry.WindsweptEnchantments;
-import com.rosemods.windswept.core.registry.WindsweptEntities;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;

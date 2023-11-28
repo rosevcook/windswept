@@ -68,6 +68,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         flowerToDye(YELLOW_ROSE.get(), Items.YELLOW_DYE, consumer);
         flowerToDye(FOXGLOVE.get(), Items.PINK_DYE, consumer);
         flowerToDye(BLUEBELLS.get(), Items.BLUE_DYE, consumer);
+        flowerToDye(SNOWDROP.get(), Items.LIGHT_GRAY_DYE, consumer);
         flowerToDye(NIGHTSHADE.get(), Items.LIGHT_BLUE_DYE, consumer);
         tallFlowerToDye(RED_ROSE_BUSH.get(), Items.RED_DYE, consumer);
         tallFlowerToDye(PINK_ROSE_BUSH.get(), Items.PINK_DYE, consumer);
@@ -86,6 +87,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         conditionalRecipe(ShapedRecipeBuilder.shaped(SNOW_BOOTS.get()).define('#', WindsweptItemTags.SILVER_INGOT).define('L', Items.LEATHER).pattern("L L").pattern("L L").pattern("# #").unlockedBy(getHasName(Items.LEATHER), has(Items.LEATHER)), new NotCondition(new TagEmptyCondition(WindsweptItemTags.SILVER_INGOT.location())), consumer, getSaveLocation("snow_boots_from_silver"));
         conditionalRecipe(ShapelessRecipeBuilder.shapeless(WILD_BERRY_PIPS.get()).requires(WILD_BERRIES.get()).unlockedBy(getHasName(WILD_BERRIES.get()), has(WILD_BERRIES.get())), new ModLoadedCondition("berry_good"), consumer, getSaveLocation(WILD_BERRY_PIPS.get()));
         ShapedRecipeBuilder.shaped(HOLLY_WREATH.get()).define('#', HOLLY_BERRIES.get()).define('B', FROZEN_BRANCH.get()).pattern(" # ").pattern("#B#").pattern(" # ").unlockedBy(getHasName(HOLLY_BERRIES.get()), has(HOLLY_BERRIES.get())).save(consumer, getSaveLocation(HOLLY_WREATH.get()));
+        ShapelessRecipeBuilder.shapeless(FROST_ARROW.get(), 4).requires(Items.ARROW).requires(FROZEN_BRANCH.get()).unlockedBy(getHasName(FROZEN_BRANCH.get()), has(FROZEN_BRANCH.get())).save(consumer, getSaveLocation(FROST_ARROW.get()));
 
         // building blocks
         ShapedRecipeBuilder.shaped(CUT_ICE.get(), 4).define('#', Items.ICE).pattern("##").pattern("##").unlockedBy(getHasName(Items.ICE), has(Items.ICE)).save(consumer, getSaveLocation(CUT_ICE.get()));

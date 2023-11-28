@@ -22,7 +22,7 @@ import net.minecraft.world.level.Level;
 import java.util.function.Supplier;
 
 public class DrinkableBottleItem extends HoneyBottleItem {
-    private static final TargetedItemCategoryFiller FILLER = new TargetedItemCategoryFiller(Items.HONEY_BOTTLE::asItem);
+    private static final TargetedItemCategoryFiller FILLER = new TargetedItemCategoryFiller(() -> Items.HONEY_BOTTLE);
     private final Supplier<SoundEvent> drinkSound;
 
     public DrinkableBottleItem(Supplier<SoundEvent> drinkSound, FoodProperties food) {

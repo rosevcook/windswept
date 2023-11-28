@@ -201,8 +201,8 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.pottedPlant(YELLOW_ROSE, POTTED_YELLOW_ROSE);
         this.pottedPlant(FOXGLOVE, POTTED_FOXGLOVE);
         this.pottedPlant(NIGHTSHADE, POTTED_NIGHTSHADE);
-
-        this.blubells(BLUEBELLS, POTTED_BLUEBELLS);
+        this.pottedPlantWithPottedVariant(SNOWDROP, POTTED_SNOWDROP);
+        this.pottedPlantWithPottedVariant(BLUEBELLS, POTTED_BLUEBELLS);
 
         this.wildBerryBush(WILD_BERRY_BUSH);
         this.compressedBlock(WILD_BERRY_BASKET);
@@ -246,12 +246,6 @@ public class WindsweptModelProvider extends BlockStateProvider {
                 .partialState().with(WildBerryBushBlock.AGE, 3).addModels(new ConfiguredModel(model.apply(3), 0, 0, true));
     }
 
-    private void blubells(RegistryObject<Block> bluebells, RegistryObject<Block> pot) {
-        this.pot(pot, this.modLoc("block/potted_" + getItemName(bluebells.get())));
-        this.simpleCross(bluebells);
-        this.generatedItem(bluebells.get(), TextureFolder.Block);
-    }
-
     private void iceSheet(RegistryObject<Block> block, ResourceLocation texture) {
         this.paneBlockWithRenderType((IronBarsBlock) block.get(), texture, texture, "translucent");
         this.itemModels().withExistingParent(getItemName(block.get()), "item/generated").texture("layer0", texture).renderType("translucent");
@@ -274,6 +268,12 @@ public class WindsweptModelProvider extends BlockStateProvider {
 
     private void pottedPlant(RegistryObject<Block> plant, RegistryObject<Block> pot) {
         this.pot(pot, this.blockTexture(plant.get()));
+        this.simpleCross(plant);
+        this.generatedItem(plant.get(), TextureFolder.Block);
+    }
+
+    private void pottedPlantWithPottedVariant(RegistryObject<Block> plant, RegistryObject<Block> pot) {
+        this.pot(pot, this.modLoc("block/potted_" + getItemName(plant.get())));
         this.simpleCross(plant);
         this.generatedItem(plant.get(), TextureFolder.Block);
     }
