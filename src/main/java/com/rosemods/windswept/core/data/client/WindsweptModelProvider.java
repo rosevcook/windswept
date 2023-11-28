@@ -63,6 +63,8 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.generatedItem(FOUL_BERRY_BOWL.get(), TextureFolder.Item);
         this.generatedItem(WILD_BERRY_PIPS.get(), TextureFolder.Item);
         this.generatedItemWithOverlay(SNOW_BOOTS.get());
+        this.generatedItem(FROST_ARROW.get(), TextureFolder.Item);
+        this.itemOnAStick(HOLLY_BERRIES_ON_A_STICK.get(), TextureFolder.Item);
         this.generatedItem(FROZEN_FLESH.get(), TextureFolder.Item);
         this.generatedItem(FROZEN_BRANCH.get(), TextureFolder.Item);
         this.generatedItem(SNOW_GOLEM_BANNER_PATTERN.get(), TextureFolder.Item);
@@ -84,9 +86,9 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.generatedItem(CHESTNUT_CHICKEN_PLATTER.get(), TextureFolder.Item);
 
         //block models
-        this.log(STRIPPED_HOLLY_LOG);
+        this.pillar(STRIPPED_HOLLY_LOG);
         this.wood(STRIPPED_HOLLY_WOOD, this.blockTexture(STRIPPED_HOLLY_LOG.get()));
-        this.log(HOLLY_LOG);
+        this.pillar(HOLLY_LOG);
         this.wood(HOLLY_WOOD, this.blockTexture(HOLLY_LOG.get()));
         this.cubeAll(HOLLY_PLANKS);
         this.slab(HOLLY_SLAB, this.blockTexture(HOLLY_PLANKS.get()));
@@ -116,9 +118,9 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.ladder(HOLLY_WREATH);
         this.compressedBlock(HOLLY_BERRY_BASKET);
 
-        this.log(STRIPPED_CHESTNUT_LOG);
+        this.pillar(STRIPPED_CHESTNUT_LOG);
         this.wood(STRIPPED_CHESTNUT_WOOD, this.blockTexture(STRIPPED_CHESTNUT_LOG.get()));
-        this.log(CHESTNUT_LOG);
+        this.pillar(CHESTNUT_LOG);
         this.wood(CHESTNUT_WOOD, this.blockTexture(CHESTNUT_LOG.get()));
         this.cubeAll(CHESTNUT_PLANKS);
         this.slab(CHESTNUT_SLAB, this.blockTexture(CHESTNUT_PLANKS.get()));
@@ -183,9 +185,9 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.iceSheet(ICE_SHEET, this.blockTexture(Blocks.ICE));
         this.iceSheet(CUT_ICE_SHEET, this.blockTexture(CUT_ICE.get()));
 
-        this.simpleCross(SNOWY_SPROUTS);
-        this.generatedItem(SNOWY_SPROUTS.get(), TextureFolder.Item);
-        this.pot(POTTED_SNOWY_SPROUTS, this.modLoc("block/potted_snowy_sprouts"));
+        this.pottedPlantWithPottedVariant(SNOWY_SPROUTS, POTTED_SNOWY_SPROUTS);
+        this.pottedPlantWithPottedVariant(RED_TUNDRA_SPROUTS, POTTED_RED_TUNDRA_SPROUTS);
+        this.pottedPlantWithPottedVariant(YELLOW_TUNDRA_SPROUTS, POTTED_YELLOW_TUNDRA_SPROUTS);
 
         this.tallPlant(RED_ROSE_BUSH);
         this.tallPlant(PINK_ROSE_BUSH);
@@ -207,6 +209,24 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.wildBerryBush(WILD_BERRY_BUSH);
         this.compressedBlock(WILD_BERRY_BASKET);
 
+        this.simpleCross(ICICLE);
+        this.generatedItem(ICICLE.get(), TextureFolder.Block);
+        this.pillar(ICICLE_BLOCK);
+        this.pillar(CHISELED_ICICLE_BLOCK);
+
+        this.carpet(TUNDRA_MOSS_CARPET, this.blockTexture(TUNDRA_MOSS_BLOCK.get()));
+        this.cubeAll(TUNDRA_MOSS_BLOCK);
+        this.cubeAll(TUNDRA_MOSSY_COBBLESTONE);
+        this.stairs(TUNDRA_MOSSY_COBBLESTONE_STAIRS, this.blockTexture(TUNDRA_MOSSY_COBBLESTONE.get()));
+        this.slab(TUNDRA_MOSSY_COBBLESTONE_SLAB, this.blockTexture(TUNDRA_MOSSY_COBBLESTONE.get()));
+        this.wall(TUNDRA_MOSSY_COBBLESTONE_WALL, this.blockTexture(TUNDRA_MOSSY_COBBLESTONE.get()));
+        this.verticalSlab(TUNDRA_MOSSY_COBBLESTONE_VERTICAL_SLAB, this.blockTexture(TUNDRA_MOSSY_COBBLESTONE.get()));
+        this.cubeAll(TUNDRA_MOSSY_STONE_BRICKS);
+        this.stairs(TUNDRA_MOSSY_STONE_BRICK_STAIRS, this.blockTexture(TUNDRA_MOSSY_STONE_BRICKS.get()));
+        this.slab(TUNDRA_MOSSY_STONE_BRICK_SLAB, this.blockTexture(TUNDRA_MOSSY_STONE_BRICKS.get()));
+        this.wall(TUNDRA_MOSSY_STONE_BRICK_WALL, this.blockTexture(TUNDRA_MOSSY_STONE_BRICKS.get()));
+        this.verticalSlab(TUNDRA_MOSSY_STONE_BRICK_VERTICAL_SLAB, this.blockTexture(TUNDRA_MOSSY_STONE_BRICKS.get()));
+
         this.compressedBlock(RED_MUSHROOM_BASKET);
         this.compressedBlock(BROWN_MUSHROOM_BASKET);
         this.compressedBlock(GLOW_SHROOM_BASKET);
@@ -225,6 +245,11 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.itemModels().withExistingParent(name, "item/generated").texture("layer0", this.modLoc(folder.format(name)));
     }
 
+    private void itemOnAStick(ItemLike item, TextureFolder folder) {
+        String name = getItemName(item);
+        this.itemModels().withExistingParent(name, "item/handheld_rod").texture("layer0", this.modLoc(folder.format(name)));
+    }
+
     private void generatedItemWithOverlay(ItemLike item) {
         String name = getItemName(item);
         this.itemModels().withExistingParent(name, "item/generated").texture("layer0", this.modLoc("item/" + name)).texture("layer1", this.modLoc("item/" + name + "_overlay"));
@@ -238,7 +263,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
 
     private void wildBerryBush(RegistryObject<Block> bush) {
         String name = getBlockName(bush.get());
-        final Function<Integer, ModelFile> model = i -> this.models().cross(name + "_stage" + i, this.modLoc("block/" + name + "_stage" + i)).renderType("cutout");
+        Function<Integer, ModelFile> model = i -> this.models().cross(name + "_stage" + i, this.modLoc("block/" + name + "_stage" + i)).renderType("cutout");
         this.getVariantBuilder(bush.get())
                 .partialState().with(WildBerryBushBlock.AGE, 0).addModels(new ConfiguredModel(model.apply(0), 0, 0, true))
                 .partialState().with(WildBerryBushBlock.AGE, 1).addModels(new ConfiguredModel(model.apply(1), 0, 0, true))
@@ -281,6 +306,11 @@ public class WindsweptModelProvider extends BlockStateProvider {
     private void pot(RegistryObject<Block> pot, ResourceLocation texture) {
         ModelFile model = this.models().withExistingParent(getBlockName(pot.get()), "block/flower_pot_cross").texture("plant", texture).renderType("cutout");
         this.simpleBlock(pot.get(), model);
+    }
+
+    private void carpet(RegistryObject<Block> carpet, ResourceLocation texture) {
+        this.simpleBlock(carpet.get(), this.models().carpet(getItemName(carpet.get()), texture));
+        this.itemModel(carpet);
     }
 
     private void trapdoor(RegistryObject<Block> trapdoor) {
@@ -395,9 +425,9 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.itemModel(cabinet);
     }
 
-    private void log(RegistryObject<Block> log) {
-        this.axisBlock((RotatedPillarBlock) log.get(), this.blockTexture(log.get()), this.modLoc("block/" + getItemName(log.get()) + "_top"));
-        this.itemModel(log);
+    private void pillar(RegistryObject<Block> pillar) {
+        this.axisBlock((RotatedPillarBlock) pillar.get(), this.blockTexture(pillar.get()), this.modLoc("block/" + getItemName(pillar.get()) + "_top"));
+        this.itemModel(pillar);
     }
 
     private void wood(RegistryObject<Block> log, ResourceLocation texture) {

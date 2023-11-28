@@ -38,7 +38,7 @@ public class BluebellsFeature extends Feature<NoneFeatureConfiguration> {
         return generated;
     }
 
-    private static boolean shouldPlace(int x, int z, RandomSource rand) {
+    public static boolean shouldPlace(int x, int z, RandomSource rand) {
         return (x == 0 && z == 0) || (x + z == 0 || x - z == 0 ? rand.nextBoolean()
                 : (Mth.abs(x + z) < 5 && Mth.abs(x - z) < 5) ? rand.nextInt(3) > 0 : rand.nextInt(8) == 0);
     }

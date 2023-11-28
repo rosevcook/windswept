@@ -1,10 +1,7 @@
 package com.rosemods.windswept.core.registry;
 
 import com.mojang.datafixers.util.Pair;
-import com.rosemods.windswept.common.item.BerryBowlItem;
-import com.rosemods.windswept.common.item.DrinkableBottleItem;
-import com.rosemods.windswept.common.item.FrostArrowItem;
-import com.rosemods.windswept.common.item.SnowBootsItem;
+import com.rosemods.windswept.common.item.*;
 import com.rosemods.windswept.common.item.wooden_bucket.WoodenBucketItem;
 import com.rosemods.windswept.common.item.wooden_bucket.WoodenMilkBucketItem;
 import com.rosemods.windswept.common.item.wooden_bucket.WoodenPowderSnowBucketItem;
@@ -66,6 +63,7 @@ public class WindsweptItems {
     public static final RegistryObject<Item> FROST_ARROW = HELPER.createItem("frost_arrow", () -> new FrostArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
     public static final RegistryObject<Item> FROZEN_FLESH = HELPER.createItem("frozen_flesh", () -> new InjectedItem(Items.ROTTEN_FLESH, PropertyUtil.food(WindsweptFoods.FROZEN_FLESH)));
     public static final RegistryObject<Item> FROZEN_BRANCH = HELPER.createItem("frozen_branch", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<Item> HOLLY_BERRIES_ON_A_STICK = HELPER.createItem("holly_berries_on_a_stick", () -> new HollyBerriesOnAStickItem(new Item.Properties().durability(25).tab(CreativeModeTab.TAB_TRANSPORTATION), 7));
 
     // Banner Patterns //
 

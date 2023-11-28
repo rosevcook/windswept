@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "windswept:block/chiseled_icicle_block_top",
+    "side": "windswept:block/chiseled_icicle_block"
+  }
+}

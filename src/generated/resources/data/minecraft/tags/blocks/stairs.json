@@ -5,6 +5,8 @@
     "windswept:packed_ice_brick_stairs",
     "windswept:packed_ice_stairs",
     "windswept:blue_ice_stairs",
-    "windswept:snow_stairs"
+    "windswept:snow_stairs",
+    "windswept:tundra_mossy_cobblestone_stairs",
+    "windswept:tundra_mossy_stone_brick_stairs"
   ]
 }

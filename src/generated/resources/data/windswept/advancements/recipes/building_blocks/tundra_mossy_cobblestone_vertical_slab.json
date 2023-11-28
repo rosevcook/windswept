@@ -1,0 +1,46 @@
+{
+  "advancements": [
+    {
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "criteria": {
+          "has_the_recipe": {
+            "conditions": {
+              "recipe": "windswept:tundra_mossy_cobblestone_vertical_slab"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+          },
+          "has_tundra_mossy_cobblestone_slab": {
+            "conditions": {
+              "items": [
+                {
+                  "items": [
+                    "windswept:tundra_mossy_cobblestone_slab"
+                  ]
+                }
+              ]
+            },
+            "trigger": "minecraft:inventory_changed"
+          }
+        },
+        "requirements": [
+          [
+            "has_tundra_mossy_cobblestone_slab",
+            "has_the_recipe"
+          ]
+        ],
+        "rewards": {
+          "recipes": [
+            "windswept:tundra_mossy_cobblestone_vertical_slab"
+          ]
+        }
+      },
+      "conditions": [
+        {
+          "type": "blueprint:quark_flag",
+          "flag": "vertical_slabs"
+        }
+      ]
+    }
+  ]
+}

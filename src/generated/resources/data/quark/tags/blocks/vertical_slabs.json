@@ -7,6 +7,8 @@
     "windswept:packed_ice_brick_vertical_slab",
     "windswept:packed_ice_vertical_slab",
     "windswept:blue_ice_vertical_slab",
-    "windswept:snow_vertical_slab"
+    "windswept:snow_vertical_slab",
+    "windswept:tundra_mossy_cobblestone_vertical_slab",
+    "windswept:tundra_mossy_stone_brick_vertical_slab"
   ]
 }

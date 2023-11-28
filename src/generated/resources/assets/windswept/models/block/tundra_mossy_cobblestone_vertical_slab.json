@@ -1,0 +1,8 @@
+{
+  "parent": "blueprint:block/vertical_slab",
+  "textures": {
+    "bottom": "windswept:block/tundra_mossy_cobblestone",
+    "side": "windswept:block/tundra_mossy_cobblestone",
+    "top": "windswept:block/tundra_mossy_cobblestone"
+  }
+}

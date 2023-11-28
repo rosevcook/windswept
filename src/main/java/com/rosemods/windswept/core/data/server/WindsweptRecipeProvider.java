@@ -88,8 +88,15 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         conditionalRecipe(ShapelessRecipeBuilder.shapeless(WILD_BERRY_PIPS.get()).requires(WILD_BERRIES.get()).unlockedBy(getHasName(WILD_BERRIES.get()), has(WILD_BERRIES.get())), new ModLoadedCondition("berry_good"), consumer, getSaveLocation(WILD_BERRY_PIPS.get()));
         ShapedRecipeBuilder.shaped(HOLLY_WREATH.get()).define('#', HOLLY_BERRIES.get()).define('B', FROZEN_BRANCH.get()).pattern(" # ").pattern("#B#").pattern(" # ").unlockedBy(getHasName(HOLLY_BERRIES.get()), has(HOLLY_BERRIES.get())).save(consumer, getSaveLocation(HOLLY_WREATH.get()));
         ShapelessRecipeBuilder.shapeless(FROST_ARROW.get(), 4).requires(Items.ARROW).requires(FROZEN_BRANCH.get()).unlockedBy(getHasName(FROZEN_BRANCH.get()), has(FROZEN_BRANCH.get())).save(consumer, getSaveLocation(FROST_ARROW.get()));
+        ShapedRecipeBuilder.shaped(HOLLY_BERRIES_ON_A_STICK.get()).define('#', Items.FISHING_ROD).define('H', HOLLY_BERRIES.get()).pattern("# ").pattern(" H").unlockedBy(getHasName(HOLLY_BERRIES.get()), has(HOLLY_BERRIES.get())).save(consumer, getSaveLocation(HOLLY_BERRIES_ON_A_STICK.get()));
 
         // building blocks
+        ShapedRecipeBuilder.shaped(TUNDRA_MOSS_CARPET.get(), 3).define('#', TUNDRA_MOSS_BLOCK.get()).pattern("##").unlockedBy(getHasName(TUNDRA_MOSS_BLOCK.get()), has(TUNDRA_MOSS_BLOCK.get())).save(consumer, getSaveLocation(TUNDRA_MOSS_CARPET.get()));
+
+        ShapedRecipeBuilder.shaped(ICICLE_BLOCK.get()).define('#', ICICLE.get()).pattern("##").pattern("##").unlockedBy(getHasName(ICICLE.get()), has(ICICLE.get())).save(consumer, getSaveLocation(ICICLE_BLOCK.get()));
+        ShapedRecipeBuilder.shaped(CHISELED_ICICLE_BLOCK.get(), 2).define('#', ICICLE_BLOCK.get()).pattern("#").pattern("#").unlockedBy(getHasName(ICICLE_BLOCK.get()), has(ICICLE_BLOCK.get())).save(consumer, getSaveLocation(CHISELED_ICICLE_BLOCK.get()));
+        stonecutting(ICICLE_BLOCK.get(), CHISELED_ICICLE_BLOCK.get(), 1, consumer);
+
         ShapedRecipeBuilder.shaped(CUT_ICE.get(), 4).define('#', Items.ICE).pattern("##").pattern("##").unlockedBy(getHasName(Items.ICE), has(Items.ICE)).save(consumer, getSaveLocation(CUT_ICE.get()));
         ShapedRecipeBuilder.shaped(ICE_SHEET.get(), 12).define('#', Items.ICE).pattern("###").pattern("###").unlockedBy(getHasName(Items.ICE), has(Items.ICE)).save(consumer, getSaveLocation(ICE_SHEET.get()));
         ShapedRecipeBuilder.shaped(CUT_ICE_SHEET.get(), 12).define('#', CUT_ICE.get()).pattern("###").pattern("###").unlockedBy(getHasName(CUT_ICE.get()), has(CUT_ICE.get())).save(consumer, getSaveLocation(CUT_ICE_SHEET.get()));
@@ -127,6 +134,8 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         brickSet(Blocks.PACKED_ICE, PACKED_ICE_BRICKS.get(), CHISELED_PACKED_ICE_BRICKS.get(), PACKED_ICE_BRICK_SLAB.get(), PACKED_ICE_BRICK_STAIRS.get(), PACKED_ICE_BRICK_WALL.get(), PACKED_ICE_BRICK_VERTICAL_SLAB.get(), consumer);
         brickSet(Blocks.BLUE_ICE, BLUE_ICE_BRICKS.get(), CHISELED_BLUE_ICE_BRICKS.get(), BLUE_ICE_BRICK_SLAB.get(), BLUE_ICE_BRICK_STAIRS.get(), BLUE_ICE_BRICK_WALL.get(), BLUE_ICE_BRICK_VERTICAL_SLAB.get(), consumer);
         brickSet(Blocks.SNOW_BLOCK, SNOW_BRICKS.get(), null, SNOW_BRICK_SLAB.get(), SNOW_BRICK_STAIRS.get(), SNOW_BRICK_WALL.get(), SNOW_BRICK_VERTICAL_SLAB.get(), consumer);
+        brickSet(null, TUNDRA_MOSSY_COBBLESTONE.get(), null, TUNDRA_MOSSY_COBBLESTONE_SLAB.get(), TUNDRA_MOSSY_COBBLESTONE_STAIRS.get(), TUNDRA_MOSSY_COBBLESTONE_WALL.get(), TUNDRA_MOSSY_COBBLESTONE_VERTICAL_SLAB.get(), consumer);
+        brickSet(TUNDRA_MOSSY_COBBLESTONE.get(), TUNDRA_MOSSY_STONE_BRICKS.get(), null, TUNDRA_MOSSY_STONE_BRICK_SLAB.get(), TUNDRA_MOSSY_STONE_BRICK_STAIRS.get(), TUNDRA_MOSSY_STONE_BRICK_WALL.get(), TUNDRA_MOSSY_STONE_BRICK_VERTICAL_SLAB.get(), consumer);
 
         // wood sets
         woodSet(WindsweptItemTags.HOLLY_LOGS, HOLLY_PLANKS.get(), HOLLY_SLAB.get(), HOLLY_STAIRS.get(), HOLLY_LOG.get(), HOLLY_WOOD.get(), STRIPPED_HOLLY_LOG.get(), STRIPPED_HOLLY_WOOD.get(), HOLLY_BOATS.getFirst().get(), HOLLY_BOATS.getSecond().get(), HOLLY_BUTTON.get(), HOLLY_DOOR.get(), HOLLY_TRAPDOOR.get(), HOLLY_FENCE.get(), HOLLY_FENCE_GATE.get(), HOLLY_PRESSURE_PLATE.get(), HOLLY_SIGNS.getFirst().get(), HOLLY_VERTICAL_SLAB.get(), HOLLY_POST.get(), STRIPPED_HOLLY_POST.get(), HOLLY_BOARDS.get(), HOLLY_BEEHIVE.get(), HOLLY_LADDER.get(), HOLLY_BOOKSHELF.get(), HOLLY_CHEST.get(), HOLLY_TRAPPED_CHEST.get(), LARGE_HOLLY_BOAT.get(), HOLLY_FURNACE_BOAT.get(), VERTICAL_HOLLY_PLANKS.get(), HOLLY_CABINET.get(), consumer);
@@ -154,8 +163,10 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         conditionalRecipe(SimpleCookingRecipeBuilder.smoking(Ingredient.of(ingredient), result, .35f, 100).unlockedBy(getHasName(ingredient), has(ingredient)), condition, consumer, getSaveLocation(getName(result) + "_from_smoking"));
     }
 
-    private static void brickSet(ItemLike ingredient, Block block, @Nullable Block chiseled, Block slab, Block stairs, Block wall, Block verticalSlab, Consumer<FinishedRecipe> consumer) {
-        ShapedRecipeBuilder.shaped(block, 4).define('#', ingredient).pattern("##").pattern("##").unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, getSaveLocation(getName(block)));
+    private static void brickSet(@Nullable ItemLike ingredient, Block block, @Nullable Block chiseled, Block slab, Block stairs, Block wall, Block verticalSlab, Consumer<FinishedRecipe> consumer) {
+        if (ingredient != null)
+            ShapedRecipeBuilder.shaped(block, 4).define('#', ingredient).pattern("##").pattern("##").unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, getSaveLocation(getName(block)));
+
         stonecutting(block, slab, 2, consumer);
         stonecutting(block, stairs, 1, consumer);
         stairs(block, stairs, consumer);

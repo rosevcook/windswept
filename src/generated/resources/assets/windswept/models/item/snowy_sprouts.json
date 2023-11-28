@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "windswept:item/snowy_sprouts"
+    "layer0": "windswept:block/snowy_sprouts"
   }
 }

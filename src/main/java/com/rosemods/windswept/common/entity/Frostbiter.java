@@ -34,10 +34,11 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 
 import java.util.UUID;
 
-public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob {
+public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob, ItemSteerable {
     private static final EntityDataAccessor<Boolean> LEFT_ANTLER = SynchedEntityData.defineId(Frostbiter.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> RIGHT_ANTLER = SynchedEntityData.defineId(Frostbiter.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Integer> ANGER_TIME = SynchedEntityData.defineId(Frostbiter.class, EntityDataSerializers.INT);
@@ -327,6 +328,21 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
     @Override
     public void startPersistentAngerTimer() {
         this.setRemainingPersistentAngerTime(ANGER_RANGE.sample(this.random));
+    }
+
+    @Override
+    public boolean boost() {
+        return false; // do
+    }
+
+    @Override
+    public void travelWithInput(Vec3 p_20858_) {
+        // do
+    }
+
+    @Override
+    public float getSteeringSpeed() {
+        return 0; // do
     }
 
     public class FrostbiterPanicGoal extends PanicGoal {

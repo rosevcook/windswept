@@ -74,6 +74,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateItem(FROZEN_BRANCH);
         this.translateItem(SNOW_BOOTS);
         this.translateItem(FROST_ARROW);
+        this.add(HOLLY_BERRIES_ON_A_STICK.get(), "Holly Berries on a Stick");
         this.translateBannerPattern(SNOW_CHARGE_BANNER_PATTERN, "snow_charge");
         this.translateBannerPattern(SNOW_GOLEM_BANNER_PATTERN, "snow_golem");
         this.translateBannerPattern(ROSE_FLOWER_BANNER_PATTERN, "rose_flower");
@@ -160,6 +161,8 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.add(ROASTED_CHESTNUT_CRATE.get(), "Crate of Roasted Chestnuts");
 
         this.translateBlock(SNOWY_SPROUTS);
+        this.translateBlock(RED_TUNDRA_SPROUTS);
+        this.translateBlock(YELLOW_TUNDRA_SPROUTS);
 
         this.add("block.windswept.snow_carpet", "Snow Carpet");
         this.translateBlock(SNOW_STAIRS);
@@ -222,9 +225,28 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(POTTED_NIGHTSHADE);
         this.translateBlock(POTTED_SNOWDROP);
         this.translateBlock(POTTED_SNOWY_SPROUTS);
+        this.translateBlock(POTTED_RED_TUNDRA_SPROUTS);
+        this.translateBlock(POTTED_YELLOW_TUNDRA_SPROUTS);
 
         this.translateBlock(WILD_BERRY_BUSH);
         this.add(WILD_BERRY_BASKET.get(), "Basket of Wild Berries");
+
+        this.translateBlock(ICICLE);
+        this.translateBlock(ICICLE_BLOCK);
+        this.translateBlock(CHISELED_ICICLE_BLOCK);
+
+        this.translateBlock(TUNDRA_MOSS_CARPET);
+        this.translateBlock(TUNDRA_MOSS_BLOCK);
+        this.translateBlock(TUNDRA_MOSSY_COBBLESTONE);
+        this.translateBlock(TUNDRA_MOSSY_COBBLESTONE_SLAB);
+        this.translateBlock(TUNDRA_MOSSY_COBBLESTONE_STAIRS);
+        this.translateBlock(TUNDRA_MOSSY_COBBLESTONE_WALL);
+        this.translateBlock(TUNDRA_MOSSY_COBBLESTONE_VERTICAL_SLAB);
+        this.translateBlock(TUNDRA_MOSSY_STONE_BRICKS);
+        this.translateBlock(TUNDRA_MOSSY_STONE_BRICK_SLAB);
+        this.translateBlock(TUNDRA_MOSSY_STONE_BRICK_STAIRS);
+        this.translateBlock(TUNDRA_MOSSY_STONE_BRICK_WALL);
+        this.translateBlock(TUNDRA_MOSSY_STONE_BRICK_VERTICAL_SLAB);
 
         this.add(RED_MUSHROOM_BASKET.get(), "Basket of Red Mushrooms");
         this.add(BROWN_MUSHROOM_BASKET.get(), "Basket of Brown Mushrooms");
@@ -236,6 +258,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 
         this.translateEntity(WindsweptEntities.CHILLED);
         this.translateEntity(WindsweptEntities.FROSTBITER);
+        this.translateEntity(WindsweptEntities.FROST_ARROW);
 
         // Effects //
 

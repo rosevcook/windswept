@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "windswept:icicle_block"
+  },
+  "result": "windswept:chiseled_icicle_block"
+}

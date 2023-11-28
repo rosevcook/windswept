@@ -8,6 +8,9 @@
     "windswept:blue_ice_vertical_slab",
     "windswept:cut_ice",
     "windswept:ice_sheet",
-    "windswept:cut_ice_sheet"
+    "windswept:cut_ice_sheet",
+    "windswept:icicle",
+    "windswept:icicle_block",
+    "windswept:chiseled_icicle_block"
   ]
 }

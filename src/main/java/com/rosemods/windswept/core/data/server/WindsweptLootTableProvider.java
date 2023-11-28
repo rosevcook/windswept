@@ -211,9 +211,12 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.tallFlower(YELLOW_ROSE_BUSH.get());
             this.tallFlower(WITHER_ROSE_BUSH.get());
 
-            // plants
+            // sprouts
             this.add(SNOWY_SPROUTS.get(), Blocks::createShearsOnlyDrop);
+            this.add(RED_TUNDRA_SPROUTS.get(), Blocks::createShearsOnlyDrop);
+            this.add(YELLOW_TUNDRA_SPROUTS.get(), Blocks::createShearsOnlyDrop);
 
+            // flowers
             this.dropSelf(RED_ROSE.get());
             this.dropSelf(PINK_ROSE.get());
             this.dropSelf(BLUE_ROSE.get());
@@ -235,6 +238,8 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropPottedContents(POTTED_SNOWDROP.get());
             this.dropPottedContents(POTTED_NIGHTSHADE.get());
             this.dropPottedContents(POTTED_SNOWY_SPROUTS.get());
+            this.dropPottedContents(POTTED_RED_TUNDRA_SPROUTS.get());
+            this.dropPottedContents(POTTED_YELLOW_TUNDRA_SPROUTS.get());
 
             // wild berry
             this.add(WILD_BERRY_BUSH.get(), b -> applyExplosionDecay(b, LootTable.lootTable()
@@ -246,6 +251,26 @@ public class WindsweptLootTableProvider extends LootTableProvider {
                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 2f)))
                             .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));
             this.dropSelf(WILD_BERRY_BASKET.get());
+
+            // icicle blocks
+            this.dropSelf(ICICLE.get());
+            this.dropSelf(ICICLE_BLOCK.get());
+            this.dropSelf(CHISELED_ICICLE_BLOCK.get());
+
+            // tundra moss blocks
+            this.dropSelf(TUNDRA_MOSS_CARPET.get());
+            this.dropSelf(TUNDRA_MOSS_BLOCK.get());
+            this.dropSelf(TUNDRA_MOSSY_COBBLESTONE.get());
+            this.dropSelf(TUNDRA_MOSSY_COBBLESTONE_STAIRS.get());
+            this.add(TUNDRA_MOSSY_COBBLESTONE_SLAB.get(), Blocks::createSlabItemTable);
+            this.dropSelf(TUNDRA_MOSSY_COBBLESTONE_WALL.get());
+            this.add(TUNDRA_MOSSY_COBBLESTONE_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+            this.dropSelf(TUNDRA_MOSSY_STONE_BRICKS.get());
+            this.dropSelf(TUNDRA_MOSSY_STONE_BRICK_STAIRS.get());
+            this.add(TUNDRA_MOSSY_STONE_BRICK_SLAB.get(), Blocks::createSlabItemTable);
+            this.dropSelf(TUNDRA_MOSSY_STONE_BRICK_WALL.get());
+            this.add(TUNDRA_MOSSY_STONE_BRICK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+
 
             // mushroom crates
             this.dropSelf(RED_MUSHROOM_BASKET.get());

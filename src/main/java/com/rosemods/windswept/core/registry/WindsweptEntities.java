@@ -29,7 +29,7 @@ public class WindsweptEntities {
 
     public static final RegistryObject<EntityType<Chilled>> CHILLED = HELPER.createLivingEntity("chilled", Chilled::new, MobCategory.MONSTER, .6f, 2f);
     public static final RegistryObject<EntityType<Frostbiter>> FROSTBITER = HELPER.createLivingEntity("frostbiter", Frostbiter::new, MobCategory.CREATURE, 2f, 1.8f);
-    public static final RegistryObject<EntityType<FrostArrow>> FROST_ARROW = HELPER.createEntity("blunt_arrow", FrostArrow::new, FrostArrow::new, MobCategory.MISC, .5f, .5f);
+    public static final RegistryObject<EntityType<FrostArrow>> FROST_ARROW = HELPER.createEntity("frost_arrow", FrostArrow::new, FrostArrow::new, MobCategory.MISC, .5f, .5f);
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {

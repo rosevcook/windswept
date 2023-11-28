@@ -20,7 +20,7 @@ public class FrostbiterEatFlowersGoal extends Goal {
 
     @Override
     public boolean canUse() {
-        return (!this.frostbiter.hasLeftAntler() || !this.frostbiter.hasRightAntler()) && this.isFoodAt(this.getMouthPos());
+        return this.isFoodAt(this.getMouthPos());
     }
 
     @Override
@@ -33,7 +33,7 @@ public class FrostbiterEatFlowersGoal extends Goal {
         this.tick = this.adjustedTickDelay(40);
         this.frostbiter.level.broadcastEntityEvent(this.frostbiter, (byte) 10);
         this.frostbiter.getNavigation().stop();
-        this.frostbiter.setEyesShut(true);
+        //this.frostbiter.setEyesShut(true);
         NetworkUtil.setPlayingAnimation(this.frostbiter, WindsweptPlayableEndimations.FROSTBITER_EAT);
     }
 
@@ -49,12 +49,14 @@ public class FrostbiterEatFlowersGoal extends Goal {
 
         if (this.tick == this.adjustedTickDelay(2)) {
             BlockPos pos = this.getMouthPos();
-            this.frostbiter.setEyesShut(false);
+            //this.frostbiter.setEyesShut(false);
 
             if (this.isFoodAt(pos)) {
                 this.frostbiter.level.destroyBlock(pos, false);
                 this.frostbiter.ate();
-                this.frostbiter.growRandomAntler();
+
+                if (!this.frostbiter.hasLeftAntler() || !this.frostbiter.hasRightAntler())
+                    this.frostbiter.growRandomAntler();
             }
         }
     }

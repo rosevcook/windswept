@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_side_tall",
+  "textures": {
+    "wall": "windswept:block/tundra_mossy_stone_bricks"
+  }
+}
