@@ -4,8 +4,17 @@
     {
       "conditions": [
         {
-          "type": "forge:mod_loaded",
-          "modid": "caverns_and_chasms"
+          "type": "forge:or",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "caverns_and_chasms"
+            },
+            {
+              "type": "forge:mod_loaded",
+              "modid": "quark"
+            }
+          ]
         }
       ],
       "recipe": {

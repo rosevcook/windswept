@@ -205,6 +205,6 @@ public class WindsweptBlocks {
 
     // Misc //
 
-    public static final RegistryObject<Block> FROZEN_FLESH_BLOCK = HELPER.createCompatBlock("frozen_flesh_block", () -> new Block(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.COLOR_BLUE).strength(.8f).sound(SoundType.CORAL_BLOCK)), CreativeModeTab.TAB_DECORATIONS, WindsweptConstants.CAVERNS_AND_CHASMS);
+    public static final RegistryObject<Block> FROZEN_FLESH_BLOCK = HELPER.createBlock("frozen_flesh_block", () -> new Block(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.COLOR_BLUE).strength(.8f).sound(SoundType.CORAL_BLOCK)), ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.CAVERNS_AND_CHASMS) ? CreativeModeTab.TAB_DECORATIONS : null);
 
 }
