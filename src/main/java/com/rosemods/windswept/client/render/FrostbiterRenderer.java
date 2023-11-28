@@ -4,7 +4,6 @@ import com.rosemods.windswept.client.model.FrostbiterModel;
 import com.rosemods.windswept.common.entity.Frostbiter;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.other.WindsweptModelLayers;
-import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;

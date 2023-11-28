@@ -3,6 +3,7 @@ package com.rosemods.windswept.client.model;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.rosemods.windswept.common.entity.Frostbiter;
+import com.rosemods.windswept.core.registry.WindsweptPlayableEndimations;
 import com.teamabnormals.blueprint.core.endimator.Endimator;
 import com.teamabnormals.blueprint.core.endimator.entity.EndimatorEntityModel;
 import net.minecraft.client.model.geom.ModelPart;
@@ -53,16 +54,28 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> {
     @Override
     public void setupAnim(Frostbiter frostbiter, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         super.setupAnim(frostbiter, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+        boolean isShaking = frostbiter.isEndimationPlaying(WindsweptPlayableEndimations.FROSTBITER_SHAKE);
+        boolean isEating = frostbiter.isEndimationPlaying(WindsweptPlayableEndimations.FROSTBITER_SHAKE);
+
         this.rightLeg.xRot = Mth.cos(limbSwing * .6662f) * .9f * limbSwingAmount;
         this.leftLeg.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f  * limbSwingAmount;
-        this.rightArm.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * limbSwingAmount;
-        this.leftArm.xRot = Mth.cos(limbSwing * .6662f) * .9f  * limbSwingAmount;
+        if (!isEating) {
+            this.rightArm.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * limbSwingAmount;
+            this.leftArm.xRot = Mth.cos(limbSwing * .6662f) * .9f * limbSwingAmount;
+        }
 
-        this.tail.yRot = Mth.cos(limbSwing * .6662f + Mth.PI) * limbSwingAmount;
-        this.tail.zRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .1f * limbSwingAmount;
-        this.body.zRot = Mth.cos(limbSwing * .6662f) * .2f * limbSwingAmount;
-        this.bell.zRot = Mth.cos(limbSwing * .6662f) * .6f * limbSwingAmount;
+        if (!isEating) {
+            this.tail.yRot = Mth.cos(limbSwing * .6662f + Mth.PI) * limbSwingAmount;
+            this.tail.zRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .1f * limbSwingAmount;
+            this.body.zRot = Mth.cos(limbSwing * .6662f) * .2f * limbSwingAmount;
+            if (!isShaking)
+                this.bell.zRot = Mth.cos(limbSwing * .6662f) * .6f * limbSwingAmount;
+        }
 
+        this.checkVisible(frostbiter);
+    }
+
+    private void checkVisible(Frostbiter frostbiter) {
         this.frontEyesClosed.visible = frostbiter.hasEyesClosed();
         this.front.visible = !this.frontEyesClosed.visible;
         this.leaves.visible = frostbiter.hasAntlers();
@@ -78,7 +91,7 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> {
         if (this.young) {
             poseStack.pushPose();
             poseStack.scale(.55f, .55f, .55f);
-            poseStack.translate(0f, 1.3f, 0f);
+            poseStack.translate(0f, 1.3f, .2f);
             head.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
             poseStack.popPose();
 
