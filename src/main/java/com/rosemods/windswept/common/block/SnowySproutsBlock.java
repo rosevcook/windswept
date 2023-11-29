@@ -12,7 +12,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.IForgeShearable;
 
 public class SnowySproutsBlock extends BushBlock implements IForgeShearable {
-    protected static final VoxelShape SHAPE = Block.box(2f, 0f, 2f, 14f, 3f, 14f);
+    protected static final VoxelShape SHAPE = Block.box(2f, 0f, 2f, 14f, 4.5f, 14f);
 
     public SnowySproutsBlock(Properties properties) {
         super(properties);

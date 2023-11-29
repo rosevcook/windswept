@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "windswept:frozen_branch"
+    },
+    "P": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "pattern": [
+    "# #",
+    "#P#"
+  ],
+  "result": {
+    "item": "windswept:frostbiter_trophy"
+  }
+}

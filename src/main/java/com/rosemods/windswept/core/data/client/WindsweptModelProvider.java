@@ -231,6 +231,8 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.compressedBlock(BROWN_MUSHROOM_BASKET);
         this.compressedBlock(GLOW_SHROOM_BASKET);
 
+        this.horizontalBlock(FROSTBITER_TROPHY.get(), this.models().getExistingFile(this.modLoc("block/frostbiter_trophy")));
+        this.generatedItem(FROSTBITER_TROPHY.get(), TextureFolder.Item);
         this.cubeAll(FROZEN_FLESH_BLOCK);
     }
 

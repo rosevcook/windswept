@@ -271,13 +271,13 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(TUNDRA_MOSSY_STONE_BRICK_WALL.get());
             this.add(TUNDRA_MOSSY_STONE_BRICK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
 
-
             // mushroom crates
             this.dropSelf(RED_MUSHROOM_BASKET.get());
             this.dropSelf(BROWN_MUSHROOM_BASKET.get());
             this.dropSelf(GLOW_SHROOM_BASKET.get());
 
             // misc
+            this.dropSelf(FROSTBITER_TROPHY.get());
             this.dropSelf(FROZEN_FLESH_BLOCK.get());
         }
 

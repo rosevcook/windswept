@@ -252,6 +252,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.add(BROWN_MUSHROOM_BASKET.get(), "Basket of Brown Mushrooms");
         this.add(GLOW_SHROOM_BASKET.get(), "Basket of Glow Shrooms");
 
+        this.translateBlock(FROSTBITER_TROPHY);
         this.translateBlock(FROZEN_FLESH_BLOCK);
 
         // Entities //

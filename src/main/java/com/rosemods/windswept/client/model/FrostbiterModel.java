@@ -58,7 +58,7 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> {
         boolean isEating = frostbiter.isEndimationPlaying(WindsweptPlayableEndimations.FROSTBITER_SHAKE);
 
         this.rightLeg.xRot = Mth.cos(limbSwing * .6662f) * .9f * limbSwingAmount;
-        this.leftLeg.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f  * limbSwingAmount;
+        this.leftLeg.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * limbSwingAmount;
         if (!isEating) {
             this.rightArm.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * limbSwingAmount;
             this.leftArm.xRot = Mth.cos(limbSwing * .6662f) * .9f * limbSwingAmount;
@@ -72,16 +72,12 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> {
                 this.bell.zRot = Mth.cos(limbSwing * .6662f) * .6f * limbSwingAmount;
         }
 
-        this.checkVisible(frostbiter);
-    }
-
-    private void checkVisible(Frostbiter frostbiter) {
-        this.frontEyesClosed.visible = frostbiter.hasEyesClosed();
+        this.frontEyesClosed.visible = ageInTicks % 200 == 0 || ageInTicks % 200 == 1 || ageInTicks % 200 == 2 || frostbiter.hasEyesShut;
         this.front.visible = !this.frontEyesClosed.visible;
         this.leaves.visible = frostbiter.hasAntlers();
         this.leash.visible = frostbiter.isTame();
-        this.leftAntler.visible = frostbiter.hasLeftAntler() && !frostbiter.isBaby();
-        this.rightAntler.visible = frostbiter.hasRightAntler() && !frostbiter.isBaby();
+        this.leftAntler.visible = frostbiter.hasLeftAntler();
+        this.rightAntler.visible = frostbiter.hasRightAntler();
         this.brokenLeftAntler.visible = !this.leftAntler.visible;
         this.brokenRightAntler.visible = !this.rightAntler.visible;
     }

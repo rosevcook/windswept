@@ -45,10 +45,8 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
     private static final UniformInt ANGER_RANGE = TimeUtil.rangeOfSeconds(20, 39);
 
     private int dropDelay;
-    private int blinkDelay;
     private boolean hasJustDropped;
-    private boolean isBlinking;
-    private boolean isEyesShut;
+    public boolean hasEyesShut;
     private UUID lastHurtBy;
 
     public Frostbiter(EntityType<? extends Frostbiter> type, Level level) {
@@ -108,36 +106,14 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
         super.customServerAiStep();
     }
 
-    public boolean hasEyesClosed() {
-        return this.isBlinking || this.isEyesShut;
-    }
-
-    public void setEyesShut(boolean shut) {
-        this.isEyesShut = shut;
-    }
-
     @Override
     public void tick() {
         super.tick();
-
-        this.tickBlinking();
 
         if (!this.isNoAi()) {
             this.tickAntlerShaking();
         }
 
-    }
-
-    private void tickBlinking() {
-        if (this.tickCount % 200 == 0)
-            this.isBlinking = true;
-
-        if (this.isBlinking && this.blinkDelay < 4)
-            this.blinkDelay++;
-        else {
-            this.isBlinking = false;
-            this.blinkDelay = 0;
-        }
     }
 
     private void tickAntlerShaking() {
@@ -151,13 +127,13 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
         }
 
         if (this.hasAntlers() && !this.hasJustDropped)
-            if (this.dropDelay == 0 && this.random.nextInt(1000) == 0 && this.isNoEndimationPlaying()) {
+            if (this.dropDelay == 0 && this.random.nextInt(5000) == 0 && this.isNoEndimationPlaying()) {
                 NetworkUtil.setPlayingAnimation(this, WindsweptPlayableEndimations.FROSTBITER_SHAKE);
                 this.getNavigation().stop();
-                this.setEyesShut(true);
+                this.hasEyesShut = true;
             } else if (this.dropDelay == 8 && isShaking) {
                 this.dropRandomAntler();
-                this.setEyesShut(false);
+                this.hasEyesShut = false;
             }
     }
 

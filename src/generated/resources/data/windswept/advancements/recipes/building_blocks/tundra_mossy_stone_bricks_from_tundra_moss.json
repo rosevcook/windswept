@@ -3,16 +3,16 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "windswept:tundra_mossy_stone_bricks"
+        "recipe": "windswept:tundra_mossy_stone_bricks_from_tundra_moss"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_tundra_mossy_cobblestone": {
+    "has_tundra_moss_block": {
       "conditions": {
         "items": [
           {
             "items": [
-              "windswept:tundra_mossy_cobblestone"
+              "windswept:tundra_moss_block"
             ]
           }
         ]
@@ -22,13 +22,13 @@
   },
   "requirements": [
     [
-      "has_tundra_mossy_cobblestone",
+      "has_tundra_moss_block",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "windswept:tundra_mossy_stone_bricks"
+      "windswept:tundra_mossy_stone_bricks_from_tundra_moss"
     ]
   }
 }
