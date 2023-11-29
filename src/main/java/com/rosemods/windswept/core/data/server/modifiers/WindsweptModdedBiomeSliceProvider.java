@@ -25,12 +25,11 @@ public class WindsweptModdedBiomeSliceProvider extends ModdedBiomeSliceProvider 
     @Override
     protected void registerSlices() {
         List<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> entries = new ArrayList<>();
-        new ChestnutBiomeBuilder().addBiomesToSlice(entries::add);
-        this.registerSlice("chestnut", 4, new BiomeUtil.MultiNoiseModdedBiomeProvider(new Climate.ParameterList<>(entries)), LevelStem.OVERWORLD.location());
+        new WindsweptBiomeBuilder().addBiomesToSlice(entries::add);
+        this.registerSlice("main", 4, new BiomeUtil.MultiNoiseModdedBiomeProvider(new Climate.ParameterList<>(entries)), LevelStem.OVERWORLD.location());
     }
 
-    @SuppressWarnings("unchecked")
-    private static final class ChestnutBiomeBuilder {
+    private static final class WindsweptBiomeBuilder {
         private final Climate.Parameter FULL_RANGE = Climate.Parameter.span(-1.0F, 1.0F);
         private final Climate.Parameter[] temperatures = new Climate.Parameter[]{Climate.Parameter.span(-1.0F, -0.45F), Climate.Parameter.span(-0.45F, -0.15F), Climate.Parameter.span(-0.15F, 0.2F), Climate.Parameter.span(0.2F, 0.55F), Climate.Parameter.span(0.55F, 1.0F)};
         private final Climate.Parameter[] humidities = new Climate.Parameter[]{Climate.Parameter.span(-1.0F, -0.35F), Climate.Parameter.span(-0.35F, -0.1F), Climate.Parameter.span(-0.1F, 0.1F), Climate.Parameter.span(0.1F, 0.3F), Climate.Parameter.span(0.3F, 1.0F)};
@@ -46,9 +45,9 @@ public class WindsweptModdedBiomeSliceProvider extends ModdedBiomeSliceProvider 
         private final Climate.Parameter midInlandContinentalness = Climate.Parameter.span(0.03F, 0.3F);
         private final Climate.Parameter farInlandContinentalness = Climate.Parameter.span(0.3F, 1.0F);
         private final ResourceKey<Biome> VANILLA = BlueprintBiomes.ORIGINAL_SOURCE_MARKER.getKey();
-        private final ResourceKey<Biome>[][] MIDDLE_BIOMES = new ResourceKey[][]{{VANILLA, VANILLA, VANILLA, WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey(), WindsweptBiomes.CHESTNUT_FOREST.getKey()}, {VANILLA, VANILLA, VANILLA, WindsweptBiomes.CHESTNUT_FOREST.getKey(), VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
+        private final ResourceKey<Biome>[][] MIDDLE_BIOMES = new ResourceKey[][]{{WindsweptBiomes.TUNDRA.getKey(), WindsweptBiomes.TUNDRA.getKey(), WindsweptBiomes.TUNDRA.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey(), WindsweptBiomes.CHESTNUT_FOREST.getKey()}, {VANILLA, VANILLA, VANILLA, WindsweptBiomes.CHESTNUT_FOREST.getKey(), VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
         private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{{VANILLA, null, WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey(), null, null}, {null, null, null, null, VANILLA}, {VANILLA, null, null, VANILLA, null}, {null, null, VANILLA, VANILLA, VANILLA}, {null, null, null, null, null}};
-        private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{{VANILLA, VANILLA, VANILLA, WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey()}, {VANILLA, VANILLA, VANILLA, WindsweptBiomes.CHESTNUT_FOREST.getKey(), VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
+        private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{{WindsweptBiomes.TUNDRA.getKey(), WindsweptBiomes.TUNDRA.getKey(), WindsweptBiomes.TUNDRA.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey()}, {VANILLA, VANILLA, VANILLA, WindsweptBiomes.CHESTNUT_FOREST.getKey(), VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
         private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{{VANILLA, null, null, null, null}, {null, null, VANILLA, VANILLA, VANILLA}, {null, null, VANILLA, VANILLA, null}, {null, null, null, null, null}, {VANILLA, VANILLA, null, null, null}};
 
         private void addBiomesToSlice(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer) {

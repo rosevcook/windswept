@@ -2,6 +2,7 @@ package com.rosemods.windswept.core.data.server.tags;
 
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.other.tags.WindsweptBiomeTags;
+import com.rosemods.windswept.core.registry.WindsweptBiomes;
 import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
@@ -32,19 +33,19 @@ public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
 
         this.tag(WindsweptBiomeTags.IS_CHESTNUT_FOREST).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey());
 
-        this.tag(WindsweptBiomeTags.HAS_SPOTTED_ORANGE_MAPLE_TREES).add(CHESTNUT_FOREST.getKey());
-        this.tag(WindsweptBiomeTags.HAS_SPOTTED_RED_MAPLE_TREES).add(SNOWY_CHESTNUT_FOREST.getKey());
+        this.tag(WindsweptBiomeTags.HAS_SPOTTED_ORANGE_MAPLE_TREES).add(CHESTNUT_FOREST.getKey(), WindsweptBiomes.TUNDRA.getKey());
+        this.tag(WindsweptBiomeTags.HAS_SPOTTED_RED_MAPLE_TREES).add(SNOWY_CHESTNUT_FOREST.getKey(), WindsweptBiomes.TUNDRA.getKey());
 
-        this.tag(BiomeTags.IS_OVERWORLD).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey());
+        this.tag(BiomeTags.IS_OVERWORLD).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), TUNDRA.getKey());
         this.tag(BiomeTags.IS_FOREST).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey());
-        this.tag(BiomeTags.HAS_IGLOO).add(SNOWY_CHESTNUT_FOREST.getKey());
+        this.tag(BiomeTags.HAS_IGLOO).add(SNOWY_CHESTNUT_FOREST.getKey(), TUNDRA.getKey());
         this.tag(BiomeTags.IS_TAIGA).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey());
         this.tag(BiomeTags.HAS_RUINED_PORTAL_STANDARD).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey());
-        this.tag(BiomeTags.HAS_MINESHAFT).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey());
-        this.tag(BiomeTags.STRONGHOLD_BIASED_TO).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey());
-        this.tag(BiomeTags.HAS_PILLAGER_OUTPOST).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey());
-        this.tag(Tags.Biomes.IS_SNOWY).add(SNOWY_CHESTNUT_FOREST.getKey());
-        this.tag(Tags.Biomes.IS_COLD).add(SNOWY_CHESTNUT_FOREST.getKey());
+        this.tag(BiomeTags.HAS_MINESHAFT).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), TUNDRA.getKey());
+        this.tag(BiomeTags.STRONGHOLD_BIASED_TO).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), TUNDRA.getKey());
+        this.tag(BiomeTags.HAS_PILLAGER_OUTPOST).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), TUNDRA.getKey());
+        this.tag(Tags.Biomes.IS_SNOWY).add(SNOWY_CHESTNUT_FOREST.getKey(), TUNDRA.getKey());
+        this.tag(Tags.Biomes.IS_COLD).add(SNOWY_CHESTNUT_FOREST.getKey(), TUNDRA.getKey());
         this.tag(Tags.Biomes.IS_CONIFEROUS).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey());
         this.tag(Tags.Biomes.IS_DENSE).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey());
         this.tag(Tags.Biomes.IS_DENSE_OVERWORLD).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey());

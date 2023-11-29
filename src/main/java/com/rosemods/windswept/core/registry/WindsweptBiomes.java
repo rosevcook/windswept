@@ -18,11 +18,10 @@ public class WindsweptBiomes {
 
     public static final BiomeSubRegistryHelper.KeyedBiome CHESTNUT_FOREST = HELPER.createBiome("chestnut_forest", () -> chestnutForest(false));
     public static final BiomeSubRegistryHelper.KeyedBiome SNOWY_CHESTNUT_FOREST = HELPER.createBiome("snowy_chestnut_forest", () -> chestnutForest(true));
+    public static final BiomeSubRegistryHelper.KeyedBiome TUNDRA = HELPER.createBiome("tundra", WindsweptBiomes::tundra);
 
     private static Biome chestnutForest(boolean snowy) {
-        MobSpawnSettings.Builder spawns = baseChestnutSpawns();
         BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder();
-        float temp = snowy ? -.3f : .3f;
 
         OverworldBiomes.globalOverworldGeneration(generation);
         BiomeDefaultFeatures.addPlainGrass(generation);
@@ -40,7 +39,7 @@ public class WindsweptBiomes {
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.TALL_BIRCH.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, (snowy ? WindsweptFeatures.Placements.WHITE_ROSE_BUSH : WindsweptFeatures.Placements.BLUE_ROSE_BUSH).getHolder().get());
 
-        return new Biome.BiomeBuilder().precipitation(snowy ? Biome.Precipitation.SNOW : Biome.Precipitation.RAIN).temperature(temp).downfall(.4f).specialEffects((new BiomeSpecialEffects.Builder()).waterColor(4159204).waterFogColor(329011).fogColor(12638463).skyColor(calculateSkyColor(temp)).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).backgroundMusic(OverworldBiomes.NORMAL_MUSIC).build()).mobSpawnSettings(spawns.build()).generationSettings(generation.build()).build();
+        return biome(snowy ? -.3f : .3f, .4f, 4159204, 329011, 12638463, snowy ? Biome.Precipitation.SNOW : Biome.Precipitation.RAIN, generation, baseChestnutSpawns()).build();
     }
 
     private static MobSpawnSettings.Builder baseChestnutSpawns() {
@@ -53,6 +52,45 @@ public class WindsweptBiomes {
         spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FOX, 12, 4, 4));
 
         return spawns;
+    }
+
+    private static Biome tundra() {
+        BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder();
+
+        OverworldBiomes.globalOverworldGeneration(generation);
+        BiomeDefaultFeatures.addPlainGrass(generation);
+        BiomeDefaultFeatures.addDefaultOres(generation);
+        BiomeDefaultFeatures.addDefaultSoftDisks(generation);
+        BiomeDefaultFeatures.addRareBerryBushes(generation);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
+        BiomeDefaultFeatures.addDefaultMushrooms(generation);
+
+        return biome(1f, .2f,4159204, 329011, 12638463, Biome.Precipitation.NONE, generation, basTundraSpawns()).build();
+    }
+
+    private static MobSpawnSettings.Builder basTundraSpawns() {
+        MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
+
+        BiomeDefaultFeatures.commonSpawns(spawns);
+        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 8, 4, 4));
+        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FOX, 12, 4, 4));
+
+        return spawns;
+    }
+
+    private static Biome.BiomeBuilder biome(float temp, float downfall, int waterColor, int waterFogColor, int fogColor, Biome.Precipitation precipitation, BiomeGenerationSettings.Builder generation, MobSpawnSettings.Builder spawns) {
+        return new Biome.BiomeBuilder()
+                .precipitation(precipitation)
+                .temperature(temp).downfall(downfall)
+                .specialEffects((new BiomeSpecialEffects.Builder())
+                        .waterColor(waterColor)
+                        .waterFogColor(waterFogColor)
+                        .fogColor(fogColor)
+                        .skyColor(calculateSkyColor(temp))
+                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+                        .backgroundMusic(OverworldBiomes.NORMAL_MUSIC).build())
+                .mobSpawnSettings(spawns.build()).generationSettings(generation.build());
+
     }
 
     private static int calculateSkyColor(float temperature) {
