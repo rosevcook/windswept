@@ -277,6 +277,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(GLOW_SHROOM_BASKET.get());
 
             // misc
+            this.add(GELISOL.get(), b -> createSingleItemTableWithSilkTouch(b, net.minecraft.world.level.block.Blocks.DIRT));
             this.dropSelf(FROSTBITER_TROPHY.get());
             this.dropSelf(FROZEN_FLESH_BLOCK.get());
         }

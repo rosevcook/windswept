@@ -231,6 +231,8 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.compressedBlock(BROWN_MUSHROOM_BASKET);
         this.compressedBlock(GLOW_SHROOM_BASKET);
 
+        this.simpleBlock(GELISOL.get(), this.models().cubeBottomTop("gelisol", this.modLoc("block/gelisol_side"), this.mcLoc("block/dirt"), this.modLoc("block/gelisol_top")));
+        this.itemModel(GELISOL);
         this.horizontalBlock(FROSTBITER_TROPHY.get(), this.models().getExistingFile(this.modLoc("block/frostbiter_trophy")));
         this.generatedItem(FROSTBITER_TROPHY.get(), TextureFolder.Item);
         this.cubeAll(FROZEN_FLESH_BLOCK);
@@ -391,7 +393,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
 
     private void compressedBlock(RegistryObject<Block> block) {
         String name = getItemName(block.get());
-        this.directionalBlock(block.get(), models().cubeBottomTop(name, this.modLoc("block/" + name + "_side"), this.modLoc("block/" + name + "_bottom"), this.modLoc("block/" + name + "_top")));
+        this.directionalBlock(block.get(), this.models().cubeBottomTop(name, this.modLoc("block/" + name + "_side"), this.modLoc("block/" + name + "_bottom"), this.modLoc("block/" + name + "_top")));
         this.itemModel(block);
     }
 
@@ -529,8 +531,8 @@ public class WindsweptModelProvider extends BlockStateProvider {
 
     private void boards(RegistryObject<Block> boards) {
         ResourceLocation texture = this.blockTexture(boards.get());
-        ModelFile boardsModel = models().getBuilder(getItemName(boards.get())).parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Blueprint.MOD_ID, "block/template_boards"))).texture("all", texture);
-        ModelFile boardsHorizontalModel = models().getBuilder(getItemName(boards.get()) + "_horizontal").parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Blueprint.MOD_ID, "block/template_boards_horizontal"))).texture("all", texture);
+        ModelFile boardsModel = this.models().getBuilder(getItemName(boards.get())).parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Blueprint.MOD_ID, "block/template_boards"))).texture("all", texture);
+        ModelFile boardsHorizontalModel = this.models().getBuilder(getItemName(boards.get()) + "_horizontal").parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Blueprint.MOD_ID, "block/template_boards_horizontal"))).texture("all", texture);
 
         this.itemModel(boards);
         this.getVariantBuilder(boards.get())
