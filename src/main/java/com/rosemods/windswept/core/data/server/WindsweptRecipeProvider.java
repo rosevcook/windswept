@@ -69,6 +69,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         flowerToDye(FOXGLOVE.get(), Items.PINK_DYE, consumer);
         flowerToDye(BLUEBELLS.get(), Items.BLUE_DYE, consumer);
         flowerToDye(SNOWDROP.get(), Items.LIGHT_GRAY_DYE, consumer);
+        flowerToDye(MOSS_CAMPION.get(), Items.PURPLE_DYE, consumer);
         flowerToDye(NIGHTSHADE.get(), Items.LIGHT_BLUE_DYE, consumer);
         tallFlowerToDye(RED_ROSE_BUSH.get(), Items.RED_DYE, consumer);
         tallFlowerToDye(PINK_ROSE_BUSH.get(), Items.PINK_DYE, consumer);

@@ -6,8 +6,6 @@ import com.rosemods.windswept.core.registry.WindsweptItems;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -43,7 +41,7 @@ public class Chilled extends Zombie {
     @Override
     public boolean doHurtTarget(Entity entity) {
         if (super.doHurtTarget(entity) && entity instanceof LivingEntity livingEntity) {
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 600), this);
+            livingEntity.setTicksFrozen(livingEntity.getTicksFrozen() + 100);
             return true;
         }
 

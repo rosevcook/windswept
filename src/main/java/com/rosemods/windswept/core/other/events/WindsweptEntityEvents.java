@@ -8,12 +8,14 @@ import com.rosemods.windswept.core.WindsweptConfig;
 import com.rosemods.windswept.core.other.WindsweptDataProcessors;
 import com.rosemods.windswept.core.other.tags.WindsweptBlockTags;
 import com.rosemods.windswept.core.other.tags.WindsweptEntityTypeTags;
+import com.rosemods.windswept.core.registry.WindsweptBiomes;
 import com.rosemods.windswept.core.registry.WindsweptEffects;
 import com.rosemods.windswept.core.registry.WindsweptEntities;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
 import com.teamabnormals.blueprint.common.world.storage.tracking.TrackedData;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintEntityTypeTags;
+import net.minecraft.core.Holder;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
@@ -29,6 +31,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.ThornsEnchantment;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.entity.SignBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.Tags;
@@ -118,20 +121,22 @@ public class WindsweptEntityEvents {
         MobSpawnType reason = event.getSpawnReason();
 
         // convert zombies in cold biomes to chilled && skeletons to strays
-        if (mob != null && level instanceof ServerLevel && event.getResult() != Result.DENY
-                && mob.getY() > 60 && (reason == MobSpawnType.NATURAL || reason == MobSpawnType.CHUNK_GENERATION)
-                && level.getBiome(mob.blockPosition()).is(Tags.Biomes.IS_SNOWY)) {
-            if (mob.getType() == EntityType.ZOMBIE) {
-                mob = mob.convertTo(WindsweptEntities.CHILLED.get(), true);
+        if (mob != null && level instanceof ServerLevel && event.getResult() != Result.DENY && mob.getY() > 60 && (reason == MobSpawnType.NATURAL || reason == MobSpawnType.CHUNK_GENERATION)) {
+            Holder<Biome> biome = level.getBiome(mob.blockPosition());
 
-                if (mob instanceof Chilled chilled)
-                    chilled.cncCompat(level.getRandom());
-            } else if (mob.getType() == EntityType.SKELETON && WindsweptConfig.COMMON.strays.get()) {
-                mob = mob.convertTo(EntityType.STRAY, true);
+            if (biome.is(Tags.Biomes.IS_SNOWY) || biome.is(WindsweptBiomes.TUNDRA.getKey()))
+                if (mob.getType() == EntityType.ZOMBIE) {
+                    mob = mob.convertTo(WindsweptEntities.CHILLED.get(), true);
 
-                if (mob != null)
-                    mob.setItemInHand(InteractionHand.MAIN_HAND, Items.BOW.getDefaultInstance());
-            }
+                    if (mob instanceof Chilled chilled)
+                        chilled.cncCompat(level.getRandom());
+                } else if (mob.getType() == EntityType.SKELETON && WindsweptConfig.COMMON.strays.get()) {
+                    mob = mob.convertTo(EntityType.STRAY, true);
+
+                    if (mob != null)
+                        mob.setItemInHand(InteractionHand.MAIN_HAND, Items.BOW.getDefaultInstance());
+                }
+
         }
     }
 

@@ -61,9 +61,9 @@ public class WindsweptBiomes {
         BiomeDefaultFeatures.addPlainGrass(generation);
         BiomeDefaultFeatures.addDefaultOres(generation);
         BiomeDefaultFeatures.addDefaultSoftDisks(generation);
-        BiomeDefaultFeatures.addRareBerryBushes(generation);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
         BiomeDefaultFeatures.addDefaultMushrooms(generation);
+        BiomeDefaultFeatures.addCommonBerryBushes(generation);
 
         return biome(1f, .2f,4159204, 329011, 12638463, Biome.Precipitation.NONE, generation, basTundraSpawns()).build();
     }

@@ -225,6 +225,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(FOXGLOVE.get());
             this.dropSelf(BLUEBELLS.get());
             this.dropSelf(SNOWDROP.get());
+            this.dropSelf(MOSS_CAMPION.get());
             this.dropSelf(NIGHTSHADE.get());
 
             // pots
@@ -236,6 +237,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropPottedContents(POTTED_FOXGLOVE.get());
             this.dropPottedContents(POTTED_BLUEBELLS.get());
             this.dropPottedContents(POTTED_SNOWDROP.get());
+            this.dropPottedContents(POTTED_MOSS_CAMPION.get());
             this.dropPottedContents(POTTED_NIGHTSHADE.get());
             this.dropPottedContents(POTTED_SNOWY_SPROUTS.get());
             this.dropPottedContents(POTTED_RED_TUNDRA_SPROUTS.get());
