@@ -29,15 +29,15 @@
     "windswept:icicle",
     "windswept:icicle_block",
     "windswept:chiseled_icicle_block",
-    "windswept:tundra_mossy_cobblestone",
-    "windswept:tundra_mossy_cobblestone_stairs",
-    "windswept:tundra_mossy_cobblestone_slab",
-    "windswept:tundra_mossy_cobblestone_wall",
-    "windswept:tundra_mossy_cobblestone_vertical_slab",
-    "windswept:tundra_mossy_stone_bricks",
-    "windswept:tundra_mossy_stone_brick_stairs",
-    "windswept:tundra_mossy_stone_brick_slab",
-    "windswept:tundra_mossy_stone_brick_wall",
-    "windswept:tundra_mossy_stone_brick_vertical_slab"
+    "windswept:dry_mossy_cobblestone",
+    "windswept:dry_mossy_cobblestone_stairs",
+    "windswept:dry_mossy_cobblestone_slab",
+    "windswept:dry_mossy_cobblestone_wall",
+    "windswept:dry_mossy_cobblestone_vertical_slab",
+    "windswept:dry_mossy_stone_bricks",
+    "windswept:dry_mossy_stone_brick_stairs",
+    "windswept:dry_mossy_stone_brick_slab",
+    "windswept:dry_mossy_stone_brick_wall",
+    "windswept:dry_mossy_stone_brick_vertical_slab"
   ]
 }

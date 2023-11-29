@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "type=double": {
+      "model": "windswept:block/dry_mossy_stone_bricks"
+    },
+    "type=east": {
+      "model": "windswept:block/dry_mossy_stone_brick_vertical_slab",
+      "uvlock": true,
+      "y": 90
+    },
+    "type=north": {
+      "model": "windswept:block/dry_mossy_stone_brick_vertical_slab",
+      "uvlock": true
+    },
+    "type=south": {
+      "model": "windswept:block/dry_mossy_stone_brick_vertical_slab",
+      "uvlock": true,
+      "y": 180
+    },
+    "type=west": {
+      "model": "windswept:block/dry_mossy_stone_brick_vertical_slab",
+      "uvlock": true,
+      "y": 270
+    }
+  }
+}

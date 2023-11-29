@@ -235,18 +235,18 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(ICICLE_BLOCK);
         this.translateBlock(CHISELED_ICICLE_BLOCK);
 
-        this.translateBlock(TUNDRA_MOSS_CARPET);
-        this.translateBlock(TUNDRA_MOSS_BLOCK);
-        this.translateBlock(TUNDRA_MOSSY_COBBLESTONE);
-        this.translateBlock(TUNDRA_MOSSY_COBBLESTONE_SLAB);
-        this.translateBlock(TUNDRA_MOSSY_COBBLESTONE_STAIRS);
-        this.translateBlock(TUNDRA_MOSSY_COBBLESTONE_WALL);
-        this.translateBlock(TUNDRA_MOSSY_COBBLESTONE_VERTICAL_SLAB);
-        this.translateBlock(TUNDRA_MOSSY_STONE_BRICKS);
-        this.translateBlock(TUNDRA_MOSSY_STONE_BRICK_SLAB);
-        this.translateBlock(TUNDRA_MOSSY_STONE_BRICK_STAIRS);
-        this.translateBlock(TUNDRA_MOSSY_STONE_BRICK_WALL);
-        this.translateBlock(TUNDRA_MOSSY_STONE_BRICK_VERTICAL_SLAB);
+        this.translateBlock(DRY_MOSS_CARPET);
+        this.translateBlock(DRY_MOSS_BLOCK);
+        this.translateBlock(DRY_MOSSY_COBBLESTONE);
+        this.translateBlock(DRY_MOSSY_COBBLESTONE_SLAB);
+        this.translateBlock(DRY_MOSSY_COBBLESTONE_STAIRS);
+        this.translateBlock(DRY_MOSSY_COBBLESTONE_WALL);
+        this.translateBlock(DRY_MOSSY_COBBLESTONE_VERTICAL_SLAB);
+        this.translateBlock(DRY_MOSSY_STONE_BRICKS);
+        this.translateBlock(DRY_MOSSY_STONE_BRICK_SLAB);
+        this.translateBlock(DRY_MOSSY_STONE_BRICK_STAIRS);
+        this.translateBlock(DRY_MOSSY_STONE_BRICK_WALL);
+        this.translateBlock(DRY_MOSSY_STONE_BRICK_VERTICAL_SLAB);
 
         this.add(RED_MUSHROOM_BASKET.get(), "Basket of Red Mushrooms");
         this.add(BROWN_MUSHROOM_BASKET.get(), "Basket of Brown Mushrooms");

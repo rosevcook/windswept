@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "windswept:block/tundra_mossy_cobblestone",
-    "side": "windswept:block/tundra_mossy_cobblestone",
-    "top": "windswept:block/tundra_mossy_cobblestone"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "windswept:tundra_mossy_cobblestone"
-  },
-  "result": "windswept:tundra_mossy_cobblestone_stairs"
-}

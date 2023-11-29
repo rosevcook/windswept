@@ -214,18 +214,18 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.pillar(ICICLE_BLOCK);
         this.pillar(CHISELED_ICICLE_BLOCK);
 
-        this.carpet(TUNDRA_MOSS_CARPET, this.blockTexture(TUNDRA_MOSS_BLOCK.get()));
-        this.cubeAll(TUNDRA_MOSS_BLOCK);
-        this.cubeAll(TUNDRA_MOSSY_COBBLESTONE);
-        this.stairs(TUNDRA_MOSSY_COBBLESTONE_STAIRS, this.blockTexture(TUNDRA_MOSSY_COBBLESTONE.get()));
-        this.slab(TUNDRA_MOSSY_COBBLESTONE_SLAB, this.blockTexture(TUNDRA_MOSSY_COBBLESTONE.get()));
-        this.wall(TUNDRA_MOSSY_COBBLESTONE_WALL, this.blockTexture(TUNDRA_MOSSY_COBBLESTONE.get()));
-        this.verticalSlab(TUNDRA_MOSSY_COBBLESTONE_VERTICAL_SLAB, this.blockTexture(TUNDRA_MOSSY_COBBLESTONE.get()));
-        this.cubeAll(TUNDRA_MOSSY_STONE_BRICKS);
-        this.stairs(TUNDRA_MOSSY_STONE_BRICK_STAIRS, this.blockTexture(TUNDRA_MOSSY_STONE_BRICKS.get()));
-        this.slab(TUNDRA_MOSSY_STONE_BRICK_SLAB, this.blockTexture(TUNDRA_MOSSY_STONE_BRICKS.get()));
-        this.wall(TUNDRA_MOSSY_STONE_BRICK_WALL, this.blockTexture(TUNDRA_MOSSY_STONE_BRICKS.get()));
-        this.verticalSlab(TUNDRA_MOSSY_STONE_BRICK_VERTICAL_SLAB, this.blockTexture(TUNDRA_MOSSY_STONE_BRICKS.get()));
+        this.carpet(DRY_MOSS_CARPET, this.blockTexture(DRY_MOSS_BLOCK.get()));
+        this.cubeAll(DRY_MOSS_BLOCK);
+        this.cubeAll(DRY_MOSSY_COBBLESTONE);
+        this.stairs(DRY_MOSSY_COBBLESTONE_STAIRS, this.blockTexture(DRY_MOSSY_COBBLESTONE.get()));
+        this.slab(DRY_MOSSY_COBBLESTONE_SLAB, this.blockTexture(DRY_MOSSY_COBBLESTONE.get()));
+        this.wall(DRY_MOSSY_COBBLESTONE_WALL, this.blockTexture(DRY_MOSSY_COBBLESTONE.get()));
+        this.verticalSlab(DRY_MOSSY_COBBLESTONE_VERTICAL_SLAB, this.blockTexture(DRY_MOSSY_COBBLESTONE.get()));
+        this.cubeAll(DRY_MOSSY_STONE_BRICKS);
+        this.stairs(DRY_MOSSY_STONE_BRICK_STAIRS, this.blockTexture(DRY_MOSSY_STONE_BRICKS.get()));
+        this.slab(DRY_MOSSY_STONE_BRICK_SLAB, this.blockTexture(DRY_MOSSY_STONE_BRICKS.get()));
+        this.wall(DRY_MOSSY_STONE_BRICK_WALL, this.blockTexture(DRY_MOSSY_STONE_BRICKS.get()));
+        this.verticalSlab(DRY_MOSSY_STONE_BRICK_VERTICAL_SLAB, this.blockTexture(DRY_MOSSY_STONE_BRICKS.get()));
 
         this.compressedBlock(RED_MUSHROOM_BASKET);
         this.compressedBlock(BROWN_MUSHROOM_BASKET);

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:cobblestone"
+    },
+    {
+      "item": "windswept:dry_moss_block"
+    }
+  ],
+  "result": {
+    "item": "windswept:dry_mossy_cobblestone"
+  }
+}

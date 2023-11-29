@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "windswept:block/dry_mossy_stone_bricks",
+    "side": "windswept:block/dry_mossy_stone_bricks",
+    "top": "windswept:block/dry_mossy_stone_bricks"
+  }
+}

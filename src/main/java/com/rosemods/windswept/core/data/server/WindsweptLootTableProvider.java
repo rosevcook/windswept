@@ -258,18 +258,18 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(CHISELED_ICICLE_BLOCK.get());
 
             // tundra moss blocks
-            this.dropSelf(TUNDRA_MOSS_CARPET.get());
-            this.dropSelf(TUNDRA_MOSS_BLOCK.get());
-            this.dropSelf(TUNDRA_MOSSY_COBBLESTONE.get());
-            this.dropSelf(TUNDRA_MOSSY_COBBLESTONE_STAIRS.get());
-            this.add(TUNDRA_MOSSY_COBBLESTONE_SLAB.get(), Blocks::createSlabItemTable);
-            this.dropSelf(TUNDRA_MOSSY_COBBLESTONE_WALL.get());
-            this.add(TUNDRA_MOSSY_COBBLESTONE_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
-            this.dropSelf(TUNDRA_MOSSY_STONE_BRICKS.get());
-            this.dropSelf(TUNDRA_MOSSY_STONE_BRICK_STAIRS.get());
-            this.add(TUNDRA_MOSSY_STONE_BRICK_SLAB.get(), Blocks::createSlabItemTable);
-            this.dropSelf(TUNDRA_MOSSY_STONE_BRICK_WALL.get());
-            this.add(TUNDRA_MOSSY_STONE_BRICK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+            this.dropSelf(DRY_MOSS_CARPET.get());
+            this.dropSelf(DRY_MOSS_BLOCK.get());
+            this.dropSelf(DRY_MOSSY_COBBLESTONE.get());
+            this.dropSelf(DRY_MOSSY_COBBLESTONE_STAIRS.get());
+            this.add(DRY_MOSSY_COBBLESTONE_SLAB.get(), Blocks::createSlabItemTable);
+            this.dropSelf(DRY_MOSSY_COBBLESTONE_WALL.get());
+            this.add(DRY_MOSSY_COBBLESTONE_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+            this.dropSelf(DRY_MOSSY_STONE_BRICKS.get());
+            this.dropSelf(DRY_MOSSY_STONE_BRICK_STAIRS.get());
+            this.add(DRY_MOSSY_STONE_BRICK_SLAB.get(), Blocks::createSlabItemTable);
+            this.dropSelf(DRY_MOSSY_STONE_BRICK_WALL.get());
+            this.add(DRY_MOSSY_STONE_BRICK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
 
             // mushroom crates
             this.dropSelf(RED_MUSHROOM_BASKET.get());
