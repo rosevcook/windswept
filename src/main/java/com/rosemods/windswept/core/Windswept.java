@@ -79,13 +79,13 @@ public class Windswept {
 
     private void dataSetup(GatherDataEvent event) {
         DataGenerator gen = event.getGenerator();
-        boolean client = event.includeClient();
-        boolean server = event.includeServer();
 
+        boolean client = event.includeClient();
         gen.addProvider(client, new WindsweptSoundProvider(event));
         gen.addProvider(client, new WindsweptLangProvider(event));
         gen.addProvider(client, new WindsweptModelProvider(event));
 
+        boolean server = event.includeServer();
         var blockTags = new WindsweptBlockTagProvider(event);
         gen.addProvider(server, blockTags);
         gen.addProvider(server, new WindsweptItemTagProvider(event, blockTags));

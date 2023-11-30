@@ -52,7 +52,7 @@ public abstract class FoxEatBerriesGoalMixin extends MoveToBlockGoal {
     private void isValidTarget(LevelReader level, BlockPos pos, CallbackInfoReturnable<Boolean> info) {
         BlockState state = level.getBlockState(pos);
 
-        if (state.is(WindsweptBlocks.WILD_BERRY_BUSH.get()) && state.getValue(WildBerryBushBlock.AGE) == 2)
+        if (state.is(WindsweptBlocks.WILD_BERRY_BUSH.get()) && state.getValue(WildBerryBushBlock.AGE) == 3)
             info.setReturnValue(true);
     }
 

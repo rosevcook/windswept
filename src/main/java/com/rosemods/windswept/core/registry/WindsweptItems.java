@@ -27,18 +27,23 @@ import net.minecraftforge.registries.RegistryObject;
 public class WindsweptItems {
     public static final ItemSubRegistryHelper HELPER = Windswept.REGISTRY_HELPER.getItemSubHelper();
 
-    // Wooden Buckets //
+    // Misc //
+    public static final RegistryObject<Item> HOLLY_BERRIES = HELPER.createItem("holly_berries", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_BREWING).food(WindsweptFoods.HOLLY_BERRIES)));
+    public static final RegistryObject<Item> HOLLY_BERRIES_ON_A_STICK = HELPER.createItem("holly_berries_on_a_stick", () -> new HollyBerriesOnAStickItem(new Item.Properties().durability(25).tab(CreativeModeTab.TAB_TRANSPORTATION), 7));
+    public static final RegistryObject<Item> FROST_ARROW = HELPER.createItem("frost_arrow", () -> new FrostArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
+    public static final RegistryObject<Item> FROZEN_FLESH = HELPER.createItem("frozen_flesh", () -> new InjectedItem(Items.ROTTEN_FLESH, PropertyUtil.food(WindsweptFoods.FROZEN_FLESH)));
+    public static final RegistryObject<Item> FROZEN_BRANCH = HELPER.createItem("frozen_branch", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<Item> SNOW_BOOTS = HELPER.createItem("snow_boots", () -> new SnowBootsItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
 
+    // Wooden Buckets //
     public static final RegistryObject<Item> WOODEN_BUCKET = HELPER.createItem("wooden_bucket", () -> new WoodenBucketItem(() -> Fluids.EMPTY, new Item.Properties().durability(24).tab(CreativeModeTab.TAB_MISC)));
     public static final RegistryObject<Item> WOODEN_WATER_BUCKET = HELPER.createItem("wooden_water_bucket", () -> new WoodenBucketItem(() -> Fluids.WATER, new Item.Properties().durability(24).craftRemainder(WOODEN_BUCKET.get()).tab(CreativeModeTab.TAB_MISC)));
     public static final RegistryObject<Item> WOODEN_MILK_BUCKET = HELPER.createItem("wooden_milk_bucket", () -> new WoodenMilkBucketItem(new Item.Properties().durability(24).craftRemainder(WOODEN_BUCKET.get()).tab(CreativeModeTab.TAB_MISC)));
     public static final RegistryObject<Item> WOODEN_POWDER_SNOW_BUCKET = HELPER.createItem("wooden_powder_snow_bucket", () -> new WoodenPowderSnowBucketItem(new Item.Properties().durability(24).craftRemainder(WOODEN_BUCKET.get()).tab(CreativeModeTab.TAB_MISC)));
 
     // Food //
-
     public static final RegistryObject<Item> WILD_BERRIES = HELPER.createItem("wild_berries", ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD) ? () -> new Item(PropertyUtil.food(WindsweptFoods.WILD_BERRIES)) : () -> new ItemNameBlockItem(WindsweptBlocks.WILD_BERRY_BUSH.get(), PropertyUtil.food(WindsweptFoods.WILD_BERRIES)));
     public static final RegistryObject<Item> WILD_BERRY_PIPS = HELPER.createItem("wild_berry_pips", ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD) ? () -> new ItemNameBlockItem(WindsweptBlocks.WILD_BERRY_BUSH.get(), new Item.Properties().tab(ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD) ? CreativeModeTab.TAB_MISC : null)) : () -> new Item(new Item.Properties()));
-
     public static final RegistryObject<Item> WILD_BERRY_JUICE = HELPER.createItem("wild_berry_juice", () -> new DrinkableBottleItem(WindsweptFoods.WILD_BERRY_JUICE));
     public static final RegistryObject<Item> WILD_BERRY_COOKIE = HELPER.createItem("wild_berry_cookie", () -> new Item(PropertyUtil.food(WindsweptFoods.WILD_BERRY_COOKIE)));
     public static final RegistryObject<Item> WILD_BERRY_BOWL = HELPER.createItem("wild_berry_bowl", () -> new BerryBowlItem(WILD_BERRIES.get(), WindsweptFoods.BERRY_BOWL));
@@ -56,34 +61,21 @@ public class WindsweptItems {
     public static final RegistryObject<Item> CHESTNUT_CHICKEN_PLATTER = HELPER.createItem("chestnut_chicken_platter", () -> new BowlFoodItem((ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) ? PropertyUtil.food(WindsweptFDCompat.CHESTNUT_CHICKEN_PLATTER) : new Item.Properties()).craftRemainder(Items.BOWL).stacksTo(1)));
     public static final RegistryObject<Item> FOUL_BERRY_BOWL = HELPER.createItem("foul_berry_bowl", () -> new BerryBowlItem(null, Items.BOWL, new Item.Properties().tab(ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.AUTUMNITY) ? CreativeModeTab.TAB_FOOD : null).food(ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.AUTUMNITY) ? WindsweptAutumnityCompat.FOUL_BERRY_BOWL : null)));
 
-    // Misc //
-
-    public static final RegistryObject<Item> SNOW_BOOTS = HELPER.createItem("snow_boots", () -> new SnowBootsItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
-    public static final RegistryObject<Item> HOLLY_BERRIES = HELPER.createItem("holly_berries", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_BREWING).food(WindsweptFoods.HOLLY_BERRIES)));
-    public static final RegistryObject<Item> FROST_ARROW = HELPER.createItem("frost_arrow", () -> new FrostArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
-    public static final RegistryObject<Item> FROZEN_FLESH = HELPER.createItem("frozen_flesh", () -> new InjectedItem(Items.ROTTEN_FLESH, PropertyUtil.food(WindsweptFoods.FROZEN_FLESH)));
-    public static final RegistryObject<Item> FROZEN_BRANCH = HELPER.createItem("frozen_branch", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
-    public static final RegistryObject<Item> HOLLY_BERRIES_ON_A_STICK = HELPER.createItem("holly_berries_on_a_stick", () -> new HollyBerriesOnAStickItem(new Item.Properties().durability(25).tab(CreativeModeTab.TAB_TRANSPORTATION), 7));
-
     // Banner Patterns //
-
     public static final RegistryObject<Item> SNOW_GOLEM_BANNER_PATTERN = HELPER.createItem("snow_golem_banner_pattern", () -> new BlueprintBannerPatternItem(WindsweptBannerPatternTags.SNOW_GOLEM, new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));
     public static final RegistryObject<Item> SNOW_CHARGE_BANNER_PATTERN = HELPER.createItem("snow_charge_banner_pattern", () -> new BlueprintBannerPatternItem(WindsweptBannerPatternTags.SNOW_CHARGE, new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));
     public static final RegistryObject<Item> ROSE_FLOWER_BANNER_PATTERN = HELPER.createItem("rose_flower_banner_pattern", () -> new BlueprintBannerPatternItem(WindsweptBannerPatternTags.ROSE_FLOWER, new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));
 
     // Music Discs //
-
     public static final RegistryObject<Item> MUSIC_DISC_RAIN = HELPER.createItem("music_disc_rain", () -> new BlueprintRecordItem(2, WindsweptSounds.MUSIC_DISC_RAIN, new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_MISC).rarity(Rarity.RARE), 124));
     public static final RegistryObject<Item> MUSIC_DISC_SNOW = HELPER.createItem("music_disc_snow", () -> new BlueprintRecordItem(2, WindsweptSounds.MUSIC_DISC_SNOW, new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_MISC).rarity(Rarity.RARE), 121));
     public static final RegistryObject<Item> MUSIC_DISC_BUMBLEBEE = HELPER.createItem("music_disc_bumblebee", () -> new BlueprintRecordItem(2, WindsweptSounds.MUSIC_DISC_BUMBLEBEE, new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_MISC).rarity(Rarity.RARE), 55));
 
     // Spawn Eggs //
-
     public static final RegistryObject<ForgeSpawnEggItem> CHILLED_SPAWN_EGG = HELPER.createSpawnEggItem("chilled", WindsweptEntityTypes.CHILLED::get, 0x9e9cbe, 0x98654a);
     public static final RegistryObject<ForgeSpawnEggItem> FROSTBITER_SPAWN_EGG = HELPER.createSpawnEggItem("frostbiter", WindsweptEntityTypes.FROSTBITER::get, 0xe2e2e2, 0x8fb5ff);
 
     // Boats //
-
     public static final Pair<RegistryObject<Item>, RegistryObject<Item>> HOLLY_BOATS = HELPER.createBoatAndChestBoatItem("holly", WindsweptBlocks.HOLLY_PLANKS);
     public static final RegistryObject<Item> HOLLY_FURNACE_BOAT = HELPER.createItem("holly_furnace_boat", ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BOATLOAD) ? WindsweptBoatTypes.HOLLY_FURNACE_BOAT : () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> LARGE_HOLLY_BOAT = HELPER.createItem("large_holly_boat", ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BOATLOAD) ? WindsweptBoatTypes.LARGE_HOLLY_BOAT : () -> new Item(new Item.Properties()));

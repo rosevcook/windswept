@@ -20,8 +20,7 @@ public class FrostbiterEatFlowersGoal extends Goal {
 
     @Override
     public boolean canUse() {
-        return this.frostbiter.isNoEndimationPlaying() && (this.frostbiter.getRandom()
-                .nextInt(this.frostbiter.isBaby() ? 500 : 1000) == 0 || this.isFoodAt(this.getMouthPos()));
+        return this.frostbiter.isNoEndimationPlaying() && this.isFoodAt(this.getMouthPos());
     }
 
     @Override

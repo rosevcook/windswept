@@ -59,10 +59,8 @@ public class WildBerryBushBlock extends BushBlock implements BonemealableBlock {
     @Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource rand) {
         int i = state.getValue(AGE);
-        if (i < 3 && level.getRawBrightness(pos.above(), 0) >= 9 && ForgeHooks.onCropsGrowPre(level, pos, state, rand.nextInt(5) == 0)) {
+        if (i < 3 && level.getRawBrightness(pos.above(), 0) >= 9)
             level.setBlock(pos, state.setValue(AGE, i + 1), 2);
-            ForgeHooks.onCropsGrowPost(level, pos, state);
-        }
     }
 
     @Override
