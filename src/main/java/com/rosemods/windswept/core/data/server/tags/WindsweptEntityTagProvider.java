@@ -8,7 +8,7 @@ import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.data.event.GatherDataEvent;
 
-import static com.rosemods.windswept.core.registry.WindsweptEntities.*;
+import static com.rosemods.windswept.core.registry.WindsweptEntityTypes.*;
 
 public class WindsweptEntityTagProvider extends EntityTypeTagsProvider {
 

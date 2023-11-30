@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
+    "snowy=false": {
       "model": "windswept:block/gelisol"
+    },
+    "snowy=true": {
+      "model": "windswept:block/gelisol_snowy"
     }
   }
 }

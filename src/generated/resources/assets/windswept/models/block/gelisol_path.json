@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/dirt_path",
+  "textures": {
+    "side": "windswept:block/gelisol_path_side",
+    "top": "windswept:block/gelisol_path_top"
+  }
+}

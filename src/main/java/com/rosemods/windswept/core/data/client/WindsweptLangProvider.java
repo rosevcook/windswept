@@ -255,14 +255,15 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.add(GLOW_SHROOM_BASKET.get(), "Basket of Glow Shrooms");
 
         this.translateBlock(GELISOL);
+        this.translateBlock(GELISOL_PATH);
         this.translateBlock(FROSTBITER_TROPHY);
         this.translateBlock(FROZEN_FLESH_BLOCK);
 
         // Entities //
 
-        this.translateEntity(WindsweptEntities.CHILLED);
-        this.translateEntity(WindsweptEntities.FROSTBITER);
-        this.translateEntity(WindsweptEntities.FROST_ARROW);
+        this.translateEntity(WindsweptEntityTypes.CHILLED);
+        this.translateEntity(WindsweptEntityTypes.FROSTBITER);
+        this.translateEntity(WindsweptEntityTypes.FROST_ARROW);
 
         // Effects //
 

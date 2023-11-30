@@ -1,7 +1,7 @@
 package com.rosemods.windswept.common.item;
 
 import com.rosemods.windswept.common.entity.Frostbiter;
-import com.rosemods.windswept.core.registry.WindsweptEntities;
+import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
 import com.teamabnormals.blueprint.core.util.item.filling.TargetedItemCategoryFiller;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.CreativeModeTab;
@@ -13,7 +13,7 @@ public class HollyBerriesOnAStickItem extends FoodOnAStickItem<Frostbiter> {
     private static final TargetedItemCategoryFiller FILLER = new TargetedItemCategoryFiller(() -> Items.CARROT_ON_A_STICK);
 
     public HollyBerriesOnAStickItem(Properties properties, int consumeItemDamage) {
-        super(properties, WindsweptEntities.FROSTBITER.get(), consumeItemDamage);
+        super(properties, WindsweptEntityTypes.FROSTBITER.get(), consumeItemDamage);
     }
 
     @Override

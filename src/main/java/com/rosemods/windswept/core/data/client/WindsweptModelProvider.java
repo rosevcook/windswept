@@ -202,9 +202,9 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.pottedPlant(WHITE_ROSE, POTTED_WHITE_ROSE);
         this.pottedPlant(YELLOW_ROSE, POTTED_YELLOW_ROSE);
         this.pottedPlant(FOXGLOVE, POTTED_FOXGLOVE);
-        this.pottedPlant(MOSS_CAMPION, POTTED_MOSS_CAMPION);
         this.pottedPlant(NIGHTSHADE, POTTED_NIGHTSHADE);
         this.pottedPlantWithPottedVariant(SNOWDROP, POTTED_SNOWDROP);
+        this.pottedPlantWithPottedVariant(MOSS_CAMPION, POTTED_MOSS_CAMPION);
         this.pottedPlantWithPottedVariant(BLUEBELLS, POTTED_BLUEBELLS);
 
         this.wildBerryBush(WILD_BERRY_BUSH);
@@ -232,8 +232,12 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.compressedBlock(BROWN_MUSHROOM_BASKET);
         this.compressedBlock(GLOW_SHROOM_BASKET);
 
-        this.simpleBlock(GELISOL.get(), this.models().cubeBottomTop("gelisol", this.modLoc("block/gelisol_side"), this.mcLoc("block/dirt"), this.modLoc("block/gelisol_top")));
+        this.getVariantBuilder(GELISOL.get())
+                .partialState().with(SnowyDirtBlock.SNOWY, false).addModels(new ConfiguredModel(this.models().cubeBottomTop("gelisol", this.modLoc("block/gelisol_side"), this.mcLoc("block/dirt"), this.modLoc("block/gelisol_top"))))
+                .partialState().with(SnowyDirtBlock.SNOWY, true).addModels(new ConfiguredModel(this.models().cubeBottomTop("gelisol_snowy", this.modLoc("block/gelisol_side_snowy"), this.mcLoc("block/dirt"), this.modLoc("block/gelisol_top"))));
         this.itemModel(GELISOL);
+        this.simpleBlock(GELISOL_PATH.get(), this.models().withExistingParent("gelisol_path", this.mcLoc("dirt_path")).texture("top", this.modLoc("block/gelisol_path_top")).texture("side", this.modLoc("block/gelisol_path_side")));
+        this.itemModel(GELISOL_PATH);
         this.horizontalBlock(FROSTBITER_TROPHY.get(), this.models().getExistingFile(this.modLoc("block/frostbiter_trophy")));
         this.generatedItem(FROSTBITER_TROPHY.get(), TextureFolder.Item);
         this.cubeAll(FROZEN_FLESH_BLOCK);

@@ -1,6 +1,6 @@
 package com.rosemods.windswept.common.entity;
 
-import com.rosemods.windswept.core.registry.WindsweptEntities;
+import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.entity.EntityType;
@@ -19,11 +19,11 @@ public class FrostArrow extends AbstractArrow {
     }
 
     public FrostArrow(PlayMessages.SpawnEntity spawnEntity, Level world) {
-        this(WindsweptEntities.FROST_ARROW.get(), world);
+        this(WindsweptEntityTypes.FROST_ARROW.get(), world);
     }
 
     public FrostArrow(Level worldIn, LivingEntity shooter) {
-        super(WindsweptEntities.FROST_ARROW.get(), shooter, worldIn);
+        super(WindsweptEntityTypes.FROST_ARROW.get(), shooter, worldIn);
     }
 
 

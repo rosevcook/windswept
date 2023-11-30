@@ -3,7 +3,7 @@ package com.rosemods.windswept.core.data.server.modifiers;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import com.rosemods.windswept.core.registry.WindsweptEffects;
-import com.rosemods.windswept.core.registry.WindsweptEntities;
+import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.teamabnormals.blueprint.common.advancement.modification.AdvancementModifierProvider;
 import com.teamabnormals.blueprint.common.advancement.modification.modifiers.CriteriaModifier;
@@ -28,7 +28,7 @@ public class WindsweptAdvancementModifierProvider extends AdvancementModifierPro
     @Override
     protected void registerEntries() {
         final List<Block> seedsBlocks = List.of(WindsweptBlocks.WILD_BERRY_BUSH.get());
-        final List<EntityType<?>> killedMobs = List.of(WindsweptEntities.CHILLED.get());
+        final List<EntityType<?>> killedMobs = List.of(WindsweptEntityTypes.CHILLED.get());
 
         this.entry("balanced_diet").selects("husbandry/balanced_diet").addModifier(this.food().requirements(RequirementsStrategy.AND).build());
         this.entry("all_effects").selects("nether/all_effects").addModifier(new EffectsChangedModifier("all_effects", false, this.effects()));

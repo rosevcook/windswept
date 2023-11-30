@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "windswept:purple_dye_from_moss_campion"
+        "recipe": "windswept:magenta_dye_from_moss_campion"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "windswept:purple_dye_from_moss_campion"
+      "windswept:magenta_dye_from_moss_campion"
     ]
   }
 }

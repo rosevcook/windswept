@@ -10,7 +10,7 @@ import com.rosemods.windswept.core.other.tags.WindsweptBlockTags;
 import com.rosemods.windswept.core.other.tags.WindsweptEntityTypeTags;
 import com.rosemods.windswept.core.registry.WindsweptBiomes;
 import com.rosemods.windswept.core.registry.WindsweptEffects;
-import com.rosemods.windswept.core.registry.WindsweptEntities;
+import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
 import com.teamabnormals.blueprint.common.world.storage.tracking.TrackedData;
@@ -126,7 +126,7 @@ public class WindsweptEntityEvents {
 
             if (biome.is(Tags.Biomes.IS_SNOWY) || biome.is(WindsweptBiomes.TUNDRA.getKey()))
                 if (mob.getType() == EntityType.ZOMBIE) {
-                    mob = mob.convertTo(WindsweptEntities.CHILLED.get(), true);
+                    mob = mob.convertTo(WindsweptEntityTypes.CHILLED.get(), true);
 
                     if (mob instanceof Chilled chilled)
                         chilled.cncCompat(level.getRandom());
@@ -159,7 +159,7 @@ public class WindsweptEntityEvents {
                 if (data.getValue(WindsweptDataProcessors.IS_FREEZE_CONVERTING)) {
                     ammendData(data, WindsweptDataProcessors.FREEZE_CONVERT_TIME, -1);
                     if (data.getValue(WindsweptDataProcessors.FREEZE_CONVERT_TIME) < 0) {
-                        mob.convertTo(WindsweptEntities.CHILLED.get(), true);
+                        mob.convertTo(WindsweptEntityTypes.CHILLED.get(), true);
                         data.clean();
                         if (!mob.isSilent())
                             mob.level.levelEvent(null, 1048, mob.blockPosition(), 0);

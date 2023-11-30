@@ -3,7 +3,7 @@ package com.rosemods.windswept.core.data.server.modifiers;
 import com.mojang.serialization.JsonOps;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.other.tags.WindsweptBiomeTags;
-import com.rosemods.windswept.core.registry.WindsweptEntities;
+import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
 import com.rosemods.windswept.core.registry.WindsweptFeatures;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
@@ -58,7 +58,7 @@ public final class WindsweptBiomeModifier {
         addFeature("yellow_rose_bushes", Biomes.DARK_FOREST, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.YELLOW_ROSE_BUSH);
 
         // spawns
-        addSpawn("chilled", Tags.Biomes.IS_SNOWY, WindsweptEntities.CHILLED, 5, 3, 7);
+        addSpawn("chilled", Tags.Biomes.IS_SNOWY, WindsweptEntityTypes.CHILLED, 5, 3, 7);
 
         // removed features
         removeFeature("grove_spruces", Biomes.GROVE, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_GROVE);

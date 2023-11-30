@@ -1,7 +1,7 @@
 package com.rosemods.windswept.common.entity;
 
 import com.rosemods.windswept.common.entity.ai.goal.FrostbiterEatFlowersGoal;
-import com.rosemods.windswept.core.registry.WindsweptEntities;
+import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.rosemods.windswept.core.registry.WindsweptPlayableEndimations;
 import com.teamabnormals.blueprint.core.endimator.Endimatable;
@@ -251,7 +251,7 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
 
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob mob) {
-        Frostbiter biter = WindsweptEntities.FROSTBITER.get().create(level);
+        Frostbiter biter = WindsweptEntityTypes.FROSTBITER.get().create(level);
 
         UUID uuid = this.getOwnerUUID();
         if (uuid != null) {

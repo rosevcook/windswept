@@ -3,7 +3,7 @@ package com.rosemods.windswept.core.data.server;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import com.rosemods.windswept.core.Windswept;
-import com.rosemods.windswept.core.registry.WindsweptEntities;
+import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock.VerticalSlabType;
 import net.minecraft.advancements.critereon.EntityPredicate;
@@ -64,7 +64,8 @@ public class WindsweptLootTableProvider extends LootTableProvider {
     }
 
     @Override
-    protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext validationtracker) { }
+    protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext validationtracker) {
+    }
 
     private static <T> Iterable<T> getContent(IForgeRegistry<T> entry) {
         return entry.getValues().stream().filter(i -> entry.getKey(i) != null
@@ -280,6 +281,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 
             // misc
             this.add(GELISOL.get(), b -> createSingleItemTableWithSilkTouch(b, net.minecraft.world.level.block.Blocks.DIRT));
+            this.add(GELISOL_PATH.get(), b -> createSingleItemTableWithSilkTouch(b, net.minecraft.world.level.block.Blocks.DIRT));
             this.dropSelf(FROSTBITER_TROPHY.get());
             this.dropSelf(FROZEN_FLESH_BLOCK.get());
         }
@@ -290,11 +292,11 @@ public class WindsweptLootTableProvider extends LootTableProvider {
         }
 
         private void tallFlower(Block block) {
-            this.add(block, (b) -> createSinglePropConditionTable(b, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
+            this.add(block, b -> createSinglePropConditionTable(b, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         }
 
         private void leafPile(Block block) {
-            this.add(block, (b) -> createMultifaceBlockDrops(b, MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.SHEARS))));
+            this.add(block, b -> createMultifaceBlockDrops(b, MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.SHEARS))));
         }
 
         @Override
@@ -318,7 +320,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 
         @Override
         protected void addTables() {
-            this.add(WindsweptEntities.CHILLED.get(),
+            this.add(WindsweptEntityTypes.CHILLED.get(),
                     LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1f))
                                     .add(LootItem.lootTableItem(FROZEN_FLESH::get)
                                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(-2f, 2f)))
@@ -337,7 +339,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
                                             .when(LootItemEntityPropertyCondition.hasProperties(
                                                     LootContext.EntityTarget.KILLER,
                                                     EntityPredicate.Builder.entity().of(EntityTypeTags.SKELETONS)))));
-            this.add(WindsweptEntities.FROSTBITER.get(), LootTable.lootTable());
+            this.add(WindsweptEntityTypes.FROSTBITER.get(), LootTable.lootTable());
 
         }
 
