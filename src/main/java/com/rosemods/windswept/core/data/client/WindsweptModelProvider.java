@@ -186,8 +186,8 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.iceSheet(CUT_ICE_SHEET, this.blockTexture(CUT_ICE.get()));
 
         this.pottedPlantWithPottedVariant(SNOWY_SPROUTS, POTTED_SNOWY_SPROUTS);
-        this.pottedPlantWithPottedVariant(RED_TUNDRA_SPROUTS, POTTED_RED_TUNDRA_SPROUTS);
-        this.pottedPlantWithPottedVariant(YELLOW_TUNDRA_SPROUTS, POTTED_YELLOW_TUNDRA_SPROUTS);
+        this.pottedPlantWithPottedVariant(GELISOL_SPROUTS, POTTED_GELISOL_SPROUTS);
+        this.pottedPlantWithPottedVariant(DRY_MOSS_SPROUTS, POTTED_DRY_MOSS_SPROUTS);
 
         this.tallPlant(RED_ROSE_BUSH);
         this.tallPlant(PINK_ROSE_BUSH);

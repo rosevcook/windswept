@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "windswept:block/red_tundra_sprouts"
+    "layer0": "windswept:block/dry_moss_sprouts"
   }
 }

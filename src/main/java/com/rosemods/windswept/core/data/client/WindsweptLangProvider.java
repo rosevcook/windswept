@@ -161,8 +161,8 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.add(ROASTED_CHESTNUT_CRATE.get(), "Crate of Roasted Chestnuts");
 
         this.translateBlock(SNOWY_SPROUTS);
-        this.translateBlock(RED_TUNDRA_SPROUTS);
-        this.translateBlock(YELLOW_TUNDRA_SPROUTS);
+        this.translateBlock(GELISOL_SPROUTS);
+        this.translateBlock(DRY_MOSS_SPROUTS);
 
         this.add("block.windswept.snow_carpet", "Snow Carpet");
         this.translateBlock(SNOW_STAIRS);
@@ -227,8 +227,8 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(POTTED_SNOWDROP);
         this.translateBlock(POTTED_MOSS_CAMPION);
         this.translateBlock(POTTED_SNOWY_SPROUTS);
-        this.translateBlock(POTTED_RED_TUNDRA_SPROUTS);
-        this.translateBlock(POTTED_YELLOW_TUNDRA_SPROUTS);
+        this.translateBlock(POTTED_GELISOL_SPROUTS);
+        this.translateBlock(POTTED_DRY_MOSS_SPROUTS);
 
         this.translateBlock(WILD_BERRY_BUSH);
         this.add(WILD_BERRY_BASKET.get(), "Basket of Wild Berries");

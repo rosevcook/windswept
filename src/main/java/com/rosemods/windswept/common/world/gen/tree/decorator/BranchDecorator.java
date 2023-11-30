@@ -81,5 +81,4 @@ public class BranchDecorator extends TreeDecorator {
         return new BranchDecorator(BlockStateProvider.simple(block), minHeight);
     }
 
-
 }
