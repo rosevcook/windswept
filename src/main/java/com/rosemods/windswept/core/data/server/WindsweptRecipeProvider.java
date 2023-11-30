@@ -88,7 +88,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         conditionalRecipe(ShapedRecipeBuilder.shaped(SNOW_BOOTS.get()).define('#', WindsweptItemTags.SILVER_INGOT).define('L', Items.LEATHER).pattern("L L").pattern("L L").pattern("# #").unlockedBy(getHasName(Items.LEATHER), has(Items.LEATHER)), new NotCondition(new TagEmptyCondition(WindsweptItemTags.SILVER_INGOT.location())), consumer, getSaveLocation("snow_boots_from_silver"));
         conditionalRecipe(ShapelessRecipeBuilder.shapeless(WILD_BERRY_PIPS.get()).requires(WILD_BERRIES.get()).unlockedBy(getHasName(WILD_BERRIES.get()), has(WILD_BERRIES.get())), new ModLoadedCondition("berry_good"), consumer, getSaveLocation(WILD_BERRY_PIPS.get()));
         ShapedRecipeBuilder.shaped(HOLLY_WREATH.get()).define('#', HOLLY_BERRIES.get()).define('B', FROZEN_BRANCH.get()).pattern(" # ").pattern("#B#").pattern(" # ").unlockedBy(getHasName(HOLLY_BERRIES.get()), has(HOLLY_BERRIES.get())).save(consumer, getSaveLocation(HOLLY_WREATH.get()));
-        ShapelessRecipeBuilder.shapeless(FROST_ARROW.get(), 4).requires(Items.ARROW).requires(FROZEN_BRANCH.get()).unlockedBy(getHasName(FROZEN_BRANCH.get()), has(FROZEN_BRANCH.get())).save(consumer, getSaveLocation(FROST_ARROW.get()));
+        ShapedRecipeBuilder.shaped(FROST_ARROW.get(), 4).define('#', FROZEN_BRANCH.get()).define('I', ICICLES.get()).define('S', Items.STICK).pattern("#").pattern("S").pattern("I").unlockedBy(getHasName(FROZEN_BRANCH.get()), has(FROZEN_BRANCH.get())).save(consumer, getSaveLocation(FROST_ARROW.get()));
         ShapedRecipeBuilder.shaped(HOLLY_BERRIES_ON_A_STICK.get()).define('#', Items.FISHING_ROD).define('H', HOLLY_BERRIES.get()).pattern("# ").pattern(" H").unlockedBy(getHasName(HOLLY_BERRIES.get()), has(HOLLY_BERRIES.get())).save(consumer, getSaveLocation(HOLLY_BERRIES_ON_A_STICK.get()));
 
         // blocks
@@ -97,9 +97,11 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         ShapelessRecipeBuilder.shapeless(DRY_MOSSY_COBBLESTONE.get()).requires(Items.COBBLESTONE).requires(DRY_MOSS_BLOCK.get()).unlockedBy(getHasName(DRY_MOSS_BLOCK.get()), has(DRY_MOSS_BLOCK.get())).save(consumer, getSaveLocation("dry_mossy_cobblestone_from_dry_moss"));
         ShapelessRecipeBuilder.shapeless(DRY_MOSSY_STONE_BRICKS.get()).requires(Items.STONE_BRICKS).requires(DRY_MOSS_BLOCK.get()).unlockedBy(getHasName(DRY_MOSS_BLOCK.get()), has(DRY_MOSS_BLOCK.get())).save(consumer, getSaveLocation("dry_mossy_stone_bricks_from_dry_moss"));
 
-        ShapedRecipeBuilder.shaped(ICICLE_BLOCK.get()).define('#', ICICLE.get()).pattern("##").pattern("##").unlockedBy(getHasName(ICICLE.get()), has(ICICLE.get())).save(consumer, getSaveLocation(ICICLE_BLOCK.get()));
+        ShapedRecipeBuilder.shaped(ICICLE_BLOCK.get(), 2).define('#', ICICLES.get()).pattern("##").pattern("##").unlockedBy(getHasName(ICICLES.get()), has(ICICLES.get())).save(consumer, getSaveLocation(ICICLE_BLOCK.get()));
         ShapedRecipeBuilder.shaped(CHISELED_ICICLE_BLOCK.get(), 2).define('#', ICICLE_BLOCK.get()).pattern("#").pattern("#").unlockedBy(getHasName(ICICLE_BLOCK.get()), has(ICICLE_BLOCK.get())).save(consumer, getSaveLocation(CHISELED_ICICLE_BLOCK.get()));
         stonecutting(ICICLE_BLOCK.get(), CHISELED_ICICLE_BLOCK.get(), 1, consumer);
+        ShapedRecipeBuilder.shaped(ICICLE_DOOR.get(), 3).define('#', ICICLES.get()).pattern("##").pattern("##").pattern("##").unlockedBy(getHasName(ICICLES.get()), has(ICICLES.get())).save(consumer, getSaveLocation(ICICLE_DOOR.get()));
+        ShapedRecipeBuilder.shaped(ICICLE_TRAPDOOR.get(), 2).define('#', ICICLES.get()).pattern("###").pattern("###").unlockedBy(getHasName(ICICLES.get()), has(ICICLES.get())).save(consumer, getSaveLocation(ICICLE_TRAPDOOR.get()));
 
         ShapedRecipeBuilder.shaped(CUT_ICE.get(), 4).define('#', Items.ICE).pattern("##").pattern("##").unlockedBy(getHasName(Items.ICE), has(Items.ICE)).save(consumer, getSaveLocation(CUT_ICE.get()));
         ShapedRecipeBuilder.shaped(ICE_SHEET.get(), 12).define('#', Items.ICE).pattern("###").pattern("###").unlockedBy(getHasName(Items.ICE), has(Items.ICE)).save(consumer, getSaveLocation(ICE_SHEET.get()));

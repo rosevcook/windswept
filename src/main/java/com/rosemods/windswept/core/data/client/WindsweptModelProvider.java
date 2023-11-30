@@ -128,8 +128,8 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.fence(CHESTNUT_FENCE, this.blockTexture(CHESTNUT_PLANKS.get()));
         this.fenceGate(CHESTNUT_FENCE_GATE, this.blockTexture(CHESTNUT_PLANKS.get()));
         this.pressurePlate(CHESTNUT_PRESSURE_PLATE, this.blockTexture(CHESTNUT_PLANKS.get()));
-        this.doorCutout(CHESTNUT_DOOR);
-        this.trapdoorCutout(CHESTNUT_TRAPDOOR);
+        this.door(CHESTNUT_DOOR);
+        this.trapdoor(CHESTNUT_TRAPDOOR);
         this.button(CHESTNUT_BUTTON, this.blockTexture(CHESTNUT_PLANKS.get()));
         this.signs(CHESTNUT_SIGNS, CHESTNUT_PLANKS);
         this.leaves(CHESTNUT_LEAVES);
@@ -210,10 +210,12 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.wildBerryBush(WILD_BERRY_BUSH);
         this.compressedBlock(WILD_BERRY_BASKET);
 
-        this.simpleCross(ICICLE);
-        this.generatedItem(ICICLE.get(), TextureFolder.Block);
+        this.simpleCross(ICICLES);
+        this.generatedItem(ICICLES.get(), TextureFolder.Item);
         this.pillar(ICICLE_BLOCK);
         this.pillar(CHISELED_ICICLE_BLOCK);
+        this.doorCutout(ICICLE_DOOR);
+        this.trapdoorCutout(ICICLE_TRAPDOOR);
 
         this.carpet(DRY_MOSS_CARPET, this.blockTexture(DRY_MOSS_BLOCK.get()));
         this.cubeAll(DRY_MOSS_BLOCK);

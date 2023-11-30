@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "windswept:icicle_block"
+        "recipe": "windswept:icicle_trapdoor"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "windswept:icicle_block"
+      "windswept:icicle_trapdoor"
     ]
   }
 }

@@ -256,9 +256,11 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(WILD_BERRY_BASKET.get());
 
             // icicle blocks
-            this.dropSelf(ICICLE.get());
+            this.dropSelf(ICICLES.get());
             this.dropSelf(ICICLE_BLOCK.get());
             this.dropSelf(CHISELED_ICICLE_BLOCK.get());
+            this.add(ICICLE_DOOR.get(), Blocks::createDoorTable);
+            this.dropSelf(ICICLE_TRAPDOOR.get());
 
             // tundra moss blocks
             this.dropSelf(DRY_MOSS_CARPET.get());

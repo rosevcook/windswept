@@ -9,8 +9,10 @@
     "windswept:cut_ice",
     "windswept:ice_sheet",
     "windswept:cut_ice_sheet",
-    "windswept:icicle",
+    "windswept:icicles",
     "windswept:icicle_block",
-    "windswept:chiseled_icicle_block"
+    "windswept:chiseled_icicle_block",
+    "windswept:icicle_door",
+    "windswept:icicle_trapdoor"
   ]
 }

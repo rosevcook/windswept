@@ -233,9 +233,11 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(WILD_BERRY_BUSH);
         this.add(WILD_BERRY_BASKET.get(), "Basket of Wild Berries");
 
-        this.translateBlock(ICICLE);
+        this.translateBlock(ICICLES);
         this.translateBlock(ICICLE_BLOCK);
         this.translateBlock(CHISELED_ICICLE_BLOCK);
+        this.translateBlock(ICICLE_DOOR);
+        this.translateBlock(ICICLE_TRAPDOOR);
 
         this.translateBlock(DRY_MOSS_CARPET);
         this.translateBlock(DRY_MOSS_BLOCK);

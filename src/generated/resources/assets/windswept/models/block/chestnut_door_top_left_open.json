@@ -1,6 +1,5 @@
 {
   "parent": "minecraft:block/door_top_left_open",
-  "render_type": "minecraft:cutout",
   "textures": {
     "bottom": "windswept:block/chestnut_door_bottom",
     "top": "windswept:block/chestnut_door_top"

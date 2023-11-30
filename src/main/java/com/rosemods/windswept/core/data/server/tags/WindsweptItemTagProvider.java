@@ -81,7 +81,9 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
         this.copy(BlockTags.WALLS, ItemTags.WALLS);
         this.copy(BlockTags.WOODEN_BUTTONS, ItemTags.WOODEN_BUTTONS);
         this.copy(BlockTags.WOODEN_DOORS, ItemTags.WOODEN_DOORS);
+        this.copy(BlockTags.DOORS, ItemTags.DOORS);
         this.copy(BlockTags.WOODEN_TRAPDOORS, ItemTags.WOODEN_TRAPDOORS);
+        this.copy(BlockTags.TRAPDOORS, ItemTags.TRAPDOORS);
         this.copy(BlockTags.WOODEN_FENCES, ItemTags.WOODEN_FENCES);
         this.copy(BlockTags.WOODEN_PRESSURE_PLATES, ItemTags.WOODEN_PRESSURE_PLATES);
         this.copy(BlockTags.WOODEN_SLABS, ItemTags.WOODEN_SLABS);
