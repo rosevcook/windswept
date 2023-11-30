@@ -17,16 +17,17 @@ public class WitherRoseBlockMixin implements BonemealableBlock {
 
     @Override
     public boolean isValidBonemealTarget(BlockGetter getter, BlockPos pos, BlockState state, boolean isClient) {
-        return true;
+        return getter.getBlockState(pos.above()).getMaterial().isReplaceable();
     }
 
     @Override
     public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state) {
-        return random.nextInt(5) == 0;
+        return true;
     }
 
     @Override
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
         RoseFlowerBlock.grow(level, pos, WindsweptBlocks.WITHER_ROSE_BUSH.get());
     }
+
 }

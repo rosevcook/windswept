@@ -22,7 +22,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class WindsweptStructureRepaletterProvider extends StructureRepaletterProvider {
 
     public WindsweptStructureRepaletterProvider(GatherDataEvent event) {
-        super(event.getGenerator(), Windswept.MODID);
+        super(event.getGenerator(), Windswept.MOD_ID);
     }
 
     @Override
@@ -45,7 +45,6 @@ public class WindsweptStructureRepaletterProvider extends StructureRepaletterPro
         this.register(BuiltinStructures.VILLAGE_SNOWY, Blocks.LIGHT_GRAY_WOOL, WindsweptBlocks.SNOW_BRICKS.get());
 
         // Ancient City //
-        this.register(BuiltinStructures.ANCIENT_CITY, Blocks.STONE_PRESSURE_PLATE, WindsweptBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE.get());
         this.register(BuiltinStructures.ANCIENT_CITY, Blocks.BLUE_ICE, WindsweptBlocks.PACKED_ICE_BRICKS.get());
 
         // Mod Compat //

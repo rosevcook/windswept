@@ -1,7 +1,7 @@
 package com.rosemods.windswept.common.item.wooden_bucket;
 
 import com.rosemods.windswept.core.WindsweptConfig;
-import com.rosemods.windswept.core.api.IWoodenBucketPickupBlock;
+import com.rosemods.windswept.common.block.IWoodenBucketPickupBlock;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.teamabnormals.blueprint.core.util.item.filling.TargetedItemCategoryFiller;
 import net.minecraft.advancements.CriteriaTriggers;

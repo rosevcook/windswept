@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "minecraft:blue_ice"
+  },
+  "result": "windswept:blue_ice_brick_slab"
+}

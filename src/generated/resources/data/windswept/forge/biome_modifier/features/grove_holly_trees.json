@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#windswept:has_feature/grove_holly_trees",
+  "biomes": "minecraft:grove",
   "features": [
     "windswept:grove_holly_trees",
     "windswept:grove_spruce_trees"

@@ -3,9 +3,7 @@ package com.rosemods.windswept.core.data.server;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import com.rosemods.windswept.core.Windswept;
-import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import com.rosemods.windswept.core.registry.WindsweptEntities;
-import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock.VerticalSlabType;
 import net.minecraft.advancements.critereon.EntityPredicate;
@@ -48,6 +46,9 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
+import static com.rosemods.windswept.core.registry.WindsweptBlocks.*;
+import static com.rosemods.windswept.core.registry.WindsweptItems.*;
+
 public class WindsweptLootTableProvider extends LootTableProvider {
     private final Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet> blockTables = Pair.of(Blocks::new, LootContextParamSets.BLOCK);
     private final Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet> entityTables = Pair.of(Entities::new, LootContextParamSets.ENTITY);
@@ -63,12 +64,11 @@ public class WindsweptLootTableProvider extends LootTableProvider {
     }
 
     @Override
-    protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext validationtracker) {
-    }
+    protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext validationtracker) { }
 
     private static <T> Iterable<T> getContent(IForgeRegistry<T> entry) {
         return entry.getValues().stream().filter(i -> entry.getKey(i) != null
-                && Windswept.MODID.equals(entry.getKey(i).getNamespace())).collect(Collectors.toSet());
+                && Windswept.MOD_ID.equals(entry.getKey(i).getNamespace())).collect(Collectors.toSet());
     }
 
     private static class Blocks extends BlockLoot {
@@ -76,173 +76,181 @@ public class WindsweptLootTableProvider extends LootTableProvider {
         @Override
         protected void addTables() {
             // holly
-            this.dropSelf(WindsweptBlocks.STRIPPED_HOLLY_LOG.get());
-            this.dropSelf(WindsweptBlocks.STRIPPED_HOLLY_WOOD.get());
-            this.dropSelf(WindsweptBlocks.HOLLY_LOG.get());
-            this.dropSelf(WindsweptBlocks.HOLLY_WOOD.get());
-            this.dropSelf(WindsweptBlocks.HOLLY_PLANKS.get());
-            this.add(WindsweptBlocks.HOLLY_SLAB.get(), Blocks::createSlabItemTable);
-            this.dropSelf(WindsweptBlocks.HOLLY_STAIRS.get());
-            this.dropSelf(WindsweptBlocks.HOLLY_FENCE.get());
-            this.dropSelf(WindsweptBlocks.HOLLY_FENCE_GATE.get());
-            this.dropSelf(WindsweptBlocks.HOLLY_PRESSURE_PLATE.get());
-            this.add(WindsweptBlocks.HOLLY_DOOR.get(), Blocks::createDoorTable);
-            this.dropSelf(WindsweptBlocks.HOLLY_TRAPDOOR.get());
-            this.dropSelf(WindsweptBlocks.HOLLY_BUTTON.get());
-            this.dropSelf(WindsweptBlocks.HOLLY_SIGNS.getFirst().get());
-            this.dropSelf(WindsweptBlocks.HOLLY_SIGNS.getSecond().get());
-            this.dropSelf(WindsweptBlocks.HOLLY_SAPLING.get());
-            this.dropPottedContents(WindsweptBlocks.POTTED_HOLLY_SAPLING.get());
+            this.dropSelf(STRIPPED_HOLLY_LOG.get());
+            this.dropSelf(STRIPPED_HOLLY_WOOD.get());
+            this.dropSelf(HOLLY_LOG.get());
+            this.dropSelf(HOLLY_WOOD.get());
+            this.dropSelf(HOLLY_PLANKS.get());
+            this.add(HOLLY_SLAB.get(), Blocks::createSlabItemTable);
+            this.dropSelf(HOLLY_STAIRS.get());
+            this.dropSelf(HOLLY_FENCE.get());
+            this.dropSelf(HOLLY_FENCE_GATE.get());
+            this.dropSelf(HOLLY_PRESSURE_PLATE.get());
+            this.add(HOLLY_DOOR.get(), Blocks::createDoorTable);
+            this.dropSelf(HOLLY_TRAPDOOR.get());
+            this.dropSelf(HOLLY_BUTTON.get());
+            this.dropSelf(HOLLY_SIGNS.getFirst().get());
+            this.dropSelf(HOLLY_SIGNS.getSecond().get());
+            this.dropSelf(HOLLY_SAPLING.get());
+            this.dropPottedContents(POTTED_HOLLY_SAPLING.get());
 
-            this.add(WindsweptBlocks.HOLLY_BEEHIVE.get(), Blocks::createBeeHiveDrop);
-            this.dropSelf(WindsweptBlocks.HOLLY_LADDER.get());
-            this.dropSelf(WindsweptBlocks.VERTICAL_HOLLY_PLANKS.get());
-            this.bookshelf(WindsweptBlocks.HOLLY_BOOKSHELF.get());
-            this.dropSelf(WindsweptBlocks.HOLLY_BOARDS.get());
-            this.dropSelf(WindsweptBlocks.HOLLY_CABINET.get());
-            this.add(WindsweptBlocks.HOLLY_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
-            this.dropSelf(WindsweptBlocks.STRIPPED_HOLLY_POST.get());
-            this.dropSelf(WindsweptBlocks.HOLLY_POST.get());
-            this.dropSelf(WindsweptBlocks.HOLLY_CHEST.get());
-            this.dropSelf(WindsweptBlocks.HOLLY_TRAPPED_CHEST.get());
+            this.add(HOLLY_BEEHIVE.get(), Blocks::createBeeHiveDrop);
+            this.dropSelf(HOLLY_LADDER.get());
+            this.dropSelf(VERTICAL_HOLLY_PLANKS.get());
+            this.bookshelf(HOLLY_BOOKSHELF.get());
+            this.dropSelf(HOLLY_BOARDS.get());
+            this.dropSelf(HOLLY_CABINET.get());
+            this.add(HOLLY_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+            this.dropSelf(STRIPPED_HOLLY_POST.get());
+            this.dropSelf(HOLLY_POST.get());
+            this.dropSelf(HOLLY_CHEST.get());
+            this.dropSelf(HOLLY_TRAPPED_CHEST.get());
 
-            this.add(WindsweptBlocks.HOLLY_LEAVES.get(), b -> createLeavesDrops(b, WindsweptBlocks.HOLLY_SAPLING
+            this.add(HOLLY_LEAVES.get(), b -> createLeavesDrops(b, HOLLY_SAPLING
                     .get(), .05f, .0625f, .083333336f, .1f).withPool(LootPool.lootPool()
                     .setRolls(ConstantValue.exactly(1f)).when(HAS_NO_SHEARS_OR_SILK_TOUCH)
-                    .add(applyExplosionCondition(b, LootItem.lootTableItem(WindsweptItems.HOLLY_BERRIES.get()))
+                    .add(applyExplosionCondition(b, LootItem.lootTableItem(HOLLY_BERRIES.get()))
                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(-6f, 1f)))
                             .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));
 
 
-            this.dropSelf(WindsweptBlocks.HOLLY_HEDGE.get());
-            this.dropSelf(WindsweptBlocks.HOLLY_LEAF_CARPET.get());
-            this.leafPile(WindsweptBlocks.HOLLY_LEAF_PILE.get());
+            this.dropSelf(HOLLY_HEDGE.get());
+            this.dropSelf(HOLLY_LEAF_CARPET.get());
+            this.leafPile(HOLLY_LEAF_PILE.get());
 
-            this.dropSelf(WindsweptBlocks.HOLLY_BERRY_BASKET.get());
+            this.dropSelf(HOLLY_BERRY_BASKET.get());
 
             // chestnut
-            this.dropSelf(WindsweptBlocks.STRIPPED_CHESTNUT_LOG.get());
-            this.dropSelf(WindsweptBlocks.STRIPPED_CHESTNUT_WOOD.get());
-            this.dropSelf(WindsweptBlocks.CHESTNUT_LOG.get());
-            this.dropSelf(WindsweptBlocks.CHESTNUT_WOOD.get());
-            this.dropSelf(WindsweptBlocks.CHESTNUT_PLANKS.get());
-            this.add(WindsweptBlocks.CHESTNUT_SLAB.get(), Blocks::createSlabItemTable);
-            this.dropSelf(WindsweptBlocks.CHESTNUT_STAIRS.get());
-            this.dropSelf(WindsweptBlocks.CHESTNUT_FENCE.get());
-            this.dropSelf(WindsweptBlocks.CHESTNUT_FENCE_GATE.get());
-            this.dropSelf(WindsweptBlocks.CHESTNUT_PRESSURE_PLATE.get());
-            this.add(WindsweptBlocks.CHESTNUT_DOOR.get(), Blocks::createDoorTable);
-            this.dropSelf(WindsweptBlocks.CHESTNUT_TRAPDOOR.get());
-            this.dropSelf(WindsweptBlocks.CHESTNUT_BUTTON.get());
-            this.dropSelf(WindsweptBlocks.CHESTNUT_SIGNS.getFirst().get());
-            this.dropSelf(WindsweptBlocks.CHESTNUT_SIGNS.getSecond().get());
-            this.dropSelf(WindsweptBlocks.CHESTNUT_SAPLING.get());
-            this.dropPottedContents(WindsweptBlocks.POTTED_CHESTNUT_SAPLING.get());
+            this.dropSelf(STRIPPED_CHESTNUT_LOG.get());
+            this.dropSelf(STRIPPED_CHESTNUT_WOOD.get());
+            this.dropSelf(CHESTNUT_LOG.get());
+            this.dropSelf(CHESTNUT_WOOD.get());
+            this.dropSelf(CHESTNUT_PLANKS.get());
+            this.add(CHESTNUT_SLAB.get(), Blocks::createSlabItemTable);
+            this.dropSelf(CHESTNUT_STAIRS.get());
+            this.dropSelf(CHESTNUT_FENCE.get());
+            this.dropSelf(CHESTNUT_FENCE_GATE.get());
+            this.dropSelf(CHESTNUT_PRESSURE_PLATE.get());
+            this.add(CHESTNUT_DOOR.get(), Blocks::createDoorTable);
+            this.dropSelf(CHESTNUT_TRAPDOOR.get());
+            this.dropSelf(CHESTNUT_BUTTON.get());
+            this.dropSelf(CHESTNUT_SIGNS.getFirst().get());
+            this.dropSelf(CHESTNUT_SIGNS.getSecond().get());
+            this.dropSelf(CHESTNUT_SAPLING.get());
+            this.dropPottedContents(POTTED_CHESTNUT_SAPLING.get());
 
-            this.add(WindsweptBlocks.CHESTNUT_BEEHIVE.get(), Blocks::createBeeHiveDrop);
-            this.dropSelf(WindsweptBlocks.CHESTNUT_LADDER.get());
-            this.dropSelf(WindsweptBlocks.VERTICAL_CHESTNUT_PLANKS.get());
-            this.bookshelf(WindsweptBlocks.CHESTNUT_BOOKSHELF.get());
-            this.dropSelf(WindsweptBlocks.CHESTNUT_BOARDS.get());
-            this.dropSelf(WindsweptBlocks.CHESTNUT_CABINET.get());
-            this.add(WindsweptBlocks.CHESTNUT_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
-            this.dropSelf(WindsweptBlocks.STRIPPED_CHESTNUT_POST.get());
-            this.dropSelf(WindsweptBlocks.CHESTNUT_POST.get());
-            this.dropSelf(WindsweptBlocks.CHESTNUT_CHEST.get());
-            this.dropSelf(WindsweptBlocks.CHESTNUT_TRAPPED_CHEST.get());
+            this.add(CHESTNUT_BEEHIVE.get(), Blocks::createBeeHiveDrop);
+            this.dropSelf(CHESTNUT_LADDER.get());
+            this.dropSelf(VERTICAL_CHESTNUT_PLANKS.get());
+            this.bookshelf(CHESTNUT_BOOKSHELF.get());
+            this.dropSelf(CHESTNUT_BOARDS.get());
+            this.dropSelf(CHESTNUT_CABINET.get());
+            this.add(CHESTNUT_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+            this.dropSelf(STRIPPED_CHESTNUT_POST.get());
+            this.dropSelf(CHESTNUT_POST.get());
+            this.dropSelf(CHESTNUT_CHEST.get());
+            this.dropSelf(CHESTNUT_TRAPPED_CHEST.get());
 
-            this.add(WindsweptBlocks.CHESTNUT_LEAVES.get(), b -> createLeavesDrops(b, WindsweptBlocks.CHESTNUT_SAPLING
+            this.add(CHESTNUT_LEAVES.get(), b -> createLeavesDrops(b, CHESTNUT_SAPLING
                     .get(), .05f, .0625f, .083333336f, .1f).withPool(LootPool.lootPool()
                     .setRolls(ConstantValue.exactly(1f)).when(HAS_NO_SHEARS_OR_SILK_TOUCH)
-                    .add(applyExplosionCondition(b, LootItem.lootTableItem(WindsweptItems.CHESTNUTS.get()))
+                    .add(applyExplosionCondition(b, LootItem.lootTableItem(CHESTNUTS.get()))
                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(-4f, 1f)))
                             .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));
 
-            this.dropSelf(WindsweptBlocks.CHESTNUT_HEDGE.get());
-            this.dropSelf(WindsweptBlocks.CHESTNUT_LEAF_CARPET.get());
-            this.leafPile(WindsweptBlocks.CHESTNUT_LEAF_PILE.get());
+            this.dropSelf(CHESTNUT_HEDGE.get());
+            this.dropSelf(CHESTNUT_LEAF_CARPET.get());
+            this.leafPile(CHESTNUT_LEAF_PILE.get());
 
-            this.dropSelf(WindsweptBlocks.CHESTNUT_CRATE.get());
-            this.dropSelf(WindsweptBlocks.ROASTED_CHESTNUT_CRATE.get());
+            this.dropSelf(CHESTNUT_CRATE.get());
+            this.dropSelf(ROASTED_CHESTNUT_CRATE.get());
 
-            // snow bricks
-            this.dropSelf(WindsweptBlocks.SNOW_BRICKS.get());
-            this.dropSelf(WindsweptBlocks.SNOW_BRICK_STAIRS.get());
-            this.add(WindsweptBlocks.SNOW_BRICK_SLAB.get(), Blocks::createSlabItemTable);
-            this.dropSelf(WindsweptBlocks.SNOW_BRICK_WALL.get());
-            this.add(WindsweptBlocks.SNOW_BRICK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+            // snow blocks
+            this.dropSelf(SNOW_STAIRS.get());
+            this.add(SNOW_SLAB.get(), Blocks::createSlabItemTable);
+            this.add(SNOW_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+            this.dropSelf(SNOW_BRICKS.get());
+            this.dropSelf(SNOW_BRICK_STAIRS.get());
+            this.add(SNOW_BRICK_SLAB.get(), Blocks::createSlabItemTable);
+            this.dropSelf(SNOW_BRICK_WALL.get());
+            this.add(SNOW_BRICK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
 
-            // packed ice bricks
-            this.dropSelf(WindsweptBlocks.PACKED_ICE_BRICKS.get());
-            this.dropSelf(WindsweptBlocks.CHISELED_PACKED_ICE_BRICKS.get());
-            this.dropSelf(WindsweptBlocks.PACKED_ICE_BRICK_STAIRS.get());
-            this.add(WindsweptBlocks.PACKED_ICE_BRICK_SLAB.get(), Blocks::createSlabItemTable);
-            this.dropSelf(WindsweptBlocks.PACKED_ICE_BRICK_WALL.get());
-            this.add(WindsweptBlocks.PACKED_ICE_BRICK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+            // packed ice blocks
+            this.dropSelf(PACKED_ICE_STAIRS.get());
+            this.add(PACKED_ICE_SLAB.get(), Blocks::createSlabItemTable);
+            this.add(PACKED_ICE_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+            this.dropSelf(PACKED_ICE_BRICKS.get());
+            this.dropSelf(CHISELED_PACKED_ICE_BRICKS.get());
+            this.dropSelf(PACKED_ICE_BRICK_STAIRS.get());
+            this.add(PACKED_ICE_BRICK_SLAB.get(), Blocks::createSlabItemTable);
+            this.dropSelf(PACKED_ICE_BRICK_WALL.get());
+            this.add(PACKED_ICE_BRICK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
 
-            // blue ice bricks
-            this.dropSelf(WindsweptBlocks.BLUE_ICE_BRICKS.get());
-            this.dropSelf(WindsweptBlocks.CHISELED_BLUE_ICE_BRICKS.get());
-            this.dropSelf(WindsweptBlocks.BLUE_ICE_BRICK_STAIRS.get());
-            this.add(WindsweptBlocks.BLUE_ICE_BRICK_SLAB.get(), Blocks::createSlabItemTable);
-            this.dropSelf(WindsweptBlocks.BLUE_ICE_BRICK_WALL.get());
-            this.add(WindsweptBlocks.BLUE_ICE_BRICK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+            // blue ice blocks
+            this.dropSelf(BLUE_ICE_STAIRS.get());
+            this.add(BLUE_ICE_SLAB.get(), Blocks::createSlabItemTable);
+            this.add(BLUE_ICE_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+            this.dropSelf(BLUE_ICE_BRICKS.get());
+            this.dropSelf(CHISELED_BLUE_ICE_BRICKS.get());
+            this.dropSelf(BLUE_ICE_BRICK_STAIRS.get());
+            this.add(BLUE_ICE_BRICK_SLAB.get(), Blocks::createSlabItemTable);
+            this.dropSelf(BLUE_ICE_BRICK_WALL.get());
+            this.add(BLUE_ICE_BRICK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
 
-            // deepslate
-            this.dropSelf(WindsweptBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE.get());
-            this.dropSelf(WindsweptBlocks.POLISHED_DEEPSLATE_BUTTON.get());
+            // ice blocks
+            this.dropSelf(CUT_ICE.get());
+            this.dropSelf(ICE_SHEET.get());
+            this.dropSelf(CUT_ICE_SHEET.get());
 
             // rose bushes
-            this.tallFlower(WindsweptBlocks.RED_ROSE_BUSH.get());
-            this.tallFlower(WindsweptBlocks.PINK_ROSE_BUSH.get());
-            this.tallFlower(WindsweptBlocks.BLUE_ROSE_BUSH.get());
-            this.tallFlower(WindsweptBlocks.WHITE_ROSE_BUSH.get());
-            this.tallFlower(WindsweptBlocks.YELLOW_ROSE_BUSH.get());
-            this.tallFlower(WindsweptBlocks.WITHER_ROSE_BUSH.get());
+            this.tallFlower(RED_ROSE_BUSH.get());
+            this.tallFlower(PINK_ROSE_BUSH.get());
+            this.tallFlower(BLUE_ROSE_BUSH.get());
+            this.tallFlower(WHITE_ROSE_BUSH.get());
+            this.tallFlower(YELLOW_ROSE_BUSH.get());
+            this.tallFlower(WITHER_ROSE_BUSH.get());
 
             // plants
-            this.add(WindsweptBlocks.SNOWY_SPROUTS.get(), Blocks::createShearsOnlyDrop);
+            this.add(SNOWY_SPROUTS.get(), Blocks::createShearsOnlyDrop);
 
-            this.dropSelf(WindsweptBlocks.RED_ROSE.get());
-            this.dropSelf(WindsweptBlocks.PINK_ROSE.get());
-            this.dropSelf(WindsweptBlocks.BLUE_ROSE.get());
-            this.dropSelf(WindsweptBlocks.WHITE_ROSE.get());
-            this.dropSelf(WindsweptBlocks.YELLOW_ROSE.get());
-            this.dropSelf(WindsweptBlocks.FOXGLOVE.get());
-            this.dropSelf(WindsweptBlocks.BLUEBELLS.get());
-            this.dropSelf(WindsweptBlocks.NIGHTSHADE.get());
+            this.dropSelf(RED_ROSE.get());
+            this.dropSelf(PINK_ROSE.get());
+            this.dropSelf(BLUE_ROSE.get());
+            this.dropSelf(WHITE_ROSE.get());
+            this.dropSelf(YELLOW_ROSE.get());
+            this.dropSelf(FOXGLOVE.get());
+            this.dropSelf(BLUEBELLS.get());
+            this.dropSelf(NIGHTSHADE.get());
 
             // pots
-            this.dropPottedContents(WindsweptBlocks.POTTED_RED_ROSE.get());
-            this.dropPottedContents(WindsweptBlocks.POTTED_PINK_ROSE.get());
-            this.dropPottedContents(WindsweptBlocks.POTTED_BLUE_ROSE.get());
-            this.dropPottedContents(WindsweptBlocks.POTTED_WHITE_ROSE.get());
-            this.dropPottedContents(WindsweptBlocks.POTTED_YELLOW_ROSE.get());
-            this.dropPottedContents(WindsweptBlocks.POTTED_FOXGLOVE.get());
-            this.dropPottedContents(WindsweptBlocks.POTTED_BLUEBELLS.get());
-            this.dropPottedContents(WindsweptBlocks.POTTED_NIGHTSHADE.get());
-            this.dropPottedContents(WindsweptBlocks.POTTED_SNOWY_SPROUTS.get());
+            this.dropPottedContents(POTTED_RED_ROSE.get());
+            this.dropPottedContents(POTTED_PINK_ROSE.get());
+            this.dropPottedContents(POTTED_BLUE_ROSE.get());
+            this.dropPottedContents(POTTED_WHITE_ROSE.get());
+            this.dropPottedContents(POTTED_YELLOW_ROSE.get());
+            this.dropPottedContents(POTTED_FOXGLOVE.get());
+            this.dropPottedContents(POTTED_BLUEBELLS.get());
+            this.dropPottedContents(POTTED_NIGHTSHADE.get());
+            this.dropPottedContents(POTTED_SNOWY_SPROUTS.get());
 
             // wild berry
-            this.add(WindsweptBlocks.WILD_BERRY_BUSH.get(), b -> applyExplosionDecay(b, LootTable.lootTable()
+            this.add(WILD_BERRY_BUSH.get(), b -> applyExplosionDecay(b, LootTable.lootTable()
                     .withPool(LootPool.lootPool()
                             .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(b)
                                     .setProperties(StatePropertiesPredicate.Builder.properties()
                                             .hasProperty(SweetBerryBushBlock.AGE, 2)))
-                            .add(LootItem.lootTableItem(WindsweptItems.WILD_BERRIES.get()))
+                            .add(LootItem.lootTableItem(WILD_BERRIES.get()))
                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 2f)))
                             .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));
-            this.dropSelf(WindsweptBlocks.WILD_BERRY_BASKET.get());
-            this.dropOther(WindsweptBlocks.WILD_BERRY_BUSH_PIPS.get(), WindsweptItems.WILD_BERRY_PIPS.get());
+            this.dropSelf(WILD_BERRY_BASKET.get());
 
             // mushroom crates
-            this.dropSelf(WindsweptBlocks.RED_MUSHROOM_BASKET.get());
-            this.dropSelf(WindsweptBlocks.BROWN_MUSHROOM_BASKET.get());
-            this.dropSelf(WindsweptBlocks.GLOW_SHROOM_BASKET.get());
+            this.dropSelf(RED_MUSHROOM_BASKET.get());
+            this.dropSelf(BROWN_MUSHROOM_BASKET.get());
+            this.dropSelf(GLOW_SHROOM_BASKET.get());
 
             // misc
-            this.dropSelf(WindsweptBlocks.ICE_SHEET.get());
-            this.dropSelf(WindsweptBlocks.FROZEN_FLESH_BLOCK.get());
+            this.dropSelf(FROZEN_FLESH_BLOCK.get());
         }
 
 
@@ -281,7 +289,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
         protected void addTables() {
             this.add(WindsweptEntities.CHILLED.get(),
                     LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1f))
-                                    .add(LootItem.lootTableItem(WindsweptItems.FROZEN_FLESH::get)
+                                    .add(LootItem.lootTableItem(FROZEN_FLESH::get)
                                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(-2f, 2f)))
                                             .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0f, 1f)))))
                             .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1f))
@@ -294,7 +302,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
                                     .when(LootItemKilledByPlayerCondition.killedByPlayer())
                                     .when(LootItemRandomChanceWithLootingCondition.randomChanceAndLootingBoost(.025f, .01f)))
                             .withPool(
-                                    LootPool.lootPool().add(LootItem.lootTableItem(WindsweptItems.MUSIC_DISC_SNOW::get))
+                                    LootPool.lootPool().add(LootItem.lootTableItem(MUSIC_DISC_SNOW::get))
                                             .when(LootItemEntityPropertyCondition.hasProperties(
                                                     LootContext.EntityTarget.KILLER,
                                                     EntityPredicate.Builder.entity().of(EntityTypeTags.SKELETONS)))));
@@ -313,28 +321,28 @@ public class WindsweptLootTableProvider extends LootTableProvider {
         public void accept(BiConsumer<ResourceLocation, Builder> builder) {
             register("grove_weathered_house", LootTable.lootTable().withPool(LootPool.lootPool().setRolls(UniformGenerator.between(4f, 8f))
                     .add(LootItem.lootTableItem(Items.GOLD_INGOT).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
-                    .add(LootItem.lootTableItem(WindsweptBlocks.SNOWY_SPROUTS.get()).setWeight(4).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 4f))))
-                    .add(LootItem.lootTableItem(WindsweptItems.SNOW_BOOTS.get()).setWeight(1).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))))
+                    .add(LootItem.lootTableItem(SNOWY_SPROUTS.get()).setWeight(4).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 4f))))
+                    .add(LootItem.lootTableItem(SNOW_BOOTS.get()).setWeight(1).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))))
                     .add(LootItem.lootTableItem(Items.DIAMOND).setWeight(1))
                     .add(LootItem.lootTableItem(Items.BOOK).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
-                    .add(LootItem.lootTableItem(WindsweptItems.WOODEN_BUCKET.get()).setWeight(1).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))))
-                    .add(LootItem.lootTableItem(WindsweptItems.WOODEN_POWDER_SNOW_BUCKET.get()).setWeight(1).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))))
-                    .add(LootItem.lootTableItem(WindsweptItems.WILD_BERRIES.get()).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(2f, 3f))))
+                    .add(LootItem.lootTableItem(WOODEN_BUCKET.get()).setWeight(1).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))))
+                    .add(LootItem.lootTableItem(WOODEN_POWDER_SNOW_BUCKET.get()).setWeight(1).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))))
+                    .add(LootItem.lootTableItem(WILD_BERRIES.get()).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(2f, 3f))))
                     .add(LootItem.lootTableItem(Items.SNOW_BLOCK).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
                     .add(LootItem.lootTableItem(Items.COBWEB).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
-                    .add(LootItem.lootTableItem(WindsweptBlocks.HOLLY_SAPLING.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
-                    .add(LootItem.lootTableItem(WindsweptItems.COOKED_GOAT.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
+                    .add(LootItem.lootTableItem(HOLLY_SAPLING.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
+                    .add(LootItem.lootTableItem(COOKED_GOAT.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
             ), builder);
 
             register("chestnut_weathered_house", LootTable.lootTable().withPool(LootPool.lootPool().setRolls(UniformGenerator.between(2f, 5f))
                     .add(LootItem.lootTableItem(Items.EMERALD).setWeight(1).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
                     .add(LootItem.lootTableItem(Items.FERN).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 4f))))
                     .add(LootItem.lootTableItem(Items.SWEET_BERRIES).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
-                    .add(LootItem.lootTableItem(WindsweptBlocks.CHESTNUT_LOG.get()).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
+                    .add(LootItem.lootTableItem(CHESTNUT_LOG.get()).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
                     .add(LootItem.lootTableItem(Items.COBWEB).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
-                    .add(LootItem.lootTableItem(WindsweptBlocks.CHESTNUT_SAPLING.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
+                    .add(LootItem.lootTableItem(CHESTNUT_SAPLING.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
                     .add(LootItem.lootTableItem(Items.BIRCH_SAPLING).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
-                    .add(LootItem.lootTableItem(WindsweptItems.WOODEN_BUCKET.get()).setWeight(1).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))))
+                    .add(LootItem.lootTableItem(WOODEN_BUCKET.get()).setWeight(1).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))))
             ), builder);
         }
 

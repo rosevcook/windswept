@@ -11,7 +11,7 @@ import net.minecraftforge.data.event.GatherDataEvent;
 public class WindsweptEntityTagProvider extends EntityTypeTagsProvider {
 
     public WindsweptEntityTagProvider(GatherDataEvent event) {
-        super(event.getGenerator(), Windswept.MODID, event.getExistingFileHelper());
+        super(event.getGenerator(), Windswept.MOD_ID, event.getExistingFileHelper());
     }
 
     @Override

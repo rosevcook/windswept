@@ -5,7 +5,7 @@ import net.minecraftforge.common.ForgeConfigSpec.ConfigValue;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import org.apache.commons.lang3.tuple.Pair;
 
-@EventBusSubscriber(modid = Windswept.MODID)
+@EventBusSubscriber(modid = Windswept.MOD_ID)
 public class WindsweptConfig {
     public static final Common COMMON;
     public static final Client CLIENT;
@@ -14,16 +14,19 @@ public class WindsweptConfig {
 
     public static class Common {
         public final ConfigValue<Integer> woodenBucketDurabilty;
+        public final ConfigValue<Double> bumblebeeDiscChance;
         public final ConfigValue<Boolean> iceBoatNerf;
         public final ConfigValue<Boolean> birchBranches;
         public final ConfigValue<Boolean> strays;
         public final ConfigValue<Boolean> roots;
         public final ConfigValue<Boolean> biggerFlowerHitbox;
         public final ConfigValue<Boolean> rabbitLitters;
+        public final ConfigValue<Boolean> rainWashSnow;
 
         private Common(ForgeConfigSpec.Builder builder) {
             builder.comment("Windswept Content Tweaks").push("content");
             this.woodenBucketDurabilty = builder.comment("How much durability Wooden Buckets should have").defineInRange("Wooden Bucket Durability", 24, 1, 1000);
+            this.bumblebeeDiscChance = builder.comment("The chance that the Bumblebee Music Disc should drop from Beehives and Bee Nests").defineInRange("Bumblebee Disc Chance", .01d, 0d, 1d);
             builder.pop();
 
             builder.comment("Vanilla Gameplay Tweaks").push("tweaks");
@@ -32,6 +35,7 @@ public class WindsweptConfig {
             this.iceBoatNerf = builder.comment("Nerfs Boats ability to go extremely fast when on ice and other slippery blocks; default: false").define("Ice Boat Nerf", false);
             this.biggerFlowerHitbox = builder.comment("If the Hitbox for Flowers should be Larger").define("Larger Flower Hitbox", true);
             this.rabbitLitters = builder.comment("If Rabbits should have litters of 1-3").define("Rabbit Litters", true);
+            this.rainWashSnow = builder.comment("If Rain should wash away Snow Layers").define("Rain Wash Away Snow", true);
             builder.pop();
 
             builder.comment("Tweaks to Windswept Worldgen").push("worldgen");

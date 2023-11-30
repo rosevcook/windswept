@@ -1,0 +1,77 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "windswept:block/cut_ice_sheet_post"
+      }
+    },
+    {
+      "apply": {
+        "model": "windswept:block/cut_ice_sheet_side"
+      },
+      "when": {
+        "north": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "windswept:block/cut_ice_sheet_noside"
+      },
+      "when": {
+        "north": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "windswept:block/cut_ice_sheet_side_alt"
+      },
+      "when": {
+        "south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "windswept:block/cut_ice_sheet_noside_alt",
+        "y": 90
+      },
+      "when": {
+        "south": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "windswept:block/cut_ice_sheet_side_alt",
+        "y": 90
+      },
+      "when": {
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "windswept:block/cut_ice_sheet_noside",
+        "y": 270
+      },
+      "when": {
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "windswept:block/cut_ice_sheet_side",
+        "y": 90
+      },
+      "when": {
+        "east": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "windswept:block/cut_ice_sheet_noside_alt"
+      },
+      "when": {
+        "east": "false"
+      }
+    }
+  ]
+}

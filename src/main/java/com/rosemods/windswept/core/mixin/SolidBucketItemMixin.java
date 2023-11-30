@@ -13,12 +13,12 @@ public class SolidBucketItemMixin extends Item {
 
     @Override
     public void fillItemCategory(CreativeModeTab tab, NonNullList<ItemStack> items) {
-        if (this.allowedIn(tab)) // item group filling fix
+        if (this.allowedIn(tab))
             items.add(this.getDefaultInstance());
     }
 
     @Override
-    public ItemStack getCraftingRemainingItem(ItemStack itemStack) { //crafting recipe with vanilla powder snow bucket bug fix. If there is no container item, return bucket
+    public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
         return !this.hasCraftingRemainingItem() ? Items.BUCKET.getDefaultInstance() : super.getCraftingRemainingItem(itemStack);
     }
 

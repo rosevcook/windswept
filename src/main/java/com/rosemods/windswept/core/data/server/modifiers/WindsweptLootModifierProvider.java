@@ -28,7 +28,7 @@ import java.util.function.Consumer;
 public class WindsweptLootModifierProvider extends LootModifierProvider {
 
     public WindsweptLootModifierProvider(GatherDataEvent event) {
-        super(event.getGenerator(), Windswept.MODID);
+        super(event.getGenerator(), Windswept.MOD_ID);
     }
 
     @Override

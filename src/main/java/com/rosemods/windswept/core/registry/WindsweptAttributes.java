@@ -9,14 +9,14 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-@EventBusSubscriber(modid = Windswept.MODID, bus = Bus.MOD)
+@EventBusSubscriber(modid = Windswept.MOD_ID, bus = Bus.MOD)
 public class WindsweptAttributes {
-    public static final DeferredRegister<Attribute> ATTRIBUTES = DeferredRegister.create(ForgeRegistries.ATTRIBUTES, Windswept.MODID);
+    public static final DeferredRegister<Attribute> ATTRIBUTES = DeferredRegister.create(ForgeRegistries.ATTRIBUTES, Windswept.MOD_ID);
 
     public static final RegistryObject<Attribute> SNOW_SPEED = ATTRIBUTES.register("snow_speed", () -> new RangedAttribute(createDescriptionId("snow_speed"), 0d, 0d, 1d));
 
     private static String createDescriptionId(String name) {
-        return "attribute." + Windswept.MODID + ".name.generic." + name;
+        return "attribute." + Windswept.MOD_ID + ".name.generic." + name;
     }
 
 }

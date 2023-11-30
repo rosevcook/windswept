@@ -51,9 +51,8 @@ public class WindsweptPlugin implements IModPlugin {
         registration.addIngredientInfo(new ItemStack(item.get()), VanillaTypes.ITEM_STACK, Component.translatable(getDesc(item)));
     }
 
-
     public static String getDesc(Supplier<? extends ItemLike> item) {
-        return Windswept.MODID + ".jei.info." + ForgeRegistries.ITEMS.getKey(item.get().asItem()).getPath();
+        return Windswept.MOD_ID + ".jei.info." + ForgeRegistries.ITEMS.getKey(item.get().asItem()).getPath();
     }
 
     @Override

@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(Fox.class)
 public abstract class FoxMixin extends Animal {
 
-    protected FoxMixin(EntityType<? extends Fox> entity, Level level) {
+    private FoxMixin(EntityType<? extends Fox> entity, Level level) {
         super(entity, level);
     }
 
@@ -26,9 +26,9 @@ public abstract class FoxMixin extends Animal {
     private void populateDefaultEquipmentSlots(RandomSource rand, DifficultyInstance difficulty, CallbackInfo info) {
         Fox fox = (Fox) (Object) this;
 
-        if (this.random.nextInt(12) == 0)
+        if (rand.nextInt(12) == 0)
             this.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(WindsweptBlocks.FOXGLOVE.get()));
-        else if (fox.getFoxType() == Fox.Type.SNOW && this.random.nextInt(12) == 0)
+        else if (fox.getFoxType() == Fox.Type.SNOW && rand.nextInt(4) == 0)
             this.setItemInHand(InteractionHand.MAIN_HAND, WindsweptItems.WILD_BERRIES.get().getDefaultInstance());
     }
 

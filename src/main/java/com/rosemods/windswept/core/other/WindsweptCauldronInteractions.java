@@ -26,29 +26,15 @@ import net.minecraftforge.fml.ModList;
 public final class WindsweptCauldronInteractions {
 
     public static void registerCauldronInteractions() {
-        // empty water cauldron
-        CauldronInteraction.WATER.put(WindsweptItems.WOODEN_BUCKET.get(), WindsweptCauldronInteractions::emptyWaterCauldron);
+        CauldronInteraction.WATER.put(WindsweptItems.WOODEN_BUCKET.get(), WindsweptCauldronInteractions::emptyWaterCauldron); // empty water cauldron
+        CauldronInteraction.EMPTY.put(WindsweptItems.WOODEN_WATER_BUCKET.get(), WindsweptCauldronInteractions::fillWaterCauldron); // fill empty cauldron with water
+        CauldronInteraction.WATER.put(WindsweptItems.WOODEN_WATER_BUCKET.get(), WindsweptCauldronInteractions::fillWaterCauldron); // fill water cauldron to max
+        CauldronInteraction.POWDER_SNOW.put(WindsweptItems.WOODEN_BUCKET.get(), WindsweptCauldronInteractions::emptySnowCauldron); // empty snow cauldron
+        CauldronInteraction.EMPTY.put(WindsweptItems.WOODEN_POWDER_SNOW_BUCKET.get(), WindsweptCauldronInteractions::fillSnowCauldron); // fill empty cauldron with snow
+        CauldronInteraction.POWDER_SNOW.put(WindsweptItems.WOODEN_POWDER_SNOW_BUCKET.get(), WindsweptCauldronInteractions::fillSnowCauldron); // fill snow cauldron to max
+        CauldronInteraction.WATER.put(WindsweptItems.SNOW_BOOTS.get(), CauldronInteraction.DYED_ITEM); // snow boots
 
-        // fill empty cauldron with water
-        CauldronInteraction.EMPTY.put(WindsweptItems.WOODEN_WATER_BUCKET.get(), WindsweptCauldronInteractions::fillWaterCauldron);
-
-        // fill water cauldron to max
-        CauldronInteraction.WATER.put(WindsweptItems.WOODEN_WATER_BUCKET.get(), WindsweptCauldronInteractions::fillWaterCauldron);
-
-        // empty snow cauldron
-        CauldronInteraction.POWDER_SNOW.put(WindsweptItems.WOODEN_BUCKET.get(), WindsweptCauldronInteractions::emptySnowCauldron);
-
-        // fill empty cauldron with snow
-        CauldronInteraction.EMPTY.put(WindsweptItems.WOODEN_POWDER_SNOW_BUCKET.get(), WindsweptCauldronInteractions::fillSnowCauldron);
-
-        // fill snow cauldron to max
-        CauldronInteraction.POWDER_SNOW.put(WindsweptItems.WOODEN_POWDER_SNOW_BUCKET.get(), WindsweptCauldronInteractions::fillSnowCauldron);
-
-        // snow boots
-        CauldronInteraction.WATER.put(WindsweptItems.SNOW_BOOTS.get(), CauldronInteraction.DYED_ITEM);
-
-        //neapolitan milk cauldrons
-        if (ModList.get().isLoaded(WindsweptConstants.NEAPOLITAN))
+        if (ModList.get().isLoaded(WindsweptConstants.NEAPOLITAN)) //neapolitan milk cauldrons
             WindsweptMilkCauldronInteractions.registerCauldronInteractions();
     }
 
@@ -95,11 +81,11 @@ public final class WindsweptCauldronInteractions {
     }
 
     private static InteractionResult emptyWaterCauldron(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, ItemStack stack) {
-        return emptyCauldron(WindsweptItems.WOODEN_WATER_BUCKET::get, SoundEvents.BUCKET_FILL, state, level, pos, player, hand, stack);
+        return emptyCauldron(WindsweptItems.WOODEN_WATER_BUCKET.get(), SoundEvents.BUCKET_FILL, state, level, pos, player, hand, stack);
     }
 
     private static InteractionResult emptySnowCauldron(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, ItemStack stack) {
-        return emptyCauldron(WindsweptItems.WOODEN_POWDER_SNOW_BUCKET::get, SoundEvents.BUCKET_FILL_POWDER_SNOW, state, level, pos, player, hand, stack);
+        return emptyCauldron(WindsweptItems.WOODEN_POWDER_SNOW_BUCKET.get(), SoundEvents.BUCKET_FILL_POWDER_SNOW, state, level, pos, player, hand, stack);
     }
 
 }

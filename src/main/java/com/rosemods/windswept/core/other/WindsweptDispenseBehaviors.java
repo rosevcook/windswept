@@ -1,7 +1,7 @@
 package com.rosemods.windswept.core.other;
 
 import com.rosemods.windswept.common.item.wooden_bucket.WoodenBucketItem;
-import com.rosemods.windswept.core.api.IWoodenBucketPickupBlock;
+import com.rosemods.windswept.common.block.IWoodenBucketPickupBlock;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockSource;

@@ -4,9 +4,9 @@
       "type": "criteria",
       "config": {
         "criteria": {
-          "windswept:wild_berry_bush_pips": {
+          "windswept:wild_berry_bush": {
             "conditions": {
-              "block": "windswept:wild_berry_bush_pips"
+              "block": "windswept:wild_berry_bush"
             },
             "trigger": "minecraft:placed_block"
           }
@@ -16,7 +16,7 @@
             "index": 0,
             "replace": false,
             "requirements": [
-              "windswept:wild_berry_bush_pips"
+              "windswept:wild_berry_bush"
             ]
           }
         ]

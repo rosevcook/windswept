@@ -11,12 +11,14 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.RegistryOps;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
@@ -43,28 +45,27 @@ public final class WindsweptBiomeModifier {
     public static JsonCodecProvider<BiomeModifier> register(GatherDataEvent event) {
         // features
         addFeature("bluebells", WindsweptBiomeTags.HAS_BLUEBELLS, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.BLUEBELLS);
-        addFeature("foxgloves", WindsweptBiomeTags.HAS_FOXGLOVES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.FOXGLOVE);
-        addFeature("snowy_sprouts", WindsweptBiomeTags.HAS_SNOWY_SPROUTS, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.SNOWY_SPROUTS);
-        addFeature("snowy_flowers", WindsweptBiomeTags.HAS_SNOWY_FLOWERS, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.WHITE_ROSE, WindsweptFeatures.Placements.PINK_ROSE, WindsweptFeatures.Placements.BLUE_ROSE);
-        addFeature("taiga_flowers", WindsweptBiomeTags.HAS_TAIGA_FLOWERS, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.RED_ROSE, WindsweptFeatures.Placements.YELLOW_ROSE);
+        addFeature("snowy_sprouts", Tags.Biomes.IS_SNOWY, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.SNOWY_SPROUTS);
+        addFeature("snowy_flowers", Tags.Biomes.IS_SNOWY, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.WHITE_ROSE, WindsweptFeatures.Placements.PINK_ROSE, WindsweptFeatures.Placements.BLUE_ROSE);
+        addFeature("taiga_flowers", BiomeTags.IS_TAIGA, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.FOXGLOVE, WindsweptFeatures.Placements.RED_ROSE, WindsweptFeatures.Placements.YELLOW_ROSE);
         addFeature("holly_trees", WindsweptBiomeTags.HAS_HOLLY_TREES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.HOLLY_TREES);
-        addFeature("grove_holly_trees", WindsweptBiomeTags.HAS_GROVE_HOLLY_TREES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.GROVE_HOLLY_TREES, WindsweptFeatures.Placements.GROVE_SPRUCE_TREES);
+        addFeature("grove_holly_trees", Biomes.GROVE, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.GROVE_HOLLY_TREES, WindsweptFeatures.Placements.GROVE_SPRUCE_TREES);
         addFeature("wild_berries", WindsweptBiomeTags.HAS_WILD_BERRIES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.WILD_BERRY_BUSH);
         addFeature("common_wild_berries", WindsweptBiomeTags.HAS_COMMON_WILD_BERRIES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.WILD_BERRY_BUSH_COMMON);
         addFeature("nightshades", WindsweptBiomeTags.HAS_NIGHTSHADES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.NIGHTHSADE);
-        addFeature("chestnut_trees", WindsweptBiomeTags.HAS_CHESTNUT_TREES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.CHESTNUT_TREES);
+        addFeature("rare_chestnut_trees", WindsweptBiomeTags.HAS_RARE_CHESTNUT_TREES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.CHESTNUT_TREES);
         addFeature("rare_snowy_holly_trees", WindsweptBiomeTags.HAS_RARE_SNOWY_HOLLY_TREES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.RARE_SNOWY_HOLLY_TREES);
-        addFeature("yellow_rose_bushes", WindsweptBiomeTags.HAS_YELLOW_ROSE_BUSHES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.YELLOW_ROSE_BUSH);
+        addFeature("yellow_rose_bushes", Biomes.DARK_FOREST, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.YELLOW_ROSE_BUSH);
 
         // spawns
         addSpawn("chilled", Tags.Biomes.IS_SNOWY, WindsweptEntities.CHILLED, 5, 3, 7);
 
         // removed features
-        removeFeature("grove_spruces", WindsweptBiomeTags.HAS_GROVE_HOLLY_TREES, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_GROVE);
+        removeFeature("grove_spruces", Biomes.GROVE, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_GROVE);
         removeFeature("taiga_default_flowers", BiomeTags.IS_TAIGA, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_DEFAULT);
         removeFeature("snowy_default_flowers", Tags.Biomes.IS_SNOWY, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_DEFAULT);
 
-        return JsonCodecProvider.forDatapackRegistry(event.getGenerator(), event.getExistingFileHelper(), Windswept.MODID, RegistryOps.create(JsonOps.INSTANCE, access), ForgeRegistries.Keys.BIOME_MODIFIERS, modifiers);
+        return JsonCodecProvider.forDatapackRegistry(event.getGenerator(), event.getExistingFileHelper(), Windswept.MOD_ID, RegistryOps.create(JsonOps.INSTANCE, access), ForgeRegistries.Keys.BIOME_MODIFIERS, modifiers);
     }
 
     @SafeVarargs
@@ -73,9 +74,20 @@ public final class WindsweptBiomeModifier {
                 new ForgeBiomeModifiers.AddFeaturesBiomeModifier(new HolderSet.Named<>(biomeRegistry, tagKey), featureSet(features), step));
     }
 
+    @SafeVarargs
+    private static void addFeature(String name, ResourceKey<Biome> biome, GenerationStep.Decoration step, RegistryObject<PlacedFeature>... features) {
+        modifiers.put(Windswept.REGISTRY_HELPER.prefix("features/" + name),
+                new ForgeBiomeModifiers.AddFeaturesBiomeModifier(HolderSet.direct(biomeRegistry.getOrCreateHolderOrThrow(biome)), featureSet(features), step));
+    }
+
     private static void removeFeature(String name, TagKey<Biome> tagKey, GenerationStep.Decoration step, Holder<PlacedFeature> feature) {
         modifiers.put(Windswept.REGISTRY_HELPER.prefix("removed_features/" + name),
                 new ForgeBiomeModifiers.RemoveFeaturesBiomeModifier(new HolderSet.Named<>(biomeRegistry, tagKey), featureSet(feature), Set.of(step)));
+    }
+
+    private static void removeFeature(String name, ResourceKey<Biome> biome, GenerationStep.Decoration step, Holder<PlacedFeature> feature) {
+        modifiers.put(Windswept.REGISTRY_HELPER.prefix("removed_features/" + name),
+                new ForgeBiomeModifiers.RemoveFeaturesBiomeModifier(HolderSet.direct(biomeRegistry.getOrCreateHolderOrThrow(biome)), featureSet(feature), Set.of(step)));
     }
 
     private static <T extends LivingEntity> void addSpawn(String name, TagKey<Biome> tagKey, RegistryObject<EntityType<T>> entity, int weight, int min, int max) {
@@ -85,10 +97,7 @@ public final class WindsweptBiomeModifier {
 
     @SafeVarargs
     private static HolderSet<PlacedFeature> featureSet(RegistryObject<PlacedFeature>... features) {
-        return HolderSet.direct(Stream.of(features).map(registryObject -> {
-            assert registryObject.getKey() != null;
-            return placedFeatures.getOrCreateHolderOrThrow(registryObject.getKey());
-        }).collect(Collectors.toList()));
+        return HolderSet.direct(Stream.of(features).map(registryObject -> placedFeatures.getOrCreateHolderOrThrow(registryObject.getKey())).collect(Collectors.toList()));
     }
 
     @SafeVarargs

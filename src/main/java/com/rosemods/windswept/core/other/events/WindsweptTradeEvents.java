@@ -11,7 +11,7 @@ import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
-@EventBusSubscriber(modid = Windswept.MODID)
+@EventBusSubscriber(modid = Windswept.MOD_ID)
 public class WindsweptTradeEvents {
 
     @SubscribeEvent

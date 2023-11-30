@@ -7,6 +7,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.TallFlowerBlock;
@@ -22,18 +23,22 @@ public class RoseFlowerBlock extends BlueprintFlowerBlock implements Bonemealabl
         this.tall = tall;
     }
 
-    public static void grow(ServerLevel level, BlockPos pos, Block tallFlower) {
+    public static void grow(WorldGenLevel level, BlockPos pos, Block tallFlower) {
         TallFlowerBlock.placeAt(level, tallFlower.defaultBlockState(), pos, 2);
+    }
+
+    public Block getBushVariant() {
+        return this.tall.get();
     }
 
     @Override
     public boolean isValidBonemealTarget(BlockGetter getter, BlockPos pos, BlockState state, boolean isClient) {
-        return true;
+        return getter.getBlockState(pos.above()).getMaterial().isReplaceable();
     }
 
     @Override
     public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state) {
-        return random.nextInt(2) == 0;
+        return true;
     }
 
     @Override

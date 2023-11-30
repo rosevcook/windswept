@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class WindsweptModdedBiomeSliceProvider extends ModdedBiomeSliceProvider {
 
     public WindsweptModdedBiomeSliceProvider(GatherDataEvent event) {
-        super(event.getGenerator(), Windswept.MODID);
+        super(event.getGenerator(), Windswept.MOD_ID);
     }
 
     @Override

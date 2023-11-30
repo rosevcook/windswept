@@ -10,6 +10,14 @@
     "minecraft:snowy_taiga",
     "minecraft:birch_forest",
     "minecraft:flower_forest",
-    "minecraft:windswept_hills"
+    "minecraft:windswept_hills",
+    {
+      "id": "environmental:pine_barrens",
+      "required": false
+    },
+    {
+      "id": "environmental:blossom_woods",
+      "required": false
+    }
   ]
 }

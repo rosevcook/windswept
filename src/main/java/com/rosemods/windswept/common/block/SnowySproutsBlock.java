@@ -1,9 +1,10 @@
 package com.rosemods.windswept.common.block;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -19,7 +20,7 @@ public class SnowySproutsBlock extends BushBlock implements IForgeShearable {
 
     @Override
     protected boolean mayPlaceOn(BlockState state, BlockGetter getter, BlockPos pos) {
-        return super.mayPlaceOn(state, getter, pos) || state.is(Blocks.SNOW_BLOCK);
+        return canSupportCenter((LevelReader) getter, pos, Direction.UP);
     }
 
     @Override

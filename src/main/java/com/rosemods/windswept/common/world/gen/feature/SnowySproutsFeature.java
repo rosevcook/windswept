@@ -1,6 +1,6 @@
 package com.rosemods.windswept.common.world.gen.feature;
 
-import com.rosemods.windswept.common.block.wild_berry.WildBerryBushBlock;
+import com.rosemods.windswept.common.block.WildBerryBushBlock;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;

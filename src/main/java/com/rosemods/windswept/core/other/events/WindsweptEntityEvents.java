@@ -1,12 +1,10 @@
 package com.rosemods.windswept.core.other.events;
 
-import com.rosemods.windswept.common.effect.ThornsEffect;
 import com.rosemods.windswept.common.entity.Chilled;
 import com.rosemods.windswept.common.item.SnowBootsItem;
 import com.rosemods.windswept.common.item.wooden_bucket.WoodenMilkBucketItem;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.WindsweptConfig;
-import com.rosemods.windswept.core.other.WindsweptConstants;
 import com.rosemods.windswept.core.other.WindsweptDataProcessors;
 import com.rosemods.windswept.core.other.tags.WindsweptBlockTags;
 import com.rosemods.windswept.core.other.tags.WindsweptEntityTypeTags;
@@ -16,8 +14,8 @@ import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
 import com.teamabnormals.blueprint.common.world.storage.tracking.TrackedData;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintEntityTypeTags;
-import com.teamabnormals.blueprint.core.util.registry.ItemSubRegistryHelper;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
@@ -28,6 +26,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.ThornsEnchantment;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.entity.SignBlockEntity;
@@ -43,7 +42,7 @@ import net.minecraftforge.eventbus.api.Event.Result;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
-@EventBusSubscriber(modid = Windswept.MODID)
+@EventBusSubscriber(modid = Windswept.MOD_ID)
 public class WindsweptEntityEvents {
 
     @SubscribeEvent
@@ -53,8 +52,13 @@ public class WindsweptEntityEvents {
         Entity attacker = source.getEntity();
 
         // thorns damage
-        if (attacker != null && entity != null && entity.hasEffect(WindsweptEffects.THORNS.get()))
-            ThornsEffect.doThornsDamage(entity, attacker);
+        if (attacker != null && entity != null && entity.hasEffect(WindsweptEffects.THORNS.get())) {
+            int amplifier = entity.getEffect(WindsweptEffects.THORNS.get()).getAmplifier() + 1;
+            RandomSource rand = entity.getRandom();
+
+            if (ThornsEnchantment.shouldHit(amplifier, rand))
+                attacker.hurt(DamageSource.thorns(entity), ThornsEnchantment.getDamage(amplifier, rand));
+        }
     }
 
     @SubscribeEvent
@@ -105,12 +109,6 @@ public class WindsweptEntityEvents {
                 }
             }
         }
-    }
-
-    @SubscribeEvent
-    public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
-        if (event.getItemStack().is(WindsweptItems.WILD_BERRIES.get()) && ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD))
-            event.setUseItem(Result.DENY);
     }
 
     @SubscribeEvent

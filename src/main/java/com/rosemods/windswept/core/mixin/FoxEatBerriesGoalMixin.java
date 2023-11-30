@@ -1,6 +1,6 @@
 package com.rosemods.windswept.core.mixin;
 
-import com.rosemods.windswept.common.block.wild_berry.WildBerryBushBlock;
+import com.rosemods.windswept.common.block.WildBerryBushBlock;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import net.minecraft.core.BlockPos;
@@ -23,11 +23,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(Fox.FoxEatBerriesGoal.class)
 public abstract class FoxEatBerriesGoalMixin extends MoveToBlockGoal {
 
-    protected FoxEatBerriesGoalMixin(PathfinderMob mob, double speedModifier, int searchRange) {
+    private FoxEatBerriesGoalMixin(PathfinderMob mob, double speedModifier, int searchRange) {
         super(mob, speedModifier, searchRange);
     }
 
-    @Inject(at = @At("HEAD"), method = "onReachedTarget")
+    @Inject(method = "onReachedTarget", at = @At("HEAD"))
     private void onReachedTarget(CallbackInfo ci) {
         BlockState state = this.mob.level.getBlockState(this.blockPos);
 
