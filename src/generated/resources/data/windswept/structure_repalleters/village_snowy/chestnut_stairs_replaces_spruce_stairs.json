@@ -1,0 +1,7 @@
+{
+  "type": "blueprint:simple",
+  "priority": "normal",
+  "replaces_block": "minecraft:spruce_stairs",
+  "replaces_with": "windswept:chestnut_stairs",
+  "selector": "minecraft:village_snowy"
+}

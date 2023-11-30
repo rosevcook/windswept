@@ -39,6 +39,7 @@ public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
         this.tag(BiomeTags.IS_OVERWORLD).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), TUNDRA.getKey());
         this.tag(BiomeTags.IS_FOREST).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey());
         this.tag(BiomeTags.HAS_IGLOO).add(SNOWY_CHESTNUT_FOREST.getKey(), TUNDRA.getKey());
+        this.tag(BiomeTags.HAS_VILLAGE_SNOWY).add(SNOWY_CHESTNUT_FOREST.get());
         this.tag(BiomeTags.IS_TAIGA).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey());
         this.tag(BiomeTags.HAS_RUINED_PORTAL_STANDARD).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey());
         this.tag(BiomeTags.HAS_MINESHAFT).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), TUNDRA.getKey());

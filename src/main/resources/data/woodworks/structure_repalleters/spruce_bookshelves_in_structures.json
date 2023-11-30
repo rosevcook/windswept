@@ -1,0 +1,27 @@
+{
+  "type": "blueprint:simple",
+  "priority": "normal",
+  "replaces_block": "minecraft:bookshelf",
+  "replaces_with": "woodworks:spruce_bookshelf",
+  "selector": {
+    "type": "names",
+    "conditions": [
+      {
+        "type": "forge:and",
+        "values": [
+          {
+            "type": "woodworks:config",
+            "value": "wooden_bookshelves"
+          },
+          {
+            "type": "woodworks:config",
+            "value": "wooden_bookshelves_in_structures"
+          }
+        ]
+      }
+    ],
+    "config": [
+      "minecraft:village_taiga"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "type": "blueprint:simple",
+  "priority": "normal",
+  "replaces_block": "minecraft:spruce_door",
+  "replaces_with": "windswept:chestnut_door",
+  "selector": "minecraft:village_snowy"
+}
