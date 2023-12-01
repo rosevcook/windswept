@@ -46,7 +46,6 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
 
     private int dropDelay;
     private boolean hasJustDropped;
-    public boolean hasEyesShut;
     private UUID lastHurtBy;
 
     public Frostbiter(EntityType<? extends Frostbiter> type, Level level) {
@@ -130,11 +129,9 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
             if (this.dropDelay == 0 && this.random.nextInt(5000) == 0 && this.isNoEndimationPlaying()) {
                 NetworkUtil.setPlayingAnimation(this, WindsweptPlayableEndimations.FROSTBITER_SHAKE);
                 this.getNavigation().stop();
-                this.hasEyesShut = true;
-            } else if (this.dropDelay == 8 && isShaking) {
+            } else if (this.dropDelay == 8 && isShaking)
                 this.dropRandomAntler();
-                this.hasEyesShut = false;
-            }
+
     }
 
     public void setLeftAntler(boolean has) {

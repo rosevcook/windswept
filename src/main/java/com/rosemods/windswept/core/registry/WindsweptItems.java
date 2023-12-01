@@ -49,7 +49,6 @@ public class WindsweptItems {
     public static final RegistryObject<Item> WILD_BERRY_BOWL = HELPER.createItem("wild_berry_bowl", () -> new BerryBowlItem(WILD_BERRIES.get(), WindsweptFoods.BERRY_BOWL));
     public static final RegistryObject<Item> SWEET_BERRY_BOWL = HELPER.createItem("sweet_berry_bowl", () -> new BerryBowlItem(Items.SWEET_BERRIES, WindsweptFoods.BERRY_BOWL));
     public static final RegistryObject<Item> FOUL_BERRY_BOWL = HELPER.createItem("foul_berry_bowl", () -> new BerryBowlItem(null, Items.BOWL, new Item.Properties().tab(ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.AUTUMNITY) ? CreativeModeTab.TAB_FOOD : null).food(ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.AUTUMNITY) ? WindsweptAutumnityCompat.FOUL_BERRY_BOWL : null)));
-    public static final RegistryObject<Item> MUTTON_PIE = HELPER.createItem("mutton_pie", () -> new InjectedItem(Items.COOKED_MUTTON, PropertyUtil.food(WindsweptFoods.MUTTON_PIE)));
 
     public static final RegistryObject<Item> CHESTNUTS = HELPER.createItem("chestnuts", () -> new Item(PropertyUtil.food(WindsweptFoods.CHESTNUTS)));
     public static final RegistryObject<Item> ROASTED_CHESTNUTS = HELPER.createItem("roasted_chestnuts", () -> new Item(PropertyUtil.food(WindsweptFoods.ROASTED_CHESTNUTS)));
@@ -62,6 +61,7 @@ public class WindsweptItems {
     public static final RegistryObject<Item> GOAT_SHANKS = HELPER.createCompatItem(WindsweptConstants.FARMERSDELIGHT, "goat_shanks", new Item.Properties().food(WindsweptFoods.GOAT_SHANKS), CreativeModeTab.TAB_FOOD);
     public static final RegistryObject<Item> COOKED_GOAT_SHANKS = HELPER.createCompatItem(WindsweptConstants.FARMERSDELIGHT, "cooked_goat_shanks", new Item.Properties().food(WindsweptFoods.COOKED_GOAT_SHANKS), CreativeModeTab.TAB_FOOD);
     public static final RegistryObject<Item> GOAT_STEW = HELPER.createItem("goat_stew", () -> new BowlFoodItem(PropertyUtil.food(ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) ? WindsweptFDCompat.GOAT_STEW : WindsweptFoods.GOAT_STEW).craftRemainder(Items.BOWL).stacksTo(1)));
+    public static final RegistryObject<Item> MUTTON_PIE = HELPER.createItem("mutton_pie", () -> new InjectedItem(Items.COOKED_MUTTON, PropertyUtil.food(WindsweptFoods.MUTTON_PIE)));
 
     // Banner Patterns //
     public static final RegistryObject<Item> SNOW_GOLEM_BANNER_PATTERN = HELPER.createItem("snow_golem_banner_pattern", () -> new BlueprintBannerPatternItem(WindsweptBannerPatternTags.SNOW_GOLEM, new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));

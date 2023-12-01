@@ -28,7 +28,6 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> {
     private final ModelPart brokenLeftAntler;
     private final ModelPart brokenRightAntler;
 
-
     public FrostbiterModel(ModelPart root) {
         this.body = root.getChild("body");
         this.head = root.getChild("head");
@@ -59,6 +58,7 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> {
 
         this.rightLeg.xRot = Mth.cos(limbSwing * .6662f) * .9f * limbSwingAmount;
         this.leftLeg.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * limbSwingAmount;
+
         if (!isEating) {
             this.rightArm.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * limbSwingAmount;
             this.leftArm.xRot = Mth.cos(limbSwing * .6662f) * .9f * limbSwingAmount;
@@ -68,11 +68,15 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> {
             this.tail.yRot = Mth.cos(limbSwing * .6662f + Mth.PI) * limbSwingAmount;
             this.tail.zRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .1f * limbSwingAmount;
             this.body.zRot = Mth.cos(limbSwing * .6662f) * .2f * limbSwingAmount;
-            if (!isShaking)
+
+            if (!isShaking) {
+                this.head.xRot = headPitch * ((float)Math.PI / 180f) - 125f;
+                this.head.yRot = headPitch * ((float)Math.PI / 180f);
                 this.bell.zRot = Mth.cos(limbSwing * .6662f) * .6f * limbSwingAmount;
+            }
         }
 
-        this.frontEyesClosed.visible = ageInTicks % 200 == 0 || ageInTicks % 200 == 1 || ageInTicks % 200 == 2 || frostbiter.hasEyesShut || !frostbiter.isNoEndimationPlaying();
+        this.frontEyesClosed.visible = !frostbiter.isNoEndimationPlaying();
         this.front.visible = !this.frontEyesClosed.visible;
         this.leaves.visible = frostbiter.hasAntlers();
         this.leash.visible = frostbiter.isTame();

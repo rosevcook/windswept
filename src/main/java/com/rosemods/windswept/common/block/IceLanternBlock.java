@@ -19,7 +19,6 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -27,42 +26,9 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class IceLanternBlock extends Block implements SimpleWaterloggedBlock {
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-    protected static final VoxelShape[] SHAPES = new VoxelShape[]{
-            Shapes.or( // UP
-                    box(7.0F, 0.0F, 7.0D, 9.0D, 4.0D, 9.0D),
-                    box(4.0F, 4.0F, 4.0F, 12.0F, 5.0F, 12.0F),
-                    box(5.0F, 5.0F, 5.0F, 11.0F, 13.0F, 11.0F),
-                    box(4.0F, 13.0F, 4.0F, 12.0F, 14.0F, 12.0F)),
-            Shapes.or( // DOWN
-                    box(7.0F, 12.0F, 7.0D, 9.0D, 16.0D, 9.0D),
-                    box(4.0F, 2.0F, 4.0F, 12.0F, 3.0F, 12.0F),
-                    box(5.0F, 3.0F, 5.0F, 11.0F, 11.0F, 11.0F),
-                    box(4.0F, 11.0F, 4.0F, 12.0F, 12.0F, 12.0F)),
-            Shapes.or( // NORTH
-                    box(7.0F, 12.0F, 10.0D, 9.0D, 16.0D, 12.0D),
-                    box(7.0F, 14.0F, 10.0D, 9.0D, 16.0D, 16.0D),
-                    box(4.0F, 2.0F, 7.0F, 12.0F, 3.0F, 15.0F),
-                    box(5.0F, 3.0F, 8.0F, 11.0F, 11.0F, 14.0F),
-                    box(4.0F, 11.0F, 7.0F, 12.0F, 12.0F, 15.0F)),
-            Shapes.or( // EAST
-                    box(4.0F, 12.0F, 7.0D, 6.0D, 16.0D, 9.0D),
-                    box(0.0F, 14.0F, 7.0D, 6.0D, 16.0D, 9.0D),
-                    box(1.0F, 2.0F, 4.0F, 9.0F, 3.0F, 12.0F),
-                    box(2.0F, 3.0F, 5.0F, 8.0F, 11.0F, 11.0F),
-                    box(1.0F, 11.0F, 4.0F, 9.0F, 12.0F, 12.0F)),
-            Shapes.or( // SOUTH
-                    box(7.0F, 12.0F, 4.0D, 9.0D, 16.0D, 6.0D),
-                    box(7.0F, 14.0F, 0.0D, 9.0D, 16.0D, 6.0D),
-                    box(4.0F, 2.0F, 1.0F, 12.0F, 3.0F, 9.0F),
-                    box(5.0F, 3.0F, 2.0F, 11.0F, 11.0F, 8.0F),
-                    box(4.0F, 11.0F, 1.0F, 12.0F, 12.0F, 9.0F)),
-            Shapes.or( // WEST
-                    box(10.0F, 12.0F, 7.0D, 12.0D, 16.0D, 9.0D),
-                    box(10.0F, 14.0F, 7.0D, 16.0D, 16.0D, 9.0D),
-                    box(7.0F, 2.0F, 4.0F, 15.0F, 3.0F, 12.0F),
-                    box(8.0F, 3.0F, 5.0F, 14.0F, 11.0F, 11.0F),
-                    box(7.0F, 11.0F, 4.0F, 15.0F, 12.0F, 12.0F)),
-    };
+    private static final VoxelShape SHAPE = Block.box(3f, 0f, 3f, 13f, 11f, 13f);
+    private static final VoxelShape HANGING = Block.box(3f, 3f, 3f, 13f, 14f, 13f);
+    private static final VoxelShape SIDE = Block.box(3f, 2f, 3f, 13f, 13f, 13f);
 
     public IceLanternBlock(Properties properties) {
         super(properties);
@@ -71,12 +37,9 @@ public class IceLanternBlock extends Block implements SimpleWaterloggedBlock {
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return switch (state.getValue(FACING)) {
-            case UP -> SHAPES[0];
-            default -> SHAPES[1];
-            case NORTH -> SHAPES[2];
-            case EAST -> SHAPES[3];
-            case SOUTH -> SHAPES[4];
-            case WEST -> SHAPES[5];
+            default -> SIDE;
+            case UP -> SHAPE;
+            case DOWN -> HANGING;
         };
     }
 

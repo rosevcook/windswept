@@ -227,9 +227,9 @@ public class WindsweptModelProvider extends BlockStateProvider {
                 .partialState().with(IceLanternBlock.FACING, Direction.UP).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/ice_lantern"))))
                 .partialState().with(IceLanternBlock.FACING, Direction.DOWN).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/ice_lantern_hanging"))))
                 .partialState().with(IceLanternBlock.FACING, Direction.NORTH).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/ice_lantern_side"))))
-                .partialState().with(IceLanternBlock.FACING, Direction.SOUTH).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/ice_lantern_side"))))
+                .partialState().with(IceLanternBlock.FACING, Direction.SOUTH).addModels(ConfiguredModel.builder().modelFile(this.models().getExistingFile(this.modLoc("block/ice_lantern_side"))).rotationY(180).build())
                 .partialState().with(IceLanternBlock.FACING, Direction.EAST).addModels(ConfiguredModel.builder().modelFile(this.models().getExistingFile(this.modLoc("block/ice_lantern_side"))).rotationY(90).build())
-                .partialState().with(IceLanternBlock.FACING, Direction.WEST).addModels(ConfiguredModel.builder().modelFile(this.models().getExistingFile(this.modLoc("block/ice_lantern_side"))).rotationY(90).build());
+                .partialState().with(IceLanternBlock.FACING, Direction.WEST).addModels(ConfiguredModel.builder().modelFile(this.models().getExistingFile(this.modLoc("block/ice_lantern_side"))).rotationY(270).build());
 
     this.generatedItem(ICE_LANTERN.get(), TextureFolder.Item);
 

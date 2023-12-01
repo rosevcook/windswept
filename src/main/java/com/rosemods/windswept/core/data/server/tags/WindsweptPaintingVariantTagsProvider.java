@@ -1,10 +1,11 @@
 package com.rosemods.windswept.core.data.server.tags;
 
 import com.rosemods.windswept.core.Windswept;
-import com.rosemods.windswept.core.registry.WindsweptPaintingVariants;
 import net.minecraft.data.tags.PaintingVariantTagsProvider;
 import net.minecraft.tags.PaintingVariantTags;
 import net.minecraftforge.data.event.GatherDataEvent;
+
+import static com.rosemods.windswept.core.registry.WindsweptPaintingVariants.*;
 
 public class WindsweptPaintingVariantTagsProvider extends PaintingVariantTagsProvider {
 
@@ -14,7 +15,7 @@ public class WindsweptPaintingVariantTagsProvider extends PaintingVariantTagsPro
 
     @Override
     public void addTags() {
-        this.tag(PaintingVariantTags.PLACEABLE).add(WindsweptPaintingVariants.CLIFFSIDE.get(), WindsweptPaintingVariants.BLOOM.get(), WindsweptPaintingVariants.FREE_FIGURE_STUDY.get());
+        this.tag(PaintingVariantTags.PLACEABLE).add(CLIFFSIDE.get(), BLOOM.get(), FREE_FIGURE_STUDY.get(), TUNDRA.get(), DRESS_CODES.get());
     }
 
 }
