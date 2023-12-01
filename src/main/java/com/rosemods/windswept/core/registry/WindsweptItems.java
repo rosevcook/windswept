@@ -30,9 +30,9 @@ public class WindsweptItems {
     // Misc //
     public static final RegistryObject<Item> HOLLY_BERRIES = HELPER.createItem("holly_berries", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_BREWING).food(WindsweptFoods.HOLLY_BERRIES)));
     public static final RegistryObject<Item> HOLLY_BERRIES_ON_A_STICK = HELPER.createItem("holly_berries_on_a_stick", () -> new HollyBerriesOnAStickItem(new Item.Properties().durability(25).tab(CreativeModeTab.TAB_TRANSPORTATION), 7));
-    public static final RegistryObject<Item> FROST_ARROW = HELPER.createItem("frost_arrow", () -> new FrostArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
     public static final RegistryObject<Item> FROZEN_FLESH = HELPER.createItem("frozen_flesh", () -> new InjectedItem(Items.ROTTEN_FLESH, PropertyUtil.food(WindsweptFoods.FROZEN_FLESH)));
     public static final RegistryObject<Item> FROZEN_BRANCH = HELPER.createItem("frozen_branch", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<Item> FROST_ARROW = HELPER.createItem("frost_arrow", () -> new FrostArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
     public static final RegistryObject<Item> SNOW_BOOTS = HELPER.createItem("snow_boots", () -> new SnowBootsItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
 
     // Wooden Buckets //
@@ -48,18 +48,20 @@ public class WindsweptItems {
     public static final RegistryObject<Item> WILD_BERRY_COOKIE = HELPER.createItem("wild_berry_cookie", () -> new Item(PropertyUtil.food(WindsweptFoods.WILD_BERRY_COOKIE)));
     public static final RegistryObject<Item> WILD_BERRY_BOWL = HELPER.createItem("wild_berry_bowl", () -> new BerryBowlItem(WILD_BERRIES.get(), WindsweptFoods.BERRY_BOWL));
     public static final RegistryObject<Item> SWEET_BERRY_BOWL = HELPER.createItem("sweet_berry_bowl", () -> new BerryBowlItem(Items.SWEET_BERRIES, WindsweptFoods.BERRY_BOWL));
+    public static final RegistryObject<Item> FOUL_BERRY_BOWL = HELPER.createItem("foul_berry_bowl", () -> new BerryBowlItem(null, Items.BOWL, new Item.Properties().tab(ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.AUTUMNITY) ? CreativeModeTab.TAB_FOOD : null).food(ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.AUTUMNITY) ? WindsweptAutumnityCompat.FOUL_BERRY_BOWL : null)));
     public static final RegistryObject<Item> MUTTON_PIE = HELPER.createItem("mutton_pie", () -> new InjectedItem(Items.COOKED_MUTTON, PropertyUtil.food(WindsweptFoods.MUTTON_PIE)));
-    public static final RegistryObject<Item> GOAT = HELPER.createItem("goat", () -> new Item(PropertyUtil.food(WindsweptFoods.GOAT)));
-    public static final RegistryObject<Item> COOKED_GOAT = HELPER.createItem("cooked_goat", () -> new Item(PropertyUtil.food(WindsweptFoods.COOKED_GOAT)));
-    public static final RegistryObject<Item> GOAT_STEW = HELPER.createItem("goat_stew", () -> new BowlFoodItem(PropertyUtil.food(ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) ? WindsweptFDCompat.GOAT_STEW : WindsweptFoods.GOAT_STEW).craftRemainder(Items.BOWL).stacksTo(1)));
+
     public static final RegistryObject<Item> CHESTNUTS = HELPER.createItem("chestnuts", () -> new Item(PropertyUtil.food(WindsweptFoods.CHESTNUTS)));
     public static final RegistryObject<Item> ROASTED_CHESTNUTS = HELPER.createItem("roasted_chestnuts", () -> new Item(PropertyUtil.food(WindsweptFoods.ROASTED_CHESTNUTS)));
     public static final RegistryObject<Item> CHESTNUT_SOUP = HELPER.createItem("chestnut_soup", () -> new BowlFoodItem(PropertyUtil.food(ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) ? WindsweptFDCompat.CHESTNUT_SOUP : WindsweptFoods.CHESTNUT_SOUP).craftRemainder(Items.BOWL).stacksTo(1)));
-    public static final RegistryObject<Item> GOAT_SHANKS = HELPER.createCompatItem(WindsweptConstants.FARMERSDELIGHT, "goat_shanks", new Item.Properties().food(WindsweptFoods.GOAT_SHANKS), CreativeModeTab.TAB_FOOD);
-    public static final RegistryObject<Item> COOKED_GOAT_SHANKS = HELPER.createCompatItem(WindsweptConstants.FARMERSDELIGHT, "cooked_goat_shanks", new Item.Properties().food(WindsweptFoods.COOKED_GOAT_SHANKS), CreativeModeTab.TAB_FOOD);
     public static final RegistryObject<Item> CHESTNUT_RISOTTO = HELPER.createItem("chestnut_risotto", () -> new BowlFoodItem((ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) ? PropertyUtil.food(WindsweptFDCompat.CHESTNUT_RISOTTO) : new Item.Properties()).craftRemainder(Items.BOWL).stacksTo(1)));
     public static final RegistryObject<Item> CHESTNUT_CHICKEN_PLATTER = HELPER.createItem("chestnut_chicken_platter", () -> new BowlFoodItem((ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) ? PropertyUtil.food(WindsweptFDCompat.CHESTNUT_CHICKEN_PLATTER) : new Item.Properties()).craftRemainder(Items.BOWL).stacksTo(1)));
-    public static final RegistryObject<Item> FOUL_BERRY_BOWL = HELPER.createItem("foul_berry_bowl", () -> new BerryBowlItem(null, Items.BOWL, new Item.Properties().tab(ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.AUTUMNITY) ? CreativeModeTab.TAB_FOOD : null).food(ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.AUTUMNITY) ? WindsweptAutumnityCompat.FOUL_BERRY_BOWL : null)));
+
+    public static final RegistryObject<Item> GOAT = HELPER.createItem("goat", () -> new Item(PropertyUtil.food(WindsweptFoods.GOAT)));
+    public static final RegistryObject<Item> COOKED_GOAT = HELPER.createItem("cooked_goat", () -> new Item(PropertyUtil.food(WindsweptFoods.COOKED_GOAT)));
+    public static final RegistryObject<Item> GOAT_SHANKS = HELPER.createCompatItem(WindsweptConstants.FARMERSDELIGHT, "goat_shanks", new Item.Properties().food(WindsweptFoods.GOAT_SHANKS), CreativeModeTab.TAB_FOOD);
+    public static final RegistryObject<Item> COOKED_GOAT_SHANKS = HELPER.createCompatItem(WindsweptConstants.FARMERSDELIGHT, "cooked_goat_shanks", new Item.Properties().food(WindsweptFoods.COOKED_GOAT_SHANKS), CreativeModeTab.TAB_FOOD);
+    public static final RegistryObject<Item> GOAT_STEW = HELPER.createItem("goat_stew", () -> new BowlFoodItem(PropertyUtil.food(ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) ? WindsweptFDCompat.GOAT_STEW : WindsweptFoods.GOAT_STEW).craftRemainder(Items.BOWL).stacksTo(1)));
 
     // Banner Patterns //
     public static final RegistryObject<Item> SNOW_GOLEM_BANNER_PATTERN = HELPER.createItem("snow_golem_banner_pattern", () -> new BlueprintBannerPatternItem(WindsweptBannerPatternTags.SNOW_GOLEM, new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));

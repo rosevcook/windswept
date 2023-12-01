@@ -31,7 +31,6 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.ForgeHooks;
 
 public class WildBerryBushBlock extends BushBlock implements BonemealableBlock {
     public static final IntegerProperty AGE = BlockStateProperties.AGE_3;

@@ -105,25 +105,27 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> CHESTNUT_LEAF_CARPET = HELPER.createCompatBlock(WindsweptConstants.QUARK, "chestnut_leaf_carpet", () -> new LeafCarpetBlock(Properties.CHESTNUT.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> CHESTNUT_LEAF_PILE = HELPER.createCompatBlock(WindsweptConstants.WOODWORKS, "chestnut_leaf_pile", () -> new LeafPileBlock(Properties.CHESTNUT.leafPile()), CreativeModeTab.TAB_DECORATIONS);
 
+    // Compressed Blocks //
+    public static final RegistryObject<Block> CHESTNUT_CRATE = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "chestnut_crate", () -> new BlueprintDirectionalBlock(Properties.CRATE), 300, CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> ROASTED_CHESTNUT_CRATE = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "roasted_chestnut_crate", () -> new BlueprintDirectionalBlock(Properties.CRATE), 300, CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> HOLLY_BERRY_BASKET = HELPER.createFuelBlock("holly_berry_basket", () -> new BlueprintDirectionalBlock(Properties.CRATE), 300, ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD) ? CreativeModeTab.TAB_DECORATIONS : null);
+    public static final RegistryObject<Block> WILD_BERRY_BASKET = HELPER.createFuelBlock("wild_berry_basket", () -> new BlueprintDirectionalBlock(Properties.CRATE), 300, ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD) ? CreativeModeTab.TAB_DECORATIONS : null);
+    public static final RegistryObject<Block> RED_MUSHROOM_BASKET = HELPER.createFuelBlock("red_mushroom_basket", () -> new BlueprintDirectionalBlock(Properties.CRATE), 300, ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD) ? CreativeModeTab.TAB_DECORATIONS : null);
+    public static final RegistryObject<Block> BROWN_MUSHROOM_BASKET = HELPER.createFuelBlock("brown_mushroom_basket", () -> new BlueprintDirectionalBlock(Properties.CRATE), 300, ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD) ? CreativeModeTab.TAB_DECORATIONS : null);
+    public static final RegistryObject<Block> GLOW_SHROOM_BASKET = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "glow_shroom_basket", () -> new BlueprintDirectionalBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(1.5f).sound(SoundType.WOOD).lightLevel(s -> 12)), 300, CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> FROZEN_FLESH_BLOCK = HELPER.createBlock("frozen_flesh_block", () -> new Block(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.COLOR_BLUE).strength(.8f).sound(SoundType.CORAL_BLOCK)), ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.CAVERNS_AND_CHASMS) ? CreativeModeTab.TAB_DECORATIONS : null);
+
     // Sprouts //
     public static final RegistryObject<Block> SNOWY_SPROUTS = HELPER.createInjectedBlock("snowy_sprouts", Items.SEA_PICKLE, () -> new SnowySproutsBlock(Properties.COLD_SPROUTS), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> GELISOL_SPROUTS = HELPER.createInjectedBlock("gelisol_sprouts", Items.SEA_PICKLE, () -> new SnowySproutsBlock(Properties.COLD_SPROUTS), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> DRY_MOSS_SPROUTS = HELPER.createInjectedBlock("dry_moss_sprouts", Items.SEA_PICKLE, () -> new SnowySproutsBlock(Properties.COLD_SPROUTS), CreativeModeTab.TAB_DECORATIONS);
 
-    // Rose Bushes //
-    public static final RegistryObject<Block> RED_ROSE_BUSH = HELPER.createInjectedBlock("red_rose_bush", Items.ROSE_BUSH, () -> new BlueprintTallFlowerBlock(PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> PINK_ROSE_BUSH = HELPER.createInjectedBlock("pink_rose_bush", Items.ROSE_BUSH, () -> new BlueprintTallFlowerBlock(PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> BLUE_ROSE_BUSH = HELPER.createInjectedBlock("blue_rose_bush", Items.ROSE_BUSH, () -> new BlueprintTallFlowerBlock(PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> WHITE_ROSE_BUSH = HELPER.createInjectedBlock("white_rose_bush", Items.ROSE_BUSH, () -> new BlueprintTallFlowerBlock(PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> YELLOW_ROSE_BUSH = HELPER.createInjectedBlock("yellow_rose_bush", Items.ROSE_BUSH, () -> new BlueprintTallFlowerBlock(PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> WITHER_ROSE_BUSH = HELPER.createInjectedBlock("wither_rose_bush", Items.ROSE_BUSH, () -> new WitherRoseBushBlock(PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
-
     // Flowers //
-    public static final RegistryObject<Block> RED_ROSE = HELPER.createBlock("red_rose", () -> new RoseFlowerBlock(RED_ROSE_BUSH, () -> MobEffects.WITHER, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> PINK_ROSE = HELPER.createBlock("pink_rose", () -> new RoseFlowerBlock(PINK_ROSE_BUSH, () -> MobEffects.WITHER, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> BLUE_ROSE = HELPER.createBlock("blue_rose", () -> new RoseFlowerBlock(BLUE_ROSE_BUSH, () -> MobEffects.WITHER, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> WHITE_ROSE = HELPER.createBlock("white_rose", () -> new RoseFlowerBlock(WHITE_ROSE_BUSH, () -> MobEffects.WITHER, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> YELLOW_ROSE = HELPER.createBlock("yellow_rose", () -> new RoseFlowerBlock(YELLOW_ROSE_BUSH, () -> MobEffects.WITHER, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> RED_ROSE = HELPER.createBlock("red_rose", () -> new RoseFlowerBlock(WindsweptBlocks.RED_ROSE_BUSH, () -> MobEffects.WITHER, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> PINK_ROSE = HELPER.createBlock("pink_rose", () -> new RoseFlowerBlock(WindsweptBlocks.PINK_ROSE_BUSH, () -> MobEffects.WITHER, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> BLUE_ROSE = HELPER.createBlock("blue_rose", () -> new RoseFlowerBlock(WindsweptBlocks.BLUE_ROSE_BUSH, () -> MobEffects.WITHER, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> WHITE_ROSE = HELPER.createBlock("white_rose", () -> new RoseFlowerBlock(WindsweptBlocks.WHITE_ROSE_BUSH, () -> MobEffects.WITHER, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> YELLOW_ROSE = HELPER.createBlock("yellow_rose", () -> new RoseFlowerBlock(WindsweptBlocks.YELLOW_ROSE_BUSH, () -> MobEffects.WITHER, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> FOXGLOVE = HELPER.createBlock("foxglove", () -> new BlueprintFlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> BLUEBELLS = HELPER.createBlock("bluebells", () -> new BlueprintFlowerBlock(() -> MobEffects.SLOW_FALLING, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> SNOWDROP = HELPER.createBlock("snowdrop", () -> new SnowdropBlock(() -> MobEffects.MOVEMENT_SLOWDOWN, 5, PropertyUtil.flower().sound(SoundType.NETHER_SPROUTS)), CreativeModeTab.TAB_DECORATIONS);
@@ -145,15 +147,13 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> POTTED_GELISOL_SPROUTS = HELPER.createBlockNoItem("potted_gelisol_sprouts", () -> new FlowerPotBlock(GELISOL_SPROUTS.get(), PropertyUtil.flowerPot()));
     public static final RegistryObject<Block> POTTED_DRY_MOSS_SPROUTS = HELPER.createBlockNoItem("potted_dry_moss_sprouts", () -> new FlowerPotBlock(DRY_MOSS_SPROUTS.get(), PropertyUtil.flowerPot()));
 
-    // Compressed Blocks //
-    public static final RegistryObject<Block> CHESTNUT_CRATE = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "chestnut_crate", () -> new BlueprintDirectionalBlock(Properties.CRATE), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> ROASTED_CHESTNUT_CRATE = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "roasted_chestnut_crate", () -> new BlueprintDirectionalBlock(Properties.CRATE), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> HOLLY_BERRY_BASKET = HELPER.createFuelBlock("holly_berry_basket", () -> new BlueprintDirectionalBlock(Properties.CRATE), 300, ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD) ? CreativeModeTab.TAB_DECORATIONS : null);
-    public static final RegistryObject<Block> WILD_BERRY_BASKET = HELPER.createFuelBlock("wild_berry_basket", () -> new BlueprintDirectionalBlock(Properties.CRATE), 300, ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD) ? CreativeModeTab.TAB_DECORATIONS : null);
-    public static final RegistryObject<Block> RED_MUSHROOM_BASKET = HELPER.createFuelBlock("red_mushroom_basket", () -> new BlueprintDirectionalBlock(Properties.CRATE), 300, ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD) ? CreativeModeTab.TAB_DECORATIONS : null);
-    public static final RegistryObject<Block> BROWN_MUSHROOM_BASKET = HELPER.createFuelBlock("brown_mushroom_basket", () -> new BlueprintDirectionalBlock(Properties.CRATE), 300, ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD) ? CreativeModeTab.TAB_DECORATIONS : null);
-    public static final RegistryObject<Block> GLOW_SHROOM_BASKET = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "glow_shroom_basket", () -> new BlueprintDirectionalBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(1.5f).sound(SoundType.WOOD).lightLevel(s -> 12)), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> FROZEN_FLESH_BLOCK = HELPER.createBlock("frozen_flesh_block", () -> new Block(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.COLOR_BLUE).strength(.8f).sound(SoundType.CORAL_BLOCK)), ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.CAVERNS_AND_CHASMS) ? CreativeModeTab.TAB_DECORATIONS : null);
+    // Tall Flowers//
+    public static final RegistryObject<Block> RED_ROSE_BUSH = HELPER.createInjectedBlock("red_rose_bush", Items.ROSE_BUSH, () -> new BlueprintTallFlowerBlock(PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> PINK_ROSE_BUSH = HELPER.createInjectedBlock("pink_rose_bush", Items.ROSE_BUSH, () -> new BlueprintTallFlowerBlock(PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> BLUE_ROSE_BUSH = HELPER.createInjectedBlock("blue_rose_bush", Items.ROSE_BUSH, () -> new BlueprintTallFlowerBlock(PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> WHITE_ROSE_BUSH = HELPER.createInjectedBlock("white_rose_bush", Items.ROSE_BUSH, () -> new BlueprintTallFlowerBlock(PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> YELLOW_ROSE_BUSH = HELPER.createInjectedBlock("yellow_rose_bush", Items.ROSE_BUSH, () -> new BlueprintTallFlowerBlock(PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> WITHER_ROSE_BUSH = HELPER.createInjectedBlock("wither_rose_bush", Items.ROSE_BUSH, () -> new WitherRoseBushBlock(PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
 
     // Icicle Blocks //
     public static final RegistryObject<Block> ICICLES = HELPER.createInjectedBlock("icicles", Items.HANGING_ROOTS, () -> new IcicleBlock(BlockBehaviour.Properties.copy(Blocks.PACKED_ICE).strength(.1f)), CreativeModeTab.TAB_DECORATIONS);
@@ -161,30 +161,11 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> CHISELED_ICICLE_BLOCK = HELPER.createBlock("chiseled_icicle_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.PACKED_ICE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> ICICLE_DOOR = HELPER.createBlock("icicle_door", () -> new DoorBlock(Block.Properties.of(Material.ICE, MaterialColor.ICE).strength(3f).sound(SoundType.GLASS).noOcclusion()), CreativeModeTab.TAB_REDSTONE);
     public static final RegistryObject<Block> ICICLE_TRAPDOOR = HELPER.createBlock("icicle_trapdoor", () -> new TrapDoorBlock(Block.Properties.of(Material.ICE, MaterialColor.ICE).strength(3f).sound(SoundType.GLASS).noOcclusion().isValidSpawn(PropertyUtil::never)), CreativeModeTab.TAB_REDSTONE);
+    public static final RegistryObject<Block> ICE_LANTERN = HELPER.createBlock("ice_lantern", () -> new IceLanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), CreativeModeTab.TAB_DECORATIONS);
 
     // Decoration Blocks //
     public static final RegistryObject<Block> HOLLY_WREATH = HELPER.createBlock("holly_wreath", () -> new LadderBlock(Block.Properties.of(Material.LEAVES).instabreak().sound(SoundType.AZALEA).noCollission().noOcclusion()), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> FROSTBITER_TROPHY = HELPER.createBlock("frostbiter_trophy", () -> new LadderBlock(Properties.HOLLY.ladder().sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
-
-    // Gelisol Blocks //
-    public static final RegistryObject<Block> GELISOL = HELPER.createInjectedBlock("gelisol", Items.PODZOL, () -> new GelisolBlock(BlockBehaviour.Properties.copy(Blocks.PODZOL)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> GELISOL_PATH = HELPER.createInjectedBlock("gelisol_path", Items.DIRT_PATH, () -> new DirtPathBlock(BlockBehaviour.Properties.copy(Blocks.DIRT_PATH)), CreativeModeTab.TAB_DECORATIONS);
-
-    // Tundra Moss Blocks //
-    public static final RegistryObject<Block> DRY_MOSS_CARPET = HELPER.createInjectedBlock("dry_moss_carpet", Items.MOSS_BLOCK, () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_CARPET)), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> DRY_MOSS_BLOCK = HELPER.createInjectedBlock("dry_moss_block", Items.MOSS_BLOCK, () -> new MossBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_BLOCK)), CreativeModeTab.TAB_DECORATIONS);
-
-    public static final RegistryObject<Block> DRY_MOSSY_COBBLESTONE = HELPER.createInjectedBlock("dry_mossy_cobblestone", Items.MOSSY_COBBLESTONE, () -> new Block(BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> DRY_MOSSY_COBBLESTONE_STAIRS = HELPER.createInjectedBlock("dry_mossy_cobblestone_stairs", Items.MOSSY_COBBLESTONE_STAIRS, () -> new StairBlock(DRY_MOSSY_COBBLESTONE.get()::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> DRY_MOSSY_COBBLESTONE_SLAB = HELPER.createInjectedBlock("dry_mossy_cobblestone_slab", Items.MOSSY_COBBLESTONE_SLAB, () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> DRY_MOSSY_COBBLESTONE_WALL = HELPER.createInjectedBlock("dry_mossy_cobblestone_wall", Items.MOSSY_COBBLESTONE_WALL, () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE)), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> DRY_MOSSY_COBBLESTONE_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "dry_mossy_cobblestone_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-
-    public static final RegistryObject<Block> DRY_MOSSY_STONE_BRICKS = HELPER.createInjectedBlock("dry_mossy_stone_bricks", Items.MOSSY_STONE_BRICKS, () -> new Block(BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> DRY_MOSSY_STONE_BRICK_STAIRS = HELPER.createInjectedBlock("dry_mossy_stone_brick_stairs", Items.MOSSY_STONE_BRICK_STAIRS, () -> new StairBlock(DRY_MOSSY_STONE_BRICKS.get()::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> DRY_MOSSY_STONE_BRICK_SLAB = HELPER.createInjectedBlock("dry_mossy_stone_brick_slab", Items.MOSSY_STONE_BRICK_SLAB, () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> DRY_MOSSY_STONE_BRICK_WALL = HELPER.createInjectedBlock("dry_mossy_stone_brick_wall", Items.MOSSY_STONE_BRICK_WALL, () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICKS)), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> DRY_MOSSY_STONE_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "dry_mossy_stone_brick_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
     // Packed Ice Blocks //
     public static final RegistryObject<Block> PACKED_ICE_STAIRS = HELPER.createBlock("packed_ice_stairs", () -> new StairBlock(Blocks.PACKED_ICE::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.PACKED_ICE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
@@ -220,6 +201,26 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> SNOW_BRICK_SLAB = HELPER.createBlock("snow_brick_slab", () -> new SlabBlock(Properties.SNOW_BRICKS), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> SNOW_BRICK_WALL = HELPER.createBlock("snow_brick_wall", () -> new WallBlock(Properties.SNOW_BRICKS), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> SNOW_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "snow_brick_vertical_slab", () -> new VerticalSlabBlock(Properties.SNOW_BRICKS), CreativeModeTab.TAB_BUILDING_BLOCKS);
+
+    // Gelisol Blocks //
+    public static final RegistryObject<Block> GELISOL = HELPER.createInjectedBlock("gelisol", Items.PODZOL, () -> new GelisolBlock(BlockBehaviour.Properties.copy(Blocks.PODZOL)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> GELISOL_PATH = HELPER.createInjectedBlock("gelisol_path", Items.DIRT_PATH, () -> new DirtPathBlock(BlockBehaviour.Properties.copy(Blocks.DIRT_PATH)), CreativeModeTab.TAB_DECORATIONS);
+
+    // Tundra Moss Blocks //
+    public static final RegistryObject<Block> DRY_MOSS_CARPET = HELPER.createInjectedBlock("dry_moss_carpet", Items.MOSS_BLOCK, () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_CARPET)), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> DRY_MOSS_BLOCK = HELPER.createInjectedBlock("dry_moss_block", Items.MOSS_BLOCK, () -> new MossBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_BLOCK)), CreativeModeTab.TAB_DECORATIONS);
+
+    public static final RegistryObject<Block> DRY_MOSSY_COBBLESTONE = HELPER.createInjectedBlock("dry_mossy_cobblestone", Items.MOSSY_COBBLESTONE, () -> new Block(BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> DRY_MOSSY_COBBLESTONE_STAIRS = HELPER.createInjectedBlock("dry_mossy_cobblestone_stairs", Items.MOSSY_COBBLESTONE_STAIRS, () -> new StairBlock(DRY_MOSSY_COBBLESTONE.get()::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> DRY_MOSSY_COBBLESTONE_SLAB = HELPER.createInjectedBlock("dry_mossy_cobblestone_slab", Items.MOSSY_COBBLESTONE_SLAB, () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> DRY_MOSSY_COBBLESTONE_WALL = HELPER.createInjectedBlock("dry_mossy_cobblestone_wall", Items.MOSSY_COBBLESTONE_WALL, () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE)), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> DRY_MOSSY_COBBLESTONE_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "dry_mossy_cobblestone_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+
+    public static final RegistryObject<Block> DRY_MOSSY_STONE_BRICKS = HELPER.createInjectedBlock("dry_mossy_stone_bricks", Items.MOSSY_STONE_BRICKS, () -> new Block(BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> DRY_MOSSY_STONE_BRICK_STAIRS = HELPER.createInjectedBlock("dry_mossy_stone_brick_stairs", Items.MOSSY_STONE_BRICK_STAIRS, () -> new StairBlock(DRY_MOSSY_STONE_BRICKS.get()::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> DRY_MOSSY_STONE_BRICK_SLAB = HELPER.createInjectedBlock("dry_mossy_stone_brick_slab", Items.MOSSY_STONE_BRICK_SLAB, () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> DRY_MOSSY_STONE_BRICK_WALL = HELPER.createInjectedBlock("dry_mossy_stone_brick_wall", Items.MOSSY_STONE_BRICK_WALL, () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICKS)), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> DRY_MOSSY_STONE_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "dry_mossy_stone_brick_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
     // Ice Blocks //
     public static final RegistryObject<Block> CUT_ICE = HELPER.createBlock("cut_ice", () -> new IceBlock(BlockBehaviour.Properties.copy(Blocks.ICE)), CreativeModeTab.TAB_BUILDING_BLOCKS);

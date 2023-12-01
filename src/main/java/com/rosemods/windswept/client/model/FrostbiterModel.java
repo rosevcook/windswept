@@ -72,7 +72,7 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> {
                 this.bell.zRot = Mth.cos(limbSwing * .6662f) * .6f * limbSwingAmount;
         }
 
-        this.frontEyesClosed.visible = ageInTicks % 200 == 0 || ageInTicks % 200 == 1 || ageInTicks % 200 == 2 || frostbiter.hasEyesShut;
+        this.frontEyesClosed.visible = ageInTicks % 200 == 0 || ageInTicks % 200 == 1 || ageInTicks % 200 == 2 || frostbiter.hasEyesShut || !frostbiter.isNoEndimationPlaying();
         this.front.visible = !this.frontEyesClosed.visible;
         this.leaves.visible = frostbiter.hasAntlers();
         this.leash.visible = frostbiter.isTame();
@@ -94,21 +94,22 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> {
             poseStack.pushPose();
             poseStack.scale(.45f, .45f, .45f);
             poseStack.translate(0f, 1.5f, 0f);
-            this.renderBody(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+            body.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+            tail.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+            leftArm.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+            rightArm.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+            leftLeg.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+            rightLeg.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
             poseStack.popPose();
         } else {
             head.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-            this.renderBody(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+            body.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+            tail.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+            leftArm.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+            rightArm.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+            leftLeg.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+            rightLeg.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
         }
-    }
-
-    private void renderBody(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-        body.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-        tail.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-        leftArm.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-        rightArm.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-        leftLeg.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-        rightLeg.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
     }
 
 }

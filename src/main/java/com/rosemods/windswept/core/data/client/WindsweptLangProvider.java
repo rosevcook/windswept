@@ -238,6 +238,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(CHISELED_ICICLE_BLOCK);
         this.translateBlock(ICICLE_DOOR);
         this.translateBlock(ICICLE_TRAPDOOR);
+        this.translateBlock(ICE_LANTERN);
 
         this.translateBlock(DRY_MOSS_CARPET);
         this.translateBlock(DRY_MOSS_BLOCK);

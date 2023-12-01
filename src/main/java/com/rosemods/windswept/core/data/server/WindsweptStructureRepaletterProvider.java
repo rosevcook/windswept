@@ -1,11 +1,8 @@
 package com.rosemods.windswept.core.data.server;
 
-import com.google.common.collect.Maps;
 import com.rosemods.windswept.core.Windswept;
-import com.rosemods.windswept.core.WindsweptConfig;
 import com.teamabnormals.blueprint.common.world.modification.structure.SimpleStructureRepaletter;
 import com.teamabnormals.blueprint.common.world.modification.structure.StructureRepaletterProvider;
-import com.teamabnormals.blueprint.core.api.conditions.ConfigValueCondition;
 import com.teamabnormals.blueprint.core.util.modification.selection.ConditionedResourceSelector;
 import com.teamabnormals.blueprint.core.util.modification.selection.selectors.NamesResourceSelector;
 import net.minecraft.core.Registry;
@@ -13,7 +10,6 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.structure.Structure;
-import net.minecraftforge.common.crafting.conditions.AndCondition;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import net.minecraftforge.common.crafting.conditions.OrCondition;
@@ -48,6 +44,7 @@ public class WindsweptStructureRepaletterProvider extends StructureRepaletterPro
         this.register(VILLAGE_TAIGA, Blocks.POTTED_POPPY, POTTED_RED_ROSE.get());
         this.register(VILLAGE_TAIGA, Blocks.POPPY, RED_ROSE.get());
         this.register(VILLAGE_SNOWY, Blocks.LIGHT_GRAY_WOOL, SNOW_BRICKS.get());
+        this.register(VILLAGE_SNOWY, Blocks.BLUE_ICE, PACKED_ICE_BRICKS.get());
 
         // Ancient City //
         this.register(ANCIENT_CITY, Blocks.BLUE_ICE, PACKED_ICE_BRICKS.get());

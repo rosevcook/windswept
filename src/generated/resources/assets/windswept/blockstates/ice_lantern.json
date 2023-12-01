@@ -1,0 +1,24 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "windswept:block/ice_lantern_hanging"
+    },
+    "facing=east": {
+      "model": "windswept:block/ice_lantern_side",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "windswept:block/ice_lantern_side"
+    },
+    "facing=south": {
+      "model": "windswept:block/ice_lantern_side"
+    },
+    "facing=up": {
+      "model": "windswept:block/ice_lantern"
+    },
+    "facing=west": {
+      "model": "windswept:block/ice_lantern_side",
+      "y": 90
+    }
+  }
+}

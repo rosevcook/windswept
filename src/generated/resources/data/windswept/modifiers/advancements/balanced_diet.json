@@ -197,6 +197,12 @@
         },
         "requirements": [
           [
+            "windswept:holly_berries"
+          ],
+          [
+            "windswept:frozen_flesh"
+          ],
+          [
             "windswept:wild_berries"
           ],
           [
@@ -212,16 +218,10 @@
             "windswept:sweet_berry_bowl"
           ],
           [
+            "windswept:foul_berry_bowl"
+          ],
+          [
             "windswept:mutton_pie"
-          ],
-          [
-            "windswept:goat"
-          ],
-          [
-            "windswept:cooked_goat"
-          ],
-          [
-            "windswept:goat_stew"
           ],
           [
             "windswept:chestnuts"
@@ -233,25 +233,25 @@
             "windswept:chestnut_soup"
           ],
           [
-            "windswept:goat_shanks"
-          ],
-          [
-            "windswept:cooked_goat_shanks"
-          ],
-          [
             "windswept:chestnut_risotto"
           ],
           [
             "windswept:chestnut_chicken_platter"
           ],
           [
-            "windswept:foul_berry_bowl"
+            "windswept:goat"
           ],
           [
-            "windswept:holly_berries"
+            "windswept:cooked_goat"
           ],
           [
-            "windswept:frozen_flesh"
+            "windswept:goat_shanks"
+          ],
+          [
+            "windswept:cooked_goat_shanks"
+          ],
+          [
+            "windswept:goat_stew"
           ]
         ],
         "should_replace_requirements": false

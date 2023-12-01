@@ -3,6 +3,7 @@ package com.rosemods.windswept.common.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -12,18 +13,23 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import org.jetbrains.annotations.Nullable;
 
-public class IcicleBlock extends Block {
+public class IcicleBlock extends Block implements SimpleWaterloggedBlock {
     public static final EnumProperty<IcicleStates> STATE = EnumProperty.create("states", IcicleStates.class);
+    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     protected static final VoxelShape SHAPE = Block.box(2f, 2f, 2f, 14f, 16f, 14f);
     protected static final VoxelShape FLOOR = Block.box(2f, 0f, 2f, 14f, 4.5f, 14f);
 
@@ -33,12 +39,16 @@ public class IcicleBlock extends Block {
     }
 
     @Override
-    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        return state.getValue(STATE) == IcicleStates.FLOOR ? canSupportCenter(level, pos.below(), Direction.UP) : canSupportCenter(level, pos.above(), Direction.DOWN);
+    public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
+        Direction direction = state.getValue(STATE) == IcicleStates.FLOOR ? Direction.UP : Direction.DOWN;
+        BlockPos blockpos = pos.relative(direction.getOpposite());
+
+        return Block.canSupportCenter(world, blockpos, direction);
     }
 
-    public BlockState updateShape(BlockState state, Direction direction, BlockState newState, LevelAccessor level, BlockPos pos, BlockPos newPos) {
-        return state.canSurvive(level, pos) ? state : Blocks.AIR.defaultBlockState();
+    @Override
+    public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
+        return state.canSurvive(level, currentPos) ? state : Blocks.AIR.defaultBlockState();
     }
 
     @Override
@@ -48,16 +58,31 @@ public class IcicleBlock extends Block {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(STATE);
+        builder.add(STATE, WATERLOGGED);
     }
 
-    @Nullable
+    @Override
+    public FluidState getFluidState(BlockState state) {
+        return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : Fluids.EMPTY.defaultFluidState();
+    }
+
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        if (canSupportCenter(context.getLevel(), context.getClickedPos().below(), Direction.UP))
-            return this.defaultBlockState().setValue(STATE, IcicleStates.NORMAL);
+        Direction direction = context.getClickedFace();
+        Level level = context.getLevel();
+        BlockPos pos = context.getClickedPos();
 
-        return this.defaultBlockState();
+        if (direction == Direction.UP || direction == Direction.DOWN) {
+            FluidState fluid = level.getFluidState(pos);
+            IcicleStates state = direction == Direction.UP ? IcicleStates.FLOOR : IcicleStates.NORMAL;
+
+            if (level.getBlockState(pos.above()).getBlock() instanceof IcicleBlock)
+                state = IcicleStates.BOTTOM;
+
+            return this.defaultBlockState().setValue(STATE, state).setValue(WATERLOGGED, fluid.is(FluidTags.WATER) && fluid.getAmount() == 8);
+        }
+
+        return null;
     }
 
     @OnlyIn(Dist.CLIENT)

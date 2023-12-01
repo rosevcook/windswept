@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "windswept:icicles"
+    },
+    "I": {
+      "item": "minecraft:iron_nugget"
+    },
+    "N": {
+      "item": "windswept:nightshade"
+    }
+  },
+  "pattern": [
+    " I ",
+    "#N#",
+    "###"
+  ],
+  "result": {
+    "item": "windswept:ice_lantern"
+  }
+}
