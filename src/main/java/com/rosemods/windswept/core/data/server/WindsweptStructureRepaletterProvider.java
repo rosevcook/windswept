@@ -48,7 +48,6 @@ public class WindsweptStructureRepaletterProvider extends StructureRepaletterPro
 
         // Ancient City //
         this.register(ANCIENT_CITY, Blocks.BLUE_ICE, PACKED_ICE_BRICKS.get());
-
         // Chestnut in Snowy Village //
         this.register(VILLAGE_SNOWY, Blocks.SPRUCE_PLANKS, CHESTNUT_PLANKS.get());
         this.register(VILLAGE_SNOWY, Blocks.SPRUCE_STAIRS, CHESTNUT_STAIRS.get());
@@ -70,11 +69,26 @@ public class WindsweptStructureRepaletterProvider extends StructureRepaletterPro
         this.register(VILLAGE_SNOWY, Blocks.CHEST, CHESTNUT_CHEST.get(), quarkOrWoodworks);
         this.register(VILLAGE_SNOWY, Blocks.BOOKSHELF, CHESTNUT_BOOKSHELF.get(), quarkOrWoodworks);
         this.register(VILLAGE_SNOWY, Blocks.LADDER, CHESTNUT_LADDER.get(), quarkOrWoodworks);
+
+        // Shipwrecks //
+        NamesResourceSelector shipwrecks = new NamesResourceSelector(SHIPWRECK.location(), SHIPWRECK_BEACHED.location());
+
+        this.register("shipwrecks/chestnut_door_replaces_jungle_door", shipwrecks, Blocks.JUNGLE_DOOR, CHESTNUT_DOOR.get());
+        this.register("shipwrecks/chestnut_fence_replaces_jungle_fence", shipwrecks, Blocks.JUNGLE_FENCE, CHESTNUT_FENCE.get());
+        this.register("shipwrecks/chestnut_log_replaces_jungle_log", shipwrecks, Blocks.JUNGLE_LOG, CHESTNUT_LOG.get());
+        this.register("shipwrecks/chestnut_planks_replaces_jungle_planks", shipwrecks, Blocks.JUNGLE_PLANKS, CHESTNUT_PLANKS.get());
+        this.register("shipwrecks/chestnut_slab_replaces_jungle_slab", shipwrecks, Blocks.JUNGLE_SLAB, CHESTNUT_SLAB.get());
+        this.register("shipwrecks/chestnut_stairs_replaces_jungle_stairs", shipwrecks, Blocks.JUNGLE_STAIRS, CHESTNUT_STAIRS.get());
+        this.register("shipwrecks/chestnut_trapdoor_replaces_jungle_trapdoor", shipwrecks, Blocks.JUNGLE_TRAPDOOR, CHESTNUT_TRAPDOOR.get());
     }
 
     private void register(ResourceKey<Structure> structure, Block replacesBlock, Block replacesWith, ICondition... conditions) {
         this.registerRepaletter(structure.location().getPath() + "/" + getName(replacesWith) + "_replaces_" + getName(replacesBlock),
                 new ConditionedResourceSelector(new NamesResourceSelector(structure.location()), conditions), EventPriority.NORMAL, new SimpleStructureRepaletter(replacesBlock, replacesWith));
+    }
+
+    private void register(String name, NamesResourceSelector structures, Block replacesBlock, Block replacesWith) {
+        this.registerRepaletter(name, new ConditionedResourceSelector(structures), EventPriority.NORMAL, new SimpleStructureRepaletter(replacesBlock, replacesWith));
     }
 
     private static ResourceKey<Structure> getLocalKey(String name) {

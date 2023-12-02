@@ -7,8 +7,8 @@ import com.rosemods.windswept.common.block.holly.HollyLeavesBlock;
 import com.rosemods.windswept.common.block.holly.HollySaplingBlock;
 import com.rosemods.windswept.common.block.nightshade.NightShadeFlowerPotBlock;
 import com.rosemods.windswept.common.block.nightshade.NightshadeFlowerBlock;
-import com.rosemods.windswept.common.world.gen.tree.ChestnutTreeGrower;
-import com.rosemods.windswept.common.world.gen.tree.HollyTreeGrower;
+import com.rosemods.windswept.common.level.gen.tree.ChestnutTreeGrower;
+import com.rosemods.windswept.common.level.gen.tree.HollyTreeGrower;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.other.WindsweptConstants;
 import com.rosemods.windswept.integration.farmers_delight.WindsweptFDCompat;
@@ -242,5 +242,5 @@ public class WindsweptBlocks {
         public static final BlockBehaviour.Properties COLD_SPROUTS = BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XZ);
 
     }
-
+    
 }

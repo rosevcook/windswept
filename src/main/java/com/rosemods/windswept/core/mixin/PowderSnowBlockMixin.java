@@ -1,7 +1,7 @@
 package com.rosemods.windswept.core.mixin;
 
-import com.rosemods.windswept.core.WindsweptConfig;
 import com.rosemods.windswept.common.block.IWoodenBucketPickupBlock;
+import com.rosemods.windswept.core.WindsweptConfig;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -24,7 +24,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(PowderSnowBlock.class)
 public class PowderSnowBlockMixin extends Block implements IWoodenBucketPickupBlock {
 
-    protected PowderSnowBlockMixin(Properties properties) {
+    private PowderSnowBlockMixin(Properties properties) {
         super(properties);
     }
 

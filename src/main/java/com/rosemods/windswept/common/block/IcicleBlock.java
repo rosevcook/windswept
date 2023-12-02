@@ -34,7 +34,7 @@ public class IcicleBlock extends Block implements SimpleWaterloggedBlock {
 
     public IcicleBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.defaultBlockState().setValue(STATE, IcicleStates.FLOOR));
+        this.registerDefaultState(this.defaultBlockState().setValue(STATE, IcicleStates.NORMAL).setValue(WATERLOGGED, false));
     }
 
     @Override
@@ -118,7 +118,7 @@ public class IcicleBlock extends Block implements SimpleWaterloggedBlock {
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource rand) {
         if (rand.nextFloat() < .05f && !state.getValue(WATERLOGGED) && level.getBlockState(pos.below()).isAir())
             level.addParticle(ParticleTypes.DRIPPING_DRIPSTONE_WATER, pos.getX() + .5d,
-                    pos.getY() + .15d, pos.getZ() + .4d, 0d, 0d, 0d);
+                    pos.getY() + .15d, pos.getZ() + .65d, 0d, 0d, 0d);
 
     }
 

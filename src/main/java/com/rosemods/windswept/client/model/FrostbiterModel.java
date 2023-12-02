@@ -70,7 +70,7 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> {
             this.body.zRot = Mth.cos(limbSwing * .6662f) * .2f * limbSwingAmount;
 
             if (!isShaking) {
-                this.head.xRot = headPitch * ((float)Math.PI / 180f) - 125f;
+                //this.head.xRot = headPitch * ((float)Math.PI / 180f) - 125f;
                 this.head.yRot = headPitch * ((float)Math.PI / 180f);
                 this.bell.zRot = Mth.cos(limbSwing * .6662f) * .6f * limbSwingAmount;
             }

@@ -1,6 +1,6 @@
 package com.rosemods.windswept.core.registry;
 
-import com.rosemods.windswept.common.world.gen.tree.trunk_placer.ChestnutTrunkPlacer;
+import com.rosemods.windswept.common.level.gen.tree.trunk_placer.ChestnutTrunkPlacer;
 import com.rosemods.windswept.core.Windswept;
 import net.minecraft.core.Registry;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;

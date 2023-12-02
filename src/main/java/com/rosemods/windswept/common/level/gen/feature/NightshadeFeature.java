@@ -1,4 +1,4 @@
-package com.rosemods.windswept.common.world.gen.feature;
+package com.rosemods.windswept.common.level.gen.feature;
 
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import net.minecraft.core.BlockPos;

@@ -2,7 +2,6 @@ package com.rosemods.windswept.core.registry;
 
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.registry.util.EffectSubRegistryHelper;
-import com.teamabnormals.blueprint.common.effect.BlueprintMobEffect;
 import com.teamabnormals.blueprint.core.util.DataUtil;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -18,11 +17,9 @@ public class WindsweptEffects {
     public static final EffectSubRegistryHelper HELPER = Windswept.REGISTRY_HELPER.getSubHelper(ForgeRegistries.MOB_EFFECTS);
 
     // Effects //
-
-    public static final RegistryObject<MobEffect> THORNS = HELPER.createEffect("thorns", () -> new BlueprintMobEffect(MobEffectCategory.BENEFICIAL, 0x295230));
+    public static final RegistryObject<MobEffect> THORNS = HELPER.createEffect("thorns", MobEffectCategory.BENEFICIAL, 0x295230);
 
     // Potions //
-
     public static final RegistryObject<Potion> THORNS_POTION = HELPER.createPotion("thorns", THORNS, 3600, 0);
     public static final RegistryObject<Potion> LONG_THORNS_POTION = HELPER.createPotion("long_thorns", THORNS, 9600, 0);
     public static final RegistryObject<Potion> STRONG_THORNS_POTION = HELPER.createPotion("strong_thorns", THORNS, 1800, 1);

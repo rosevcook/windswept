@@ -1,7 +1,7 @@
 package com.rosemods.windswept.core.mixin;
 
 import com.google.common.collect.ImmutableList;
-import com.rosemods.windswept.common.world.gen.tree.decorator.BranchDecorator;
+import com.rosemods.windswept.common.level.gen.tree.decorator.BranchDecorator;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration.TreeConfigurationBuilder;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
 import org.spongepowered.asm.mixin.Mixin;

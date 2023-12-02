@@ -1,18 +1,18 @@
-package com.rosemods.windswept.common.world.gen.feature;
+package com.rosemods.windswept.common.level.gen.feature;
 
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 
-public class SnowySproutsFeature extends Feature<NoneFeatureConfiguration> {
+public class BluebellsFeature extends Feature<NoneFeatureConfiguration> {
 
-    public SnowySproutsFeature() {
+    public BluebellsFeature() {
         super(NoneFeatureConfiguration.CODEC);
     }
 
@@ -20,9 +20,8 @@ public class SnowySproutsFeature extends Feature<NoneFeatureConfiguration> {
     public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
         BlockPos origin = context.origin();
         WorldGenLevel level = context.level();
-        BlockState state = WindsweptBlocks.SNOWY_SPROUTS.get().defaultBlockState();
-        BlockState snowdrop = WindsweptBlocks.SNOWDROP.get().defaultBlockState();
         RandomSource rand = context.random();
+        BlockState state = WindsweptBlocks.BLUEBELLS.get().defaultBlockState();
         boolean generated = false;
 
         for (int x = -5; x <= 5; ++x)
@@ -30,9 +29,8 @@ public class SnowySproutsFeature extends Feature<NoneFeatureConfiguration> {
                 for (int y = -2; y <= 2; ++y) {
                     BlockPos pos = origin.offset(x, y, z);
 
-                    if ((level.isEmptyBlock(pos) || level.getBlockState(pos).is(Blocks.SNOW)) && pos.getY() < level.getMaxBuildHeight()
-                            && BluebellsFeature.shouldPlace(x, z, rand) && state.canSurvive(level, pos) && level.getBlockState(pos.below()).is(Blocks.SNOW_BLOCK)) {
-                        level.setBlock(pos, rand.nextInt(6) == 0 ? snowdrop : state, 2);
+                    if (level.isEmptyBlock(pos) && pos.getY() < level.getMaxBuildHeight() && shouldPlace(x, z, rand) && state.canSurvive(level, pos)) {
+                        level.setBlock(pos, state, 2);
                         generated = true;
                     }
                 }
@@ -40,4 +38,10 @@ public class SnowySproutsFeature extends Feature<NoneFeatureConfiguration> {
         return generated;
     }
 
+    public static boolean shouldPlace(int x, int z, RandomSource rand) {
+        return (x == 0 && z == 0) || (x + z == 0 || x - z == 0 ? rand.nextBoolean()
+                : (Mth.abs(x + z) < 5 && Mth.abs(x - z) < 5) ? rand.nextInt(3) > 0 : rand.nextInt(8) == 0);
+    }
+
 }
+

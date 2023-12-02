@@ -1,4 +1,4 @@
-package com.rosemods.windswept.common.world.gen.tree.foliage_placer;
+package com.rosemods.windswept.common.level.gen.tree.foliage_placer;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

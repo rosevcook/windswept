@@ -1,6 +1,6 @@
 package com.rosemods.windswept.core.registry;
 
-import com.rosemods.windswept.common.world.gen.tree.decorator.BranchDecorator;
+import com.rosemods.windswept.common.level.gen.tree.decorator.BranchDecorator;
 import com.rosemods.windswept.core.Windswept;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
 import net.minecraftforge.registries.DeferredRegister;

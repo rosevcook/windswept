@@ -12,7 +12,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntityRenderer.class)
 public class LivingEntityRendererMixin {
-
     @Inject(method = "isShaking", at = @At("HEAD"), cancellable = true)
     public <T extends LivingEntity> void isShaking(T entity, CallbackInfoReturnable<Boolean> info) {
         if (entity instanceof Mob && ((IDataManager) entity).getValue(WindsweptDataProcessors.IS_FREEZE_CONVERTING))

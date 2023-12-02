@@ -11,14 +11,15 @@
       "model": "windswept:block/ice_lantern_side"
     },
     "facing=south": {
-      "model": "windswept:block/ice_lantern_side"
+      "model": "windswept:block/ice_lantern_side",
+      "y": 180
     },
     "facing=up": {
       "model": "windswept:block/ice_lantern"
     },
     "facing=west": {
       "model": "windswept:block/ice_lantern_side",
-      "y": 90
+      "y": 270
     }
   }
 }

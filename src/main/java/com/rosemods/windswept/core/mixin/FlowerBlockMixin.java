@@ -16,7 +16,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(FlowerBlock.class)
 public class FlowerBlockMixin {
-
     @Inject(method = "getShape", at = @At("HEAD"), cancellable = true)
     private void getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context, CallbackInfoReturnable<VoxelShape> info) {
         if (WindsweptConfig.COMMON.biggerFlowerHitbox.get()) {

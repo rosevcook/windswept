@@ -1,4 +1,4 @@
-package com.rosemods.windswept.common.world.gen.tree.decorator;
+package com.rosemods.windswept.common.level.gen.tree.decorator;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

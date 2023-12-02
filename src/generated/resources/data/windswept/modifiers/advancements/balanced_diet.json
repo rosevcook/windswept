@@ -221,9 +221,6 @@
             "windswept:foul_berry_bowl"
           ],
           [
-            "windswept:mutton_pie"
-          ],
-          [
             "windswept:chestnuts"
           ],
           [
@@ -252,6 +249,9 @@
           ],
           [
             "windswept:goat_stew"
+          ],
+          [
+            "windswept:mutton_pie"
           ]
         ],
         "should_replace_requirements": false
