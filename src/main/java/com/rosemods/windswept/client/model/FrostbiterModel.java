@@ -6,10 +6,11 @@ import com.rosemods.windswept.common.entity.Frostbiter;
 import com.rosemods.windswept.core.registry.WindsweptPlayableEndimations;
 import com.teamabnormals.blueprint.core.endimator.Endimator;
 import com.teamabnormals.blueprint.core.endimator.entity.EndimatorEntityModel;
+import net.minecraft.client.model.HeadedModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.util.Mth;
 
-public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> {
+public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> implements HeadedModel {
     private final ModelPart body;
     private final ModelPart head;
     private final ModelPart tail;
@@ -71,7 +72,7 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> {
 
             if (!isShaking) {
                 //this.head.xRot = headPitch * ((float)Math.PI / 180f) - 125f;
-                this.head.yRot = headPitch * ((float)Math.PI / 180f);
+                //this.head.yRot = headPitch * ((float)Math.PI / 180f);
                 this.bell.zRot = Mth.cos(limbSwing * .6662f) * .6f * limbSwingAmount;
             }
         }
@@ -116,4 +117,8 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> {
         }
     }
 
+    @Override
+    public ModelPart getHead() {
+        return this.head;
+    }
 }

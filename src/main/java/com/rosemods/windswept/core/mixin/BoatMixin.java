@@ -9,7 +9,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Boat.class)
 public class BoatMixin {
-
     @Inject(method = "getGroundFriction", at = @At("HEAD"), cancellable = true)
     private void getGroundFriction(CallbackInfoReturnable<Float> info) {
         if (WindsweptConfig.COMMON.iceBoatNerf.get())
