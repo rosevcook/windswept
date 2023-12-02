@@ -82,16 +82,21 @@ public class IcicleBlock extends Block implements SimpleWaterloggedBlock {
         Level level = context.getLevel();
         BlockPos pos = context.getClickedPos();
         FluidState fluid = level.getFluidState(pos);
+        Direction face = context.getClickedFace();
 
-        if (context.getClickedFace() == Direction.UP) {
+        if (face == Direction.DOWN) {
+            BlockState blockstate = this.defaultBlockState().setValue(STATE, IcicleStates.NORMAL);
+
+            if (blockstate.canSurvive(level, pos))
+                return blockstate.setValue(WATERLOGGED, fluid.getType() == Fluids.WATER);
+
+        } else if (face == Direction.UP) {
             BlockState blockstate = this.defaultBlockState().setValue(STATE, IcicleStates.FLOOR);
 
             if (blockstate.canSurvive(level, pos))
                 return blockstate.setValue(WATERLOGGED, fluid.getType() == Fluids.WATER);
 
-        }
-
-        for (Direction direction : context.getNearestLookingDirections())
+        } else for (Direction direction : context.getNearestLookingDirections())
             if (direction.getAxis() == Direction.Axis.Y) {
                 IcicleStates state;
 

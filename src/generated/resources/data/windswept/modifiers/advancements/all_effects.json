@@ -5,6 +5,7 @@
       "config": {
         "criteria": "all_effects",
         "effects": {
+          "windswept:frost_resistance": {},
           "windswept:thorns": {}
         },
         "removes": false

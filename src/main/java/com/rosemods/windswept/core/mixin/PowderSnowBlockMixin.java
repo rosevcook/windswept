@@ -2,6 +2,7 @@ package com.rosemods.windswept.core.mixin;
 
 import com.rosemods.windswept.common.block.IWoodenBucketPickupBlock;
 import com.rosemods.windswept.core.WindsweptConfig;
+import com.rosemods.windswept.core.registry.WindsweptEffects;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -54,7 +55,7 @@ public class PowderSnowBlockMixin extends Block implements IWoodenBucketPickupBl
 
     @Inject(method = "canEntityWalkOnPowderSnow", at = @At("HEAD"), cancellable = true)
     private static void canEntityWalkOnPowderSnow(Entity entity, CallbackInfoReturnable<Boolean> info) {
-        if (entity instanceof LivingEntity livingEntity && livingEntity.getItemBySlot(EquipmentSlot.FEET).is(WindsweptItems.SNOW_BOOTS.get()))
+        if (entity instanceof LivingEntity livingEntity && (livingEntity.getItemBySlot(EquipmentSlot.FEET).is(WindsweptItems.SNOW_BOOTS.get()) || livingEntity.hasEffect(WindsweptEffects.FROST_RESISTANCE.get())))
             info.setReturnValue(true);
     }
 

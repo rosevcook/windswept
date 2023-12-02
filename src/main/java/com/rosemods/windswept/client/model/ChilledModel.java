@@ -9,6 +9,7 @@ public class ChilledModel extends ZombieModel<Chilled> {
     public ChilledModel(ModelPart root) {
         super(root);
     }
+
     @Override
     protected Iterable<ModelPart> headParts() {
         return ImmutableList.of(this.head, this.hat);

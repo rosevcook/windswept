@@ -1,5 +1,6 @@
 package com.rosemods.windswept.core.other;
 
+import com.rosemods.windswept.core.registry.WindsweptEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -7,7 +8,7 @@ import net.minecraft.world.food.FoodProperties;
 public final class WindsweptFoods {
     public static final FoodProperties BERRY_BOWL = new FoodProperties.Builder().nutrition(6).saturationMod(.3f).build();
     public static final FoodProperties WILD_BERRIES = new FoodProperties.Builder().nutrition(2).saturationMod(.1f).build();
-    public static final FoodProperties WILD_BERRY_JUICE = new FoodProperties.Builder().nutrition(4).alwaysEat().saturationMod(.1f).effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 300, 0), 1f).build();
+    public static final FoodProperties WILD_BERRY_JUICE = new FoodProperties.Builder().nutrition(4).alwaysEat().saturationMod(.1f).effect(() -> new MobEffectInstance(WindsweptEffects.FROST_RESISTANCE.get(), 300, 0), 1f).build();
     public static final FoodProperties HOLLY_BERRIES = new FoodProperties.Builder().nutrition(2).saturationMod(.4f).effect(() -> new MobEffectInstance(MobEffects.POISON, 100, 0), 1f).build();
     public static final FoodProperties MUTTON_PIE = new FoodProperties.Builder().nutrition(8).saturationMod(.3f).build();
     public static final FoodProperties GOAT = new FoodProperties.Builder().nutrition(2).saturationMod(.3f).meat().build();

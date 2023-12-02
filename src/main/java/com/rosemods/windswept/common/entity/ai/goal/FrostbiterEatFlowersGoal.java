@@ -51,9 +51,8 @@ public class FrostbiterEatFlowersGoal extends Goal {
             if (this.isFoodAt(pos)) {
                 this.frostbiter.level.destroyBlock(pos, false);
                 this.frostbiter.ate();
-
-                if (!this.frostbiter.hasLeftAntler() || !this.frostbiter.hasRightAntler())
-                    this.frostbiter.growRandomAntler();
+                // if baby, set age ticks up
+                this.frostbiter.growRandomAntler();
             }
         }
     }
