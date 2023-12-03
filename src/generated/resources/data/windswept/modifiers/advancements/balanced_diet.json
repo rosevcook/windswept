@@ -193,6 +193,16 @@
               }
             },
             "trigger": "minecraft:consume_item"
+          },
+          "windswept:wild_berry_popsicle": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:wild_berry_popsicle"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
           }
         },
         "requirements": [
@@ -207,6 +217,9 @@
           ],
           [
             "windswept:wild_berry_juice"
+          ],
+          [
+            "windswept:wild_berry_popsicle"
           ],
           [
             "windswept:wild_berry_cookie"

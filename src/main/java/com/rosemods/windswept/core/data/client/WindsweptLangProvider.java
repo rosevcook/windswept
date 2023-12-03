@@ -40,9 +40,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-
         // Items //
-
         this.translateItem(HOLLY_BERRIES);
         this.translateItem(HOLLY_BOATS.getFirst());
         this.add(HOLLY_BOATS.getSecond().get(), "Holly Boat with Chest");
@@ -58,6 +56,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateItem(WOODEN_MILK_BUCKET);
         this.translateItem(WOODEN_POWDER_SNOW_BUCKET);
         this.translateItem(WILD_BERRIES);
+        this.translateItem(WILD_BERRY_POPSICLE);
         this.translateItem(WILD_BERRY_COOKIE);
         this.translateItem(WILD_BERRY_JUICE);
         this.translateItem(WILD_BERRY_PIPS);
@@ -91,7 +90,6 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateItem(LARGE_CHESTNUT_BOAT);
 
         // Blocks //
-
         this.translateBlock(STRIPPED_HOLLY_LOG);
         this.translateBlock(STRIPPED_HOLLY_WOOD);
         this.translateBlock(HOLLY_LOG);
@@ -263,15 +261,13 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(FROZEN_FLESH_BLOCK);
 
         // Entities //
-
         this.translateEntity(WindsweptEntityTypes.CHILLED);
         this.translateEntity(WindsweptEntityTypes.FROSTBITER);
         this.translateEntity(WindsweptEntityTypes.FROST_ARROW);
 
         // Effects //
-
         this.translateEffect(WindsweptEffects.THORNS, "Causes damage to enemies when they attack you.");
-        this.translateEffect(WindsweptEffects.FROST_RESISTANCE, "Grants immunity to frost. Stops slipping on blocks. Allows for walking on Powder Snow.");
+        this.translateEffect(WindsweptEffects.FROST_RESISTANCE, "Grants immunity to frost. Allows for walking on Powder Snow.");
 
         this.translatePotion(WindsweptEffects.THORNS_POTION, "Prickling");
         this.translatePotion(WindsweptEffects.LONG_THORNS_POTION, "Prickling");
@@ -281,21 +277,17 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translatePotion(WindsweptEffects.LONG_FROST_RESISTANCE_POTION, "Frost Resistance");
 
         // Attributes
-
         this.translateAttribute(WindsweptAttributes.SNOW_SPEED);
 
         // Biomes //
-
         this.translateBiome(WindsweptBiomes.CHESTNUT_FOREST);
         this.translateBiome(WindsweptBiomes.SNOWY_CHESTNUT_FOREST);
         this.translateBiome(WindsweptBiomes.TUNDRA);
 
         // Enchantments //
-
         this.translateEnchantment(WindsweptEnchantments.SLIPPING_CURSE, "Curse of Slipping", "Causes the wearer to slip on any block as if it was ice whilst damaging the boots.");
 
         // Damage Sources //
-
         this.translateDamageSource(WindsweptDamageSources.HOLLY_LEAVES,
                 player -> player + " was ripped to death by holly leaves",
                 (player, entity) -> player + " was ripped to death by holly leaves whilst trying to escape " + entity);
@@ -309,12 +301,10 @@ public class WindsweptLangProvider extends LanguageProvider {
                 (player, entity) -> player + " was ripped to death by holly leaf hedge whilst trying to escape " + entity);
 
         // Slabfish //
-
         this.add("entity.environmental.slabfish.type.chestnut", "Chestnut");
         this.add("entity.environmental.slabfish.type.grove", "Grove");
 
         // JEI Info //
-
         this.jeiInfo(MUSIC_DISC_RAIN, "Dropped by a Drowned if killed by a Skeleton.");
         this.jeiInfo(MUSIC_DISC_SNOW, "Dropped by a Chilled if killed by a Skeleton.");
         this.jeiInfo(MUSIC_DISC_BUMBLEBEE, "Sometimes dropped when shearing a Beehive for Honeycombs.");

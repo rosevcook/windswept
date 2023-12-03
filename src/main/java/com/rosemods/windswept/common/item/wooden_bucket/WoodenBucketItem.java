@@ -1,7 +1,8 @@
 package com.rosemods.windswept.common.item.wooden_bucket;
 
-import com.rosemods.windswept.core.WindsweptConfig;
 import com.rosemods.windswept.common.block.IWoodenBucketPickupBlock;
+import com.rosemods.windswept.core.Windswept;
+import com.rosemods.windswept.core.WindsweptConfig;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.teamabnormals.blueprint.core.util.item.filling.TargetedItemCategoryFiller;
 import net.minecraft.advancements.CriteriaTriggers;
@@ -13,6 +14,8 @@ import net.minecraft.stats.Stats;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -27,10 +30,9 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 
-import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
-public class WoodenBucketItem extends BucketItem {
+public class WoodenBucketItem extends BucketItem implements Wearable {
     public static final TargetedItemCategoryFiller FILLER = new TargetedItemCategoryFiller(Items.POWDER_SNOW_BUCKET::asItem);
 
     public WoodenBucketItem(Supplier<? extends Fluid> supplier, Properties builder) {
@@ -118,9 +120,19 @@ public class WoodenBucketItem extends BucketItem {
         FILLER.fillItem(this, group, items);
     }
 
+    @Override
+    public EquipmentSlot getEquipmentSlot(ItemStack stack) {
+        return stack.is(WindsweptItems.WOODEN_BUCKET.get()) ? EquipmentSlot.HEAD : null;
+    }
+
+    @Override
+    public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+        return Windswept.MOD_ID + ":textures/models/armor/wooden_bucket_armor_layer_1.png";
+    }
+
     // Util //
 
-    public static ItemStack getEmpty(ItemStack handStack, @Nullable Player player, @Nullable InteractionHand hand) {
+    public static ItemStack getEmpty(ItemStack handStack, Player player, InteractionHand hand) {
         ItemStack bucket = new ItemStack(WindsweptItems.WOODEN_BUCKET.get());
         bucket.setDamageValue(handStack.getDamageValue());
 

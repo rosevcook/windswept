@@ -7,7 +7,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.util.function.Supplier;
 
 public final class WindsweptConstants {
-    public static final boolean IN_DEV = false;
+    public static final boolean IN_DEV = true;
     public static final String QUARK = modId("quark");
     public static final String BERRY_GOOD = modId("berry_good");
     public static final String WOODWORKS = modId("woodworks");
@@ -18,6 +18,7 @@ public final class WindsweptConstants {
     public static final String CAVERNS_AND_CHASMS = modId("caverns_and_chasms");
 
     public static final Supplier<Item> FOUL_BERRIES = () -> ForgeRegistries.ITEMS.getValue(new ResourceLocation("autumnity", "foul_berries"));
+    public static final Supplier<Item> MELON_POPSICLE = () -> ForgeRegistries.ITEMS.getValue(new ResourceLocation("farmersdelight", "melon_popsicle"));
     public static final Supplier<Item> SILVER_SWORD = () -> ForgeRegistries.ITEMS.getValue(new ResourceLocation("caverns_and_chasms", "silver_sword"));
     public static final Supplier<Item> SILVER_SHOVEL = () -> ForgeRegistries.ITEMS.getValue(new ResourceLocation("caverns_and_chasms", "silver_shovel"));
     public static final Supplier<Item> SILVER_AXE = () -> ForgeRegistries.ITEMS.getValue(new ResourceLocation("caverns_and_chasms", "silver_axe"));

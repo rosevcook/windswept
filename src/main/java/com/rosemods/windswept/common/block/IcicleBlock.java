@@ -5,6 +5,8 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -17,6 +19,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.DripstoneThickness;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
@@ -78,6 +81,14 @@ public class IcicleBlock extends Block implements SimpleWaterloggedBlock {
     }
 
     @Override
+    public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float damage) {
+        if (state.getValue(STATE) == IcicleStates.FLOOR)
+            entity.causeFallDamage(damage + 2f, 2f, DamageSource.STALAGMITE);
+        else
+            super.fallOn(level, state, pos, entity, damage);
+    }
+
+    @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         Level level = context.getLevel();
         BlockPos pos = context.getClickedPos();
@@ -85,7 +96,7 @@ public class IcicleBlock extends Block implements SimpleWaterloggedBlock {
         Direction face = context.getClickedFace();
 
         if (face == Direction.DOWN) {
-            BlockState blockstate = this.defaultBlockState().setValue(STATE, IcicleStates.NORMAL);
+            BlockState blockstate = this.defaultBlockState().setValue(STATE, level.getBlockState(pos.above()).is(this) ? IcicleStates.BOTTOM : IcicleStates.NORMAL);
 
             if (blockstate.canSurvive(level, pos))
                 return blockstate.setValue(WATERLOGGED, fluid.getType() == Fluids.WATER);
@@ -96,7 +107,9 @@ public class IcicleBlock extends Block implements SimpleWaterloggedBlock {
             if (blockstate.canSurvive(level, pos))
                 return blockstate.setValue(WATERLOGGED, fluid.getType() == Fluids.WATER);
 
-        } else for (Direction direction : context.getNearestLookingDirections())
+        }
+
+        for (Direction direction : context.getNearestLookingDirections())
             if (direction.getAxis() == Direction.Axis.Y) {
                 IcicleStates state;
 

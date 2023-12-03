@@ -52,6 +52,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.generatedItem(WOODEN_POWDER_SNOW_BUCKET.get(), TextureFolder.Item);
         this.generatedItem(WOODEN_WATER_BUCKET.get(), TextureFolder.Item);
         this.generatedItem(WILD_BERRIES.get(), TextureFolder.Item);
+        this.itemOnAStick(WILD_BERRY_POPSICLE.get(), TextureFolder.Item);
         this.generatedItem(WILD_BERRY_COOKIE.get(), TextureFolder.Item);
         this.generatedItem(WILD_BERRY_JUICE.get(), TextureFolder.Item);
         this.generatedItem(WILD_BERRY_BOWL.get(), TextureFolder.Item);
