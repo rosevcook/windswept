@@ -27,8 +27,7 @@ public class IceLanternBlock extends Block implements SimpleWaterloggedBlock {
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     private static final VoxelShape SHAPE = Block.box(3f, 0f, 3f, 13f, 11f, 13f);
-    private static final VoxelShape HANGING = Block.box(3f, 3f, 3f, 13f, 14f, 13f);
-    private static final VoxelShape SIDE = Block.box(3f, 2f, 3f, 13f, 13f, 13f);
+    private static final VoxelShape HANGING = Block.box(3f, 2f, 3f, 13f, 13f, 13f);
 
     public IceLanternBlock(Properties properties) {
         super(properties);
@@ -36,11 +35,7 @@ public class IceLanternBlock extends Block implements SimpleWaterloggedBlock {
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return switch (state.getValue(FACING)) {
-            default -> SIDE;
-            case UP -> SHAPE;
-            case DOWN -> HANGING;
-        };
+        return state.getValue(FACING) == Direction.UP ? SHAPE : HANGING;
     }
 
     @OnlyIn(Dist.CLIENT)
