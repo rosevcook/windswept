@@ -32,7 +32,7 @@ public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
 
         this.tag(WindsweptBiomeTags.IS_CHESTNUT_FOREST).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey());
 
-        this.tag(WindsweptBiomeTags.HAS_SPOTTED_ORANGE_MAPLE_TREES).add(CHESTNUT_FOREST.getKey(), WindsweptBiomes.TUNDRA.getKey());
+        this.tag(WindsweptBiomeTags.HAS_SPOTTED_ORANGE_MAPLE_TREES).add(CHESTNUT_FOREST.getKey());
         this.tag(WindsweptBiomeTags.HAS_SPOTTED_RED_MAPLE_TREES).add(SNOWY_CHESTNUT_FOREST.getKey(), WindsweptBiomes.TUNDRA.getKey());
 
         this.tag(WindsweptBiomeTags.HAS_YAK).add(WindsweptBiomes.TUNDRA.getKey());

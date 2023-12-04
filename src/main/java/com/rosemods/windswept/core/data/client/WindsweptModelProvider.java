@@ -224,7 +224,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.pillar(CHISELED_ICICLE_BLOCK);
         this.doorCutout(ICICLE_DOOR);
         this.trapdoorCutout(ICICLE_TRAPDOOR);
-
+        this.bars(ICICLE_BARS);
         this.getVariantBuilder(ICE_LANTERN.get())
                 .partialState().with(IceLanternBlock.FACING, Direction.UP).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/ice_lantern"))))
                 .partialState().with(IceLanternBlock.FACING, Direction.DOWN).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/ice_lantern_hanging"))))
@@ -232,7 +232,6 @@ public class WindsweptModelProvider extends BlockStateProvider {
                 .partialState().with(IceLanternBlock.FACING, Direction.SOUTH).addModels(ConfiguredModel.builder().modelFile(this.models().getExistingFile(this.modLoc("block/ice_lantern_side"))).rotationY(180).build())
                 .partialState().with(IceLanternBlock.FACING, Direction.EAST).addModels(ConfiguredModel.builder().modelFile(this.models().getExistingFile(this.modLoc("block/ice_lantern_side"))).rotationY(90).build())
                 .partialState().with(IceLanternBlock.FACING, Direction.WEST).addModels(ConfiguredModel.builder().modelFile(this.models().getExistingFile(this.modLoc("block/ice_lantern_side"))).rotationY(270).build());
-
         this.generatedItem(ICE_LANTERN.get(), TextureFolder.Item);
 
         this.carpet(DRY_MOSS_CARPET, this.blockTexture(DRY_MOSS_BLOCK.get()));
@@ -303,6 +302,12 @@ public class WindsweptModelProvider extends BlockStateProvider {
     private void iceSheet(RegistryObject<Block> block, ResourceLocation texture) {
         this.paneBlockWithRenderType((IronBarsBlock) block.get(), texture, texture, "translucent");
         this.itemModels().withExistingParent(getItemName(block.get()), "item/generated").texture("layer0", texture).renderType("translucent");
+    }
+
+    private void bars(RegistryObject<Block> block) {
+        ResourceLocation texture = this.blockTexture(block.get());
+        this.paneBlockWithRenderType((IronBarsBlock) block.get(), texture, texture, "cutout");
+        this.itemModels().withExistingParent(getItemName(block.get()), "item/generated").texture("layer0", texture);
     }
 
     private void ice(RegistryObject<Block> block) {

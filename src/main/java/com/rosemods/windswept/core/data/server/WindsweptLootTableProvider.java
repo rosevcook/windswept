@@ -262,6 +262,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(CHISELED_ICICLE_BLOCK.get());
             this.add(ICICLE_DOOR.get(), Blocks::createDoorTable);
             this.dropSelf(ICICLE_TRAPDOOR.get());
+            this.dropSelf(ICICLE_BARS.get());
             this.dropSelf(ICE_LANTERN.get());
 
             // tundra moss blocks
