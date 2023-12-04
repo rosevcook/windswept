@@ -68,20 +68,21 @@ public class Chilled extends Zombie {
     public void cncCompat(RandomSource random) {
         if (ModList.get().isLoaded(WindsweptConstants.CAVERNS_AND_CHASMS)) {
             if (random.nextFloat() < .075f)
-                this.setItemSlot(EquipmentSlot.MAINHAND, randomDurability(random, random.nextBoolean() ? WindsweptConstants.SILVER_SWORD.get() : WindsweptConstants.SILVER_SHOVEL.get()));
+                this.setItemSlot(EquipmentSlot.MAINHAND, randomDurability(random, random.nextBoolean() ? WindsweptConstants.getItem("caverns_and_chasms", "silver_sword") : WindsweptConstants.getItem("caverns_and_chasms", "silver_shovel")));
             else if (random.nextFloat() < .05f) {
-                this.setItemSlot(EquipmentSlot.MAINHAND, randomDurability(random, WindsweptConstants.SILVER_AXE.get()));
-                this.setItemSlot(EquipmentSlot.OFFHAND, randomDurability(random, WindsweptConstants.SILVER_AXE.get()));
+                Item axe = WindsweptConstants.getItem("caverns_and_chasms", "silver_axe");
+                this.setItemSlot(EquipmentSlot.MAINHAND, randomDurability(random, axe));
+                this.setItemSlot(EquipmentSlot.OFFHAND, randomDurability(random, axe));
             }
 
             if (random.nextFloat() < .05f)
-                this.setItemSlot(EquipmentSlot.HEAD, randomDurability(random, WindsweptConstants.SILVER_HELMET.get()));
+                this.setItemSlot(EquipmentSlot.HEAD, randomDurability(random, WindsweptConstants.getItem("caverns_and_chasms", "silver_helmet")));
             if (random.nextFloat() < .05f)
-                this.setItemSlot(EquipmentSlot.CHEST, randomDurability(random, WindsweptConstants.SILVER_CHESTPLATE.get()));
+                this.setItemSlot(EquipmentSlot.CHEST, randomDurability(random, WindsweptConstants.getItem("caverns_and_chasms", "silver_chestplate")));
             if (random.nextFloat() < .05f)
-                this.setItemSlot(EquipmentSlot.LEGS, randomDurability(random, WindsweptConstants.SILVER_LEGGINGS.get()));
+                this.setItemSlot(EquipmentSlot.LEGS, randomDurability(random, WindsweptConstants.getItem("caverns_and_chasms", "silver_leggings")));
             if (random.nextFloat() < .05f)
-                this.setItemSlot(EquipmentSlot.FEET, randomDurability(random, WindsweptConstants.SILVER_BOOTS.get()));
+                this.setItemSlot(EquipmentSlot.FEET, randomDurability(random, WindsweptConstants.getItem("caverns_and_chasms", "silver_boots")));
         }
     }
 

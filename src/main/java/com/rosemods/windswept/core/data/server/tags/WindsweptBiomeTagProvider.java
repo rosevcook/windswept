@@ -47,7 +47,6 @@ public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
         this.tag(BiomeTags.HAS_MINESHAFT).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), TUNDRA.getKey());
         this.tag(BiomeTags.STRONGHOLD_BIASED_TO).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), TUNDRA.getKey());
         this.tag(BiomeTags.HAS_PILLAGER_OUTPOST).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), TUNDRA.getKey());
-        this.tag(BiomeTags.POLAR_BEARS_SPAWN_ON_ALTERNATE_BLOCKS).add(TUNDRA.getKey());
         this.tag(Tags.Biomes.IS_SNOWY).add(SNOWY_CHESTNUT_FOREST.getKey());
         this.tag(Tags.Biomes.IS_COLD).add(SNOWY_CHESTNUT_FOREST.getKey(), TUNDRA.getKey());
         this.tag(Tags.Biomes.IS_CONIFEROUS).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey());

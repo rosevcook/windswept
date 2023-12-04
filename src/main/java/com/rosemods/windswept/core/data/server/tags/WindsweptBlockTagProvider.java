@@ -48,6 +48,11 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
         this.tag(Tags.Blocks.CHESTS_TRAPPED).add(HOLLY_TRAPPED_CHEST.get(), CHESTNUT_TRAPPED_CHEST.get());
 
         //vanilla
+        this.tag(BlockTags.VALID_SPAWN).add(GELISOL.get(), DRY_MOSS_BLOCK.get());
+        this.tag(BlockTags.ANIMALS_SPAWNABLE_ON).add(GELISOL.get(), DRY_MOSS_BLOCK.get());
+        this.tag(BlockTags.FOXES_SPAWNABLE_ON).add(GELISOL.get(), DRY_MOSS_BLOCK.get());
+        this.tag(BlockTags.GOATS_SPAWNABLE_ON).add(GELISOL.get(), DRY_MOSS_BLOCK.get());
+        this.tag(BlockTags.WOLVES_SPAWNABLE_ON).add(GELISOL.get(), DRY_MOSS_BLOCK.get());
         this.tag(BlockTags.DIRT).add(DRY_MOSS_BLOCK.get(), GELISOL.get(), GELISOL_PATH.get());
         this.tag(BlockTags.SNOW_LAYER_CAN_SURVIVE_ON).add(HOLLY_LEAVES.get());
         this.tag(BlockTags.WALLS).add(BLUE_ICE_BRICK_WALL.get(), SNOW_BRICK_WALL.get(), PACKED_ICE_BRICK_WALL.get(), DRY_MOSSY_COBBLESTONE_WALL.get(), DRY_MOSSY_STONE_BRICK_WALL.get());

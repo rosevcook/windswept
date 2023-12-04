@@ -52,15 +52,16 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         conditionalRecipe(ShapelessRecipeBuilder.shapeless(GOAT_STEW.get()).requires(Items.BOWL).requires(COOKED_GOAT.get()).requires(Items.BAKED_POTATO).requires(Items.CARROT).requires(Items.BROWN_MUSHROOM).unlockedBy(getHasName(COOKED_GOAT.get()), has(COOKED_GOAT.get())), new NotCondition(new ModLoadedCondition("farmersdelight")), consumer, getSaveLocation(GOAT_STEW.get()));
         ShapelessRecipeBuilder.shapeless(MUTTON_PIE.get()).requires(WindsweptItemTags.COOKED_MUTTON).requires(Items.WHEAT).requires(Items.SUGAR).requires(Tags.Items.EGGS).unlockedBy(getHasName(Items.COOKED_MUTTON), has(WindsweptItemTags.COOKED_MUTTON)).save(consumer, getSaveLocation(MUTTON_PIE.get()));
         ShapedRecipeBuilder.shaped(WILD_BERRY_POPSICLE.get()).define('#', WILD_BERRIES.get()).define('S', Items.STICK).define('I', ICICLES.get()).pattern(" ##").pattern("I##").pattern("SI ").unlockedBy(getHasName(WILD_BERRIES.get()), has(WILD_BERRIES.get())).save(consumer, getSaveLocation(WILD_BERRY_POPSICLE.get()));
-        conditionalRecipe(ShapedRecipeBuilder.shaped(WindsweptConstants.MELON_POPSICLE.get()).define('#', Items.MELON_SLICE).define('S', Items.STICK).define('I', ICICLES.get()).pattern(" ##").pattern("I##").pattern("SI ").unlockedBy(getHasName(Items.MELON_SLICE), has(Items.MELON_SLICE)), new ModLoadedCondition("farmersdelight"), consumer, getSaveLocation("melon_popsicle_from_icicles"));
+        conditionalRecipe(ShapedRecipeBuilder.shaped(WindsweptConstants.getItem("farmersdelight", "melon_popsicle")).define('#', Items.MELON_SLICE).define('S', Items.STICK).define('I', ICICLES.get()).pattern(" ##").pattern("I##").pattern("SI ").unlockedBy(getHasName(Items.MELON_SLICE), has(Items.MELON_SLICE)), new ModLoadedCondition("farmersdelight"), consumer, getSaveLocation("melon_popsicle_from_icicles"));
 
         // berry bowls
         ShapelessRecipeBuilder.shapeless(WILD_BERRY_BOWL.get()).requires(Items.BOWL).requires(WILD_BERRIES.get(), 3).unlockedBy(getHasName(WILD_BERRIES.get()), has(WILD_BERRIES.get())).save(consumer, getSaveLocation(WILD_BERRY_BOWL.get()));
         ShapelessRecipeBuilder.shapeless(WILD_BERRIES.get(), 3).requires(WILD_BERRY_BOWL.get()).unlockedBy(getHasName(WILD_BERRY_BOWL.get()), has(WILD_BERRY_BOWL.get())).save(consumer, getSaveLocation("wild_berry_bowl_revert"));
         ShapelessRecipeBuilder.shapeless(SWEET_BERRY_BOWL.get()).requires(Items.BOWL).requires(Items.SWEET_BERRIES, 3).unlockedBy(getHasName(Items.SWEET_BERRIES), has(Items.SWEET_BERRIES)).save(consumer, getSaveLocation(SWEET_BERRY_BOWL.get()));
         ShapelessRecipeBuilder.shapeless(Items.SWEET_BERRIES, 3).requires(SWEET_BERRY_BOWL.get()).unlockedBy(getHasName(SWEET_BERRY_BOWL.get()), has(SWEET_BERRY_BOWL.get())).save(consumer, getSaveLocation("sweet_berry_bowl_revert"));
-        conditionalRecipe(ShapelessRecipeBuilder.shapeless(FOUL_BERRY_BOWL.get()).requires(Items.BOWL).requires(WindsweptConstants.FOUL_BERRIES.get(), 3).unlockedBy("has_foul_berries", has(WindsweptConstants.FOUL_BERRIES.get())), new ModLoadedCondition("autumnity"), consumer, getSaveLocation(FOUL_BERRY_BOWL.get()));
-        conditionalRecipe(ShapelessRecipeBuilder.shapeless(WindsweptConstants.FOUL_BERRIES.get(), 3).requires(FOUL_BERRY_BOWL.get()).unlockedBy(getHasName(FOUL_BERRY_BOWL.get()), has(FOUL_BERRY_BOWL.get())), new ModLoadedCondition("autumnity"), consumer, getSaveLocation("foul_berry_bowl_revert"));
+        Item foulBerries = WindsweptConstants.getItem("autumnity", "foul_berries");
+        conditionalRecipe(ShapelessRecipeBuilder.shapeless(FOUL_BERRY_BOWL.get()).requires(Items.BOWL).requires(foulBerries, 3).unlockedBy("has_foul_berries", has(foulBerries)), new ModLoadedCondition("autumnity"), consumer, getSaveLocation(FOUL_BERRY_BOWL.get()));
+        conditionalRecipe(ShapelessRecipeBuilder.shapeless(foulBerries, 3).requires(FOUL_BERRY_BOWL.get()).unlockedBy(getHasName(FOUL_BERRY_BOWL.get()), has(FOUL_BERRY_BOWL.get())), new ModLoadedCondition("autumnity"), consumer, getSaveLocation("foul_berry_bowl_revert"));
 
         // dyes
         flowerToDye(RED_ROSE.get(), Items.RED_DYE, consumer);
@@ -95,7 +96,6 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         ShapedRecipeBuilder.shaped(HOLLY_BERRIES_ON_A_STICK.get()).define('#', Items.FISHING_ROD).define('H', HOLLY_BERRIES.get()).pattern("# ").pattern(" H").unlockedBy(getHasName(HOLLY_BERRIES.get()), has(HOLLY_BERRIES.get())).save(consumer, getSaveLocation(HOLLY_BERRIES_ON_A_STICK.get()));
 
         // blocks
-        ShapedRecipeBuilder.shaped(ICE_LANTERN.get()).define('#', ICICLES.get()).define('N', NIGHTSHADE.get()).pattern("#").pattern("N").pattern("#").unlockedBy(getHasName(ICICLES.get()), has(ICICLES.get())).save(consumer, getSaveLocation(ICE_LANTERN.get()));
         ShapedRecipeBuilder.shaped(FROSTBITER_TROPHY.get()).define('#', FROZEN_BRANCH.get()).define('P', ItemTags.PLANKS).pattern("# #").pattern("#P#").unlockedBy(getHasName(FROZEN_BRANCH.get()), has(FROZEN_BRANCH.get())).save(consumer, getSaveLocation(FROSTBITER_TROPHY.get()));
         ShapedRecipeBuilder.shaped(DRY_MOSS_CARPET.get(), 3).define('#', DRY_MOSS_BLOCK.get()).pattern("##").unlockedBy(getHasName(DRY_MOSS_BLOCK.get()), has(DRY_MOSS_BLOCK.get())).save(consumer, getSaveLocation(DRY_MOSS_CARPET.get()));
         ShapelessRecipeBuilder.shapeless(DRY_MOSSY_COBBLESTONE.get()).requires(Items.COBBLESTONE).requires(DRY_MOSS_BLOCK.get()).unlockedBy(getHasName(DRY_MOSS_BLOCK.get()), has(DRY_MOSS_BLOCK.get())).save(consumer, getSaveLocation("dry_mossy_cobblestone_from_dry_moss"));
@@ -106,6 +106,8 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         stonecutting(ICICLE_BLOCK.get(), CHISELED_ICICLE_BLOCK.get(), 1, consumer);
         ShapedRecipeBuilder.shaped(ICICLE_DOOR.get(), 3).define('#', ICICLES.get()).pattern("##").pattern("##").pattern("##").unlockedBy(getHasName(ICICLES.get()), has(ICICLES.get())).save(consumer, getSaveLocation(ICICLE_DOOR.get()));
         ShapedRecipeBuilder.shaped(ICICLE_TRAPDOOR.get(), 2).define('#', ICICLES.get()).pattern("###").pattern("###").unlockedBy(getHasName(ICICLES.get()), has(ICICLES.get())).save(consumer, getSaveLocation(ICICLE_TRAPDOOR.get()));
+        ShapedRecipeBuilder.shaped(ICICLE_BARS.get(), 16).define('#', ICICLE_BLOCK.get()).pattern("###").pattern("###").unlockedBy(getHasName(ICICLE_BLOCK.get()), has(ICICLE_BLOCK.get())).save(consumer, getSaveLocation(ICICLE_BARS.get()));
+        ShapedRecipeBuilder.shaped(ICE_LANTERN.get()).define('#', ICICLES.get()).define('N', NIGHTSHADE.get()).pattern("#").pattern("N").pattern("#").unlockedBy(getHasName(ICICLES.get()), has(ICICLES.get())).save(consumer, getSaveLocation(ICE_LANTERN.get()));
 
         ShapedRecipeBuilder.shaped(CUT_ICE.get(), 4).define('#', Items.ICE).pattern("##").pattern("##").unlockedBy(getHasName(Items.ICE), has(Items.ICE)).save(consumer, getSaveLocation(CUT_ICE.get()));
         ShapedRecipeBuilder.shaped(ICE_SHEET.get(), 12).define('#', Items.ICE).pattern("###").pattern("###").unlockedBy(getHasName(Items.ICE), has(Items.ICE)).save(consumer, getSaveLocation(ICE_SHEET.get()));
