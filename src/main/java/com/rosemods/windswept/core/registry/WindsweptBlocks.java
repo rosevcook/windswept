@@ -208,7 +208,7 @@ public class WindsweptBlocks {
 
     // Tundra Moss Blocks //
     public static final RegistryObject<Block> DRY_MOSS_CARPET = HELPER.createInjectedBlock("dry_moss_carpet", Items.MOSS_BLOCK, () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_CARPET)), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> DRY_MOSS_BLOCK = HELPER.createInjectedBlock("dry_moss_block", Items.MOSS_BLOCK, () -> new MossBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_BLOCK)), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> DRY_MOSS_BLOCK = HELPER.createInjectedBlock("dry_moss_block", Items.MOSS_BLOCK, () -> new DryMossBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_BLOCK)), CreativeModeTab.TAB_DECORATIONS);
 
     public static final RegistryObject<Block> DRY_MOSSY_COBBLESTONE = HELPER.createInjectedBlock("dry_mossy_cobblestone", Items.MOSSY_COBBLESTONE, () -> new Block(BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> DRY_MOSSY_COBBLESTONE_STAIRS = HELPER.createInjectedBlock("dry_mossy_cobblestone_stairs", Items.MOSSY_COBBLESTONE_STAIRS, () -> new StairBlock(DRY_MOSSY_COBBLESTONE.get()::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);

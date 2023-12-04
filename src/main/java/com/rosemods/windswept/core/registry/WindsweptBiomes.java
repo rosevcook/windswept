@@ -58,12 +58,19 @@ public class WindsweptBiomes {
         BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder();
 
         OverworldBiomes.globalOverworldGeneration(generation);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.FALLEN_LOG.getHolder().get());
         BiomeDefaultFeatures.addPlainGrass(generation);
         BiomeDefaultFeatures.addDefaultOres(generation);
         BiomeDefaultFeatures.addDefaultSoftDisks(generation);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
         BiomeDefaultFeatures.addDefaultMushrooms(generation);
         BiomeDefaultFeatures.addCommonBerryBushes(generation);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.DRY_MOSS_PATCH.getHolder().get());
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.DRY_MOSS_ROCK.getHolder().get());
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.GELISOL_PATCH.getHolder().get());
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.TUNDRA_SNOW_PATCH.getHolder().get());
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.RARE_HOLLY_TREES.getHolder().get());
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.RARE_SPRUCE_TREES.getHolder().get());
 
         return biome(1f, .2f,4159204, 329011, 12638463, Biome.Precipitation.NONE, generation, basTundraSpawns()).build();
     }
@@ -73,7 +80,9 @@ public class WindsweptBiomes {
 
         BiomeDefaultFeatures.commonSpawns(spawns);
         spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 8, 4, 4));
+        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.LLAMA, 10, 4, 4));
         spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FOX, 12, 4, 4));
+        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.POLAR_BEAR, 1, 1, 2));
 
         return spawns;
     }
