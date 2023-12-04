@@ -79,6 +79,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         tallFlowerToDye(WHITE_ROSE_BUSH.get(), Items.WHITE_DYE, consumer);
         tallFlowerToDye(YELLOW_ROSE_BUSH.get(), Items.YELLOW_DYE, consumer);
         tallFlowerToDye(WITHER_ROSE_BUSH.get(), Items.BLACK_DYE, consumer);
+        tallFlowerToDye(LUPINE.get(), Items.PURPLE_DYE, consumer);
 
         // other items
         ShapelessRecipeBuilder.shapeless(SNOW_CHARGE_BANNER_PATTERN.get()).requires(Items.PAPER).requires(BlueprintItemTags.BUCKETS_POWDER_SNOW).unlockedBy(getHasName(Items.POWDER_SNOW_BUCKET), has(BlueprintItemTags.BUCKETS_POWDER_SNOW)).save(consumer, getSaveLocation(SNOW_CHARGE_BANNER_PATTERN.get()));

@@ -30,7 +30,7 @@ public class FallenLogFeature extends Feature<NoneFeatureConfiguration> {
         int length = rand.nextInt(4, 8);
         boolean generated = false;
 
-        for (int i = -2; i < 2; i++)
+        for (int i = -5; i < 5; i++)
             if (canPlaceOn(level.getBlockState(origin.above(i)))) {
                 origin = origin.above(i + 1);
                 break;

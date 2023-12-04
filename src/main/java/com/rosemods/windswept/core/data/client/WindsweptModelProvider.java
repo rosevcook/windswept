@@ -198,6 +198,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.tallPlant(WHITE_ROSE_BUSH);
         this.tallPlant(YELLOW_ROSE_BUSH);
         this.tallPlant(WITHER_ROSE_BUSH);
+        this.tallPlant(LUPINE);
 
         this.pottedPlant(RED_ROSE, POTTED_RED_ROSE);
         this.pottedPlant(PINK_ROSE, POTTED_PINK_ROSE);
@@ -232,7 +233,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
                 .partialState().with(IceLanternBlock.FACING, Direction.EAST).addModels(ConfiguredModel.builder().modelFile(this.models().getExistingFile(this.modLoc("block/ice_lantern_side"))).rotationY(90).build())
                 .partialState().with(IceLanternBlock.FACING, Direction.WEST).addModels(ConfiguredModel.builder().modelFile(this.models().getExistingFile(this.modLoc("block/ice_lantern_side"))).rotationY(270).build());
 
-    this.generatedItem(ICE_LANTERN.get(), TextureFolder.Item);
+        this.generatedItem(ICE_LANTERN.get(), TextureFolder.Item);
 
         this.carpet(DRY_MOSS_CARPET, this.blockTexture(DRY_MOSS_BLOCK.get()));
         this.cubeAll(DRY_MOSS_BLOCK);

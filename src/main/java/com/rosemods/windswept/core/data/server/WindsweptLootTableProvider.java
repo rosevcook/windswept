@@ -204,7 +204,8 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(ICE_SHEET.get());
             this.dropSelf(CUT_ICE_SHEET.get());
 
-            // rose bushes
+            // tall plants
+            this.tallFlower(LUPINE.get());
             this.tallFlower(RED_ROSE_BUSH.get());
             this.tallFlower(PINK_ROSE_BUSH.get());
             this.tallFlower(BLUE_ROSE_BUSH.get());

@@ -62,27 +62,31 @@ public final class WindsweptFeatures {
         public static final RandomPatchConfiguration WHITE_ROSE_BUSH = createPlantPatch(32, WindsweptBlocks.WHITE_ROSE_BUSH.get().defaultBlockState());
         public static final RandomPatchConfiguration BLUE_ROSE_BUSH = createPlantPatch(32, WindsweptBlocks.BLUE_ROSE_BUSH.get().defaultBlockState());
         public static final RandomPatchConfiguration YELLOW_ROSE_BUSH = createPlantPatch(32, WindsweptBlocks.YELLOW_ROSE_BUSH.get().defaultBlockState());
+        public static final RandomPatchConfiguration LUPINE = createPlantPatch(32, WindsweptBlocks.LUPINE.get().defaultBlockState());
         public static final RandomPatchConfiguration CHESTNUT_FERNS = FeatureUtils.simpleRandomPatchConfiguration(4, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.FERN))));
         public static final SimpleBlockConfiguration DRY_MOSS_VEGETATION = new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+                .add(Blocks.AIR.defaultBlockState(), 1)
                 .add(WindsweptBlocks.MOSS_CAMPION.get().defaultBlockState(), 4)
                 .add(WindsweptBlocks.DRY_MOSS_CARPET.get().defaultBlockState(), 25)
                 .add(WindsweptBlocks.DRY_MOSS_SPROUTS.get().defaultBlockState(), 50)
-                .add(Blocks.TALL_GRASS.defaultBlockState(), 4))); // make lupine
+                .add(Blocks.TALL_GRASS.defaultBlockState(), 4)));
 
         public static final SimpleBlockConfiguration GELISOL_VEGETATION = new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+                .add(Blocks.AIR.defaultBlockState(), 1)
                 .add(WindsweptBlocks.FOXGLOVE.get().defaultBlockState(), 1)
                 .add(WindsweptBlocks.MOSS_CAMPION.get().defaultBlockState(), 4)
                 .add(WindsweptBlocks.GELISOL_SPROUTS.get().defaultBlockState(), 50)));
 
         public static final SimpleBlockConfiguration TUNDRA_SNOW_VEGETATION = new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+                .add(Blocks.AIR.defaultBlockState(), 1)
                 .add(Blocks.SNOW.defaultBlockState(), 50)
                 .add(WindsweptBlocks.SNOWDROP.get().defaultBlockState(), 4)
                 .add(WindsweptBlocks.SNOWY_SPROUTS.get().defaultBlockState(), 20)));
 
         private static RandomPatchConfiguration createPlantPatch(int tries, BlockState state) {
             return new RandomPatchConfiguration(tries, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
-                    new SimpleBlockConfiguration(new DualNoiseProvider(new InclusiveRange<Integer>(1, 3),
-                            new NormalNoise.NoiseParameters(-10, 1d), 1f, 2345l,
+                    new SimpleBlockConfiguration(new DualNoiseProvider(new InclusiveRange<>(1, 3),
+                            new NormalNoise.NoiseParameters(-10, 1d), 1f, 2345L,
                             new NormalNoise.NoiseParameters(-3, 1d), 1f, List.of(state)))));
         }
 
@@ -121,6 +125,7 @@ public final class WindsweptFeatures {
         public static final RegistryObject<ConfiguredFeature<?, ?>> WHITE_ROSE_BUSH = CONFIGURED_FEATURES.register("white_rose_bush", () -> new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.WHITE_ROSE_BUSH));
         public static final RegistryObject<ConfiguredFeature<?, ?>> BLUE_ROSE_BUSH = CONFIGURED_FEATURES.register("blue_rose_bush", () -> new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.BLUE_ROSE_BUSH));
         public static final RegistryObject<ConfiguredFeature<?, ?>> YELLOW_ROSE_BUSH = CONFIGURED_FEATURES.register("yellow_rose_bush", () -> new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.YELLOW_ROSE_BUSH));
+        public static final RegistryObject<ConfiguredFeature<?, ?>> LUPINE = CONFIGURED_FEATURES.register("lupine", () -> new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.LUPINE));
         public static final RegistryObject<ConfiguredFeature<?, ?>> BLUEBELLS = CONFIGURED_FEATURES.register("bluebells", () -> new ConfiguredFeature<>(BLUEBELL_PATCH.get(), NoneFeatureConfiguration.NONE));
         public static final RegistryObject<ConfiguredFeature<?, ?>> NIGHTHSADE = CONFIGURED_FEATURES.register("nightshades", () -> new ConfiguredFeature<>(NIGHTSHADE_PATCH.get(), NoneFeatureConfiguration.NONE));
         public static final RegistryObject<ConfiguredFeature<?, ?>> WILD_BERRY_BUSH = CONFIGURED_FEATURES.register("wild_berry_bush", () -> new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.WILD_BERRY_BUSH));
@@ -135,7 +140,7 @@ public final class WindsweptFeatures {
         public static final RegistryObject<ConfiguredFeature<VegetationPatchConfiguration, ?>> DRY_MOSS_PATCH = CONFIGURED_FEATURES.register("dry_moss_patch", () -> new ConfiguredFeature<>(Feature.VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, BlockStateProvider.simple(WindsweptBlocks.DRY_MOSS_BLOCK.get()), PlacementUtils.inlinePlaced(DRY_MOSS_VEGETATION.getHolder().get()), CaveSurface.FLOOR, ConstantInt.of(1), 0f, 5, .8f, UniformInt.of(4, 7), .3f)));
         public static final RegistryObject<ConfiguredFeature<VegetationPatchConfiguration, ?>> DRY_MOSS_PATCH_BONEMEAL = CONFIGURED_FEATURES.register("dry_moss_patch_bonemeal", () -> new ConfiguredFeature<>(Feature.VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, BlockStateProvider.simple(WindsweptBlocks.DRY_MOSS_BLOCK.get()), PlacementUtils.inlinePlaced(DRY_MOSS_VEGETATION.getHolder().get()), CaveSurface.FLOOR, ConstantInt.of(1), 0f, 5, .6f, UniformInt.of(1, 2), .75f)));
         public static final RegistryObject<ConfiguredFeature<BlockStateConfiguration, ?>> DRY_MOSS_ROCK = CONFIGURED_FEATURES.register("dry_moss_rock", () -> new ConfiguredFeature<>(Feature.FOREST_ROCK, new BlockStateConfiguration(WindsweptBlocks.DRY_MOSSY_COBBLESTONE.get().defaultBlockState())));
-        public static final RegistryObject<ConfiguredFeature<NoneFeatureConfiguration, ?>> FALLEN_LOG = CONFIGURED_FEATURES.register("fallen_log", () -> new ConfiguredFeature<>(WindsweptFeatures.FALLEN_LOG.get(),NoneFeatureConfiguration.NONE));
+        public static final RegistryObject<ConfiguredFeature<NoneFeatureConfiguration, ?>> FALLEN_LOG = CONFIGURED_FEATURES.register("fallen_log", () -> new ConfiguredFeature<>(WindsweptFeatures.FALLEN_LOG.get(), NoneFeatureConfiguration.NONE));
 
         public static final RegistryObject<ConfiguredFeature<SimpleBlockConfiguration, ?>> GELISOL_VEGETATION = CONFIGURED_FEATURES.register("gelisol_vegetation", () -> new ConfiguredFeature<>(Feature.SIMPLE_BLOCK, Configs.GELISOL_VEGETATION));
         public static final RegistryObject<ConfiguredFeature<VegetationPatchConfiguration, ?>> GELISOL_PATCH = CONFIGURED_FEATURES.register("gelisol_patch", () -> new ConfiguredFeature<>(Feature.VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, BlockStateProvider.simple(WindsweptBlocks.GELISOL.get()), PlacementUtils.inlinePlaced(GELISOL_VEGETATION.getHolder().get()), CaveSurface.FLOOR, ConstantInt.of(1), 0f, 5, .8f, UniformInt.of(4, 7), .3f)));
@@ -158,6 +163,7 @@ public final class WindsweptFeatures {
         public static final RegistryObject<PlacedFeature> WHITE_ROSE_BUSH = createPlantPatch("white_rose_bush", 12, Features.WHITE_ROSE_BUSH);
         public static final RegistryObject<PlacedFeature> BLUE_ROSE_BUSH = createPlantPatch("blue_rose_bush", 12, Features.BLUE_ROSE_BUSH);
         public static final RegistryObject<PlacedFeature> YELLOW_ROSE_BUSH = createPlantPatch("yellow_rose_bush", 12, Features.YELLOW_ROSE_BUSH);
+        public static final RegistryObject<PlacedFeature> LUPINE = createPlantPatch("lupine", 12, Features.LUPINE);
         public static final RegistryObject<PlacedFeature> NIGHTHSADE = createPlantPatch("nightshade", 360, Features.NIGHTHSADE);
         public static final RegistryObject<PlacedFeature> WILD_BERRY_BUSH = createPlantPatch("wild_berry_bush", 32, Features.WILD_BERRY_BUSH);
         public static final RegistryObject<PlacedFeature> WILD_BERRY_BUSH_COMMON = createPlantPatch("wild_berry_bush_common", 5, Features.WILD_BERRY_BUSH);
@@ -166,8 +172,8 @@ public final class WindsweptFeatures {
         public static final RegistryObject<PlacedFeature> FLOOR_ICICLES = register("floor_icicles", Features.FLOOR_ICICLES, PlacementUtils.countExtra(1, .1f, 1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
         public static final RegistryObject<PlacedFeature> DRY_MOSS_PATCH = register("dry_moss_patch", Features.DRY_MOSS_PATCH, PlacementUtils.countExtra(2, .1f, 1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
-        public static final RegistryObject<PlacedFeature> DRY_MOSS_ROCK = register("dry_moss_rock", Features.DRY_MOSS_ROCK, CountPlacement.of(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
-        public static final RegistryObject<PlacedFeature> FALLEN_LOG = register("fallen_log", Features.FALLEN_LOG, PlacementUtils.countExtra(1, .1f, 1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        public static final RegistryObject<PlacedFeature> DRY_MOSS_ROCK = register("dry_moss_rock", Features.DRY_MOSS_ROCK, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        public static final RegistryObject<PlacedFeature> FALLEN_LOG = register("fallen_log", Features.FALLEN_LOG, PlacementUtils.countExtra(2, .1f, 1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         public static final RegistryObject<PlacedFeature> GELISOL_PATCH = register("gelisol_patch", Features.GELISOL_PATCH, PlacementUtils.countExtra(2, .1f, 1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         public static final RegistryObject<PlacedFeature> TUNDRA_SNOW_PATCH = register("tundra_snow_patch", Features.TUNDRA_SNOW_PATCH, PlacementUtils.countExtra(1, .1f, 1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 

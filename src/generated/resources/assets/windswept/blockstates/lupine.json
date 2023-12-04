@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "windswept:block/lupine_bottom"
+    },
+    "half=upper": {
+      "model": "windswept:block/lupine_top"
+    }
+  }
+}

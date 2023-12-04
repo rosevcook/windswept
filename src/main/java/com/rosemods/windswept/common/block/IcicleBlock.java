@@ -3,6 +3,7 @@ package com.rosemods.windswept.common.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.damagesource.DamageSource;
@@ -45,7 +46,7 @@ public class IcicleBlock extends Block implements SimpleWaterloggedBlock {
         Direction direction = state.getValue(STATE) == IcicleStates.FLOOR ? Direction.UP : Direction.DOWN;
         BlockPos blockpos = pos.relative(direction.getOpposite());
 
-        return Block.canSupportCenter(world, blockpos, direction);
+        return Block.canSupportCenter(world, blockpos, direction) || world.getBlockState(blockpos).is(BlockTags.LEAVES);
     }
 
     @Override
