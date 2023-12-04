@@ -56,6 +56,7 @@ public final class WindsweptBiomeModifier {
         addFeature("rare_chestnut_trees", WindsweptBiomeTags.HAS_RARE_CHESTNUT_TREES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.CHESTNUT_TREES);
         addFeature("rare_snowy_holly_trees", WindsweptBiomeTags.HAS_RARE_SNOWY_HOLLY_TREES, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.RARE_SNOWY_HOLLY_TREES);
         addFeature("yellow_rose_bushes", Biomes.DARK_FOREST, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.YELLOW_ROSE_BUSH);
+        addFeature("icicles", Tags.Biomes.IS_SNOWY, GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.ICICLES, WindsweptFeatures.Placements.FLOOR_ICICLES);
 
         // spawns
         addSpawn("chilled", Tags.Biomes.IS_SNOWY, WindsweptEntityTypes.CHILLED, 5, 3, 7);

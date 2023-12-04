@@ -2,10 +2,7 @@ package com.rosemods.windswept.core.registry;
 
 import com.google.common.collect.ImmutableList;
 import com.rosemods.windswept.common.block.WildBerryBushBlock;
-import com.rosemods.windswept.common.level.gen.feature.BluebellsFeature;
-import com.rosemods.windswept.common.level.gen.feature.NightshadeFeature;
-import com.rosemods.windswept.common.level.gen.feature.RoseFeature;
-import com.rosemods.windswept.common.level.gen.feature.SnowySproutsFeature;
+import com.rosemods.windswept.common.level.gen.feature.*;
 import com.rosemods.windswept.common.level.gen.tree.decorator.BranchDecorator;
 import com.rosemods.windswept.common.level.gen.tree.foliage_placer.ChestnutFoliagePlacer;
 import com.rosemods.windswept.common.level.gen.tree.trunk_placer.ChestnutTrunkPlacer;
@@ -46,6 +43,8 @@ public final class WindsweptFeatures {
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> NIGHTSHADE_PATCH = FEATURES.register("nightshade_patch", NightshadeFeature::new);
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> BLUEBELL_PATCH = FEATURES.register("bluebell_patch", BluebellsFeature::new);
     public static final RegistryObject<Feature<RoseFeature.RoseFeatureConfiguration>> ROSE_PATCH = FEATURES.register("rose_patch", RoseFeature::new);
+    public static final RegistryObject<Feature<NoneFeatureConfiguration>> ICICLES_PATCH = FEATURES.register("icicles_patch", IciclesFeature::new);
+    public static final RegistryObject<Feature<NoneFeatureConfiguration>> FLOOR_ICICLES_PATCH = FEATURES.register("floor_icicles_patch", FloorIciclesFeature::new);
 
     public static class Configs {
         public static final TreeConfiguration HOLLY_TREE = createHollyTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.HOLLY_LOG.get(), 2))).build();
@@ -109,6 +108,8 @@ public final class WindsweptFeatures {
         public static final RegistryObject<ConfiguredFeature<?, ?>> NIGHTHSADE = CONFIGURED_FEATURES.register("nightshades", () -> new ConfiguredFeature<>(NIGHTSHADE_PATCH.get(), NoneFeatureConfiguration.NONE));
         public static final RegistryObject<ConfiguredFeature<?, ?>> WILD_BERRY_BUSH = CONFIGURED_FEATURES.register("wild_berry_bush", () -> new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.WILD_BERRY_BUSH));
         public static final RegistryObject<ConfiguredFeature<?, ?>> SNOWY_SPROUTS = CONFIGURED_FEATURES.register("snowy_sprouts", () -> new ConfiguredFeature<>(SNOWY_SPROUTS_PATCH.get(), NoneFeatureConfiguration.NONE));
+        public static final RegistryObject<ConfiguredFeature<?, ?>> ICICLES = CONFIGURED_FEATURES.register("icicles", () -> new ConfiguredFeature<>(ICICLES_PATCH.get(), NoneFeatureConfiguration.NONE));
+        public static final RegistryObject<ConfiguredFeature<?, ?>> FLOOR_ICICLES = CONFIGURED_FEATURES.register("floor_icicles", () -> new ConfiguredFeature<>(FLOOR_ICICLES_PATCH.get(), NoneFeatureConfiguration.NONE));
         public static final RegistryObject<ConfiguredFeature<?, ?>> HOLLY_TREES = CONFIGURED_FEATURES.register("holly_trees", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature((Holder<PlacedFeature>) TreePlacements.HOLLY_TREES_BEES.getHolder().get(), 0.33333334F)), (Holder<PlacedFeature>) TreePlacements.HOLLY_TREES_BEES.getHolder().get())));
         public static final RegistryObject<ConfiguredFeature<?, ?>> GROVE_HOLLY_TREES = CONFIGURED_FEATURES.register("grove_holly_trees", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature((Holder<PlacedFeature>) TreePlacements.HOLLY_ON_SNOW.getHolder().get(), 0.33333334F)), (Holder<PlacedFeature>) TreePlacements.HOLLY_ON_SNOW.getHolder().get())));
         public static final RegistryObject<ConfiguredFeature<?, ?>> CHESTNUT_TREES = CONFIGURED_FEATURES.register("chestnut_trees", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature((Holder<PlacedFeature>) TreePlacements.CHESTNUT_TREES_BEES.getHolder().get(), 0.33333334F)), (Holder<PlacedFeature>) TreePlacements.CHESTNUT_TREES_BEES.getHolder().get())));
@@ -132,6 +133,8 @@ public final class WindsweptFeatures {
         public static final RegistryObject<PlacedFeature> WILD_BERRY_BUSH = createPlantPatch("wild_berry_bush", 32, Features.WILD_BERRY_BUSH);
         public static final RegistryObject<PlacedFeature> WILD_BERRY_BUSH_COMMON = createPlantPatch("wild_berry_bush_common", 5, Features.WILD_BERRY_BUSH);
         public static final RegistryObject<PlacedFeature> SNOWY_SPROUTS = createPlantPatch("snowy_sprouts", 4, Features.SNOWY_SPROUTS);
+        public static final RegistryObject<PlacedFeature> ICICLES = register("icicles", Features.ICICLES, PlacementUtils.countExtra(4, .1f, 1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        public static final RegistryObject<PlacedFeature> FLOOR_ICICLES = register("floor_icicles", Features.FLOOR_ICICLES, PlacementUtils.countExtra(1, .1f, 1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         public static final RegistryObject<PlacedFeature> TALL_FERNS = register("tall_ferns", VegetationFeatures.PATCH_LARGE_FERN, List.of(RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
         public static final RegistryObject<PlacedFeature> CHESTNUT_FERNS = register("chestnut_ferns", Features.CHESTNUT_FERNS, CountPlacement.of(10), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
 
