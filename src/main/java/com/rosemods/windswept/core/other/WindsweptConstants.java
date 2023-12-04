@@ -7,7 +7,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.util.function.Supplier;
 
 public final class WindsweptConstants {
-    public static final boolean IN_DEV = false;
+    public static final boolean IN_DEV = true;
     public static final String QUARK = modId("quark");
     public static final String BERRY_GOOD = modId("berry_good");
     public static final String WOODWORKS = modId("woodworks");

@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#windswept:has_feature/nightshades",
+  "biomes": "#minecraft:is_overworld",
   "features": "windswept:nightshade",
   "step": "vegetal_decoration"
 }
