@@ -17,8 +17,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:gold_ingot",
-          "weight": 2
+          "name": "minecraft:gold_ingot"
         },
         {
           "type": "minecraft:item",
@@ -53,10 +52,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:diamond"
-        },
-        {
-          "type": "minecraft:item",
           "functions": [
             {
               "add": false,
@@ -85,21 +80,6 @@
             }
           ],
           "name": "windswept:wooden_bucket"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "damage": {
-                "type": "minecraft:uniform",
-                "max": 20.0,
-                "min": 3.0
-              },
-              "function": "minecraft:set_damage"
-            }
-          ],
-          "name": "windswept:wooden_powder_snow_bucket"
         },
         {
           "type": "minecraft:item",
