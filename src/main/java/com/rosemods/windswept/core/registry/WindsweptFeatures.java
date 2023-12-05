@@ -66,7 +66,7 @@ public final class WindsweptFeatures {
         public static final RandomPatchConfiguration CHESTNUT_FERNS = FeatureUtils.simpleRandomPatchConfiguration(4, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.FERN))));
         public static final SimpleBlockConfiguration DRY_MOSS_VEGETATION = new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
                 .add(Blocks.AIR.defaultBlockState(), 50)
-                .add(WindsweptBlocks.MOSS_CAMPION.get().defaultBlockState(), 4)
+                .add(WindsweptBlocks.MOSS_CAMPION.get().defaultBlockState(), 3)
                 .add(WindsweptBlocks.DRY_MOSS_CARPET.get().defaultBlockState(), 25)
                 .add(WindsweptBlocks.DRY_MOSS_SPROUTS.get().defaultBlockState(), 50)));
 
@@ -78,7 +78,7 @@ public final class WindsweptFeatures {
         public static final SimpleBlockConfiguration TUNDRA_SNOW_VEGETATION = new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
                 .add(Blocks.AIR.defaultBlockState(), 20)
                 .add(Blocks.SNOW.defaultBlockState(), 50)
-                .add(WindsweptBlocks.SNOWDROP.get().defaultBlockState(), 4)
+                .add(WindsweptBlocks.SNOWDROP.get().defaultBlockState(), 2)
                 .add(WindsweptBlocks.SNOWY_SPROUTS.get().defaultBlockState(), 20)));
 
         private static RandomPatchConfiguration createPlantPatch(int tries, BlockState state) {

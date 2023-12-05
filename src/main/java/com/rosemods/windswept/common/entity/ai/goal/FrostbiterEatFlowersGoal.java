@@ -45,14 +45,16 @@ public class FrostbiterEatFlowersGoal extends Goal {
     public void tick() {
         this.tick = Math.max(0, this.tick - 1);
 
-        if (this.tick == this.adjustedTickDelay(2)) {
+        if (this.tick == this.adjustedTickDelay(15)) {
             BlockPos pos = this.getMouthPos();
 
             if (this.isFoodAt(pos)) {
                 this.frostbiter.level.destroyBlock(pos, false);
                 this.frostbiter.ate();
-                // if baby, set age ticks up
                 this.frostbiter.growRandomAntler();
+
+                if (this.frostbiter.isBaby())
+                    this.frostbiter.ageUp(Frostbiter.getSpeedUpSecondsWhenFeeding(-this.frostbiter.getAge()), true);
             }
         }
     }
