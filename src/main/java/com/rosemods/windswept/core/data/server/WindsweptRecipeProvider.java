@@ -96,6 +96,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         ShapedRecipeBuilder.shaped(HOLLY_BERRIES_ON_A_STICK.get()).define('#', Items.FISHING_ROD).define('H', HOLLY_BERRIES.get()).pattern("# ").pattern(" H").unlockedBy(getHasName(HOLLY_BERRIES.get()), has(HOLLY_BERRIES.get())).save(consumer, getSaveLocation(HOLLY_BERRIES_ON_A_STICK.get()));
 
         // blocks
+        ShapedRecipeBuilder.shaped(ICE_SHEET.get(), 12).define('#', Items.ICE).pattern("###").pattern("###").unlockedBy(getHasName(Items.ICE), has(Items.ICE)).save(consumer, getSaveLocation(ICE_SHEET.get()));
         ShapedRecipeBuilder.shaped(FROSTBITER_TROPHY.get()).define('#', FROZEN_BRANCH.get()).define('P', ItemTags.PLANKS).pattern("# #").pattern("#P#").unlockedBy(getHasName(FROZEN_BRANCH.get()), has(FROZEN_BRANCH.get())).save(consumer, getSaveLocation(FROSTBITER_TROPHY.get()));
         ShapedRecipeBuilder.shaped(DRY_MOSS_CARPET.get(), 3).define('#', DRY_MOSS_BLOCK.get()).pattern("##").unlockedBy(getHasName(DRY_MOSS_BLOCK.get()), has(DRY_MOSS_BLOCK.get())).save(consumer, getSaveLocation(DRY_MOSS_CARPET.get()));
         ShapelessRecipeBuilder.shapeless(DRY_MOSSY_COBBLESTONE.get()).requires(Items.COBBLESTONE).requires(DRY_MOSS_BLOCK.get()).unlockedBy(getHasName(DRY_MOSS_BLOCK.get()), has(DRY_MOSS_BLOCK.get())).save(consumer, getSaveLocation("dry_mossy_cobblestone_from_dry_moss"));
@@ -109,9 +110,6 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         ShapedRecipeBuilder.shaped(ICICLE_BARS.get(), 16).define('#', ICICLE_BLOCK.get()).pattern("###").pattern("###").unlockedBy(getHasName(ICICLE_BLOCK.get()), has(ICICLE_BLOCK.get())).save(consumer, getSaveLocation(ICICLE_BARS.get()));
         ShapedRecipeBuilder.shaped(ICE_LANTERN.get()).define('#', ICICLES.get()).define('N', NIGHTSHADE.get()).pattern("#").pattern("N").pattern("#").unlockedBy(getHasName(ICICLES.get()), has(ICICLES.get())).save(consumer, getSaveLocation(ICE_LANTERN.get()));
 
-        ShapedRecipeBuilder.shaped(CUT_ICE.get(), 4).define('#', Items.ICE).pattern("##").pattern("##").unlockedBy(getHasName(Items.ICE), has(Items.ICE)).save(consumer, getSaveLocation(CUT_ICE.get()));
-        ShapedRecipeBuilder.shaped(ICE_SHEET.get(), 12).define('#', Items.ICE).pattern("###").pattern("###").unlockedBy(getHasName(Items.ICE), has(Items.ICE)).save(consumer, getSaveLocation(ICE_SHEET.get()));
-        ShapedRecipeBuilder.shaped(CUT_ICE_SHEET.get(), 12).define('#', CUT_ICE.get()).pattern("###").pattern("###").unlockedBy(getHasName(CUT_ICE.get()), has(CUT_ICE.get())).save(consumer, getSaveLocation(CUT_ICE_SHEET.get()));
 
         stairs(Blocks.SNOW_BLOCK, SNOW_STAIRS.get(), consumer);
         slab(Blocks.SNOW_BLOCK, SNOW_SLAB.get(), consumer);

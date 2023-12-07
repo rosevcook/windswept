@@ -200,9 +200,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.add(BLUE_ICE_BRICK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
 
             // ice blocks
-            this.dropSelf(CUT_ICE.get());
             this.dropSelf(ICE_SHEET.get());
-            this.dropSelf(CUT_ICE_SHEET.get());
 
             // tall plants
             this.tallFlower(LUPINE.get());

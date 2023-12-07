@@ -184,9 +184,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.wall(BLUE_ICE_BRICK_WALL, this.blockTexture(BLUE_ICE_BRICKS.get()));
         this.verticalSlab(BLUE_ICE_BRICK_VERTICAL_SLAB, this.blockTexture(BLUE_ICE_BRICKS.get()));
 
-        this.ice(CUT_ICE);
         this.iceSheet(ICE_SHEET, this.blockTexture(Blocks.ICE));
-        this.iceSheet(CUT_ICE_SHEET, this.blockTexture(CUT_ICE.get()));
 
         this.pottedPlantWithPottedVariant(SNOWY_SPROUTS, POTTED_SNOWY_SPROUTS);
         this.pottedPlantWithPottedVariant(GELISOL_SPROUTS, POTTED_GELISOL_SPROUTS);
@@ -308,11 +306,6 @@ public class WindsweptModelProvider extends BlockStateProvider {
         ResourceLocation texture = this.blockTexture(block.get());
         this.paneBlockWithRenderType((IronBarsBlock) block.get(), texture, texture, "cutout");
         this.itemModels().withExistingParent(getItemName(block.get()), "item/generated").texture("layer0", texture);
-    }
-
-    private void ice(RegistryObject<Block> block) {
-        this.simpleBlock(block.get(), this.models().cubeAll(getItemName(block.get()), this.blockTexture(block.get())).renderType("translucent"));
-        this.itemModel(block);
     }
 
     private void tallPlant(RegistryObject<Block> flower) {

@@ -1,7 +1,6 @@
 package com.rosemods.windswept.core.other;
 
 import com.rosemods.windswept.core.registry.WindsweptEffects;
-import com.rosemods.windswept.core.registry.WindsweptItems;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -22,5 +21,5 @@ public final class WindsweptFoods {
     public static final FoodProperties GOAT_SHANKS = new FoodProperties.Builder().nutrition(1).saturationMod(.1f).meat().build();
     public static final FoodProperties COOKED_GOAT_SHANKS = new FoodProperties.Builder().nutrition(3).saturationMod(.3f).meat().build();
     public static final FoodProperties WILD_BERRY_COOKIE = new FoodProperties.Builder().nutrition(2).fast().saturationMod(.1f).build();
-    public static final FoodProperties POPSICLE = new FoodProperties.Builder().nutrition(4).saturationMod(.7f).fast().alwaysEat().effect(() -> new MobEffectInstance(WindsweptEffects.FROST_RESISTANCE.get(), 300, 0), 1f).build();
+    public static final FoodProperties WILD_BERRY_POPSICLE = new FoodProperties.Builder().nutrition(4).saturationMod(.7f).alwaysEat().effect(() -> new MobEffectInstance(WindsweptEffects.FROST_RESISTANCE.get(), 300, 0), 1f).build();
 }

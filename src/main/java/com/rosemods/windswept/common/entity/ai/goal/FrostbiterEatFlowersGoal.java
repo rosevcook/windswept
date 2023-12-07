@@ -45,7 +45,7 @@ public class FrostbiterEatFlowersGoal extends Goal {
     public void tick() {
         this.tick = Math.max(0, this.tick - 1);
 
-        if (this.tick == this.adjustedTickDelay(15)) {
+        if (this.tick == this.adjustedTickDelay(5)) {
             BlockPos pos = this.getMouthPos();
 
             if (this.isFoodAt(pos)) {

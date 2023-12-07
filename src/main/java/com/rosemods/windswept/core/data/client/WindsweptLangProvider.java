@@ -192,9 +192,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(BLUE_ICE_BRICK_WALL);
         this.translateBlock(BLUE_ICE_BRICK_VERTICAL_SLAB);
 
-        this.translateBlock(CUT_ICE);
         this.translateBlock(ICE_SHEET);
-        this.translateBlock(CUT_ICE_SHEET);
 
         this.translateBlock(LUPINE);
         this.translateBlock(RED_ROSE_BUSH);
