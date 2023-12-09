@@ -2,8 +2,8 @@ package com.rosemods.windswept.common.block;
 
 import net.minecraft.world.level.block.Block;
 
-public class ChristmasCakeBlock extends Block {
-    public ChristmasCakeBlock(Properties properties) {
+public class ChristmasPuddingBlock extends Block {
+    public ChristmasPuddingBlock(Properties properties) {
         super(properties);
     }
 }

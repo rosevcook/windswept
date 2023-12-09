@@ -61,6 +61,8 @@ public class WindsweptItems {
     public static final RegistryObject<Item> GOAT_STEW = HELPER.createItem("goat_stew", () -> new BowlFoodItem(PropertyUtil.food(ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) ? WindsweptFDCompat.GOAT_STEW : WindsweptFoods.GOAT_STEW).craftRemainder(Items.BOWL).stacksTo(1)));
     public static final RegistryObject<Item> MUTTON_PIE = HELPER.createItem("mutton_pie", () -> new InjectedItem(Items.COOKED_MUTTON, PropertyUtil.food(WindsweptFoods.MUTTON_PIE)));
 
+    public static final RegistryObject<Item> CHRISTMAS_PUDDING_SLICE = HELPER.createItem("christmas_pudding_slice", () -> new Item(new Item.Properties().food(WindsweptFoods.CAKE_SLICE).tab(ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) ? CreativeModeTab.TAB_FOOD : null)));
+
     // Banner Patterns //
     public static final RegistryObject<Item> SNOW_GOLEM_BANNER_PATTERN = HELPER.createItem("snow_golem_banner_pattern", () -> new BlueprintBannerPatternItem(WindsweptBannerPatternTags.SNOW_GOLEM, new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));
     public static final RegistryObject<Item> SNOW_CHARGE_BANNER_PATTERN = HELPER.createItem("snow_charge_banner_pattern", () -> new BlueprintBannerPatternItem(WindsweptBannerPatternTags.SNOW_CHARGE, new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));

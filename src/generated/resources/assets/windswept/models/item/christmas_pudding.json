@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "windswept:item/christmas_cake"
+    "layer0": "windswept:item/christmas_pudding"
   }
 }

@@ -26,7 +26,6 @@ public class FrostArrow extends AbstractArrow {
         super(WindsweptEntityTypes.FROST_ARROW.get(), shooter, worldIn);
     }
 
-
     @Override
     public void tick() {
         super.tick();

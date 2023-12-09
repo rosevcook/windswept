@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "windswept:holly_berries"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "windswept:roasted_chestnuts"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "forge:eggs"
+    },
+    {
+      "tag": "forge:crops/wheat"
+    }
+  ],
+  "result": {
+    "item": "windswept:christmas_pudding"
+  }
+}

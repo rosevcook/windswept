@@ -44,6 +44,16 @@
             },
             "trigger": "minecraft:consume_item"
           },
+          "windswept:christmas_pudding_slice": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:christmas_pudding_slice"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
           "windswept:cooked_goat": {
             "conditions": {
               "item": {
@@ -265,6 +275,9 @@
           ],
           [
             "windswept:mutton_pie"
+          ],
+          [
+            "windswept:christmas_pudding_slice"
           ]
         ],
         "should_replace_requirements": false

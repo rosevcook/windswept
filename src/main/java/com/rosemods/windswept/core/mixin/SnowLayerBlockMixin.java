@@ -13,7 +13,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(SnowLayerBlock.class)
 public class SnowLayerBlockMixin {
-
     @Inject(method = "randomTick", at = @At("TAIL"))
     private void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource rand, CallbackInfo info) {
         if (level.isRainingAt(pos) && WindsweptConfig.COMMON.rainWashSnow.get()) {

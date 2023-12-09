@@ -60,6 +60,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateItem(WILD_BERRY_COOKIE);
         this.translateItem(WILD_BERRY_JUICE);
         this.translateItem(WILD_BERRY_PIPS);
+        this.translateItem(CHRISTMAS_PUDDING_SLICE);
         this.add(SWEET_BERRY_BOWL.get(), "Bowl of Sweet Berries");
         this.add(WILD_BERRY_BOWL.get(), "Bowl of Wild Berries");
         this.translateItem(MUTTON_PIE);
@@ -192,7 +193,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(BLUE_ICE_BRICK_VERTICAL_SLAB);
 
         this.translateBlock(HOLLY_WREATH);
-        this.translateBlock(CHRISTMAS_CAKE);
+        this.translateBlock(CHRISTMAS_PUDDING);
         this.translateBlock(FROSTBITER_TROPHY);
         this.translateBlock(ICE_SHEET);
 

@@ -200,7 +200,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 
             // decoration
             this.dropSelf(FROSTBITER_TROPHY.get());
-            this.add(CHRISTMAS_CAKE.get(), LootTable.lootTable());
+            this.add(CHRISTMAS_PUDDING.get(), LootTable.lootTable());
             this.dropSelf(HOLLY_WREATH.get());
             this.dropSelf(ICE_SHEET.get());
 

@@ -57,6 +57,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.generatedItem(WILD_BERRY_JUICE.get(), TextureFolder.Item);
         this.generatedItem(WILD_BERRY_BOWL.get(), TextureFolder.Item);
         this.generatedItem(SWEET_BERRY_BOWL.get(), TextureFolder.Item);
+        this.generatedItem(CHRISTMAS_PUDDING_SLICE.get(), TextureFolder.Item);
         this.generatedItem(MUTTON_PIE.get(), TextureFolder.Item);
         this.generatedItem(GOAT.get(), TextureFolder.Item);
         this.generatedItem(COOKED_GOAT.get(), TextureFolder.Item);
@@ -184,7 +185,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.verticalSlab(BLUE_ICE_BRICK_VERTICAL_SLAB, this.blockTexture(BLUE_ICE_BRICKS.get()));
 
         this.ladder(HOLLY_WREATH);
-        this.generatedItem(CHRISTMAS_CAKE.get(), TextureFolder.Item);
+        this.generatedItem(CHRISTMAS_PUDDING.get(), TextureFolder.Item);
         this.horizontalBlock(FROSTBITER_TROPHY.get(), this.models().getExistingFile(this.modLoc("block/frostbiter_trophy")));
         this.generatedItem(FROSTBITER_TROPHY.get(), TextureFolder.Item);
         this.iceSheet(ICE_SHEET, this.blockTexture(Blocks.ICE));

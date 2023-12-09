@@ -22,4 +22,5 @@ public final class WindsweptFoods {
     public static final FoodProperties COOKED_GOAT_SHANKS = new FoodProperties.Builder().nutrition(3).saturationMod(.3f).meat().build();
     public static final FoodProperties WILD_BERRY_COOKIE = new FoodProperties.Builder().nutrition(2).fast().saturationMod(.1f).build();
     public static final FoodProperties WILD_BERRY_POPSICLE = new FoodProperties.Builder().nutrition(4).saturationMod(.7f).alwaysEat().effect(() -> new MobEffectInstance(WindsweptEffects.FROST_RESISTANCE.get(), 300, 0), 1f).build();
+    public static final FoodProperties CAKE_SLICE = new FoodProperties.Builder().nutrition(2).saturationMod(.1f).fast().effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 0), 1f).effect(() -> new MobEffectInstance(WindsweptEffects.THORNS.get(), 400, 0), 1f).build();
 }
