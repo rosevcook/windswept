@@ -2,9 +2,6 @@ package com.rosemods.windswept.core.registry;
 
 import com.mojang.datafixers.util.Pair;
 import com.rosemods.windswept.common.item.*;
-import com.rosemods.windswept.common.item.wooden_bucket.WoodenBucketItem;
-import com.rosemods.windswept.common.item.wooden_bucket.WoodenMilkBucketItem;
-import com.rosemods.windswept.common.item.wooden_bucket.WoodenPowderSnowBucketItem;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.other.WindsweptConstants;
 import com.rosemods.windswept.core.other.WindsweptFoods;

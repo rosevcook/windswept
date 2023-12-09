@@ -1,4 +1,4 @@
-package com.rosemods.windswept.common.block.nightshade;
+package com.rosemods.windswept.common.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;

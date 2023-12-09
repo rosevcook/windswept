@@ -118,7 +118,6 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.post(HOLLY_POST, this.blockTexture(HOLLY_LOG.get()));
         this.post(STRIPPED_HOLLY_POST, this.blockTexture(STRIPPED_HOLLY_LOG.get()));
         this.chests(HOLLY_CHEST, HOLLY_TRAPPED_CHEST, this.blockTexture(HOLLY_PLANKS.get()));
-        this.ladder(HOLLY_WREATH);
         this.compressedBlock(HOLLY_BERRY_BASKET);
 
         this.pillar(STRIPPED_CHESTNUT_LOG);
@@ -184,6 +183,10 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.wall(BLUE_ICE_BRICK_WALL, this.blockTexture(BLUE_ICE_BRICKS.get()));
         this.verticalSlab(BLUE_ICE_BRICK_VERTICAL_SLAB, this.blockTexture(BLUE_ICE_BRICKS.get()));
 
+        this.ladder(HOLLY_WREATH);
+        this.generatedItem(CHRISTMAS_CAKE.get(), TextureFolder.Item);
+        this.horizontalBlock(FROSTBITER_TROPHY.get(), this.models().getExistingFile(this.modLoc("block/frostbiter_trophy")));
+        this.generatedItem(FROSTBITER_TROPHY.get(), TextureFolder.Item);
         this.iceSheet(ICE_SHEET, this.blockTexture(Blocks.ICE));
 
         this.pottedPlantWithPottedVariant(SNOWY_SPROUTS, POTTED_SNOWY_SPROUTS);
@@ -255,8 +258,6 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.itemModel(GELISOL);
         this.simpleBlock(GELISOL_PATH.get(), this.models().withExistingParent("gelisol_path", this.mcLoc("dirt_path")).texture("top", this.modLoc("block/gelisol_path_top")).texture("side", this.modLoc("block/gelisol_path_side")));
         this.itemModel(GELISOL_PATH);
-        this.horizontalBlock(FROSTBITER_TROPHY.get(), this.models().getExistingFile(this.modLoc("block/frostbiter_trophy")));
-        this.generatedItem(FROSTBITER_TROPHY.get(), TextureFolder.Item);
         this.cubeAll(FROZEN_FLESH_BLOCK);
     }
 

@@ -4,8 +4,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.function.Supplier;
-
 public final class WindsweptConstants {
     public static final boolean IN_DEV = true;
     public static final String QUARK = modId("quark");

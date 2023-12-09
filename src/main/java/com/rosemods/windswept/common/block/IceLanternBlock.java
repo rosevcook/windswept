@@ -1,6 +1,5 @@
 package com.rosemods.windswept.common.block;
 
-import com.rosemods.windswept.common.block.nightshade.NightshadeFlowerBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.FluidTags;

@@ -119,7 +119,6 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(HOLLY_LEAF_CARPET.get());
             this.leafPile(HOLLY_LEAF_PILE.get());
 
-            this.dropSelf(HOLLY_WREATH.get());
             this.dropSelf(HOLLY_BERRY_BASKET.get());
 
             // chestnut
@@ -199,7 +198,10 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(BLUE_ICE_BRICK_WALL.get());
             this.add(BLUE_ICE_BRICK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
 
-            // ice blocks
+            // decoration
+            this.dropSelf(FROSTBITER_TROPHY.get());
+            this.add(CHRISTMAS_CAKE.get(), LootTable.lootTable());
+            this.dropSelf(HOLLY_WREATH.get());
             this.dropSelf(ICE_SHEET.get());
 
             // tall plants
@@ -285,7 +287,6 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             // misc
             this.add(GELISOL.get(), b -> createSingleItemTableWithSilkTouch(b, net.minecraft.world.level.block.Blocks.DIRT));
             this.add(GELISOL_PATH.get(), b -> createSingleItemTableWithSilkTouch(b, net.minecraft.world.level.block.Blocks.DIRT));
-            this.dropSelf(FROSTBITER_TROPHY.get());
             this.dropSelf(FROZEN_FLESH_BLOCK.get());
         }
 

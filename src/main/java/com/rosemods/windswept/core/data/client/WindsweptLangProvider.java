@@ -121,7 +121,6 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(STRIPPED_HOLLY_POST);
         this.translateBlock(HOLLY_CHEST);
         this.translateBlock(HOLLY_TRAPPED_CHEST);
-        this.translateBlock(HOLLY_WREATH);
         this.add(HOLLY_BERRY_BASKET.get(), "Basket of Holly Berries");
 
         this.translateBlock(STRIPPED_CHESTNUT_LOG);
@@ -192,6 +191,9 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(BLUE_ICE_BRICK_WALL);
         this.translateBlock(BLUE_ICE_BRICK_VERTICAL_SLAB);
 
+        this.translateBlock(HOLLY_WREATH);
+        this.translateBlock(CHRISTMAS_CAKE);
+        this.translateBlock(FROSTBITER_TROPHY);
         this.translateBlock(ICE_SHEET);
 
         this.translateBlock(LUPINE);
@@ -257,7 +259,6 @@ public class WindsweptLangProvider extends LanguageProvider {
 
         this.translateBlock(GELISOL);
         this.translateBlock(GELISOL_PATH);
-        this.translateBlock(FROSTBITER_TROPHY);
         this.translateBlock(FROZEN_FLESH_BLOCK);
 
         // Entities //

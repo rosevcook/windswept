@@ -1,4 +1,4 @@
-package com.rosemods.windswept.common.block.holly;
+package com.rosemods.windswept.common.block;
 
 import com.rosemods.windswept.core.other.WindsweptDamageSources;
 import com.teamabnormals.blueprint.common.block.wood.BlueprintSaplingBlock;

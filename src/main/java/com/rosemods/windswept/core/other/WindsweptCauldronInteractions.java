@@ -1,6 +1,6 @@
 package com.rosemods.windswept.core.other;
 
-import com.rosemods.windswept.common.item.wooden_bucket.WoodenBucketItem;
+import com.rosemods.windswept.common.item.WoodenBucketItem;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.rosemods.windswept.integration.neapolitan.WindsweptMilkCauldronInteractions;
 import net.minecraft.core.BlockPos;

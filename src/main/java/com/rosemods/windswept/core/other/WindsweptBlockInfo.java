@@ -77,6 +77,15 @@ public final class WindsweptBlockInfo {
         DataUtil.registerFlammable(HOLLY_FENCE.get(), 5, 20);
         DataUtil.registerFlammable(HOLLY_FENCE_GATE.get(), 5, 20);
         DataUtil.registerFlammable(HOLLY_BOARDS.get(), 5, 20);
+        DataUtil.registerFlammable(HOLLY_LEAVES.get(), 30, 60);
+        DataUtil.registerFlammable(HOLLY_LEAF_CARPET.get(), 30, 60);
+        DataUtil.registerFlammable(HOLLY_VERTICAL_SLAB.get(), 5, 20);
+        DataUtil.registerFlammable(HOLLY_BOOKSHELF.get(), 30, 20);
+        DataUtil.registerFlammable(HOLLY_BEEHIVE.get(), 5, 20);
+        DataUtil.registerFlammable(HOLLY_POST.get(), 5, 20);
+        DataUtil.registerFlammable(STRIPPED_HOLLY_POST.get(), 5, 20);
+        DataUtil.registerFlammable(HOLLY_HEDGE.get(), 5, 20);
+        DataUtil.registerFlammable(HOLLY_LEAF_PILE.get(), 30, 60);
 
         DataUtil.registerFlammable(STRIPPED_CHESTNUT_LOG.get(), 5, 5);
         DataUtil.registerFlammable(STRIPPED_CHESTNUT_WOOD.get(), 5, 5);
@@ -89,26 +98,7 @@ public final class WindsweptBlockInfo {
         DataUtil.registerFlammable(CHESTNUT_FENCE.get(), 5, 20);
         DataUtil.registerFlammable(CHESTNUT_FENCE_GATE.get(), 5, 20);
         DataUtil.registerFlammable(CHESTNUT_BOARDS.get(), 5, 20);
-
-        DataUtil.registerFlammable(HOLLY_BERRY_BASKET.get(), 5, 20);
-        DataUtil.registerFlammable(CHESTNUT_CRATE.get(), 5, 20);
-        DataUtil.registerFlammable(ROASTED_CHESTNUT_CRATE.get(), 5, 20);
-        DataUtil.registerFlammable(RED_MUSHROOM_BASKET.get(), 5, 20);
-        DataUtil.registerFlammable(BROWN_MUSHROOM_BASKET.get(), 5, 20);
-        DataUtil.registerFlammable(GLOW_SHROOM_BASKET.get(), 5, 20);
-
-        DataUtil.registerFlammable(HOLLY_LEAVES.get(), 30, 60);
         DataUtil.registerFlammable(CHESTNUT_LEAVES.get(), 30, 60);
-
-        DataUtil.registerFlammable(HOLLY_LEAF_CARPET.get(), 30, 60);
-        DataUtil.registerFlammable(HOLLY_VERTICAL_SLAB.get(), 5, 20);
-        DataUtil.registerFlammable(HOLLY_BOOKSHELF.get(), 30, 20);
-        DataUtil.registerFlammable(HOLLY_BEEHIVE.get(), 5, 20);
-        DataUtil.registerFlammable(HOLLY_POST.get(), 5, 20);
-        DataUtil.registerFlammable(STRIPPED_HOLLY_POST.get(), 5, 20);
-        DataUtil.registerFlammable(HOLLY_HEDGE.get(), 5, 20);
-        DataUtil.registerFlammable(HOLLY_LEAF_PILE.get(), 30, 60);
-
         DataUtil.registerFlammable(CHESTNUT_LEAF_CARPET.get(), 30, 60);
         DataUtil.registerFlammable(CHESTNUT_VERTICAL_SLAB.get(), 5, 20);
         DataUtil.registerFlammable(CHESTNUT_BOOKSHELF.get(), 30, 20);
@@ -118,12 +108,17 @@ public final class WindsweptBlockInfo {
         DataUtil.registerFlammable(CHESTNUT_HEDGE.get(), 5, 20);
         DataUtil.registerFlammable(CHESTNUT_LEAF_PILE.get(), 30, 60);
 
-        DataUtil.registerFlammable(WILD_BERRY_BUSH.get(), 60, 100);
+        DataUtil.registerFlammable(HOLLY_BERRY_BASKET.get(), 5, 20);
+        DataUtil.registerFlammable(CHESTNUT_CRATE.get(), 5, 20);
+        DataUtil.registerFlammable(ROASTED_CHESTNUT_CRATE.get(), 5, 20);
+        DataUtil.registerFlammable(RED_MUSHROOM_BASKET.get(), 5, 20);
+        DataUtil.registerFlammable(BROWN_MUSHROOM_BASKET.get(), 5, 20);
+        DataUtil.registerFlammable(GLOW_SHROOM_BASKET.get(), 5, 20);
 
+        DataUtil.registerFlammable(WILD_BERRY_BUSH.get(), 60, 100);
         DataUtil.registerFlammable(SNOWY_SPROUTS.get(), 60, 100);
         DataUtil.registerFlammable(GELISOL_SPROUTS.get(), 60, 100);
         DataUtil.registerFlammable(DRY_MOSS_SPROUTS.get(), 60, 100);
-
         DataUtil.registerFlammable(RED_ROSE.get(), 60, 100);
         DataUtil.registerFlammable(PINK_ROSE.get(), 60, 100);
         DataUtil.registerFlammable(BLUE_ROSE.get(), 60, 100);
@@ -134,14 +129,13 @@ public final class WindsweptBlockInfo {
         DataUtil.registerFlammable(MOSS_CAMPION.get(), 60, 100);
         DataUtil.registerFlammable(NIGHTSHADE.get(), 60, 100);
         DataUtil.registerFlammable(BLUEBELLS.get(), 60, 100);
-
+        DataUtil.registerFlammable(LUPINE.get(), 60, 100);
         DataUtil.registerFlammable(RED_ROSE_BUSH.get(), 60, 100);
         DataUtil.registerFlammable(PINK_ROSE_BUSH.get(), 60, 100);
         DataUtil.registerFlammable(BLUE_ROSE_BUSH.get(), 60, 100);
         DataUtil.registerFlammable(WHITE_ROSE_BUSH.get(), 60, 100);
         DataUtil.registerFlammable(YELLOW_ROSE_BUSH.get(), 60, 100);
         DataUtil.registerFlammable(WITHER_ROSE_BUSH.get(), 60, 100);
-        DataUtil.registerFlammable(LUPINE.get(), 60, 100);
     }
 
 }

@@ -2,7 +2,7 @@ package com.rosemods.windswept.core.other.events;
 
 import com.rosemods.windswept.common.entity.Chilled;
 import com.rosemods.windswept.common.item.SnowBootsItem;
-import com.rosemods.windswept.common.item.wooden_bucket.WoodenMilkBucketItem;
+import com.rosemods.windswept.common.item.WoodenMilkBucketItem;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.WindsweptConfig;
 import com.rosemods.windswept.core.other.WindsweptDataProcessors;

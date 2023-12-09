@@ -2,11 +2,6 @@ package com.rosemods.windswept.core.registry;
 
 import com.mojang.datafixers.util.Pair;
 import com.rosemods.windswept.common.block.*;
-import com.rosemods.windswept.common.block.holly.HollyHedgeBlock;
-import com.rosemods.windswept.common.block.holly.HollyLeavesBlock;
-import com.rosemods.windswept.common.block.holly.HollySaplingBlock;
-import com.rosemods.windswept.common.block.nightshade.NightShadeFlowerPotBlock;
-import com.rosemods.windswept.common.block.nightshade.NightshadeFlowerBlock;
 import com.rosemods.windswept.common.level.gen.tree.ChestnutTreeGrower;
 import com.rosemods.windswept.common.level.gen.tree.HollyTreeGrower;
 import com.rosemods.windswept.core.Windswept;
@@ -167,6 +162,7 @@ public class WindsweptBlocks {
 
     // Decoration Blocks //
     public static final RegistryObject<Block> HOLLY_WREATH = HELPER.createBlock("holly_wreath", () -> new LadderBlock(Block.Properties.of(Material.LEAVES).instabreak().sound(SoundType.AZALEA).noCollission().noOcclusion()), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> CHRISTMAS_CAKE = HELPER.createInjectedBlock("christmas_cake", Items.CAKE, () -> new ChristmasCakeBlock(BlockBehaviour.Properties.copy(Blocks.CAKE)), CreativeModeTab.TAB_FOOD);
     public static final RegistryObject<Block> FROSTBITER_TROPHY = HELPER.createBlock("frostbiter_trophy", () -> new LadderBlock(Properties.HOLLY.ladder().sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> ICE_SHEET = HELPER.createBlock("ice_sheet", () -> new IceSheetBlock(BlockBehaviour.Properties.copy(Blocks.ICE)), CreativeModeTab.TAB_DECORATIONS);
 

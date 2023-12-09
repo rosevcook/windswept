@@ -1,4 +1,4 @@
-package com.rosemods.windswept.common.item.wooden_bucket;
+package com.rosemods.windswept.common.item;
 
 import com.rosemods.windswept.core.WindsweptConfig;
 import com.rosemods.windswept.core.registry.WindsweptItems;
