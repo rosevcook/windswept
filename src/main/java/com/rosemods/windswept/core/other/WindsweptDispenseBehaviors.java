@@ -1,12 +1,11 @@
 package com.rosemods.windswept.core.other;
 
-import com.rosemods.windswept.common.item.WoodenBucketItem;
 import com.rosemods.windswept.common.block.IWoodenBucketPickupBlock;
+import com.rosemods.windswept.common.item.WoodenBucketItem;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockSource;
 import net.minecraft.core.Direction;
-import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -20,7 +19,6 @@ public final class WindsweptDispenseBehaviors {
         DispenserBlock.registerBehavior(WindsweptItems.WOODEN_BUCKET.get(), WindsweptDispenseBehaviors::fillBucket);
         DispenserBlock.registerBehavior(WindsweptItems.WOODEN_WATER_BUCKET.get(), WindsweptDispenseBehaviors::emptyWaterBucket);
         DispenserBlock.registerBehavior(WindsweptItems.WOODEN_POWDER_SNOW_BUCKET.get(), WindsweptDispenseBehaviors::emptyPowderSnowBucket);
-        DispenserBlock.registerBehavior(WindsweptItems.SNOW_BOOTS.get(), ArmorItem.DISPENSE_ITEM_BEHAVIOR);
     }
 
     private static ItemStack fillBucket(BlockSource source, ItemStack stack) {

@@ -8,6 +8,7 @@
     "BeehiveBlockMixin",
     "BlockMixin",
     "BoatMixin",
+    "DrownedMixin",
     "EntityMixin",
     "FlowerBlockMixin",
     "FoxEatBerriesGoalMixin",
@@ -28,6 +29,7 @@
     "WitherRoseBlockMixin"
   ],
   "client": [
+    "client.HumanoidArmorLayerMixin",
     "client.LivingEntityRendererMixin",
     "client.RabbitRendererMixin"
   ],

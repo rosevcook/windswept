@@ -1,7 +1,6 @@
 package com.rosemods.windswept.common.item;
 
 import com.rosemods.windswept.common.block.IWoodenBucketPickupBlock;
-import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.WindsweptConfig;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.teamabnormals.blueprint.core.util.item.filling.TargetedItemCategoryFiller;
@@ -10,11 +9,12 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
@@ -32,7 +32,7 @@ import net.minecraft.world.phys.HitResult;
 
 import java.util.function.Supplier;
 
-public class WoodenBucketItem extends BucketItem implements Wearable {
+public class WoodenBucketItem extends BucketItem {
     public static final TargetedItemCategoryFiller FILLER = new TargetedItemCategoryFiller(Items.POWDER_SNOW_BUCKET::asItem);
 
     public WoodenBucketItem(Supplier<? extends Fluid> supplier, Properties builder) {
@@ -50,6 +50,7 @@ public class WoodenBucketItem extends BucketItem implements Wearable {
             BlockPos blockpos = blockhitresult.getBlockPos();
             Direction direction = blockhitresult.getDirection();
             BlockPos blockpos1 = blockpos.relative(direction);
+
             if (level.mayInteract(player, blockpos) && player.mayUseItemAt(blockpos1, direction, itemstack)) {
                 if (this.getFluid() == Fluids.EMPTY) {
                     BlockState state = level.getBlockState(blockpos);
@@ -66,7 +67,7 @@ public class WoodenBucketItem extends BucketItem implements Wearable {
                         if (!level.isClientSide)
                             CriteriaTriggers.FILLED_BUCKET.trigger((ServerPlayer) player, filledBucket);
 
-                        return InteractionResultHolder.sidedSuccess(ItemUtils.createFilledResult(itemstack, player, filledBucket), level.isClientSide);
+                        return InteractionResultHolder.sidedSuccess(filledBucket, level.isClientSide);
                     }
                 } else {
                     BlockState blockstate = level.getBlockState(blockpos);
@@ -122,12 +123,12 @@ public class WoodenBucketItem extends BucketItem implements Wearable {
 
     @Override
     public EquipmentSlot getEquipmentSlot(ItemStack stack) {
-        return stack.is(WindsweptItems.WOODEN_BUCKET.get()) ? EquipmentSlot.HEAD : null;
+        return this.getFluid() == Fluids.EMPTY ? EquipmentSlot.HEAD : null;
     }
 
     @Override
-    public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-        return Windswept.MOD_ID + ":textures/models/armor/wooden_bucket_armor_layer_1.png";
+    public SoundEvent getEquipSound() {
+        return SoundEvents.ARMOR_EQUIP_LEATHER;
     }
 
     // Util //
