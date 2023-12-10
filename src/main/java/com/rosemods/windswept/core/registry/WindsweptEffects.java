@@ -35,7 +35,7 @@ public class WindsweptEffects {
         DataUtil.addMix(THORNS_POTION.get(), Items.REDSTONE, LONG_THORNS_POTION.get());
         DataUtil.addMix(THORNS_POTION.get(), Items.GLOWSTONE_DUST, STRONG_THORNS_POTION.get());
 
-        DataUtil.addMix(Potions.AWKWARD, WindsweptBlocks.ICICLES.get().asItem(), FROST_RESISTANCE_POTION.get());
+        DataUtil.addMix(Potions.AWKWARD, WindsweptItems.FROZEN_BRANCH.get(), FROST_RESISTANCE_POTION.get());
         DataUtil.addMix(FROST_RESISTANCE_POTION.get(), Items.REDSTONE, LONG_FROST_RESISTANCE_POTION.get());
     }
 

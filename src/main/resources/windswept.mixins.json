@@ -15,6 +15,7 @@
     "LiquidBlockMixin",
     "LivingEntityMixin",
     "LlamaMixin",
+    "PlayerMixin",
     "PowderSnowBlockMixin",
     "RabbitMixin",
     "SimpleWaterloggedBlockMixin",

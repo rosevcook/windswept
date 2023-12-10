@@ -5,6 +5,7 @@ import com.rosemods.windswept.common.item.SnowBootsItem;
 import com.rosemods.windswept.core.other.tags.WindsweptEntityTypeTags;
 import com.rosemods.windswept.core.registry.WindsweptEffects;
 import net.minecraft.core.BlockPos;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -14,6 +15,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin extends Entity {
@@ -36,6 +38,11 @@ public abstract class LivingEntityMixin extends Entity {
             return false;
 
         return super.isFullyFrozen();
+    }
+
+    @Inject(method = "canFreeze", at = @At("HEAD"), cancellable = true)
+    private void canFreeze(CallbackInfoReturnable<Boolean> info) {
+        info.setReturnValue(!this.getType().is(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES) && !this.isSpectator());
     }
 
     @Inject(method = "onChangedBlock", at = @At("TAIL"))

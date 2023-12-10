@@ -38,10 +38,6 @@ public class EffectSubRegistryHelper implements ISubRegistryHelper<MobEffect> {
         return this.effectRegister.register(name, () -> new BlueprintMobEffect(effectType, liquidColor));
     }
 
-    public <P extends Potion> RegistryObject<P> createPotion(String name, Supplier<? extends P> potion) {
-        return this.potionRegister.register(name, potion);
-    }
-
     public RegistryObject<Potion> createPotion(String name, Supplier<? extends MobEffect> effect, int duration, int strength) {
         return this.potionRegister.register(name, () -> new Potion(new MobEffectInstance(effect.get(), duration, strength)));
     }

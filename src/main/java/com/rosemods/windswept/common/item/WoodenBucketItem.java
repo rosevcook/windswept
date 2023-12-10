@@ -32,8 +32,8 @@ import net.minecraft.world.phys.HitResult;
 
 import java.util.function.Supplier;
 
-public class WoodenBucketItem extends BucketItem {
-    public static final TargetedItemCategoryFiller FILLER = new TargetedItemCategoryFiller(Items.POWDER_SNOW_BUCKET::asItem);
+public class WoodenBucketItem extends BucketItem implements Wearable {
+    public static final TargetedItemCategoryFiller FILLER = new TargetedItemCategoryFiller(() -> Items.POWDER_SNOW_BUCKET);
 
     public WoodenBucketItem(Supplier<? extends Fluid> supplier, Properties builder) {
         super(supplier, builder);
@@ -44,9 +44,7 @@ public class WoodenBucketItem extends BucketItem {
         ItemStack itemstack = player.getItemInHand(hand);
         BlockHitResult blockhitresult = getPlayerPOVHitResult(level, player, this.getFluid() == Fluids.EMPTY ? ClipContext.Fluid.SOURCE_ONLY : ClipContext.Fluid.NONE);
 
-        if (blockhitresult.getType() != HitResult.Type.BLOCK)
-            return InteractionResultHolder.pass(itemstack);
-        else {
+        if (blockhitresult.getType() == HitResult.Type.BLOCK) {
             BlockPos blockpos = blockhitresult.getBlockPos();
             Direction direction = blockhitresult.getDirection();
             BlockPos blockpos1 = blockpos.relative(direction);
@@ -85,6 +83,8 @@ public class WoodenBucketItem extends BucketItem {
 
             return InteractionResultHolder.fail(itemstack);
         }
+
+        return InteractionResultHolder.pass(itemstack);
     }
 
     @Override
@@ -132,24 +132,29 @@ public class WoodenBucketItem extends BucketItem {
     }
 
     // Util //
-
     public static ItemStack getEmpty(ItemStack handStack, Player player, InteractionHand hand) {
         ItemStack bucket = new ItemStack(WindsweptItems.WOODEN_BUCKET.get());
         bucket.setDamageValue(handStack.getDamageValue());
+        handStack.getAllEnchantments().forEach(bucket::enchant);
 
-        if (player != null)
+        if (player != null) {
             bucket.hurtAndBreak(1, player, p -> {
                 if (hand != null)
                     p.broadcastBreakEvent(hand);
             });
-        else if (bucket.hurt(1, RandomSource.create(), null))
+
+            if (player.getAbilities().instabuild)
+                return handStack;
+        } else if (bucket.hurt(1, RandomSource.create(), null))
             bucket.setCount(0);
 
-        return player != null && player.getAbilities().instabuild ? handStack : bucket;
+        return bucket;
     }
 
     public static ItemStack getFilled(ItemStack handStack, ItemLike filled, Player player) {
         ItemStack bucket = new ItemStack(filled);
+        handStack.getAllEnchantments().forEach(bucket::enchant);
+
         if (!player.getAbilities().instabuild)
             bucket.setDamageValue(handStack.getDamageValue());
 

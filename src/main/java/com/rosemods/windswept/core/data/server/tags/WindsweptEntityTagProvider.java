@@ -25,6 +25,7 @@ public class WindsweptEntityTagProvider extends EntityTypeTagsProvider {
 
         this.tag(EntityTypeTags.POWDER_SNOW_WALKABLE_MOBS).add(CHILLED.get(), FROSTBITER.get());
         this.tag(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES).add(CHILLED.get(), FROSTBITER.get());
+        this.tag(EntityTypeTags.ARROWS).add(FROST_ARROW.get());
     }
 
 }
