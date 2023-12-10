@@ -184,6 +184,16 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
     }
 
     @Override
+    public boolean doHurtTarget(Entity entity) {
+        if (super.doHurtTarget(entity) && entity instanceof LivingEntity livingEntity) {
+            livingEntity.setTicksFrozen(livingEntity.getTicksFrozen() + 100);
+            return true;
+        }
+
+        return false;
+    }
+
+    @Override
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
 

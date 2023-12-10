@@ -22,8 +22,8 @@ public abstract class SnowyDirtBlockMixin extends Block {
     }
 
     @Inject(method = "updateShape", at = @At("HEAD"), cancellable = true)
-    public void updateShape(BlockState state, Direction direction, BlockState otherState, LevelAccessor level, BlockPos pos, BlockPos otherPos, CallbackInfoReturnable<BlockState> info) {
-        info.setReturnValue(direction == Direction.UP ? state.setValue(SnowyDirtBlock.SNOWY, otherState.is(BlockTags.SNOW) && canSupportCenter(level, pos.above(), Direction.DOWN)) : state);
+    public void updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos, CallbackInfoReturnable<BlockState> info) {
+        info.setReturnValue(facing == Direction.UP ? state.setValue(SnowyDirtBlock.SNOWY, facingState.is(BlockTags.SNOW) && canSupportCenter(level, currentPos.above(), Direction.DOWN)) : state);
     }
 
     @Inject(method = "getStateForPlacement", at = @At("HEAD"), cancellable = true)

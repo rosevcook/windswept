@@ -1,0 +1,33 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "farmersdelight"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "windswept:christmas_pudding_slice"
+          },
+          {
+            "item": "windswept:christmas_pudding_slice"
+          },
+          {
+            "item": "windswept:christmas_pudding_slice"
+          },
+          {
+            "item": "windswept:christmas_pudding_slice"
+          }
+        ],
+        "result": {
+          "item": "windswept:christmas_pudding"
+        }
+      }
+    }
+  ]
+}

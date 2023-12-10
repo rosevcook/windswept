@@ -33,10 +33,10 @@ public class FrostArrow extends AbstractArrow {
         if (!inGround && level.isClientSide && tickCount > 2) {
             Vec3 motion = this.getDeltaMovement();
 
-            for (int i = 1; i < 4; i++) {
-                double px = getX() - motion.x * ((float) i / 4) + (Math.random() - .5d) * .1d;
-                double py = getY() - motion.y * ((float) i / 4) + (Math.random() - .5d) * .1d;
-                double pz = getZ() - motion.z * ((float) i / 4) + (Math.random() - .5d) * .1d;
+            for (int i = 1; i < 3; i++) {
+                double px = getX() - motion.x * ((float) i / 3) + (Math.random() - .5d) * .1d;
+                double py = getY() - motion.y * ((float) i / 3) + (Math.random() - .5d) * .1d;
+                double pz = getZ() - motion.z * ((float) i / 3) + (Math.random() - .5d) * .1d;
                 double mx = (Math.random() - 0.5) * .03d - motion.x * .08d;
                 double my = (Math.random() - 0.5) * .03d - motion.y * .08d;
                 double mz = (Math.random() - 0.5) * .03d - motion.z * .08d;
@@ -49,7 +49,7 @@ public class FrostArrow extends AbstractArrow {
     @Override
     protected void onHitEntity(EntityHitResult result) {
         if (result.getEntity() instanceof LivingEntity livingEntity)
-            livingEntity.setTicksFrozen(livingEntity.getTicksFrozen() + 200);
+            livingEntity.setTicksFrozen((int) ((livingEntity.getTicksFrozen() + 100) * this.getDeltaMovement().length()));
 
         super.onHitEntity(result);
     }

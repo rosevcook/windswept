@@ -2,6 +2,7 @@ package com.rosemods.windswept.core.mixin;
 
 import com.rosemods.windswept.common.enchantment.curse.SlippingCurseEnchantment;
 import com.rosemods.windswept.common.item.SnowBootsItem;
+import com.rosemods.windswept.core.other.tags.WindsweptEntityTypeTags;
 import com.rosemods.windswept.core.registry.WindsweptEffects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
@@ -23,7 +24,18 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Override
     public int getTicksFrozen() {
-        return ((LivingEntity) (Object) this).hasEffect(WindsweptEffects.FROST_RESISTANCE.get()) ? 0 : super.getTicksFrozen();
+        if (((LivingEntity) (Object) this).hasEffect(WindsweptEffects.FROST_RESISTANCE.get()))
+            return 0;
+
+        return super.getTicksFrozen();
+    }
+
+    @Override
+    public boolean isFullyFrozen() {
+        if (this.isInPowderSnow && this.getType().is(WindsweptEntityTypeTags.CONVERT_TO_CHILLED))
+            return false;
+
+        return super.isFullyFrozen();
     }
 
     @Inject(method = "onChangedBlock", at = @At("TAIL"))

@@ -7,6 +7,7 @@ import com.teamabnormals.blueprint.common.loot.modification.modifiers.LootPoolsM
 import net.minecraft.advancements.critereon.EntityFlagsPredicate;
 import net.minecraft.advancements.critereon.EntityPredicate;
 import net.minecraft.tags.EntityTypeTags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -17,12 +18,14 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemDamageFunction;
 import net.minecraft.world.level.storage.loot.functions.SmeltItemFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemKilledByPlayerCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Collections;
+import java.util.List;
 import java.util.function.Consumer;
 
 public class WindsweptLootModifierProvider extends LootModifierProvider {
@@ -39,17 +42,27 @@ public class WindsweptLootModifierProvider extends LootModifierProvider {
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3)))
                         .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0, 1)))
                         .apply(SmeltItemFunction.smelted().when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS,
-                                EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnFire(true).build()))))
-                ).build()), false));
+                                EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnFire(true).build()))))).build()), false));
 
         // drowned rain disc
-        this.entry("drowned_disc").selects("entities/drowned")
-                .addModifier(new LootPoolsModifier(
-                        Collections.singletonList(LootPool.lootPool().name("windswept:rain_disc")
-                                .add(LootItem.lootTableItem(WindsweptItems.MUSIC_DISC_RAIN::get))
-                                .when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.KILLER,
-                                        EntityPredicate.Builder.entity().of(EntityTypeTags.SKELETONS)))
-                                .build()), false));
+        this.entry("drowned_disc").selects("entities/drowned").addModifier(new LootPoolsModifier(
+                Collections.singletonList(LootPool.lootPool().name("windswept:rain_disc")
+                        .add(LootItem.lootTableItem(WindsweptItems.MUSIC_DISC_RAIN::get))
+                        .when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.KILLER,
+                                EntityPredicate.Builder.entity().of(EntityTypeTags.SKELETONS))).build()), false));
+
+        // strays drop frost arrows
+        this.entry("stray").selects("entities/stray").addModifier(new LootPoolsModifier(List.of(
+                LootPool.lootPool().setRolls(ConstantValue.exactly(1f)).add(LootItem.lootTableItem(Items.ARROW)
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(0f, 2f)))
+                        .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0f, 1f)))).build(),
+                LootPool.lootPool().setRolls(ConstantValue.exactly(1f)).add(LootItem.lootTableItem(Items.BONE)
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(0f, 2f)))
+                        .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0f, 1f)))).build(),
+                LootPool.lootPool().setRolls(ConstantValue.exactly(1f)).add(LootItem.lootTableItem(WindsweptItems.FROST_ARROW.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(0f, 1f)))
+                                .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0f, 1f)).setLimit(1)))
+                        .when(LootItemKilledByPlayerCondition.killedByPlayer()).build()), true));
 
         // chests
         this.chestEntry("village_taiga_house", "chests/village/village_taiga_house", WindsweptItems.MUTTON_PIE, b -> b.setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(-1, 2))));
