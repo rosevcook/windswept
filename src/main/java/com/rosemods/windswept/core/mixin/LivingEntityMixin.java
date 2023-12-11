@@ -42,7 +42,7 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Inject(method = "canFreeze", at = @At("HEAD"), cancellable = true)
     private void canFreeze(CallbackInfoReturnable<Boolean> info) {
-        info.setReturnValue(!this.getType().is(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES) && !this.isSpectator());
+        info.setReturnValue(!this.getType().is(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES) && !this.isSpectator() && !((LivingEntity) (Object) this).hasEffect(WindsweptEffects.FROST_RESISTANCE.get()));
     }
 
     @Inject(method = "onChangedBlock", at = @At("TAIL"))

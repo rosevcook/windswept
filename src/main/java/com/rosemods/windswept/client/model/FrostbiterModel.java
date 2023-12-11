@@ -24,6 +24,7 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> implements
     private final ModelPart leaves;
     private final ModelPart leash;
     private final ModelPart bell;
+    private final ModelPart saddle;
     private final ModelPart leftAntler;
     private final ModelPart rightAntler;
     private final ModelPart brokenLeftAntler;
@@ -43,6 +44,7 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> implements
         this.leaves = this.head.getChild("leaves");
         this.leash = this.head.getChild("leash");
         this.bell = this.leash.getChild("bell");
+        this.saddle = this.body.getChild("saddle");
         this.leftAntler = this.head.getChild("left_antler");
         this.rightAntler = this.head.getChild("right_antler");
         this.brokenLeftAntler = this.head.getChild("broken_left_antler");
@@ -63,24 +65,22 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> implements
         if (!isEating) {
             this.rightArm.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * limbSwingAmount;
             this.leftArm.xRot = Mth.cos(limbSwing * .6662f) * .9f * limbSwingAmount;
-        }
 
-        if (!isEating) {
             this.tail.yRot = Mth.cos(limbSwing * .6662f + Mth.PI) * limbSwingAmount;
             this.tail.zRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .1f * limbSwingAmount;
             this.body.zRot = Mth.cos(limbSwing * .6662f) * .2f * limbSwingAmount;
 
             if (!isShaking) {
-                //this.head.xRot = headPitch * ((float)Math.PI / 180f) - 125f;
-                this.head.yRot = headPitch * ((float)Math.PI / 180f);
+                this.head.yRot = headPitch * ((float) Math.PI / 180f);
                 this.bell.zRot = Mth.cos(limbSwing * .6662f) * .6f * limbSwingAmount;
             }
         }
 
-        this.frontEyesClosed.visible = !frostbiter.isNoEndimationPlaying();
-        this.front.visible = !this.frontEyesClosed.visible;
+        this.front.visible = frostbiter.isNoEndimationPlaying();
+        this.frontEyesClosed.visible = !this.front.visible;
         this.leaves.visible = frostbiter.hasAntlers();
         this.leash.visible = frostbiter.isTame();
+        this.saddle.visible = this.leash.visible;
         this.leftAntler.visible = frostbiter.hasLeftAntler();
         this.rightAntler.visible = frostbiter.hasRightAntler();
         this.brokenLeftAntler.visible = !this.leftAntler.visible;

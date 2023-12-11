@@ -14,10 +14,7 @@ public class WallDecorationBlock extends LadderBlock {
 
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        Direction direction = state.getValue(FACING);
-        BlockState blockstate = level.getBlockState(pos.relative(direction.getOpposite()));
-
-        return blockstate.is(BlockTags.LEAVES) || blockstate.isFaceSturdy(level, pos, direction);
+        return level.getBlockState(pos.relative(state.getValue(FACING).getOpposite())).getMaterial().isSolid();
     }
 
 }
