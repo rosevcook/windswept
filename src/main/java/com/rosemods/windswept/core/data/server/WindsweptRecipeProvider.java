@@ -151,7 +151,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         compressedBlock(ROASTED_CHESTNUT_CRATE.get(), ROASTED_CHESTNUTS.get(), getQuarkCondition("apple_crate"), consumer);
         compressedBlock(RED_MUSHROOM_BASKET.get(), Items.RED_MUSHROOM, new OrCondition(new OrCondition(new ModLoadedCondition("berry_good"), new ModLoadedCondition("farmersdelight")), getQuarkCondition("apple_crate")), consumer);
         compressedBlock(BROWN_MUSHROOM_BASKET.get(), Items.BROWN_MUSHROOM, new OrCondition(new OrCondition(new ModLoadedCondition("berry_good"), new ModLoadedCondition("farmersdelight")), getQuarkCondition("apple_crate")), consumer);
-        compressedBlock(FROZEN_FLESH_BLOCK.get(), FROZEN_FLESH.get(), new OrCondition(new ModLoadedCondition("caverns_and_chasms"), new ModLoadedCondition("quark")), consumer);
+        compressedBlock(FROZEN_FLESH_BLOCK.get(), FROZEN_FLESH.get(), consumer);
     }
 
     private static void conditionalRecipe(RecipeBuilder recipe, ICondition condition, Consumer<FinishedRecipe> consumer, ResourceLocation id) {
@@ -189,6 +189,11 @@ public class WindsweptRecipeProvider extends RecipeProvider {
     private static void compressedBlock(Block block, ItemLike item, ICondition condition, Consumer<FinishedRecipe> consumer) {
         conditionalRecipe(ShapedRecipeBuilder.shaped(block).define('#', item).pattern("###").pattern("###").pattern("###").unlockedBy(getHasName(item), has(item)), condition, consumer, getSaveLocation(block));
         conditionalRecipe(ShapelessRecipeBuilder.shapeless(item, 9).requires(block).unlockedBy(getHasName(block), has(block)), condition, consumer, getSaveLocation(getName(block) + "_revert"));
+    }
+
+    private static void compressedBlock(Block block, ItemLike item, Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(block).define('#', item).pattern("###").pattern("###").pattern("###").unlockedBy(getHasName(item), has(item)).save(consumer, getSaveLocation(block));
+        ShapelessRecipeBuilder.shapeless(item, 9).requires(block).unlockedBy(getHasName(block), has(block)).save(consumer, getSaveLocation(getName(block) + "_revert"));
     }
 
     private static void woodSet(TagKey<Item> logs, Block planks, Block slab, Block stairs, Block log, Block wood, Block strippedLog, Block strippedWood, ItemLike boat, ItemLike chestBoat, Block button, Block door, Block trapdoor, Block fence, Block fenceGate, Block pressurePlate, Block sign, Block verticalSlab, Block post, Block strippedPost, Block boards, Block beehive, Block ladder, Block bookshelf, Block chest, Block trappedChest, Item largeBoat, Item furnaceBoat, Block verticalPlanks, Block cabinet, Consumer<FinishedRecipe> consumer) {

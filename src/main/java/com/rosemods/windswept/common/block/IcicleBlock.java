@@ -38,7 +38,7 @@ public class IcicleBlock extends Block implements SimpleWaterloggedBlock {
 
     public IcicleBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.defaultBlockState().setValue(STATE, IcicleStates.NORMAL).setValue(WATERLOGGED, false));
+        this.registerDefaultState(this.stateDefinition.any().setValue(STATE, IcicleStates.NORMAL).setValue(WATERLOGGED, false));
     }
 
     @Override

@@ -30,6 +30,7 @@ public class IceLanternBlock extends Block implements SimpleWaterloggedBlock {
 
     public IceLanternBlock(Properties properties) {
         super(properties);
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.UP).setValue(WATERLOGGED, false));
     }
 
     @Override
