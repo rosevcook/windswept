@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "state=1": {
+      "model": "windswept:block/christmas_pudding_1"
+    },
+    "state=2": {
+      "model": "windswept:block/christmas_pudding_2"
+    },
+    "state=3": {
+      "model": "windswept:block/christmas_pudding_3"
+    },
+    "state=4": {
+      "model": "windswept:block/christmas_pudding_4"
+    },
+    "state=fire": {
+      "model": "windswept:block/christmas_pudding_fire"
+    }
+  }
+}

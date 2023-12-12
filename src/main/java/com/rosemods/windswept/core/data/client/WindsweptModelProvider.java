@@ -1,6 +1,7 @@
 package com.rosemods.windswept.core.data.client;
 
 import com.mojang.datafixers.util.Pair;
+import com.rosemods.windswept.common.block.ChristmasPuddingBlock;
 import com.rosemods.windswept.common.block.IceLanternBlock;
 import com.rosemods.windswept.common.block.IcicleBlock;
 import com.rosemods.windswept.common.block.WildBerryBushBlock;
@@ -185,6 +186,12 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.verticalSlab(BLUE_ICE_BRICK_VERTICAL_SLAB, this.blockTexture(BLUE_ICE_BRICKS.get()));
 
         this.ladder(HOLLY_WREATH);
+        this.getVariantBuilder(CHRISTMAS_PUDDING.get())
+                .partialState().with(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.FIRE).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/christmas_pudding_fire"))))
+                .partialState().with(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.FOUR).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/christmas_pudding_4"))))
+                .partialState().with(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.THREE).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/christmas_pudding_3"))))
+                .partialState().with(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.TWO).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/christmas_pudding_2"))))
+                .partialState().with(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.ONE).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/christmas_pudding_1"))));
         this.generatedItem(CHRISTMAS_PUDDING.get(), TextureFolder.Item);
         this.horizontalBlock(FROSTBITER_TROPHY.get(), this.models().getExistingFile(this.modLoc("block/frostbiter_trophy")));
         this.generatedItem(FROSTBITER_TROPHY.get(), TextureFolder.Item);
