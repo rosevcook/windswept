@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.rosemods.windswept.core.WindsweptConfig;
+import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import com.rosemods.windswept.core.registry.WindsweptTrunkPlacers;
 import com.teamabnormals.blueprint.common.block.wood.LogBlock;
 import net.minecraft.core.BlockPos;
@@ -49,8 +50,8 @@ public class ChestnutTrunkPlacer extends TrunkPlacer {
             this.placeLog(level, consumer, rand, pos.offset(0, y, 0), config);
 
         // branches
-        int raisedX = 2;
-        int raisedZ = 2;
+        List<Integer> raisedX = Lists.newArrayList();
+        List<Integer> raisedZ = Lists.newArrayList();
         for (int x = -2; x <= 2; x++)
             for (int z = -2; z <= 2; z++)
                 if (x == 0 || z == 0) {
@@ -64,14 +65,20 @@ public class ChestnutTrunkPlacer extends TrunkPlacer {
                         int posZ = z;
                         int posY = y;
 
-                        if (rand.nextInt(2) == 0) {
-                            if (x != 0 && rand.nextBoolean()) posX += x > 0 ? 1 : -1;
-                            else if (z != 0 && rand.nextBoolean()) posZ += z > 0 ? 1 : -1;
+                        if (rand.nextFloat() < .4f) {
+                            boolean success = false;
+                            if (x != 0 && rand.nextBoolean()) {
+                                posX += x > 0 ? 1 : -1;
+                                success = true;
+                            } else if (z != 0 && rand.nextBoolean()) {
+                                posZ += z > 0 ? 1 : -1;
+                                success = true;
+                            }
 
-                            if (rand.nextInt(5) == 0) {
+                            if (success && rand.nextInt(5) == 0) {
                                 posY++;
-                                if (x != 0) raisedX = (int) Math.signum(x);
-                                else if (z != 0) raisedZ = (int) Math.signum(z);
+                                if (x != 0) raisedX.add((int) Math.signum(x));
+                                else raisedZ.add((int) Math.signum(z));
                             }
 
                             this.placeLog(level, consumer, rand, pos.offset(posX, posY, posZ), config, s -> s.setValue(LogBlock.AXIS, finalX != 0 ? Direction.Axis.X : Direction.Axis.Z));
@@ -98,10 +105,10 @@ public class ChestnutTrunkPlacer extends TrunkPlacer {
                             consumer.accept(pos.offset(x, -2, z), Blocks.HANGING_ROOTS.defaultBlockState());
                     }
 
-                    if (x == raisedX || z == raisedZ || rand.nextInt(24) == 0)
+                    if (raisedX.contains(x) || raisedZ.contains(z) || rand.nextInt(32) == 0)
                         this.placeLog(level, consumer, rand, pos.offset(x, 1, z), config);
 
-                    if (level.isStateAtPosition(pos.offset(x, grassCheck, z), state -> state.is(Blocks.GRASS_BLOCK) || state.is(Blocks.PODZOL) || state.is(Blocks.MYCELIUM)))
+                    if (level.isStateAtPosition(pos.offset(x, grassCheck, z), state -> state.is(Blocks.GRASS_BLOCK) || state.is(Blocks.PODZOL) || state.is(Blocks.MYCELIUM) || state.is(WindsweptBlocks.GELISOL.get())))
                         setDirtAt(level, consumer, rand, pos.offset(x, grassCheck, z), config);
 
                 }
