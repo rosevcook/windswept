@@ -8,10 +8,7 @@ import com.rosemods.windswept.core.WindsweptConfig;
 import com.rosemods.windswept.core.other.WindsweptDataProcessors;
 import com.rosemods.windswept.core.other.tags.WindsweptBlockTags;
 import com.rosemods.windswept.core.other.tags.WindsweptEntityTypeTags;
-import com.rosemods.windswept.core.registry.WindsweptBiomes;
-import com.rosemods.windswept.core.registry.WindsweptEffects;
-import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
-import com.rosemods.windswept.core.registry.WindsweptItems;
+import com.rosemods.windswept.core.registry.*;
 import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
 import com.teamabnormals.blueprint.common.world.storage.tracking.TrackedData;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintEntityTypeTags;
@@ -28,6 +25,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.ThornsEnchantment;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -54,14 +52,26 @@ public class WindsweptEntityEvents {
         DamageSource source = event.getSource();
         Entity attacker = source.getEntity();
 
+        if (attacker == null || entity == null)
+            return;
+
         // thorns damage
-        if (attacker != null && entity != null && entity.hasEffect(WindsweptEffects.THORNS.get())) {
+        if (entity.hasEffect(WindsweptEffects.THORNS.get())) {
             int amplifier = entity.getEffect(WindsweptEffects.THORNS.get()).getAmplifier() + 1;
             RandomSource rand = entity.getRandom();
 
             if (ThornsEnchantment.shouldHit(amplifier, rand))
                 attacker.hurt(DamageSource.thorns(entity), ThornsEnchantment.getDamage(amplifier, rand));
         }
+
+        // frost aspect
+        if (attacker instanceof LivingEntity livingEntity) {
+            int level = EnchantmentHelper.getEnchantmentLevel(WindsweptEnchantments.FROST_ASPECT.get(), livingEntity);
+
+            if (level > 0)
+                entity.setTicksFrozen(Math.min(entity.getTicksFrozen() + (70 * level), entity.getTicksRequiredToFreeze() * 2));
+        }
+
     }
 
     @SubscribeEvent

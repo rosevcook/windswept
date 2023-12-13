@@ -1,4 +1,4 @@
-package com.rosemods.windswept.common.enchantment.curse;
+package com.rosemods.windswept.common.enchantment;
 
 import com.rosemods.windswept.core.registry.WindsweptEnchantments;
 import net.minecraft.world.entity.Entity;

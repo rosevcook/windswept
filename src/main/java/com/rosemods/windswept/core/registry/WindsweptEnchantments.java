@@ -1,6 +1,7 @@
 package com.rosemods.windswept.core.registry;
 
-import com.rosemods.windswept.common.enchantment.curse.SlippingCurseEnchantment;
+import com.rosemods.windswept.common.enchantment.FrostAspectEnchantment;
+import com.rosemods.windswept.common.enchantment.SlippingCurseEnchantment;
 import com.rosemods.windswept.core.Windswept;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraftforge.registries.DeferredRegister;
@@ -11,4 +12,5 @@ public final class WindsweptEnchantments {
     public static final DeferredRegister<Enchantment> ENCHANTMENTS = DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, Windswept.MOD_ID);
 
     public static final RegistryObject<Enchantment> SLIPPING_CURSE = ENCHANTMENTS.register("slipping_curse", SlippingCurseEnchantment::new);
+    public static final RegistryObject<Enchantment> FROST_ASPECT = ENCHANTMENTS.register("frost_aspect", FrostAspectEnchantment::new);
 }

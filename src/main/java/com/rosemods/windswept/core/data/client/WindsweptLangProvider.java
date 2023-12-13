@@ -288,6 +288,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 
         // Enchantments //
         this.translateEnchantment(WindsweptEnchantments.SLIPPING_CURSE, "Curse of Slipping", "Causes the wearer to slip on any block as if it was ice whilst damaging the boots.");
+        this.translateEnchantment(WindsweptEnchantments.FROST_ASPECT, "Frost Aspect", "Causes additional frost damage when used to attack a mob.");
 
         // Damage Sources //
         this.translateDamageSource(WindsweptDamageSources.HOLLY_LEAVES,
