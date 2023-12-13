@@ -43,9 +43,11 @@ import java.util.UUID;
 public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob, ItemSteerable, Saddleable {
     private static final EntityDataAccessor<Boolean> LEFT_ANTLER = SynchedEntityData.defineId(Frostbiter.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> RIGHT_ANTLER = SynchedEntityData.defineId(Frostbiter.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> SADDLED = SynchedEntityData.defineId(Frostbiter.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Integer> BOOST_TIME = SynchedEntityData.defineId(Frostbiter.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> ANGER_TIME = SynchedEntityData.defineId(Frostbiter.class, EntityDataSerializers.INT);
     private static final UniformInt ANGER_RANGE = TimeUtil.rangeOfSeconds(20, 39);
-
+    private final ItemBasedSteering steering = new ItemBasedSteering(this.entityData, BOOST_TIME, SADDLED);
     private int dropDelay;
     private boolean hasJustDropped;
     private UUID lastHurtBy;
@@ -60,6 +62,8 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
         super.defineSynchedData();
         this.entityData.define(LEFT_ANTLER, true);
         this.entityData.define(RIGHT_ANTLER, true);
+        this.entityData.define(SADDLED, false);
+        this.entityData.define(BOOST_TIME, 0);
         this.entityData.define(ANGER_TIME, 0);
     }
 
@@ -68,6 +72,7 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
         super.addAdditionalSaveData(compound);
         compound.putBoolean("LeftAntler", this.hasLeftAntler());
         compound.putBoolean("RightAntler", this.hasRightAntler());
+        compound.putBoolean("Saddled", this.isSaddled());
         this.addPersistentAngerSaveData(compound);
     }
 
@@ -76,6 +81,7 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
         super.readAdditionalSaveData(compound);
         this.setLeftAntler(compound.getBoolean("LeftAntler"));
         this.setRightAntler(compound.getBoolean("RightAntler"));
+        this.setSaddled(compound.getBoolean("Saddled"));
         this.readPersistentAngerSaveData(this.level, compound);
     }
 
@@ -86,7 +92,7 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
         this.goalSelector.addGoal(1, new FrostbiterPanicGoal());
         this.goalSelector.addGoal(2, new FrostbiterMeleeAttackGoal());
         this.goalSelector.addGoal(2, new BreedGoal(this, 1f));
-        this.goalSelector.addGoal(3, new TemptGoal(this, 1.1f, Ingredient.of(WindsweptItems.HOLLY_BERRIES.get()), false));
+        this.goalSelector.addGoal(3, new TemptGoal(this, 1.15f, Ingredient.of(WindsweptItems.HOLLY_BERRIES.get(), WindsweptItems.HOLLY_BERRIES_ON_A_STICK.get()), false));
         this.goalSelector.addGoal(4, new FollowParentGoal(this, 1f));
         this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, .7f));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 6f));
@@ -198,13 +204,18 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
 
-        if (stack.is(Items.BUCKET) && !this.isBaby()) {
+        if (this.isSaddled() && !this.isVehicle() && !player.isSecondaryUseActive()) {
+            if (!this.level.isClientSide)
+                player.startRiding(this);
+
+            return InteractionResult.sidedSuccess(this.level.isClientSide);
+        } else if (stack.is(Items.BUCKET) && !this.isBaby()) {
             player.playSound(SoundEvents.COW_MILK, 1f, 1f);
             player.setItemInHand(hand, ItemUtils.createFilledResult(stack, player, Items.MILK_BUCKET.getDefaultInstance()));
 
             return InteractionResult.sidedSuccess(this.level.isClientSide);
         } else if (!this.isTame() && stack.is(WindsweptItems.HOLLY_BERRIES.get())) {
-            if (this.random.nextInt(10) == 0) {
+            if (this.random.nextInt(4) == 0) {
                 this.setTame(true);
                 this.setOwnerUUID(player.getUUID());
                 this.usePlayerItem(player, hand, stack);
@@ -218,10 +229,13 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
             }
 
             return InteractionResult.SUCCESS;
+        } else {
+            InteractionResult interactionresult = super.mobInteract(player, hand);
+
+            return !interactionresult.consumesAction() ? (stack.is(Items.SADDLE) ?
+                    stack.interactLivingEntity(player, this, hand) : InteractionResult.PASS) : interactionresult;
         }
 
-
-        return super.mobInteract(player, hand);
     }
 
     @Override
@@ -317,18 +331,33 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
     }
 
     @Override
+    public Entity getControllingPassenger() {
+        Entity entity = this.getFirstPassenger();
+
+        return entity instanceof Player player && this.canBeControlledBy(player) ? entity : null;
+    }
+
+    private boolean canBeControlledBy(Player player) {
+        return this.isSaddled() && (player.getMainHandItem().is(WindsweptItems.HOLLY_BERRIES_ON_A_STICK.get()) || player.getOffhandItem().is(WindsweptItems.HOLLY_BERRIES_ON_A_STICK.get()));
+    }
+
+    @Override
     public boolean boost() {
-        return false; // do
+        return this.steering.boost(this.getRandom());
     }
 
     @Override
-    public void travelWithInput(Vec3 p_20858_) {
-        // do
+    public void travel(Vec3 travel) {
+        this.travel(this, this.steering, travel);
     }
 
     @Override
+    public void travelWithInput(Vec3 travel) {
+        super.travel(travel);
+    }
+
     public float getSteeringSpeed() {
-        return 0; // do
+        return (float) this.getAttributeValue(Attributes.MOVEMENT_SPEED);
     }
 
     @Override
@@ -338,12 +367,24 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
 
     @Override
     public void equipSaddle(SoundSource sound) {
+        this.setSaddled(true);
 
+        if (sound != null)
+            this.level.playSound(null, this, SoundEvents.HORSE_SADDLE, sound, .5f, 1f);
+    }
+
+    private void setSaddled(boolean saddled) {
+        this.entityData.set(SADDLED, saddled);
     }
 
     @Override
     public boolean isSaddled() {
-        return false;
+        return this.entityData.get(SADDLED);
+    }
+
+    @Override
+    public double getPassengersRidingOffset() {
+        return super.getPassengersRidingOffset() * 1.25d;
     }
 
     public class FrostbiterPanicGoal extends PanicGoal {
