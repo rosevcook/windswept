@@ -90,7 +90,7 @@ public class ChestnutTrunkPlacer extends TrunkPlacer {
                     this.placeLog(level, consumer, rand, pos.offset(x, 0, z), config);
                     int grassCheck = -1;
 
-                    if (level.isStateAtPosition(pos.offset(x, -1, z), state -> state.getMaterial().isReplaceable())) {
+                    if (level.isStateAtPosition(pos.offset(x, -1, z), state -> !state.getMaterial().isSolid())) {
                         this.placeLog(level, consumer, rand, pos.offset(x, -1, z), config);
                         grassCheck--;
 

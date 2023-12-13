@@ -1,6 +1,7 @@
 package com.rosemods.windswept.common.block;
 
 import com.rosemods.windswept.core.registry.WindsweptEffects;
+import com.rosemods.windswept.core.registry.WindsweptItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
@@ -69,6 +70,7 @@ public class ChristmasPuddingBlock extends Block {
                 case ONE -> {
                     level.removeBlock(pos, false);
                     level.gameEvent(player, GameEvent.BLOCK_DESTROY, pos);
+                    popResourceFromFace(level, pos.offset(.5f, -.5f, .5f), Direction.UP, WindsweptItems.HOLLY_BERRIES.get().getDefaultInstance());
                 }
             }
 

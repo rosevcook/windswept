@@ -17,9 +17,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.PowderSnowBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(PowderSnowBlock.class)
@@ -29,6 +32,7 @@ public class PowderSnowBlockMixin extends Block implements IWoodenBucketPickupBl
         super(properties);
     }
 
+    @OnlyIn(Dist.CLIENT)
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource rand) {
         if (WindsweptConfig.CLIENT.powderSnowParticles.get() && rand.nextInt(16) == 0) {
@@ -51,6 +55,12 @@ public class PowderSnowBlockMixin extends Block implements IWoodenBucketPickupBl
     @Override
     public Item getWoodenBucketItem() {
         return WindsweptItems.WOODEN_POWDER_SNOW_BUCKET.get();
+    }
+
+    @Inject(method = "entityInside", at = @At("TAIL"))
+    private void entityInside(BlockState state, Level level, BlockPos pos, Entity entity, CallbackInfo info) {
+        if (entity instanceof LivingEntity livingEntity && livingEntity.hasEffect(WindsweptEffects.FROST_RESISTANCE.get()))
+            entity.setIsInPowderSnow(false);
     }
 
     @Inject(method = "canEntityWalkOnPowderSnow", at = @At("HEAD"), cancellable = true)

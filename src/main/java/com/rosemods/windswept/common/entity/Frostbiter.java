@@ -14,6 +14,7 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.TimeUtil;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.InteractionHand;
@@ -25,7 +26,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.ResetUniversalAngerTargetGoal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -39,7 +40,7 @@ import net.minecraft.world.phys.Vec3;
 
 import java.util.UUID;
 
-public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob, ItemSteerable {
+public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob, ItemSteerable, Saddleable {
     private static final EntityDataAccessor<Boolean> LEFT_ANTLER = SynchedEntityData.defineId(Frostbiter.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> RIGHT_ANTLER = SynchedEntityData.defineId(Frostbiter.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Integer> ANGER_TIME = SynchedEntityData.defineId(Frostbiter.class, EntityDataSerializers.INT);
@@ -91,10 +92,10 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 6f));
         this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
 
-        this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, false, this::isAngryAt));
-        this.targetSelector.addGoal(1, new HurtByTargetGoal(this).setAlertOthers());
-        this.targetSelector.addGoal(2, new ResetUniversalAngerTargetGoal<>(this, true));
-        this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
+        this.targetSelector.addGoal(0, new OwnerHurtByTargetGoal(this));
+        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, false, this::isAngryAt));
+        this.targetSelector.addGoal(2, new HurtByTargetGoal(this).setAlertOthers());
+        this.targetSelector.addGoal(3, new ResetUniversalAngerTargetGoal<>(this, true));
     }
 
     @Override
@@ -328,6 +329,21 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
     @Override
     public float getSteeringSpeed() {
         return 0; // do
+    }
+
+    @Override
+    public boolean isSaddleable() {
+        return this.isTame() && !this.isBaby();
+    }
+
+    @Override
+    public void equipSaddle(SoundSource sound) {
+
+    }
+
+    @Override
+    public boolean isSaddled() {
+        return false;
     }
 
     public class FrostbiterPanicGoal extends PanicGoal {

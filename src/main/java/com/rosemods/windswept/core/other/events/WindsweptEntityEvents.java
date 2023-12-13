@@ -164,7 +164,7 @@ public class WindsweptEntityEvents {
                         if (!mob.isSilent())
                             mob.level.levelEvent(null, 1048, mob.blockPosition(), 0);
                     }
-                } else if (mob.isInPowderSnow && !mob.hasEffect(WindsweptEffects.FROST_RESISTANCE.get())) {
+                } else if (mob.isInPowderSnow) {
                     ammendData(data, WindsweptDataProcessors.POWDER_SNOW_TIME, 1);
                     if (data.getValue(WindsweptDataProcessors.POWDER_SNOW_TIME) >= 140) {
                         data.setValue(WindsweptDataProcessors.FREEZE_CONVERT_TIME, 300);

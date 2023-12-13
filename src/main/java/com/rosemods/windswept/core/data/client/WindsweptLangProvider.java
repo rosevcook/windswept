@@ -269,7 +269,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 
         // Effects //
         this.translateEffect(WindsweptEffects.THORNS, "Causes damage to enemies when they attack you.");
-        this.translateEffect(WindsweptEffects.FROST_RESISTANCE, "Grants immunity to frost. Allows for walking on Powder Snow.");
+        this.translateEffect(WindsweptEffects.FROST_RESISTANCE, "Grants immunity to frost. Allows for walking on Powder Snow. Stops Entity Conversion in Powder Snow.");
 
         this.translatePotion(WindsweptEffects.THORNS_POTION, "Prickling");
         this.translatePotion(WindsweptEffects.LONG_THORNS_POTION, "Prickling");

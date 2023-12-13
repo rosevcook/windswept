@@ -19,6 +19,7 @@
     "PowderSnowBlockMixin",
     "RabbitMixin",
     "SimpleWaterloggedBlockMixin",
+    "SkeletonMixin",
     "SnowLayerBlockMixin",
     "SnowyDirtBlockMixin",
     "SolidBucketItemMixin",

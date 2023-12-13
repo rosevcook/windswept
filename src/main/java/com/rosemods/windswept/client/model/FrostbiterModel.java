@@ -80,7 +80,7 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> implements
         this.frontEyesClosed.visible = !this.front.visible;
         this.leaves.visible = frostbiter.hasAntlers();
         this.leash.visible = frostbiter.isTame();
-        this.saddle.visible = this.leash.visible;
+        this.saddle.visible = frostbiter.isSaddled();
         this.leftAntler.visible = frostbiter.hasLeftAntler();
         this.rightAntler.visible = frostbiter.hasRightAntler();
         this.brokenLeftAntler.visible = !this.leftAntler.visible;

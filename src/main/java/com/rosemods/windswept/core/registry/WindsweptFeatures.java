@@ -162,7 +162,7 @@ public final class WindsweptFeatures {
         public static final RegistryObject<PlacedFeature> BLUE_ROSE_BUSH = createPlantPatch("blue_rose_bush", 12, Features.BLUE_ROSE_BUSH);
         public static final RegistryObject<PlacedFeature> YELLOW_ROSE_BUSH = createPlantPatch("yellow_rose_bush", 12, Features.YELLOW_ROSE_BUSH);
         public static final RegistryObject<PlacedFeature> LUPINE = createPlantPatch("lupine", 12, Features.LUPINE);
-        public static final RegistryObject<PlacedFeature> NIGHTHSADE = createPlantPatch("nightshade", 360, Features.NIGHTHSADE);
+        public static final RegistryObject<PlacedFeature> NIGHTHSADE = createPlantPatch("nightshade", 340, Features.NIGHTHSADE);
         public static final RegistryObject<PlacedFeature> WILD_BERRY_BUSH = createPlantPatch("wild_berry_bush", 32, Features.WILD_BERRY_BUSH);
         public static final RegistryObject<PlacedFeature> WILD_BERRY_BUSH_COMMON = createPlantPatch("wild_berry_bush_common", 5, Features.WILD_BERRY_BUSH);
         public static final RegistryObject<PlacedFeature> SNOWY_SPROUTS = createPlantPatch("snowy_sprouts", 4, Features.SNOWY_SPROUTS);

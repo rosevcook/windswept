@@ -1,6 +1,9 @@
 {
   "values": [
     "minecraft:bee",
+    "minecraft:goat",
+    "minecraft:fox",
+    "minecraft:horse",
     "windswept:frostbiter"
   ]
 }
