@@ -206,6 +206,8 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.leafPile(PINE_LEAF_PILE.get());
 
             // pinecone
+            this.dropSelf(PINECONE.get()); //change
+
             this.dropSelf(PINECONE_BLOCK.get());
             this.dropSelf(CARVED_PINECONE_BLOCK.get());
             this.dropSelf(WILL_O_THE_WISP.get());

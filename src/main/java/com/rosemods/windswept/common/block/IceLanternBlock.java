@@ -53,11 +53,11 @@ public class IceLanternBlock extends Block implements SimpleWaterloggedBlock {
     }
 
     @Override
-    public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         Direction direction = state.getValue(FACING);
         BlockPos blockpos = pos.relative(direction.getOpposite());
 
-        return Block.canSupportCenter(world, blockpos, direction);
+        return Block.canSupportCenter(level, blockpos, direction);
     }
 
     @Override

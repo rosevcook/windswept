@@ -175,6 +175,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         compressedBlock(RED_MUSHROOM_BASKET.get(), Items.RED_MUSHROOM, new OrCondition(new OrCondition(new ModLoadedCondition("berry_good"), new ModLoadedCondition("farmersdelight")), getQuarkCondition("apple_crate")), consumer);
         compressedBlock(BROWN_MUSHROOM_BASKET.get(), Items.BROWN_MUSHROOM, new OrCondition(new OrCondition(new ModLoadedCondition("berry_good"), new ModLoadedCondition("farmersdelight")), getQuarkCondition("apple_crate")), consumer);
         compressedBlock(FROZEN_FLESH_BLOCK.get(), FROZEN_FLESH.get(), consumer);
+        compressedBlock(PINECONE_BLOCK.get(), PINECONE.get(), consumer);
     }
 
     private static void conditionalRecipe(RecipeBuilder recipe, ICondition condition, Consumer<FinishedRecipe> consumer, ResourceLocation id) {

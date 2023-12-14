@@ -1,10 +1,7 @@
 package com.rosemods.windswept.core.data.client;
 
 import com.mojang.datafixers.util.Pair;
-import com.rosemods.windswept.common.block.ChristmasPuddingBlock;
-import com.rosemods.windswept.common.block.IceLanternBlock;
-import com.rosemods.windswept.common.block.IcicleBlock;
-import com.rosemods.windswept.common.block.WildBerryBushBlock;
+import com.rosemods.windswept.common.block.*;
 import com.rosemods.windswept.core.Windswept;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock.VerticalSlabType;
@@ -192,6 +189,8 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.post(STRIPPED_PINE_POST, this.blockTexture(STRIPPED_PINE_LOG.get()));
         this.chests(PINE_CHEST, PINE_TRAPPED_CHEST, this.blockTexture(PINE_PLANKS.get()));
 
+        this.hangingPinecone(PINECONE);
+
         this.directionalBlock(PINECONE_BLOCK.get(), this.models().cubeTop("pinecone_block", this.modLoc("block/pinecone_block"), this.modLoc("block/pinecone_block_top")));
         this.itemModel(PINECONE_BLOCK);
         this.horizontalBlock(CARVED_PINECONE_BLOCK.get(), this.models().orientable("carved_pinecone_block", this.modLoc("block/pinecone_block"), this.modLoc("block/carved_pinecone_block"), this.modLoc("block/pinecone_block_top")));
@@ -362,6 +361,18 @@ public class WindsweptModelProvider extends BlockStateProvider {
     }
 
     // Blocks //
+
+    private void hangingPinecone(RegistryObject<Block> pinecone) {
+        String name = getItemName(pinecone.get());
+        ResourceLocation texture = this.modLoc("block/hanging_" + name);
+
+        this.generatedItem(pinecone.get(), TextureFolder.Item);
+        this.getVariantBuilder(pinecone.get())
+                .partialState().with(PineconeBlock.AMOUNT, 1).addModels(new ConfiguredModel(this.models().withExistingParent(name + "_1", this.modLoc("block/hanging_pinecone_template_1")).texture("texture", texture)))
+                .partialState().with(PineconeBlock.AMOUNT, 2).addModels(new ConfiguredModel(this.models().withExistingParent(name + "_2", this.modLoc("block/hanging_pinecone_template_2")).texture("texture", texture)))
+                .partialState().with(PineconeBlock.AMOUNT, 3).addModels(new ConfiguredModel(this.models().withExistingParent(name + "_3", this.modLoc("block/hanging_pinecone_template_3")).texture("texture", texture)))
+                .partialState().with(PineconeBlock.AMOUNT, 4).addModels(new ConfiguredModel(this.models().withExistingParent(name + "_4", this.modLoc("block/hanging_pinecone_template_4")).texture("texture", texture)));
+    }
 
     private void wildBerryBush(RegistryObject<Block> bush) {
         String name = getBlockName(bush.get());

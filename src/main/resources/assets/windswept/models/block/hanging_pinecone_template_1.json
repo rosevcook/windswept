@@ -1,0 +1,51 @@
+{
+	"textures": {
+		"particle": "#texture"
+	},
+	"elements": [
+		{
+			"from": [5, 7, 5],
+			"to": [11, 15, 11],
+			"faces": {
+				"north": {"uv": [0, 8, 6, 16], "texture": "#texture"},
+				"east": {"uv": [0, 8, 6, 16], "texture": "#texture"},
+				"south": {"uv": [0, 8, 6, 16], "texture": "#texture"},
+				"west": {"uv": [0, 8, 6, 16], "texture": "#texture"},
+				"up": {"uv": [0, 0, 6, 6], "texture": "#texture"},
+				"down": {"uv": [6, 0, 12, 6], "texture": "#texture"}
+			}
+		},
+		{
+			"from": [8, 15, 7],
+			"to": [8, 16, 9],
+			"faces": {
+				"north": {"uv": [6, 8, 8, 9], "texture": "#texture"},
+				"east": {"uv": [6, 8, 8, 9], "texture": "#texture"},
+				"south": {"uv": [6, 8, 8, 9], "texture": "#texture"},
+				"west": {"uv": [6, 8, 8, 9], "texture": "#texture"},
+				"up": {"uv": [6, 8, 8, 9], "texture": "#texture"},
+				"down": {"uv": [6, 8, 8, 9], "texture": "#texture"}
+			}
+		},
+		{
+			"from": [7, 15, 8],
+			"to": [9, 16, 8],
+			"faces": {
+				"north": {"uv": [6, 8, 8, 9], "texture": "#texture"},
+				"east": {"uv": [6, 8, 8, 9], "texture": "#texture"},
+				"south": {"uv": [6, 8, 8, 9], "texture": "#texture"},
+				"west": {"uv": [6, 8, 8, 9], "texture": "#texture"},
+				"up": {"uv": [6, 8, 8, 9], "texture": "#texture"},
+				"down": {"uv": [6, 8, 8, 9], "texture": "#texture"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "group",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1, 2]
+		}
+	]
+}
