@@ -1,0 +1,27 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "caverns_and_chasms"
+        }
+      ],
+      "recipe": {
+  	"type": "minecraft:crafting_shapeless",
+  	"ingredients": [
+    	  {
+      	    "item": "windswept:pinecone"
+    	  },
+    	  {
+      	    "item": "caverns_and_chasms:cupric_torch"
+    	  }
+  	],
+        "result": {
+          "item": "windswept:cupric_fairy_light"
+        }
+      }
+    }
+  ]
+}

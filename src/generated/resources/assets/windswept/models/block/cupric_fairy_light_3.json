@@ -1,0 +1,6 @@
+{
+  "parent": "windswept:block/hanging_pinecone_template_3",
+  "textures": {
+    "texture": "windswept:block/cupric_fairy_light"
+  }
+}

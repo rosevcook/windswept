@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "windswept:item/cupric_fairy_light"
+  }
+}

@@ -201,6 +201,7 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> PINECONE = HELPER.createBlock("pinecone", () -> new PineconeBlock(Block.Properties.of(Material.PLANT, MaterialColor.COLOR_BROWN).strength(.25f).sound(WindsweptSoundTypes.PINECONE)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> FAIRY_LIGHT = HELPER.createBlock("fairy_light", () -> new PineconeBlock(BlockBehaviour.Properties.copy(PINECONE.get()).lightLevel(s -> 14)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> SOUL_FAIRY_LIGHT = HELPER.createBlock("soul_fairy_light", () -> new PineconeBlock(BlockBehaviour.Properties.copy(PINECONE.get()).lightLevel(s -> 10)), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> CUPRIC_FAIRY_LIGHT = HELPER.createCompatBlock(WindsweptConstants.CAVERNS_AND_CHASMS, "cupric_fairy_light", () -> new PineconeBlock(BlockBehaviour.Properties.copy(PINECONE.get()).lightLevel(s -> 10)), CreativeModeTab.TAB_DECORATIONS);
 
     public static final RegistryObject<Block> PINECONE_BLOCK = HELPER.createBlock("pinecone_block", () -> new PineconeBlockBlock(Properties.PINECONE_BLOCK), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> CARVED_PINECONE_BLOCK = HELPER.createBlock("carved_pinecone_block", () -> new CarvedPineconeBlock(Properties.PINECONE_BLOCK), CreativeModeTab.TAB_DECORATIONS);
