@@ -197,6 +197,25 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.add(BLUE_ICE_BRICK_SLAB.get(), Blocks::createSlabItemTable);
             this.dropSelf(BLUE_ICE_BRICK_WALL.get());
             this.add(BLUE_ICE_BRICK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+            
+            // shale
+            this.dropSelf(SHALE.get());
+            this.dropSelf(SHALE_STAIRS.get());
+            this.add(SHALE_SLAB.get(), Blocks::createSlabItemTable);
+            this.dropSelf(SHALE_WALL.get());
+            this.add(SHALE_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+            this.dropSelf(POLISHED_SHALE.get());
+            this.dropSelf(POLISHED_SHALE_STAIRS.get());
+            this.add(POLISHED_SHALE_SLAB.get(), Blocks::createSlabItemTable);
+            this.add(POLISHED_SHALE_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+            this.dropSelf(POLISHED_SHALE_BRICKS.get());
+            this.dropSelf(ICY_POLISHED_SHALE_BRICKS.get());
+            this.dropSelf(CHISELED_POLISHED_SHALE_BRICKS.get());
+            this.dropSelf(POLISHED_SHALE_BRICK_STAIRS.get());
+            this.add(POLISHED_SHALE_BRICK_SLAB.get(), Blocks::createSlabItemTable);
+            this.dropSelf(POLISHED_SHALE_BRICK_WALL.get());
+            this.add(POLISHED_SHALE_BRICK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+            this.dropSelf(ICY_POLISHED_SHALE_BRICKS.get());
 
             // decoration
             this.dropSelf(FROSTBITER_TROPHY.get());

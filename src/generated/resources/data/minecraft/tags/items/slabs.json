@@ -7,6 +7,9 @@
     "windswept:blue_ice_brick_slab",
     "windswept:snow_slab",
     "windswept:dry_mossy_cobblestone_slab",
-    "windswept:dry_mossy_stone_brick_slab"
+    "windswept:dry_mossy_stone_brick_slab",
+    "windswept:shale_slab",
+    "windswept:polished_shale_slab",
+    "windswept:polished_shale_brick_slab"
   ]
 }

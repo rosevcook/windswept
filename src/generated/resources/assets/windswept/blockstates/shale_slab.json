@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "windswept:block/shale_slab"
+    },
+    "type=double": {
+      "model": "windswept:block/shale"
+    },
+    "type=top": {
+      "model": "windswept:block/shale_slab_top"
+    }
+  }
+}

@@ -192,6 +192,23 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(BLUE_ICE_BRICK_WALL);
         this.translateBlock(BLUE_ICE_BRICK_VERTICAL_SLAB);
 
+        this.translateBlock(SHALE);
+        this.translateBlock(SHALE_STAIRS);
+        this.translateBlock(SHALE_SLAB);
+        this.translateBlock(SHALE_WALL);
+        this.translateBlock(SHALE_VERTICAL_SLAB);
+        this.translateBlock(POLISHED_SHALE);
+        this.translateBlock(POLISHED_SHALE_STAIRS);
+        this.translateBlock(POLISHED_SHALE_SLAB);
+        this.translateBlock(POLISHED_SHALE_VERTICAL_SLAB);
+        this.translateBlock(POLISHED_SHALE_BRICKS);
+        this.translateBlock(CHISELED_POLISHED_SHALE_BRICKS);
+        this.translateBlock(POLISHED_SHALE_BRICK_STAIRS);
+        this.translateBlock(POLISHED_SHALE_BRICK_SLAB);
+        this.translateBlock(POLISHED_SHALE_BRICK_WALL);
+        this.translateBlock(POLISHED_SHALE_BRICK_VERTICAL_SLAB);
+        this.translateBlock(ICY_POLISHED_SHALE_BRICKS);
+
         this.translateBlock(HOLLY_WREATH);
         this.translateBlock(CHRISTMAS_PUDDING);
         this.translateBlock(FROSTBITER_TROPHY);

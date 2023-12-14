@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "windswept:polished_shale_bricks"
+  },
+  "result": "windswept:chiseled_polished_shale_bricks"
+}

@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "type=double": {
+      "model": "windswept:block/polished_shale"
+    },
+    "type=east": {
+      "model": "windswept:block/polished_shale_vertical_slab",
+      "uvlock": true,
+      "y": 90
+    },
+    "type=north": {
+      "model": "windswept:block/polished_shale_vertical_slab",
+      "uvlock": true
+    },
+    "type=south": {
+      "model": "windswept:block/polished_shale_vertical_slab",
+      "uvlock": true,
+      "y": 180
+    },
+    "type=west": {
+      "model": "windswept:block/polished_shale_vertical_slab",
+      "uvlock": true,
+      "y": 270
+    }
+  }
+}

@@ -40,6 +40,22 @@
     "windswept:icicle_door",
     "windswept:icicle_trapdoor",
     "windswept:icicle_bars",
-    "windswept:ice_lantern"
+    "windswept:ice_lantern",
+    "windswept:shale",
+    "windswept:shale_stairs",
+    "windswept:shale_slab",
+    "windswept:shale_wall",
+    "windswept:shale_vertical_slab",
+    "windswept:polished_shale",
+    "windswept:polished_shale_stairs",
+    "windswept:polished_shale_slab",
+    "windswept:polished_shale_vertical_slab",
+    "windswept:polished_shale_bricks",
+    "windswept:chiseled_polished_shale_bricks",
+    "windswept:polished_shale_brick_stairs",
+    "windswept:polished_shale_brick_slab",
+    "windswept:polished_shale_brick_wall",
+    "windswept:polished_shale_brick_vertical_slab",
+    "windswept:icy_polished_shale_bricks"
   ]
 }

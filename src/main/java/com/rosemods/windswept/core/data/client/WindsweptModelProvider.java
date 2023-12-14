@@ -185,6 +185,23 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.wall(BLUE_ICE_BRICK_WALL, this.blockTexture(BLUE_ICE_BRICKS.get()));
         this.verticalSlab(BLUE_ICE_BRICK_VERTICAL_SLAB, this.blockTexture(BLUE_ICE_BRICKS.get()));
 
+        this.cubeAll(SHALE);
+        this.stairs(SHALE_STAIRS, this.blockTexture(SHALE.get()));
+        this.slab(SHALE_SLAB, this.blockTexture(SHALE.get()));
+        this.wall(SHALE_WALL, this.blockTexture(SHALE.get()));
+        this.verticalSlab(SHALE_VERTICAL_SLAB, this.blockTexture(SHALE.get()));
+        this.cubeAll(POLISHED_SHALE);
+        this.stairs(POLISHED_SHALE_STAIRS, this.blockTexture(POLISHED_SHALE.get()));
+        this.slab(POLISHED_SHALE_SLAB, this.blockTexture(POLISHED_SHALE.get()));
+        this.verticalSlab(POLISHED_SHALE_VERTICAL_SLAB, this.blockTexture(POLISHED_SHALE.get()));
+        this.cubeAll(POLISHED_SHALE_BRICKS);
+        this.cubeAll(ICY_POLISHED_SHALE_BRICKS);
+        this.cubeAll(CHISELED_POLISHED_SHALE_BRICKS);
+        this.stairs(POLISHED_SHALE_BRICK_STAIRS, this.blockTexture(POLISHED_SHALE_BRICKS.get()));
+        this.slab(POLISHED_SHALE_BRICK_SLAB, this.blockTexture(POLISHED_SHALE_BRICKS.get()));
+        this.wall(POLISHED_SHALE_BRICK_WALL, this.blockTexture(POLISHED_SHALE_BRICKS.get()));
+        this.verticalSlab(POLISHED_SHALE_BRICK_VERTICAL_SLAB, this.blockTexture(POLISHED_SHALE_BRICKS.get()));
+
         this.ladder(HOLLY_WREATH);
         this.getVariantBuilder(CHRISTMAS_PUDDING.get())
                 .partialState().with(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.FIRE).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/christmas_pudding_fire"))))
