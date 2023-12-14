@@ -45,6 +45,11 @@
     "windswept:weathered_pine_post",
     "windswept:pinecone_block",
     "windswept:carved_pinecone_block",
-    "windswept:will_o_the_wisp"
+    "windswept:will_o_the_wisp",
+    "windswept:pinecone_shingles",
+    "windswept:pinecone_shingle_stairs",
+    "windswept:pinecone_shingle_slab",
+    "windswept:pinecone_shingle_wall",
+    "windswept:pinecone_shingle_vertical_slab"
   ]
 }

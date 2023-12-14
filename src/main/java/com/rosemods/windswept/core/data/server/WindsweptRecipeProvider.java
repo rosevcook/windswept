@@ -147,16 +147,17 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         stonecutting(POLISHED_SHALE.get(), POLISHED_SHALE_BRICK_WALL.get(), 1, consumer);
         conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(POLISHED_SHALE.get()), POLISHED_SHALE_BRICK_VERTICAL_SLAB.get(), 2).unlockedBy(getHasName(POLISHED_SHALE.get()), has(POLISHED_SHALE.get())), getQuarkCondition("vertical_slabs"), consumer, getSaveLocation("polished_shale_brick_vertical_slab_from_polished_shale_stonecutting"));
 
-        blockset(null, Blocks.PACKED_ICE, null, PACKED_ICE_SLAB.get(), PACKED_ICE_STAIRS.get(), null, PACKED_ICE_VERTICAL_SLAB.get(), consumer);
-        blockset(null, Blocks.BLUE_ICE, null, BLUE_ICE_SLAB.get(), BLUE_ICE_STAIRS.get(), null, BLUE_ICE_VERTICAL_SLAB.get(), consumer);
-        blockset(Blocks.PACKED_ICE, PACKED_ICE_BRICKS.get(), CHISELED_PACKED_ICE_BRICKS.get(), PACKED_ICE_BRICK_SLAB.get(), PACKED_ICE_BRICK_STAIRS.get(), PACKED_ICE_BRICK_WALL.get(), PACKED_ICE_BRICK_VERTICAL_SLAB.get(), consumer);
-        blockset(Blocks.BLUE_ICE, BLUE_ICE_BRICKS.get(), CHISELED_BLUE_ICE_BRICKS.get(), BLUE_ICE_BRICK_SLAB.get(), BLUE_ICE_BRICK_STAIRS.get(), BLUE_ICE_BRICK_WALL.get(), BLUE_ICE_BRICK_VERTICAL_SLAB.get(), consumer);
-        blockset(Blocks.SNOW_BLOCK, SNOW_BRICKS.get(), null, SNOW_BRICK_SLAB.get(), SNOW_BRICK_STAIRS.get(), SNOW_BRICK_WALL.get(), SNOW_BRICK_VERTICAL_SLAB.get(), consumer);
-        blockset(null, DRY_MOSSY_COBBLESTONE.get(), null, DRY_MOSSY_COBBLESTONE_SLAB.get(), DRY_MOSSY_COBBLESTONE_STAIRS.get(), DRY_MOSSY_COBBLESTONE_WALL.get(), DRY_MOSSY_COBBLESTONE_VERTICAL_SLAB.get(), consumer);
-        blockset(null, DRY_MOSSY_STONE_BRICKS.get(), null, DRY_MOSSY_STONE_BRICK_SLAB.get(), DRY_MOSSY_STONE_BRICK_STAIRS.get(), DRY_MOSSY_STONE_BRICK_WALL.get(), DRY_MOSSY_STONE_BRICK_VERTICAL_SLAB.get(), consumer);
-        blockset(null, SHALE.get(), null, SHALE_SLAB.get(), SHALE_STAIRS.get(), SHALE_WALL.get(), SHALE_VERTICAL_SLAB.get(), consumer);
-        blockset(SHALE.get(), POLISHED_SHALE.get(), null, POLISHED_SHALE_SLAB.get(), POLISHED_SHALE_STAIRS.get(), null, POLISHED_SHALE_VERTICAL_SLAB.get(), consumer);
-        blockset(POLISHED_SHALE.get(), POLISHED_SHALE_BRICKS.get(), CHISELED_POLISHED_SHALE_BRICKS.get(), POLISHED_SHALE_BRICK_SLAB.get(), POLISHED_SHALE_BRICK_STAIRS.get(), POLISHED_SHALE_BRICK_WALL.get(), POLISHED_SHALE_BRICK_VERTICAL_SLAB.get(), consumer);
+        blockset(null, Blocks.PACKED_ICE, null, PACKED_ICE_SLAB.get(), PACKED_ICE_STAIRS.get(), null, PACKED_ICE_VERTICAL_SLAB.get(), true, consumer);
+        blockset(null, Blocks.BLUE_ICE, null, BLUE_ICE_SLAB.get(), BLUE_ICE_STAIRS.get(), null, BLUE_ICE_VERTICAL_SLAB.get(), true, consumer);
+        blockset(Blocks.PACKED_ICE, PACKED_ICE_BRICKS.get(), CHISELED_PACKED_ICE_BRICKS.get(), PACKED_ICE_BRICK_SLAB.get(), PACKED_ICE_BRICK_STAIRS.get(), PACKED_ICE_BRICK_WALL.get(), PACKED_ICE_BRICK_VERTICAL_SLAB.get(), true, consumer);
+        blockset(Blocks.BLUE_ICE, BLUE_ICE_BRICKS.get(), CHISELED_BLUE_ICE_BRICKS.get(), BLUE_ICE_BRICK_SLAB.get(), BLUE_ICE_BRICK_STAIRS.get(), BLUE_ICE_BRICK_WALL.get(), BLUE_ICE_BRICK_VERTICAL_SLAB.get(), true, consumer);
+        blockset(Blocks.SNOW_BLOCK, SNOW_BRICKS.get(), null, SNOW_BRICK_SLAB.get(), SNOW_BRICK_STAIRS.get(), SNOW_BRICK_WALL.get(), SNOW_BRICK_VERTICAL_SLAB.get(), true, consumer);
+        blockset(null, DRY_MOSSY_COBBLESTONE.get(), null, DRY_MOSSY_COBBLESTONE_SLAB.get(), DRY_MOSSY_COBBLESTONE_STAIRS.get(), DRY_MOSSY_COBBLESTONE_WALL.get(), DRY_MOSSY_COBBLESTONE_VERTICAL_SLAB.get(), true, consumer);
+        blockset(null, DRY_MOSSY_STONE_BRICKS.get(), null, DRY_MOSSY_STONE_BRICK_SLAB.get(), DRY_MOSSY_STONE_BRICK_STAIRS.get(), DRY_MOSSY_STONE_BRICK_WALL.get(), DRY_MOSSY_STONE_BRICK_VERTICAL_SLAB.get(), true, consumer);
+        blockset(null, SHALE.get(), null, SHALE_SLAB.get(), SHALE_STAIRS.get(), SHALE_WALL.get(), SHALE_VERTICAL_SLAB.get(), true, consumer);
+        blockset(SHALE.get(), POLISHED_SHALE.get(), null, POLISHED_SHALE_SLAB.get(), POLISHED_SHALE_STAIRS.get(), null, POLISHED_SHALE_VERTICAL_SLAB.get(), true, consumer);
+        blockset(POLISHED_SHALE.get(), POLISHED_SHALE_BRICKS.get(), CHISELED_POLISHED_SHALE_BRICKS.get(), POLISHED_SHALE_BRICK_SLAB.get(), POLISHED_SHALE_BRICK_STAIRS.get(), POLISHED_SHALE_BRICK_WALL.get(), POLISHED_SHALE_BRICK_VERTICAL_SLAB.get(), true, consumer);
+        blockset(PINECONE_BLOCK.get(), PINECONE_SHINGLES.get(), null, PINECONE_SHINGLE_SLAB.get(), PINECONE_SHINGLE_STAIRS.get(), PINECONE_SHINGLE_WALL.get(), PINECONE_SHINGLE_VERTICAL_SLAB.get(), false, consumer);
 
         // wood sets
         woodSet(WindsweptItemTags.HOLLY_LOGS, HOLLY_PLANKS.get(), HOLLY_SLAB.get(), HOLLY_STAIRS.get(), HOLLY_LOG.get(), HOLLY_WOOD.get(), STRIPPED_HOLLY_LOG.get(), STRIPPED_HOLLY_WOOD.get(), HOLLY_BOATS.getFirst().get(), HOLLY_BOATS.getSecond().get(), HOLLY_BUTTON.get(), HOLLY_DOOR.get(), HOLLY_TRAPDOOR.get(), HOLLY_FENCE.get(), HOLLY_FENCE_GATE.get(), HOLLY_PRESSURE_PLATE.get(), HOLLY_SIGNS.getFirst().get(), HOLLY_VERTICAL_SLAB.get(), HOLLY_POST.get(), STRIPPED_HOLLY_POST.get(), HOLLY_BOARDS.get(), HOLLY_BEEHIVE.get(), HOLLY_LADDER.get(), HOLLY_BOOKSHELF.get(), HOLLY_CHEST.get(), HOLLY_TRAPPED_CHEST.get(), LARGE_HOLLY_BOAT.get(), HOLLY_FURNACE_BOAT.get(), VERTICAL_HOLLY_PLANKS.get(), HOLLY_CABINET.get(), consumer);
@@ -186,25 +187,32 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         conditionalRecipe(SimpleCookingRecipeBuilder.smoking(Ingredient.of(ingredient), result, .35f, 100).unlockedBy(getHasName(ingredient), has(ingredient)), condition, consumer, getSaveLocation(getName(result) + "_from_smoking"));
     }
 
-    private static void blockset(@Nullable ItemLike ingredient, Block block, @Nullable Block chiseled, Block slab, Block stairs, @Nullable Block wall, Block verticalSlab, Consumer<FinishedRecipe> consumer) {
+    private static void blockset(@Nullable ItemLike ingredient, Block block, @Nullable Block chiseled, Block slab, Block stairs, @Nullable Block wall, Block verticalSlab, boolean stoncutter, Consumer<FinishedRecipe> consumer) {
         if (ingredient != null)
             ShapedRecipeBuilder.shaped(block, 4).define('#', ingredient).pattern("##").pattern("##").unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, getSaveLocation(getName(block)));
 
-        stonecutting(block, slab, 2, consumer);
-        stonecutting(block, stairs, 1, consumer);
+        if (stoncutter) {
+            stonecutting(block, slab, 2, consumer);
+            stonecutting(block, stairs, 1, consumer);
+            conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(block), verticalSlab, 2).unlockedBy(getHasName(block), has(block)), getQuarkCondition("vertical_slabs"), consumer, getSaveLocation(getName(verticalSlab) + "_from_" + getName(block) + "_stonecutting"));
+        }
+
         stairs(block, stairs, consumer);
         slab(block, slab, consumer);
         verticalSlab(verticalSlab, slab, consumer);
-        conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(block), verticalSlab, 2).unlockedBy(getHasName(block), has(block)), getQuarkCondition("vertical_slabs"), consumer, getSaveLocation(getName(verticalSlab) + "_from_" + getName(block) + "_stonecutting"));
 
         if (wall != null) {
-            stonecutting(block, wall, 1, consumer);
             wall(block, wall, consumer);
+
+            if (stoncutter)
+                stonecutting(block, wall, 1, consumer);
         }
 
         if (chiseled != null) {
-            stonecutting(block, chiseled, 1, consumer);
             ShapedRecipeBuilder.shaped(chiseled).define('#', slab).pattern("#").pattern("#").unlockedBy(getHasName(block), has(block)).save(consumer, getSaveLocation(getName(chiseled)));
+
+            if (stoncutter)
+                stonecutting(block, chiseled, 1, consumer);
         }
     }
 

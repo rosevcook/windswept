@@ -199,6 +199,11 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(PINECONE_BLOCK);
         this.translateBlock(CARVED_PINECONE_BLOCK);
         this.add(WILL_O_THE_WISP.get(), "Will o' the Wisp");
+        this.translateBlock(PINECONE_SHINGLES);
+        this.translateBlock(PINECONE_SHINGLE_SLAB);
+        this.translateBlock(PINECONE_SHINGLE_STAIRS);
+        this.translateBlock(PINECONE_SHINGLE_WALL);
+        this.translateBlock(PINECONE_SHINGLE_VERTICAL_SLAB);
 
         this.translateBlock(SNOWY_SPROUTS);
         this.translateBlock(GELISOL_SPROUTS);

@@ -198,10 +198,15 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> ICE_SHEET = HELPER.createBlock("ice_sheet", () -> new IceSheetBlock(BlockBehaviour.Properties.copy(Blocks.ICE)), CreativeModeTab.TAB_DECORATIONS);
 
     // Pinecone Blocks //
-
     public static final RegistryObject<Block> PINECONE_BLOCK = HELPER.createBlock("pinecone_block", () -> new PineconeBlockBlock(Properties.PINECONE_BLOCK), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> CARVED_PINECONE_BLOCK = HELPER.createBlock("carved_pinecone_block", () -> new CarvedPineconeBlock(Properties.PINECONE_BLOCK), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> WILL_O_THE_WISP = HELPER.createBlock("will_o_the_wisp", () -> new WillOTheWispBlock(BlockBehaviour.Properties.copy(PINECONE_BLOCK.get()).lightLevel(s -> 15)), CreativeModeTab.TAB_DECORATIONS);
+
+    public static final RegistryObject<Block> PINECONE_SHINGLES = HELPER.createBlock("pinecone_shingles", () -> new Block(Properties.PINECONE_BLOCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> PINECONE_SHINGLE_STAIRS = HELPER.createBlock("pinecone_shingle_stairs", () -> new StairBlock(PINECONE_SHINGLES.get()::defaultBlockState, Properties.PINECONE_BLOCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> PINECONE_SHINGLE_SLAB = HELPER.createBlock("pinecone_shingle_slab", () -> new SlabBlock(Properties.PINECONE_BLOCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> PINECONE_SHINGLE_WALL = HELPER.createBlock("pinecone_shingle_wall", () -> new WallBlock(Properties.PINECONE_BLOCK), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> PINECONE_SHINGLE_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "pinecone_shingle_vertical_slab", () -> new VerticalSlabBlock(Properties.PINECONE_BLOCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
     // Icicle Blocks //
     public static final RegistryObject<Block> ICICLES = HELPER.createInjectedBlock("icicles", Items.HANGING_ROOTS, () -> new IcicleBlock(BlockBehaviour.Properties.copy(Blocks.PACKED_ICE).noOcclusion()), CreativeModeTab.TAB_DECORATIONS);
