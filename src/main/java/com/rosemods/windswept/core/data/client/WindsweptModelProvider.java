@@ -190,6 +190,8 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.chests(PINE_CHEST, PINE_TRAPPED_CHEST, this.blockTexture(PINE_PLANKS.get()));
 
         this.hangingPinecone(PINECONE);
+        this.hangingPinecone(FAIRY_LIGHT);
+        this.hangingPinecone(SOUL_FAIRY_LIGHT);
 
         this.directionalBlock(PINECONE_BLOCK.get(), this.models().cubeTop("pinecone_block", this.modLoc("block/pinecone_block"), this.modLoc("block/pinecone_block_top")));
         this.itemModel(PINECONE_BLOCK);
@@ -364,7 +366,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
 
     private void hangingPinecone(RegistryObject<Block> pinecone) {
         String name = getItemName(pinecone.get());
-        ResourceLocation texture = this.modLoc("block/hanging_" + name);
+        ResourceLocation texture = this.blockTexture(pinecone.get());
 
         this.generatedItem(pinecone.get(), TextureFolder.Item);
         this.getVariantBuilder(pinecone.get())
