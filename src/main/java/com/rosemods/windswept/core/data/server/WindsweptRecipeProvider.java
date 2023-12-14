@@ -96,6 +96,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         ShapedRecipeBuilder.shaped(HOLLY_WREATH.get()).define('#', HOLLY_BERRIES.get()).define('B', FROZEN_BRANCH.get()).pattern(" # ").pattern("#B#").pattern(" # ").unlockedBy(getHasName(HOLLY_BERRIES.get()), has(HOLLY_BERRIES.get())).save(consumer, getSaveLocation(HOLLY_WREATH.get()));
         ShapedRecipeBuilder.shaped(FROST_ARROW.get(), 6).define('#', FROZEN_BRANCH.get()).define('I', ICICLES.get()).define('S', Items.STICK).pattern("#").pattern("S").pattern("I").unlockedBy(getHasName(FROZEN_BRANCH.get()), has(FROZEN_BRANCH.get())).save(consumer, getSaveLocation(FROST_ARROW.get()));
         ShapedRecipeBuilder.shaped(HOLLY_BERRIES_ON_A_STICK.get()).define('#', Items.FISHING_ROD).define('H', HOLLY_BERRIES.get()).pattern("# ").pattern(" H").unlockedBy(getHasName(HOLLY_BERRIES.get()), has(HOLLY_BERRIES.get())).save(consumer, getSaveLocation(HOLLY_BERRIES_ON_A_STICK.get()));
+        ShapelessRecipeBuilder.shapeless(SHALE.get()).requires(Items.COBBLESTONE).requires(Items.BLUE_ICE).unlockedBy(getHasName(SHALE.get()), has(SHALE.get())).save(consumer, getSaveLocation(SHALE.get()));
 
         // blocks
         ShapedRecipeBuilder.shaped(ICE_SHEET.get(), 12).define('#', Items.ICE).pattern("###").pattern("###").unlockedBy(getHasName(Items.ICE), has(Items.ICE)).save(consumer, getSaveLocation(ICE_SHEET.get()));
