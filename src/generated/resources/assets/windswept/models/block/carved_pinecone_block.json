@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "windswept:block/carved_pinecone_block",
+    "side": "windswept:block/pinecone_block",
+    "top": "windswept:block/pinecone_block_top"
+  }
+}

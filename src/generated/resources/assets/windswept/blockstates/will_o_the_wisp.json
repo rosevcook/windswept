@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "windswept:block/will_o_the_wisp",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "windswept:block/will_o_the_wisp"
+    },
+    "facing=south": {
+      "model": "windswept:block/will_o_the_wisp",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "windswept:block/will_o_the_wisp",
+      "y": 270
+    }
+  }
+}

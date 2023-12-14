@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "windswept:block/carved_pinecone_block",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "windswept:block/carved_pinecone_block"
+    },
+    "facing=south": {
+      "model": "windswept:block/carved_pinecone_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "windswept:block/carved_pinecone_block",
+      "y": 270
+    }
+  }
+}

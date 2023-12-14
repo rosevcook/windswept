@@ -205,6 +205,11 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(PINE_LEAF_CARPET.get());
             this.leafPile(PINE_LEAF_PILE.get());
 
+            // pinecone
+            this.dropSelf(PINECONE_BLOCK.get());
+            this.dropSelf(CARVED_PINECONE_BLOCK.get());
+            this.dropSelf(WILL_O_THE_WISP.get());
+
             // snow blocks
             this.dropSelf(SNOW_STAIRS.get());
             this.add(SNOW_SLAB.get(), Blocks::createSlabItemTable);

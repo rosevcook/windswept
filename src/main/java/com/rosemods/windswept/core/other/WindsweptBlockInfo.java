@@ -66,6 +66,8 @@ public final class WindsweptBlockInfo {
         DataUtil.registerCompostable(MUTTON_PIE.get(), 1f);
         DataUtil.registerCompostable(CHRISTMAS_PUDDING.get(), 1f);
         DataUtil.registerCompostable(CHRISTMAS_PUDDING_SLICE.get(), .85f);
+
+        DataUtil.registerCompostable(PINECONE_BLOCK.get(), 1f);
     }
 
     public static void registerFlammables() {

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_top",
+  "textures": {
+    "side": "windswept:block/pinecone_block",
+    "top": "windswept:block/pinecone_block_top"
+  }
+}

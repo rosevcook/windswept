@@ -192,6 +192,13 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.post(STRIPPED_PINE_POST, this.blockTexture(STRIPPED_PINE_LOG.get()));
         this.chests(PINE_CHEST, PINE_TRAPPED_CHEST, this.blockTexture(PINE_PLANKS.get()));
 
+        this.directionalBlock(PINECONE_BLOCK.get(), this.models().cubeTop("pinecone_block", this.modLoc("block/pinecone_block"), this.modLoc("block/pinecone_block_top")));
+        this.itemModel(PINECONE_BLOCK);
+        this.horizontalBlock(CARVED_PINECONE_BLOCK.get(), this.models().orientable("carved_pinecone_block", this.modLoc("block/pinecone_block"), this.modLoc("block/carved_pinecone_block"), this.modLoc("block/pinecone_block_top")));
+        this.itemModel(CARVED_PINECONE_BLOCK);
+        this.horizontalBlock(WILL_O_THE_WISP.get(), this.models().orientable("will_o_the_wisp", this.modLoc("block/pinecone_block"), this.modLoc("block/will_o_the_wisp"), this.modLoc("block/pinecone_block_top")));
+        this.itemModel(WILL_O_THE_WISP);
+
         this.stairs(SNOW_STAIRS, this.mcLoc("block/snow"));
         this.slab(SNOW_SLAB, this.mcLoc("block/snow_block"), this.mcLoc("block/snow"));
         this.verticalSlab(SNOW_VERTICAL_SLAB, this.mcLoc("block/snow_block"), this.mcLoc("block/snow"));
