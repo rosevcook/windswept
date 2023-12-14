@@ -1,6 +1,7 @@
 {
   "values": [
-    "#windswept:holly_leaves",
-    "#windswept:chestnut_leaves"
+    "windswept:holly_leaves",
+    "windswept:chestnut_leaves",
+    "windswept:pine_leaves"
   ]
 }

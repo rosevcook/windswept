@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "windswept:block/stripped_pine_wood_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "windswept:block/stripped_pine_wood"
+    },
+    "axis=z": {
+      "model": "windswept:block/stripped_pine_wood_horizontal",
+      "x": 90
+    }
+  }
+}

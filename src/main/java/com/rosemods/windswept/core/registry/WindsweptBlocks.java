@@ -20,6 +20,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.grower.OakTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
@@ -99,6 +100,44 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> CHESTNUT_HEDGE = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "chestnut_hedge", () -> new HedgeBlock(Properties.CHESTNUT.planks()), 300, CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> CHESTNUT_LEAF_CARPET = HELPER.createCompatBlock(WindsweptConstants.QUARK, "chestnut_leaf_carpet", () -> new LeafCarpetBlock(Properties.CHESTNUT.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> CHESTNUT_LEAF_PILE = HELPER.createCompatBlock(WindsweptConstants.WOODWORKS, "chestnut_leaf_pile", () -> new LeafPileBlock(Properties.CHESTNUT.leafPile()), CreativeModeTab.TAB_DECORATIONS);
+
+    // Pine //
+    public static final RegistryObject<Block> PINE_LOG = HELPER.createBlock("pine_log", () -> new LogBlock(WindsweptBlocks.WEATHERED_PINE_LOG, Properties.PINE.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> PINE_WOOD = HELPER.createBlock("pine_wood", () -> new WoodBlock(WindsweptBlocks.WEATHERED_PINE_WOOD, Properties.PINE.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> WEATHERED_PINE_LOG = HELPER.createBlock("weathered_pine_log", () -> new LogBlock(WindsweptBlocks.STRIPPED_PINE_LOG, Properties.PINE.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> WEATHERED_PINE_WOOD = HELPER.createBlock("weathered_pine_wood", () -> new WoodBlock(WindsweptBlocks.STRIPPED_PINE_WOOD, Properties.PINE.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> STRIPPED_PINE_LOG = HELPER.createBlock("stripped_pine_log", () -> new StrippedLogBlock(Properties.PINE.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> STRIPPED_PINE_WOOD = HELPER.createBlock("stripped_pine_wood", () -> new StrippedWoodBlock(Properties.PINE.log()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> PINE_PLANKS = HELPER.createBlock("pine_planks", () -> new PlanksBlock(Properties.PINE.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> PINE_STAIRS = HELPER.createBlock("pine_stairs", () -> new WoodStairBlock(PINE_PLANKS.get().defaultBlockState(), Properties.PINE.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> PINE_SLAB = HELPER.createBlock("pine_slab", () -> new WoodSlabBlock(Properties.PINE.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> PINE_VERTICAL_SLAB = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "pine_vertical_slab", () -> new VerticalSlabBlock(Properties.PINE.planks()), 150, CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> PINE_FENCE = HELPER.createFuelBlock("pine_fence", () -> new WoodFenceBlock(Properties.PINE.planks()), 300, CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> PINE_FENCE_GATE = HELPER.createFuelBlock("pine_fence_gate", () -> new WoodFenceGateBlock(Properties.PINE.planks()), 300, CreativeModeTab.TAB_REDSTONE);
+    public static final RegistryObject<Block> PINE_PRESSURE_PLATE = HELPER.createBlock("pine_pressure_plate", () -> new WoodPressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Properties.PINE.pressurePlate()), CreativeModeTab.TAB_REDSTONE);
+    public static final RegistryObject<Block> PINE_BUTTON = HELPER.createBlock("pine_button", () -> new BlueprintWoodButtonBlock(Properties.PINE.button()), CreativeModeTab.TAB_REDSTONE);
+    public static final RegistryObject<Block> PINE_DOOR = HELPER.createBlock("pine_door", () -> new WoodDoorBlock(Properties.PINE.door()), CreativeModeTab.TAB_REDSTONE);
+    public static final RegistryObject<Block> PINE_TRAPDOOR = HELPER.createBlock("pine_trapdoor", () -> new WoodTrapDoorBlock(Properties.PINE.trapdoor()), CreativeModeTab.TAB_REDSTONE);
+    public static final Pair<RegistryObject<BlueprintStandingSignBlock>, RegistryObject<BlueprintWallSignBlock>> PINE_SIGNS = HELPER.createSignBlock("pine", MaterialColor.COLOR_BROWN);
+    public static final RegistryObject<Block> PINE_SAPLING = HELPER.createBlock("pine_sapling", () -> new BlueprintSaplingBlock(new OakTreeGrower(), PropertyUtil.sapling()), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> POTTED_PINE_SAPLING = HELPER.createBlockNoItem("potted_pine_sapling", () -> new FlowerPotBlock(PINE_SAPLING.get(), PropertyUtil.flowerPot()));
+
+    public static final RegistryObject<Block> VERTICAL_PINE_PLANKS = HELPER.createCompatBlock(WindsweptConstants.QUARK, "vertical_pine_planks", () -> new Block(Properties.PINE.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> PINE_BEEHIVE = HELPER.createCompatBlock(WindsweptConstants.WOODWORKS, "pine_beehive", () -> new BlueprintBeehiveBlock(Properties.PINE.beehive()), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> PINE_LADDER = HELPER.createFuelBlock("pine_ladder", () -> new BlueprintLadderBlock(Properties.PINE.ladder()), 300, ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.WOODWORKS) ? CreativeModeTab.TAB_DECORATIONS : null);
+    public static final RegistryObject<Block> PINE_BOOKSHELF = HELPER.createFuelBlock("pine_bookshelf", () -> new BookshelfBlock(Properties.PINE.bookshelf()), 300, ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.WOODWORKS) ? CreativeModeTab.TAB_BUILDING_BLOCKS : null);
+    public static final RegistryObject<Block> PINE_BOARDS = HELPER.createCompatBlock(WindsweptConstants.WOODWORKS, "pine_boards", () -> new RotatedPillarBlock(Properties.HOLLY.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> PINE_CABINET = HELPER.createCompatFuelBlock(WindsweptConstants.FARMERSDELIGHT, "pine_cabinet", ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) ? WindsweptFDCompat.CABINET_SUPPLIER : () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)), 300, CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> STRIPPED_PINE_POST = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "stripped_pine_post", () -> new WoodPostBlock(Properties.PINE.post()), 300, CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> WEATHERED_PINE_POST = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "weathered_pine_post", () -> new WoodPostBlock(STRIPPED_PINE_POST, Properties.PINE.post()), 300, CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> PINE_POST = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "pine_post", () -> new WoodPostBlock(WEATHERED_PINE_POST, Properties.PINE.post()), 300, CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<BlueprintChestBlock> PINE_CHEST = HELPER.createChestBlock("pine", Properties.PINE.chest(), ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.WOODWORKS) ? CreativeModeTab.TAB_DECORATIONS : null);
+    public static final RegistryObject<BlueprintTrappedChestBlock> PINE_TRAPPED_CHEST = HELPER.createTrappedChestBlock("pine", Properties.PINE.chest(), ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.WOODWORKS) ? CreativeModeTab.TAB_REDSTONE : null);
+
+    public static final RegistryObject<Block> PINE_LEAVES = HELPER.createBlock("pine_leaves", () -> new BlueprintLeavesBlock(Properties.PINE.leaves()), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> PINE_HEDGE = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "pine_hedge", () -> new HedgeBlock(Properties.PINE.planks()), 300, CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> PINE_LEAF_CARPET = HELPER.createCompatBlock(WindsweptConstants.QUARK, "pine_leaf_carpet", () -> new LeafCarpetBlock(Properties.PINE.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> PINE_LEAF_PILE = HELPER.createCompatBlock(WindsweptConstants.WOODWORKS, "pine_leaf_pile", () -> new LeafPileBlock(Properties.PINE.leafPile()), CreativeModeTab.TAB_DECORATIONS);
 
     // Compressed Blocks //
     public static final RegistryObject<Block> CHESTNUT_CRATE = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "chestnut_crate", () -> new BlueprintDirectionalBlock(Properties.CRATE), 300, CreativeModeTab.TAB_DECORATIONS);
@@ -248,6 +287,7 @@ public class WindsweptBlocks {
         // Wood Sets //
         public static final PropertyUtil.WoodSetProperties HOLLY = PropertyUtil.WoodSetProperties.builder(MaterialColor.COLOR_PURPLE).build();
         public static final PropertyUtil.WoodSetProperties CHESTNUT = PropertyUtil.WoodSetProperties.builder(MaterialColor.COLOR_BROWN).build();
+        public static final PropertyUtil.WoodSetProperties PINE = PropertyUtil.WoodSetProperties.builder(MaterialColor.COLOR_BLACK).build();
 
         // Blocks //
         public static final BlockBehaviour.Properties SNOW_BRICKS = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.SNOW).strength(.85f).sound(SoundType.SNOW);

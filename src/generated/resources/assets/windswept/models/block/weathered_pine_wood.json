@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "windswept:block/weathered_pine_log",
+    "side": "windswept:block/weathered_pine_log"
+  }
+}

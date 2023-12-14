@@ -166,6 +166,45 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(CHESTNUT_CRATE.get());
             this.dropSelf(ROASTED_CHESTNUT_CRATE.get());
 
+            //pine
+            this.dropSelf(STRIPPED_PINE_LOG.get());
+            this.dropSelf(STRIPPED_PINE_WOOD.get());
+            this.dropSelf(WEATHERED_PINE_LOG.get());
+            this.dropSelf(WEATHERED_PINE_WOOD.get());
+            this.dropSelf(PINE_LOG.get());
+            this.dropSelf(PINE_WOOD.get());
+            this.dropSelf(PINE_PLANKS.get());
+            this.add(PINE_SLAB.get(), Blocks::createSlabItemTable);
+            this.dropSelf(PINE_STAIRS.get());
+            this.dropSelf(PINE_FENCE.get());
+            this.dropSelf(PINE_FENCE_GATE.get());
+            this.dropSelf(PINE_PRESSURE_PLATE.get());
+            this.add(PINE_DOOR.get(), Blocks::createDoorTable);
+            this.dropSelf(PINE_TRAPDOOR.get());
+            this.dropSelf(PINE_BUTTON.get());
+            this.dropSelf(PINE_SIGNS.getFirst().get());
+            this.dropSelf(PINE_SIGNS.getSecond().get());
+            this.dropSelf(PINE_SAPLING.get());
+            this.dropPottedContents(POTTED_PINE_SAPLING.get());
+
+            this.add(PINE_BEEHIVE.get(), Blocks::createBeeHiveDrop);
+            this.dropSelf(PINE_LADDER.get());
+            this.dropSelf(VERTICAL_PINE_PLANKS.get());
+            this.bookshelf(PINE_BOOKSHELF.get());
+            this.dropSelf(PINE_BOARDS.get());
+            this.dropSelf(PINE_CABINET.get());
+            this.add(PINE_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+            this.dropSelf(STRIPPED_PINE_POST.get());
+            this.dropSelf(WEATHERED_PINE_POST.get());
+            this.dropSelf(PINE_POST.get());
+            this.dropSelf(PINE_CHEST.get());
+            this.dropSelf(PINE_TRAPPED_CHEST.get());
+
+            this.add(PINE_LEAVES.get(), b -> createLeavesDrops(b, PINE_SAPLING.get(), .05f, .0625f, .083333336f, .1f));
+            this.dropSelf(PINE_HEDGE.get());
+            this.dropSelf(PINE_LEAF_CARPET.get());
+            this.leafPile(PINE_LEAF_PILE.get());
+
             // snow blocks
             this.dropSelf(SNOW_STAIRS.get());
             this.add(SNOW_SLAB.get(), Blocks::createSlabItemTable);
@@ -197,7 +236,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.add(BLUE_ICE_BRICK_SLAB.get(), Blocks::createSlabItemTable);
             this.dropSelf(BLUE_ICE_BRICK_WALL.get());
             this.add(BLUE_ICE_BRICK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
-            
+
             // shale
             this.dropSelf(SHALE.get());
             this.dropSelf(SHALE_STAIRS.get());

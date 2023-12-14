@@ -1,0 +1,27 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "boatload"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "minecraft:furnace"
+          },
+          {
+            "item": "windswept:pine_boat"
+          }
+        ],
+        "result": {
+          "item": "windswept:pine_furnace_boat"
+        }
+      }
+    }
+  ]
+}

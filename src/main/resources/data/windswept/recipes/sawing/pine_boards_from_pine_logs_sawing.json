@@ -1,0 +1,37 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "woodworks"
+            },
+            {
+              "type": "woodworks:config",
+              "value": "sawmill"
+            },
+            {
+              "type": "woodworks:config",
+              "value": "wooden_boards"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "woodworks:sawmill",
+        "count": 4,
+        "ingredient": {
+          "tag": "windswept:pine_logs"
+        },
+        "result": "windswept:pine_boards"
+      }
+    }
+  ]
+}
+
+
+

@@ -84,5 +84,8 @@ public class WindsweptItems {
     public static final Pair<RegistryObject<Item>, RegistryObject<Item>> CHESTNUT_BOATS = HELPER.createBoatAndChestBoatItem("chestnut", WindsweptBlocks.CHESTNUT_PLANKS);
     public static final RegistryObject<Item> CHESTNUT_FURNACE_BOAT = HELPER.createItem("chestnut_furnace_boat", ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BOATLOAD) ? WindsweptBoatTypes.CHESTNUT_FURNACE_BOAT : () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> LARGE_CHESTNUT_BOAT = HELPER.createItem("large_chestnut_boat", ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BOATLOAD) ? WindsweptBoatTypes.LARGE_CHESTNUT_BOAT : () -> new Item(new Item.Properties()));
+    public static final Pair<RegistryObject<Item>, RegistryObject<Item>> PINE_BOATS = HELPER.createBoatAndChestBoatItem("pine", WindsweptBlocks.PINE_PLANKS);
+    public static final RegistryObject<Item> PINE_FURNACE_BOAT = HELPER.createItem("pine_furnace_boat", ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BOATLOAD) ? WindsweptBoatTypes.PINE_FURNACE_BOAT : () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> LARGE_PINE_BOAT = HELPER.createItem("large_pine_boat", ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BOATLOAD) ? WindsweptBoatTypes.LARGE_PINE_BOAT : () -> new Item(new Item.Properties()));
 
 }

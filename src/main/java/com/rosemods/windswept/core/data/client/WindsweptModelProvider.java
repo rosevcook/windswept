@@ -47,6 +47,8 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.generatedItem(HOLLY_BOATS.getSecond().get(), TextureFolder.Item);
         this.generatedItem(CHESTNUT_BOATS.getFirst().get(), TextureFolder.Item);
         this.generatedItem(CHESTNUT_BOATS.getSecond().get(), TextureFolder.Item);
+        this.generatedItem(PINE_BOATS.getFirst().get(), TextureFolder.Item);
+        this.generatedItem(PINE_BOATS.getSecond().get(), TextureFolder.Item);
         this.generatedItem(HOLLY_BERRIES.get(), TextureFolder.Item);
         this.generatedItem(WOODEN_BUCKET.get(), TextureFolder.Item);
         this.generatedItem(WOODEN_MILK_BUCKET.get(), TextureFolder.Item);
@@ -84,6 +86,8 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.generatedItem(LARGE_HOLLY_BOAT.get(), TextureFolder.Item);
         this.generatedItem(CHESTNUT_FURNACE_BOAT.get(), TextureFolder.Item);
         this.generatedItem(LARGE_CHESTNUT_BOAT.get(), TextureFolder.Item);
+        this.generatedItem(PINE_FURNACE_BOAT.get(), TextureFolder.Item);
+        this.generatedItem(LARGE_PINE_BOAT.get(), TextureFolder.Item);
         this.generatedItem(CHESTNUTS.get(), TextureFolder.Item);
         this.generatedItem(ROASTED_CHESTNUTS.get(), TextureFolder.Item);
         this.generatedItem(CHESTNUT_SOUP.get(), TextureFolder.Item);
@@ -154,6 +158,39 @@ public class WindsweptModelProvider extends BlockStateProvider {
 
         this.compressedBlock(CHESTNUT_CRATE);
         this.compressedBlock(ROASTED_CHESTNUT_CRATE);
+
+        this.pillar(STRIPPED_PINE_LOG);
+        this.wood(STRIPPED_PINE_WOOD, this.blockTexture(STRIPPED_PINE_LOG.get()));
+        this.pillar(WEATHERED_PINE_LOG);
+        this.wood(WEATHERED_PINE_WOOD, this.blockTexture(WEATHERED_PINE_LOG.get()));
+        this.pillar(PINE_LOG);
+        this.wood(PINE_WOOD, this.blockTexture(PINE_LOG.get()));
+        this.cubeAll(PINE_PLANKS);
+        this.slab(PINE_SLAB, this.blockTexture(PINE_PLANKS.get()));
+        this.stairs(PINE_STAIRS, this.blockTexture(PINE_PLANKS.get()));
+        this.fence(PINE_FENCE, this.blockTexture(PINE_PLANKS.get()));
+        this.fenceGate(PINE_FENCE_GATE, this.blockTexture(PINE_PLANKS.get()));
+        this.pressurePlate(PINE_PRESSURE_PLATE, this.blockTexture(PINE_PLANKS.get()));
+        this.doorCutout(PINE_DOOR);
+        this.trapdoorCutout(PINE_TRAPDOOR);
+        this.button(PINE_BUTTON, this.blockTexture(PINE_PLANKS.get()));
+        this.signs(PINE_SIGNS, PINE_PLANKS);
+        //this.leaves(PINE_LEAVES);
+        this.pottedPlant(PINE_SAPLING, POTTED_PINE_SAPLING);
+        //this.beehive(PINE_BEEHIVE);
+        //this.hedge(PINE_HEDGE, PINE_LEAVES, PINE_LOG);
+        //this.leafCarpet(PINE_LEAF_CARPET, this.blockTexture(PINE_LEAVES.get()));
+        //this.leafPile(PINE_LEAF_PILE, this.blockTexture(PINE_LEAVES.get()), true);
+        //this.ladder(PINE_LADDER);
+        this.verticalPlanks(VERTICAL_PINE_PLANKS, this.blockTexture(PINE_PLANKS.get()));
+        //this.bookshelf(PINE_BOOKSHELF, PINE_PLANKS);
+        this.boards(PINE_BOARDS);
+        //this.cabinet(PINE_CABINET);
+        this.verticalSlab(PINE_VERTICAL_SLAB, this.blockTexture(PINE_PLANKS.get()));
+        this.post(PINE_POST, this.blockTexture(PINE_LOG.get()));
+        this.post(WEATHERED_PINE_POST, this.blockTexture(WEATHERED_PINE_LOG.get()));
+        this.post(STRIPPED_PINE_POST, this.blockTexture(STRIPPED_PINE_LOG.get()));
+        this.chests(PINE_CHEST, PINE_TRAPPED_CHEST, this.blockTexture(PINE_PLANKS.get()));
 
         this.stairs(SNOW_STAIRS, this.mcLoc("block/snow"));
         this.slab(SNOW_SLAB, this.mcLoc("block/snow_block"), this.mcLoc("block/snow"));

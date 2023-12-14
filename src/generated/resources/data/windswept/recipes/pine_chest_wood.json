@@ -1,0 +1,40 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "blueprint:quark_flag",
+              "flag": "wood_to_chest_recipes"
+            },
+            {
+              "type": "blueprint:quark_flag",
+              "flag": "variant_chests"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "group": "wooden_chests",
+        "key": {
+          "#": {
+            "tag": "windswept:pine_logs"
+          }
+        },
+        "pattern": [
+          "###",
+          "# #",
+          "###"
+        ],
+        "result": {
+          "count": 4,
+          "item": "windswept:pine_chest"
+        }
+      }
+    }
+  ]
+}

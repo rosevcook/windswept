@@ -46,6 +46,8 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.add(HOLLY_BOATS.getSecond().get(), "Holly Boat with Chest");
         this.translateItem(CHESTNUT_BOATS.getFirst());
         this.add(CHESTNUT_BOATS.getSecond().get(), "Chestnut Boat with Chest");
+        this.translateItem(PINE_BOATS.getFirst());
+        this.add(PINE_BOATS.getSecond().get(), "Pine Boat with Chest");
         this.translateItem(CHESTNUTS);
         this.translateItem(ROASTED_CHESTNUTS);
         this.translateItem(CHESTNUT_SOUP);
@@ -86,13 +88,16 @@ public class WindsweptLangProvider extends LanguageProvider {
 
         this.add(HOLLY_FURNACE_BOAT.get(), "Holly Boat with Furnace");
         this.translateItem(LARGE_HOLLY_BOAT);
-
         this.add(CHESTNUT_FURNACE_BOAT.get(), "Chestnut Boat with Furnace");
         this.translateItem(LARGE_CHESTNUT_BOAT);
+        this.add(PINE_FURNACE_BOAT.get(), "Pine Boat with Furnace");
+        this.translateItem(LARGE_PINE_BOAT);
 
         // Blocks //
         this.translateBlock(STRIPPED_HOLLY_LOG);
         this.translateBlock(STRIPPED_HOLLY_WOOD);
+        this.translateBlock(WEATHERED_PINE_LOG);
+        this.translateBlock(WEATHERED_PINE_WOOD);
         this.translateBlock(HOLLY_LOG);
         this.translateBlock(HOLLY_WOOD);
         this.translateBlock(HOLLY_PLANKS);
@@ -119,6 +124,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(HOLLY_CABINET);
         this.translateBlock(HOLLY_VERTICAL_SLAB);
         this.translateBlock(HOLLY_POST);
+        this.translateBlock(WEATHERED_PINE_POST);
         this.translateBlock(STRIPPED_HOLLY_POST);
         this.translateBlock(HOLLY_CHEST);
         this.translateBlock(HOLLY_TRAPPED_CHEST);
@@ -157,6 +163,38 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(CHESTNUT_TRAPPED_CHEST);
         this.add(CHESTNUT_CRATE.get(), "Crate of Chestnuts");
         this.add(ROASTED_CHESTNUT_CRATE.get(), "Crate of Roasted Chestnuts");
+
+        this.translateBlock(STRIPPED_PINE_LOG);
+        this.translateBlock(STRIPPED_PINE_WOOD);
+        this.translateBlock(PINE_LOG);
+        this.translateBlock(PINE_WOOD);
+        this.translateBlock(PINE_PLANKS);
+        this.translateBlock(VERTICAL_PINE_PLANKS);
+        this.translateBlock(PINE_SLAB);
+        this.translateBlock(PINE_STAIRS);
+        this.translateBlock(PINE_FENCE);
+        this.translateBlock(PINE_FENCE_GATE);
+        this.translateBlock(PINE_PRESSURE_PLATE);
+        this.translateBlock(PINE_DOOR);
+        this.translateBlock(PINE_TRAPDOOR);
+        this.translateBlock(PINE_BUTTON);
+        this.translateSign(PINE_SIGNS, "pine");
+        this.translateBlock(PINE_LEAVES);
+        this.translateBlock(PINE_SAPLING);
+        this.translateBlock(POTTED_PINE_SAPLING);
+        this.translateBlock(PINE_BEEHIVE);
+        this.add(PINE_HEDGE.get(), "Pine Leaf Hedge");
+        this.translateBlock(PINE_LEAF_CARPET);
+        this.add(PINE_LEAF_PILE.get(), "Pile of Pine Leaves");
+        this.translateBlock(PINE_LADDER);
+        this.translateBlock(PINE_BOOKSHELF);
+        this.translateBlock(PINE_BOARDS);
+        this.translateBlock(PINE_CABINET);
+        this.translateBlock(PINE_VERTICAL_SLAB);
+        this.translateBlock(PINE_POST);
+        this.translateBlock(STRIPPED_PINE_POST);
+        this.translateBlock(PINE_CHEST);
+        this.translateBlock(PINE_TRAPPED_CHEST);
 
         this.translateBlock(SNOWY_SPROUTS);
         this.translateBlock(GELISOL_SPROUTS);

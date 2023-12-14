@@ -1,9 +1,11 @@
 {
   "values": [
-    "#windswept:holly_leaves",
-    "#windswept:chestnut_leaves",
+    "windswept:holly_leaves",
+    "windswept:chestnut_leaves",
+    "windswept:pine_leaves",
     "windswept:holly_leaf_carpet",
     "windswept:chestnut_leaf_carpet",
+    "windswept:pine_leaf_carpet",
     "windswept:frozen_flesh_block",
     "windswept:dry_moss_carpet",
     "windswept:dry_moss_block"
