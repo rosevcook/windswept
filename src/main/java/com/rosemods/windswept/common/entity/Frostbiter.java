@@ -300,7 +300,7 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
         return Mob.createMobAttributes()
                 .add(Attributes.ARMOR, 4f)
                 .add(Attributes.ATTACK_DAMAGE, 5f)
-                .add(Attributes.MAX_HEALTH, 45f)
+                .add(Attributes.MAX_HEALTH, 40f)
                 .add(Attributes.MOVEMENT_SPEED, .22f)
                 .add(Attributes.ATTACK_KNOCKBACK, 1.2f);
     }
@@ -357,7 +357,7 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
     }
 
     public float getSteeringSpeed() {
-        return (float) this.getAttributeValue(Attributes.MOVEMENT_SPEED);
+        return (float) this.getAttributeValue(Attributes.MOVEMENT_SPEED) * .9f;
     }
 
     @Override
