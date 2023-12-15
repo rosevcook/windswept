@@ -108,6 +108,11 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         post(WEATHERED_PINE_POST.get(), WEATHERED_PINE_WOOD.get(), consumer);
         ShapedRecipeBuilder.shaped(WILL_O_THE_WISP.get()).define('#', CARVED_PINECONE_BLOCK.get()).define('N', NIGHTSHADE.get()).pattern("#").pattern("N").unlockedBy(getHasName(CARVED_PINECONE_BLOCK.get()), has(CARVED_PINECONE_BLOCK.get())).save(consumer, getSaveLocation(WILL_O_THE_WISP.get()));
 
+        ShapelessRecipeBuilder.shapeless(POLISHED_DEEPSLATE_BUTTON.get()).requires(Items.POLISHED_DEEPSLATE).unlockedBy(getHasName(Items.POLISHED_DEEPSLATE), has(Items.POLISHED_DEEPSLATE)).save(consumer, getSaveLocation(POLISHED_DEEPSLATE_BUTTON.get()));
+        ShapedRecipeBuilder.shaped(POLISHED_DEEPSLATE_PRESSURE_PLATE.get()).define('#', Items.POLISHED_DEEPSLATE).pattern("##").unlockedBy(getHasName(Items.POLISHED_DEEPSLATE), has(Items.POLISHED_DEEPSLATE)).save(consumer, getSaveLocation(POLISHED_DEEPSLATE_PRESSURE_PLATE.get()));
+        ShapelessRecipeBuilder.shapeless(POLISHED_SHALE_BUTTON.get()).requires(POLISHED_SHALE.get()).unlockedBy(getHasName(POLISHED_SHALE.get()), has(POLISHED_SHALE.get())).save(consumer, getSaveLocation(POLISHED_SHALE_BUTTON.get()));
+        ShapedRecipeBuilder.shaped(POLISHED_SHALE_PRESSURE_PLATE.get()).define('#', POLISHED_SHALE.get()).pattern("##").unlockedBy(getHasName(POLISHED_SHALE.get()), has(POLISHED_SHALE.get())).save(consumer, getSaveLocation(POLISHED_SHALE_PRESSURE_PLATE.get()));
+        
         ShapelessRecipeBuilder.shapeless(FAIRY_LIGHT.get()).requires(PINECONE.get()).requires(Items.TORCH).unlockedBy(getHasName(PINECONE.get()), has(PINECONE.get())).save(consumer, getSaveLocation(FAIRY_LIGHT.get()));
         ShapelessRecipeBuilder.shapeless(SOUL_FAIRY_LIGHT.get()).requires(PINECONE.get()).requires(Items.SOUL_TORCH).unlockedBy(getHasName(PINECONE.get()), has(PINECONE.get())).save(consumer, getSaveLocation(SOUL_FAIRY_LIGHT.get()));
 

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "windswept:polished_shale"
+    }
+  ],
+  "result": {
+    "item": "windswept:polished_shale_button"
+  }
+}

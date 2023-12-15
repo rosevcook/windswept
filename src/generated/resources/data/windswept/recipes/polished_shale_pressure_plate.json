@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "windswept:polished_shale"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "item": "windswept:polished_shale_pressure_plate"
+  }
+}

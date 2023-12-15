@@ -47,7 +47,9 @@ public class WindsweptStructureRepaletterProvider extends StructureRepaletterPro
         this.register(VILLAGE_SNOWY, Blocks.BLUE_ICE, PACKED_ICE_BRICKS.get());
 
         // Ancient City //
+        this.register(ANCIENT_CITY, Blocks.STONE_PRESSURE_PLATE, POLISHED_DEEPSLATE_PRESSURE_PLATE.get());
         this.register(ANCIENT_CITY, Blocks.BLUE_ICE, PACKED_ICE_BRICKS.get());
+
         // Chestnut in Snowy Village //
         this.register(VILLAGE_SNOWY, Blocks.SPRUCE_PLANKS, CHESTNUT_PLANKS.get());
         this.register(VILLAGE_SNOWY, Blocks.SPRUCE_STAIRS, CHESTNUT_STAIRS.get());
