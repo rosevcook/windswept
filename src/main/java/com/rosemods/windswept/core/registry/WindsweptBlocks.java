@@ -2,6 +2,7 @@ package com.rosemods.windswept.core.registry;
 
 import com.mojang.datafixers.util.Pair;
 import com.rosemods.windswept.common.block.*;
+import com.rosemods.windswept.common.item.CarvedPumpkinBlockItem;
 import com.rosemods.windswept.common.level.gen.tree.ChestnutTreeGrower;
 import com.rosemods.windswept.common.level.gen.tree.HollyTreeGrower;
 import com.rosemods.windswept.core.Windswept;
@@ -19,6 +20,7 @@ import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
 import com.teamabnormals.blueprint.core.util.registry.ItemSubRegistryHelper;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.grower.OakTreeGrower;
@@ -204,7 +206,7 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> CUPRIC_FAIRY_LIGHT = HELPER.createCompatBlock(WindsweptConstants.CAVERNS_AND_CHASMS, "cupric_fairy_light", () -> new PineconeBlock(BlockBehaviour.Properties.copy(PINECONE.get()).lightLevel(s -> 10)), CreativeModeTab.TAB_DECORATIONS);
 
     public static final RegistryObject<Block> PINECONE_BLOCK = HELPER.createBlock("pinecone_block", () -> new PineconeBlockBlock(Properties.PINECONE_BLOCK), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> CARVED_PINECONE_BLOCK = HELPER.createBlock("carved_pinecone_block", () -> new CarvedPineconeBlock(Properties.PINECONE_BLOCK), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> CARVED_PINECONE_BLOCK = HELPER.createBlockWithItem("carved_pinecone_block", () -> new CarvedPineconeBlock(Properties.PINECONE_BLOCK), () -> new CarvedPumpkinBlockItem(WindsweptBlocks.CARVED_PINECONE_BLOCK.get(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
     public static final RegistryObject<Block> WILL_O_THE_WISP = HELPER.createBlock("will_o_the_wisp", () -> new WillOTheWispBlock(BlockBehaviour.Properties.copy(PINECONE_BLOCK.get()).lightLevel(s -> 10)), CreativeModeTab.TAB_DECORATIONS);
 
     public static final RegistryObject<Block> PINECONE_SHINGLES = HELPER.createBlock("pinecone_shingles", () -> new Block(Properties.PINECONE_BLOCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
