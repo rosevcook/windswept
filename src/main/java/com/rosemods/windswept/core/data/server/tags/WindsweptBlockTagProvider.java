@@ -57,7 +57,7 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
         this.tag(BlockTags.WOLVES_SPAWNABLE_ON).add(GELISOL.get(), DRY_MOSS_BLOCK.get());
         this.tag(BlockTags.DIRT).add(DRY_MOSS_BLOCK.get(), GELISOL.get(), GELISOL_PATH.get());
         this.tag(BlockTags.SNOW_LAYER_CAN_SURVIVE_ON).add(HOLLY_LEAVES.get());
-        this.tag(BlockTags.WALLS).add(BLUE_ICE_BRICK_WALL.get(), SNOW_BRICK_WALL.get(), PACKED_ICE_BRICK_WALL.get(), DRY_MOSSY_COBBLESTONE_WALL.get(), DRY_MOSSY_STONE_BRICK_WALL.get(), SHALE_WALL.get(), POLISHED_SHALE_BRICK_WALL.get(), PINECONE_SHINGLE_WALL.get());
+        this.tag(BlockTags.WALLS).add(BLUE_ICE_BRICK_WALL.get(), SNOW_BRICK_WALL.get(), PACKED_ICE_BRICK_WALL.get(), DRY_MOSSY_COBBLESTONE_WALL.get(), DRY_MOSSY_STONE_BRICK_WALL.get(), SHALE_WALL.get(), POLISHED_SHALE_WALL.get(), POLISHED_SHALE_BRICK_WALL.get(), PINECONE_SHINGLE_WALL.get());
         this.tag(BlockTags.BEEHIVES).add(HOLLY_BEEHIVE.get(), CHESTNUT_BEEHIVE.get(), PINE_BEEHIVE.get());
         this.tag(BlockTags.WOODEN_BUTTONS).add(HOLLY_BUTTON.get(), CHESTNUT_BUTTON.get(), PINE_BUTTON.get());
         this.tag(BlockTags.WOODEN_PRESSURE_PLATES).add(HOLLY_PRESSURE_PLATE.get(), CHESTNUT_PRESSURE_PLATE.get(), PINE_PRESSURE_PLATE.get());

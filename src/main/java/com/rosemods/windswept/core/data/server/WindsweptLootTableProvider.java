@@ -262,6 +262,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.add(SHALE_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
             this.dropSelf(POLISHED_SHALE.get());
             this.dropSelf(POLISHED_SHALE_STAIRS.get());
+            this.dropSelf(POLISHED_SHALE_WALL.get());
             this.add(POLISHED_SHALE_SLAB.get(), Blocks::createSlabItemTable);
             this.add(POLISHED_SHALE_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
             this.dropSelf(POLISHED_SHALE_BRICKS.get());

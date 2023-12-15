@@ -223,24 +223,25 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> ICE_LANTERN = HELPER.createBlock("ice_lantern", () -> new IceLanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), CreativeModeTab.TAB_DECORATIONS);
 
     // Shale //
-    public static final RegistryObject<Block> SHALE = HELPER.createInjectedBlock("shale", Items.POLISHED_ANDESITE, () -> new Block(BlockBehaviour.Properties.copy(Blocks.DRIPSTONE_BLOCK)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> SHALE_STAIRS = HELPER.createInjectedBlock("shale_stairs", Items.POLISHED_ANDESITE_STAIRS, () -> new StairBlock(SHALE.get()::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.DRIPSTONE_BLOCK)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> SHALE_SLAB = HELPER.createInjectedBlock("shale_slab", Items.POLISHED_ANDESITE_SLAB, () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.DRIPSTONE_BLOCK)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> SHALE_WALL = HELPER.createInjectedBlock("shale_wall", Items.ANDESITE_WALL, () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.DRIPSTONE_BLOCK)), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> SHALE_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "shale_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.DRIPSTONE_BLOCK)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> SHALE = HELPER.createInjectedBlock("shale", Items.POLISHED_ANDESITE, () -> new Block(Properties.SHALE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> SHALE_STAIRS = HELPER.createInjectedBlock("shale_stairs", Items.POLISHED_ANDESITE_STAIRS, () -> new StairBlock(SHALE.get()::defaultBlockState, Properties.SHALE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> SHALE_SLAB = HELPER.createInjectedBlock("shale_slab", Items.POLISHED_ANDESITE_SLAB, () -> new SlabBlock(Properties.SHALE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> SHALE_WALL = HELPER.createInjectedBlock("shale_wall", Items.ANDESITE_WALL, () -> new WallBlock(Properties.SHALE), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> SHALE_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "shale_vertical_slab", () -> new VerticalSlabBlock(Properties.SHALE), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
-    public static final RegistryObject<Block> POLISHED_SHALE = HELPER.createInjectedBlock("polished_shale", Items.POLISHED_ANDESITE, () -> new Block(BlockBehaviour.Properties.copy(Blocks.DRIPSTONE_BLOCK)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> POLISHED_SHALE_STAIRS = HELPER.createInjectedBlock("polished_shale_stairs", Items.POLISHED_ANDESITE_STAIRS, () -> new StairBlock(POLISHED_SHALE.get()::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.DRIPSTONE_BLOCK)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> POLISHED_SHALE_SLAB = HELPER.createInjectedBlock("polished_shale_slab", Items.POLISHED_ANDESITE_SLAB, () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.DRIPSTONE_BLOCK)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> POLISHED_SHALE_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "polished_shale_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.DRIPSTONE_BLOCK)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> POLISHED_SHALE = HELPER.createInjectedBlock("polished_shale", Items.POLISHED_ANDESITE, () -> new Block(Properties.SHALE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> POLISHED_SHALE_STAIRS = HELPER.createInjectedBlock("polished_shale_stairs", Items.POLISHED_ANDESITE_STAIRS, () -> new StairBlock(POLISHED_SHALE.get()::defaultBlockState, Properties.SHALE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> POLISHED_SHALE_SLAB = HELPER.createInjectedBlock("polished_shale_slab", Items.POLISHED_ANDESITE_SLAB, () -> new SlabBlock(Properties.SHALE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> POLISHED_SHALE_WALL = HELPER.createInjectedBlock("polished_shale_wall", Items.ANDESITE_WALL, () -> new WallBlock(Properties.SHALE), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> POLISHED_SHALE_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "polished_shale_vertical_slab", () -> new VerticalSlabBlock(Properties.SHALE), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
-    public static final RegistryObject<Block> POLISHED_SHALE_BRICKS = HELPER.createBlock("polished_shale_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DRIPSTONE_BLOCK)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> ICY_POLISHED_SHALE_BRICKS = HELPER.createBlock("icy_polished_shale_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DRIPSTONE_BLOCK)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> CHISELED_POLISHED_SHALE_BRICKS = HELPER.createBlock("chiseled_polished_shale_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DRIPSTONE_BLOCK)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> POLISHED_SHALE_BRICK_STAIRS = HELPER.createBlock("polished_shale_brick_stairs", () -> new StairBlock(POLISHED_SHALE_BRICKS.get()::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.DRIPSTONE_BLOCK)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> POLISHED_SHALE_BRICK_SLAB = HELPER.createBlock("polished_shale_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.DRIPSTONE_BLOCK)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> POLISHED_SHALE_BRICK_WALL = HELPER.createBlock("polished_shale_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.DRIPSTONE_BLOCK)), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> POLISHED_SHALE_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "polished_shale_brick_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.DRIPSTONE_BLOCK)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> POLISHED_SHALE_BRICKS = HELPER.createBlock("polished_shale_bricks", () -> new Block(Properties.SHALE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> ICY_POLISHED_SHALE_BRICKS = HELPER.createBlock("icy_polished_shale_bricks", () -> new Block(Properties.SHALE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> CHISELED_POLISHED_SHALE_BRICKS = HELPER.createBlock("chiseled_polished_shale_bricks", () -> new Block(Properties.SHALE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> POLISHED_SHALE_BRICK_STAIRS = HELPER.createBlock("polished_shale_brick_stairs", () -> new StairBlock(POLISHED_SHALE_BRICKS.get()::defaultBlockState, Properties.SHALE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> POLISHED_SHALE_BRICK_SLAB = HELPER.createBlock("polished_shale_brick_slab", () -> new SlabBlock(Properties.SHALE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> POLISHED_SHALE_BRICK_WALL = HELPER.createBlock("polished_shale_brick_wall", () -> new WallBlock(Properties.SHALE), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> POLISHED_SHALE_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "polished_shale_brick_vertical_slab", () -> new VerticalSlabBlock(Properties.SHALE), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
     // Packed Ice Blocks //
     public static final RegistryObject<Block> PACKED_ICE_STAIRS = HELPER.createBlock("packed_ice_stairs", () -> new StairBlock(Blocks.PACKED_ICE::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.PACKED_ICE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
@@ -312,6 +313,7 @@ public class WindsweptBlocks {
         public static final BlockBehaviour.Properties CRATE = BlockBehaviour.Properties.of(Material.WOOD).strength(1.5f).sound(SoundType.WOOD);
         public static final BlockBehaviour.Properties COLD_SPROUTS = BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XZ);
         public static final BlockBehaviour.Properties PINECONE_BLOCK = Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN).strength(2f, 3f).sound(WindsweptSoundTypes.PINECONE);
+        public static final BlockBehaviour.Properties SHALE  = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_BLUE).sound(SoundType.DRIPSTONE_BLOCK).requiresCorrectToolForDrops().strength(1.5f, 1f);
     }
 
 }

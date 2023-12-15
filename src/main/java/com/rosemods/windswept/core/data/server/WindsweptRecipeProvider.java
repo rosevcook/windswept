@@ -159,7 +159,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         blockset(null, DRY_MOSSY_COBBLESTONE.get(), null, DRY_MOSSY_COBBLESTONE_SLAB.get(), DRY_MOSSY_COBBLESTONE_STAIRS.get(), DRY_MOSSY_COBBLESTONE_WALL.get(), DRY_MOSSY_COBBLESTONE_VERTICAL_SLAB.get(), true, consumer);
         blockset(null, DRY_MOSSY_STONE_BRICKS.get(), null, DRY_MOSSY_STONE_BRICK_SLAB.get(), DRY_MOSSY_STONE_BRICK_STAIRS.get(), DRY_MOSSY_STONE_BRICK_WALL.get(), DRY_MOSSY_STONE_BRICK_VERTICAL_SLAB.get(), true, consumer);
         blockset(null, SHALE.get(), null, SHALE_SLAB.get(), SHALE_STAIRS.get(), SHALE_WALL.get(), SHALE_VERTICAL_SLAB.get(), true, consumer);
-        blockset(SHALE.get(), POLISHED_SHALE.get(), null, POLISHED_SHALE_SLAB.get(), POLISHED_SHALE_STAIRS.get(), null, POLISHED_SHALE_VERTICAL_SLAB.get(), true, consumer);
+        blockset(SHALE.get(), POLISHED_SHALE.get(), null, POLISHED_SHALE_SLAB.get(), POLISHED_SHALE_STAIRS.get(), POLISHED_SHALE_WALL.get(), POLISHED_SHALE_VERTICAL_SLAB.get(), true, consumer);
         blockset(POLISHED_SHALE.get(), POLISHED_SHALE_BRICKS.get(), CHISELED_POLISHED_SHALE_BRICKS.get(), POLISHED_SHALE_BRICK_SLAB.get(), POLISHED_SHALE_BRICK_STAIRS.get(), POLISHED_SHALE_BRICK_WALL.get(), POLISHED_SHALE_BRICK_VERTICAL_SLAB.get(), true, consumer);
         blockset(PINECONE_BLOCK.get(), PINECONE_SHINGLES.get(), null, PINECONE_SHINGLE_SLAB.get(), PINECONE_SHINGLE_STAIRS.get(), PINECONE_SHINGLE_WALL.get(), PINECONE_SHINGLE_VERTICAL_SLAB.get(), false, consumer);
 
