@@ -2,6 +2,7 @@ package com.rosemods.windswept.core.data.server;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
+import com.rosemods.windswept.common.block.PineconeBlock;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock;
@@ -206,10 +207,10 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.leafPile(PINE_LEAF_PILE.get());
 
             // pinecone
-            this.dropSelf(PINECONE.get()); //change
-            this.dropSelf(FAIRY_LIGHT.get()); //change
-            this.dropSelf(SOUL_FAIRY_LIGHT.get()); //change
-            this.dropSelf(CUPRIC_FAIRY_LIGHT.get()); //change
+            this.add(PINECONE.get(), Blocks::createPineconeTable);
+            this.add(FAIRY_LIGHT.get(), Blocks::createPineconeTable);
+            this.add(SOUL_FAIRY_LIGHT.get(), Blocks::createPineconeTable);
+            this.add(CUPRIC_FAIRY_LIGHT.get(), Blocks::createPineconeTable);
 
             this.dropSelf(PINECONE_BLOCK.get());
             this.dropSelf(CARVED_PINECONE_BLOCK.get());
@@ -380,6 +381,15 @@ public class WindsweptLootTableProvider extends LootTableProvider {
         @Override
         public Iterable<Block> getKnownBlocks() {
             return getContent(ForgeRegistries.BLOCKS);
+        }
+
+        private static LootTable.Builder createPineconeTable(Block block) {
+            return LootTable.lootTable()
+                    .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1f))
+                            .add(applyExplosionDecay(block, LootItem.lootTableItem(block)
+                                    .apply(List.of(2, 3, 4), i -> SetItemCountFunction.setCount(ConstantValue.exactly((float) i))
+                                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PineconeBlock.AMOUNT, i)))))));
         }
 
         private static LootTable.Builder createVerticalSlabItemTable(Block block) {
