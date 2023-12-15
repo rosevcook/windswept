@@ -246,7 +246,7 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> POLISHED_SHALE_PRESSURE_PLATE = HELPER.createInjectedBlock("polished_shale_pressure_plate", Items.STONE_PRESSURE_PLATE, () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_BLUE).requiresCorrectToolForDrops().noCollission().strength(.5f).sound(SoundType.DRIPSTONE_BLOCK)), CreativeModeTab.TAB_REDSTONE);
     public static final RegistryObject<Block> POLISHED_SHALE_BUTTON = HELPER.createInjectedBlock("polished_shale_button", Items.STONE_BUTTON, () -> new StoneButtonBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(.5f).sound(SoundType.DRIPSTONE_BLOCK)), CreativeModeTab.TAB_REDSTONE);
 
-    // Deepslate
+    // Deepslate //
     public static final RegistryObject<Block> POLISHED_DEEPSLATE_PRESSURE_PLATE = HELPER.createInjectedBlock("polished_deepslate_pressure_plate", Items.STONE_PRESSURE_PLATE, () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).requiresCorrectToolForDrops().noCollission().strength(.5f).sound(SoundType.POLISHED_DEEPSLATE)), CreativeModeTab.TAB_REDSTONE);
     public static final RegistryObject<Block> POLISHED_DEEPSLATE_BUTTON = HELPER.createInjectedBlock("polished_deepslate_button", Items.STONE_BUTTON, () -> new StoneButtonBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(.5f).sound(SoundType.POLISHED_DEEPSLATE)), CreativeModeTab.TAB_REDSTONE);
 
