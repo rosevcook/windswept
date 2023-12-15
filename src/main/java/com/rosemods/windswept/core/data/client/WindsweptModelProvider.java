@@ -172,12 +172,12 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.trapdoorCutout(PINE_TRAPDOOR);
         this.button(PINE_BUTTON, this.blockTexture(PINE_PLANKS.get()));
         this.signs(PINE_SIGNS, PINE_PLANKS);
-        //this.leaves(PINE_LEAVES);
+        this.leaves(PINE_LEAVES);
         this.pottedPlant(PINE_SAPLING, POTTED_PINE_SAPLING);
         //this.beehive(PINE_BEEHIVE);
-        //this.hedge(PINE_HEDGE, PINE_LEAVES, PINE_LOG);
-        //this.leafCarpet(PINE_LEAF_CARPET, this.blockTexture(PINE_LEAVES.get()));
-        //this.leafPile(PINE_LEAF_PILE, this.blockTexture(PINE_LEAVES.get()), true);
+        this.hedge(PINE_HEDGE, PINE_LEAVES, PINE_LOG);
+        this.leafCarpet(PINE_LEAF_CARPET, this.blockTexture(PINE_LEAVES.get()));
+        this.leafPile(PINE_LEAF_PILE, this.blockTexture(PINE_LEAVES.get()), false);
         this.ladder(PINE_LADDER);
         this.verticalPlanks(VERTICAL_PINE_PLANKS, this.blockTexture(PINE_PLANKS.get()));
         this.bookshelf(PINE_BOOKSHELF, PINE_PLANKS);

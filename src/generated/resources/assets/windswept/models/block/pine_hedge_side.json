@@ -1,0 +1,7 @@
+{
+  "parent": "blueprint:block/hedge_side",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "leaf": "windswept:block/pine_leaves"
+  }
+}
