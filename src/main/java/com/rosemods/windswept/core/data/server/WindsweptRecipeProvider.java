@@ -134,27 +134,31 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         stonecutting(Blocks.PACKED_ICE, PACKED_ICE_BRICK_SLAB.get(), 2, consumer);
         stonecutting(Blocks.PACKED_ICE, PACKED_ICE_BRICK_STAIRS.get(), 1, consumer);
         stonecutting(Blocks.PACKED_ICE, PACKED_ICE_BRICK_WALL.get(), 1, consumer);
-        conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.PACKED_ICE), PACKED_ICE_BRICK_VERTICAL_SLAB.get(), 2).unlockedBy(getHasName(Blocks.PACKED_ICE), has(Blocks.PACKED_ICE)), getQuarkCondition("vertical_slabs"), consumer, getSaveLocation("packed_ice_brick_vertical_slab_from_packed_ice_stonecutting"));
+        verticalSlabStonecutting(Blocks.PACKED_ICE, PACKED_ICE_BRICK_VERTICAL_SLAB.get(), consumer);
         stonecutting(Blocks.BLUE_ICE, BLUE_ICE_BRICKS.get(), 1, consumer);
         stonecutting(Blocks.BLUE_ICE, CHISELED_BLUE_ICE_BRICKS.get(), 1, consumer);
         stonecutting(Blocks.BLUE_ICE, BLUE_ICE_BRICK_SLAB.get(), 2, consumer);
         stonecutting(Blocks.BLUE_ICE, BLUE_ICE_BRICK_STAIRS.get(), 1, consumer);
         stonecutting(Blocks.BLUE_ICE, BLUE_ICE_BRICK_WALL.get(), 1, consumer);
-        conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.BLUE_ICE), BLUE_ICE_BRICK_VERTICAL_SLAB.get(), 2).unlockedBy(getHasName(Blocks.BLUE_ICE), has(Blocks.BLUE_ICE)), getQuarkCondition("vertical_slabs"), consumer, getSaveLocation("blue_ice_brick_vertical_slab_from_blue_ice_stonecutting"));
+        verticalSlabStonecutting(Blocks.BLUE_ICE, BLUE_ICE_BRICK_VERTICAL_SLAB.get(), consumer);
 
-        stonecutting(SHALE.get(), POLISHED_SHALE.get(), 1, consumer);
         stonecutting(SHALE.get(), POLISHED_SHALE_BRICKS.get(), 1, consumer);
         stonecutting(SHALE.get(), CHISELED_POLISHED_SHALE_BRICKS.get(), 1, consumer);
         stonecutting(SHALE.get(), POLISHED_SHALE_BRICK_SLAB.get(), 2, consumer);
         stonecutting(SHALE.get(), POLISHED_SHALE_BRICK_STAIRS.get(), 1, consumer);
         stonecutting(SHALE.get(), POLISHED_SHALE_BRICK_WALL.get(), 1, consumer);
-        conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(SHALE.get()), POLISHED_SHALE_BRICK_VERTICAL_SLAB.get(), 2).unlockedBy(getHasName(SHALE.get()), has(SHALE.get())), getQuarkCondition("vertical_slabs"), consumer, getSaveLocation("polished_shale_brick_vertical_slab_from_shale_stonecutting"));
+        verticalSlabStonecutting(SHALE.get(), POLISHED_SHALE_BRICK_VERTICAL_SLAB.get(), consumer);
+        stonecutting(SHALE.get(), POLISHED_SHALE.get(), 1, consumer);
+        stonecutting(SHALE.get(), POLISHED_SHALE_SLAB.get(), 2, consumer);
+        stonecutting(SHALE.get(), POLISHED_SHALE_STAIRS.get(), 1, consumer);
+        stonecutting(SHALE.get(), POLISHED_SHALE_WALL.get(), 1, consumer);
+        verticalSlabStonecutting(SHALE.get(), POLISHED_SHALE_VERTICAL_SLAB.get(), consumer);
         stonecutting(POLISHED_SHALE.get(), POLISHED_SHALE_BRICKS.get(), 1, consumer);
         stonecutting(POLISHED_SHALE.get(), CHISELED_POLISHED_SHALE_BRICKS.get(), 1, consumer);
         stonecutting(POLISHED_SHALE.get(), POLISHED_SHALE_BRICK_SLAB.get(), 2, consumer);
         stonecutting(POLISHED_SHALE.get(), POLISHED_SHALE_BRICK_STAIRS.get(), 1, consumer);
         stonecutting(POLISHED_SHALE.get(), POLISHED_SHALE_BRICK_WALL.get(), 1, consumer);
-        conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(POLISHED_SHALE.get()), POLISHED_SHALE_BRICK_VERTICAL_SLAB.get(), 2).unlockedBy(getHasName(POLISHED_SHALE.get()), has(POLISHED_SHALE.get())), getQuarkCondition("vertical_slabs"), consumer, getSaveLocation("polished_shale_brick_vertical_slab_from_polished_shale_stonecutting"));
+        verticalSlabStonecutting(POLISHED_SHALE.get(), POLISHED_SHALE_BRICK_VERTICAL_SLAB.get(), consumer);
 
         blockset(null, Blocks.PACKED_ICE, null, PACKED_ICE_SLAB.get(), PACKED_ICE_STAIRS.get(), null, PACKED_ICE_VERTICAL_SLAB.get(), true, consumer);
         blockset(null, Blocks.BLUE_ICE, null, BLUE_ICE_SLAB.get(), BLUE_ICE_STAIRS.get(), null, BLUE_ICE_VERTICAL_SLAB.get(), true, consumer);
@@ -204,7 +208,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         if (stoncutter) {
             stonecutting(block, slab, 2, consumer);
             stonecutting(block, stairs, 1, consumer);
-            conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(block), verticalSlab, 2).unlockedBy(getHasName(block), has(block)), getQuarkCondition("vertical_slabs"), consumer, getSaveLocation(getName(verticalSlab) + "_from_" + getName(block) + "_stonecutting"));
+            verticalSlabStonecutting(block, verticalSlab, consumer);
         }
 
         stairs(block, stairs, consumer);
@@ -224,6 +228,10 @@ public class WindsweptRecipeProvider extends RecipeProvider {
             if (stoncutter)
                 stonecutting(block, chiseled, 1, consumer);
         }
+    }
+
+    private static void verticalSlabStonecutting(ItemLike block, Block verticalSlab, Consumer<FinishedRecipe> consumer) {
+        conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(block), verticalSlab, 2).unlockedBy(getHasName(block), has(block)), getQuarkCondition("vertical_slabs"), consumer, getSaveLocation(getName(verticalSlab) + "_from_" + getName(block) + "_stonecutting"));
     }
 
     private static void compressedBlock(Block block, ItemLike item, ICondition condition, Consumer<FinishedRecipe> consumer) {
