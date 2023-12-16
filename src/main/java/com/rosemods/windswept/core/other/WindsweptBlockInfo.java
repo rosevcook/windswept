@@ -20,6 +20,7 @@ public final class WindsweptBlockInfo {
         DataUtil.registerCompostable(HOLLY_BERRIES.get(), .3f);
         DataUtil.registerCompostable(CHESTNUTS.get(), .3f);
         DataUtil.registerCompostable(ROASTED_CHESTNUTS.get(), .3f);
+        DataUtil.registerCompostable(PINECONE.get(), .3f);
 
         DataUtil.registerCompostable(CHESTNUT_CRATE.get(), 1f);
         DataUtil.registerCompostable(ROASTED_CHESTNUT_CRATE.get(), 1f);

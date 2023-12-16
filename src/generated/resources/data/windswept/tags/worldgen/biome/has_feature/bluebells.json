@@ -6,10 +6,6 @@
     "minecraft:old_growth_birch_forest",
     "minecraft:old_growth_spruce_taiga",
     "windswept:chestnut_forest",
-    "windswept:snowy_chestnut_forest",
-    {
-      "id": "environmental:pine_barrens",
-      "required": false
-    }
+    "windswept:snowy_chestnut_forest"
   ]
 }
