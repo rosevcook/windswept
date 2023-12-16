@@ -59,9 +59,9 @@ public final class WindsweptFeatures {
         public static final TreeConfiguration HOLLY_TREE_BEES = createHollyTree().decorators(List.of(new BeehiveDecorator(.01f), BranchDecorator.create(WindsweptBlocks.HOLLY_LOG.get(), 2))).build();
         public static final TreeConfiguration CHESTNUT_TREE = createChestnutTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.CHESTNUT_LOG.get(), 4))).build();
         public static final TreeConfiguration CHESTNUT_TREE_BEES = createChestnutTree().decorators(List.of(new BeehiveDecorator(.005f), BranchDecorator.create(WindsweptBlocks.CHESTNUT_LOG.get(), 4))).build();
-        public static final TreeConfiguration PINE_TREE = createPineTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.PINE_LOG.get(), 4))).build();
-        public static final TreeConfiguration PINE_TREE_BEES = createPineTree().decorators(List.of(new BeehiveDecorator(.005f), BranchDecorator.create(WindsweptBlocks.PINE_LOG.get(), 4))).build();
-        
+        public static final TreeConfiguration PINE_TREE = createPineTree().build();
+        public static final TreeConfiguration PINE_TREE_BEES = createPineTree().decorators(List.of(new BeehiveDecorator(.005f))).build();
+
         public static final RandomPatchConfiguration FOXGLOVE = createPlantPatch(64, WindsweptBlocks.FOXGLOVE.get().defaultBlockState());
         public static final RandomPatchConfiguration WILD_BERRY_BUSH = createPlantPatch(32, WindsweptBlocks.WILD_BERRY_BUSH.get().defaultBlockState().setValue(WildBerryBushBlock.AGE, 3));
         public static final RandomPatchConfiguration WHITE_ROSE_BUSH = createPlantPatch(32, WindsweptBlocks.WHITE_ROSE_BUSH.get().defaultBlockState());
@@ -108,7 +108,7 @@ public final class WindsweptFeatures {
                     BlockStateProvider.simple(WindsweptBlocks.CHESTNUT_LOG.get()),
                     new ChestnutTrunkPlacer(),
                     BlockStateProvider.simple(WindsweptBlocks.CHESTNUT_LEAVES.get()),
-                    new ChestnutFoliagePlacer(ConstantInt.of(2), ConstantInt.of(2)),
+                    new ChestnutFoliagePlacer(),
                     new TwoLayersFeatureSize(1, 0, 1))
                     .forceDirt();
         }
@@ -118,7 +118,7 @@ public final class WindsweptFeatures {
                     BlockStateProvider.simple(WindsweptBlocks.PINE_LOG.get()),
                     new PineTrunkPlacer(),
                     BlockStateProvider.simple(WindsweptBlocks.PINE_LEAVES.get()),
-                    new ChestnutFoliagePlacer(ConstantInt.of(2), ConstantInt.of(2)),
+                    new ChestnutFoliagePlacer(),
                     new TwoLayersFeatureSize(1, 0, 1))
                     .forceDirt();
         }

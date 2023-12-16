@@ -5,6 +5,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.rosemods.windswept.core.registry.WindsweptFoliagePlacers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
+import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.block.state.BlockState;
@@ -17,7 +18,11 @@ import java.util.function.BiConsumer;
 public class ChestnutFoliagePlacer extends FoliagePlacer {
     public static final Codec<ChestnutFoliagePlacer> CODEC = RecordCodecBuilder.create(placer -> foliagePlacerParts(placer).apply(placer, ChestnutFoliagePlacer::new));
 
-    public ChestnutFoliagePlacer(IntProvider radius, IntProvider offset) {
+    public ChestnutFoliagePlacer() {
+        this(ConstantInt.of(0), ConstantInt.of(0));
+    }
+
+    private ChestnutFoliagePlacer(IntProvider radius, IntProvider offset) {
         super(radius, offset);
     }
 

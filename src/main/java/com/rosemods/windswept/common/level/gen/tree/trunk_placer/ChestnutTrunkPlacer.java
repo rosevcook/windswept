@@ -47,7 +47,7 @@ public class ChestnutTrunkPlacer extends TrunkPlacer {
         list.add(new FoliagePlacer.FoliageAttachment(pos.offset(0, h + 2, 0), 0, false));
 
         for (int y = 1; y < h; y++)
-            this.placeLog(level, consumer, rand, pos.offset(0, y, 0), config);
+            this.placeLog(level, consumer, rand, pos.above(y), config);
 
         // branches
         List<Integer> raisedX = Lists.newArrayList();
@@ -110,7 +110,6 @@ public class ChestnutTrunkPlacer extends TrunkPlacer {
 
                     if (level.isStateAtPosition(pos.offset(x, grassCheck, z), state -> state.is(Blocks.GRASS_BLOCK) || state.is(Blocks.PODZOL) || state.is(Blocks.MYCELIUM) || state.is(WindsweptBlocks.GELISOL.get())))
                         setDirtAt(level, consumer, rand, pos.offset(x, grassCheck, z), config);
-
                 }
 
         return list;
