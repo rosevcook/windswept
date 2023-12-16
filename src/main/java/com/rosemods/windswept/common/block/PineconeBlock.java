@@ -16,7 +16,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class PineconeBlock extends Block {
     public static final IntegerProperty AMOUNT = IntegerProperty.create("amount", 1, 4);
-    private static final VoxelShape SHAPE = Block.box(1.5f, 6f, 1.5f, 14.5f, 16f, 14.5f);
+    private static final VoxelShape SHAPE = Block.box(1f, 6f, 1f, 15f, 16f, 15f);
 
     public PineconeBlock(Properties properties) {
         super(properties);

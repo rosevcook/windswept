@@ -20,6 +20,8 @@ public class WindsweptBiomes {
     public static final BiomeSubRegistryHelper.KeyedBiome SNOWY_CHESTNUT_FOREST = HELPER.createBiome("snowy_chestnut_forest", () -> chestnutForest(true));
     public static final BiomeSubRegistryHelper.KeyedBiome TUNDRA = HELPER.createBiome("tundra", WindsweptBiomes::tundra);
 
+    // Chestnut //
+
     private static Biome chestnutForest(boolean snowy) {
         BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder();
 
@@ -54,6 +56,8 @@ public class WindsweptBiomes {
 
         return spawns;
     }
+
+    // Tundra //
 
     private static Biome tundra() {
         BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder();
@@ -90,6 +94,8 @@ public class WindsweptBiomes {
 
         return spawns;
     }
+
+    // Util //
 
     private static Biome.BiomeBuilder biome(float temp, float downfall, int waterColor, int waterFogColor, int fogColor, Biome.Precipitation precipitation, BiomeGenerationSettings.Builder generation, MobSpawnSettings.Builder spawns) {
         return new Biome.BiomeBuilder()

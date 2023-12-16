@@ -5,6 +5,7 @@ import com.rosemods.windswept.common.block.*;
 import com.rosemods.windswept.common.item.CarvedPumpkinBlockItem;
 import com.rosemods.windswept.common.level.gen.tree.ChestnutTreeGrower;
 import com.rosemods.windswept.common.level.gen.tree.HollyTreeGrower;
+import com.rosemods.windswept.common.level.gen.tree.PineTreeGrower;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.other.WindsweptConstants;
 import com.rosemods.windswept.core.other.WindsweptSoundTypes;
@@ -23,7 +24,6 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.grower.OakTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
@@ -122,7 +122,7 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> PINE_DOOR = HELPER.createBlock("pine_door", () -> new WoodDoorBlock(Properties.PINE.door()), CreativeModeTab.TAB_REDSTONE);
     public static final RegistryObject<Block> PINE_TRAPDOOR = HELPER.createBlock("pine_trapdoor", () -> new WoodTrapDoorBlock(Properties.PINE.trapdoor()), CreativeModeTab.TAB_REDSTONE);
     public static final Pair<RegistryObject<BlueprintStandingSignBlock>, RegistryObject<BlueprintWallSignBlock>> PINE_SIGNS = HELPER.createSignBlock("pine", MaterialColor.COLOR_BROWN);
-    public static final RegistryObject<Block> PINE_SAPLING = HELPER.createBlock("pine_sapling", () -> new BlueprintSaplingBlock(new OakTreeGrower(), PropertyUtil.sapling()), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> PINE_SAPLING = HELPER.createBlock("pine_sapling", () -> new BlueprintSaplingBlock(new PineTreeGrower(), PropertyUtil.sapling()), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> POTTED_PINE_SAPLING = HELPER.createBlockNoItem("potted_pine_sapling", () -> new FlowerPotBlock(PINE_SAPLING.get(), PropertyUtil.flowerPot()));
 
     public static final RegistryObject<Block> VERTICAL_PINE_PLANKS = HELPER.createCompatBlock(WindsweptConstants.QUARK, "vertical_pine_planks", () -> new Block(Properties.PINE.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
@@ -322,7 +322,7 @@ public class WindsweptBlocks {
         public static final BlockBehaviour.Properties CRATE = BlockBehaviour.Properties.of(Material.WOOD).strength(1.5f).sound(SoundType.WOOD);
         public static final BlockBehaviour.Properties COLD_SPROUTS = BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XZ);
         public static final BlockBehaviour.Properties PINECONE_BLOCK = Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN).strength(2f, 3f).sound(WindsweptSoundTypes.PINECONE);
-        public static final BlockBehaviour.Properties SHALE  = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_BLUE).sound(SoundType.DRIPSTONE_BLOCK).requiresCorrectToolForDrops().strength(1.5f, 1f);
+        public static final BlockBehaviour.Properties SHALE = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_BLUE).sound(SoundType.DRIPSTONE_BLOCK).requiresCorrectToolForDrops().strength(1.5f, 1f);
     }
 
 }

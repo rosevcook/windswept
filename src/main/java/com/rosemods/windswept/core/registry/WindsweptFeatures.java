@@ -6,6 +6,7 @@ import com.rosemods.windswept.common.level.gen.feature.*;
 import com.rosemods.windswept.common.level.gen.tree.decorator.BranchDecorator;
 import com.rosemods.windswept.common.level.gen.tree.foliage_placer.ChestnutFoliagePlacer;
 import com.rosemods.windswept.common.level.gen.tree.trunk_placer.ChestnutTrunkPlacer;
+import com.rosemods.windswept.common.level.gen.tree.trunk_placer.PineTrunkPlacer;
 import com.rosemods.windswept.core.Windswept;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
@@ -58,7 +59,9 @@ public final class WindsweptFeatures {
         public static final TreeConfiguration HOLLY_TREE_BEES = createHollyTree().decorators(List.of(new BeehiveDecorator(.01f), BranchDecorator.create(WindsweptBlocks.HOLLY_LOG.get(), 2))).build();
         public static final TreeConfiguration CHESTNUT_TREE = createChestnutTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.CHESTNUT_LOG.get(), 4))).build();
         public static final TreeConfiguration CHESTNUT_TREE_BEES = createChestnutTree().decorators(List.of(new BeehiveDecorator(.005f), BranchDecorator.create(WindsweptBlocks.CHESTNUT_LOG.get(), 4))).build();
-
+        public static final TreeConfiguration PINE_TREE = createPineTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.PINE_LOG.get(), 4))).build();
+        public static final TreeConfiguration PINE_TREE_BEES = createPineTree().decorators(List.of(new BeehiveDecorator(.005f), BranchDecorator.create(WindsweptBlocks.PINE_LOG.get(), 4))).build();
+        
         public static final RandomPatchConfiguration FOXGLOVE = createPlantPatch(64, WindsweptBlocks.FOXGLOVE.get().defaultBlockState());
         public static final RandomPatchConfiguration WILD_BERRY_BUSH = createPlantPatch(32, WindsweptBlocks.WILD_BERRY_BUSH.get().defaultBlockState().setValue(WildBerryBushBlock.AGE, 3));
         public static final RandomPatchConfiguration WHITE_ROSE_BUSH = createPlantPatch(32, WindsweptBlocks.WHITE_ROSE_BUSH.get().defaultBlockState());
@@ -105,6 +108,16 @@ public final class WindsweptFeatures {
                     BlockStateProvider.simple(WindsweptBlocks.CHESTNUT_LOG.get()),
                     new ChestnutTrunkPlacer(),
                     BlockStateProvider.simple(WindsweptBlocks.CHESTNUT_LEAVES.get()),
+                    new ChestnutFoliagePlacer(ConstantInt.of(2), ConstantInt.of(2)),
+                    new TwoLayersFeatureSize(1, 0, 1))
+                    .forceDirt();
+        }
+
+        private static TreeConfigurationBuilder createPineTree() {
+            return new TreeConfiguration.TreeConfigurationBuilder(
+                    BlockStateProvider.simple(WindsweptBlocks.PINE_LOG.get()),
+                    new PineTrunkPlacer(),
+                    BlockStateProvider.simple(WindsweptBlocks.PINE_LEAVES.get()),
                     new ChestnutFoliagePlacer(ConstantInt.of(2), ConstantInt.of(2)),
                     new TwoLayersFeatureSize(1, 0, 1))
                     .forceDirt();
@@ -219,13 +232,17 @@ public final class WindsweptFeatures {
 
         public static final RegistryObject<ConfiguredFeature<?, ?>> CHESTNUT_TREES = Features.CONFIGURED_FEATURES.register("chestnut_trees_checked", () -> new ConfiguredFeature<>(Feature.TREE, Configs.CHESTNUT_TREE));
         public static final RegistryObject<ConfiguredFeature<?, ?>> CHESTNUT_TREES_BEES = Features.CONFIGURED_FEATURES.register("chestnut_trees_bees_checked", () -> new ConfiguredFeature<>(Feature.TREE, Configs.CHESTNUT_TREE_BEES));
+
+        public static final RegistryObject<ConfiguredFeature<?, ?>> PINE_TREES = Features.CONFIGURED_FEATURES.register("pine_trees_checked", () -> new ConfiguredFeature<>(Feature.TREE, Configs.PINE_TREE));
+        public static final RegistryObject<ConfiguredFeature<?, ?>> PINE_TREES_BEES = Features.CONFIGURED_FEATURES.register("pine_trees_bees_checked", () -> new ConfiguredFeature<>(Feature.TREE, Configs.PINE_TREE_BEES));
+
     }
 
     public static class TreePlacements {
         public static final RegistryObject<PlacedFeature> HOLLY_TREES_BEES = Placements.register("holly_trees_bees_checked", TreeFeatures.HOLLY_TREES_BEES, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING));
         public static final RegistryObject<PlacedFeature> HOLLY_ON_SNOW = Placements.register("holly_on_snow_checked", TreeFeatures.HOLLY_TREES, net.minecraft.data.worldgen.placement.TreePlacements.SNOW_TREE_FILTER_DECORATOR);
-
         public static final RegistryObject<PlacedFeature> CHESTNUT_TREES_BEES = Placements.register("chestnut_trees_bees_checked", TreeFeatures.CHESTNUT_TREES_BEES, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING));
+        public static final RegistryObject<PlacedFeature> PINE_TREES_BEES = Placements.register("pine_trees_bees_checked", TreeFeatures.PINE_TREES_BEES, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING));
 
         public static List<PlacementModifier> treePlacement(PlacementModifier modifier) {
             return ImmutableList.<PlacementModifier>builder().add(modifier).add(InSquarePlacement.spread())
