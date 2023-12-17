@@ -106,6 +106,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         ShapelessRecipeBuilder.shapeless(DRY_MOSSY_STONE_BRICKS.get()).requires(Items.STONE_BRICKS).requires(DRY_MOSS_BLOCK.get()).unlockedBy(getHasName(DRY_MOSS_BLOCK.get()), has(DRY_MOSS_BLOCK.get())).save(consumer, getSaveLocation("dry_mossy_stone_bricks_from_dry_moss"));
         ShapedRecipeBuilder.shaped(ICY_POLISHED_SHALE_BRICKS.get(), 8).define('#', POLISHED_SHALE_BRICKS.get()).define('I', ICICLES.get()).pattern("###").pattern("#I#").pattern("###").unlockedBy(getHasName(POLISHED_SHALE_BRICKS.get()), has(POLISHED_SHALE_BRICKS.get())).save(consumer, getSaveLocation(ICY_POLISHED_SHALE_BRICKS.get()));
         post(WEATHERED_PINE_POST.get(), WEATHERED_PINE_WOOD.get(), consumer);
+        woodFromLogs(consumer, WEATHERED_PINE_WOOD.get(), WEATHERED_PINE_LOG.get());
         ShapedRecipeBuilder.shaped(WILL_O_THE_WISP.get()).define('#', CARVED_PINECONE_BLOCK.get()).define('N', NIGHTSHADE.get()).pattern("#").pattern("N").unlockedBy(getHasName(CARVED_PINECONE_BLOCK.get()), has(CARVED_PINECONE_BLOCK.get())).save(consumer, getSaveLocation(WILL_O_THE_WISP.get()));
 
         ShapelessRecipeBuilder.shapeless(POLISHED_DEEPSLATE_BUTTON.get()).requires(Items.POLISHED_DEEPSLATE).unlockedBy(getHasName(Items.POLISHED_DEEPSLATE), has(Items.POLISHED_DEEPSLATE)).save(consumer, getSaveLocation(POLISHED_DEEPSLATE_BUTTON.get()));
