@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "windswept:pine_wood"
+      "item": "windswept:weathered_pine_wood"
     }
   ],
   "tool": {
@@ -11,7 +11,7 @@
   },
   "result": [
     {
-      "item": "windswept:weathered_pine_wood"
+      "item": "windswept:stripped_pine_wood"
     },
     {
       "item": "farmersdelight:tree_bark"
