@@ -15,9 +15,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.block.state.properties.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -341,17 +339,17 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.slab(CUT_DOLOMITE_SLAB, this.blockTexture(CUT_DOLOMITE.get()), this.modLoc("block/cut_dolomite"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"));
         this.slab(CUT_DOLOMITE_BRICK_SLAB, this.blockTexture(CUT_DOLOMITE_BRICKS.get()), this.modLoc("block/cut_dolomite_bricks"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"));
 
-        this.stairs(DOLOMITE_STAIRS, this.blockTexture(DOLOMITE.get()), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"));
-        this.stairs(CUT_DOLOMITE_STAIRS, this.blockTexture(CUT_DOLOMITE.get()), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"));
-        this.stairs(CUT_DOLOMITE_BRICK_STAIRS, this.blockTexture(CUT_DOLOMITE_BRICKS.get()), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"));
+        this.stairsInversion(DOLOMITE_STAIRS, this.blockTexture(DOLOMITE.get()), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"));
+        this.stairsInversion(CUT_DOLOMITE_STAIRS, this.blockTexture(CUT_DOLOMITE.get()), this.modLoc("block/cut_dolomite_bottom"), this.modLoc("block/dolomite_top"));
+        this.stairsInversion(CUT_DOLOMITE_BRICK_STAIRS, this.blockTexture(CUT_DOLOMITE_BRICKS.get()), this.modLoc("block/cut_dolomite_bottom"), this.modLoc("block/dolomite_top"));
 
         this.wall(DOLOMITE_WALL, this.blockTexture(DOLOMITE.get()));
         this.wall(CUT_DOLOMITE_WALL, this.blockTexture(CUT_DOLOMITE.get()));
         this.wall(CUT_DOLOMITE_BRICK_WALL, this.blockTexture(CUT_DOLOMITE_BRICKS.get()));
 
         this.verticalSlab(DOLOMITE_VERTICAL_SLAB, this.blockTexture(DOLOMITE.get()), this.modLoc("block/dolomite"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"));
-        this.verticalSlab(CUT_DOLOMITE_VERTICAL_SLAB, this.blockTexture(CUT_DOLOMITE.get()), this.modLoc("block/cut_dolomite"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"));
-        this.verticalSlab(CUT_DOLOMITE_BRICK_VERTICAL_SLAB, this.blockTexture(CUT_DOLOMITE_BRICKS.get()), this.modLoc("block/cut_dolomite_bricks"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"));
+        this.verticalSlab(CUT_DOLOMITE_VERTICAL_SLAB, this.blockTexture(CUT_DOLOMITE.get()), this.modLoc("block/cut_dolomite"), this.modLoc("block/cut_dolomite_bottom"), this.modLoc("block/dolomite_top"));
+        this.verticalSlab(CUT_DOLOMITE_BRICK_VERTICAL_SLAB, this.blockTexture(CUT_DOLOMITE_BRICKS.get()), this.modLoc("block/cut_dolomite_bricks"), this.modLoc("block/cut_dolomite_bottom"), this.modLoc("block/dolomite_top"));
 
 
         // dry moss
@@ -549,6 +547,38 @@ public class WindsweptModelProvider extends BlockStateProvider {
     private void stairs(RegistryObject<Block> stairs, ResourceLocation side, ResourceLocation bottom, ResourceLocation top) {
         this.stairsBlock((StairBlock) stairs.get(), side, bottom, top);
         this.itemModel(stairs);
+    }
+
+    private void stairsInversion(RegistryObject<Block> block, ResourceLocation side, ResourceLocation bottom, ResourceLocation top) {
+        String name = getBlockName(block.get());
+        ModelFile stairs = this.models().stairs(name, side, bottom, top);
+        ModelFile stairsInner = this.models().stairsInner(name + "_inner", side, bottom, top);
+        ModelFile stairsOuter = this.models().stairsOuter(name + "_outer", side, bottom, top);
+        ModelFile stairsInverse = this.models().stairs(name + "_inverse", side, top, bottom);
+        ModelFile stairsInnerInverse = this.models().stairsInner(name + "_inner_inverse", side, top, bottom);
+        ModelFile stairsOuterInverse = this.models().stairsOuter(name + "_outer_inverse", side, top, bottom);
+
+        this.itemModel(block);
+        this.getVariantBuilder(block.get()).forAllStatesExcept(state -> {
+            Direction facing = state.getValue(StairBlock.FACING);
+            Half half = state.getValue(StairBlock.HALF);
+            StairsShape shape = state.getValue(StairBlock.SHAPE);
+            ModelFile model = half == Half.BOTTOM ? stairs : stairsInverse;
+            ModelFile inner = half == Half.BOTTOM ? stairsInner : stairsInnerInverse;
+            ModelFile outer = half == Half.BOTTOM ? stairsOuter : stairsOuterInverse;
+
+            int yRot = (int) facing.getClockWise().toYRot();
+            if (shape == StairsShape.INNER_LEFT || shape == StairsShape.OUTER_LEFT) yRot += 270;
+            if (shape != StairsShape.STRAIGHT && half == Half.TOP) yRot += 90;
+            yRot %= 360;
+
+            return ConfiguredModel.builder()
+                    .modelFile(shape == StairsShape.STRAIGHT ? model : shape == StairsShape.INNER_LEFT || shape == StairsShape.INNER_RIGHT ? inner : outer)
+                    .rotationX(half == Half.BOTTOM ? 0 : 180)
+                    .rotationY(yRot)
+                    .uvLock(yRot != 0 || half == Half.TOP)
+                    .build();
+        }, StairBlock.WATERLOGGED);
     }
 
     private void wall(RegistryObject<Block> wall, ResourceLocation texture) {
