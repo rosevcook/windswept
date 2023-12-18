@@ -278,7 +278,7 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> SNOW_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "snow_brick_vertical_slab", () -> new VerticalSlabBlock(Properties.SNOW_BRICKS), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
     // Dolomite //
-    public static final RegistryObject<Block> DOLOMITE = HELPER.createBlock("dolomite", () -> new Block(Properties.DOLOMITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> DOLOMITE = HELPER.createBlock("dolomite", () -> new DolomiteBlock(Properties.DOLOMITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> DOLOMITE_STAIRS = HELPER.createBlock("dolomite_stairs", () -> new StairBlock(DOLOMITE.get()::defaultBlockState, Properties.DOLOMITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> DOLOMITE_SLAB = HELPER.createBlock("dolomite_slab", () -> new SlabBlock(Properties.DOLOMITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> DOLOMITE_WALL = HELPER.createBlock("dolomite_wall", () -> new WallBlock(Properties.DOLOMITE), CreativeModeTab.TAB_DECORATIONS);

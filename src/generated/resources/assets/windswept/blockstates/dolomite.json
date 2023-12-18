@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
+    "top=false": {
       "model": "windswept:block/dolomite"
+    },
+    "top=true": {
+      "model": "windswept:block/dolomite_top"
     }
   }
 }

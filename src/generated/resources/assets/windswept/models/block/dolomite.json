@@ -1,8 +1,6 @@
 {
-  "parent": "minecraft:block/cube_bottom_top",
+  "parent": "minecraft:block/cube_all",
   "textures": {
-    "bottom": "windswept:block/dolomite_bottom",
-    "side": "windswept:block/dolomite",
-    "top": "windswept:block/dolomite_top"
+    "all": "windswept:block/dolomite_bottom"
   }
 }
