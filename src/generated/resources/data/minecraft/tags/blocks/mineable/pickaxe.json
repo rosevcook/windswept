@@ -58,6 +58,22 @@
     "windswept:polished_shale_brick_vertical_slab",
     "windswept:icy_polished_shale_bricks",
     "windswept:polished_deepslate_pressure_plate",
-    "windswept:polished_shale_pressure_plate"
+    "windswept:polished_shale_pressure_plate",
+    "windswept:dolomite",
+    "windswept:dolomite_stairs",
+    "windswept:dolomite_slab",
+    "windswept:dolomite_wall",
+    "windswept:dolomite_vertical_slab",
+    "windswept:cut_dolomite",
+    "windswept:cut_dolomite_stairs",
+    "windswept:cut_dolomite_slab",
+    "windswept:cut_dolomite_wall",
+    "windswept:cut_dolomite_vertical_slab",
+    "windswept:cut_dolomite_bricks",
+    "windswept:chiseled_cut_dolomite_bricks",
+    "windswept:cut_dolomite_brick_stairs",
+    "windswept:cut_dolomite_brick_slab",
+    "windswept:cut_dolomite_brick_wall",
+    "windswept:cut_dolomite_brick_vertical_slab"
   ]
 }

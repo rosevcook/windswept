@@ -8,6 +8,9 @@
     "windswept:shale_wall",
     "windswept:polished_shale_wall",
     "windswept:polished_shale_brick_wall",
-    "windswept:pinecone_shingle_wall"
+    "windswept:pinecone_shingle_wall",
+    "windswept:dolomite_wall",
+    "windswept:cut_dolomite_wall",
+    "windswept:cut_dolomite_brick_wall"
   ]
 }

@@ -14,6 +14,9 @@
     "windswept:shale_vertical_slab",
     "windswept:polished_shale_vertical_slab",
     "windswept:polished_shale_brick_vertical_slab",
-    "windswept:pinecone_shingle_vertical_slab"
+    "windswept:pinecone_shingle_vertical_slab",
+    "windswept:dolomite_vertical_slab",
+    "windswept:cut_dolomite_vertical_slab",
+    "windswept:cut_dolomite_brick_vertical_slab"
   ]
 }

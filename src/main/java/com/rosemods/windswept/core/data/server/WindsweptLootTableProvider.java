@@ -346,6 +346,24 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(ICICLE_TRAPDOOR.get());
             this.dropSelf(ICICLE_BARS.get());
             this.dropSelf(ICE_LANTERN.get());
+            
+            //dolomite
+            this.dropSelf(DOLOMITE.get());
+            this.dropSelf(DOLOMITE_STAIRS.get());
+            this.add(DOLOMITE_SLAB.get(), Blocks::createSlabItemTable);
+            this.dropSelf(DOLOMITE_WALL.get());
+            this.add(DOLOMITE_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+            this.dropSelf(CUT_DOLOMITE.get());
+            this.dropSelf(CUT_DOLOMITE_STAIRS.get());
+            this.add(CUT_DOLOMITE_SLAB.get(), Blocks::createSlabItemTable);
+            this.dropSelf(CUT_DOLOMITE_WALL.get());
+            this.add(CUT_DOLOMITE_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+            this.dropSelf(CUT_DOLOMITE_BRICKS.get());
+            this.dropSelf(CHISELED_CUT_DOLOMITE_BRICKS.get());
+            this.dropSelf(CUT_DOLOMITE_BRICK_STAIRS.get());
+            this.add(CUT_DOLOMITE_BRICK_SLAB.get(), Blocks::createSlabItemTable);
+            this.dropSelf(CUT_DOLOMITE_BRICK_WALL.get());
+            this.add(CUT_DOLOMITE_BRICK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
 
             // tundra moss blocks
             this.dropSelf(DRY_MOSS_CARPET.get());

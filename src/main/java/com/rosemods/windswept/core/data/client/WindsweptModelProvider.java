@@ -318,6 +318,15 @@ public class WindsweptModelProvider extends BlockStateProvider {
                 .partialState().with(IceLanternBlock.FACING, Direction.WEST).addModels(ConfiguredModel.builder().modelFile(this.models().getExistingFile(this.modLoc("block/ice_lantern_side"))).rotationY(270).build());
         this.generatedItem(ICE_LANTERN.get(), TextureFolder.Item);
 
+        this.simpleBlock(DOLOMITE.get(), this.models().cubeBottomTop("dolomite", this.modLoc("block/dolomite"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top")));
+        this.itemModel(DOLOMITE);
+        this.simpleBlock(CUT_DOLOMITE.get(), this.models().cubeBottomTop("cut_dolomite", this.modLoc("block/cut_dolomite"), this.modLoc("block/cut_dolomite_bottom"), this.modLoc("block/dolomite_top")));
+        this.itemModel(CUT_DOLOMITE);
+        this.simpleBlock(CUT_DOLOMITE_BRICKS.get(), this.models().cubeBottomTop("cut_dolomite_bricks", this.modLoc("block/cut_dolomite_bricks"), this.modLoc("block/cut_dolomite_bottom"), this.modLoc("block/dolomite_top")));
+        this.itemModel(CUT_DOLOMITE_BRICKS);
+        this.simpleBlock(CHISELED_CUT_DOLOMITE_BRICKS.get(), this.models().cubeBottomTop("chiseled_cut_dolomite_bricks", this.modLoc("block/chiseled_cut_dolomite_bricks"), this.modLoc("block/cut_dolomite_bottom"), this.modLoc("block/dolomite_top")));
+        this.itemModel(CHISELED_CUT_DOLOMITE_BRICKS);
+
         this.carpet(DRY_MOSS_CARPET, this.blockTexture(DRY_MOSS_BLOCK.get()));
         this.cubeAll(DRY_MOSS_BLOCK);
         this.cubeAll(DRY_MOSSY_COBBLESTONE);

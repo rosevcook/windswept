@@ -15,8 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class BeehiveBlockMixin {
     @Inject(method = "dropHoneycomb", at = @At("TAIL"))
     private static void dropHoneycomb(Level level, BlockPos pos, CallbackInfo info) {
-        double chance = WindsweptConfig.COMMON.bumblebeeDiscChance.get();
-        if (chance > 0 && level.random.nextFloat() < chance)
+        if (level.random.nextFloat() < WindsweptConfig.COMMON.bumblebeeDiscChance.get())
             Block.popResourceFromFace(level, pos, level.getBlockState(pos).getValue(BeehiveBlock.FACING), WindsweptItems.MUSIC_DISC_BUMBLEBEE.get().getDefaultInstance());
     }
 }

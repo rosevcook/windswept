@@ -11,6 +11,9 @@
     "windswept:shale_stairs",
     "windswept:polished_shale_stairs",
     "windswept:polished_shale_brick_stairs",
-    "windswept:pinecone_shingle_stairs"
+    "windswept:pinecone_shingle_stairs",
+    "windswept:dolomite_stairs",
+    "windswept:cut_dolomite_stairs",
+    "windswept:cut_dolomite_brick_stairs"
   ]
 }

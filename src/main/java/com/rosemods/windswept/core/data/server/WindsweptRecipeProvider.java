@@ -161,6 +161,24 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         stonecutting(POLISHED_SHALE.get(), POLISHED_SHALE_BRICK_WALL.get(), 1, consumer);
         verticalSlabStonecutting(POLISHED_SHALE.get(), POLISHED_SHALE_BRICK_VERTICAL_SLAB.get(), consumer);
 
+        stonecutting(DOLOMITE.get(), CUT_DOLOMITE_BRICKS.get(), 1, consumer);
+        stonecutting(DOLOMITE.get(), CHISELED_CUT_DOLOMITE_BRICKS.get(), 1, consumer);
+        stonecutting(DOLOMITE.get(), CUT_DOLOMITE_BRICK_SLAB.get(), 2, consumer);
+        stonecutting(DOLOMITE.get(), CUT_DOLOMITE_BRICK_STAIRS.get(), 1, consumer);
+        stonecutting(DOLOMITE.get(), CUT_DOLOMITE_BRICK_WALL.get(), 1, consumer);
+        verticalSlabStonecutting(DOLOMITE.get(), CUT_DOLOMITE_BRICK_VERTICAL_SLAB.get(), consumer);
+        stonecutting(DOLOMITE.get(), CUT_DOLOMITE.get(), 1, consumer);
+        stonecutting(DOLOMITE.get(), CUT_DOLOMITE_SLAB.get(), 2, consumer);
+        stonecutting(DOLOMITE.get(), CUT_DOLOMITE_STAIRS.get(), 1, consumer);
+        stonecutting(DOLOMITE.get(), CUT_DOLOMITE_WALL.get(), 1, consumer);
+        verticalSlabStonecutting(DOLOMITE.get(), CUT_DOLOMITE_VERTICAL_SLAB.get(), consumer);
+        stonecutting(CUT_DOLOMITE.get(), CUT_DOLOMITE_BRICKS.get(), 1, consumer);
+        stonecutting(CUT_DOLOMITE.get(), CHISELED_CUT_DOLOMITE_BRICKS.get(), 1, consumer);
+        stonecutting(CUT_DOLOMITE.get(), CUT_DOLOMITE_BRICK_SLAB.get(), 2, consumer);
+        stonecutting(CUT_DOLOMITE.get(), CUT_DOLOMITE_BRICK_STAIRS.get(), 1, consumer);
+        stonecutting(CUT_DOLOMITE.get(), CUT_DOLOMITE_BRICK_WALL.get(), 1, consumer);
+        verticalSlabStonecutting(CUT_DOLOMITE.get(), CUT_DOLOMITE_BRICK_VERTICAL_SLAB.get(), consumer);
+
         blockset(null, Blocks.PACKED_ICE, null, PACKED_ICE_SLAB.get(), PACKED_ICE_STAIRS.get(), null, PACKED_ICE_VERTICAL_SLAB.get(), true, consumer);
         blockset(null, Blocks.BLUE_ICE, null, BLUE_ICE_SLAB.get(), BLUE_ICE_STAIRS.get(), null, BLUE_ICE_VERTICAL_SLAB.get(), true, consumer);
         blockset(Blocks.PACKED_ICE, PACKED_ICE_BRICKS.get(), CHISELED_PACKED_ICE_BRICKS.get(), PACKED_ICE_BRICK_SLAB.get(), PACKED_ICE_BRICK_STAIRS.get(), PACKED_ICE_BRICK_WALL.get(), PACKED_ICE_BRICK_VERTICAL_SLAB.get(), true, consumer);
@@ -172,6 +190,9 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         blockset(SHALE.get(), POLISHED_SHALE.get(), null, POLISHED_SHALE_SLAB.get(), POLISHED_SHALE_STAIRS.get(), POLISHED_SHALE_WALL.get(), POLISHED_SHALE_VERTICAL_SLAB.get(), true, consumer);
         blockset(POLISHED_SHALE.get(), POLISHED_SHALE_BRICKS.get(), CHISELED_POLISHED_SHALE_BRICKS.get(), POLISHED_SHALE_BRICK_SLAB.get(), POLISHED_SHALE_BRICK_STAIRS.get(), POLISHED_SHALE_BRICK_WALL.get(), POLISHED_SHALE_BRICK_VERTICAL_SLAB.get(), true, consumer);
         blockset(PINECONE_BLOCK.get(), PINECONE_SHINGLES.get(), null, PINECONE_SHINGLE_SLAB.get(), PINECONE_SHINGLE_STAIRS.get(), PINECONE_SHINGLE_WALL.get(), PINECONE_SHINGLE_VERTICAL_SLAB.get(), false, consumer);
+        blockset(null, DOLOMITE.get(), null, DOLOMITE_SLAB.get(), DOLOMITE_STAIRS.get(), DOLOMITE_WALL.get(), DOLOMITE_VERTICAL_SLAB.get(), true, consumer);
+        blockset(DOLOMITE.get(), CUT_DOLOMITE.get(), null, CUT_DOLOMITE_SLAB.get(), CUT_DOLOMITE_STAIRS.get(), CUT_DOLOMITE_WALL.get(), CUT_DOLOMITE_VERTICAL_SLAB.get(), true, consumer);
+        blockset(CUT_DOLOMITE.get(), CUT_DOLOMITE_BRICKS.get(), CHISELED_CUT_DOLOMITE_BRICKS.get(), CUT_DOLOMITE_BRICK_SLAB.get(), CUT_DOLOMITE_BRICK_STAIRS.get(), CUT_DOLOMITE_BRICK_WALL.get(), CUT_DOLOMITE_BRICK_VERTICAL_SLAB.get(), true, consumer);
 
         // wood sets
         woodSet(WindsweptItemTags.HOLLY_LOGS, HOLLY_PLANKS.get(), HOLLY_SLAB.get(), HOLLY_STAIRS.get(), HOLLY_LOG.get(), HOLLY_WOOD.get(), STRIPPED_HOLLY_LOG.get(), STRIPPED_HOLLY_WOOD.get(), HOLLY_BOATS.getFirst().get(), HOLLY_BOATS.getSecond().get(), HOLLY_BUTTON.get(), HOLLY_DOOR.get(), HOLLY_TRAPDOOR.get(), HOLLY_FENCE.get(), HOLLY_FENCE_GATE.get(), HOLLY_PRESSURE_PLATE.get(), HOLLY_SIGNS.getFirst().get(), HOLLY_VERTICAL_SLAB.get(), HOLLY_POST.get(), STRIPPED_HOLLY_POST.get(), HOLLY_BOARDS.get(), HOLLY_BEEHIVE.get(), HOLLY_LADDER.get(), HOLLY_BOOKSHELF.get(), HOLLY_CHEST.get(), HOLLY_TRAPPED_CHEST.get(), LARGE_HOLLY_BOAT.get(), HOLLY_FURNACE_BOAT.get(), VERTICAL_HOLLY_PLANKS.get(), HOLLY_CABINET.get(), consumer);
