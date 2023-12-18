@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/cube_bottom_top",
+  "parent": "minecraft:block/slab",
   "textures": {
     "bottom": "windswept:block/dolomite_bottom",
     "side": "windswept:block/dolomite",

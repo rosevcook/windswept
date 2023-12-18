@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "windswept:block/cut_dolomite_slab"
+    },
+    "type=double": {
+      "model": "windswept:block/cut_dolomite"
+    },
+    "type=top": {
+      "model": "windswept:block/cut_dolomite_slab_top"
+    }
+  }
+}
