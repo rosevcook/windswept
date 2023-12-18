@@ -1,12 +1,21 @@
 {
   "variants": {
-    "type=bottom": {
+    "top=false,type=bottom": {
+      "model": "windswept:block/dolomite_slab_bottom"
+    },
+    "top=false,type=double": {
+      "model": "windswept:block/dolomite_bottom"
+    },
+    "top=false,type=top": {
+      "model": "windswept:block/dolomite_slab_top_bottom"
+    },
+    "top=true,type=bottom": {
       "model": "windswept:block/dolomite_slab"
     },
-    "type=double": {
+    "top=true,type=double": {
       "model": "windswept:block/dolomite"
     },
-    "type=top": {
+    "top=true,type=top": {
       "model": "windswept:block/dolomite_slab_top"
     }
   }

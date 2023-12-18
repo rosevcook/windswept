@@ -2,7 +2,7 @@
   "parent": "minecraft:block/slab",
   "textures": {
     "bottom": "windswept:block/dolomite_bottom",
-    "side": "windswept:block/cut_dolomite",
+    "side": "windswept:block/cut_dolomite_slab",
     "top": "windswept:block/dolomite_top"
   }
 }

@@ -335,9 +335,18 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.itemModel(CUT_DOLOMITE_BRICKS);
         this.itemModel(CHISELED_CUT_DOLOMITE_BRICKS);
 
-        this.slab(DOLOMITE_SLAB, this.blockTexture(DOLOMITE.get()), this.modLoc("block/dolomite"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"));
-        this.slab(CUT_DOLOMITE_SLAB, this.blockTexture(CUT_DOLOMITE.get()), this.modLoc("block/cut_dolomite"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"));
+
+        this.getVariantBuilder(DOLOMITE_SLAB.get())
+                .partialState().with(SlabBlock.TYPE, SlabType.BOTTOM).with(DolomiteSlabBlock.TOP, true).addModels(new ConfiguredModel(this.models().slab("dolomite_slab", this.modLoc("block/dolomite_slab"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"))))
+                .partialState().with(SlabBlock.TYPE, SlabType.TOP).with(DolomiteSlabBlock.TOP, true).addModels(new ConfiguredModel(this.models().slabTop("dolomite_slab_top", this.modLoc("block/dolomite_slab"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"))))
+                .partialState().with(SlabBlock.TYPE, SlabType.DOUBLE).with(DolomiteSlabBlock.TOP, true).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/dolomite"))))
+                .partialState().with(SlabBlock.TYPE, SlabType.BOTTOM).with(DolomiteSlabBlock.TOP, false).addModels(new ConfiguredModel(this.models().slab("dolomite_slab_bottom", this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_bottom"))))
+                .partialState().with(SlabBlock.TYPE, SlabType.TOP).with(DolomiteSlabBlock.TOP, false).addModels(new ConfiguredModel(this.models().slabTop("dolomite_slab_top_bottom", this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_bottom"))))
+                .partialState().with(SlabBlock.TYPE, SlabType.DOUBLE).with(DolomiteSlabBlock.TOP, false).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/dolomite_bottom"))));
+        this.models().cubeBottomTop("cut_dolomite_slab_double", this.modLoc("block/cut_dolomite_slab"), this.modLoc("block/cut_dolomite_bottom"), this.modLoc("block/dolomite_top"));
+        this.slab(CUT_DOLOMITE_SLAB, this.modLoc("block/cut_dolomite_slab_double"), this.modLoc("block/cut_dolomite_slab"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"));
         this.slab(CUT_DOLOMITE_BRICK_SLAB, this.blockTexture(CUT_DOLOMITE_BRICKS.get()), this.modLoc("block/cut_dolomite_bricks"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"));
+        this.itemModel(DOLOMITE_SLAB);
 
         this.stairsInversion(DOLOMITE_STAIRS, this.blockTexture(DOLOMITE.get()), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"));
         this.stairsInversion(CUT_DOLOMITE_STAIRS, this.blockTexture(CUT_DOLOMITE.get()), this.modLoc("block/cut_dolomite_bottom"), this.modLoc("block/dolomite_top"));
