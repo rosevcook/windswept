@@ -14,7 +14,6 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
-//i made this class for a bit of fun, id like to see something like this in blueprint.
 public class EffectSubRegistryHelper implements ISubRegistryHelper<MobEffect> {
     protected final RegistryHelper parent;
     protected final DeferredRegister<MobEffect> effectRegister;

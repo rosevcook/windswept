@@ -57,7 +57,7 @@ public class WindsweptPlugin implements IModPlugin {
 
     @Override
     public ResourceLocation getPluginUid() {
-        return Windswept.REGISTRY_HELPER.prefix("jei_plugin");
+        return Windswept.location("jei_plugin");
     }
 
 }

@@ -72,28 +72,28 @@ public final class WindsweptBiomeModifier {
 
     @SafeVarargs
     private static void addFeature(String name, TagKey<Biome> tagKey, GenerationStep.Decoration step, RegistryObject<PlacedFeature>... features) {
-        modifiers.put(Windswept.REGISTRY_HELPER.prefix("features/" + name),
+        modifiers.put(Windswept.location("features/" + name),
                 new ForgeBiomeModifiers.AddFeaturesBiomeModifier(new HolderSet.Named<>(biomeRegistry, tagKey), featureSet(features), step));
     }
 
     @SafeVarargs
     private static void addFeature(String name, ResourceKey<Biome> biome, GenerationStep.Decoration step, RegistryObject<PlacedFeature>... features) {
-        modifiers.put(Windswept.REGISTRY_HELPER.prefix("features/" + name),
+        modifiers.put(Windswept.location("features/" + name),
                 new ForgeBiomeModifiers.AddFeaturesBiomeModifier(HolderSet.direct(biomeRegistry.getOrCreateHolderOrThrow(biome)), featureSet(features), step));
     }
 
     private static void removeFeature(String name, TagKey<Biome> tagKey, GenerationStep.Decoration step, Holder<PlacedFeature> feature) {
-        modifiers.put(Windswept.REGISTRY_HELPER.prefix("removed_features/" + name),
+        modifiers.put(Windswept.location("removed_features/" + name),
                 new ForgeBiomeModifiers.RemoveFeaturesBiomeModifier(new HolderSet.Named<>(biomeRegistry, tagKey), featureSet(feature), Set.of(step)));
     }
 
     private static void removeFeature(String name, ResourceKey<Biome> biome, GenerationStep.Decoration step, Holder<PlacedFeature> feature) {
-        modifiers.put(Windswept.REGISTRY_HELPER.prefix("removed_features/" + name),
+        modifiers.put(Windswept.location("removed_features/" + name),
                 new ForgeBiomeModifiers.RemoveFeaturesBiomeModifier(HolderSet.direct(biomeRegistry.getOrCreateHolderOrThrow(biome)), featureSet(feature), Set.of(step)));
     }
 
     private static <T extends LivingEntity> void addSpawn(String name, TagKey<Biome> tagKey, RegistryObject<EntityType<T>> entity, int weight, int min, int max) {
-        modifiers.put(Windswept.REGISTRY_HELPER.prefix("spawns/" + name),
+        modifiers.put(Windswept.location("spawns/" + name),
                 new ForgeBiomeModifiers.AddSpawnsBiomeModifier(new HolderSet.Named<>(biomeRegistry, tagKey), List.of(new MobSpawnSettings.SpawnerData(entity.get(), weight, min, max))));
     }
 

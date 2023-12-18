@@ -5,7 +5,6 @@ import com.teamabnormals.blueprint.common.world.modification.structure.SimpleStr
 import com.teamabnormals.blueprint.common.world.modification.structure.StructureRepaletterProvider;
 import com.teamabnormals.blueprint.core.util.modification.selection.ConditionedResourceSelector;
 import com.teamabnormals.blueprint.core.util.modification.selection.selectors.NamesResourceSelector;
-import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -18,6 +17,7 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import static com.rosemods.windswept.core.registry.WindsweptBlocks.*;
+import static com.rosemods.windswept.core.registry.WindsweptStructures.*;
 import static net.minecraft.world.level.levelgen.structure.BuiltinStructures.*;
 
 public class WindsweptStructureRepaletterProvider extends StructureRepaletterProvider {
@@ -63,10 +63,10 @@ public class WindsweptStructureRepaletterProvider extends StructureRepaletterPro
         // Mod Compat //
         ICondition quarkOrWoodworks = new OrCondition(new ModLoadedCondition("quark"), new ModLoadedCondition("woodworks"));
 
-        this.register(getLocalKey("grove_weathered_house"), Blocks.BOOKSHELF, HOLLY_BOOKSHELF.get(), quarkOrWoodworks);
-        this.register(getLocalKey("grove_weathered_house"), Blocks.CHEST, HOLLY_CHEST.get(), quarkOrWoodworks);
-        this.register(getLocalKey("grove_weathered_house"), Blocks.LADDER, HOLLY_LADDER.get(), quarkOrWoodworks);
-        this.register(getLocalKey("chestnut_weathered_house"), Blocks.LADDER, CHESTNUT_LADDER.get(), quarkOrWoodworks);
+        this.register(GROVE_WEATHERED_HOUSE, Blocks.BOOKSHELF, HOLLY_BOOKSHELF.get(), quarkOrWoodworks);
+        this.register(GROVE_WEATHERED_HOUSE, Blocks.CHEST, HOLLY_CHEST.get(), quarkOrWoodworks);
+        this.register(GROVE_WEATHERED_HOUSE, Blocks.LADDER, HOLLY_LADDER.get(), quarkOrWoodworks);
+        this.register(CHESTNUT_WEATHERED_HOUSE, Blocks.LADDER, CHESTNUT_LADDER.get(), quarkOrWoodworks);
         this.register(IGLOO, Blocks.CHEST, HOLLY_CHEST.get(), quarkOrWoodworks);
         this.register(IGLOO, Blocks.LADDER, HOLLY_LADDER.get(), quarkOrWoodworks);
         this.register(VILLAGE_SNOWY, Blocks.CHEST, CHESTNUT_CHEST.get(), quarkOrWoodworks);
@@ -92,10 +92,6 @@ public class WindsweptStructureRepaletterProvider extends StructureRepaletterPro
 
     private void register(String name, NamesResourceSelector structures, Block replacesBlock, Block replacesWith) {
         this.registerRepaletter(name, new ConditionedResourceSelector(structures), EventPriority.NORMAL, new SimpleStructureRepaletter(replacesBlock, replacesWith));
-    }
-
-    private static ResourceKey<Structure> getLocalKey(String name) {
-        return ResourceKey.create(Registry.STRUCTURE_REGISTRY, Windswept.REGISTRY_HELPER.prefix(name));
     }
 
     private static String getName(Block block) {

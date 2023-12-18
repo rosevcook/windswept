@@ -19,7 +19,7 @@ public class GuiMixin {
     @Inject(method = "render", at = @At("HEAD"))
     private void render(PoseStack poseStack, float p_93032_, CallbackInfo info) {
         //if (this.minecraft.player != null && this.minecraft.options.getCameraType().isFirstPerson() && !this.minecraft.player.isScoping()) //&& this.minecraft.player.getInventory().getArmor(3).is(WindsweptBlocks.CARVED_PINECONE_BLOCK.get().asItem()))
-        //((Gui) (Object) this).renderTextureOverlay(Windswept.REGISTRY_HELPER.prefix("textures/misc/pineconeblur.png"), 1f);
+        //((Gui) (Object) this).renderTextureOverlay(Windswept.location("textures/misc/pineconeblur.png"), 1f);
     }
 
 }

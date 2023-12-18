@@ -11,7 +11,7 @@ public final class WindsweptBannerPatternTags {
     public static final TagKey<BannerPattern> ROSE_FLOWER = createTag("rose_flower");
 
     private static TagKey<BannerPattern> createTag(String name) {
-        return TagKey.create(Registry.BANNER_PATTERN_REGISTRY, Windswept.REGISTRY_HELPER.prefix("pattern_item/" + name));
+        return TagKey.create(Registry.BANNER_PATTERN_REGISTRY, Windswept.location("pattern_item/" + name));
     }
 
 }

@@ -12,7 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.monster.Zombie;
 
 public class ChilledRenderer extends AbstractZombieRenderer<Chilled, ChilledModel> {
-    private static final ResourceLocation CHILLED_LOCATION = Windswept.REGISTRY_HELPER.prefix("textures/entity/chilled.png");
+    private static final ResourceLocation CHILLED_LOCATION = Windswept.location("textures/entity/chilled.png");
 
     public ChilledRenderer(Context context) {
         super(context, new ChilledModel(context.bakeLayer(WindsweptModelLayers.CHILLED)), new ChilledModel(context.bakeLayer(ModelLayers.ZOMBIE_INNER_ARMOR)), new ChilledModel(context.bakeLayer(ModelLayers.ZOMBIE_OUTER_ARMOR)));

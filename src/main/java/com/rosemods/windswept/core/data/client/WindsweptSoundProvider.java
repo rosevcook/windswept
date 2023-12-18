@@ -24,7 +24,7 @@ public class WindsweptSoundProvider extends SoundDefinitionsProvider {
     }
 
     private void register(RegistryObject<SoundEvent> soundEvent, String location, Consumer<Sound> consumer) {
-        Sound sound = sound(Windswept.REGISTRY_HELPER.prefix(location));
+        Sound sound = sound(Windswept.location(location));
         if (consumer != null)
             consumer.accept(sound);
 

@@ -474,7 +474,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
         }
 
         private static void register(String name, LootTable.Builder lootTable, BiConsumer<ResourceLocation, Builder> builder) {
-            builder.accept(Windswept.REGISTRY_HELPER.prefix("chests/" + name), lootTable);
+            builder.accept(Windswept.location("chests/" + name), lootTable);
         }
 
     }

@@ -33,7 +33,7 @@ public abstract class HumanoidArmorLayerMixin<T extends LivingEntity, M extends 
             model.head.visible = true;
             model.hat.visible = true;
 
-            VertexConsumer vertexconsumer = ItemRenderer.getArmorFoilBuffer(source, RenderType.armorCutoutNoCull(Windswept.REGISTRY_HELPER.prefix("textures/models/armor/wooden_bucket_layer_1.png")), false, false);
+            VertexConsumer vertexconsumer = ItemRenderer.getArmorFoilBuffer(source, RenderType.armorCutoutNoCull(Windswept.location("textures/models/armor/wooden_bucket_layer_1.png")), false, false);
             model.renderToBuffer(pose, vertexconsumer, p_117123_, OverlayTexture.NO_OVERLAY, 1f, 1f, 1f, 1f);
 
             info.cancel();

@@ -11,14 +11,12 @@ import com.rosemods.windswept.core.data.server.modifiers.WindsweptBiomeModifier;
 import com.rosemods.windswept.core.data.server.modifiers.WindsweptLootModifierProvider;
 import com.rosemods.windswept.core.data.server.modifiers.WindsweptModdedBiomeSliceProvider;
 import com.rosemods.windswept.core.data.server.tags.*;
-import com.rosemods.windswept.core.other.WindsweptBlockInfo;
-import com.rosemods.windswept.core.other.WindsweptCauldronInteractions;
-import com.rosemods.windswept.core.other.WindsweptDataProcessors;
-import com.rosemods.windswept.core.other.WindsweptDispenseBehaviors;
+import com.rosemods.windswept.core.other.*;
 import com.rosemods.windswept.core.registry.*;
 import com.rosemods.windswept.core.registry.util.EffectSubRegistryHelper;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -64,6 +62,7 @@ public class Windswept {
 
     private void commonSetup(FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
+            //WindsweptVillagerTypes.registerVillagerTypes();
             WindsweptBlockInfo.changeLocalisation();
             WindsweptBlockInfo.registerCompostables();
             WindsweptBlockInfo.registerFlammables();
@@ -100,6 +99,10 @@ public class Windswept {
         gen.addProvider(server, new WindsweptModdedBiomeSliceProvider(event));
         gen.addProvider(server, new WindsweptPaintingVariantTagsProvider(event));
         gen.addProvider(server, WindsweptBiomeModifier.register(event));
+    }
+
+    public static ResourceLocation location(String id) {
+        return new ResourceLocation(MOD_ID, id);
     }
 
 }

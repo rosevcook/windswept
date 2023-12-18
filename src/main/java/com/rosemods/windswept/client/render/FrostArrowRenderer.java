@@ -7,7 +7,7 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 
 public class FrostArrowRenderer extends ArrowRenderer<FrostArrow> {
-    private static final ResourceLocation FROST_ARROW = Windswept.REGISTRY_HELPER.prefix("textures/entity/projectiles/frost_arrow.png");
+    private static final ResourceLocation FROST_ARROW = Windswept.location("textures/entity/projectiles/frost_arrow.png");
 
     public FrostArrowRenderer(EntityRendererProvider.Context context) {
         super(context);

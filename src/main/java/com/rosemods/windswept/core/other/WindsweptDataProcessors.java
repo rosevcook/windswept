@@ -17,7 +17,7 @@ public final class WindsweptDataProcessors {
     }
 
     private static void register(String name, TrackedData<?> data) {
-        TrackedDataManager.INSTANCE.registerData(Windswept.REGISTRY_HELPER.prefix(name), data);
+        TrackedDataManager.INSTANCE.registerData(Windswept.location(name), data);
     }
 
 }

@@ -347,7 +347,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
     }
 
     private static ResourceLocation getSaveLocation(String name) {
-        return Windswept.REGISTRY_HELPER.prefix(name);
+        return Windswept.location(name);
     }
 
 }

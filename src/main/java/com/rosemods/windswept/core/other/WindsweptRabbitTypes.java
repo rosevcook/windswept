@@ -6,5 +6,5 @@ import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = Windswept.MOD_ID)
 public class WindsweptRabbitTypes {
-    public static final BlueprintRabbitTypes.BlueprintRabbitType CHESTNUT = BlueprintRabbitTypes.register(1227, Windswept.REGISTRY_HELPER.prefix("chestnut"));
+    public static final BlueprintRabbitTypes.BlueprintRabbitType CHESTNUT = BlueprintRabbitTypes.register(1227, Windswept.location("chestnut"));
 }
