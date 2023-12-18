@@ -351,7 +351,6 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.verticalSlab(CUT_DOLOMITE_VERTICAL_SLAB, this.blockTexture(CUT_DOLOMITE.get()), this.modLoc("block/cut_dolomite"), this.modLoc("block/cut_dolomite_bottom"), this.modLoc("block/dolomite_top"));
         this.verticalSlab(CUT_DOLOMITE_BRICK_VERTICAL_SLAB, this.blockTexture(CUT_DOLOMITE_BRICKS.get()), this.modLoc("block/cut_dolomite_bricks"), this.modLoc("block/cut_dolomite_bottom"), this.modLoc("block/dolomite_top"));
 
-
         // dry moss
         this.carpet(DRY_MOSS_CARPET, this.blockTexture(DRY_MOSS_BLOCK.get()));
         this.cubeAll(DRY_MOSS_BLOCK);
