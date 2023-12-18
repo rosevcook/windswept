@@ -31,6 +31,7 @@
                 "name": "minecraft:arrow"
               }
             ],
+            "name": "minecraft:arrow",
             "rolls": 1.0
           },
           {
@@ -60,6 +61,7 @@
                 "name": "minecraft:bone"
               }
             ],
+            "name": "minecraft:bone",
             "rolls": 1.0
           },
           {
@@ -95,6 +97,7 @@
                 "name": "windswept:frost_arrow"
               }
             ],
+            "name": "windswept:frost_arrow",
             "rolls": 1.0
           }
         ],

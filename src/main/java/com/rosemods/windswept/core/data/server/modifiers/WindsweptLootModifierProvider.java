@@ -53,13 +53,13 @@ public class WindsweptLootModifierProvider extends LootModifierProvider {
 
         // strays drop frost arrows
         this.entry("stray").selects("entities/stray").addModifier(new LootPoolsModifier(List.of(
-                LootPool.lootPool().setRolls(ConstantValue.exactly(1f)).add(LootItem.lootTableItem(Items.ARROW)
+                LootPool.lootPool().name("minecraft:arrow").setRolls(ConstantValue.exactly(1f)).add(LootItem.lootTableItem(Items.ARROW)
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(0f, 2f)))
                         .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0f, 1f)))).build(),
-                LootPool.lootPool().setRolls(ConstantValue.exactly(1f)).add(LootItem.lootTableItem(Items.BONE)
+                LootPool.lootPool().name("minecraft:bone").setRolls(ConstantValue.exactly(1f)).add(LootItem.lootTableItem(Items.BONE)
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(0f, 2f)))
                         .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0f, 1f)))).build(),
-                LootPool.lootPool().setRolls(ConstantValue.exactly(1f)).add(LootItem.lootTableItem(WindsweptItems.FROST_ARROW.get())
+                LootPool.lootPool().name("windswept:frost_arrow").setRolls(ConstantValue.exactly(1f)).add(LootItem.lootTableItem(WindsweptItems.FROST_ARROW.get())
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(0f, 1f)))
                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0f, 1f)).setLimit(1)))
                         .when(LootItemKilledByPlayerCondition.killedByPlayer()).build()), true));
