@@ -207,7 +207,7 @@ public final class WindsweptFeatures {
         public static final RegistryObject<PlacedFeature> TALL_BIRCH = register("tall_birch", VegetationFeatures.BIRCH_TALL, TreePlacements.treePlacement(PlacementUtils.countExtra(5, .1f, 1)));
         public static final RegistryObject<PlacedFeature> PINE_TREES = register("pine_trees", Features.PINE_TREES, TreePlacements.treePlacement(PlacementUtils.countExtra(9, .1f, 1)));
 
-        public static final RegistryObject<PlacedFeature> SHALE = register("shale", Features.SHALE, PlacementUtils.countExtra(2, .1f, 3), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(64), VerticalAnchor.absolute(256)), BiomeFilter.biome());
+        public static final RegistryObject<PlacedFeature> SHALE = register("shale", Features.SHALE, PlacementUtils.countExtra(2, .1f, 4), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(64), VerticalAnchor.absolute(256)), BiomeFilter.biome());
 
 
         private static RegistryObject<PlacedFeature> createPlantPatch(String name, int onceEvery, RegistryObject<ConfiguredFeature<?, ?>> feature) {

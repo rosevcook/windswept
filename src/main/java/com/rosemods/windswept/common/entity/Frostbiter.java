@@ -54,6 +54,8 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
     public Frostbiter(EntityType<? extends Frostbiter> type, Level level) {
         super(type, level);
         this.setTame(false);
+        this.setLeftAntler(true);
+        this.setRightAntler(true);
     }
 
     @Override

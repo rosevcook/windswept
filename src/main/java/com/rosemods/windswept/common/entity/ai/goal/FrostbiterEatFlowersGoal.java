@@ -20,7 +20,7 @@ public class FrostbiterEatFlowersGoal extends Goal {
 
     @Override
     public boolean canUse() {
-        return this.frostbiter.isNoEndimationPlaying() && this.isFoodAt(this.getMouthPos());
+        return this.frostbiter.isNoEndimationPlaying() && this.isFoodAt(this.frostbiter.blockPosition());
     }
 
     @Override
@@ -46,7 +46,7 @@ public class FrostbiterEatFlowersGoal extends Goal {
         this.tick = Math.max(0, this.tick - 1);
 
         if (this.tick == this.adjustedTickDelay(5)) {
-            BlockPos pos = this.getMouthPos();
+            BlockPos pos = this.frostbiter.blockPosition();
 
             if (this.isFoodAt(pos)) {
                 this.frostbiter.level.destroyBlock(pos, false);
@@ -61,10 +61,6 @@ public class FrostbiterEatFlowersGoal extends Goal {
 
     private boolean isFoodAt(BlockPos pos) {
         return this.frostbiter.level.getBlockState(pos).is(BlockTags.FLOWERS);
-    }
-
-    private BlockPos getMouthPos() {
-        return this.frostbiter.blockPosition().relative(this.frostbiter.getDirection());
     }
 
 }
