@@ -34,7 +34,6 @@ import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 
@@ -175,7 +174,7 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
             this.setLeftAntler(false);
 
         this.hasJustDropped = true;
-        Block.popResourceFromFace(this.level, this.blockPosition(), this.getDirection(), WindsweptItems.FROZEN_BRANCH.get().getDefaultInstance());
+        this.spawnAtLocation(WindsweptItems.FROZEN_BRANCH.get(), 1);
     }
 
     public void growRandomAntler() {

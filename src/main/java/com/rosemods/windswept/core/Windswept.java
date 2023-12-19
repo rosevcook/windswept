@@ -62,7 +62,7 @@ public class Windswept {
 
     private void commonSetup(FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            //WindsweptVillagerTypes.registerVillagerTypes();
+            WindsweptVillagerTypes.registerVillagerTypes();
             WindsweptBlockInfo.changeLocalisation();
             WindsweptBlockInfo.registerCompostables();
             WindsweptBlockInfo.registerFlammables();

@@ -1,11 +1,13 @@
 package com.rosemods.windswept.core.other;
 
 import com.rosemods.windswept.core.registry.WindsweptBiomes;
+import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.npc.VillagerType;
 import net.minecraft.world.level.biome.Biomes;
 
 public final class WindsweptVillagerTypes {
     public static void registerVillagerTypes() {
+        VillagerTrades.TRADES.isEmpty();
         VillagerType ice = VillagerType.register("windswept:ice");
 
         VillagerType.BY_BIOME.replace(Biomes.ICE_SPIKES, ice);
