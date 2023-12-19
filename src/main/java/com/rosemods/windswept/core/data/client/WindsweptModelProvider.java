@@ -327,9 +327,9 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.getVariantBuilder(DOLOMITE.get())
                 .partialState().with(DolomiteBlock.TOP, true).addModels(new ConfiguredModel(this.models().cubeBottomTop("dolomite", this.modLoc("block/dolomite"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"))))
                 .partialState().with(DolomiteBlock.TOP, false).addModels(new ConfiguredModel(this.models().cubeAll("dolomite_bottom", this.modLoc("block/dolomite_bottom"))));
-        this.simpleBlock(CUT_DOLOMITE.get(), this.models().cubeBottomTop("cut_dolomite", this.modLoc("block/cut_dolomite"), this.modLoc("block/cut_dolomite_bottom"), this.modLoc("block/dolomite_top")));
-        this.simpleBlock(CUT_DOLOMITE_BRICKS.get(), this.models().cubeBottomTop("cut_dolomite_bricks", this.modLoc("block/cut_dolomite_bricks"), this.modLoc("block/cut_dolomite_bottom"), this.modLoc("block/dolomite_top")));
-        this.simpleBlock(CHISELED_CUT_DOLOMITE_BRICKS.get(), this.models().cubeBottomTop("chiseled_cut_dolomite_bricks", this.modLoc("block/chiseled_cut_dolomite_bricks"), this.modLoc("block/cut_dolomite_bottom"), this.modLoc("block/dolomite_top")));
+        this.simpleBlock(CUT_DOLOMITE.get(), this.models().cubeBottomTop("cut_dolomite", this.modLoc("block/cut_dolomite"), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top")));
+        this.simpleBlock(CUT_DOLOMITE_BRICKS.get(), this.models().cubeBottomTop("cut_dolomite_bricks", this.modLoc("block/cut_dolomite_bricks"), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top")));
+        this.simpleBlock(CHISELED_CUT_DOLOMITE_BRICKS.get(), this.models().cubeBottomTop("chiseled_cut_dolomite_bricks", this.modLoc("block/chiseled_cut_dolomite_bricks"), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top")));
         this.itemModel(DOLOMITE);
         this.itemModel(CUT_DOLOMITE);
         this.itemModel(CUT_DOLOMITE_BRICKS);
@@ -343,22 +343,28 @@ public class WindsweptModelProvider extends BlockStateProvider {
                 .partialState().with(SlabBlock.TYPE, SlabType.BOTTOM).with(DolomiteSlabBlock.TOP, false).addModels(new ConfiguredModel(this.models().slab("dolomite_slab_bottom", this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_bottom"))))
                 .partialState().with(SlabBlock.TYPE, SlabType.TOP).with(DolomiteSlabBlock.TOP, false).addModels(new ConfiguredModel(this.models().slabTop("dolomite_slab_top_bottom", this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_bottom"))))
                 .partialState().with(SlabBlock.TYPE, SlabType.DOUBLE).with(DolomiteSlabBlock.TOP, false).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/dolomite_bottom"))));
-        this.models().cubeBottomTop("cut_dolomite_slab_double", this.modLoc("block/cut_dolomite_slab"), this.modLoc("block/cut_dolomite_bottom"), this.modLoc("block/dolomite_top"));
+        this.models().cubeBottomTop("cut_dolomite_slab_double", this.modLoc("block/cut_dolomite_slab"), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top"));
         this.slab(CUT_DOLOMITE_SLAB, this.modLoc("block/cut_dolomite_slab_double"), this.modLoc("block/cut_dolomite_slab"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"));
         this.slab(CUT_DOLOMITE_BRICK_SLAB, this.blockTexture(CUT_DOLOMITE_BRICKS.get()), this.modLoc("block/cut_dolomite_bricks"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"));
         this.itemModel(DOLOMITE_SLAB);
 
         this.stairsInversion(DOLOMITE_STAIRS, this.blockTexture(DOLOMITE.get()), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"));
-        this.stairsInversion(CUT_DOLOMITE_STAIRS, this.blockTexture(CUT_DOLOMITE.get()), this.modLoc("block/cut_dolomite_bottom"), this.modLoc("block/dolomite_top"));
-        this.stairsInversion(CUT_DOLOMITE_BRICK_STAIRS, this.blockTexture(CUT_DOLOMITE_BRICKS.get()), this.modLoc("block/cut_dolomite_bottom"), this.modLoc("block/dolomite_top"));
+        this.stairsInversion(CUT_DOLOMITE_STAIRS, this.blockTexture(CUT_DOLOMITE.get()), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top"));
+        this.stairsInversion(CUT_DOLOMITE_BRICK_STAIRS, this.blockTexture(CUT_DOLOMITE_BRICKS.get()), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top"));
 
         this.wall(DOLOMITE_WALL, this.blockTexture(DOLOMITE.get()));
         this.wall(CUT_DOLOMITE_WALL, this.blockTexture(CUT_DOLOMITE.get()));
         this.wall(CUT_DOLOMITE_BRICK_WALL, this.blockTexture(CUT_DOLOMITE_BRICKS.get()));
 
         this.verticalSlab(DOLOMITE_VERTICAL_SLAB, this.blockTexture(DOLOMITE.get()), this.modLoc("block/dolomite"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"));
-        this.verticalSlab(CUT_DOLOMITE_VERTICAL_SLAB, this.blockTexture(CUT_DOLOMITE.get()), this.modLoc("block/cut_dolomite"), this.modLoc("block/cut_dolomite_bottom"), this.modLoc("block/dolomite_top"));
-        this.verticalSlab(CUT_DOLOMITE_BRICK_VERTICAL_SLAB, this.blockTexture(CUT_DOLOMITE_BRICKS.get()), this.modLoc("block/cut_dolomite_bricks"), this.modLoc("block/cut_dolomite_bottom"), this.modLoc("block/dolomite_top"));
+        this.verticalSlab(CUT_DOLOMITE_VERTICAL_SLAB, this.blockTexture(CUT_DOLOMITE.get()), this.modLoc("block/cut_dolomite"), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top"));
+        this.verticalSlab(CUT_DOLOMITE_BRICK_VERTICAL_SLAB, this.blockTexture(CUT_DOLOMITE_BRICKS.get()), this.modLoc("block/cut_dolomite_bricks"), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top"));
+
+        this.cubeAll(SMOOTH_DOLOMITE);
+        this.stairs(SMOOTH_DOLOMITE_STAIRS, this.blockTexture(SMOOTH_DOLOMITE.get()));
+        this.models().cubeBottomTop("smooth_dolomite_slab_double", this.modLoc("block/smooth_dolomite_slab"), this.modLoc("block/smooth_dolomite"), this.modLoc("block/smooth_dolomite"));
+        this.slab(SMOOTH_DOLOMITE_SLAB, this.modLoc("block/smooth_dolomite_slab_double"), this.modLoc("block/smooth_dolomite_slab"), this.modLoc("block/smooth_dolomite"), this.modLoc("block/smooth_dolomite"));
+        this.verticalSlab(SMOOTH_DOLOMITE_VERTICAL_SLAB, this.blockTexture(SMOOTH_DOLOMITE.get()));
 
         // dry moss
         this.carpet(DRY_MOSS_CARPET, this.blockTexture(DRY_MOSS_BLOCK.get()));

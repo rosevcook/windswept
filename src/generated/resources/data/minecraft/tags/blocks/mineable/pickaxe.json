@@ -74,6 +74,10 @@
     "windswept:cut_dolomite_brick_stairs",
     "windswept:cut_dolomite_brick_slab",
     "windswept:cut_dolomite_brick_wall",
-    "windswept:cut_dolomite_brick_vertical_slab"
+    "windswept:cut_dolomite_brick_vertical_slab",
+    "windswept:smooth_dolomite",
+    "windswept:smooth_dolomite_stairs",
+    "windswept:smooth_dolomite_slab",
+    "windswept:smooth_dolomite_vertical_slab"
   ]
 }

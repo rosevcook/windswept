@@ -332,7 +332,11 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(CUT_DOLOMITE_BRICK_SLAB);
         this.translateBlock(CUT_DOLOMITE_BRICK_WALL);
         this.translateBlock(CUT_DOLOMITE_BRICK_VERTICAL_SLAB);
-        
+        this.translateBlock(SMOOTH_DOLOMITE);
+        this.translateBlock(SMOOTH_DOLOMITE_SLAB);
+        this.translateBlock(SMOOTH_DOLOMITE_STAIRS);
+        this.translateBlock(SMOOTH_DOLOMITE_VERTICAL_SLAB);
+
         this.translateBlock(DRY_MOSS_CARPET);
         this.translateBlock(DRY_MOSS_BLOCK);
         this.translateBlock(DRY_MOSSY_COBBLESTONE);

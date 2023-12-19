@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "windswept:smooth_dolomite"
+  },
+  "result": "windswept:smooth_dolomite_slab"
+}

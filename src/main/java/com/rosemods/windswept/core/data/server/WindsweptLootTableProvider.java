@@ -364,6 +364,10 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.add(CUT_DOLOMITE_BRICK_SLAB.get(), Blocks::createSlabItemTable);
             this.dropSelf(CUT_DOLOMITE_BRICK_WALL.get());
             this.add(CUT_DOLOMITE_BRICK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+            this.dropSelf(SMOOTH_DOLOMITE.get());
+            this.dropSelf(SMOOTH_DOLOMITE_STAIRS.get());
+            this.add(SMOOTH_DOLOMITE_SLAB.get(), Blocks::createSlabItemTable);
+            this.add(SMOOTH_DOLOMITE_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
 
             // tundra moss blocks
             this.dropSelf(DRY_MOSS_CARPET.get());

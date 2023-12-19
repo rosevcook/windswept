@@ -296,7 +296,12 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> CUT_DOLOMITE_BRICK_SLAB = HELPER.createBlock("cut_dolomite_brick_slab", () -> new SlabBlock(Properties.DOLOMITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> CUT_DOLOMITE_BRICK_WALL = HELPER.createBlock("cut_dolomite_brick_wall", () -> new WallBlock(Properties.DOLOMITE), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> CUT_DOLOMITE_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "cut_dolomite_brick_vertical_slab", () -> new VerticalSlabBlock(Properties.DOLOMITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    
+
+    public static final RegistryObject<Block> SMOOTH_DOLOMITE = HELPER.createBlock("smooth_dolomite", () -> new Block(Properties.DOLOMITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> SMOOTH_DOLOMITE_STAIRS = HELPER.createBlock("smooth_dolomite_stairs", () -> new StairBlock(SMOOTH_DOLOMITE.get()::defaultBlockState, Properties.DOLOMITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> SMOOTH_DOLOMITE_SLAB = HELPER.createBlock("smooth_dolomite_slab", () -> new SlabBlock(Properties.DOLOMITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> SMOOTH_DOLOMITE_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "smooth_dolomite_vertical_slab", () -> new VerticalSlabBlock(Properties.DOLOMITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+
     // Gelisol Blocks //
     public static final RegistryObject<Block> GELISOL = HELPER.createInjectedBlock("gelisol", Items.PODZOL, () -> new GelisolBlock(BlockBehaviour.Properties.copy(Blocks.PODZOL)), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> GELISOL_PATH = HELPER.createInjectedBlock("gelisol_path", Items.DIRT_PATH, () -> new DirtPathBlock(BlockBehaviour.Properties.copy(Blocks.DIRT_PATH)), CreativeModeTab.TAB_DECORATIONS);

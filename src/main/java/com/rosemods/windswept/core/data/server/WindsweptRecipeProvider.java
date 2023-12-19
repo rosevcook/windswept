@@ -108,6 +108,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         post(WEATHERED_PINE_POST.get(), WEATHERED_PINE_WOOD.get(), consumer);
         woodFromLogs(consumer, WEATHERED_PINE_WOOD.get(), WEATHERED_PINE_LOG.get());
         ShapedRecipeBuilder.shaped(WILL_O_THE_WISP.get()).define('#', CARVED_PINECONE_BLOCK.get()).define('N', NIGHTSHADE.get()).pattern("#").pattern("N").unlockedBy(getHasName(CARVED_PINECONE_BLOCK.get()), has(CARVED_PINECONE_BLOCK.get())).save(consumer, getSaveLocation(WILL_O_THE_WISP.get()));
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(DOLOMITE.get()), SMOOTH_DOLOMITE.get(), .1f, 200).unlockedBy(getHasName(DOLOMITE.get()), has(DOLOMITE.get())).save(consumer, getSaveLocation(SMOOTH_DOLOMITE.get()));
 
         ShapelessRecipeBuilder.shapeless(POLISHED_DEEPSLATE_BUTTON.get()).requires(Items.POLISHED_DEEPSLATE).unlockedBy(getHasName(Items.POLISHED_DEEPSLATE), has(Items.POLISHED_DEEPSLATE)).save(consumer, getSaveLocation(POLISHED_DEEPSLATE_BUTTON.get()));
         ShapedRecipeBuilder.shaped(POLISHED_DEEPSLATE_PRESSURE_PLATE.get()).define('#', Items.POLISHED_DEEPSLATE).pattern("##").unlockedBy(getHasName(Items.POLISHED_DEEPSLATE), has(Items.POLISHED_DEEPSLATE)).save(consumer, getSaveLocation(POLISHED_DEEPSLATE_PRESSURE_PLATE.get()));
@@ -193,6 +194,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         blockset(null, DOLOMITE.get(), null, DOLOMITE_SLAB.get(), DOLOMITE_STAIRS.get(), DOLOMITE_WALL.get(), DOLOMITE_VERTICAL_SLAB.get(), true, consumer);
         blockset(DOLOMITE.get(), CUT_DOLOMITE.get(), null, CUT_DOLOMITE_SLAB.get(), CUT_DOLOMITE_STAIRS.get(), CUT_DOLOMITE_WALL.get(), CUT_DOLOMITE_VERTICAL_SLAB.get(), true, consumer);
         blockset(CUT_DOLOMITE.get(), CUT_DOLOMITE_BRICKS.get(), CHISELED_CUT_DOLOMITE_BRICKS.get(), CUT_DOLOMITE_BRICK_SLAB.get(), CUT_DOLOMITE_BRICK_STAIRS.get(), CUT_DOLOMITE_BRICK_WALL.get(), CUT_DOLOMITE_BRICK_VERTICAL_SLAB.get(), true, consumer);
+        blockset(null, SMOOTH_DOLOMITE.get(), null, SMOOTH_DOLOMITE_SLAB.get(), SMOOTH_DOLOMITE_STAIRS.get(), null, SMOOTH_DOLOMITE_VERTICAL_SLAB.get(), true, consumer);
 
         // wood sets
         woodSet(WindsweptItemTags.HOLLY_LOGS, HOLLY_PLANKS.get(), HOLLY_SLAB.get(), HOLLY_STAIRS.get(), HOLLY_LOG.get(), HOLLY_WOOD.get(), STRIPPED_HOLLY_LOG.get(), STRIPPED_HOLLY_WOOD.get(), HOLLY_BOATS.getFirst().get(), HOLLY_BOATS.getSecond().get(), HOLLY_BUTTON.get(), HOLLY_DOOR.get(), HOLLY_TRAPDOOR.get(), HOLLY_FENCE.get(), HOLLY_FENCE_GATE.get(), HOLLY_PRESSURE_PLATE.get(), HOLLY_SIGNS.getFirst().get(), HOLLY_VERTICAL_SLAB.get(), HOLLY_POST.get(), STRIPPED_HOLLY_POST.get(), HOLLY_BOARDS.get(), HOLLY_BEEHIVE.get(), HOLLY_LADDER.get(), HOLLY_BOOKSHELF.get(), HOLLY_CHEST.get(), HOLLY_TRAPPED_CHEST.get(), LARGE_HOLLY_BOAT.get(), HOLLY_FURNACE_BOAT.get(), VERTICAL_HOLLY_PLANKS.get(), HOLLY_CABINET.get(), consumer);

@@ -3,6 +3,6 @@
   "textures": {
     "bottom": "windswept:block/dolomite_top",
     "side": "windswept:block/cut_dolomite",
-    "top": "windswept:block/cut_dolomite_bottom"
+    "top": "windswept:block/smooth_dolomite"
   }
 }

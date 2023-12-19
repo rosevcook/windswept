@@ -14,6 +14,7 @@
     "windswept:pinecone_shingle_slab",
     "windswept:dolomite_slab",
     "windswept:cut_dolomite_slab",
-    "windswept:cut_dolomite_brick_slab"
+    "windswept:cut_dolomite_brick_slab",
+    "windswept:smooth_dolomite_slab"
   ]
 }

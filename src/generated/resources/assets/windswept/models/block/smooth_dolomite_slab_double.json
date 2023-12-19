@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "windswept:block/smooth_dolomite",
+    "side": "windswept:block/smooth_dolomite_slab",
+    "top": "windswept:block/smooth_dolomite"
+  }
+}
