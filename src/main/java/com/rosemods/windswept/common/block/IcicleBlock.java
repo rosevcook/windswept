@@ -20,7 +20,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DripstoneThickness;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
@@ -32,8 +31,9 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class IcicleBlock extends Block implements SimpleWaterloggedBlock {
     public static final EnumProperty<IcicleStates> STATE = EnumProperty.create("state", IcicleStates.class);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-    private static final VoxelShape SHAPE = Block.box(1f, 0f, 1f, 15f, 16f, 15f);
-    private static final VoxelShape BOTTOM = Block.box(2.5f, 4f, 2.5f, 13.5f, 16f, 13.5f);
+    private static final VoxelShape SHAPE = Block.box(1f, 4f, 1f, 15f, 16f, 15f);
+    private static final VoxelShape TOP = Block.box(1f, 0f, 1f, 15f, 16f, 15f);
+    private static final VoxelShape BOTTOM = Block.box(2.5f, 5f, 2.5f, 13.5f, 16f, 13.5f);
     private static final VoxelShape FLOOR = Block.box(2f, 0f, 2f, 14f, 4.5f, 14f);
 
     public IcicleBlock(Properties properties) {
@@ -42,11 +42,18 @@ public class IcicleBlock extends Block implements SimpleWaterloggedBlock {
     }
 
     @Override
-    public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         Direction direction = state.getValue(STATE) == IcicleStates.FLOOR ? Direction.UP : Direction.DOWN;
         BlockPos blockpos = pos.relative(direction.getOpposite());
 
-        return Block.canSupportCenter(world, blockpos, direction) || world.getBlockState(blockpos).is(BlockTags.LEAVES);
+        if (direction == Direction.DOWN) {
+            BlockState above = level.getBlockState(pos.above());
+
+            if (above.is(this) && above.getValue(STATE) == IcicleStates.NORMAL)
+                return true;
+        }
+
+        return Block.canSupportCenter(level, blockpos, direction) || level.getBlockState(blockpos).is(BlockTags.LEAVES);
     }
 
     @Override
@@ -66,6 +73,7 @@ public class IcicleBlock extends Block implements SimpleWaterloggedBlock {
     public VoxelShape getShape(BlockState state, BlockGetter blockGetter, BlockPos blockpos, CollisionContext context) {
         return switch (state.getValue(STATE)) {
             default -> SHAPE;
+            case TOP -> TOP;
             case BOTTOM -> BOTTOM;
             case FLOOR -> FLOOR;
         };
@@ -108,9 +116,7 @@ public class IcicleBlock extends Block implements SimpleWaterloggedBlock {
             if (blockstate.canSurvive(level, pos))
                 return blockstate.setValue(WATERLOGGED, fluid.getType() == Fluids.WATER);
 
-        }
-
-        for (Direction direction : context.getNearestLookingDirections())
+        } else for (Direction direction : context.getNearestLookingDirections())
             if (direction.getAxis() == Direction.Axis.Y) {
                 IcicleStates state;
 
