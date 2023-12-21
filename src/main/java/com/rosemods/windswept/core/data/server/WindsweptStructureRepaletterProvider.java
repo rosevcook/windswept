@@ -67,6 +67,9 @@ public class WindsweptStructureRepaletterProvider extends StructureRepaletterPro
         this.register(GROVE_WEATHERED_HOUSE, Blocks.CHEST, HOLLY_CHEST.get(), quarkOrWoodworks);
         this.register(GROVE_WEATHERED_HOUSE, Blocks.LADDER, HOLLY_LADDER.get(), quarkOrWoodworks);
         this.register(CHESTNUT_WEATHERED_HOUSE, Blocks.LADDER, CHESTNUT_LADDER.get(), quarkOrWoodworks);
+        this.register(VILLAGE_FROZEN, Blocks.BOOKSHELF, HOLLY_BOOKSHELF.get(), quarkOrWoodworks);
+        this.register(VILLAGE_FROZEN, Blocks.CHEST, HOLLY_CHEST.get(), quarkOrWoodworks);
+        this.register(VILLAGE_FROZEN, Blocks.LADDER, HOLLY_LADDER.get(), quarkOrWoodworks);
         this.register(IGLOO, Blocks.CHEST, HOLLY_CHEST.get(), quarkOrWoodworks);
         this.register(IGLOO, Blocks.LADDER, HOLLY_LADDER.get(), quarkOrWoodworks);
         this.register(VILLAGE_SNOWY, Blocks.CHEST, CHESTNUT_CHEST.get(), quarkOrWoodworks);

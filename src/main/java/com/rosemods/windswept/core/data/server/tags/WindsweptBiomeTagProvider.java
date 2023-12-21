@@ -29,6 +29,7 @@ public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
 
         this.tag(WindsweptBiomeTags.HAS_GROVE_WEATHERED_HOUSE).add(Biomes.GROVE, Biomes.FROZEN_PEAKS, Biomes.JAGGED_PEAKS);
         this.tag(WindsweptBiomeTags.HAS_CHESTNUT_WEATHERED_HOUSE).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey());
+        this.tag(WindsweptBiomeTags.HAS_FROZEN_VILLAGE).add(TUNDRA.getKey());
 
         this.tag(WindsweptBiomeTags.IS_CHESTNUT_FOREST).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey());
 

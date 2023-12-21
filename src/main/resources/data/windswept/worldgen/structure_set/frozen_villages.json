@@ -1,0 +1,18 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 10387370,
+    "separation": 8,
+    "spacing": 34,
+    "exclusion_zone": {
+      "chunk_count": 10,
+      "other_set": "minecraft:pillager_outposts"
+    }
+  },
+  "structures": [
+    {
+      "structure": "windswept:village_frozen",
+      "weight": 1
+    }
+  ]
+}

@@ -15,6 +15,7 @@ public final class WindsweptBiomeTags {
 
     public static final TagKey<Biome> HAS_GROVE_WEATHERED_HOUSE = TagUtil.biomeTag(Windswept.MOD_ID, "has_structure/grove_weathered_house");
     public static final TagKey<Biome> HAS_CHESTNUT_WEATHERED_HOUSE = TagUtil.biomeTag(Windswept.MOD_ID, "has_structure/chestnut_weathered_house");
+    public static final TagKey<Biome> HAS_FROZEN_VILLAGE = TagUtil.biomeTag(Windswept.MOD_ID, "has_structure/frozen_village");
 
     public static final TagKey<Biome> IS_CHESTNUT_FOREST = TagUtil.biomeTag(Windswept.MOD_ID, "is_chestnut_forest");
 

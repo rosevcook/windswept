@@ -47,7 +47,7 @@ public class WindsweptLootModifierProvider extends LootModifierProvider {
         // drowned rain disc
         this.entry("drowned_disc").selects("entities/drowned").addModifier(new LootPoolsModifier(
                 Collections.singletonList(LootPool.lootPool().name("windswept:rain_disc")
-                        .add(LootItem.lootTableItem(WindsweptItems.MUSIC_DISC_RAIN::get))
+                        .add(LootItem.lootTableItem(WindsweptItems.MUSIC_DISC_RAIN.get()))
                         .when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.KILLER,
                                 EntityPredicate.Builder.entity().of(EntityTypeTags.SKELETONS))).build()), false));
 
