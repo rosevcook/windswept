@@ -305,6 +305,8 @@
   "death.attack.windswept.holly_sapling.player": "%1$s was ripped to death by holly sapling whilst trying to escape %2$s",
   "effect.windswept.frost_resistance": "Frost Resistance",
   "effect.windswept.frost_resistance.description": "Grants immunity to frost. Allows for walking on Powder Snow. Stops Entity Conversion in Powder Snow.",
+  "effect.windswept.plenty": "Plenty",
+  "effect.windswept.plenty.description": "idk yet.",
   "effect.windswept.thorns": "Thorns",
   "effect.windswept.thorns.description": "Causes damage to enemies when they attack you.",
   "enchantment.windswept.frost_aspect": "Frost Aspect",

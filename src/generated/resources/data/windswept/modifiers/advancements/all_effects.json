@@ -6,6 +6,7 @@
         "criteria": "all_effects",
         "effects": {
           "windswept:frost_resistance": {},
+          "windswept:plenty": {},
           "windswept:thorns": {}
         },
         "removes": false

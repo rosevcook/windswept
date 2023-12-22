@@ -19,6 +19,7 @@ public class WindsweptEffects {
     // Effects //
     public static final RegistryObject<MobEffect> THORNS = HELPER.createEffect("thorns", MobEffectCategory.BENEFICIAL, 0x295230);
     public static final RegistryObject<MobEffect> FROST_RESISTANCE = HELPER.createEffect("frost_resistance", MobEffectCategory.BENEFICIAL, 0x618cff);
+    public static final RegistryObject<MobEffect> PLENTY = HELPER.createEffect("plenty", MobEffectCategory.BENEFICIAL, 0xe68834);
 
     // Potions //
     public static final RegistryObject<Potion> THORNS_POTION = HELPER.createPotion("thorns", THORNS, 3600, 0);
