@@ -94,6 +94,36 @@
             },
             "trigger": "minecraft:consume_item"
           },
+          "windswept:ginger_root": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:ginger_root"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "windswept:ginger_sorbet": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:ginger_sorbet"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "windswept:gingerbread_cookie": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:gingerbread_cookie"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
           "windswept:goat": {
             "conditions": {
               "item": {
@@ -257,6 +287,15 @@
           ],
           [
             "windswept:chestnut_chicken_platter"
+          ],
+          [
+            "windswept:ginger_root"
+          ],
+          [
+            "windswept:gingerbread_cookie"
+          ],
+          [
+            "windswept:ginger_sorbet"
           ],
           [
             "windswept:goat"

@@ -8,16 +8,22 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 
-public class PopsicleItem extends Item {
-    public PopsicleItem(Properties properties) {
+import java.util.function.Supplier;
+
+public class FoodRemainderItem extends Item {
+    private final Supplier<ItemLike> remainder;
+
+    public FoodRemainderItem(Supplier<ItemLike> remainder, Properties properties) {
         super(properties);
+        this.remainder = remainder;
     }
 
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
-        ItemStack remainder = new ItemStack(Items.STICK);
+        ItemStack remainder = this.remainder.get().asItem().getDefaultInstance();
         entity.eat(level, stack);
 
         if (entity instanceof ServerPlayer player) {

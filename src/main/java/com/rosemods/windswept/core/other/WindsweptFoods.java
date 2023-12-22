@@ -9,7 +9,7 @@ public final class WindsweptFoods {
     public static final FoodProperties BERRY_BOWL = new FoodProperties.Builder().nutrition(6).saturationMod(.3f).build();
     public static final FoodProperties WILD_BERRIES = new FoodProperties.Builder().nutrition(2).saturationMod(.1f).build();
     public static final FoodProperties WILD_BERRY_JUICE = new FoodProperties.Builder().nutrition(4).alwaysEat().saturationMod(.1f).effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 300, 0), 1f).build();
-    public static final FoodProperties HOLLY_BERRIES = new FoodProperties.Builder().nutrition(2).saturationMod(.4f).effect(() -> new MobEffectInstance(MobEffects.POISON, 100, 0), 1f).build();
+    public static final FoodProperties HOLLY_BERRIES = new FoodProperties.Builder().nutrition(2).alwaysEat().saturationMod(.4f).effect(() -> new MobEffectInstance(MobEffects.POISON, 100, 0), 1f).build();
     public static final FoodProperties MUTTON_PIE = new FoodProperties.Builder().nutrition(8).saturationMod(.3f).build();
     public static final FoodProperties GOAT = new FoodProperties.Builder().nutrition(2).saturationMod(.3f).meat().build();
     public static final FoodProperties COOKED_GOAT = new FoodProperties.Builder().nutrition(6).saturationMod(.8f).meat().build();
@@ -23,4 +23,7 @@ public final class WindsweptFoods {
     public static final FoodProperties WILD_BERRY_COOKIE = new FoodProperties.Builder().nutrition(2).fast().saturationMod(.1f).build();
     public static final FoodProperties WILD_BERRY_POPSICLE = new FoodProperties.Builder().nutrition(4).saturationMod(.7f).alwaysEat().effect(() -> new MobEffectInstance(WindsweptEffects.FROST_RESISTANCE.get(), 300, 0), 1f).build();
     public static final FoodProperties CAKE_SLICE = new FoodProperties.Builder().nutrition(2).saturationMod(.1f).fast().effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 0), 1f).effect(() -> new MobEffectInstance(WindsweptEffects.THORNS.get(), 400, 0), 1f).build();
+    public static final FoodProperties GINGER_ROOT = new FoodProperties.Builder().nutrition(1).saturationMod(.1f).build();
+    public static final FoodProperties GINGERBREAD_COOKIE = new FoodProperties.Builder().nutrition(2).alwaysEat().fast().saturationMod(.1f).effect(() -> new MobEffectInstance(WindsweptEffects.PLENTY.get(), 200, 0), 1f).build();
+    public static final FoodProperties GINGER_SORBET = new FoodProperties.Builder().nutrition(15).alwaysEat().saturationMod(.6f).effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300, 4, false, false, true), 1f).effect(() -> new MobEffectInstance(WindsweptEffects.PLENTY.get(), 300, 0), 1f).effect(() -> new MobEffectInstance(WindsweptEffects.FROST_RESISTANCE.get(), 300, 0), 1f).build();
 }

@@ -85,6 +85,9 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateMusicDisc(MUSIC_DISC_BUMBLEBEE, "rose - bumblebee");
         this.translateItem(CHILLED_SPAWN_EGG);
         this.translateItem(FROSTBITER_SPAWN_EGG);
+        this.translateItem(GINGER_ROOT);
+        this.translateItem(GINGERBREAD_COOKIE);
+        this.translateItem(GINGER_SORBET);
 
         this.add(HOLLY_FURNACE_BOAT.get(), "Holly Boat with Furnace");
         this.translateItem(LARGE_HOLLY_BOAT);

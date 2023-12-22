@@ -19,6 +19,7 @@ public final class WindsweptBlockInfo {
         DataUtil.registerCompostable(WILD_BERRY_PIPS.get(), .3f);
         DataUtil.registerCompostable(HOLLY_BERRIES.get(), .3f);
         DataUtil.registerCompostable(CHESTNUTS.get(), .3f);
+        DataUtil.registerCompostable(GINGER_ROOT.get(), .3f);
         DataUtil.registerCompostable(ROASTED_CHESTNUTS.get(), .3f);
         DataUtil.registerCompostable(PINECONE.get(), .3f);
 
@@ -64,6 +65,7 @@ public final class WindsweptBlockInfo {
         DataUtil.registerCompostable(DRY_MOSS_SPROUTS.get(), .5f);
 
         DataUtil.registerCompostable(WILD_BERRY_COOKIE.get(), .85f);
+        DataUtil.registerCompostable(GINGERBREAD_COOKIE.get(), .85f);
         DataUtil.registerCompostable(MUTTON_PIE.get(), 1f);
         DataUtil.registerCompostable(CHRISTMAS_PUDDING.get(), 1f);
         DataUtil.registerCompostable(CHRISTMAS_PUDDING_SLICE.get(), .85f);
