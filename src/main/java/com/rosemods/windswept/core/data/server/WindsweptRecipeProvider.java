@@ -99,7 +99,6 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         ShapedRecipeBuilder.shaped(HOLLY_WREATH.get()).define('#', HOLLY_BERRIES.get()).define('B', FROZEN_BRANCH.get()).pattern(" # ").pattern("#B#").pattern(" # ").unlockedBy(getHasName(HOLLY_BERRIES.get()), has(HOLLY_BERRIES.get())).save(consumer, getSaveLocation(HOLLY_WREATH.get()));
         ShapedRecipeBuilder.shaped(FROST_ARROW.get(), 6).define('#', FROZEN_BRANCH.get()).define('I', ICICLES.get()).define('S', Items.STICK).pattern("#").pattern("S").pattern("I").unlockedBy(getHasName(FROZEN_BRANCH.get()), has(FROZEN_BRANCH.get())).save(consumer, getSaveLocation(FROST_ARROW.get()));
         ShapedRecipeBuilder.shaped(HOLLY_BERRIES_ON_A_STICK.get()).define('#', Items.FISHING_ROD).define('H', HOLLY_BERRIES.get()).pattern("# ").pattern(" H").unlockedBy(getHasName(HOLLY_BERRIES.get()), has(HOLLY_BERRIES.get())).save(consumer, getSaveLocation(HOLLY_BERRIES_ON_A_STICK.get()));
-        ShapelessRecipeBuilder.shapeless(SHALE.get()).requires(Items.COBBLESTONE).requires(Items.BLUE_ICE).unlockedBy(getHasName(SHALE.get()), has(SHALE.get())).save(consumer, getSaveLocation(SHALE.get()));
 
         // blocks
         ShapedRecipeBuilder.shaped(ICE_SHEET.get(), 12).define('#', Items.ICE).pattern("###").pattern("###").unlockedBy(getHasName(Items.ICE), has(Items.ICE)).save(consumer, getSaveLocation(ICE_SHEET.get()));
@@ -111,9 +110,11 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         post(WEATHERED_PINE_POST.get(), WEATHERED_PINE_WOOD.get(), consumer);
         woodFromLogs(consumer, WEATHERED_PINE_WOOD.get(), WEATHERED_PINE_LOG.get());
         ShapedRecipeBuilder.shaped(WILL_O_THE_WISP.get()).define('#', CARVED_PINECONE_BLOCK.get()).define('N', NIGHTSHADE.get()).pattern("#").pattern("N").unlockedBy(getHasName(CARVED_PINECONE_BLOCK.get()), has(CARVED_PINECONE_BLOCK.get())).save(consumer, getSaveLocation(WILL_O_THE_WISP.get()));
+        ShapelessRecipeBuilder.shapeless(SHALE.get()).requires(Items.COBBLESTONE).requires(Items.BLUE_ICE).unlockedBy(getHasName(SHALE.get()), has(SHALE.get())).save(consumer, getSaveLocation(SHALE.get()));
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(DOLOMITE.get()), SMOOTH_DOLOMITE.get(), .1f, 200).unlockedBy(getHasName(DOLOMITE.get()), has(DOLOMITE.get())).save(consumer, getSaveLocation(SMOOTH_DOLOMITE.get()));
         ShapedRecipeBuilder.shaped(GINGERBREAD_BLOCK.get()).define('#', GINGERBREAD_COOKIE.get()).pattern("##").pattern("##").unlockedBy(getHasName(GINGERBREAD_COOKIE.get()), has(GINGERBREAD_COOKIE.get())).save(consumer, getSaveLocation(GINGERBREAD_BLOCK.get()));
-        ShapelessRecipeBuilder.shapeless(GLAZED_GINGERBREAD_BLOCK.get()).requires(GINGERBREAD_BLOCK.get()).requires(Items.SUGAR).unlockedBy(getHasName(GINGERBREAD_BLOCK.get()), has(GINGERBREAD_BLOCK.get())).save(consumer, getSaveLocation(GLAZED_GINGERBREAD_BLOCK.get()));
+        ShapelessRecipeBuilder.shapeless(GLAZED_GINGERBREAD_BLOCK.get()).requires(GINGERBREAD_BLOCK.get()).requires(Items.SUGAR).unlockedBy(getHasName(GINGERBREAD_BLOCK.get()), has(GINGERBREAD_BLOCK.get())).save(consumer, getSaveLocation("glazed_gingerbread_block_from_sugar"));
+        ShapelessRecipeBuilder.shapeless(GLAZED_GINGERBREAD_BRICKS.get()).requires(GINGERBREAD_BRICKS.get()).requires(Items.SUGAR).unlockedBy(getHasName(GINGERBREAD_BRICKS.get()), has(GINGERBREAD_BRICKS.get())).save(consumer, getSaveLocation("glazed_gingerbread_bricks_from_sugar"));
 
         ShapelessRecipeBuilder.shapeless(POLISHED_DEEPSLATE_BUTTON.get()).requires(Items.POLISHED_DEEPSLATE).unlockedBy(getHasName(Items.POLISHED_DEEPSLATE), has(Items.POLISHED_DEEPSLATE)).save(consumer, getSaveLocation(POLISHED_DEEPSLATE_BUTTON.get()));
         ShapedRecipeBuilder.shaped(POLISHED_DEEPSLATE_PRESSURE_PLATE.get()).define('#', Items.POLISHED_DEEPSLATE).pattern("##").unlockedBy(getHasName(Items.POLISHED_DEEPSLATE), has(Items.POLISHED_DEEPSLATE)).save(consumer, getSaveLocation(POLISHED_DEEPSLATE_PRESSURE_PLATE.get()));

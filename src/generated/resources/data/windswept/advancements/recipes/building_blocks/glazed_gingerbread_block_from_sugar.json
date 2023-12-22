@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "windswept:glazed_gingerbread_block"
+        "recipe": "windswept:glazed_gingerbread_block_from_sugar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "windswept:glazed_gingerbread_block"
+      "windswept:glazed_gingerbread_block_from_sugar"
     ]
   }
 }
