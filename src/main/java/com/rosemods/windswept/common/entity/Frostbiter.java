@@ -395,7 +395,7 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
 
         @Override
         protected boolean shouldPanic() {
-            return this.mob.getLastHurtByMob() != null && this.mob.isBaby() || this.mob.isOnFire();
+            return this.mob.isBaby() && super.shouldPanic();
         }
 
     }

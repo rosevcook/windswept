@@ -15,6 +15,7 @@
     "LiquidBlockMixin",
     "LivingEntityMixin",
     "LlamaMixin",
+    "PanicGoalMixin",
     "PlayerMixin",
     "PowderSnowBlockMixin",
     "RabbitMixin",
