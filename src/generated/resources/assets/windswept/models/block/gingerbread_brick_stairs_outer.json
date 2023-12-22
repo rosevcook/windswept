@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "windswept:block/gingerbread_bricks",
+    "side": "windswept:block/gingerbread_bricks",
+    "top": "windswept:block/gingerbread_bricks"
+  }
+}

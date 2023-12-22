@@ -11,6 +11,8 @@
     "windswept:pinecone_shingle_wall",
     "windswept:dolomite_wall",
     "windswept:cut_dolomite_wall",
-    "windswept:cut_dolomite_brick_wall"
+    "windswept:cut_dolomite_brick_wall",
+    "windswept:gingerbread_brick_wall",
+    "windswept:glazed_gingerbread_brick_wall"
   ]
 }

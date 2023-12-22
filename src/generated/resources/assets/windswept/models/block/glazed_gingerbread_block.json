@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_top",
+  "textures": {
+    "side": "windswept:block/glazed_gingerbread_block",
+    "top": "windswept:block/glazed_gingerbread_top"
+  }
+}

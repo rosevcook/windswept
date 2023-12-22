@@ -18,6 +18,8 @@
     "windswept:dolomite_vertical_slab",
     "windswept:cut_dolomite_vertical_slab",
     "windswept:cut_dolomite_brick_vertical_slab",
-    "windswept:smooth_dolomite_vertical_slab"
+    "windswept:smooth_dolomite_vertical_slab",
+    "windswept:gingerbread_brick_vertical_slab",
+    "windswept:glazed_gingerbread_brick_vertical_slab"
   ]
 }

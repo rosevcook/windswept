@@ -50,6 +50,20 @@
     "windswept:pinecone_shingle_stairs",
     "windswept:pinecone_shingle_slab",
     "windswept:pinecone_shingle_wall",
-    "windswept:pinecone_shingle_vertical_slab"
+    "windswept:pinecone_shingle_vertical_slab",
+    "windswept:gingerbread_block",
+    "windswept:glazed_gingerbread_block",
+    "windswept:gingerbread_bricks",
+    "windswept:gingerbread_brick_stairs",
+    "windswept:gingerbread_brick_slab",
+    "windswept:gingerbread_brick_wall",
+    "windswept:gingerbread_brick_vertical_slab",
+    "windswept:gingerbread_bricks",
+    "windswept:glazed_gingerbread_bricks",
+    "windswept:chiseled_glazed_gingerbread_bricks",
+    "windswept:glazed_gingerbread_brick_stairs",
+    "windswept:glazed_gingerbread_brick_slab",
+    "windswept:glazed_gingerbread_brick_wall",
+    "windswept:glazed_gingerbread_brick_vertical_slab"
   ]
 }

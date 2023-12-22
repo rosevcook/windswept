@@ -339,7 +339,6 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.itemModel(CUT_DOLOMITE_BRICKS);
         this.itemModel(CHISELED_CUT_DOLOMITE_BRICKS);
 
-
         this.getVariantBuilder(DOLOMITE_SLAB.get())
                 .partialState().with(SlabBlock.TYPE, SlabType.BOTTOM).with(DolomiteSlabBlock.TOP, true).addModels(new ConfiguredModel(this.models().slab("dolomite_slab", this.modLoc("block/dolomite_slab"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"))))
                 .partialState().with(SlabBlock.TYPE, SlabType.TOP).with(DolomiteSlabBlock.TOP, true).addModels(new ConfiguredModel(this.models().slabTop("dolomite_slab_top", this.modLoc("block/dolomite_slab"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"))))
@@ -369,6 +368,25 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.models().cubeBottomTop("smooth_dolomite_slab_double", this.modLoc("block/smooth_dolomite_slab"), this.modLoc("block/smooth_dolomite"), this.modLoc("block/smooth_dolomite"));
         this.slab(SMOOTH_DOLOMITE_SLAB, this.modLoc("block/smooth_dolomite_slab_double"), this.modLoc("block/smooth_dolomite_slab"), this.modLoc("block/smooth_dolomite"), this.modLoc("block/smooth_dolomite"));
         this.verticalSlab(SMOOTH_DOLOMITE_VERTICAL_SLAB, this.blockTexture(SMOOTH_DOLOMITE.get()));
+
+        // ginger
+        this.cubeAll(GINGERBREAD_BLOCK);
+        this.cubeAll(GINGERBREAD_BRICKS);
+        this.stairs(GINGERBREAD_BRICK_STAIRS, this.blockTexture(GINGERBREAD_BRICKS.get()));
+        this.slab(GINGERBREAD_BRICK_SLAB, this.blockTexture(GINGERBREAD_BRICKS.get()));
+        this.wall(GINGERBREAD_BRICK_WALL, this.blockTexture(GINGERBREAD_BRICKS.get()));
+        this.verticalSlab(GINGERBREAD_BRICK_VERTICAL_SLAB, this.blockTexture(GINGERBREAD_BRICKS.get()));
+
+        this.simpleBlock(GLAZED_GINGERBREAD_BLOCK.get(), this.models().cubeTop("glazed_gingerbread_block", this.blockTexture(GLAZED_GINGERBREAD_BLOCK.get()), this.modLoc("block/glazed_gingerbread_top")));
+        this.cubeAll(CHISELED_GLAZED_GINGERBREAD_BRICKS);
+        this.simpleBlock(GLAZED_GINGERBREAD_BRICKS.get(), this.models().cubeTop("glazed_gingerbread_bricks", this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.modLoc("block/glazed_gingerbread_top")));
+        this.stairsInversion(GLAZED_GINGERBREAD_BRICK_STAIRS, this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.modLoc("block/glazed_gingerbread_top"));
+        this.slab(GLAZED_GINGERBREAD_BRICK_SLAB, this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.modLoc("block/glazed_gingerbread_top"));
+        this.wall(GLAZED_GINGERBREAD_BRICK_WALL, this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()));
+        this.verticalSlab(GLAZED_GINGERBREAD_BRICK_VERTICAL_SLAB, this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.modLoc("block/glazed_gingerbread_top"));
+
+        this.itemModel(GLAZED_GINGERBREAD_BLOCK);
+        this.itemModel(GLAZED_GINGERBREAD_BRICKS);
 
         // dry moss
         this.carpet(DRY_MOSS_CARPET, this.blockTexture(DRY_MOSS_BLOCK.get()));

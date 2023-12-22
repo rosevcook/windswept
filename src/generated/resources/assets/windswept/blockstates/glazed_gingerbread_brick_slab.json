@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "windswept:block/glazed_gingerbread_brick_slab"
+    },
+    "type=double": {
+      "model": "windswept:block/glazed_gingerbread_bricks"
+    },
+    "type=top": {
+      "model": "windswept:block/glazed_gingerbread_brick_slab_top"
+    }
+  }
+}

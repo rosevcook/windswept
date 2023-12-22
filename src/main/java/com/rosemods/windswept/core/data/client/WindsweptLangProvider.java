@@ -270,6 +270,20 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(POLISHED_DEEPSLATE_PRESSURE_PLATE);
         this.translateBlock(POLISHED_DEEPSLATE_BUTTON);
 
+        this.translateBlock(GINGERBREAD_BLOCK);
+        this.translateBlock(GLAZED_GINGERBREAD_BLOCK);
+        this.translateBlock(GINGERBREAD_BRICKS);
+        this.translateBlock(GINGERBREAD_BRICK_STAIRS);
+        this.translateBlock(GINGERBREAD_BRICK_SLAB);
+        this.translateBlock(GINGERBREAD_BRICK_WALL);
+        this.translateBlock(GINGERBREAD_BRICK_VERTICAL_SLAB);
+        this.translateBlock(GLAZED_GINGERBREAD_BRICKS);
+        this.translateBlock(CHISELED_GLAZED_GINGERBREAD_BRICKS);
+        this.translateBlock(GLAZED_GINGERBREAD_BRICK_STAIRS);
+        this.translateBlock(GLAZED_GINGERBREAD_BRICK_SLAB);
+        this.translateBlock(GLAZED_GINGERBREAD_BRICK_WALL);
+        this.translateBlock(GLAZED_GINGERBREAD_BRICK_VERTICAL_SLAB);
+
         this.translateBlock(HOLLY_WREATH);
         this.translateBlock(CHRISTMAS_PUDDING);
         this.translateBlock(FROSTBITER_TROPHY);
@@ -320,7 +334,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(ICICLE_TRAPDOOR);
         this.translateBlock(ICICLE_BARS);
         this.translateBlock(ICE_LANTERN);
-        
+
         this.translateBlock(DOLOMITE);
         this.translateBlock(DOLOMITE_STAIRS);
         this.translateBlock(DOLOMITE_SLAB);
