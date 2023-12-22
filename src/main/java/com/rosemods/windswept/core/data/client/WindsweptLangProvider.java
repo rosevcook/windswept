@@ -292,6 +292,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(BLUEBELLS);
         this.translateBlock(SNOWDROP);
         this.translateBlock(MOSS_CAMPION);
+        this.translateBlock(GINGER_FLOWER);
         this.translateBlock(NIGHTSHADE);
 
         this.translateBlock(POTTED_RED_ROSE);
@@ -304,6 +305,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(POTTED_NIGHTSHADE);
         this.translateBlock(POTTED_SNOWDROP);
         this.translateBlock(POTTED_MOSS_CAMPION);
+        this.translateBlock(POTTED_GINGER_FLOWER);
         this.translateBlock(POTTED_SNOWY_SPROUTS);
         this.translateBlock(POTTED_GELISOL_SPROUTS);
         this.translateBlock(POTTED_DRY_MOSS_SPROUTS);
