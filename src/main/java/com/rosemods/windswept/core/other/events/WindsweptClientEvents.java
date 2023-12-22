@@ -1,5 +1,6 @@
 package com.rosemods.windswept.core.other.events;
 
+import com.rosemods.windswept.client.render.gui.CarvedPineconeOverlay;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.other.WindsweptModelLayers;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
@@ -13,6 +14,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
+import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
+import net.minecraftforge.client.gui.overlay.VanillaGuiOverlay;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
@@ -40,6 +44,12 @@ public class WindsweptClientEvents {
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(WindsweptModelLayers.CHILLED, WindsweptModelLayers::createChilledBodyLayer);
         event.registerLayerDefinition(WindsweptModelLayers.FROSTBITER, WindsweptModelLayers::createFrostbiterBodyLayer);
+    }
+
+    @SubscribeEvent
+    public static void registerGuiOverlays(RegisterGuiOverlaysEvent event) {
+        MinecraftForge.EVENT_BUS.register(new CarvedPineconeOverlay());
+        event.registerAbove(VanillaGuiOverlay.FROSTBITE.id(), "carved_pinecone", new CarvedPineconeOverlay());
     }
 
 }

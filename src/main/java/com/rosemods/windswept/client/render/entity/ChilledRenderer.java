@@ -1,4 +1,4 @@
-package com.rosemods.windswept.client.render;
+package com.rosemods.windswept.client.render.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.rosemods.windswept.client.model.ChilledModel;

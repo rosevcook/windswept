@@ -32,7 +32,6 @@
     "WitherRoseBlockMixin"
   ],
   "client": [
-    "client.GuiMixin",
     "client.HumanoidArmorLayerMixin",
     "client.LivingEntityRendererMixin",
     "client.RabbitRendererMixin"
