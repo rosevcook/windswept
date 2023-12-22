@@ -4,6 +4,16 @@
       "type": "criteria",
       "config": {
         "criteria": {
+          "windswept:candy_cane": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:candy_cane"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
           "windswept:chestnut_chicken_platter": {
             "conditions": {
               "item": {
@@ -260,6 +270,9 @@
           ],
           [
             "windswept:wild_berry_popsicle"
+          ],
+          [
+            "windswept:candy_cane"
           ],
           [
             "windswept:wild_berry_cookie"

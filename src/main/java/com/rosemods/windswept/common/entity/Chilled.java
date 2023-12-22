@@ -57,8 +57,8 @@ public class Chilled extends Zombie {
 
         this.cncCompat(rand);
 
-        if (rand.nextFloat() < .05f) {
-            this.setItemSlot(EquipmentSlot.OFFHAND, WindsweptItems.WILD_BERRY_POPSICLE.get().getDefaultInstance());
+        if (rand.nextFloat() < .075f) {
+            this.setItemSlot(EquipmentSlot.OFFHAND, WindsweptItems.CANDY_CANE.get().getDefaultInstance());
             this.armorDropChances[EquipmentSlot.OFFHAND.getIndex()] = 1f;
         }
 

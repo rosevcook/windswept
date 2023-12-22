@@ -26,4 +26,6 @@ public final class WindsweptFoods {
     public static final FoodProperties GINGER_ROOT = new FoodProperties.Builder().nutrition(1).saturationMod(.1f).build();
     public static final FoodProperties GINGERBREAD_COOKIE = new FoodProperties.Builder().nutrition(2).alwaysEat().fast().saturationMod(.1f).effect(() -> new MobEffectInstance(WindsweptEffects.PLENTY.get(), 200, 0), 1f).build();
     public static final FoodProperties GINGER_SORBET = new FoodProperties.Builder().nutrition(15).alwaysEat().saturationMod(.6f).effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300, 4, false, false, true), 1f).effect(() -> new MobEffectInstance(WindsweptEffects.PLENTY.get(), 300, 0), 1f).effect(() -> new MobEffectInstance(WindsweptEffects.FROST_RESISTANCE.get(), 300, 0), 1f).build();
+    public static final FoodProperties CANDY_CANE = new FoodProperties.Builder().nutrition(3).fast().saturationMod(.6f).build();
+
 }

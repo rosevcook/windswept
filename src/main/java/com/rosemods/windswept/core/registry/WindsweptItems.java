@@ -43,6 +43,7 @@ public class WindsweptItems {
     public static final RegistryObject<Item> WILD_BERRY_PIPS = HELPER.createItem("wild_berry_pips", ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD) ? () -> new ItemNameBlockItem(WindsweptBlocks.WILD_BERRY_BUSH.get(), new Item.Properties().tab(ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD) ? CreativeModeTab.TAB_MISC : null)) : () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> WILD_BERRY_JUICE = HELPER.createItem("wild_berry_juice", () -> new DrinkableBottleItem(WindsweptFoods.WILD_BERRY_JUICE));
     public static final RegistryObject<Item> WILD_BERRY_POPSICLE = HELPER.createItem("wild_berry_popsicle", () -> new FoodRemainderItem(() -> Items.STICK, PropertyUtil.food(WindsweptFoods.WILD_BERRY_POPSICLE)));
+    public static final RegistryObject<Item> CANDY_CANE = HELPER.createItem("candy_cane", () -> new Item(PropertyUtil.food(WindsweptFoods.CANDY_CANE)));
     public static final RegistryObject<Item> WILD_BERRY_COOKIE = HELPER.createItem("wild_berry_cookie", () -> new InjectedItem(Items.COOKIE, PropertyUtil.food(WindsweptFoods.WILD_BERRY_COOKIE)));
     public static final RegistryObject<Item> WILD_BERRY_BOWL = HELPER.createItem("wild_berry_bowl", () -> new BerryBowlItem(WILD_BERRIES.get(), WindsweptFoods.BERRY_BOWL));
     public static final RegistryObject<Item> SWEET_BERRY_BOWL = HELPER.createItem("sweet_berry_bowl", () -> new BerryBowlItem(Items.SWEET_BERRIES, WindsweptFoods.BERRY_BOWL));

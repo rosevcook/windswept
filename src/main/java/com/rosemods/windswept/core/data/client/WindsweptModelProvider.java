@@ -91,6 +91,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.generatedItem(GINGER_ROOT.get(), TextureFolder.Item);
         this.generatedItem(GINGERBREAD_COOKIE.get(), TextureFolder.Item);
         this.generatedItem(GINGER_SORBET.get(), TextureFolder.Item);
+        this.handheldItem(CANDY_CANE.get(), TextureFolder.Item);
 
         // holly
         this.pillar(STRIPPED_HOLLY_LOG);
@@ -433,6 +434,11 @@ public class WindsweptModelProvider extends BlockStateProvider {
     private void itemOnAStick(ItemLike item, TextureFolder folder) {
         String name = getItemName(item);
         this.itemModels().withExistingParent(name, "item/handheld_rod").texture("layer0", this.modLoc(folder.format(name)));
+    }
+
+    private void handheldItem(ItemLike item, TextureFolder folder) {
+        String name = getItemName(item);
+        this.itemModels().withExistingParent(name, "item/handheld").texture("layer0", this.modLoc(folder.format(name)));
     }
 
     private void generatedItemWithOverlay(ItemLike item) {
