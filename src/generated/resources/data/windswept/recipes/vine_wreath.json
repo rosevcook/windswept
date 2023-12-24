@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:vine"
+    },
+    "B": {
+      "item": "windswept:frozen_branch"
+    }
+  },
+  "pattern": [
+    " # ",
+    "#B#",
+    " # "
+  ],
+  "result": {
+    "item": "windswept:vine_wreath"
+  }
+}

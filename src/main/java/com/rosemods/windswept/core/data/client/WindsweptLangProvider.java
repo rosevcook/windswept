@@ -288,6 +288,8 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(GLAZED_GINGERBREAD_BRICK_VERTICAL_SLAB);
 
         this.translateBlock(HOLLY_WREATH);
+        this.translateBlock(PINECONE_WREATH);
+        this.translateBlock(VINE_WREATH);
         this.translateBlock(CHRISTMAS_PUDDING);
         this.translateBlock(FROSTBITER_TROPHY);
         this.translateBlock(ICE_SHEET);

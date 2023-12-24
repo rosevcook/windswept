@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "windswept:pinecone"
+    },
+    "B": {
+      "item": "windswept:frozen_branch"
+    }
+  },
+  "pattern": [
+    " # ",
+    "#B#",
+    " # "
+  ],
+  "result": {
+    "item": "windswept:pinecone_wreath"
+  }
+}

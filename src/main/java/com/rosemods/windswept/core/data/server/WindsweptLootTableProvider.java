@@ -302,6 +302,8 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(FROSTBITER_TROPHY.get());
             this.add(CHRISTMAS_PUDDING.get(), LootTable.lootTable());
             this.dropSelf(HOLLY_WREATH.get());
+            this.dropSelf(PINECONE_WREATH.get());
+            this.dropSelf(VINE_WREATH.get());
             this.dropSelf(ICE_SHEET.get());
 
             // tall plants
