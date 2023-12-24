@@ -19,8 +19,8 @@ public class PanicGoalMixin {
     @Final
     protected PathfinderMob mob;
 
-    @Inject(method = "shouldPanic", at = @At("HEAD"), cancellable = true)
-    private void shouldPanic(CallbackInfoReturnable<Boolean> info) {
+    @Inject(method = "canUse", at = @At("HEAD"), cancellable = true)
+    private void canUse(CallbackInfoReturnable<Boolean> info) {
         for (LivingEntity entity : this.mob.level.getEntitiesOfClass(LivingEntity.class, new AABB(this.mob.blockPosition()).inflate(3)))
             if (entity.getItemBySlot(EquipmentSlot.HEAD).is(WindsweptBlocks.CARVED_PINECONE_BLOCK.get().asItem())) {
                 info.setReturnValue(true);
