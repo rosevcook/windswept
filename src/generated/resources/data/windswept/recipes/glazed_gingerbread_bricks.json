@@ -1,14 +1,16 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "windswept:gingerbread_bricks"
-    },
-    {
-      "item": "minecraft:sugar"
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "windswept:glazed_gingerbread_block"
     }
+  },
+  "pattern": [
+    "##",
+    "##"
   ],
   "result": {
+    "count": 4,
     "item": "windswept:glazed_gingerbread_bricks"
   }
 }
