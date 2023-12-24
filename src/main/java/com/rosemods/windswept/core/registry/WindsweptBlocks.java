@@ -285,6 +285,8 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> CANDY_CANE_BLOCK = HELPER.createBlock("candy_cane_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.QUARTZ_PILLAR)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
     // Ginger Blocks //
+    public static final RegistryObject<Block> GINGER_SOIL = HELPER.createBlock("ginger_soil", () -> new GingerSoilBlock(BlockBehaviour.Properties.of(Material.DIRT, MaterialColor.DIRT).strength(.5f).sound(SoundType.GRAVEL)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+
     public static final RegistryObject<Block> GINGERBREAD_BLOCK = HELPER.createBlock("gingerbread_block", () -> new Block(Properties.GINGERBREAD), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> GLAZED_GINGERBREAD_BLOCK = HELPER.createBlock("glazed_gingerbread_block", () -> new Block(Properties.GINGERBREAD), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
@@ -300,7 +302,7 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> GLAZED_GINGERBREAD_BRICK_SLAB = HELPER.createBlock("glazed_gingerbread_brick_slab", () -> new SlabBlock(Properties.GINGERBREAD), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> GLAZED_GINGERBREAD_BRICK_WALL = HELPER.createBlock("glazed_gingerbread_brick_wall", () -> new WallBlock(Properties.GINGERBREAD), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> GLAZED_GINGERBREAD_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "glazed_gingerbread_brick_vertical_slab", () -> new VerticalSlabBlock(Properties.GINGERBREAD), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    
+
     // Dolomite //
     public static final RegistryObject<Block> DOLOMITE = HELPER.createBlock("dolomite", () -> new DolomiteBlock(Properties.DOLOMITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> DOLOMITE_STAIRS = HELPER.createBlock("dolomite_stairs", () -> new StairBlock(DOLOMITE.get()::defaultBlockState, Properties.DOLOMITE), CreativeModeTab.TAB_BUILDING_BLOCKS);

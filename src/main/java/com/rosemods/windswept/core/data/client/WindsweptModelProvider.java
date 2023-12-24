@@ -376,6 +376,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.verticalSlab(SMOOTH_DOLOMITE_VERTICAL_SLAB, this.blockTexture(SMOOTH_DOLOMITE.get()));
 
         // ginger
+        this.cubeAll(GINGER_SOIL);
         this.cubeAll(GINGERBREAD_BLOCK);
         this.cubeAll(GINGERBREAD_BRICKS);
         this.stairs(GINGERBREAD_BRICK_STAIRS, this.blockTexture(GINGERBREAD_BRICKS.get()));

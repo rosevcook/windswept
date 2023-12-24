@@ -19,6 +19,7 @@ import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.SweetBerryBushBlock;
@@ -284,6 +285,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(CANDY_CANE_BLOCK.get());
 
             // ginger
+            this.add(GINGER_SOIL.get(), b -> dropTwoOthers(b, Items.DIRT, GINGER_ROOT.get()));
             this.dropSelf(GINGERBREAD_BLOCK.get());
             this.dropSelf(GLAZED_GINGERBREAD_BLOCK.get());
             this.dropSelf(GINGERBREAD_BRICKS.get());
@@ -368,7 +370,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(ICICLE_TRAPDOOR.get());
             this.dropSelf(ICICLE_BARS.get());
             this.dropSelf(ICE_LANTERN.get());
-            
+
             //dolomite
             this.dropSelf(DOLOMITE.get());
             this.dropSelf(DOLOMITE_STAIRS.get());
@@ -432,6 +434,12 @@ public class WindsweptLootTableProvider extends LootTableProvider {
         @Override
         public Iterable<Block> getKnownBlocks() {
             return getContent(ForgeRegistries.BLOCKS);
+        }
+
+        private static LootTable.Builder dropTwoOthers(Block block, ItemLike other, ItemLike another) {
+            return LootTable.lootTable()
+                    .withPool(applyExplosionCondition(block, LootPool.lootPool().setRolls(ConstantValue.exactly(1f)).add(LootItem.lootTableItem(other))))
+                    .withPool(applyExplosionCondition(block, LootPool.lootPool().setRolls(ConstantValue.exactly(1f)).add(LootItem.lootTableItem(another))));
         }
 
         private static LootTable.Builder createPineconeTable(Block block) {
