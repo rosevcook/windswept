@@ -294,7 +294,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(GINGERBREAD_BRICK_WALL.get());
             this.add(GINGERBREAD_BRICK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
             this.dropSelf(GLAZED_GINGERBREAD_BRICKS.get());
-            this.dropSelf(CHISELED_GLAZED_GINGERBREAD_BRICKS.get());
+            this.dropSelf(GINGERBREAD_COOKIE_BLOCK.get());
             this.dropSelf(GLAZED_GINGERBREAD_BRICK_STAIRS.get());
             this.add(GLAZED_GINGERBREAD_BRICK_SLAB.get(), Blocks::createSlabItemTable);
             this.dropSelf(GLAZED_GINGERBREAD_BRICK_WALL.get());

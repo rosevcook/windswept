@@ -385,7 +385,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.verticalSlab(GINGERBREAD_BRICK_VERTICAL_SLAB, this.blockTexture(GINGERBREAD_BRICKS.get()));
 
         this.simpleBlock(GLAZED_GINGERBREAD_BLOCK.get(), this.models().cubeTop("glazed_gingerbread_block", this.blockTexture(GLAZED_GINGERBREAD_BLOCK.get()), this.modLoc("block/glazed_gingerbread_top")));
-        this.cubeAll(CHISELED_GLAZED_GINGERBREAD_BRICKS);
+        this.cubeAll(GINGERBREAD_COOKIE_BLOCK);
         this.simpleBlock(GLAZED_GINGERBREAD_BRICKS.get(), this.models().cubeTop("glazed_gingerbread_bricks", this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.modLoc("block/glazed_gingerbread_top")));
         this.stairsInversion(GLAZED_GINGERBREAD_BRICK_STAIRS, this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.modLoc("block/glazed_gingerbread_top"));
         this.slab(GLAZED_GINGERBREAD_BRICK_SLAB, this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.modLoc("block/glazed_gingerbread_top"));

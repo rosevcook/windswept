@@ -206,7 +206,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         blockset(CUT_DOLOMITE.get(), CUT_DOLOMITE_BRICKS.get(), CHISELED_CUT_DOLOMITE_BRICKS.get(), CUT_DOLOMITE_BRICK_SLAB.get(), CUT_DOLOMITE_BRICK_STAIRS.get(), CUT_DOLOMITE_BRICK_WALL.get(), CUT_DOLOMITE_BRICK_VERTICAL_SLAB.get(), true, consumer);
         blockset(null, SMOOTH_DOLOMITE.get(), null, SMOOTH_DOLOMITE_SLAB.get(), SMOOTH_DOLOMITE_STAIRS.get(), null, SMOOTH_DOLOMITE_VERTICAL_SLAB.get(), true, consumer);
         blockset(GINGERBREAD_BLOCK.get(), GINGERBREAD_BRICKS.get(), null, GINGERBREAD_BRICK_SLAB.get(), GINGERBREAD_BRICK_STAIRS.get(), GINGERBREAD_BRICK_WALL.get(), GINGERBREAD_BRICK_VERTICAL_SLAB.get(), false, consumer);
-        blockset(GLAZED_GINGERBREAD_BLOCK.get(), GLAZED_GINGERBREAD_BRICKS.get(), CHISELED_GLAZED_GINGERBREAD_BRICKS.get(), GLAZED_GINGERBREAD_BRICK_SLAB.get(), GLAZED_GINGERBREAD_BRICK_STAIRS.get(), GLAZED_GINGERBREAD_BRICK_WALL.get(), GLAZED_GINGERBREAD_BRICK_VERTICAL_SLAB.get(), false, consumer);
+        blockset(GLAZED_GINGERBREAD_BLOCK.get(), GLAZED_GINGERBREAD_BRICKS.get(), null, GLAZED_GINGERBREAD_BRICK_SLAB.get(), GLAZED_GINGERBREAD_BRICK_STAIRS.get(), GLAZED_GINGERBREAD_BRICK_WALL.get(), GLAZED_GINGERBREAD_BRICK_VERTICAL_SLAB.get(), false, consumer);
 
         // wood sets
         woodSet(WindsweptItemTags.HOLLY_LOGS, HOLLY_PLANKS.get(), HOLLY_SLAB.get(), HOLLY_STAIRS.get(), HOLLY_LOG.get(), HOLLY_WOOD.get(), STRIPPED_HOLLY_LOG.get(), STRIPPED_HOLLY_WOOD.get(), HOLLY_BOATS.getFirst().get(), HOLLY_BOATS.getSecond().get(), HOLLY_BUTTON.get(), HOLLY_DOOR.get(), HOLLY_TRAPDOOR.get(), HOLLY_FENCE.get(), HOLLY_FENCE_GATE.get(), HOLLY_PRESSURE_PLATE.get(), HOLLY_SIGNS.getFirst().get(), HOLLY_VERTICAL_SLAB.get(), HOLLY_POST.get(), STRIPPED_HOLLY_POST.get(), HOLLY_BOARDS.get(), HOLLY_BEEHIVE.get(), HOLLY_LADDER.get(), HOLLY_BOOKSHELF.get(), HOLLY_CHEST.get(), HOLLY_TRAPPED_CHEST.get(), LARGE_HOLLY_BOAT.get(), HOLLY_FURNACE_BOAT.get(), VERTICAL_HOLLY_PLANKS.get(), HOLLY_CABINET.get(), consumer);
@@ -225,6 +225,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         compressedBlock(BROWN_MUSHROOM_BASKET.get(), Items.BROWN_MUSHROOM, new OrCondition(new OrCondition(new ModLoadedCondition("berry_good"), new ModLoadedCondition("farmersdelight")), getQuarkCondition("apple_crate")), consumer);
         compressedBlock(FROZEN_FLESH_BLOCK.get(), FROZEN_FLESH.get(), consumer);
         compressedBlock(PINECONE_BLOCK.get(), PINECONE.get(), consumer);
+        compressedBlock(GINGERBREAD_COOKIE_BLOCK.get(), GINGERBREAD_COOKIE.get(), consumer);
         compressedBlock(CANDY_CANE_BLOCK.get(), CANDY_CANE.get(), consumer);
     }
 

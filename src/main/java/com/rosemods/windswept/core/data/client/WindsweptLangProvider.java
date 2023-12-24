@@ -282,7 +282,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(GINGERBREAD_BRICK_WALL);
         this.translateBlock(GINGERBREAD_BRICK_VERTICAL_SLAB);
         this.translateBlock(GLAZED_GINGERBREAD_BRICKS);
-        this.translateBlock(CHISELED_GLAZED_GINGERBREAD_BRICKS);
+        this.translateBlock(GINGERBREAD_COOKIE_BLOCK);
         this.translateBlock(GLAZED_GINGERBREAD_BRICK_STAIRS);
         this.translateBlock(GLAZED_GINGERBREAD_BRICK_SLAB);
         this.translateBlock(GLAZED_GINGERBREAD_BRICK_WALL);

@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "windswept:chiseled_glazed_gingerbread_bricks"
+          "name": "windswept:gingerbread_cookie_block"
         }
       ],
       "rolls": 1.0
