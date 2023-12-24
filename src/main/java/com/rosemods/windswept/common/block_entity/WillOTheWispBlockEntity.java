@@ -23,10 +23,10 @@ public class WillOTheWispBlockEntity extends BlockEntity implements BlockEntityT
                 AABB aabb = new AABB(pos.relative(direction)).inflate(0, 1, 0);
 
                 switch (direction) {
-                    case NORTH -> aabb = aabb.expandTowards(0, 0, -10);
-                    case SOUTH -> aabb = aabb.expandTowards(0, 0, 10);
-                    case EAST -> aabb = aabb.expandTowards(10, 0, 0);
-                    case WEST -> aabb = aabb.expandTowards(-10, 0, 0);
+                    case NORTH -> aabb = aabb.expandTowards(0, 0, -8);
+                    case SOUTH -> aabb = aabb.expandTowards(0, 0, 8);
+                    case EAST -> aabb = aabb.expandTowards(8, 0, 0);
+                    case WEST -> aabb = aabb.expandTowards(-8, 0, 0);
                 }
 
                 for (Player player : level.getEntitiesOfClass(Player.class, aabb))
