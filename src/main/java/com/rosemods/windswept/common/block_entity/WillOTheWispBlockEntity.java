@@ -20,13 +20,13 @@ public class WillOTheWispBlockEntity extends BlockEntity implements BlockEntityT
     public void tick(Level level, BlockPos pos, BlockState state, WillOTheWispBlockEntity blockEntity) {
         for (Direction direction : Direction.Plane.HORIZONTAL)
             if (state.getValue(WillOTheWispBlock.FACING) != direction && !level.getBlockState(pos.relative(direction)).getMaterial().isSolid()) {
-                AABB aabb = new AABB(pos.relative(direction)).inflate(0, 1, 0);
+                AABB aabb = new AABB(pos.relative(direction)).inflate(0d, .5d, 0d);
 
                 switch (direction) {
-                    case NORTH -> aabb = aabb.expandTowards(0, 0, -8);
-                    case SOUTH -> aabb = aabb.expandTowards(0, 0, 8);
-                    case EAST -> aabb = aabb.expandTowards(8, 0, 0);
-                    case WEST -> aabb = aabb.expandTowards(-8, 0, 0);
+                    case NORTH -> aabb = aabb.expandTowards(0d, 0d, -8d);
+                    case SOUTH -> aabb = aabb.expandTowards(0d, 0d, 8d);
+                    case EAST -> aabb = aabb.expandTowards(8d, 0d, 0d);
+                    case WEST -> aabb = aabb.expandTowards(-8d, 0d, 0d);
                 }
 
                 for (Player player : level.getEntitiesOfClass(Player.class, aabb))

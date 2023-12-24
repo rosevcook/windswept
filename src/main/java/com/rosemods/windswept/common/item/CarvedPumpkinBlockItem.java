@@ -15,4 +15,5 @@ public class CarvedPumpkinBlockItem extends BlockItem implements Wearable {
     public EquipmentSlot getEquipmentSlot(ItemStack stack) {
         return EquipmentSlot.HEAD;
     }
+
 }
