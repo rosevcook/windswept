@@ -279,6 +279,9 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> SNOW_BRICK_WALL = HELPER.createBlock("snow_brick_wall", () -> new WallBlock(Properties.SNOW_BRICKS), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> SNOW_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "snow_brick_vertical_slab", () -> new VerticalSlabBlock(Properties.SNOW_BRICKS), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
+    // Candy Cane Blocks //
+    public static final RegistryObject<Block> CANDY_CANE_BLOCK = HELPER.createBlock("candy_cane_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.QUARTZ_PILLAR)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+
     // Ginger Blocks //
     public static final RegistryObject<Block> GINGERBREAD_BLOCK = HELPER.createBlock("gingerbread_block", () -> new Block(Properties.GINGERBREAD), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> GLAZED_GINGERBREAD_BLOCK = HELPER.createBlock("glazed_gingerbread_block", () -> new Block(Properties.GINGERBREAD), CreativeModeTab.TAB_BUILDING_BLOCKS);

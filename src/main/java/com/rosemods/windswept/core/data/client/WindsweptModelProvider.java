@@ -307,6 +307,9 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.wildBerryBush(WILD_BERRY_BUSH);
         this.compressedBlock(WILD_BERRY_BASKET);
 
+        // candy cane
+        this.pillar(CANDY_CANE_BLOCK);
+
         // icicles
         this.getVariantBuilder(ICICLES.get())
                 .partialState().with(IcicleBlock.STATE, IcicleBlock.IcicleStates.NORMAL).addModels(new ConfiguredModel(this.models().cross("icicles", this.blockTexture(ICICLES.get())).renderType("cutout")))

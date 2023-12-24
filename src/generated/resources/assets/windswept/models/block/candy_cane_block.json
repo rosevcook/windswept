@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "windswept:block/candy_cane_block_top",
+    "side": "windswept:block/candy_cane_block"
+  }
+}

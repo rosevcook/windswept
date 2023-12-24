@@ -280,6 +280,9 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(POLISHED_DEEPSLATE_PRESSURE_PLATE.get());
             this.dropSelf(POLISHED_DEEPSLATE_BUTTON.get());
 
+            // candy cane
+            this.dropSelf(CANDY_CANE_BLOCK.get());
+
             // ginger
             this.dropSelf(GINGERBREAD_BLOCK.get());
             this.dropSelf(GLAZED_GINGERBREAD_BLOCK.get());
