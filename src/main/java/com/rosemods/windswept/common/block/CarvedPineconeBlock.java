@@ -2,11 +2,9 @@ package com.rosemods.windswept.common.block;
 
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import com.rosemods.windswept.core.registry.WindsweptSounds;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -23,6 +21,8 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.phys.BlockHitResult;
 
 public class CarvedPineconeBlock extends HorizontalDirectionalBlock implements Wearable {
+    private static final int[] KEY = new int[]{0, 3, 5, 10, 14, 15, 21, 22};
+
     public CarvedPineconeBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
@@ -53,14 +53,12 @@ public class CarvedPineconeBlock extends HorizontalDirectionalBlock implements W
                     height++;
             }
 
-            if (height > 0) {
-                int pitch = getPitch(height - 1);
+            int pitch = getPitch(height);
 
-                level.playSound(null, pos, WindsweptSounds.PINECONE_NOTE.get(), SoundSource.RECORDS, .35f, (float) Math.pow(2d, (double) (pitch - 12) / 12d));
-                level.addParticle(ParticleTypes.NOTE, (double) pos.getX() + .5d, (double) pos.getY() + 1.2d, (double) pos.getZ() + .5d, (double) pitch / 14d, 0d, 0d);
+            level.playSound(null, pos, WindsweptSounds.PINECONE_NOTE.get(), SoundSource.RECORDS, .35f, (float) Math.pow(2d, (double) (pitch - 10) / 12d));
+            level.addParticle(ParticleTypes.NOTE, (double) pos.getX() + .5d, (double) pos.getY() + 1.2d, (double) pos.getZ() + .5d, (double) pitch / KEY.length, 0d, 0d);
 
-                return true;
-            }
+            return true;
         }
 
         return false;
@@ -77,8 +75,7 @@ public class CarvedPineconeBlock extends HorizontalDirectionalBlock implements W
     }
 
     private static int getPitch(int height) {
-        int[] key = new int[]{0, 2, 3, 5, 7, 8, 10, 12, 14, 15, 17, 19, 20, 22};
-        return key[height % key.length];
+        return KEY[(KEY.length - 1) - (height % KEY.length)];
     }
 
 }
