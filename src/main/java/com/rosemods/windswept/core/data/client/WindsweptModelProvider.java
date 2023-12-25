@@ -488,7 +488,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
     private void bars(RegistryObject<Block> block) {
         ResourceLocation texture = this.blockTexture(block.get());
         this.paneBlockWithRenderType((IronBarsBlock) block.get(), texture, texture, "cutout");
-        this.itemModels().withExistingParent(getItemName(block.get()), "item/generated").texture("layer0", texture);
+        this.generatedItem(block.get(), TextureFolder.Block);
     }
 
     private void tallPlant(RegistryObject<Block> flower) {

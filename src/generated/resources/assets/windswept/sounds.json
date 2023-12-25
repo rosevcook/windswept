@@ -1,4 +1,12 @@
 {
+  "block.pinecone.note": {
+    "sounds": [
+      {
+        "name": "windswept:pinecone_note",
+        "stream": true
+      }
+    ]
+  },
   "music_disc.bumblebee": {
     "sounds": [
       {
