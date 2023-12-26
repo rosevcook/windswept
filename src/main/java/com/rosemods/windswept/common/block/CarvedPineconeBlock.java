@@ -40,28 +40,18 @@ public class CarvedPineconeBlock extends HorizontalDirectionalBlock implements W
 
     @Override
     public boolean triggerEvent(BlockState state, Level level, BlockPos pos, int i0, int i1) {
-        if (level.getBlockState(pos.above()).getMaterial().isReplaceable()) {
-            int height = 0;
+        int below = 0;
+        int above = 0;
 
-            while (height < level.getMaxBuildHeight() - pos.getY()) {
-                BlockState below = level.getBlockState(pos.below(height + 1));
+        for (; isPinecone(level.getBlockState(pos.below(below + 1))); below++) ;
+        for (; isPinecone(level.getBlockState(pos.above(above + 1))); above++) ;
 
-                if (!below.is(WindsweptBlocks.PINECONE_BLOCK.get()) && !below.is(WindsweptBlocks.WILL_O_THE_WISP.get())
-                        && !below.is(WindsweptBlocks.CARVED_PINECONE_BLOCK.get()) && !below.is(WindsweptBlocks.PINECONE_SHINGLES.get()))
-                    break;
-                else
-                    height++;
-            }
+        int pitch = KEY[(KEY.length - 1) - ((below + above) % KEY.length)];
 
-            int pitch = getPitch(height);
+        level.playSound(null, pos, WindsweptSounds.PINECONE_NOTE.get(), SoundSource.RECORDS, .35f, (float) Math.pow(2d, (pitch - 10d) / 12d));
+        level.addParticle(ParticleTypes.NOTE, (double) pos.getX() + .5d, (double) pos.getY() + (double) above + 1.2d, (double) pos.getZ() + .5d, (double) pitch / KEY.length, 0d, 0d);
 
-            level.playSound(null, pos, WindsweptSounds.PINECONE_NOTE.get(), SoundSource.RECORDS, .35f, (float) Math.pow(2d, (double) (pitch - 10) / 12d));
-            level.addParticle(ParticleTypes.NOTE, (double) pos.getX() + .5d, (double) pos.getY() + 1.2d, (double) pos.getZ() + .5d, (double) pitch / KEY.length, 0d, 0d);
-
-            return true;
-        }
-
-        return false;
+        return true;
     }
 
     @Override
@@ -74,8 +64,8 @@ public class CarvedPineconeBlock extends HorizontalDirectionalBlock implements W
         builder.add(FACING);
     }
 
-    private static int getPitch(int height) {
-        return KEY[(KEY.length - 1) - (height % KEY.length)];
+    private static boolean isPinecone(BlockState state) {
+        return state.is(WindsweptBlocks.PINECONE_BLOCK.get()) || state.is(WindsweptBlocks.PINECONE_SHINGLES.get());
     }
 
 }
