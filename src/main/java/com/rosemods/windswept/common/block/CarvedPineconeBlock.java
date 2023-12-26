@@ -40,18 +40,22 @@ public class CarvedPineconeBlock extends HorizontalDirectionalBlock implements W
 
     @Override
     public boolean triggerEvent(BlockState state, Level level, BlockPos pos, int i0, int i1) {
-        int below = 0;
-        int above = 0;
+        if (!level.getBlockState(pos.relative(state.getValue(FACING))).getMaterial().isSolid()) {
+            int below = 0;
+            int above = 0;
 
-        for (; isPinecone(level.getBlockState(pos.below(below + 1))); below++) ;
-        for (; isPinecone(level.getBlockState(pos.above(above + 1))); above++) ;
+            for (; isPinecone(level.getBlockState(pos.below(below + 1))); below++) ;
+            for (; isPinecone(level.getBlockState(pos.above(above + 1))); above++) ;
 
-        int pitch = KEY[(KEY.length - 1) - ((below + above) % KEY.length)];
+            int pitch = KEY[(KEY.length - 1) - ((below + above) % KEY.length)];
 
-        level.playSound(null, pos, WindsweptSounds.PINECONE_NOTE.get(), SoundSource.RECORDS, .35f, (float) Math.pow(2d, (pitch - 10d) / 12d));
-        level.addParticle(ParticleTypes.NOTE, (double) pos.getX() + .5d, (double) pos.getY() + (double) above + 1.2d, (double) pos.getZ() + .5d, (double) pitch / KEY.length, 0d, 0d);
+            level.playSound(null, pos, WindsweptSounds.PINECONE_NOTE.get(), SoundSource.RECORDS, .35f, (float) Math.pow(2d, (pitch - 10d) / 12d));
+            level.addParticle(ParticleTypes.NOTE, (double) pos.getX() + .5d, (double) pos.getY() + (double) above + 1.2d, (double) pos.getZ() + .5d, (double) pitch / KEY.length, 0d, 0d);
 
-        return true;
+            return true;
+        }
+
+        return false;
     }
 
     @Override
