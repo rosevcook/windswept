@@ -5,6 +5,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.PanicGoal;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -21,8 +22,16 @@ public class PanicGoalMixin {
 
     @Inject(method = "canUse", at = @At("HEAD"), cancellable = true)
     private void canUse(CallbackInfoReturnable<Boolean> info) {
-        for (LivingEntity entity : this.mob.level.getEntitiesOfClass(LivingEntity.class, new AABB(this.mob.blockPosition()).inflate(3)))
+        AABB radius = new AABB(this.mob.blockPosition()).inflate(2);
+
+        for (LivingEntity entity : this.mob.level.getEntitiesOfClass(LivingEntity.class, radius))
             if (entity.getItemBySlot(EquipmentSlot.HEAD).is(WindsweptBlocks.CARVED_PINECONE_BLOCK.get().asItem())) {
+                info.setReturnValue(true);
+                return;
+            }
+
+        for (BlockState state : this.mob.level.getBlockStatesIfLoaded(radius).toList())
+            if (state.is(WindsweptBlocks.CARVED_PINECONE_BLOCK.get()) || state.is(WindsweptBlocks.WILL_O_THE_WISP.get())) {
                 info.setReturnValue(true);
                 return;
             }
