@@ -21,7 +21,7 @@ public class WillOTheWispBlockEntity extends BlockEntity implements BlockEntityT
     @Override
     public void tick(Level level, BlockPos pos, BlockState state, WillOTheWispBlockEntity blockEntity) {
         for (Direction direction : Direction.Plane.HORIZONTAL)
-            if (state.getValue(HorizontalDirectionalBlock.FACING) != direction && !level.getBlockState(pos.relative(direction)).getMaterial().isSolid())
+            if (!level.getBlockState(pos.relative(direction)).getMaterial().isSolid())
                 for (Player player : level.getEntitiesOfClass(Player.class, expandTowards(new AABB(pos.relative(direction)), direction, 8)))
                     if (player.getDirection() == direction) {
                         turn(level, pos, state, direction, player);
@@ -30,18 +30,19 @@ public class WillOTheWispBlockEntity extends BlockEntity implements BlockEntityT
     }
 
     private static void turn(Level level, BlockPos pos, BlockState state, Direction direction, Player player) {
-        level.setBlock(pos, state.setValue(WillOTheWispBlock.FACING, direction), 2);
+        if (state.getValue(HorizontalDirectionalBlock.FACING) != direction)
+            level.setBlock(pos, state.setValue(WillOTheWispBlock.FACING, direction), 2);
 
         int distance = Math.min(Math.abs(pos.get(direction.getAxis()) - player.blockPosition().get(direction.getAxis())), 3);
         AABB aabb = expandTowards(new AABB(pos.relative(direction.getOpposite(), 3)).inflate(2), direction, distance);
 
-        for (BlockPos blockPos : BlockPos.betweenClosedStream(aabb).toList()) {
+        BlockPos.betweenClosedStream(aabb).forEach(blockPos -> {
             BlockState blockState = level.getBlockState(blockPos);
 
             if ((blockState.is(WindsweptBlocks.WILL_O_THE_WISP.get()) || blockState.is(WindsweptBlocks.CARVED_PINECONE_BLOCK.get()))
                     && blockState.getValue(HorizontalDirectionalBlock.FACING) != direction && !level.getBlockState(blockPos.relative(direction)).getMaterial().isSolid())
                 level.setBlock(blockPos, blockState.setValue(HorizontalDirectionalBlock.FACING, direction), 2);
-        }
+        });
     }
 
     private static AABB expandTowards(AABB aabb, Direction direction, double amount) {
