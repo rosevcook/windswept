@@ -1,5 +1,6 @@
 package com.rosemods.windswept.core.mixin;
 
+import com.rosemods.windswept.common.entity.Frostbiter;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -25,7 +26,7 @@ public class PanicGoalMixin {
         AABB radius = new AABB(this.mob.blockPosition()).inflate(2);
 
         for (LivingEntity entity : this.mob.level.getEntitiesOfClass(LivingEntity.class, radius))
-            if (entity.getItemBySlot(EquipmentSlot.HEAD).is(WindsweptBlocks.CARVED_PINECONE_BLOCK.get().asItem())) {
+            if (this.mob != entity && (entity.getItemBySlot(EquipmentSlot.HEAD).is(WindsweptBlocks.CARVED_PINECONE_BLOCK.get().asItem()) || (entity instanceof Frostbiter frostbiter && frostbiter.isVehicle()))) {
                 info.setReturnValue(true);
                 return;
             }

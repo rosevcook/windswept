@@ -135,7 +135,7 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
             this.hasJustDropped = false;
         }
 
-        if (this.hasAntlers() && !this.hasJustDropped)
+        if (this.hasAntlers() && !this.hasJustDropped && !this.isVehicle())
             if (this.dropDelay == 0 && this.random.nextInt(5000) == 0 && this.isNoEndimationPlaying()) {
                 NetworkUtil.setPlayingAnimation(this, WindsweptPlayableEndimations.FROSTBITER_SHAKE);
                 this.getNavigation().stop();
@@ -357,8 +357,9 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
         super.travel(travel);
     }
 
+    @Override
     public float getSteeringSpeed() {
-        return (float) this.getAttributeValue(Attributes.MOVEMENT_SPEED) * .9f;
+        return (float) this.getAttributeValue(Attributes.MOVEMENT_SPEED) * .6f;
     }
 
     @Override

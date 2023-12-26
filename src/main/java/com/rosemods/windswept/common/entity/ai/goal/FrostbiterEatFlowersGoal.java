@@ -20,7 +20,7 @@ public class FrostbiterEatFlowersGoal extends Goal {
 
     @Override
     public boolean canUse() {
-        return this.frostbiter.isNoEndimationPlaying() && this.isFoodAt(this.frostbiter.blockPosition());
+        return this.frostbiter.isNoEndimationPlaying() && this.isFoodAt(this.frostbiter.blockPosition()) && !this.frostbiter.isVehicle();
     }
 
     @Override
