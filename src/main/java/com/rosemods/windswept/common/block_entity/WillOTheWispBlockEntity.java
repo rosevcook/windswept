@@ -39,7 +39,7 @@ public class WillOTheWispBlockEntity extends BlockEntity implements BlockEntityT
                         BlockPos.betweenClosedStream(new AABB(pos.relative(direction.getOpposite(), 3)).inflate(2)).forEach(blockPos -> {
                             BlockState blockState = level.getBlockState(blockPos);
 
-                            if ((blockState.is(WindsweptBlocks.WILL_O_THE_WISP.get()) || blockState.is(WindsweptBlocks.CARVED_PINECONE_BLOCK.get())) && blockState.getValue(HorizontalDirectionalBlock.FACING) != direction)
+                            if ((blockState.is(WindsweptBlocks.WILL_O_THE_WISP.get()) || blockState.is(WindsweptBlocks.CARVED_PINECONE_BLOCK.get())) && blockState.getValue(HorizontalDirectionalBlock.FACING) != direction && !level.getBlockState(blockPos.relative(direction)).getMaterial().isSolid())
                                 level.setBlock(blockPos, blockState.setValue(HorizontalDirectionalBlock.FACING, direction), 2);
                         });
 
