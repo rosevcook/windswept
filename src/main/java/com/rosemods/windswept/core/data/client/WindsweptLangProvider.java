@@ -297,14 +297,12 @@ public class WindsweptLangProvider extends LanguageProvider {
 
         this.translateBlock(LUPINE);
         this.translateBlock(RED_ROSE_BUSH);
-        this.translateBlock(PINK_ROSE_BUSH);
         this.translateBlock(BLUE_ROSE_BUSH);
         this.translateBlock(WHITE_ROSE_BUSH);
         this.translateBlock(YELLOW_ROSE_BUSH);
         this.translateBlock(WITHER_ROSE_BUSH);
 
         this.translateBlock(RED_ROSE);
-        this.translateBlock(PINK_ROSE);
         this.translateBlock(BLUE_ROSE);
         this.translateBlock(WHITE_ROSE);
         this.translateBlock(YELLOW_ROSE);
@@ -316,7 +314,6 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(NIGHTSHADE);
 
         this.translateBlock(POTTED_RED_ROSE);
-        this.translateBlock(POTTED_PINK_ROSE);
         this.translateBlock(POTTED_BLUE_ROSE);
         this.translateBlock(POTTED_WHITE_ROSE);
         this.translateBlock(POTTED_YELLOW_ROSE);
@@ -435,7 +432,6 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.jeiInfo(MUSIC_DISC_BUMBLEBEE, "Sometimes dropped when shearing a Beehive for Honeycombs.");
 
         this.jeiInfo(RED_ROSE_BUSH, "Bonemeal a Red Rose and it will grow into a Red Rose Bush!");
-        this.jeiInfo(PINK_ROSE_BUSH, "Bonemeal a Pink Rose and it will grow into a Pink Rose Bush!");
         this.jeiInfo(BLUE_ROSE_BUSH, "Bonemeal a Blue Rose and it will grow into a Blue Rose Bush! This can also be found in Chestnut Forests");
         this.jeiInfo(WHITE_ROSE_BUSH, "Bonemeal a White Rose and it will grow into a White Rose Bush! This can also be found in Snowy Chestnut Forests");
         this.jeiInfo(YELLOW_ROSE_BUSH, "Bonemeal a Yellow Rose and it will grow into a Yellow Rose Bush!");
@@ -448,7 +444,6 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.jeiInfo(SNOWY_SPROUTS, "Snowy sprouts are small plants that grow in round patches in snowy areas. They only grow on snow blocks but when collected with shears, can also be placed on grass and dirt.");
 
         this.jeiInfo(RED_ROSE, "Red Roses can be found in Taiga biomes. They can also be bonemealed into Red Rose Bushes.");
-        this.jeiInfo(PINK_ROSE, "Pink Roses can be found in Snowy biomes. They can also be bonemealed into Pink Rose Bushes.");
         this.jeiInfo(BLUE_ROSE, "Blue Roses can be found in Snowy biomes. They can also be bonemealed into Blue Rose Bushes.");
         this.jeiInfo(WHITE_ROSE, "White Roses can be found in Snowy biomes. They can also be bonemealed into White Rose Bushes.");
         this.jeiInfo(YELLOW_ROSE, "Yellow Roses can be found in Taiga biomes. They can also be bonemealed into Yellow Rose Bushes.");

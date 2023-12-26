@@ -286,7 +286,6 @@ public class WindsweptModelProvider extends BlockStateProvider {
 
         // flowers
         this.tallPlant(RED_ROSE_BUSH);
-        this.tallPlant(PINK_ROSE_BUSH);
         this.tallPlant(BLUE_ROSE_BUSH);
         this.tallPlant(WHITE_ROSE_BUSH);
         this.tallPlant(YELLOW_ROSE_BUSH);
@@ -294,7 +293,6 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.tallPlant(LUPINE);
 
         this.pottedPlant(RED_ROSE, POTTED_RED_ROSE);
-        this.pottedPlant(PINK_ROSE, POTTED_PINK_ROSE);
         this.pottedPlant(BLUE_ROSE, POTTED_BLUE_ROSE);
         this.pottedPlant(WHITE_ROSE, POTTED_WHITE_ROSE);
         this.pottedPlant(YELLOW_ROSE, POTTED_YELLOW_ROSE);

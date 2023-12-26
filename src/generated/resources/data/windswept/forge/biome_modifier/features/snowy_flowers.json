@@ -3,7 +3,6 @@
   "biomes": "#forge:is_snowy",
   "features": [
     "windswept:white_rose",
-    "windswept:pink_rose",
     "windswept:blue_rose"
   ],
   "step": "vegetal_decoration"

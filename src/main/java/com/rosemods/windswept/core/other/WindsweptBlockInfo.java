@@ -32,7 +32,6 @@ public final class WindsweptBlockInfo {
         DataUtil.registerCompostable(GLOW_SHROOM_BASKET.get(), 1f);
 
         DataUtil.registerCompostable(RED_ROSE.get(), .65f);
-        DataUtil.registerCompostable(PINK_ROSE.get(), .65f);
         DataUtil.registerCompostable(BLUE_ROSE.get(), .65f);
         DataUtil.registerCompostable(WHITE_ROSE.get(), .65f);
         DataUtil.registerCompostable(YELLOW_ROSE.get(), .65f);
@@ -43,7 +42,6 @@ public final class WindsweptBlockInfo {
         DataUtil.registerCompostable(BLUEBELLS.get(), .65f);
 
         DataUtil.registerCompostable(RED_ROSE_BUSH.get(), .65f);
-        DataUtil.registerCompostable(PINK_ROSE_BUSH.get(), .65f);
         DataUtil.registerCompostable(BLUE_ROSE_BUSH.get(), .65f);
         DataUtil.registerCompostable(WHITE_ROSE_BUSH.get(), .65f);
         DataUtil.registerCompostable(YELLOW_ROSE_BUSH.get(), .65f);
@@ -137,6 +135,12 @@ public final class WindsweptBlockInfo {
         DataUtil.registerFlammable(PINE_HEDGE.get(), 5, 20);
         DataUtil.registerFlammable(PINE_LEAF_PILE.get(), 30, 60);
 
+        DataUtil.registerFlammable(PINECONE_BLOCK.get(), 5, 20);
+        DataUtil.registerFlammable(CARVED_PINECONE_BLOCK.get(), 5, 20);
+        DataUtil.registerFlammable(PINECONE_SHINGLES.get(), 5, 20);
+        DataUtil.registerFlammable(PINECONE_SHINGLE_STAIRS.get(), 5, 20);
+        DataUtil.registerFlammable(PINECONE_SHINGLE_SLAB.get(), 5, 20);
+
         DataUtil.registerFlammable(HOLLY_BERRY_BASKET.get(), 5, 20);
         DataUtil.registerFlammable(CHESTNUT_CRATE.get(), 5, 20);
         DataUtil.registerFlammable(ROASTED_CHESTNUT_CRATE.get(), 5, 20);
@@ -149,7 +153,6 @@ public final class WindsweptBlockInfo {
         DataUtil.registerFlammable(GELISOL_SPROUTS.get(), 60, 100);
         DataUtil.registerFlammable(DRY_MOSS_SPROUTS.get(), 60, 100);
         DataUtil.registerFlammable(RED_ROSE.get(), 60, 100);
-        DataUtil.registerFlammable(PINK_ROSE.get(), 60, 100);
         DataUtil.registerFlammable(BLUE_ROSE.get(), 60, 100);
         DataUtil.registerFlammable(WHITE_ROSE.get(), 60, 100);
         DataUtil.registerFlammable(YELLOW_ROSE.get(), 60, 100);
@@ -160,7 +163,6 @@ public final class WindsweptBlockInfo {
         DataUtil.registerFlammable(BLUEBELLS.get(), 60, 100);
         DataUtil.registerFlammable(LUPINE.get(), 60, 100);
         DataUtil.registerFlammable(RED_ROSE_BUSH.get(), 60, 100);
-        DataUtil.registerFlammable(PINK_ROSE_BUSH.get(), 60, 100);
         DataUtil.registerFlammable(BLUE_ROSE_BUSH.get(), 60, 100);
         DataUtil.registerFlammable(WHITE_ROSE_BUSH.get(), 60, 100);
         DataUtil.registerFlammable(YELLOW_ROSE_BUSH.get(), 60, 100);

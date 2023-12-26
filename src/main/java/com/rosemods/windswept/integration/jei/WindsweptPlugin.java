@@ -25,7 +25,6 @@ public class WindsweptPlugin implements IModPlugin {
         addInfo(registration, WindsweptItems.MUSIC_DISC_SNOW);
         addInfo(registration, WindsweptItems.MUSIC_DISC_BUMBLEBEE);
         addInfo(registration, WindsweptBlocks.RED_ROSE_BUSH);
-        addInfo(registration, WindsweptBlocks.PINK_ROSE_BUSH);
         addInfo(registration, WindsweptBlocks.BLUE_ROSE_BUSH);
         addInfo(registration, WindsweptBlocks.WHITE_ROSE_BUSH);
         addInfo(registration, WindsweptBlocks.YELLOW_ROSE_BUSH);
@@ -36,7 +35,6 @@ public class WindsweptPlugin implements IModPlugin {
         addInfo(registration, WindsweptBlocks.FOXGLOVE);
         addInfo(registration, WindsweptBlocks.SNOWY_SPROUTS);
         addInfo(registration, WindsweptBlocks.RED_ROSE);
-        addInfo(registration, WindsweptBlocks.PINK_ROSE);
         addInfo(registration, WindsweptBlocks.BLUE_ROSE);
         addInfo(registration, WindsweptBlocks.WHITE_ROSE);
         addInfo(registration, WindsweptBlocks.YELLOW_ROSE);

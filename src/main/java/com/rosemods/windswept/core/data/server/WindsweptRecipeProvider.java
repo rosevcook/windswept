@@ -70,7 +70,6 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 
         // dyes
         flowerToDye(RED_ROSE.get(), Items.RED_DYE, consumer);
-        flowerToDye(PINK_ROSE.get(), Items.PINK_DYE, consumer);
         flowerToDye(BLUE_ROSE.get(), Items.BLUE_DYE, consumer);
         flowerToDye(WHITE_ROSE.get(), Items.WHITE_DYE, consumer);
         flowerToDye(YELLOW_ROSE.get(), Items.YELLOW_DYE, consumer);
@@ -81,7 +80,6 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         flowerToDye(GINGER_FLOWER.get(), Items.RED_DYE, consumer);
         flowerToDye(NIGHTSHADE.get(), Items.LIGHT_BLUE_DYE, consumer);
         tallFlowerToDye(RED_ROSE_BUSH.get(), Items.RED_DYE, consumer);
-        tallFlowerToDye(PINK_ROSE_BUSH.get(), Items.PINK_DYE, consumer);
         tallFlowerToDye(BLUE_ROSE_BUSH.get(), Items.BLUE_DYE, consumer);
         tallFlowerToDye(WHITE_ROSE_BUSH.get(), Items.WHITE_DYE, consumer);
         tallFlowerToDye(YELLOW_ROSE_BUSH.get(), Items.YELLOW_DYE, consumer);

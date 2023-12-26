@@ -311,7 +311,6 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             // tall plants
             this.tallFlower(LUPINE.get());
             this.tallFlower(RED_ROSE_BUSH.get());
-            this.tallFlower(PINK_ROSE_BUSH.get());
             this.tallFlower(BLUE_ROSE_BUSH.get());
             this.tallFlower(WHITE_ROSE_BUSH.get());
             this.tallFlower(YELLOW_ROSE_BUSH.get());
@@ -324,7 +323,6 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 
             // flowers
             this.dropSelf(RED_ROSE.get());
-            this.dropSelf(PINK_ROSE.get());
             this.dropSelf(BLUE_ROSE.get());
             this.dropSelf(WHITE_ROSE.get());
             this.dropSelf(YELLOW_ROSE.get());
@@ -337,7 +335,6 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 
             // pots
             this.dropPottedContents(POTTED_RED_ROSE.get());
-            this.dropPottedContents(POTTED_PINK_ROSE.get());
             this.dropPottedContents(POTTED_BLUE_ROSE.get());
             this.dropPottedContents(POTTED_WHITE_ROSE.get());
             this.dropPottedContents(POTTED_YELLOW_ROSE.get());

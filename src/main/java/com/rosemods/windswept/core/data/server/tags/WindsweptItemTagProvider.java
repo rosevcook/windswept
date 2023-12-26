@@ -24,7 +24,7 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
     @Override
     protected void addTags() {
         //windswept
-        this.tag(WindsweptItemTags.ROSES).add(RED_ROSE.get().asItem(), PINK_ROSE.get().asItem(), BLUE_ROSE.get().asItem(), WHITE_ROSE.get().asItem(), YELLOW_ROSE.get().asItem(), Items.WITHER_ROSE, Items.ROSE_BUSH, RED_ROSE_BUSH.get().asItem(), PINK_ROSE_BUSH.get().asItem(), BLUE_ROSE_BUSH.get().asItem(), WHITE_ROSE_BUSH.get().asItem(), YELLOW_ROSE_BUSH.get().asItem(), WITHER_ROSE_BUSH.get().asItem());
+        this.tag(WindsweptItemTags.ROSES).add(RED_ROSE.get().asItem(), BLUE_ROSE.get().asItem(), WHITE_ROSE.get().asItem(), YELLOW_ROSE.get().asItem(), Items.WITHER_ROSE, Items.ROSE_BUSH, RED_ROSE_BUSH.get().asItem(), BLUE_ROSE_BUSH.get().asItem(), WHITE_ROSE_BUSH.get().asItem(), YELLOW_ROSE_BUSH.get().asItem(), WITHER_ROSE_BUSH.get().asItem());
         this.copy(WindsweptBlockTags.HOLLY_LOGS, WindsweptItemTags.HOLLY_LOGS);
         this.copy(WindsweptBlockTags.CHESTNUT_LOGS, WindsweptItemTags.CHESTNUT_LOGS);
         this.copy(WindsweptBlockTags.PINE_LOGS, WindsweptItemTags.PINE_LOGS);
