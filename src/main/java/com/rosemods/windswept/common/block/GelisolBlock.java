@@ -37,5 +37,5 @@ public class GelisolBlock extends SnowyDirtBlock implements BonemealableBlock {
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
         level.setBlock(pos.above(), WindsweptBlocks.GELISOL_SPROUTS.get().defaultBlockState(), 2);
     }
-    
+
 }

@@ -34,6 +34,9 @@ public class IciclesFeature extends Feature<NoneFeatureConfiguration> {
                 for (int y = -5; y <= 3; ++y) {
                     BlockPos pos = origin.offset(x, y, z);
 
+                    if (level.getFluidState(pos).is(Fluids.LAVA))
+                        return false;
+
                     if (BluebellsFeature.shouldPlace(x, z, rand) && level.isEmptyBlock(pos) && pos.getY() < level.getMaxBuildHeight() && state.canSurvive(level, pos) && IciclesFeature.canPlaceOn(level, pos.above())) {
                         if (rand.nextInt(3) == 0 && level.getBlockState(pos.below()).getMaterial().isReplaceable()) {
                             level.setBlock(pos, top, 2);
