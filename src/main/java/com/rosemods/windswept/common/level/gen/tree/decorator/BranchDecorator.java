@@ -1,5 +1,6 @@
 package com.rosemods.windswept.common.level.gen.tree.decorator;
 
+import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.rosemods.windswept.core.WindsweptConfig;
@@ -46,7 +47,7 @@ public class BranchDecorator extends TreeDecorator {
             return;
 
         int i = context.logs().get(0).getY();
-        List<Direction> logs = new LinkedList<>();
+        List<Direction> logs = Lists.newArrayList();
 
         for (BlockPos pos : context.logs())
             if (pos.getY() - i >= this.minHeight && rand.nextFloat() <= .25f) {

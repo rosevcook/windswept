@@ -1,5 +1,6 @@
 package com.rosemods.windswept.common.level.gen.tree.trunk_placer;
 
+import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.rosemods.windswept.common.block.PineconeBlock;
@@ -17,7 +18,6 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
 import net.minecraft.world.level.material.Fluids;
-import org.apache.commons.compress.utils.Lists;
 
 import java.util.LinkedList;
 import java.util.List;
