@@ -12,6 +12,16 @@ public class WindsweptConfig {
     public static final ForgeConfigSpec COMMON_SPEC;
     public static final ForgeConfigSpec CLIENT_SPEC;
 
+    static {
+        final Pair<Common, ForgeConfigSpec> commonSpecPair = new ForgeConfigSpec.Builder().configure(Common::new);
+        final Pair<Client, ForgeConfigSpec> clientSpecPair = new ForgeConfigSpec.Builder().configure(Client::new);
+
+        COMMON = commonSpecPair.getLeft();
+        CLIENT = clientSpecPair.getLeft();
+        COMMON_SPEC = commonSpecPair.getRight();
+        CLIENT_SPEC = clientSpecPair.getRight();
+    }
+
     public static class Common {
         public final ConfigValue<Integer> woodenBucketDurabilty;
         public final ConfigValue<Double> bumblebeeDiscChance;
@@ -61,16 +71,6 @@ public class WindsweptConfig {
             builder.pop();
         }
 
-    }
-
-    static {
-        final Pair<Common, ForgeConfigSpec> commonSpecPair = new ForgeConfigSpec.Builder().configure(Common::new);
-        final Pair<Client, ForgeConfigSpec> clientSpecPair = new ForgeConfigSpec.Builder().configure(Client::new);
-
-        COMMON = commonSpecPair.getLeft();
-        CLIENT = clientSpecPair.getLeft();
-        COMMON_SPEC = commonSpecPair.getRight();
-        CLIENT_SPEC = clientSpecPair.getRight();
     }
 
 }
