@@ -1,33 +1,28 @@
 package com.rosemods.windswept.common.levelgen.feature;
 
-import com.mojang.serialization.Codec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.rosemods.windswept.common.block.RoseFlowerBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SnowyDirtBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 
-public class RoseFeature extends Feature<RoseFeature.RoseFeatureConfiguration> {
+public class RoseFeature extends Feature<SimpleBlockConfiguration> {
 
     public RoseFeature() {
-        super(RoseFeatureConfiguration.CODEC);
+        super(SimpleBlockConfiguration.CODEC);
     }
 
     @Override
-    public boolean place(FeaturePlaceContext<RoseFeatureConfiguration> context) {
+    public boolean place(FeaturePlaceContext<SimpleBlockConfiguration> context) {
         BlockPos origin = context.origin();
         WorldGenLevel level = context.level();
         RandomSource rand = context.random();
-        BlockState state = context.config().rose.getState(rand, origin);
+        BlockState state = context.config().toPlace().getState(rand, origin);
         RoseFlowerBlock block = (RoseFlowerBlock) state.getBlock();
         boolean generated = false;
 
@@ -56,14 +51,5 @@ public class RoseFeature extends Feature<RoseFeature.RoseFeatureConfiguration> {
         return generated;
     }
 
-    public static RoseFeatureConfiguration config(RegistryObject<Block> rose) {
-        return new RoseFeatureConfiguration(SimpleStateProvider.simple(rose.get().defaultBlockState()));
-    }
-
-    public record RoseFeatureConfiguration(SimpleStateProvider rose) implements FeatureConfiguration {
-        public static final Codec<RoseFeatureConfiguration> CODEC = RecordCodecBuilder.create(i -> i
-                .group(SimpleStateProvider.CODEC.fieldOf("rose").forGetter(fc -> fc.rose))
-                .apply(i, RoseFeatureConfiguration::new));
-    }
 
 }
