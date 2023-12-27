@@ -1,6 +1,6 @@
 package com.rosemods.windswept.common.levelgen.feature;
 
-import com.rosemods.windswept.common.block.IcicleBlock;
+import com.rosemods.windswept.common.block.IciclesBlock;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
@@ -19,7 +19,7 @@ public class FloorIciclesFeature extends Feature<NoneFeatureConfiguration> {
     public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
         BlockPos origin = context.origin();
         WorldGenLevel level = context.level();
-        BlockState state = WindsweptBlocks.ICICLES.get().defaultBlockState().setValue(IcicleBlock.STATE, IcicleBlock.IcicleStates.FLOOR);
+        BlockState state = WindsweptBlocks.ICICLES.get().defaultBlockState().setValue(IciclesBlock.STATE, IciclesBlock.IcicleStates.FLOOR);
         RandomSource rand = context.random();
         boolean generated = false;
 

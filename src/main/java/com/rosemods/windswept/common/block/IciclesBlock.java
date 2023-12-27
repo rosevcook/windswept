@@ -7,7 +7,6 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.StringRepresentable;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -29,7 +28,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class IcicleBlock extends Block implements SimpleWaterloggedBlock {
+public class IciclesBlock extends Block implements SimpleWaterloggedBlock {
     public static final EnumProperty<IcicleStates> STATE = EnumProperty.create("state", IcicleStates.class);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     private static final VoxelShape SHAPE = Block.box(1f, 4f, 1f, 15f, 16f, 15f);
@@ -37,7 +36,7 @@ public class IcicleBlock extends Block implements SimpleWaterloggedBlock {
     private static final VoxelShape BOTTOM = Block.box(2.5f, 5f, 2.5f, 13.5f, 16f, 13.5f);
     private static final VoxelShape FLOOR = Block.box(2f, 0f, 2f, 14f, 4.5f, 14f);
 
-    public IcicleBlock(Properties properties) {
+    public IciclesBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(STATE, IcicleStates.NORMAL).setValue(WATERLOGGED, false));
     }

@@ -313,10 +313,10 @@ public class WindsweptModelProvider extends BlockStateProvider {
 
         // icicles
         this.getVariantBuilder(ICICLES.get())
-                .partialState().with(IcicleBlock.STATE, IcicleBlock.IcicleStates.NORMAL).addModels(new ConfiguredModel(this.models().cross("icicles", this.blockTexture(ICICLES.get())).renderType("cutout")))
-                .partialState().with(IcicleBlock.STATE, IcicleBlock.IcicleStates.TOP).addModels(new ConfiguredModel(this.models().cross("icicles_top", this.modLoc("block/icicles_top")).renderType("cutout")))
-                .partialState().with(IcicleBlock.STATE, IcicleBlock.IcicleStates.BOTTOM).addModels(new ConfiguredModel(this.models().cross("icicles_bottom", this.modLoc("block/icicles_bottom")).renderType("cutout")))
-                .partialState().with(IcicleBlock.STATE, IcicleBlock.IcicleStates.FLOOR).addModels(new ConfiguredModel(this.models().cross("icicles_floor", this.modLoc("block/icicles_floor")).renderType("cutout")));
+                .partialState().with(IciclesBlock.STATE, IciclesBlock.IcicleStates.NORMAL).addModels(new ConfiguredModel(this.models().cross("icicles", this.blockTexture(ICICLES.get())).renderType("cutout")))
+                .partialState().with(IciclesBlock.STATE, IciclesBlock.IcicleStates.TOP).addModels(new ConfiguredModel(this.models().cross("icicles_top", this.modLoc("block/icicles_top")).renderType("cutout")))
+                .partialState().with(IciclesBlock.STATE, IciclesBlock.IcicleStates.BOTTOM).addModels(new ConfiguredModel(this.models().cross("icicles_bottom", this.modLoc("block/icicles_bottom")).renderType("cutout")))
+                .partialState().with(IciclesBlock.STATE, IciclesBlock.IcicleStates.FLOOR).addModels(new ConfiguredModel(this.models().cross("icicles_floor", this.modLoc("block/icicles_floor")).renderType("cutout")));
         this.generatedItem(ICICLES.get(), TextureFolder.Item);
         this.pillar(ICICLE_BLOCK);
         this.pillar(CHISELED_ICICLE_BLOCK);

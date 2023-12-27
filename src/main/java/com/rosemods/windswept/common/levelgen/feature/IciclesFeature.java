@@ -1,6 +1,6 @@
 package com.rosemods.windswept.common.levelgen.feature;
 
-import com.rosemods.windswept.common.block.IcicleBlock;
+import com.rosemods.windswept.common.block.IciclesBlock;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
@@ -24,8 +24,8 @@ public class IciclesFeature extends Feature<NoneFeatureConfiguration> {
         BlockPos origin = context.origin();
         WorldGenLevel level = context.level();
         BlockState state = WindsweptBlocks.ICICLES.get().defaultBlockState();
-        BlockState top = WindsweptBlocks.ICICLES.get().defaultBlockState().setValue(IcicleBlock.STATE, IcicleBlock.IcicleStates.TOP);
-        BlockState bottom = WindsweptBlocks.ICICLES.get().defaultBlockState().setValue(IcicleBlock.STATE, IcicleBlock.IcicleStates.BOTTOM);
+        BlockState top = WindsweptBlocks.ICICLES.get().defaultBlockState().setValue(IciclesBlock.STATE, IciclesBlock.IcicleStates.TOP);
+        BlockState bottom = WindsweptBlocks.ICICLES.get().defaultBlockState().setValue(IciclesBlock.STATE, IciclesBlock.IcicleStates.BOTTOM);
         RandomSource rand = context.random();
         boolean generated = false;
 
@@ -40,7 +40,7 @@ public class IciclesFeature extends Feature<NoneFeatureConfiguration> {
                     if (BluebellsFeature.shouldPlace(x, z, rand) && level.isEmptyBlock(pos) && pos.getY() < level.getMaxBuildHeight() && state.canSurvive(level, pos) && IciclesFeature.canPlaceOn(level, pos.above())) {
                         if (rand.nextInt(3) == 0 && level.getBlockState(pos.below()).getMaterial().isReplaceable()) {
                             level.setBlock(pos, top, 2);
-                            level.setBlock(pos.below(), bottom.setValue(IcicleBlock.WATERLOGGED, level.getFluidState(pos.below()).is(Fluids.WATER)), 2);
+                            level.setBlock(pos.below(), bottom.setValue(IciclesBlock.WATERLOGGED, level.getFluidState(pos.below()).is(Fluids.WATER)), 2);
                         } else
                             level.setBlock(pos, state, 2);
 
