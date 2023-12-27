@@ -25,7 +25,9 @@ public class GelisolBlock extends SnowyDirtBlock implements BonemealableBlock {
 
     @Override
     public boolean isValidBonemealTarget(BlockGetter getter, BlockPos pos, BlockState state, boolean isClient) {
-        return getter.getBlockState(pos.above()).getMaterial().isReplaceable();
+        BlockState above = getter.getBlockState(pos.above());
+
+        return above.getMaterial().isReplaceable() && !above.is(WindsweptBlocks.GELISOL_SPROUTS.get());
     }
 
     @Override
@@ -35,7 +37,20 @@ public class GelisolBlock extends SnowyDirtBlock implements BonemealableBlock {
 
     @Override
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
-        level.setBlock(pos.above(), WindsweptBlocks.GELISOL_SPROUTS.get().defaultBlockState(), 2);
+        for (int i = 0; i < 128; i++) {
+            BlockPos blockPos = pos.above();
+
+            for (int j = 0; j < i / 16; j++) {
+                blockPos = blockPos.offset(random.nextInt(3) - 1, (random.nextInt(3) - 1) * random.nextInt(3) / 2, random.nextInt(3) - 1);
+
+                if (!level.getBlockState(blockPos.below()).is(this) || level.getBlockState(blockPos).isCollisionShapeFullBlock(level, blockPos))
+                    break;
+            }
+
+            if (level.getBlockState(blockPos).isAir() && level.getBlockState(blockPos.below()).is(this))
+                level.setBlock(blockPos, WindsweptBlocks.GELISOL_SPROUTS.get().defaultBlockState(), 3);
+        }
+
     }
 
 }
