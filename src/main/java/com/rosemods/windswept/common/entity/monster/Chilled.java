@@ -29,11 +29,6 @@ public class Chilled extends Zombie {
     }
 
     @Override
-    protected boolean convertsInWater() {
-        return false;
-    }
-
-    @Override
     public boolean canFreeze() {
         return false;
     }
@@ -107,6 +102,14 @@ public class Chilled extends Zombie {
             stack.enchant(WindsweptEnchantments.SLIPPING_CURSE.get(), 0);
         else
             super.enchantSpawnedArmor(rand, difficulty, slot);
+    }
+
+    @Override
+    protected void doUnderWaterConversion() {
+        this.convertToZombieType(EntityType.ZOMBIE);
+
+        if (!this.isSilent())
+            this.level.levelEvent(null, 1041, this.blockPosition(), 0);
     }
 
 }
