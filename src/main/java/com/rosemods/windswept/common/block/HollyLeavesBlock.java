@@ -4,7 +4,6 @@ import com.rosemods.windswept.core.other.WindsweptDamageSources;
 import com.rosemods.windswept.core.other.tags.WindsweptEntityTypeTags;
 import com.teamabnormals.blueprint.common.block.wood.BlueprintLeavesBlock;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
@@ -32,7 +31,7 @@ public class HollyLeavesBlock extends BlueprintLeavesBlock {
 
     @Override
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        entityInside(1.2f, WindsweptDamageSources.HOLLY_LEAVES, entity, level);
+        entityInside(1.2f, entity, level);
     }
 
     @Override
@@ -46,12 +45,12 @@ public class HollyLeavesBlock extends BlueprintLeavesBlock {
         return .2f;
     }
 
-    public static void entityInside(float damage, DamageSource source, Entity entity, Level level) {
+    public static void entityInside(float damage, Entity entity, Level level) {
         if (!level.isClientSide && (entity.xOld != entity.getX() || entity.zOld != entity.getZ()) && entity instanceof LivingEntity && !entity.getType().is(WindsweptEntityTypeTags.HOLLY_IMMUNE)) {
             double d0 = Math.abs(entity.getX() - entity.xOld);
             double d1 = Math.abs(entity.getZ() - entity.zOld);
             if (d0 >= .003d || d1 >= .003d)
-                entity.hurt(source, damage);
+                entity.hurt(WindsweptDamageSources.HOLLY_LEAVES, damage);
         }
     }
 

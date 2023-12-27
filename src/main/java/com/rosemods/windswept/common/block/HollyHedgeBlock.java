@@ -24,7 +24,7 @@ public class HollyHedgeBlock extends HedgeBlock {
 
     @Override
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        HollyLeavesBlock.entityInside(.8f, WindsweptDamageSources.HOLLY_HEDGE, entity, level);
+        HollyLeavesBlock.entityInside(.8f, entity, level);
     }
 
 }

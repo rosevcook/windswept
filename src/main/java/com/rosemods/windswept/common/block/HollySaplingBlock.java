@@ -1,6 +1,5 @@
 package com.rosemods.windswept.common.block;
 
-import com.rosemods.windswept.core.other.WindsweptDamageSources;
 import com.teamabnormals.blueprint.common.block.wood.BlueprintSaplingBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
@@ -25,7 +24,7 @@ public class HollySaplingBlock extends BlueprintSaplingBlock {
 
     @Override
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        HollyLeavesBlock.entityInside(1f, WindsweptDamageSources.HOLLY_SAPLING, entity, level);
+        HollyLeavesBlock.entityInside(1f, entity, level);
     }
 
 }

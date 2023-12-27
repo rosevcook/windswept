@@ -414,13 +414,9 @@ public class WindsweptLangProvider extends LanguageProvider {
                 player -> player + " was ripped to death by holly leaves",
                 (player, entity) -> player + " was ripped to death by holly leaves whilst trying to escape " + entity);
 
-        this.translateDamageSource(WindsweptDamageSources.HOLLY_SAPLING,
-                player -> player + " was ripped to death by holly sapling",
-                (player, entity) -> player + " was ripped to death by holly sapling whilst trying to escape " + entity);
-
-        this.translateDamageSource(WindsweptDamageSources.HOLLY_HEDGE,
-                player -> player + " was ripped to death by holly leaf hedge",
-                (player, entity) -> player + " was ripped to death by holly leaf hedge whilst trying to escape " + entity);
+        this.translateDamageSource(WindsweptDamageSources.ICICLE,
+                player -> player + " was impaled on an icicle",
+                (player, entity) -> player + " was impaled on an icicle whilst trying to escape " + entity);
 
         // Slabfish //
         this.add("entity.environmental.slabfish.type.chestnut", "Chestnut");

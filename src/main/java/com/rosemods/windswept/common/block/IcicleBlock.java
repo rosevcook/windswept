@@ -1,5 +1,6 @@
 package com.rosemods.windswept.common.block;
 
+import com.rosemods.windswept.core.other.WindsweptDamageSources;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -92,7 +93,7 @@ public class IcicleBlock extends Block implements SimpleWaterloggedBlock {
     @Override
     public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float damage) {
         if (state.getValue(STATE) == IcicleStates.FLOOR)
-            entity.causeFallDamage(damage + 2f, 2f, DamageSource.STALAGMITE);
+            entity.causeFallDamage(damage + 2f, 2f, WindsweptDamageSources.ICICLE);
         else
             super.fallOn(level, state, pos, entity, damage);
     }
