@@ -35,6 +35,7 @@
   ],
   "client": [
     "client.HumanoidArmorLayerMixin",
+    "client.ItemInHandRendererMixin",
     "client.LivingEntityRendererMixin",
     "client.RabbitRendererMixin"
   ],
