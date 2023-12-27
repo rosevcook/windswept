@@ -18,6 +18,10 @@ public class FrostArrow extends AbstractArrow {
         super(type, level);
     }
 
+    public FrostArrow(Level level, double x, double y, double z) {
+        super(WindsweptEntityTypes.FROST_ARROW.get(), x, y, z, level);
+    }
+
     public FrostArrow(PlayMessages.SpawnEntity spawnEntity, Level world) {
         this(WindsweptEntityTypes.FROST_ARROW.get(), world);
     }

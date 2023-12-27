@@ -1,8 +1,8 @@
 package com.rosemods.windswept.core.other;
 
 import com.rosemods.windswept.common.block.IWoodenBucketPickupBlock;
+import com.rosemods.windswept.common.dispense.FrostArrowDispenseBehavior;
 import com.rosemods.windswept.common.item.WoodenBucketItem;
-import com.rosemods.windswept.core.registry.WindsweptItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockSource;
 import net.minecraft.core.Direction;
@@ -13,12 +13,14 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
-public final class WindsweptDispenseBehaviors {
+import static com.rosemods.windswept.core.registry.WindsweptItems.*;
 
+public final class WindsweptDispenseBehaviors {
     public static void registerDispenseBehaviors() {
-        DispenserBlock.registerBehavior(WindsweptItems.WOODEN_BUCKET.get(), WindsweptDispenseBehaviors::fillBucket);
-        DispenserBlock.registerBehavior(WindsweptItems.WOODEN_WATER_BUCKET.get(), WindsweptDispenseBehaviors::emptyWaterBucket);
-        DispenserBlock.registerBehavior(WindsweptItems.WOODEN_POWDER_SNOW_BUCKET.get(), WindsweptDispenseBehaviors::emptyPowderSnowBucket);
+        DispenserBlock.registerBehavior(WOODEN_BUCKET.get(), WindsweptDispenseBehaviors::fillBucket);
+        DispenserBlock.registerBehavior(WOODEN_WATER_BUCKET.get(), WindsweptDispenseBehaviors::emptyWaterBucket);
+        DispenserBlock.registerBehavior(WOODEN_POWDER_SNOW_BUCKET.get(), WindsweptDispenseBehaviors::emptyPowderSnowBucket);
+        DispenserBlock.registerBehavior(FROST_ARROW.get(), new FrostArrowDispenseBehavior());
     }
 
     private static ItemStack fillBucket(BlockSource source, ItemStack stack) {
