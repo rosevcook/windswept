@@ -12,6 +12,7 @@
     "FlowerBlockMixin",
     "FoxEatBerriesGoalMixin",
     "FoxMixin",
+    "IceBlockMixin",
     "LiquidBlockMixin",
     "LivingEntityMixin",
     "LlamaMixin",
