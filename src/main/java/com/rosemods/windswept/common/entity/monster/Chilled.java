@@ -1,4 +1,4 @@
-package com.rosemods.windswept.common.entity;
+package com.rosemods.windswept.common.entity.monster;
 
 import com.rosemods.windswept.core.other.WindsweptConstants;
 import com.rosemods.windswept.core.registry.WindsweptEnchantments;

@@ -2,7 +2,7 @@ package com.rosemods.windswept.client.model;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.rosemods.windswept.common.entity.Frostbiter;
+import com.rosemods.windswept.common.entity.animal.Frostbiter;
 import com.rosemods.windswept.core.registry.WindsweptPlayableEndimations;
 import com.teamabnormals.blueprint.core.endimator.Endimator;
 import com.teamabnormals.blueprint.core.endimator.entity.EndimatorEntityModel;

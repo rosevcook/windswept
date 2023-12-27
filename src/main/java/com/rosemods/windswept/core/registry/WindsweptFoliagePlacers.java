@@ -1,6 +1,6 @@
 package com.rosemods.windswept.core.registry;
 
-import com.rosemods.windswept.common.level.gen.tree.foliage_placer.ChestnutFoliagePlacer;
+import com.rosemods.windswept.common.levelgen.tree.foliage_placer.ChestnutFoliagePlacer;
 import com.rosemods.windswept.core.Windswept;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
 import net.minecraftforge.registries.DeferredRegister;

@@ -1,7 +1,7 @@
 package com.rosemods.windswept.client.model;
 
 import com.google.common.collect.ImmutableList;
-import com.rosemods.windswept.common.entity.Chilled;
+import com.rosemods.windswept.common.entity.monster.Chilled;
 import net.minecraft.client.model.ZombieModel;
 import net.minecraft.client.model.geom.ModelPart;
 

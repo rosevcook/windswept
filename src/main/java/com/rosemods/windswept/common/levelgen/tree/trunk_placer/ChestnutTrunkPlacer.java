@@ -1,4 +1,4 @@
-package com.rosemods.windswept.common.level.gen.tree.trunk_placer;
+package com.rosemods.windswept.common.levelgen.tree.trunk_placer;
 
 import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;

@@ -2,7 +2,7 @@ package com.rosemods.windswept.common.item;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
-import com.rosemods.windswept.common.entity.Frostbiter;
+import com.rosemods.windswept.common.entity.animal.Frostbiter;
 import com.rosemods.windswept.core.other.WindsweptTiers;
 import com.rosemods.windswept.core.other.tags.WindsweptBlockTags;
 import com.rosemods.windswept.core.registry.WindsweptAttributes;

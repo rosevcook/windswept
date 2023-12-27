@@ -1,4 +1,4 @@
-package com.rosemods.windswept.common.level.gen.tree;
+package com.rosemods.windswept.common.levelgen.tree;
 
 import com.rosemods.windswept.core.registry.WindsweptFeatures;
 import net.minecraft.core.Holder;

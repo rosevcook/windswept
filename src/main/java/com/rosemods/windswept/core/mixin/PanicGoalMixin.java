@@ -1,6 +1,6 @@
 package com.rosemods.windswept.core.mixin;
 
-import com.rosemods.windswept.common.entity.Frostbiter;
+import com.rosemods.windswept.common.entity.animal.Frostbiter;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;

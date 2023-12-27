@@ -1,6 +1,6 @@
 package com.rosemods.windswept.core.mixin;
 
-import com.rosemods.windswept.common.level.gen.tree.decorator.BranchDecorator;
+import com.rosemods.windswept.common.levelgen.tree.decorator.BranchDecorator;
 import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;

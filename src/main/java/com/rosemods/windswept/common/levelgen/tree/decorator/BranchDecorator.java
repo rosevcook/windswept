@@ -1,4 +1,4 @@
-package com.rosemods.windswept.common.level.gen.tree.decorator;
+package com.rosemods.windswept.common.levelgen.tree.decorator;
 
 import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;

@@ -2,7 +2,7 @@ package com.rosemods.windswept.client.render.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.rosemods.windswept.client.model.ChilledModel;
-import com.rosemods.windswept.common.entity.Chilled;
+import com.rosemods.windswept.common.entity.monster.Chilled;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.other.WindsweptModelLayers;
 import net.minecraft.client.model.geom.ModelLayers;

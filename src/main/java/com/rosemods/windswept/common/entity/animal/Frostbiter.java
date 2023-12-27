@@ -1,4 +1,4 @@
-package com.rosemods.windswept.common.entity;
+package com.rosemods.windswept.common.entity.animal;
 
 import com.rosemods.windswept.common.entity.ai.goal.FrostbiterEatFlowersGoal;
 import com.rosemods.windswept.core.registry.WindsweptEntityTypes;

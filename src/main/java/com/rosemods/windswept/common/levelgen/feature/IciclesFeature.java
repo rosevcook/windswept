@@ -1,4 +1,4 @@
-package com.rosemods.windswept.common.level.gen.feature;
+package com.rosemods.windswept.common.levelgen.feature;
 
 import com.rosemods.windswept.common.block.IcicleBlock;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;

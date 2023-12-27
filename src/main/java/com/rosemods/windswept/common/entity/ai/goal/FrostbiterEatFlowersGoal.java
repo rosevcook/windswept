@@ -1,6 +1,6 @@
 package com.rosemods.windswept.common.entity.ai.goal;
 
-import com.rosemods.windswept.common.entity.Frostbiter;
+import com.rosemods.windswept.common.entity.animal.Frostbiter;
 import com.rosemods.windswept.core.registry.WindsweptPlayableEndimations;
 import com.teamabnormals.blueprint.core.util.NetworkUtil;
 import net.minecraft.core.BlockPos;

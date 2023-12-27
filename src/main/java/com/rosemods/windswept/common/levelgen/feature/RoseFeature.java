@@ -1,4 +1,4 @@
-package com.rosemods.windswept.common.level.gen.feature;
+package com.rosemods.windswept.common.levelgen.feature;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

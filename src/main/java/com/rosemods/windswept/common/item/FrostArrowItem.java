@@ -1,6 +1,6 @@
 package com.rosemods.windswept.common.item;
 
-import com.rosemods.windswept.common.entity.FrostArrow;
+import com.rosemods.windswept.common.entity.projectile.FrostArrow;
 import com.teamabnormals.blueprint.core.util.item.filling.TargetedItemCategoryFiller;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.entity.LivingEntity;
