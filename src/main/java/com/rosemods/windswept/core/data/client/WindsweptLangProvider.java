@@ -204,6 +204,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(FAIRY_LIGHT);
         this.translateBlock(SOUL_FAIRY_LIGHT);
         this.translateBlock(CUPRIC_FAIRY_LIGHT);
+        this.translateBlock(ENDER_FAIRY_LIGHT);
 
         this.translateBlock(PINECONE_BLOCK);
         this.translateBlock(CARVED_PINECONE_BLOCK);

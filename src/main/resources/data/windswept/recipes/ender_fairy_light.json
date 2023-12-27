@@ -1,0 +1,27 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "endergetic"
+        }
+      ],
+      "recipe": {
+  	"type": "minecraft:crafting_shapeless",
+  	"ingredients": [
+    	  {
+      	    "item": "windswept:pinecone"
+    	  },
+    	  {
+      	    "item": "endergetic:ender_torch"
+    	  }
+  	],
+        "result": {
+          "item": "windswept:ender_fairy_light"
+        }
+      }
+    }
+  ]
+}

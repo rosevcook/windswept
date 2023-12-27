@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "amount=1": {
+      "model": "windswept:block/ender_fairy_light_1"
+    },
+    "amount=2": {
+      "model": "windswept:block/ender_fairy_light_2"
+    },
+    "amount=3": {
+      "model": "windswept:block/ender_fairy_light_3"
+    },
+    "amount=4": {
+      "model": "windswept:block/ender_fairy_light_4"
+    }
+  }
+}

@@ -5,7 +5,7 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public final class WindsweptConstants {
-    public static final boolean IN_DEV = false;
+    public static final boolean IN_DEV = true;
     public static final String QUARK = modId("quark");
     public static final String BERRY_GOOD = modId("berry_good");
     public static final String WOODWORKS = modId("woodworks");
@@ -14,6 +14,7 @@ public final class WindsweptConstants {
     public static final String FARMERSDELIGHT = modId("farmersdelight");
     public static final String AUTUMNITY = modId("autumnity");
     public static final String CAVERNS_AND_CHASMS = modId("caverns_and_chasms");
+    public static final String ENDERGETIC = modId("endergetic");
 
     public static Item getItem(String modid, String path) {
         return ForgeRegistries.ITEMS.getValue(new ResourceLocation(modid, path));
