@@ -152,16 +152,14 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> GELISOL = HELPER.createInjectedBlock("gelisol", Items.PODZOL, () -> new GelisolBlock(BlockBehaviour.Properties.copy(Blocks.PODZOL)), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> GELISOL_PATH = HELPER.createInjectedBlock("gelisol_path", Items.DIRT_PATH, () -> new DirtPathBlock(BlockBehaviour.Properties.copy(Blocks.DIRT_PATH)), CreativeModeTab.TAB_DECORATIONS);
 
-    // Sprouts //
-    public static final RegistryObject<Block> SNOWY_SPROUTS = HELPER.createInjectedBlock("snowy_sprouts", Items.SEA_PICKLE, () -> new SproutsBlock(Properties.COLD_SPROUTS), CreativeModeTab.TAB_DECORATIONS);
-
-    // Flowers //
+    // Plants //
     public static final RegistryObject<Block> RED_ROSE = HELPER.createBlock("red_rose", () -> new RoseFlowerBlock(WindsweptBlocks.RED_ROSE_BUSH, () -> MobEffects.WITHER, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> BLUE_ROSE = HELPER.createBlock("blue_rose", () -> new RoseFlowerBlock(WindsweptBlocks.BLUE_ROSE_BUSH, () -> MobEffects.WITHER, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> WHITE_ROSE = HELPER.createBlock("white_rose", () -> new RoseFlowerBlock(WindsweptBlocks.WHITE_ROSE_BUSH, () -> MobEffects.WITHER, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> YELLOW_ROSE = HELPER.createBlock("yellow_rose", () -> new RoseFlowerBlock(WindsweptBlocks.YELLOW_ROSE_BUSH, () -> MobEffects.WITHER, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> FOXGLOVE = HELPER.createBlock("foxglove", () -> new BlueprintFlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> BLUEBELLS = HELPER.createBlock("bluebells", () -> new BlueprintFlowerBlock(() -> MobEffects.SLOW_FALLING, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> SNOWY_SPROUTS = HELPER.createInjectedBlock("snowy_sprouts", Items.SEA_PICKLE, () -> new SproutsBlock(Properties.COLD_SPROUTS), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> SNOWDROP = HELPER.createBlock("snowdrop", () -> new SnowdropBlock(WindsweptEffects.FROST_RESISTANCE, 5, PropertyUtil.flower().sound(SoundType.NETHER_SPROUTS)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> MOSS_CAMPION = HELPER.createBlock("moss_campion", () -> new MossCampionBlock(WindsweptEffects.THORNS, 5, PropertyUtil.flower().sound(SoundType.AZALEA)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> GINGER_FLOWER = HELPER.createBlock("ginger_flower", () -> new BlueprintFlowerBlock(WindsweptEffects.PLENTY, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
