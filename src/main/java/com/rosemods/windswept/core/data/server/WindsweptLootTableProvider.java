@@ -321,6 +321,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.add(SNOWY_SPROUTS.get(), Blocks::createShearsOnlyDrop);
             this.add(GELISOL_SPROUTS.get(), Blocks::createShearsOnlyDrop);
             this.add(DRY_MOSS_SPROUTS.get(), Blocks::createShearsOnlyDrop);
+            this.add(MOSS_SPROUTS.get(), Blocks::createShearsOnlyDrop);
 
             // flowers
             this.dropSelf(RED_ROSE.get());
@@ -348,6 +349,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropPottedContents(POTTED_SNOWY_SPROUTS.get());
             this.dropPottedContents(POTTED_GELISOL_SPROUTS.get());
             this.dropPottedContents(POTTED_DRY_MOSS_SPROUTS.get());
+            this.dropPottedContents(POTTED_MOSS_SPROUTS.get());
 
             // wild berry
             this.add(WILD_BERRY_BUSH.get(), b -> applyExplosionDecay(b, LootTable.lootTable()

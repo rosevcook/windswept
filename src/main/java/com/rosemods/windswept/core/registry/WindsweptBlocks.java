@@ -142,13 +142,14 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> PINE_LEAF_CARPET = HELPER.createCompatBlock(WindsweptConstants.QUARK, "pine_leaf_carpet", () -> new LeafCarpetBlock(Properties.PINE.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> PINE_LEAF_PILE = HELPER.createCompatBlock(WindsweptConstants.WOODWORKS, "pine_leaf_pile", () -> new LeafPileBlock(Properties.PINE.leafPile()), CreativeModeTab.TAB_DECORATIONS);
 
-    // Dry Moss //
-    public static final RegistryObject<Block> DRY_MOSS_SPROUTS = HELPER.createInjectedBlock("dry_moss_sprouts", Items.SEA_PICKLE, () -> new SproutsBlock(Properties.COLD_SPROUTS), CreativeModeTab.TAB_DECORATIONS);
+    // Moss //
+    public static final RegistryObject<Block> MOSS_SPROUTS = HELPER.createInjectedBlock("moss_sprouts", Items.SEA_PICKLE, () -> new SproutsBlock(Properties.SPROUTS), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> DRY_MOSS_SPROUTS = HELPER.createInjectedBlock("dry_moss_sprouts", Items.SEA_PICKLE, () -> new SproutsBlock(Properties.SPROUTS), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> DRY_MOSS_CARPET = HELPER.createInjectedBlock("dry_moss_carpet", Items.MOSS_BLOCK, () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_CARPET)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> DRY_MOSS_BLOCK = HELPER.createInjectedBlock("dry_moss_block", Items.MOSS_BLOCK, () -> new DryMossBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_BLOCK)), CreativeModeTab.TAB_DECORATIONS);
 
     // Gelisol Blocks //
-    public static final RegistryObject<Block> GELISOL_SPROUTS = HELPER.createInjectedBlock("gelisol_sprouts", Items.SEA_PICKLE, () -> new SproutsBlock(Properties.COLD_SPROUTS), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> GELISOL_SPROUTS = HELPER.createInjectedBlock("gelisol_sprouts", Items.SEA_PICKLE, () -> new SproutsBlock(Properties.SPROUTS), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> GELISOL = HELPER.createInjectedBlock("gelisol", Items.PODZOL, () -> new GelisolBlock(BlockBehaviour.Properties.copy(Blocks.PODZOL)), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> GELISOL_PATH = HELPER.createInjectedBlock("gelisol_path", Items.DIRT_PATH, () -> new DirtPathBlock(BlockBehaviour.Properties.copy(Blocks.DIRT_PATH)), CreativeModeTab.TAB_DECORATIONS);
 
@@ -159,7 +160,7 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> YELLOW_ROSE = HELPER.createBlock("yellow_rose", () -> new RoseFlowerBlock(WindsweptBlocks.YELLOW_ROSE_BUSH, () -> MobEffects.WITHER, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> FOXGLOVE = HELPER.createBlock("foxglove", () -> new BlueprintFlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> BLUEBELLS = HELPER.createBlock("bluebells", () -> new BlueprintFlowerBlock(() -> MobEffects.SLOW_FALLING, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> SNOWY_SPROUTS = HELPER.createInjectedBlock("snowy_sprouts", Items.SEA_PICKLE, () -> new SproutsBlock(Properties.COLD_SPROUTS), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> SNOWY_SPROUTS = HELPER.createInjectedBlock("snowy_sprouts", Items.SEA_PICKLE, () -> new SproutsBlock(Properties.SPROUTS), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> SNOWDROP = HELPER.createBlock("snowdrop", () -> new SnowdropBlock(WindsweptEffects.FROST_RESISTANCE, 5, PropertyUtil.flower().sound(SoundType.NETHER_SPROUTS)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> MOSS_CAMPION = HELPER.createBlock("moss_campion", () -> new MossCampionBlock(WindsweptEffects.THORNS, 5, PropertyUtil.flower().sound(SoundType.AZALEA)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> GINGER_FLOWER = HELPER.createBlock("ginger_flower", () -> new BlueprintFlowerBlock(WindsweptEffects.PLENTY, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
@@ -354,6 +355,7 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> POTTED_SNOWY_SPROUTS = HELPER.createBlockNoItem("potted_snowy_sprouts", () -> new FlowerPotBlock(SNOWY_SPROUTS.get(), PropertyUtil.flowerPot()));
     public static final RegistryObject<Block> POTTED_GELISOL_SPROUTS = HELPER.createBlockNoItem("potted_gelisol_sprouts", () -> new FlowerPotBlock(GELISOL_SPROUTS.get(), PropertyUtil.flowerPot()));
     public static final RegistryObject<Block> POTTED_DRY_MOSS_SPROUTS = HELPER.createBlockNoItem("potted_dry_moss_sprouts", () -> new FlowerPotBlock(DRY_MOSS_SPROUTS.get(), PropertyUtil.flowerPot()));
+    public static final RegistryObject<Block> POTTED_MOSS_SPROUTS = HELPER.createBlockNoItem("potted_moss_sprouts", () -> new FlowerPotBlock(MOSS_SPROUTS.get(), PropertyUtil.flowerPot()));
 
     // Misc //
     public static final RegistryObject<Block> WILD_BERRY_BUSH = HELPER.createBlockNoItem("wild_berry_bush", () -> new WildBerryBushBlock(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_PURPLE).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH).offsetType(BlockBehaviour.OffsetType.XZ)));
@@ -368,7 +370,7 @@ public class WindsweptBlocks {
         public static final BlockBehaviour.Properties SNOW_BRICKS = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.SNOW).strength(.85f).sound(SoundType.SNOW);
         public static final BlockBehaviour.Properties ICE_BRICKS = BlockBehaviour.Properties.of(Material.ICE_SOLID, MaterialColor.COLOR_BLUE).requiresCorrectToolForDrops().strength(2.8f).sound(SoundType.STONE);
         public static final BlockBehaviour.Properties CRATE = BlockBehaviour.Properties.of(Material.WOOD).strength(1.5f).sound(SoundType.WOOD);
-        public static final BlockBehaviour.Properties COLD_SPROUTS = BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XZ);
+        public static final BlockBehaviour.Properties SPROUTS = BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XZ);
         public static final BlockBehaviour.Properties PINECONE_BLOCK = Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN).strength(2f, 3f).sound(WindsweptSoundTypes.PINECONE);
         public static final BlockBehaviour.Properties SHALE = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_BLUE).sound(SoundType.DRIPSTONE_BLOCK).requiresCorrectToolForDrops().strength(1.5f, 1f);
         public static final BlockBehaviour.Properties DOLOMITE = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_LIGHT_BLUE).sound(SoundType.CALCITE).requiresCorrectToolForDrops().strength(.8f);

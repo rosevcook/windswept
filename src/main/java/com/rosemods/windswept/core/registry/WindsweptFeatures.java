@@ -10,6 +10,7 @@ import com.rosemods.windswept.core.Windswept;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
+import net.minecraft.data.worldgen.features.CaveFeatures;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.features.VegetationFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
@@ -73,6 +74,13 @@ public final class WindsweptFeatures {
                 .add(WindsweptBlocks.MOSS_CAMPION.get().defaultBlockState(), 3)
                 .add(WindsweptBlocks.DRY_MOSS_CARPET.get().defaultBlockState(), 25)
                 .add(WindsweptBlocks.DRY_MOSS_SPROUTS.get().defaultBlockState(), 50)));
+
+        public static final SimpleBlockConfiguration MOSS_VEGETATION = new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+                .add(Blocks.FLOWERING_AZALEA.defaultBlockState(), 4)
+                .add(Blocks.AZALEA.defaultBlockState(), 7)
+                .add(Blocks.MOSS_CARPET.defaultBlockState(), 25)
+                .add(WindsweptBlocks.MOSS_SPROUTS.get().defaultBlockState(), 50)
+                .add(Blocks.AIR.defaultBlockState(), 10)));
 
         private static RandomPatchConfiguration createPlantPatch(int tries, BlockState state) {
             return new RandomPatchConfiguration(tries, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
@@ -163,6 +171,11 @@ public final class WindsweptFeatures {
         public static final RegistryObject<ConfiguredFeature<BlockStateConfiguration, ?>> DRY_MOSS_ROCK = CONFIGURED_FEATURES.register("dry_moss_rock", () -> new ConfiguredFeature<>(Feature.FOREST_ROCK, new BlockStateConfiguration(WindsweptBlocks.DRY_MOSSY_COBBLESTONE.get().defaultBlockState())));
         public static final RegistryObject<ConfiguredFeature<NoneFeatureConfiguration, ?>> FALLEN_LOG = CONFIGURED_FEATURES.register("fallen_log", () -> new ConfiguredFeature<>(WindsweptFeatures.FALLEN_LOG.get(), NoneFeatureConfiguration.NONE));
 
+        // Moss //
+        public static final RegistryObject<ConfiguredFeature<SimpleBlockConfiguration, ?>> MOSS_VEGETATION = CONFIGURED_FEATURES.register("moss_vegetation", () -> new ConfiguredFeature<>(Feature.SIMPLE_BLOCK, Configs.MOSS_VEGETATION));
+        public static final RegistryObject<ConfiguredFeature<VegetationPatchConfiguration, ?>> MOSS_PATCH = CONFIGURED_FEATURES.register("moss_patch", () -> new ConfiguredFeature<>(Feature.VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, BlockStateProvider.simple(Blocks.MOSS_BLOCK), PlacementUtils.inlinePlaced(MOSS_VEGETATION.getHolder().get()), CaveSurface.FLOOR, ConstantInt.of(1), 0f, 5, .8f, UniformInt.of(4, 7), .3f)));
+        public static final RegistryObject<ConfiguredFeature<VegetationPatchConfiguration, ?>> MOSS_PATCH_BONEMEAL = CONFIGURED_FEATURES.register("moss_patch_bonemeal", () -> new ConfiguredFeature<>(Feature.VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, BlockStateProvider.simple(Blocks.MOSS_BLOCK), PlacementUtils.inlinePlaced(MOSS_VEGETATION.getHolder().get()), CaveSurface.FLOOR, ConstantInt.of(1), 0f, 5, .6f, UniformInt.of(1, 2), .75f)));
+
         // Stone //
         public static final RegistryObject<ConfiguredFeature<OreConfiguration, ?>> SHALE = CONFIGURED_FEATURES.register("shale", () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), WindsweptBlocks.SHALE.get().defaultBlockState(), 64)));
 
@@ -211,6 +224,9 @@ public final class WindsweptFeatures {
         public static final RegistryObject<PlacedFeature> DRY_MOSS_PATCH = register("dry_moss_patch", ConfiguredFeatures.DRY_MOSS_PATCH, PlacementUtils.countExtra(1, .1f, 1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         public static final RegistryObject<PlacedFeature> DRY_MOSS_ROCK = register("dry_moss_rock", ConfiguredFeatures.DRY_MOSS_ROCK, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         public static final RegistryObject<PlacedFeature> FALLEN_LOG = register("fallen_log", ConfiguredFeatures.FALLEN_LOG, PlacementUtils.countExtra(0, .1f, 2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+
+        // Moss //
+        public static final RegistryObject<PlacedFeature> LUSH_CAVES_VEGETATION = register("lush_caves_vegetation", ConfiguredFeatures.MOSS_PATCH, CountPlacement.of(125), InSquarePlacement.spread(), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
 
         // Stone //
         public static final RegistryObject<PlacedFeature> SHALE = register("shale", ConfiguredFeatures.SHALE, PlacementUtils.countExtra(2, .1f, 4), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(64), VerticalAnchor.absolute(256)), BiomeFilter.biome());

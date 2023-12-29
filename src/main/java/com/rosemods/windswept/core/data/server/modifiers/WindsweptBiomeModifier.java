@@ -8,6 +8,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
 import net.minecraft.core.RegistryAccess;
+import net.minecraft.data.worldgen.placement.CavePlacements;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.RegistryOps;
 import net.minecraft.resources.ResourceKey;
@@ -61,6 +62,7 @@ public final class WindsweptBiomeModifier {
         addFeature("blue_roses", WindsweptBiomeTags.HAS_BLUE_ROSE, GenerationStep.Decoration.VEGETAL_DECORATION, BLUE_ROSE);
         addFeature("white_roses", WindsweptBiomeTags.HAS_WHITE_ROSE, GenerationStep.Decoration.VEGETAL_DECORATION, WHITE_ROSE);
         addFeature("yellow_roses", WindsweptBiomeTags.HAS_YELLOW_ROSE, GenerationStep.Decoration.VEGETAL_DECORATION, YELLOW_ROSE);
+        addFeature("lush_caves_moss", Biomes.LUSH_CAVES, GenerationStep.Decoration.VEGETAL_DECORATION, LUSH_CAVES_VEGETATION);
 
         // spawns
         addSpawn("chilled", Tags.Biomes.IS_SNOWY, WindsweptEntityTypes.CHILLED, 5, 3, 7);
@@ -69,6 +71,7 @@ public final class WindsweptBiomeModifier {
         removeFeature("grove_spruce_trees", Biomes.GROVE, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_GROVE);
         removeFeature("taiga_default_flowers", BiomeTags.IS_TAIGA, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_DEFAULT);
         removeFeature("snowy_default_flowers", Tags.Biomes.IS_SNOWY, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_DEFAULT);
+        removeFeature("lush_caves_moss", Biomes.LUSH_CAVES, GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.LUSH_CAVES_VEGETATION);
 
         return JsonCodecProvider.forDatapackRegistry(event.getGenerator(), event.getExistingFileHelper(), Windswept.MOD_ID, RegistryOps.create(JsonOps.INSTANCE, access), ForgeRegistries.Keys.BIOME_MODIFIERS, modifiers);
     }

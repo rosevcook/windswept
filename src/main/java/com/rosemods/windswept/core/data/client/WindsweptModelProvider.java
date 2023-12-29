@@ -284,6 +284,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.pottedPlantWithPottedVariant(SNOWY_SPROUTS, POTTED_SNOWY_SPROUTS);
         this.pottedPlantWithPottedVariant(GELISOL_SPROUTS, POTTED_GELISOL_SPROUTS);
         this.pottedPlantWithPottedVariant(DRY_MOSS_SPROUTS, POTTED_DRY_MOSS_SPROUTS);
+        this.pottedPlantWithPottedVariant(MOSS_SPROUTS, POTTED_MOSS_SPROUTS);
 
         // flowers
         this.tallPlant(RED_ROSE_BUSH);
