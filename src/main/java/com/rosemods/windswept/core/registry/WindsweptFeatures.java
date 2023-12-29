@@ -66,9 +66,6 @@ public final class WindsweptFeatures {
 
         public static final RandomPatchConfiguration FOXGLOVE = createPlantPatch(64, WindsweptBlocks.FOXGLOVE.get().defaultBlockState());
         public static final RandomPatchConfiguration WILD_BERRY_BUSH = createPlantPatch(32, WindsweptBlocks.WILD_BERRY_BUSH.get().defaultBlockState().setValue(WildBerryBushBlock.AGE, 3));
-        public static final RandomPatchConfiguration WHITE_ROSE_BUSH = createPlantPatch(32, WindsweptBlocks.WHITE_ROSE_BUSH.get().defaultBlockState());
-        public static final RandomPatchConfiguration BLUE_ROSE_BUSH = createPlantPatch(32, WindsweptBlocks.BLUE_ROSE_BUSH.get().defaultBlockState());
-        public static final RandomPatchConfiguration YELLOW_ROSE_BUSH = createPlantPatch(32, WindsweptBlocks.YELLOW_ROSE_BUSH.get().defaultBlockState());
         public static final RandomPatchConfiguration LUPINE = createPlantPatch(64, WindsweptBlocks.LUPINE.get().defaultBlockState());
         public static final RandomPatchConfiguration CHESTNUT_FERNS = FeatureUtils.simpleRandomPatchConfiguration(4, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.FERN))));
         public static final SimpleBlockConfiguration DRY_MOSS_VEGETATION = new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
@@ -147,9 +144,6 @@ public final class WindsweptFeatures {
         public static final RegistryObject<ConfiguredFeature<?, ?>> YELLOW_ROSE = CONFIGURED_FEATURES.register("yellow_rose", () -> new ConfiguredFeature<>(ROSE_PATCH.get(), new SimpleBlockConfiguration(BlockStateProvider.simple(WindsweptBlocks.YELLOW_ROSE.get()))));
         public static final RegistryObject<ConfiguredFeature<?, ?>> FOXGLOVE = CONFIGURED_FEATURES.register("foxglove", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.FOXGLOVE));
         public static final RegistryObject<ConfiguredFeature<?, ?>> FERNS = CONFIGURED_FEATURES.register("ferns", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.CHESTNUT_FERNS));
-        public static final RegistryObject<ConfiguredFeature<?, ?>> WHITE_ROSE_BUSH = CONFIGURED_FEATURES.register("white_rose_bush", () -> new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.WHITE_ROSE_BUSH));
-        public static final RegistryObject<ConfiguredFeature<?, ?>> BLUE_ROSE_BUSH = CONFIGURED_FEATURES.register("blue_rose_bush", () -> new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.BLUE_ROSE_BUSH));
-        public static final RegistryObject<ConfiguredFeature<?, ?>> YELLOW_ROSE_BUSH = CONFIGURED_FEATURES.register("yellow_rose_bush", () -> new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.YELLOW_ROSE_BUSH));
         public static final RegistryObject<ConfiguredFeature<?, ?>> LUPINE = CONFIGURED_FEATURES.register("lupine", () -> new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.LUPINE));
         public static final RegistryObject<ConfiguredFeature<?, ?>> BLUEBELLS = CONFIGURED_FEATURES.register("bluebells", () -> new ConfiguredFeature<>(BLUEBELL_PATCH.get(), NoneFeatureConfiguration.NONE));
         public static final RegistryObject<ConfiguredFeature<?, ?>> NIGHTHSADE = CONFIGURED_FEATURES.register("nightshades", () -> new ConfiguredFeature<>(NIGHTSHADE_PATCH.get(), NoneFeatureConfiguration.NONE));
@@ -162,7 +156,7 @@ public final class WindsweptFeatures {
 
         // Holly //
         public static final RegistryObject<ConfiguredFeature<?, ?>> HOLLY = CONFIGURED_FEATURES.register("holly", () -> new ConfiguredFeature<>(Feature.TREE, Configs.HOLLY_TREE));
-        public static final RegistryObject<ConfiguredFeature<?, ?>> HOLLY_BEES = CONFIGURED_FEATURES.register("holly_bees", () -> new ConfiguredFeature<>(Feature.TREE, Configs.HOLLY_TREE));
+        public static final RegistryObject<ConfiguredFeature<?, ?>> HOLLY_BEES = CONFIGURED_FEATURES.register("holly_bees", () -> new ConfiguredFeature<>(Feature.TREE, Configs.HOLLY_TREE_BEES));
         public static final RegistryObject<ConfiguredFeature<?, ?>> HOLLY_BUSH = CONFIGURED_FEATURES.register("holly_bush", () -> new ConfiguredFeature<>(Feature.TREE, Configs.createHollyBush().build()));
 
         // Chestnut //
@@ -196,14 +190,11 @@ public final class WindsweptFeatures {
 
         // Vegetation //
         public static final RegistryObject<PlacedFeature> RED_ROSE = createPlantPatch("red_rose", 16, ConfiguredFeatures.RED_ROSE);
-        public static final RegistryObject<PlacedFeature> WHITE_ROSE = createPlantPatch("white_rose", 32, ConfiguredFeatures.WHITE_ROSE);
-        public static final RegistryObject<PlacedFeature> BLUE_ROSE = createPlantPatch("blue_rose", 32, ConfiguredFeatures.BLUE_ROSE);
-        public static final RegistryObject<PlacedFeature> YELLOW_ROSE = createPlantPatch("yellow_rose", 24, ConfiguredFeatures.YELLOW_ROSE);
+        public static final RegistryObject<PlacedFeature> WHITE_ROSE = createPlantPatch("white_rose", 16, ConfiguredFeatures.WHITE_ROSE);
+        public static final RegistryObject<PlacedFeature> BLUE_ROSE = createPlantPatch("blue_rose", 16, ConfiguredFeatures.BLUE_ROSE);
+        public static final RegistryObject<PlacedFeature> YELLOW_ROSE = createPlantPatch("yellow_rose", 16, ConfiguredFeatures.YELLOW_ROSE);
         public static final RegistryObject<PlacedFeature> FOXGLOVE = createPlantPatch("foxglove", 6, ConfiguredFeatures.FOXGLOVE);
         public static final RegistryObject<PlacedFeature> BLUEBELLS = createPlantPatch("bluebells", 4, ConfiguredFeatures.BLUEBELLS);
-        public static final RegistryObject<PlacedFeature> WHITE_ROSE_BUSH = createPlantPatch("white_rose_bush", 12, ConfiguredFeatures.WHITE_ROSE_BUSH);
-        public static final RegistryObject<PlacedFeature> BLUE_ROSE_BUSH = createPlantPatch("blue_rose_bush", 12, ConfiguredFeatures.BLUE_ROSE_BUSH);
-        public static final RegistryObject<PlacedFeature> YELLOW_ROSE_BUSH = createPlantPatch("yellow_rose_bush", 12, ConfiguredFeatures.YELLOW_ROSE_BUSH);
         public static final RegistryObject<PlacedFeature> LUPINE = createPlantPatch("lupine", 12, ConfiguredFeatures.LUPINE);
         public static final RegistryObject<PlacedFeature> NIGHTHSADE = createPlantPatch("nightshade", 340, ConfiguredFeatures.NIGHTHSADE);
         public static final RegistryObject<PlacedFeature> WILD_BERRY_BUSH = createPlantPatch("wild_berry_bush", 32, ConfiguredFeatures.WILD_BERRY_BUSH);

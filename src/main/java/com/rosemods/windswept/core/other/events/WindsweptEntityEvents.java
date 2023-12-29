@@ -131,23 +131,20 @@ public class WindsweptEntityEvents {
         MobSpawnType reason = event.getSpawnReason();
 
         // convert zombies in cold biomes to chilled && skeletons to strays
-        if (mob != null && level instanceof ServerLevel && event.getResult() != Result.DENY && mob.getY() > 60 && (reason == MobSpawnType.NATURAL || reason == MobSpawnType.CHUNK_GENERATION)) {
-            Holder<Biome> biome = level.getBiome(mob.blockPosition());
+        if (mob != null && level instanceof ServerLevel && event.getResult() != Result.DENY && mob.getY() > 60 && (reason == MobSpawnType.NATURAL || reason == MobSpawnType.CHUNK_GENERATION) && level.getBiome(mob.blockPosition()).is(Tags.Biomes.IS_SNOWY)) {
+            if (mob.getType() == EntityType.ZOMBIE) {
+                mob = mob.convertTo(WindsweptEntityTypes.CHILLED.get(), true);
 
-            if (biome.is(Tags.Biomes.IS_SNOWY) || biome.is(WindsweptBiomes.TUNDRA.getKey()))
-                if (mob.getType() == EntityType.ZOMBIE) {
-                    mob = mob.convertTo(WindsweptEntityTypes.CHILLED.get(), true);
+                if (mob instanceof Chilled chilled)
+                    chilled.cncCompat(level.getRandom());
+            } else if (mob.getType() == EntityType.SKELETON && WindsweptConfig.COMMON.strays.get()) {
+                mob = mob.convertTo(EntityType.STRAY, true);
 
-                    if (mob instanceof Chilled chilled)
-                        chilled.cncCompat(level.getRandom());
-                } else if (mob.getType() == EntityType.SKELETON && WindsweptConfig.COMMON.strays.get()) {
-                    mob = mob.convertTo(EntityType.STRAY, true);
-
-                    if (mob != null)
-                        mob.setItemInHand(InteractionHand.MAIN_HAND, Items.BOW.getDefaultInstance());
-                }
-
+                if (mob != null)
+                    mob.setItemInHand(InteractionHand.MAIN_HAND, Items.BOW.getDefaultInstance());
+            }
         }
+
     }
 
     @SubscribeEvent

@@ -6,6 +6,10 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
 
 public final class WindsweptBiomeTags {
+    public static final TagKey<Biome> HAS_RED_ROSE = TagUtil.biomeTag(Windswept.MOD_ID, "has_feature/red_rose");
+    public static final TagKey<Biome> HAS_BLUE_ROSE = TagUtil.biomeTag(Windswept.MOD_ID, "has_feature/blue_rose");
+    public static final TagKey<Biome> HAS_WHITE_ROSE = TagUtil.biomeTag(Windswept.MOD_ID, "has_feature/white_rose");
+    public static final TagKey<Biome> HAS_YELLOW_ROSE = TagUtil.biomeTag(Windswept.MOD_ID, "has_feature/yellow_rose");
     public static final TagKey<Biome> HAS_BLUEBELLS = TagUtil.biomeTag(Windswept.MOD_ID, "has_feature/bluebells");
     public static final TagKey<Biome> HAS_HOLLY_TREES = TagUtil.biomeTag(Windswept.MOD_ID, "has_feature/holly_trees");
     public static final TagKey<Biome> HAS_WILD_BERRIES = TagUtil.biomeTag(Windswept.MOD_ID, "has_feature/wild_berries");
@@ -18,6 +22,7 @@ public final class WindsweptBiomeTags {
     public static final TagKey<Biome> HAS_FROZEN_VILLAGE = TagUtil.biomeTag(Windswept.MOD_ID, "has_structure/frozen_village");
 
     public static final TagKey<Biome> IS_CHESTNUT_FOREST = TagUtil.biomeTag(Windswept.MOD_ID, "is_chestnut_forest");
+    public static final TagKey<Biome> IS_PINE_FOREST = TagUtil.biomeTag(Windswept.MOD_ID, "is_pine_forest");
 
     public static final TagKey<Biome> HAS_SPOTTED_ORANGE_MAPLE_TREES = TagUtil.biomeTag("autumnity", "has_feature/spotted_maple_tree/orange");
     public static final TagKey<Biome> HAS_SPOTTED_RED_MAPLE_TREES = TagUtil.biomeTag("autumnity", "has_feature/spotted_maple_tree/red");

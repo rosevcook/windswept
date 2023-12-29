@@ -12,10 +12,6 @@
     "minecraft:flower_forest",
     "minecraft:windswept_hills",
     "windswept:pine_forest",
-    "windswept:snowy_pine_forest",
-    {
-      "id": "environmental:blossom_woods",
-      "required": false
-    }
+    "windswept:snowy_pine_forest"
   ]
 }

@@ -1,7 +1,6 @@
 {
   "values": [
     "windswept:snowy_chestnut_forest",
-    "windswept:snowy_pine_forest",
-    "windswept:tundra"
+    "minecraft:snowy_taiga"
   ]
 }
