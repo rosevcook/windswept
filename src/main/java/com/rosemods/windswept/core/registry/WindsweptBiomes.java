@@ -77,6 +77,7 @@ public class WindsweptBiomes {
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.FERNS.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.PINE_TREES.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.RARE_HOLLY_TREES.getHolder().get());
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.HOLLY_BUSH.getHolder().get());
 
         return biome(snowy ? -.3f : .3f, .4f, 4159204, 329011, 12638463, snowy ? Biome.Precipitation.SNOW : Biome.Precipitation.RAIN, generation, basePineSpawns()).build();
     }

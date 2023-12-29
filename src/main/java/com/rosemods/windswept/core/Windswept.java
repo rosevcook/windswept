@@ -44,7 +44,7 @@ public class Windswept {
         WindsweptTreeDecorators.DECORATORS.register(bus);
         WindsweptFoliagePlacers.FOLIAGE_PLACERS.register(bus);
         WindsweptFeatures.FEATURES.register(bus);
-        WindsweptFeatures.Features.CONFIGURED_FEATURES.register(bus);
+        WindsweptFeatures.ConfiguredFeatures.CONFIGURED_FEATURES.register(bus);
         WindsweptFeatures.Placements.PLACED_FEATURES.register(bus);
         WindsweptEnchantments.ENCHANTMENTS.register(bus);
         WindsweptAttributes.ATTRIBUTES.register(bus);
