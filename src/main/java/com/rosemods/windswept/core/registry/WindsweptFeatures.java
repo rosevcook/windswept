@@ -209,19 +209,16 @@ public final class WindsweptFeatures {
 
         // Holly //
         public static final RegistryObject<PlacedFeature> HOLLY_TREES = register("holly_trees", ConfiguredFeatures.HOLLY_BEES, treePlacement(PlacementUtils.countExtra(3, .1f, 1)));
-        public static final RegistryObject<PlacedFeature> RARE_HOLLY_TREES = register("rare_holly_trees", ConfiguredFeatures.HOLLY_BEES, treePlacement(PlacementUtils.countExtra(0, .1f, 1)));
         public static final RegistryObject<PlacedFeature> HOLLY_BUSH = register("holly_bush", ConfiguredFeatures.HOLLY_BUSH, treePlacement(PlacementUtils.countExtra(1, .1f, 2)));
 
+        // On Snow //
         public static final RegistryObject<PlacedFeature> HOLLY_TREES_ON_SNOW = register("holly_trees_on_snow", ConfiguredFeatures.HOLLY_BEES, treeOnSnowPlacement(PlacementUtils.countExtra(9, .1f, 1)));
         public static final RegistryObject<PlacedFeature> RARE_HOLLY_TREES_ON_SNOW = register("rare_holly_trees_on_snow", ConfiguredFeatures.HOLLY_BEES, treeOnSnowPlacement(PlacementUtils.countExtra(0, .1f, 1)));
-
-        // Spruce //
         public static final RegistryObject<PlacedFeature> SPRUCE_TREES_ON_SNOW = register("spruce_trees_on_snow", VegetationFeatures.TREES_GROVE, treeOnSnowPlacement(PlacementUtils.countExtra(1, .1f, 1)));
-        public static final RegistryObject<PlacedFeature> RARE_SPRUCE_TREES = register("rare_spruce_trees", VegetationFeatures.TREES_TAIGA, treePlacement(PlacementUtils.countExtra(0, .1f, 1)));
 
         // Chestnut //
-        public static final RegistryObject<PlacedFeature> CHESTNUT_TREES = register("chestnut_trees", ConfiguredFeatures.CHESTNUT_BEES, treePlacement(PlacementUtils.countExtra(0, .1f, 1)));
-        public static final RegistryObject<PlacedFeature> CHESTNUT_TREES_COMMON = register("chestnut_trees_common", ConfiguredFeatures.CHESTNUT_BEES, treePlacement(PlacementUtils.countExtra(9, .1f, 1)));
+        public static final RegistryObject<PlacedFeature> CHESTNUT_TREES = register("chestnut_trees", ConfiguredFeatures.CHESTNUT_BEES, treePlacement(PlacementUtils.countExtra(9, .1f, 1)));
+        public static final RegistryObject<PlacedFeature> RARE_CHESTNUT_TREES = register("rare_chestnut_trees", ConfiguredFeatures.CHESTNUT_BEES, treePlacement(PlacementUtils.countExtra(0, .1f, 1)));
 
         // Pine //
         public static final RegistryObject<PlacedFeature> TALL_BIRCH = register("tall_birch", VegetationFeatures.BIRCH_TALL, treePlacement(PlacementUtils.countExtra(5, .1f, 1)));

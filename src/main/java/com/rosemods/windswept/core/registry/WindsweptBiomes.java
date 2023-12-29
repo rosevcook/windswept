@@ -39,9 +39,8 @@ public class WindsweptBiomes {
 
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.TALL_FERNS.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.FERNS.getHolder().get());
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.CHESTNUT_TREES_COMMON.getHolder().get());
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.CHESTNUT_TREES.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.TALL_BIRCH.getHolder().get());
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.RARE_HOLLY_TREES.getHolder().get());
 
         return biome(snowy ? -.3f : .3f, .4f, 4159204, 329011, 12638463, snowy ? Biome.Precipitation.SNOW : Biome.Precipitation.RAIN, generation, baseChestnutSpawns()).build();
     }
@@ -75,7 +74,6 @@ public class WindsweptBiomes {
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.TALL_FERNS.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.FERNS.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.PINE_TREES.getHolder().get());
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.RARE_HOLLY_TREES.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.HOLLY_BUSH.getHolder().get());
 
         return biome(snowy ? -.3f : .3f, .4f, 4159204, 329011, 12638463, snowy ? Biome.Precipitation.SNOW : Biome.Precipitation.RAIN, generation, basePineSpawns()).build();
@@ -111,8 +109,7 @@ public class WindsweptBiomes {
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.DRY_MOSS_ROCK.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.GELISOL_PATCH.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.TUNDRA_SNOW_PATCH.getHolder().get());
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.RARE_HOLLY_TREES.getHolder().get());
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.RARE_SPRUCE_TREES.getHolder().get());
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.HOLLY_BUSH.getHolder().get());
 
         return biome(1f, .2f, 4159204, 329011, 12638463, Biome.Precipitation.NONE, generation, basTundraSpawns()).build();
     }
