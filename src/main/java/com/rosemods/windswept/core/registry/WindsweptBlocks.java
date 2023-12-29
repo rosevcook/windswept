@@ -142,14 +142,18 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> PINE_LEAF_CARPET = HELPER.createCompatBlock(WindsweptConstants.QUARK, "pine_leaf_carpet", () -> new LeafCarpetBlock(Properties.PINE.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> PINE_LEAF_PILE = HELPER.createCompatBlock(WindsweptConstants.WOODWORKS, "pine_leaf_pile", () -> new LeafPileBlock(Properties.PINE.leafPile()), CreativeModeTab.TAB_DECORATIONS);
 
-    // Sprouts //
-    public static final RegistryObject<Block> SNOWY_SPROUTS = HELPER.createInjectedBlock("snowy_sprouts", Items.SEA_PICKLE, () -> new SproutsBlock(Properties.COLD_SPROUTS), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> GELISOL_SPROUTS = HELPER.createInjectedBlock("gelisol_sprouts", Items.SEA_PICKLE, () -> new SproutsBlock(Properties.COLD_SPROUTS), CreativeModeTab.TAB_DECORATIONS);
+    // Dry Moss //
     public static final RegistryObject<Block> DRY_MOSS_SPROUTS = HELPER.createInjectedBlock("dry_moss_sprouts", Items.SEA_PICKLE, () -> new SproutsBlock(Properties.COLD_SPROUTS), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> DRY_MOSS_CARPET = HELPER.createInjectedBlock("dry_moss_carpet", Items.MOSS_BLOCK, () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_CARPET)), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> DRY_MOSS_BLOCK = HELPER.createInjectedBlock("dry_moss_block", Items.MOSS_BLOCK, () -> new DryMossBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_BLOCK)), CreativeModeTab.TAB_DECORATIONS);
 
     // Gelisol Blocks //
+    public static final RegistryObject<Block> GELISOL_SPROUTS = HELPER.createInjectedBlock("gelisol_sprouts", Items.SEA_PICKLE, () -> new SproutsBlock(Properties.COLD_SPROUTS), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> GELISOL = HELPER.createInjectedBlock("gelisol", Items.PODZOL, () -> new GelisolBlock(BlockBehaviour.Properties.copy(Blocks.PODZOL)), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> GELISOL_PATH = HELPER.createInjectedBlock("gelisol_path", Items.DIRT_PATH, () -> new DirtPathBlock(BlockBehaviour.Properties.copy(Blocks.DIRT_PATH)), CreativeModeTab.TAB_DECORATIONS);
+
+    // Sprouts //
+    public static final RegistryObject<Block> SNOWY_SPROUTS = HELPER.createInjectedBlock("snowy_sprouts", Items.SEA_PICKLE, () -> new SproutsBlock(Properties.COLD_SPROUTS), CreativeModeTab.TAB_DECORATIONS);
 
     // Flowers //
     public static final RegistryObject<Block> RED_ROSE = HELPER.createBlock("red_rose", () -> new RoseFlowerBlock(WindsweptBlocks.RED_ROSE_BUSH, () -> MobEffects.WITHER, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
@@ -315,10 +319,7 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> SMOOTH_DOLOMITE_SLAB = HELPER.createBlock("smooth_dolomite_slab", () -> new SlabBlock(Properties.DOLOMITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> SMOOTH_DOLOMITE_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "smooth_dolomite_vertical_slab", () -> new VerticalSlabBlock(Properties.DOLOMITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
-    // Dry Moss Blocks //
-    public static final RegistryObject<Block> DRY_MOSS_CARPET = HELPER.createInjectedBlock("dry_moss_carpet", Items.MOSS_BLOCK, () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_CARPET)), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> DRY_MOSS_BLOCK = HELPER.createInjectedBlock("dry_moss_block", Items.MOSS_BLOCK, () -> new DryMossBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_BLOCK)), CreativeModeTab.TAB_DECORATIONS);
-
+    // Dry Mossy Blocks //
     public static final RegistryObject<Block> DRY_MOSSY_COBBLESTONE = HELPER.createInjectedBlock("dry_mossy_cobblestone", Items.MOSSY_COBBLESTONE, () -> new Block(BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> DRY_MOSSY_COBBLESTONE_STAIRS = HELPER.createInjectedBlock("dry_mossy_cobblestone_stairs", Items.MOSSY_COBBLESTONE_STAIRS, () -> new StairBlock(DRY_MOSSY_COBBLESTONE.get()::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> DRY_MOSSY_COBBLESTONE_SLAB = HELPER.createInjectedBlock("dry_mossy_cobblestone_slab", Items.MOSSY_COBBLESTONE_SLAB, () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
