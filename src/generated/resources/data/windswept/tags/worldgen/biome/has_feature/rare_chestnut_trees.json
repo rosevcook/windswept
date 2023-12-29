@@ -10,8 +10,6 @@
     "minecraft:snowy_taiga",
     "minecraft:birch_forest",
     "minecraft:flower_forest",
-    "minecraft:windswept_hills",
-    "windswept:pine_forest",
-    "windswept:snowy_pine_forest"
+    "minecraft:windswept_hills"
   ]
 }

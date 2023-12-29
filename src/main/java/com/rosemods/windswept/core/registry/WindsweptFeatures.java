@@ -210,7 +210,7 @@ public final class WindsweptFeatures {
         // Holly //
         public static final RegistryObject<PlacedFeature> HOLLY_TREES = register("holly_trees", ConfiguredFeatures.HOLLY_BEES, treePlacement(PlacementUtils.countExtra(3, .1f, 1)));
         public static final RegistryObject<PlacedFeature> RARE_HOLLY_TREES = register("rare_holly_trees", ConfiguredFeatures.HOLLY_BEES, treePlacement(PlacementUtils.countExtra(0, .1f, 1)));
-        public static final RegistryObject<PlacedFeature> HOLLY_BUSH = register("holly_bush", ConfiguredFeatures.HOLLY_BUSH, treePlacement(PlacementUtils.countExtra(0, .1f, 1)));
+        public static final RegistryObject<PlacedFeature> HOLLY_BUSH = register("holly_bush", ConfiguredFeatures.HOLLY_BUSH, treePlacement(PlacementUtils.countExtra(1, .1f, 2)));
 
         public static final RegistryObject<PlacedFeature> HOLLY_TREES_ON_SNOW = register("holly_trees_on_snow", ConfiguredFeatures.HOLLY_BEES, treeOnSnowPlacement(PlacementUtils.countExtra(9, .1f, 1)));
         public static final RegistryObject<PlacedFeature> RARE_HOLLY_TREES_ON_SNOW = register("rare_holly_trees_on_snow", ConfiguredFeatures.HOLLY_BEES, treeOnSnowPlacement(PlacementUtils.countExtra(0, .1f, 1)));
