@@ -61,6 +61,7 @@ public final class WindsweptBlockInfo {
         DataUtil.registerCompostable(SNOWY_SPROUTS.get(), .5f);
         DataUtil.registerCompostable(GELISOL_SPROUTS.get(), .5f);
         DataUtil.registerCompostable(DRY_MOSSY_SPROUTS.get(), .5f);
+        DataUtil.registerCompostable(MOSSY_SPROUTS.get(), .5f);
 
         DataUtil.registerCompostable(WILD_BERRY_COOKIE.get(), .85f);
         DataUtil.registerCompostable(GINGERBREAD_COOKIE.get(), .85f);
