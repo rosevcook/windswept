@@ -6,10 +6,7 @@ import com.rosemods.windswept.core.data.client.WindsweptSoundProvider;
 import com.rosemods.windswept.core.data.server.WindsweptLootTableProvider;
 import com.rosemods.windswept.core.data.server.WindsweptRecipeProvider;
 import com.rosemods.windswept.core.data.server.WindsweptStructureRepaletterProvider;
-import com.rosemods.windswept.core.data.server.modifiers.WindsweptAdvancementModifierProvider;
-import com.rosemods.windswept.core.data.server.modifiers.WindsweptBiomeModifier;
-import com.rosemods.windswept.core.data.server.modifiers.WindsweptLootModifierProvider;
-import com.rosemods.windswept.core.data.server.modifiers.WindsweptModdedBiomeSliceProvider;
+import com.rosemods.windswept.core.data.server.modifiers.*;
 import com.rosemods.windswept.core.data.server.tags.*;
 import com.rosemods.windswept.core.other.*;
 import com.rosemods.windswept.core.registry.*;
@@ -98,6 +95,7 @@ public class Windswept {
         gen.addProvider(server, new WindsweptStructureRepaletterProvider(event));
         gen.addProvider(server, new WindsweptModdedBiomeSliceProvider(event));
         gen.addProvider(server, new WindsweptPaintingVariantTagsProvider(event));
+        gen.addProvider(server, new WindsweptChunkGeneratorModifierProvider(event));
         gen.addProvider(server, WindsweptBiomeModifier.register(event));
     }
 

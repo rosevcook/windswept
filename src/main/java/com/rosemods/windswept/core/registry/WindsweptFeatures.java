@@ -74,17 +74,6 @@ public final class WindsweptFeatures {
                 .add(WindsweptBlocks.DRY_MOSS_CARPET.get().defaultBlockState(), 25)
                 .add(WindsweptBlocks.DRY_MOSS_SPROUTS.get().defaultBlockState(), 50)));
 
-        public static final SimpleBlockConfiguration GELISOL_VEGETATION = new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
-                .add(Blocks.AIR.defaultBlockState(), 50)
-                .add(WindsweptBlocks.FOXGLOVE.get().defaultBlockState(), 1)
-                .add(WindsweptBlocks.GELISOL_SPROUTS.get().defaultBlockState(), 30)));
-
-        public static final SimpleBlockConfiguration TUNDRA_SNOW_VEGETATION = new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
-                .add(Blocks.AIR.defaultBlockState(), 20)
-                .add(Blocks.SNOW.defaultBlockState(), 50)
-                .add(WindsweptBlocks.SNOWDROP.get().defaultBlockState(), 2)
-                .add(WindsweptBlocks.SNOWY_SPROUTS.get().defaultBlockState(), 20)));
-
         private static RandomPatchConfiguration createPlantPatch(int tries, BlockState state) {
             return new RandomPatchConfiguration(tries, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
                     new SimpleBlockConfiguration(new DualNoiseProvider(new InclusiveRange<>(1, 3),
@@ -174,12 +163,6 @@ public final class WindsweptFeatures {
         public static final RegistryObject<ConfiguredFeature<BlockStateConfiguration, ?>> DRY_MOSS_ROCK = CONFIGURED_FEATURES.register("dry_moss_rock", () -> new ConfiguredFeature<>(Feature.FOREST_ROCK, new BlockStateConfiguration(WindsweptBlocks.DRY_MOSSY_COBBLESTONE.get().defaultBlockState())));
         public static final RegistryObject<ConfiguredFeature<NoneFeatureConfiguration, ?>> FALLEN_LOG = CONFIGURED_FEATURES.register("fallen_log", () -> new ConfiguredFeature<>(WindsweptFeatures.FALLEN_LOG.get(), NoneFeatureConfiguration.NONE));
 
-        public static final RegistryObject<ConfiguredFeature<SimpleBlockConfiguration, ?>> GELISOL_VEGETATION = CONFIGURED_FEATURES.register("gelisol_vegetation", () -> new ConfiguredFeature<>(Feature.SIMPLE_BLOCK, Configs.GELISOL_VEGETATION));
-        public static final RegistryObject<ConfiguredFeature<VegetationPatchConfiguration, ?>> GELISOL_PATCH = CONFIGURED_FEATURES.register("gelisol_patch", () -> new ConfiguredFeature<>(Feature.VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, BlockStateProvider.simple(WindsweptBlocks.GELISOL.get()), PlacementUtils.inlinePlaced(GELISOL_VEGETATION.getHolder().get()), CaveSurface.FLOOR, ConstantInt.of(1), 0f, 5, .8f, UniformInt.of(4, 7), .3f)));
-
-        public static final RegistryObject<ConfiguredFeature<SimpleBlockConfiguration, ?>> TUNDRA_SNOW_VEGETAION = CONFIGURED_FEATURES.register("tundra_snow_vegetation", () -> new ConfiguredFeature<>(Feature.SIMPLE_BLOCK, Configs.TUNDRA_SNOW_VEGETATION));
-        public static final RegistryObject<ConfiguredFeature<VegetationPatchConfiguration, ?>> TUNDRA_SNOW_PATCH = CONFIGURED_FEATURES.register("tundra_snow_patch", () -> new ConfiguredFeature<>(Feature.VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, BlockStateProvider.simple(Blocks.SNOW_BLOCK), PlacementUtils.inlinePlaced(TUNDRA_SNOW_VEGETAION.getHolder().get()), CaveSurface.FLOOR, ConstantInt.of(1), 0f, 5, .8f, UniformInt.of(4, 7), .3f)));
-
         // Stone //
         public static final RegistryObject<ConfiguredFeature<OreConfiguration, ?>> SHALE = CONFIGURED_FEATURES.register("shale", () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), WindsweptBlocks.SHALE.get().defaultBlockState(), 64)));
 
@@ -225,11 +208,9 @@ public final class WindsweptFeatures {
         public static final RegistryObject<PlacedFeature> PINE_TREES = register("pine_trees", ConfiguredFeatures.PINE_BEES, treePlacement(PlacementUtils.countExtra(9, .1f, 1)));
 
         // Tundra Gen //
-        public static final RegistryObject<PlacedFeature> DRY_MOSS_PATCH = register("dry_moss_patch", ConfiguredFeatures.DRY_MOSS_PATCH, PlacementUtils.countExtra(2, .1f, 1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        public static final RegistryObject<PlacedFeature> DRY_MOSS_PATCH = register("dry_moss_patch", ConfiguredFeatures.DRY_MOSS_PATCH, PlacementUtils.countExtra(1, .1f, 1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         public static final RegistryObject<PlacedFeature> DRY_MOSS_ROCK = register("dry_moss_rock", ConfiguredFeatures.DRY_MOSS_ROCK, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         public static final RegistryObject<PlacedFeature> FALLEN_LOG = register("fallen_log", ConfiguredFeatures.FALLEN_LOG, PlacementUtils.countExtra(0, .1f, 2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
-        public static final RegistryObject<PlacedFeature> GELISOL_PATCH = register("gelisol_patch", ConfiguredFeatures.GELISOL_PATCH, PlacementUtils.countExtra(2, .1f, 1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
-        public static final RegistryObject<PlacedFeature> TUNDRA_SNOW_PATCH = register("tundra_snow_patch", ConfiguredFeatures.TUNDRA_SNOW_PATCH, PlacementUtils.countExtra(1, .1f, 1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
         // Stone //
         public static final RegistryObject<PlacedFeature> SHALE = register("shale", ConfiguredFeatures.SHALE, PlacementUtils.countExtra(2, .1f, 4), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(64), VerticalAnchor.absolute(256)), BiomeFilter.biome());

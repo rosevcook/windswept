@@ -23,7 +23,6 @@ public class WindsweptBiomes {
     public static final BiomeSubRegistryHelper.KeyedBiome TUNDRA = HELPER.createBiome("tundra", WindsweptBiomes::tundra);
 
     // Chestnut //
-
     private static Biome chestnutForest(boolean snowy) {
         BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder();
 
@@ -58,7 +57,6 @@ public class WindsweptBiomes {
     }
 
     // Pine //
-
     private static Biome pineForest(boolean snowy) {
         BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder();
 
@@ -92,23 +90,19 @@ public class WindsweptBiomes {
     }
 
     // Tundra //
-
     private static Biome tundra() {
         BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder();
 
         OverworldBiomes.globalOverworldGeneration(generation);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.FALLEN_LOG.getHolder().get());
-        BiomeDefaultFeatures.addPlainGrass(generation);
         BiomeDefaultFeatures.addDefaultOres(generation);
         BiomeDefaultFeatures.addDefaultSoftDisks(generation);
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
+        //generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
         BiomeDefaultFeatures.addDefaultMushrooms(generation);
         BiomeDefaultFeatures.addCommonBerryBushes(generation);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.LUPINE.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.DRY_MOSS_PATCH.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.DRY_MOSS_ROCK.getHolder().get());
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.GELISOL_PATCH.getHolder().get());
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.TUNDRA_SNOW_PATCH.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.HOLLY_BUSH.getHolder().get());
 
         return biome(1f, .2f, 4159204, 329011, 12638463, Biome.Precipitation.NONE, generation, basTundraSpawns()).build();
@@ -129,7 +123,6 @@ public class WindsweptBiomes {
     }
 
     // Util //
-
     private static Biome.BiomeBuilder biome(float temp, float downfall, int waterColor, int waterFogColor, int fogColor, Biome.Precipitation precipitation, BiomeGenerationSettings.Builder generation, MobSpawnSettings.Builder spawns) {
         return new Biome.BiomeBuilder()
                 .precipitation(precipitation)
