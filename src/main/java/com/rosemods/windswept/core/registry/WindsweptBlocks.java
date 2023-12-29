@@ -179,7 +179,7 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> VINE_WREATH = HELPER.createBlock("vine_wreath", () -> new WallDecorationBlock(Block.Properties.of(Material.DECORATION).instabreak().sound(SoundType.AZALEA).noCollission().noOcclusion()), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> CHRISTMAS_PUDDING = HELPER.createInjectedBlock("christmas_pudding", Items.CAKE, () -> new ChristmasPuddingBlock(BlockBehaviour.Properties.copy(Blocks.CAKE)), CreativeModeTab.TAB_FOOD);
     public static final RegistryObject<Block> FROSTBITER_TROPHY = HELPER.createBlock("frostbiter_trophy", () -> new WallDecorationBlock(Properties.HOLLY.ladder().sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> ICE_SHEET = HELPER.createBlock("ice_sheet", () -> new IceSheetBlock(BlockBehaviour.Properties.copy(Blocks.ICE)), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> ICE_SHEET = HELPER.createBlock("ice_sheet", () -> new IceSheetBlock(BlockBehaviour.Properties.of(Material.ICE).strength(.3f).sound(SoundType.GLASS).noOcclusion().friction(.98f)), CreativeModeTab.TAB_DECORATIONS);
 
     // Pinecone Blocks //
     public static final RegistryObject<Block> PINECONE = HELPER.createBlock("pinecone", () -> new PineconeBlock(Block.Properties.of(Material.PLANT, MaterialColor.COLOR_BROWN).strength(.25f).sound(WindsweptSoundTypes.PINECONE)), CreativeModeTab.TAB_DECORATIONS);

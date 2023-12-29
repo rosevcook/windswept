@@ -33,7 +33,7 @@ public class IciclesBlock extends Block implements SimpleWaterloggedBlock {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     private static final VoxelShape SHAPE = Block.box(1f, 4f, 1f, 15f, 16f, 15f);
     private static final VoxelShape TOP = Block.box(1f, 0f, 1f, 15f, 16f, 15f);
-    private static final VoxelShape BOTTOM = Block.box(2.5f, 5f, 2.5f, 13.5f, 16f, 13.5f);
+    private static final VoxelShape BOTTOM = Block.box(5f, 6f, 5f, 11f, 16f, 11f);
     private static final VoxelShape FLOOR = Block.box(2f, 0f, 2f, 14f, 4.5f, 14f);
 
     public IciclesBlock(Properties properties) {
