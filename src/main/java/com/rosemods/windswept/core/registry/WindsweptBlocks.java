@@ -143,8 +143,8 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> PINE_LEAF_PILE = HELPER.createCompatBlock(WindsweptConstants.WOODWORKS, "pine_leaf_pile", () -> new LeafPileBlock(Properties.PINE.leafPile()), CreativeModeTab.TAB_DECORATIONS);
 
     // Moss //
-    public static final RegistryObject<Block> MOSS_SPROUTS = HELPER.createInjectedBlock("moss_sprouts", Items.SEA_PICKLE, () -> new SproutsBlock(Properties.SPROUTS), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> DRY_MOSS_SPROUTS = HELPER.createInjectedBlock("dry_moss_sprouts", Items.SEA_PICKLE, () -> new SproutsBlock(Properties.SPROUTS), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> MOSSY_SPROUTS = HELPER.createInjectedBlock("mossy_sprouts", Items.SEA_PICKLE, () -> new SproutsBlock(Properties.SPROUTS), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> DRY_MOSSY_SPROUTS = HELPER.createInjectedBlock("dry_mossy_sprouts", Items.SEA_PICKLE, () -> new SproutsBlock(Properties.SPROUTS), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> DRY_MOSS_CARPET = HELPER.createInjectedBlock("dry_moss_carpet", Items.MOSS_BLOCK, () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_CARPET)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> DRY_MOSS_BLOCK = HELPER.createInjectedBlock("dry_moss_block", Items.MOSS_BLOCK, () -> new DryMossBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_BLOCK)), CreativeModeTab.TAB_DECORATIONS);
 
@@ -354,8 +354,8 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> POTTED_NIGHTSHADE = HELPER.createBlockNoItem("potted_nightshade", () -> new NightShadeFlowerPotBlock(NIGHTSHADE.get(), BlockBehaviour.Properties.of(Material.DECORATION).instabreak().noOcclusion().lightLevel(state -> 9)));
     public static final RegistryObject<Block> POTTED_SNOWY_SPROUTS = HELPER.createBlockNoItem("potted_snowy_sprouts", () -> new FlowerPotBlock(SNOWY_SPROUTS.get(), PropertyUtil.flowerPot()));
     public static final RegistryObject<Block> POTTED_GELISOL_SPROUTS = HELPER.createBlockNoItem("potted_gelisol_sprouts", () -> new FlowerPotBlock(GELISOL_SPROUTS.get(), PropertyUtil.flowerPot()));
-    public static final RegistryObject<Block> POTTED_DRY_MOSS_SPROUTS = HELPER.createBlockNoItem("potted_dry_moss_sprouts", () -> new FlowerPotBlock(DRY_MOSS_SPROUTS.get(), PropertyUtil.flowerPot()));
-    public static final RegistryObject<Block> POTTED_MOSS_SPROUTS = HELPER.createBlockNoItem("potted_moss_sprouts", () -> new FlowerPotBlock(MOSS_SPROUTS.get(), PropertyUtil.flowerPot()));
+    public static final RegistryObject<Block> POTTED_DRY_MOSSY_SPROUTS = HELPER.createBlockNoItem("potted_dry_mossy_sprouts", () -> new FlowerPotBlock(DRY_MOSSY_SPROUTS.get(), PropertyUtil.flowerPot()));
+    public static final RegistryObject<Block> POTTED_MOSSY_SPROUTS = HELPER.createBlockNoItem("potted_mossy_sprouts", () -> new FlowerPotBlock(MOSSY_SPROUTS.get(), PropertyUtil.flowerPot()));
 
     // Misc //
     public static final RegistryObject<Block> WILD_BERRY_BUSH = HELPER.createBlockNoItem("wild_berry_bush", () -> new WildBerryBushBlock(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_PURPLE).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH).offsetType(BlockBehaviour.OffsetType.XZ)));

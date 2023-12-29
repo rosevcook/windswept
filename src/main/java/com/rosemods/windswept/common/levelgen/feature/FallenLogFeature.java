@@ -54,7 +54,7 @@ public class FallenLogFeature extends Feature<NoneFeatureConfiguration> {
 
         BlockState log = (rand.nextBoolean() ? Blocks.SPRUCE_LOG : WindsweptBlocks.HOLLY_LOG.get()).defaultBlockState().setValue(LogBlock.AXIS, axis);
         BlockState carpet = WindsweptBlocks.DRY_MOSS_CARPET.get().defaultBlockState();
-        BlockState sprouts = WindsweptBlocks.DRY_MOSS_SPROUTS.get().defaultBlockState();
+        BlockState sprouts = WindsweptBlocks.DRY_MOSSY_SPROUTS.get().defaultBlockState();
 
         if (logs.size() >= 4) {
             for (BlockPos pos : logs) {

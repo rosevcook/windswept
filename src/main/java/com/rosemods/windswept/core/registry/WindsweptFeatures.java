@@ -73,13 +73,13 @@ public final class WindsweptFeatures {
                 .add(Blocks.AIR.defaultBlockState(), 50)
                 .add(WindsweptBlocks.MOSS_CAMPION.get().defaultBlockState(), 3)
                 .add(WindsweptBlocks.DRY_MOSS_CARPET.get().defaultBlockState(), 25)
-                .add(WindsweptBlocks.DRY_MOSS_SPROUTS.get().defaultBlockState(), 50)));
+                .add(WindsweptBlocks.DRY_MOSSY_SPROUTS.get().defaultBlockState(), 50)));
 
         public static final SimpleBlockConfiguration MOSS_VEGETATION = new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
                 .add(Blocks.FLOWERING_AZALEA.defaultBlockState(), 4)
                 .add(Blocks.AZALEA.defaultBlockState(), 7)
                 .add(Blocks.MOSS_CARPET.defaultBlockState(), 25)
-                .add(WindsweptBlocks.MOSS_SPROUTS.get().defaultBlockState(), 50)
+                .add(WindsweptBlocks.MOSSY_SPROUTS.get().defaultBlockState(), 50)
                 .add(Blocks.AIR.defaultBlockState(), 10)));
 
         private static RandomPatchConfiguration createPlantPatch(int tries, BlockState state) {
