@@ -38,60 +38,60 @@ public class WindsweptModelProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         // item models
-        this.generatedItem(HOLLY_BOATS.getFirst().get(), TextureFolder.Item);
-        this.generatedItem(HOLLY_BOATS.getSecond().get(), TextureFolder.Item);
-        this.generatedItem(CHESTNUT_BOATS.getFirst().get(), TextureFolder.Item);
-        this.generatedItem(CHESTNUT_BOATS.getSecond().get(), TextureFolder.Item);
-        this.generatedItem(PINE_BOATS.getFirst().get(), TextureFolder.Item);
-        this.generatedItem(PINE_BOATS.getSecond().get(), TextureFolder.Item);
-        this.generatedItem(HOLLY_BERRIES.get(), TextureFolder.Item);
-        this.generatedItem(WOODEN_BUCKET.get(), TextureFolder.Item);
-        this.generatedItem(WOODEN_MILK_BUCKET.get(), TextureFolder.Item);
-        this.generatedItem(WOODEN_POWDER_SNOW_BUCKET.get(), TextureFolder.Item);
-        this.generatedItem(WOODEN_WATER_BUCKET.get(), TextureFolder.Item);
-        this.generatedItem(WILD_BERRIES.get(), TextureFolder.Item);
-        this.itemOnAStick(WILD_BERRY_POPSICLE.get(), TextureFolder.Item);
-        this.generatedItem(WILD_BERRY_COOKIE.get(), TextureFolder.Item);
-        this.generatedItem(WILD_BERRY_JUICE.get(), TextureFolder.Item);
-        this.generatedItem(WILD_BERRY_BOWL.get(), TextureFolder.Item);
-        this.generatedItem(SWEET_BERRY_BOWL.get(), TextureFolder.Item);
-        this.generatedItem(CHRISTMAS_PUDDING_SLICE.get(), TextureFolder.Item);
-        this.generatedItem(MUTTON_PIE.get(), TextureFolder.Item);
-        this.generatedItem(GOAT.get(), TextureFolder.Item);
-        this.generatedItem(COOKED_GOAT.get(), TextureFolder.Item);
-        this.generatedItem(GOAT_STEW.get(), TextureFolder.Item);
-        this.generatedItem(GOAT_SHANKS.get(), TextureFolder.Item);
-        this.generatedItem(COOKED_GOAT_SHANKS.get(), TextureFolder.Item);
-        this.generatedItem(FOUL_BERRY_BOWL.get(), TextureFolder.Item);
-        this.generatedItem(WILD_BERRY_PIPS.get(), TextureFolder.Item);
+        this.generatedItem(HOLLY_BOATS.getFirst().get(), TextureFolder.ITEM);
+        this.generatedItem(HOLLY_BOATS.getSecond().get(), TextureFolder.ITEM);
+        this.generatedItem(CHESTNUT_BOATS.getFirst().get(), TextureFolder.ITEM);
+        this.generatedItem(CHESTNUT_BOATS.getSecond().get(), TextureFolder.ITEM);
+        this.generatedItem(PINE_BOATS.getFirst().get(), TextureFolder.ITEM);
+        this.generatedItem(PINE_BOATS.getSecond().get(), TextureFolder.ITEM);
+        this.generatedItem(HOLLY_BERRIES.get(), TextureFolder.ITEM);
+        this.generatedItem(WOODEN_BUCKET.get(), TextureFolder.ITEM);
+        this.generatedItem(WOODEN_MILK_BUCKET.get(), TextureFolder.ITEM);
+        this.generatedItem(WOODEN_POWDER_SNOW_BUCKET.get(), TextureFolder.ITEM);
+        this.generatedItem(WOODEN_WATER_BUCKET.get(), TextureFolder.ITEM);
+        this.generatedItem(WILD_BERRIES.get(), TextureFolder.ITEM);
+        this.itemOnAStick(WILD_BERRY_POPSICLE.get(), TextureFolder.ITEM);
+        this.generatedItem(WILD_BERRY_COOKIE.get(), TextureFolder.ITEM);
+        this.generatedItem(WILD_BERRY_JUICE.get(), TextureFolder.ITEM);
+        this.generatedItem(WILD_BERRY_BOWL.get(), TextureFolder.ITEM);
+        this.generatedItem(SWEET_BERRY_BOWL.get(), TextureFolder.ITEM);
+        this.generatedItem(CHRISTMAS_PUDDING_SLICE.get(), TextureFolder.ITEM);
+        this.generatedItem(MUTTON_PIE.get(), TextureFolder.ITEM);
+        this.generatedItem(GOAT.get(), TextureFolder.ITEM);
+        this.generatedItem(COOKED_GOAT.get(), TextureFolder.ITEM);
+        this.generatedItem(GOAT_STEW.get(), TextureFolder.ITEM);
+        this.generatedItem(GOAT_SHANKS.get(), TextureFolder.ITEM);
+        this.generatedItem(COOKED_GOAT_SHANKS.get(), TextureFolder.ITEM);
+        this.generatedItem(FOUL_BERRY_BOWL.get(), TextureFolder.ITEM);
+        this.generatedItem(WILD_BERRY_PIPS.get(), TextureFolder.ITEM);
         this.generatedItemWithOverlay(SNOW_BOOTS.get());
-        this.generatedItem(FROST_ARROW.get(), TextureFolder.Item);
-        this.itemOnAStick(HOLLY_BERRIES_ON_A_STICK.get(), TextureFolder.Item);
-        this.generatedItem(FROZEN_FLESH.get(), TextureFolder.Item);
-        this.generatedItem(FROZEN_BRANCH.get(), TextureFolder.Item);
-        this.generatedItem(SNOW_GOLEM_BANNER_PATTERN.get(), TextureFolder.Item);
-        this.generatedItem(SNOW_CHARGE_BANNER_PATTERN.get(), TextureFolder.Item);
-        this.generatedItem(ROSE_FLOWER_BANNER_PATTERN.get(), TextureFolder.Item);
-        this.generatedItem(MUSIC_DISC_RAIN.get(), TextureFolder.Item);
-        this.generatedItem(MUSIC_DISC_SNOW.get(), TextureFolder.Item);
-        this.generatedItem(MUSIC_DISC_BUMBLEBEE.get(), TextureFolder.Item);
+        this.generatedItem(FROST_ARROW.get(), TextureFolder.ITEM);
+        this.itemOnAStick(HOLLY_BERRIES_ON_A_STICK.get(), TextureFolder.ITEM);
+        this.generatedItem(FROZEN_FLESH.get(), TextureFolder.ITEM);
+        this.generatedItem(FROZEN_BRANCH.get(), TextureFolder.ITEM);
+        this.generatedItem(SNOW_GOLEM_BANNER_PATTERN.get(), TextureFolder.ITEM);
+        this.generatedItem(SNOW_CHARGE_BANNER_PATTERN.get(), TextureFolder.ITEM);
+        this.generatedItem(ROSE_FLOWER_BANNER_PATTERN.get(), TextureFolder.ITEM);
+        this.generatedItem(MUSIC_DISC_RAIN.get(), TextureFolder.ITEM);
+        this.generatedItem(MUSIC_DISC_SNOW.get(), TextureFolder.ITEM);
+        this.generatedItem(MUSIC_DISC_BUMBLEBEE.get(), TextureFolder.ITEM);
         this.spawnEgg(CHILLED_SPAWN_EGG);
         this.spawnEgg(FROSTBITER_SPAWN_EGG);
-        this.generatedItem(HOLLY_FURNACE_BOAT.get(), TextureFolder.Item);
-        this.generatedItem(LARGE_HOLLY_BOAT.get(), TextureFolder.Item);
-        this.generatedItem(CHESTNUT_FURNACE_BOAT.get(), TextureFolder.Item);
-        this.generatedItem(LARGE_CHESTNUT_BOAT.get(), TextureFolder.Item);
-        this.generatedItem(PINE_FURNACE_BOAT.get(), TextureFolder.Item);
-        this.generatedItem(LARGE_PINE_BOAT.get(), TextureFolder.Item);
-        this.generatedItem(CHESTNUTS.get(), TextureFolder.Item);
-        this.generatedItem(ROASTED_CHESTNUTS.get(), TextureFolder.Item);
-        this.generatedItem(CHESTNUT_SOUP.get(), TextureFolder.Item);
-        this.generatedItem(CHESTNUT_RISOTTO.get(), TextureFolder.Item);
-        this.generatedItem(CHESTNUT_CHICKEN_PLATTER.get(), TextureFolder.Item);
-        this.generatedItem(GINGER_ROOT.get(), TextureFolder.Item);
-        this.generatedItem(GINGERBREAD_COOKIE.get(), TextureFolder.Item);
-        this.generatedItem(GINGER_SORBET.get(), TextureFolder.Item);
-        this.handheldItem(CANDY_CANE.get(), TextureFolder.Item);
+        this.generatedItem(HOLLY_FURNACE_BOAT.get(), TextureFolder.ITEM);
+        this.generatedItem(LARGE_HOLLY_BOAT.get(), TextureFolder.ITEM);
+        this.generatedItem(CHESTNUT_FURNACE_BOAT.get(), TextureFolder.ITEM);
+        this.generatedItem(LARGE_CHESTNUT_BOAT.get(), TextureFolder.ITEM);
+        this.generatedItem(PINE_FURNACE_BOAT.get(), TextureFolder.ITEM);
+        this.generatedItem(LARGE_PINE_BOAT.get(), TextureFolder.ITEM);
+        this.generatedItem(CHESTNUTS.get(), TextureFolder.ITEM);
+        this.generatedItem(ROASTED_CHESTNUTS.get(), TextureFolder.ITEM);
+        this.generatedItem(CHESTNUT_SOUP.get(), TextureFolder.ITEM);
+        this.generatedItem(CHESTNUT_RISOTTO.get(), TextureFolder.ITEM);
+        this.generatedItem(CHESTNUT_CHICKEN_PLATTER.get(), TextureFolder.ITEM);
+        this.generatedItem(GINGER_ROOT.get(), TextureFolder.ITEM);
+        this.generatedItem(GINGERBREAD_COOKIE.get(), TextureFolder.ITEM);
+        this.generatedItem(GINGER_SORBET.get(), TextureFolder.ITEM);
+        this.handheldItem(CANDY_CANE.get(), TextureFolder.ITEM);
 
         // holly
         this.pillar(STRIPPED_HOLLY_LOG);
@@ -275,9 +275,9 @@ public class WindsweptModelProvider extends BlockStateProvider {
                 .partialState().with(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.THREE).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/christmas_pudding_3"))))
                 .partialState().with(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.TWO).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/christmas_pudding_2"))))
                 .partialState().with(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.ONE).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/christmas_pudding_1"))));
-        this.generatedItem(CHRISTMAS_PUDDING.get(), TextureFolder.Item);
+        this.generatedItem(CHRISTMAS_PUDDING.get(), TextureFolder.ITEM);
         this.horizontalBlock(FROSTBITER_TROPHY.get(), this.models().getExistingFile(this.modLoc("block/frostbiter_trophy")));
-        this.generatedItem(FROSTBITER_TROPHY.get(), TextureFolder.Item);
+        this.generatedItem(FROSTBITER_TROPHY.get(), TextureFolder.ITEM);
         this.iceSheet(ICE_SHEET, this.blockTexture(Blocks.ICE));
 
         // sprouts
@@ -318,7 +318,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
                 .partialState().with(IciclesBlock.STATE, IciclesBlock.IcicleStates.TOP).addModels(new ConfiguredModel(this.models().cross("icicles_top", this.modLoc("block/icicles_top")).renderType("cutout")))
                 .partialState().with(IciclesBlock.STATE, IciclesBlock.IcicleStates.BOTTOM).addModels(new ConfiguredModel(this.models().cross("icicles_bottom", this.modLoc("block/icicles_bottom")).renderType("cutout")))
                 .partialState().with(IciclesBlock.STATE, IciclesBlock.IcicleStates.FLOOR).addModels(new ConfiguredModel(this.models().cross("icicles_floor", this.modLoc("block/icicles_floor")).renderType("cutout")));
-        this.generatedItem(ICICLES.get(), TextureFolder.Item);
+        this.generatedItem(ICICLES.get(), TextureFolder.ITEM);
         this.pillar(ICICLE_BLOCK);
         this.pillar(CHISELED_ICICLE_BLOCK);
         this.doorCutout(ICICLE_DOOR);
@@ -331,7 +331,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
                 .partialState().with(IceLanternBlock.FACING, Direction.SOUTH).addModels(ConfiguredModel.builder().modelFile(this.models().getExistingFile(this.modLoc("block/ice_lantern_side"))).rotationY(180).build())
                 .partialState().with(IceLanternBlock.FACING, Direction.EAST).addModels(ConfiguredModel.builder().modelFile(this.models().getExistingFile(this.modLoc("block/ice_lantern_side"))).rotationY(90).build())
                 .partialState().with(IceLanternBlock.FACING, Direction.WEST).addModels(ConfiguredModel.builder().modelFile(this.models().getExistingFile(this.modLoc("block/ice_lantern_side"))).rotationY(270).build());
-        this.generatedItem(ICE_LANTERN.get(), TextureFolder.Item);
+        this.generatedItem(ICE_LANTERN.get(), TextureFolder.ITEM);
 
         // dolomite
         this.getVariantBuilder(DOLOMITE.get())
@@ -462,7 +462,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         String name = getItemName(pinecone.get());
         ResourceLocation texture = this.blockTexture(pinecone.get());
 
-        this.generatedItem(pinecone.get(), TextureFolder.Item);
+        this.generatedItem(pinecone.get(), TextureFolder.ITEM);
         this.getVariantBuilder(pinecone.get())
                 .partialState().with(PineconeBlock.AMOUNT, 1).addModels(new ConfiguredModel(this.models().withExistingParent(name + "_1", this.modLoc("block/hanging_pinecone_template_1")).texture("texture", texture)))
                 .partialState().with(PineconeBlock.AMOUNT, 2).addModels(new ConfiguredModel(this.models().withExistingParent(name + "_2", this.modLoc("block/hanging_pinecone_template_2")).texture("texture", texture)))
@@ -488,7 +488,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
     private void bars(RegistryObject<Block> block) {
         ResourceLocation texture = this.blockTexture(block.get());
         this.paneBlockWithRenderType((IronBarsBlock) block.get(), texture, texture, "cutout");
-        this.generatedItem(block.get(), TextureFolder.Block);
+        this.generatedItem(block.get(), TextureFolder.BLOCK);
     }
 
     private void tallPlant(RegistryObject<Block> flower) {
@@ -504,13 +504,13 @@ public class WindsweptModelProvider extends BlockStateProvider {
     private void pottedPlant(RegistryObject<Block> plant, RegistryObject<Block> pot) {
         this.pot(pot, this.blockTexture(plant.get()));
         this.simpleCross(plant);
-        this.generatedItem(plant.get(), TextureFolder.Block);
+        this.generatedItem(plant.get(), TextureFolder.BLOCK);
     }
 
     private void pottedPlantWithPottedVariant(RegistryObject<Block> plant, RegistryObject<Block> pot) {
         this.pot(pot, this.modLoc("block/potted_" + getItemName(plant.get())));
         this.simpleCross(plant);
-        this.generatedItem(plant.get(), TextureFolder.Block);
+        this.generatedItem(plant.get(), TextureFolder.BLOCK);
     }
 
     private void pot(RegistryObject<Block> pot, ResourceLocation texture) {
@@ -536,13 +536,13 @@ public class WindsweptModelProvider extends BlockStateProvider {
     private void door(RegistryObject<Block> door) {
         String name = getItemName(door.get());
         this.doorBlock((DoorBlock) door.get(), name.replace("_door", ""), this.modLoc("block/" + name + "_bottom"), this.modLoc("block/" + name + "_top"));
-        this.generatedItem(door.get(), TextureFolder.Item);
+        this.generatedItem(door.get(), TextureFolder.ITEM);
     }
 
     private void doorCutout(RegistryObject<Block> door) {
         String name = getItemName(door.get());
         this.doorBlockWithRenderType((DoorBlock) door.get(), name.replace("_door", ""), this.modLoc("block/" + name + "_bottom"), this.modLoc("block/" + name + "_top"), "cutout");
-        this.generatedItem(door.get(), TextureFolder.Item);
+        this.generatedItem(door.get(), TextureFolder.ITEM);
     }
 
     private void button(RegistryObject<Block> button, ResourceLocation texture) {
@@ -559,7 +559,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         ResourceLocation texture = this.blockTexture(ladder.get());
 
         this.horizontalBlock(ladder.get(), this.models().withExistingParent(getItemName(ladder.get()), "block/ladder").texture("particle", texture).renderType("cutout").texture("texture", texture));
-        this.generatedItem(ladder.get(), TextureFolder.Block);
+        this.generatedItem(ladder.get(), TextureFolder.BLOCK);
     }
 
     private void fence(RegistryObject<Block> fence, ResourceLocation texture) {
@@ -656,7 +656,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
 
     private void signs(Pair<RegistryObject<BlueprintStandingSignBlock>, RegistryObject<BlueprintWallSignBlock>> signs, Supplier<Block> planks) {
         this.signBlock(signs.getFirst().get(), signs.getSecond().get(), this.blockTexture(planks.get()));
-        this.generatedItem(signs.getFirst().get(), TextureFolder.Item);
+        this.generatedItem(signs.getFirst().get(), TextureFolder.ITEM);
     }
 
     private void beehive(RegistryObject<Block> beehive) {
@@ -804,7 +804,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
     }
 
     private enum TextureFolder {
-        Item, Block;
+        ITEM, BLOCK;
 
         public String format(String itemName) {
             return this.name().toLowerCase() + '/' + itemName;
