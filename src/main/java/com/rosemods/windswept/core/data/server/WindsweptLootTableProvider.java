@@ -467,25 +467,27 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 
         @Override
         protected void addTables() {
-            this.add(WindsweptEntityTypes.CHILLED.get(),
-                    LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1f))
-                                    .add(LootItem.lootTableItem(FROZEN_FLESH::get)
-                                            .apply(SetItemCountFunction.setCount(UniformGenerator.between(-2f, 2f)))
-                                            .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0f, 1f)))))
-                            .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1f))
-                                    .add(LootItem.lootTableItem(Items.GOLD_INGOT))
-                                    .add(LootItem.lootTableItem(Items.BEETROOT))
-                                    .add(LootItem.lootTableItem(Items.APPLE)
-                                            .apply(SmeltItemFunction.smelted()
-                                                    .when(LootItemEntityPropertyCondition.hasProperties(
-                                                            LootContext.EntityTarget.THIS, ENTITY_ON_FIRE))))
-                                    .when(LootItemKilledByPlayerCondition.killedByPlayer())
-                                    .when(LootItemRandomChanceWithLootingCondition.randomChanceAndLootingBoost(.025f, .01f)))
-                            .withPool(
-                                    LootPool.lootPool().add(LootItem.lootTableItem(MUSIC_DISC_SNOW::get))
-                                            .when(LootItemEntityPropertyCondition.hasProperties(
-                                                    LootContext.EntityTarget.KILLER,
-                                                    EntityPredicate.Builder.entity().of(EntityTypeTags.SKELETONS)))));
+            this.add(WindsweptEntityTypes.CHILLED.get(), LootTable.lootTable()
+                    .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1f))
+                            .add(LootItem.lootTableItem(FROZEN_FLESH.get())
+                                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(-2f, 2f)))
+                                    .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0f, 1f)))))
+                    .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1f))
+                            .add(LootItem.lootTableItem(ICICLES.get())
+                                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(-3f, 1f)))
+                                    .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0f, 1f)))))
+                    .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1f))
+                            .add(LootItem.lootTableItem(Items.GOLD_INGOT))
+                            .add(LootItem.lootTableItem(Items.BEETROOT))
+                            .add(LootItem.lootTableItem(Items.APPLE)
+                                    .apply(SmeltItemFunction.smelted().when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS, ENTITY_ON_FIRE))))
+                            .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                            .when(LootItemRandomChanceWithLootingCondition.randomChanceAndLootingBoost(.025f, .01f)))
+                    .withPool(LootPool.lootPool()
+                            .add(LootItem.lootTableItem(MUSIC_DISC_SNOW::get))
+                            .when(LootItemEntityPropertyCondition.hasProperties(
+                                    LootContext.EntityTarget.KILLER,
+                                    EntityPredicate.Builder.entity().of(EntityTypeTags.SKELETONS)))));
             this.add(WindsweptEntityTypes.FROSTBITER.get(), LootTable.lootTable());
 
         }
@@ -507,7 +509,8 @@ public class WindsweptLootTableProvider extends LootTableProvider {
                     .add(LootItem.lootTableItem(Items.BOOK).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
                     .add(LootItem.lootTableItem(WOODEN_BUCKET.get()).setWeight(1).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))))
                     .add(LootItem.lootTableItem(WILD_BERRIES.get()).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(2f, 3f))))
-                    .add(LootItem.lootTableItem(Items.SNOW_BLOCK).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
+                    .add(LootItem.lootTableItem(ICICLES.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
+                    .add(LootItem.lootTableItem(Items.SNOWBALL).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
                     .add(LootItem.lootTableItem(Items.COBWEB).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
                     .add(LootItem.lootTableItem(HOLLY_SAPLING.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
                     .add(LootItem.lootTableItem(COOKED_GOAT.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
