@@ -83,6 +83,10 @@
         },
         {
           "type": "minecraft:item",
+          "name": "windswept:wild_berry_popsicle"
+        },
+        {
+          "type": "minecraft:item",
           "functions": [
             {
               "add": false,
