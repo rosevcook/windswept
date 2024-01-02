@@ -332,6 +332,7 @@
   "enchantment.windswept.slipping_curse.desc": "Causes the wearer to slip on any block as if it was ice whilst damaging the boots.",
   "entity.environmental.slabfish.type.chestnut": "Chestnut",
   "entity.environmental.slabfish.type.grove": "Grove",
+  "entity.environmental.slabfish.type.pine": "Pine",
   "entity.windswept.chilled": "Chilled",
   "entity.windswept.frost_arrow": "Frost Arrow",
   "entity.windswept.frostbiter": "Frostbiter",
