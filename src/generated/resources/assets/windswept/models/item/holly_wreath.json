@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "windswept:item/wreath",
   "textures": {
     "layer0": "windswept:block/holly_wreath"
   }

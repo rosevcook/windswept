@@ -2,10 +2,10 @@ package com.rosemods.windswept.core.registry;
 
 import com.mojang.datafixers.util.Pair;
 import com.rosemods.windswept.common.block.*;
-import com.rosemods.windswept.common.item.CarvedPumpkinBlockItem;
 import com.rosemods.windswept.common.block.grower.ChestnutTreeGrower;
 import com.rosemods.windswept.common.block.grower.HollyTreeGrower;
 import com.rosemods.windswept.common.block.grower.PineTreeGrower;
+import com.rosemods.windswept.common.item.WearableBlockItem;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.other.WindsweptConstants;
 import com.rosemods.windswept.core.other.WindsweptSoundTypes;
@@ -175,9 +175,9 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> WITHER_ROSE_BUSH = HELPER.createInjectedBlock("wither_rose_bush", Items.ROSE_BUSH, () -> new WitherRoseBushBlock(PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
 
     // Decoration Blocks //
-    public static final RegistryObject<Block> HOLLY_WREATH = HELPER.createBlock("holly_wreath", () -> new WallDecorationBlock(Block.Properties.of(Material.DECORATION).instabreak().sound(SoundType.AZALEA).noCollission().noOcclusion()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> PINECONE_WREATH = HELPER.createBlock("pinecone_wreath", () -> new WallDecorationBlock(Block.Properties.of(Material.DECORATION).instabreak().sound(SoundType.AZALEA).noCollission().noOcclusion()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> VINE_WREATH = HELPER.createBlock("vine_wreath", () -> new WallDecorationBlock(Block.Properties.of(Material.DECORATION).instabreak().sound(SoundType.AZALEA).noCollission().noOcclusion()), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> HOLLY_WREATH = HELPER.createBlockWithItem("holly_wreath", () -> new WallDecorationBlock(Block.Properties.of(Material.DECORATION).instabreak().sound(SoundType.AZALEA).noCollission()), () -> new WearableBlockItem(WindsweptBlocks.HOLLY_WREATH.get(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
+    public static final RegistryObject<Block> PINECONE_WREATH = HELPER.createBlockWithItem("pinecone_wreath", () -> new WallDecorationBlock(Block.Properties.of(Material.DECORATION).instabreak().sound(SoundType.AZALEA).noCollission()), () -> new WearableBlockItem(WindsweptBlocks.PINECONE_WREATH.get(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
+    public static final RegistryObject<Block> VINE_WREATH = HELPER.createBlockWithItem("vine_wreath", () -> new WallDecorationBlock(Block.Properties.of(Material.DECORATION).instabreak().sound(SoundType.AZALEA).noCollission()), () -> new WearableBlockItem(WindsweptBlocks.VINE_WREATH.get(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
     public static final RegistryObject<Block> CHRISTMAS_PUDDING = HELPER.createInjectedBlock("christmas_pudding", Items.CAKE, () -> new ChristmasPuddingBlock(BlockBehaviour.Properties.copy(Blocks.CAKE)), CreativeModeTab.TAB_FOOD);
     public static final RegistryObject<Block> FROSTBITER_TROPHY = HELPER.createBlock("frostbiter_trophy", () -> new WallDecorationBlock(Properties.HOLLY.ladder().sound(SoundType.WOOD)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> ICE_SHEET = HELPER.createBlock("ice_sheet", () -> new IceSheetBlock(BlockBehaviour.Properties.of(Material.ICE).strength(.3f).sound(SoundType.GLASS).noOcclusion().friction(.98f)), CreativeModeTab.TAB_DECORATIONS);
@@ -190,7 +190,7 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> ENDER_FAIRY_LIGHT = HELPER.createCompatBlock(WindsweptConstants.ENDERGETIC, "ender_fairy_light", () -> new PineconeBlock(BlockBehaviour.Properties.copy(PINECONE.get()).lightLevel(s -> 14)), CreativeModeTab.TAB_DECORATIONS);
 
     public static final RegistryObject<Block> PINECONE_BLOCK = HELPER.createBlock("pinecone_block", () -> new PineconeBlockBlock(Properties.PINECONE_BLOCK), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> CARVED_PINECONE_BLOCK = HELPER.createBlockWithItem("carved_pinecone_block", () -> new CarvedPineconeBlock(BlockBehaviour.Properties.copy(PINECONE_BLOCK.get()).randomTicks()), () -> new CarvedPumpkinBlockItem(WindsweptBlocks.CARVED_PINECONE_BLOCK.get(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
+    public static final RegistryObject<Block> CARVED_PINECONE_BLOCK = HELPER.createBlockWithItem("carved_pinecone_block", () -> new CarvedPineconeBlock(BlockBehaviour.Properties.copy(PINECONE_BLOCK.get()).randomTicks()), () -> new WearableBlockItem(WindsweptBlocks.CARVED_PINECONE_BLOCK.get(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
     public static final RegistryObject<Block> WILL_O_THE_WISP = HELPER.createBlock("will_o_the_wisp", () -> new WillOTheWispBlock(BlockBehaviour.Properties.copy(PINECONE_BLOCK.get()).lightLevel(s -> 10)), CreativeModeTab.TAB_DECORATIONS);
 
     public static final RegistryObject<Block> PINECONE_SHINGLES = HELPER.createBlock("pinecone_shingles", () -> new Block(Properties.PINECONE_BLOCK), CreativeModeTab.TAB_BUILDING_BLOCKS);

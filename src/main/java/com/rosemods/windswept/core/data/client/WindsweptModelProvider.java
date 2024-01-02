@@ -266,9 +266,9 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.button(POLISHED_DEEPSLATE_BUTTON, this.blockTexture(Blocks.POLISHED_DEEPSLATE));
 
         // decorations
-        this.ladder(HOLLY_WREATH);
-        this.ladder(PINECONE_WREATH);
-        this.ladder(VINE_WREATH);
+        this.wreath(HOLLY_WREATH);
+        this.wreath(PINECONE_WREATH);
+        this.wreath(VINE_WREATH);
         this.getVariantBuilder(CHRISTMAS_PUDDING.get())
                 .partialState().with(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.FIRE).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/christmas_pudding_fire"))))
                 .partialState().with(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.FOUR).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/christmas_pudding_4"))))
@@ -478,6 +478,13 @@ public class WindsweptModelProvider extends BlockStateProvider {
                 .partialState().with(WildBerryBushBlock.AGE, 1).addModels(new ConfiguredModel(model.apply(1), 0, 0, true))
                 .partialState().with(WildBerryBushBlock.AGE, 2).addModels(new ConfiguredModel(model.apply(2), 0, 0, true))
                 .partialState().with(WildBerryBushBlock.AGE, 3).addModels(new ConfiguredModel(model.apply(3), 0, 0, true));
+    }
+
+    private void wreath(RegistryObject<Block> wreath) {
+        ResourceLocation texture = this.blockTexture(wreath.get());
+
+        this.horizontalBlock(wreath.get(), this.models().withExistingParent(getItemName(wreath.get()), "block/ladder").texture("particle", texture).renderType("cutout").texture("texture", texture));
+        this.itemModels().withExistingParent(getItemName(wreath.get()), this.modLoc("item/wreath")).texture("layer0", texture);
     }
 
     private void iceSheet(RegistryObject<Block> block, ResourceLocation texture) {

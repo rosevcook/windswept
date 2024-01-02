@@ -6,8 +6,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Wearable;
 import net.minecraft.world.level.block.Block;
 
-public class CarvedPumpkinBlockItem extends BlockItem implements Wearable {
-    public CarvedPumpkinBlockItem(Block block, Properties properties) {
+public class WearableBlockItem extends BlockItem implements Wearable {
+    public WearableBlockItem(Block block, Properties properties) {
         super(block, properties);
     }
 
