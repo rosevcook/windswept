@@ -124,6 +124,16 @@
             },
             "trigger": "minecraft:consume_item"
           },
+          "windswept:ginger_tea": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:ginger_tea"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
           "windswept:gingerbread_cookie": {
             "conditions": {
               "item": {
@@ -309,6 +319,9 @@
           ],
           [
             "windswept:ginger_sorbet"
+          ],
+          [
+            "windswept:ginger_tea"
           ],
           [
             "windswept:goat"

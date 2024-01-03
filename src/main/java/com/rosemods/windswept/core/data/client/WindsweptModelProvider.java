@@ -91,6 +91,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.generatedItem(GINGER_ROOT.get(), TextureFolder.ITEM);
         this.generatedItem(GINGERBREAD_COOKIE.get(), TextureFolder.ITEM);
         this.generatedItem(GINGER_SORBET.get(), TextureFolder.ITEM);
+        this.generatedItem(GINGER_TEA.get(), TextureFolder.ITEM);
         this.handheldItem(CANDY_CANE.get(), TextureFolder.ITEM);
 
         // holly

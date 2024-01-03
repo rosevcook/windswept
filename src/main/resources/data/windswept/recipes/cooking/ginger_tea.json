@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "item": "windswept:ginger_root"
+    },
+    {
+      "item": "windswept:ginger_root"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "windswept:ginger_tea"
+  },
+  "experience": 1.0,
+  "cookingtime": 200,
+  "container": {
+    "item": "minecraft:glass_bottle"
+  }
+}

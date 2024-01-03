@@ -58,6 +58,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         ShapelessRecipeBuilder.shapeless(GINGERBREAD_COOKIE.get(), 8).requires(GINGER_ROOT.get()).requires(Items.WHEAT, 2).unlockedBy(getHasName(GINGER_ROOT.get()), has(GINGER_ROOT.get())).save(consumer, getSaveLocation(GINGERBREAD_COOKIE.get()));
         ShapelessRecipeBuilder.shapeless(GINGER_SORBET.get()).requires(PINECONE.get()).requires(GINGER_ROOT.get()).requires(ROASTED_CHESTNUTS.get()).requires(Items.SNOWBALL).requires(Items.SUGAR).unlockedBy(getHasName(GINGER_ROOT.get()), has(GINGER_ROOT.get())).save(consumer, getSaveLocation(GINGER_SORBET.get()));
         ShapelessRecipeBuilder.shapeless(CANDY_CANE.get(), 3).requires(WILD_BERRIES.get()).requires(Items.SUGAR, 2).unlockedBy(getHasName(WILD_BERRIES.get()), has(WILD_BERRIES.get())).save(consumer, getSaveLocation(CANDY_CANE.get()));
+        conditionalRecipe(ShapelessRecipeBuilder.shapeless(GINGER_TEA.get()).requires(Items.GLASS_BOTTLE).requires(GINGER_ROOT.get(), 2).requires(Items.SUGAR).unlockedBy(getHasName(GINGER_ROOT.get()), has(GINGER_ROOT.get())), new NotCondition(new ModLoadedCondition("farmersdelight")), consumer, getSaveLocation(GINGER_TEA.get()));
 
         // berry bowls
         ShapelessRecipeBuilder.shapeless(WILD_BERRY_BOWL.get()).requires(Items.BOWL).requires(WILD_BERRIES.get(), 3).unlockedBy(getHasName(WILD_BERRIES.get()), has(WILD_BERRIES.get())).save(consumer, getSaveLocation(WILD_BERRY_BOWL.get()));
@@ -122,7 +123,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         ShapedRecipeBuilder.shaped(POLISHED_DEEPSLATE_PRESSURE_PLATE.get()).define('#', Items.POLISHED_DEEPSLATE).pattern("##").unlockedBy(getHasName(Items.POLISHED_DEEPSLATE), has(Items.POLISHED_DEEPSLATE)).save(consumer, getSaveLocation(POLISHED_DEEPSLATE_PRESSURE_PLATE.get()));
         ShapelessRecipeBuilder.shapeless(POLISHED_SHALE_BUTTON.get()).requires(POLISHED_SHALE.get()).unlockedBy(getHasName(POLISHED_SHALE.get()), has(POLISHED_SHALE.get())).save(consumer, getSaveLocation(POLISHED_SHALE_BUTTON.get()));
         ShapedRecipeBuilder.shaped(POLISHED_SHALE_PRESSURE_PLATE.get()).define('#', POLISHED_SHALE.get()).pattern("##").unlockedBy(getHasName(POLISHED_SHALE.get()), has(POLISHED_SHALE.get())).save(consumer, getSaveLocation(POLISHED_SHALE_PRESSURE_PLATE.get()));
-        
+
         ShapelessRecipeBuilder.shapeless(FAIRY_LIGHT.get()).requires(PINECONE.get()).requires(Items.TORCH).unlockedBy(getHasName(PINECONE.get()), has(PINECONE.get())).save(consumer, getSaveLocation(FAIRY_LIGHT.get()));
         ShapelessRecipeBuilder.shapeless(SOUL_FAIRY_LIGHT.get()).requires(PINECONE.get()).requires(Items.SOUL_TORCH).unlockedBy(getHasName(PINECONE.get()), has(PINECONE.get())).save(consumer, getSaveLocation(SOUL_FAIRY_LIGHT.get()));
 
