@@ -361,9 +361,9 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.stairsInversion(CUT_DOLOMITE_STAIRS, this.blockTexture(CUT_DOLOMITE.get()), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top"));
         this.stairsInversion(CUT_DOLOMITE_BRICK_STAIRS, this.blockTexture(CUT_DOLOMITE_BRICKS.get()), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top"));
 
-        this.wall(DOLOMITE_WALL, this.blockTexture(DOLOMITE.get()));
-        this.wall(CUT_DOLOMITE_WALL, this.blockTexture(CUT_DOLOMITE.get()));
-        this.wall(CUT_DOLOMITE_BRICK_WALL, this.blockTexture(CUT_DOLOMITE_BRICKS.get()));
+        this.wall(DOLOMITE_WALL, this.blockTexture(DOLOMITE.get()), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"));
+        this.wall(CUT_DOLOMITE_WALL, this.blockTexture(CUT_DOLOMITE.get()), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top"));
+        this.wall(CUT_DOLOMITE_BRICK_WALL, this.blockTexture(CUT_DOLOMITE_BRICKS.get()), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top"));
 
         this.verticalSlab(DOLOMITE_VERTICAL_SLAB, this.blockTexture(DOLOMITE.get()), this.modLoc("block/dolomite"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"));
         this.verticalSlab(CUT_DOLOMITE_VERTICAL_SLAB, this.blockTexture(CUT_DOLOMITE.get()), this.modLoc("block/cut_dolomite"), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top"));
@@ -389,7 +389,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.simpleBlock(GLAZED_GINGERBREAD_BRICKS.get(), this.models().cubeTop("glazed_gingerbread_bricks", this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.modLoc("block/glazed_gingerbread_top")));
         this.stairsInversion(GLAZED_GINGERBREAD_BRICK_STAIRS, this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.modLoc("block/glazed_gingerbread_top"));
         this.slab(GLAZED_GINGERBREAD_BRICK_SLAB, this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.modLoc("block/glazed_gingerbread_top"));
-        this.wall(GLAZED_GINGERBREAD_BRICK_WALL, this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()));
+        this.wall(GLAZED_GINGERBREAD_BRICK_WALL, this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.modLoc("block/glazed_gingerbread_top"));
         this.verticalSlab(GLAZED_GINGERBREAD_BRICK_VERTICAL_SLAB, this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.blockTexture(GLAZED_GINGERBREAD_BRICKS.get()), this.modLoc("block/glazed_gingerbread_top"));
 
         this.itemModel(GLAZED_GINGERBREAD_BLOCK);
@@ -639,6 +639,16 @@ public class WindsweptModelProvider extends BlockStateProvider {
     private void wall(RegistryObject<Block> wall, ResourceLocation texture) {
         this.wallBlock((WallBlock) wall.get(), texture);
         this.itemModels().wallInventory(getItemName(wall.get()), texture);
+    }
+
+    private void wall(RegistryObject<Block> wall, ResourceLocation side, ResourceLocation bottom, ResourceLocation top) {
+        String name = getBlockName(wall.get());
+        ModelFile postModel = this.models().withExistingParent(name + "_post", this.modLoc("block/template_wall_post")).texture("side", side).texture("bottom", bottom).texture("top", top);
+        ModelFile sideModel = this.models().withExistingParent(name + "_side", this.modLoc("block/template_wall_side")).texture("side", side).texture("bottom", bottom).texture("top", top);
+        ModelFile sideTallModel = this.models().withExistingParent(name + "_side_tall", this.modLoc("block/template_wall_side_tall")).texture("side", side).texture("bottom", bottom).texture("top", top);
+
+        this.wallBlock((WallBlock) wall.get(), postModel, sideModel, sideTallModel);
+        this.itemModels().withExistingParent(name, this.modLoc("block/wall_inventory")).texture("side", side).texture("bottom", bottom).texture("top", top);
     }
 
     private void cubeAll(RegistryObject<Block> block) {

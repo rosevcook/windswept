@@ -1,6 +1,8 @@
 {
-  "parent": "minecraft:block/template_wall_side_tall",
+  "parent": "windswept:block/template_wall_side_tall",
   "textures": {
-    "wall": "windswept:block/cut_dolomite"
+    "bottom": "windswept:block/smooth_dolomite",
+    "side": "windswept:block/cut_dolomite",
+    "top": "windswept:block/dolomite_top"
   }
 }

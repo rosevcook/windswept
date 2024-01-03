@@ -1,6 +1,8 @@
 {
-  "parent": "minecraft:block/template_wall_side",
+  "parent": "windswept:block/template_wall_side",
   "textures": {
-    "wall": "windswept:block/glazed_gingerbread_bricks"
+    "bottom": "windswept:block/glazed_gingerbread_bricks",
+    "side": "windswept:block/glazed_gingerbread_bricks",
+    "top": "windswept:block/glazed_gingerbread_top"
   }
 }

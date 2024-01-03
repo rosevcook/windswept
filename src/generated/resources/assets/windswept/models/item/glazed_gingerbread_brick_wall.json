@@ -1,6 +1,8 @@
 {
-  "parent": "minecraft:block/wall_inventory",
+  "parent": "windswept:item/wall_inventory",
   "textures": {
-    "wall": "windswept:block/glazed_gingerbread_bricks"
+    "bottom": "windswept:block/glazed_gingerbread_bricks",
+    "side": "windswept:block/glazed_gingerbread_bricks",
+    "top": "windswept:block/glazed_gingerbread_top"
   }
 }

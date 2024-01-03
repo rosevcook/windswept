@@ -1,6 +1,8 @@
 {
-  "parent": "minecraft:block/wall_inventory",
+  "parent": "windswept:item/wall_inventory",
   "textures": {
-    "wall": "windswept:block/cut_dolomite_bricks"
+    "bottom": "windswept:block/smooth_dolomite",
+    "side": "windswept:block/cut_dolomite_bricks",
+    "top": "windswept:block/dolomite_top"
   }
 }
