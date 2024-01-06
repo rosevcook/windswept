@@ -34,6 +34,12 @@ public class CarvedPineconeBlock extends HorizontalDirectionalBlock implements W
     }
 
     @Override
+    public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        if (level.hasNeighborSignal(pos))
+            level.blockEvent(pos, this, 0, 0);
+    }
+
+    @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
         return player.getItemInHand(hand).isEmpty() && this.triggerEvent(state, level, pos, 0, 0) ? InteractionResult.SUCCESS : InteractionResult.PASS;
     }
@@ -56,6 +62,12 @@ public class CarvedPineconeBlock extends HorizontalDirectionalBlock implements W
         }
 
         return false;
+    }
+
+    @Override
+    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos nextPos, boolean p_60514_) {
+        if (!level.isClientSide && level.hasNeighborSignal(pos))
+            level.scheduleTick(pos, this, 2);
     }
 
     @Override
