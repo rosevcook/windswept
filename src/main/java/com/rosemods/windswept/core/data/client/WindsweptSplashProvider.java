@@ -5,6 +5,7 @@ import com.teamabnormals.blueprint.client.screen.splash.SplashProvider;
 import net.minecraftforge.data.event.GatherDataEvent;
 
 public class WindsweptSplashProvider extends SplashProvider {
+
     public WindsweptSplashProvider(GatherDataEvent event) {
         super(Windswept.MOD_ID, event.getGenerator());
     }
@@ -17,4 +18,5 @@ public class WindsweptSplashProvider extends SplashProvider {
         this.add("La, la. Time to wake up and smell the pain.");
         this.add("Cats aren't supposed to be purple?! ... gross ...");
     }
+
 }

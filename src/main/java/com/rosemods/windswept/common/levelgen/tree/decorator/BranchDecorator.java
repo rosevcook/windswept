@@ -51,7 +51,7 @@ public class BranchDecorator extends TreeDecorator {
 
         for (BlockPos pos : context.logs())
             if (pos.getY() - i >= this.minHeight && rand.nextFloat() <= .25f) {
-                List<Direction> directions = new LinkedList<>(List.of(Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST));
+                List<Direction> directions = Lists.newArrayList(Direction.Plane.HORIZONTAL);
                 logs.forEach(directions::remove);
                 Collections.shuffle(directions, new Random(rand.nextInt()));
 

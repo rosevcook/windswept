@@ -5,7 +5,6 @@ import com.rosemods.windswept.common.levelgen.feature.*;
 import com.rosemods.windswept.common.levelgen.tree.decorator.BranchDecorator;
 import com.rosemods.windswept.common.levelgen.tree.foliage_placer.ChestnutFoliagePlacer;
 import com.rosemods.windswept.common.levelgen.tree.trunk_placer.ChestnutTrunkPlacer;
-import com.rosemods.windswept.common.levelgen.tree.trunk_placer.PineTrunkPlacer;
 import com.rosemods.windswept.core.Windswept;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
@@ -55,14 +54,15 @@ public final class WindsweptFeatures {
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> ICICLES_PATCH = FEATURES.register("icicles_patch", IciclesFeature::new);
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> FLOOR_ICICLES_PATCH = FEATURES.register("floor_icicles_patch", FloorIciclesFeature::new);
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> FALLEN_LOG = FEATURES.register("fallen_log", FallenLogFeature::new);
+    public static final RegistryObject<Feature<TreeConfiguration>> PINE_TREE = FEATURES.register("pine_tree", PineTreeFeature::new);
 
     public static class Configs {
         public static final TreeConfiguration HOLLY_TREE = createHollyTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.HOLLY_LOG.get(), 2))).build();
         public static final TreeConfiguration HOLLY_TREE_BEES = createHollyTree().decorators(List.of(new BeehiveDecorator(.01f), BranchDecorator.create(WindsweptBlocks.HOLLY_LOG.get(), 2))).build();
-        public static final TreeConfiguration CHESTNUT_TREE = createChestnutTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.CHESTNUT_LOG.get(), 4))).build();
-        public static final TreeConfiguration CHESTNUT_TREE_BEES = createChestnutTree().decorators(List.of(new BeehiveDecorator(.005f), BranchDecorator.create(WindsweptBlocks.CHESTNUT_LOG.get(), 4))).build();
-        public static final TreeConfiguration PINE_TREE = createPineTree().build();
-        public static final TreeConfiguration PINE_TREE_BEES = createPineTree().decorators(List.of(new BeehiveDecorator(.005f))).build();
+        public static final TreeConfiguration CHESTNUT_TREE = createChestnutTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.CHESTNUT_LOG.get(), 3))).build();
+        public static final TreeConfiguration CHESTNUT_TREE_BEES = createChestnutTree().decorators(List.of(new BeehiveDecorator(.005f), BranchDecorator.create(WindsweptBlocks.CHESTNUT_LOG.get(), 3))).build();
+        public static final TreeConfiguration PINE_TREE = createPineTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.WEATHERED_PINE_LOG.get(), 4))).build();
+        public static final TreeConfiguration PINE_TREE_BEES = createPineTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.WEATHERED_PINE_LOG.get(), 4), new BeehiveDecorator(.005f))).build();
 
         public static SimpleBlockConfiguration createDryMossVegetation() {
             return new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
@@ -121,7 +121,7 @@ public final class WindsweptFeatures {
         private static TreeConfigurationBuilder createPineTree() {
             return new TreeConfiguration.TreeConfigurationBuilder(
                     BlockStateProvider.simple(WindsweptBlocks.PINE_LOG.get()),
-                    new PineTrunkPlacer(),
+                    new StraightTrunkPlacer(0, 0, 0),
                     BlockStateProvider.simple(WindsweptBlocks.PINE_LEAVES.get()),
                     new ChestnutFoliagePlacer(),
                     new TwoLayersFeatureSize(1, 0, 1))
@@ -160,8 +160,8 @@ public final class WindsweptFeatures {
         public static final RegistryObject<ConfiguredFeature<?, ?>> CHESTNUT_BEES = ConfiguredFeatures.CONFIGURED_FEATURES.register("chestnut_bees", () -> new ConfiguredFeature<>(Feature.TREE, Configs.CHESTNUT_TREE_BEES));
 
         // Pine //
-        public static final RegistryObject<ConfiguredFeature<?, ?>> PINE = CONFIGURED_FEATURES.register("pine_", () -> new ConfiguredFeature<>(Feature.TREE, Configs.PINE_TREE));
-        public static final RegistryObject<ConfiguredFeature<?, ?>> PINE_BEES = CONFIGURED_FEATURES.register("pine_bees", () -> new ConfiguredFeature<>(Feature.TREE, Configs.PINE_TREE_BEES));
+        public static final RegistryObject<ConfiguredFeature<?, ?>> PINE = CONFIGURED_FEATURES.register("pine_", () -> new ConfiguredFeature<>(PINE_TREE.get(), Configs.PINE_TREE));
+        public static final RegistryObject<ConfiguredFeature<?, ?>> PINE_BEES = CONFIGURED_FEATURES.register("pine_bees", () -> new ConfiguredFeature<>(PINE_TREE.get(), Configs.PINE_TREE_BEES));
 
         // Tundra Gen //
         public static final RegistryObject<ConfiguredFeature<BlockStateConfiguration, ?>> DRY_MOSS_ROCK = CONFIGURED_FEATURES.register("dry_moss_rock", () -> new ConfiguredFeature<>(Feature.FOREST_ROCK, new BlockStateConfiguration(WindsweptBlocks.DRY_MOSSY_COBBLESTONE.get().defaultBlockState())));
