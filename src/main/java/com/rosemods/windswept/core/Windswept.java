@@ -3,6 +3,7 @@ package com.rosemods.windswept.core;
 import com.rosemods.windswept.core.data.client.WindsweptLangProvider;
 import com.rosemods.windswept.core.data.client.WindsweptModelProvider;
 import com.rosemods.windswept.core.data.client.WindsweptSoundProvider;
+import com.rosemods.windswept.core.data.client.WindsweptSplashProvider;
 import com.rosemods.windswept.core.data.server.WindsweptLootTableProvider;
 import com.rosemods.windswept.core.data.server.WindsweptRecipeProvider;
 import com.rosemods.windswept.core.data.server.WindsweptStructureRepaletterProvider;
@@ -80,6 +81,7 @@ public class Windswept {
         gen.addProvider(client, new WindsweptSoundProvider(event));
         gen.addProvider(client, new WindsweptLangProvider(event));
         gen.addProvider(client, new WindsweptModelProvider(event));
+        gen.addProvider(client, new WindsweptSplashProvider(event));
 
         boolean server = event.includeServer();
         var blockTags = new WindsweptBlockTagProvider(event);
