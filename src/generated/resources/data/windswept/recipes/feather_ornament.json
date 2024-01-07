@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "windswept:pinecone"
+    },
+    "F": {
+      "item": "windswept:owl_feather"
+    }
+  },
+  "pattern": [
+    "##",
+    "FF"
+  ],
+  "result": {
+    "count": 2,
+    "item": "windswept:feather_ornament"
+  }
+}
