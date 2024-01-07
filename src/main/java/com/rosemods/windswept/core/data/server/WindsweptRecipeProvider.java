@@ -119,6 +119,9 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         ShapelessRecipeBuilder.shapeless(GLAZED_GINGERBREAD_BLOCK.get()).requires(GINGERBREAD_BLOCK.get()).requires(Items.SUGAR).unlockedBy(getHasName(GINGERBREAD_BLOCK.get()), has(GINGERBREAD_BLOCK.get())).save(consumer, getSaveLocation("glazed_gingerbread_block_from_sugar"));
         ShapelessRecipeBuilder.shapeless(GLAZED_GINGERBREAD_BRICKS.get()).requires(GINGERBREAD_BRICKS.get()).requires(Items.SUGAR).unlockedBy(getHasName(GINGERBREAD_BRICKS.get()), has(GINGERBREAD_BRICKS.get())).save(consumer, getSaveLocation("glazed_gingerbread_bricks_from_sugar"));
 
+        ShapedRecipeBuilder.shaped(FEATHER_WING.get(), 2).define('#', PINECONE.get()).define('F', OWL_FEATHER.get()).pattern("#FF").unlockedBy(getHasName(OWL_FEATHER.get()), has(OWL_FEATHER.get())).save(consumer, getSaveLocation(FEATHER_WING.get()));
+        ShapedRecipeBuilder.shaped(FEATHER_ORNAMENT.get(), 2).define('#', PINECONE.get()).define('F', OWL_FEATHER.get()).pattern("##").pattern("FF").unlockedBy(getHasName(OWL_FEATHER.get()), has(OWL_FEATHER.get())).save(consumer, getSaveLocation(FEATHER_WING.get()));
+
         ShapelessRecipeBuilder.shapeless(POLISHED_DEEPSLATE_BUTTON.get()).requires(Items.POLISHED_DEEPSLATE).unlockedBy(getHasName(Items.POLISHED_DEEPSLATE), has(Items.POLISHED_DEEPSLATE)).save(consumer, getSaveLocation(POLISHED_DEEPSLATE_BUTTON.get()));
         ShapedRecipeBuilder.shaped(POLISHED_DEEPSLATE_PRESSURE_PLATE.get()).define('#', Items.POLISHED_DEEPSLATE).pattern("##").unlockedBy(getHasName(Items.POLISHED_DEEPSLATE), has(Items.POLISHED_DEEPSLATE)).save(consumer, getSaveLocation(POLISHED_DEEPSLATE_PRESSURE_PLATE.get()));
         ShapelessRecipeBuilder.shapeless(POLISHED_SHALE_BUTTON.get()).requires(POLISHED_SHALE.get()).unlockedBy(getHasName(POLISHED_SHALE.get()), has(POLISHED_SHALE.get())).save(consumer, getSaveLocation(POLISHED_SHALE_BUTTON.get()));

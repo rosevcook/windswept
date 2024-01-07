@@ -93,6 +93,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.generatedItem(GINGER_SORBET.get(), TextureFolder.ITEM);
         this.generatedItem(GINGER_TEA.get(), TextureFolder.ITEM);
         this.handheldItem(CANDY_CANE.get(), TextureFolder.ITEM);
+        this.generatedItem(OWL_FEATHER.get(), TextureFolder.ITEM);
 
         // holly
         this.pillar(STRIPPED_HOLLY_LOG);
@@ -197,6 +198,12 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.hangingPinecone(SOUL_FAIRY_LIGHT);
         this.hangingPinecone(CUPRIC_FAIRY_LIGHT);
         this.hangingPinecone(ENDER_FAIRY_LIGHT);
+
+        this.horizontalBlock(FEATHER_WING.get(), this.models().getExistingFile(this.modLoc("block/feather_wing")));
+        this.generatedItem(FEATHER_WING.get(), TextureFolder.BLOCK);
+        this.simpleCross(FEATHER_ORNAMENT);
+        this.generatedItem(FEATHER_ORNAMENT.get(), TextureFolder.BLOCK);
+
         this.directionalBlock(PINECONE_BLOCK.get(), this.models().cubeTop("pinecone_block", this.modLoc("block/pinecone_block"), this.modLoc("block/pinecone_block_top")));
         this.itemModel(PINECONE_BLOCK);
         this.horizontalBlock(CARVED_PINECONE_BLOCK.get(), this.models().orientable("carved_pinecone_block", this.modLoc("block/pinecone_block"), this.modLoc("block/carved_pinecone_block"), this.modLoc("block/pinecone_block_top")));

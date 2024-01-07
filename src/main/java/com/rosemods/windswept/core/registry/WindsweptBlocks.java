@@ -183,7 +183,7 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> ICE_SHEET = HELPER.createBlock("ice_sheet", () -> new IceSheetBlock(BlockBehaviour.Properties.of(Material.ICE).strength(.3f).sound(SoundType.GLASS).noOcclusion().friction(.98f)), CreativeModeTab.TAB_DECORATIONS);
 
     // Pinecone Blocks //
-    public static final RegistryObject<Block> PINECONE = HELPER.createBlock("pinecone", () -> new PineconeBlock(Block.Properties.of(Material.PLANT, MaterialColor.COLOR_BROWN).strength(.25f).sound(WindsweptSoundTypes.PINECONE)), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> PINECONE = HELPER.createBlock("pinecone", () -> new PineconeBlock(Block.Properties.of(Material.PLANT, MaterialColor.COLOR_BROWN).strength(.25f).noOcclusion().sound(WindsweptSoundTypes.PINECONE)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> FAIRY_LIGHT = HELPER.createBlock("fairy_light", () -> new PineconeBlock(BlockBehaviour.Properties.copy(PINECONE.get()).lightLevel(s -> 14)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> SOUL_FAIRY_LIGHT = HELPER.createBlock("soul_fairy_light", () -> new PineconeBlock(BlockBehaviour.Properties.copy(PINECONE.get()).lightLevel(s -> 10)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> CUPRIC_FAIRY_LIGHT = HELPER.createCompatBlock(WindsweptConstants.CAVERNS_AND_CHASMS, "cupric_fairy_light", () -> new PineconeBlock(BlockBehaviour.Properties.copy(PINECONE.get()).lightLevel(s -> 10)), CreativeModeTab.TAB_DECORATIONS);
@@ -192,6 +192,9 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> PINECONE_BLOCK = HELPER.createBlock("pinecone_block", () -> new PineconeBlockBlock(Properties.PINECONE_BLOCK), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> CARVED_PINECONE_BLOCK = HELPER.createBlockWithItem("carved_pinecone_block", () -> new CarvedPineconeBlock(BlockBehaviour.Properties.copy(PINECONE_BLOCK.get()).randomTicks()), () -> new WearableBlockItem(WindsweptBlocks.CARVED_PINECONE_BLOCK.get(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
     public static final RegistryObject<Block> WILL_O_THE_WISP = HELPER.createBlock("will_o_the_wisp", () -> new WillOTheWispBlock(BlockBehaviour.Properties.copy(PINECONE_BLOCK.get()).lightLevel(s -> 10)), CreativeModeTab.TAB_DECORATIONS);
+
+    public static final RegistryObject<Block> FEATHER_WING = HELPER.createBlock("feather_wing", () -> new FeatherWingBlock(Block.Properties.of(Material.DECORATION, MaterialColor.COLOR_BROWN).strength(.1f).noOcclusion().noCollission().sound(WindsweptSoundTypes.PINECONE)), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> FEATHER_ORNAMENT = HELPER.createBlock("feather_ornament", () -> new FeatherOrnamentBlock(Properties.FEATHER_ORNAMENT), CreativeModeTab.TAB_DECORATIONS);
 
     public static final RegistryObject<Block> PINECONE_SHINGLES = HELPER.createBlock("pinecone_shingles", () -> new Block(Properties.PINECONE_BLOCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> PINECONE_SHINGLE_STAIRS = HELPER.createBlock("pinecone_shingle_stairs", () -> new StairBlock(PINECONE_SHINGLES.get()::defaultBlockState, Properties.PINECONE_BLOCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
@@ -375,6 +378,7 @@ public class WindsweptBlocks {
         public static final BlockBehaviour.Properties SHALE = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_BLUE).sound(SoundType.DRIPSTONE_BLOCK).requiresCorrectToolForDrops().strength(1.5f, 1f);
         public static final BlockBehaviour.Properties DOLOMITE = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_LIGHT_BLUE).sound(SoundType.CALCITE).requiresCorrectToolForDrops().strength(.8f);
         public static final BlockBehaviour.Properties GINGERBREAD = Block.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_ORANGE).strength(2.0F, 3.0F).sound(SoundType.WOOD);
+        public static final BlockBehaviour.Properties FEATHER_ORNAMENT = Block.Properties.of(Material.DECORATION, MaterialColor.COLOR_BROWN).strength(.1f).noOcclusion().noCollission().sound(SoundType.AZALEA);
     }
 
 }

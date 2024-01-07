@@ -90,6 +90,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateItem(GINGER_SORBET);
         this.translateItem(GINGER_TEA);
         this.translateItem(CANDY_CANE);
+        this.translateItem(OWL_FEATHER);
 
         this.add(HOLLY_FURNACE_BOAT.get(), "Holly Boat with Furnace");
         this.translateItem(LARGE_HOLLY_BOAT);
@@ -210,6 +211,10 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(PINECONE_BLOCK);
         this.translateBlock(CARVED_PINECONE_BLOCK);
         this.add(WILL_O_THE_WISP.get(), "Will o' the Wisp");
+
+        this.translateBlock(FEATHER_WING);
+        this.translateBlock(FEATHER_ORNAMENT);
+
         this.translateBlock(PINECONE_SHINGLES);
         this.translateBlock(PINECONE_SHINGLE_SLAB);
         this.translateBlock(PINECONE_SHINGLE_STAIRS);
