@@ -64,6 +64,8 @@ public final class WindsweptFeatures {
         public static final TreeConfiguration CHESTNUT_TREE_BEES = createChestnutTree().decorators(List.of(new BeehiveDecorator(.005f), BranchDecorator.create(WindsweptBlocks.CHESTNUT_LOG.get(), 4))).build();
         public static final TreeConfiguration PINE_TREE = createPineTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.WEATHERED_PINE_LOG.get(), 2))).build();
         public static final TreeConfiguration PINE_TREE_BEES = createPineTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.WEATHERED_PINE_LOG.get(), 2), new BeehiveDecorator(.005f))).build();
+        public static final TreeConfiguration SMALL_DARK_OAK_TREE = createDarkOakTree().build();
+        public static final TreeConfiguration SMALL_DARK_OAK_TREE_BEES = createDarkOakTree().decorators(List.of(new BeehiveDecorator(.005f))).build();
 
         public static SimpleBlockConfiguration createDryMossVegetation() {
             return new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
@@ -129,6 +131,16 @@ public final class WindsweptFeatures {
                     .forceDirt();
         }
 
+        private static TreeConfigurationBuilder createDarkOakTree() {
+            return new TreeConfiguration.TreeConfigurationBuilder(
+                    BlockStateProvider.simple(Blocks.DARK_OAK_LOG),
+                    new StraightTrunkPlacer(4, 2, 0),
+                    BlockStateProvider.simple(Blocks.DARK_OAK_LEAVES),
+                    new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(2), 4),
+                    new TwoLayersFeatureSize(1, 0, 1))
+                    .forceDirt();
+        }
+
     }
 
     public static class ConfiguredFeatures {
@@ -154,18 +166,19 @@ public final class WindsweptFeatures {
         public static final RegistryObject<ConfiguredFeature<?, ?>> ICICLES = CONFIGURED_FEATURES.register("icicles", () -> new ConfiguredFeature<>(ICICLES_PATCH.get(), NoneFeatureConfiguration.NONE));
         public static final RegistryObject<ConfiguredFeature<?, ?>> FLOOR_ICICLES = CONFIGURED_FEATURES.register("floor_icicles", () -> new ConfiguredFeature<>(FLOOR_ICICLES_PATCH.get(), NoneFeatureConfiguration.NONE));
 
-        // Holly //
+        // Trees //
         public static final RegistryObject<ConfiguredFeature<?, ?>> HOLLY = CONFIGURED_FEATURES.register("holly", () -> new ConfiguredFeature<>(Feature.TREE, Configs.HOLLY_TREE));
         public static final RegistryObject<ConfiguredFeature<?, ?>> HOLLY_BEES = CONFIGURED_FEATURES.register("holly_bees", () -> new ConfiguredFeature<>(Feature.TREE, Configs.HOLLY_TREE_BEES));
         public static final RegistryObject<ConfiguredFeature<?, ?>> HOLLY_BUSH = CONFIGURED_FEATURES.register("holly_bush", () -> new ConfiguredFeature<>(Feature.TREE, Configs.createHollyBush().build()));
 
-        // Chestnut //
         public static final RegistryObject<ConfiguredFeature<?, ?>> CHESTNUT = ConfiguredFeatures.CONFIGURED_FEATURES.register("chestnut", () -> new ConfiguredFeature<>(Feature.TREE, Configs.CHESTNUT_TREE));
         public static final RegistryObject<ConfiguredFeature<?, ?>> CHESTNUT_BEES = ConfiguredFeatures.CONFIGURED_FEATURES.register("chestnut_bees", () -> new ConfiguredFeature<>(Feature.TREE, Configs.CHESTNUT_TREE_BEES));
 
-        // Pine //
-        public static final RegistryObject<ConfiguredFeature<?, ?>> PINE = CONFIGURED_FEATURES.register("pine_", () -> new ConfiguredFeature<>(PINE_TREE.get(), Configs.PINE_TREE));
+        public static final RegistryObject<ConfiguredFeature<?, ?>> PINE = CONFIGURED_FEATURES.register("pine", () -> new ConfiguredFeature<>(PINE_TREE.get(), Configs.PINE_TREE));
         public static final RegistryObject<ConfiguredFeature<?, ?>> PINE_BEES = CONFIGURED_FEATURES.register("pine_bees", () -> new ConfiguredFeature<>(PINE_TREE.get(), Configs.PINE_TREE_BEES));
+
+        public static final RegistryObject<ConfiguredFeature<?, ?>> SMALL_DARK_OAK = CONFIGURED_FEATURES.register("small_dark_oak", () -> new ConfiguredFeature<>(Feature.TREE, Configs.SMALL_DARK_OAK_TREE));
+        public static final RegistryObject<ConfiguredFeature<?, ?>> SMALL_DARK_OAK_BEES = CONFIGURED_FEATURES.register("small_dark_oak_bees", () -> new ConfiguredFeature<>(Feature.TREE, Configs.SMALL_DARK_OAK_TREE_BEES));
 
         // Fallen Logs //
         public static final RegistryObject<ConfiguredFeature<?, ?>> TUNDRA_FALLEN_LOG = CONFIGURED_FEATURES.register("tundra_fallen_log", () -> new ConfiguredFeature<>(WindsweptFeatures.FALLEN_LOG.get(), new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(WindsweptBlocks.HOLLY_LOG.get().defaultBlockState(), 1).add(Blocks.SPRUCE_LOG.defaultBlockState(), 1)))));

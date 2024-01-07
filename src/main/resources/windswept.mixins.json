@@ -8,6 +8,7 @@
     "BeehiveBlockMixin",
     "BlockMixin",
     "BoatMixin",
+    "DarkOakTreeGrowerMixin",
     "DrownedMixin",
     "FlowerBlockMixin",
     "FoxEatBerriesGoalMixin",
