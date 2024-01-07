@@ -14,7 +14,7 @@ public class DryMossBlock extends MossBlock {
 
     @Override
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
-        WindsweptFeatures.ConfiguredFeatures.DRY_MOSS_PATCH_BONEMEAL.get().place(level, level.getChunkSource().getGenerator(), random, pos.above());
+        WindsweptFeatures.ConfiguredFeatures.DRY_MOSS_PATCH_SMALL.get().place(level, level.getChunkSource().getGenerator(), random, pos.above());
     }
 
 }

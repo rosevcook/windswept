@@ -285,7 +285,7 @@ public class WindsweptModdedBiomeSliceProvider extends ModdedBiomeSliceProvider 
             if (p_187245_ >= 3) {
                 return this.pickPlateauBiome(p_187245_, p_187246_, p_187247_);
             } else {
-                return VANILLA;
+                return WindsweptBiomes.SNOWY_PINE_FOREST.getKey();
             }
         }
 

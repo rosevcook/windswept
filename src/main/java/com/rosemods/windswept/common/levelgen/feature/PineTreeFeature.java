@@ -30,12 +30,20 @@ public class PineTreeFeature extends BlueprintTreeFeature {
 
         // log
         this.addLog(origin);
-        if (rand.nextBoolean())
-            this.addLog(origin.above());
-        else
-            this.addSpecialLog(origin.above(), weathered);
 
-        for (int y = 2; y < height; y++)
+        if (rand.nextBoolean()) {
+            this.addLog(origin.above());
+
+            if (rand.nextBoolean())
+                this.addLog(origin.above(2));
+            else
+                this.addSpecialLog(origin.above(2), weathered);
+        } else {
+            this.addSpecialLog(origin.above(), weathered);
+            this.addSpecialLog(origin.above(2), weathered);
+        }
+
+        for (int y = 3; y < height; y++)
             if (y < weatheredHeight)
                 this.addSpecialLog(origin.above(y), weathered);
             else

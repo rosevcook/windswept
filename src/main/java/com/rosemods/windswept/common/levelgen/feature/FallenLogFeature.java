@@ -12,17 +12,17 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
-import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 
 import java.util.List;
 
-public class FallenLogFeature extends Feature<NoneFeatureConfiguration> {
+public class FallenLogFeature extends Feature<SimpleBlockConfiguration> {
     public FallenLogFeature() {
-        super(NoneFeatureConfiguration.CODEC);
+        super(SimpleBlockConfiguration.CODEC);
     }
 
     @Override
-    public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
+    public boolean place(FeaturePlaceContext<SimpleBlockConfiguration> context) {
         BlockPos origin = context.origin();
         WorldGenLevel level = context.level();
         RandomSource rand = context.random();
@@ -52,16 +52,17 @@ public class FallenLogFeature extends Feature<NoneFeatureConfiguration> {
                 break;
         }
 
-        BlockState log = (rand.nextBoolean() ? Blocks.SPRUCE_LOG : WindsweptBlocks.HOLLY_LOG.get()).defaultBlockState().setValue(LogBlock.AXIS, axis);
+        BlockState log = context.config().toPlace().getState(rand, origin).setValue(LogBlock.AXIS, axis);
         BlockState carpet = WindsweptBlocks.DRY_MOSS_CARPET.get().defaultBlockState();
         BlockState sprouts = WindsweptBlocks.DRY_MOSSY_SPROUTS.get().defaultBlockState();
+        BlockState campion = WindsweptBlocks.MOSS_CAMPION.get().defaultBlockState();
 
         if (logs.size() >= 4) {
             for (BlockPos pos : logs) {
                 level.setBlock(pos, log, 2);
 
                 if (rand.nextBoolean() && level.getBlockState(pos.above()).isAir())
-                    level.setBlock(pos.above(), rand.nextInt(2) == 0 ? sprouts : carpet, 2);
+                    level.setBlock(pos.above(), rand.nextInt(4) == 0 ? campion : (rand.nextInt(2) == 0 ? sprouts : carpet), 2);
 
                 BlockState below = level.getBlockState(pos.below());
                 if (below.is(WindsweptBlocks.GELISOL.get()) || below.is(Blocks.GRASS_BLOCK))
