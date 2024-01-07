@@ -62,8 +62,8 @@ public final class WindsweptFeatures {
         public static final TreeConfiguration HOLLY_TREE_BEES = createHollyTree().decorators(List.of(new BeehiveDecorator(.01f), BranchDecorator.create(WindsweptBlocks.HOLLY_LOG.get(), 2))).build();
         public static final TreeConfiguration CHESTNUT_TREE = createChestnutTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.CHESTNUT_LOG.get(), 4))).build();
         public static final TreeConfiguration CHESTNUT_TREE_BEES = createChestnutTree().decorators(List.of(new BeehiveDecorator(.005f), BranchDecorator.create(WindsweptBlocks.CHESTNUT_LOG.get(), 4))).build();
-        public static final TreeConfiguration PINE_TREE = createPineTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.WEATHERED_PINE_LOG.get(), 4))).build();
-        public static final TreeConfiguration PINE_TREE_BEES = createPineTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.WEATHERED_PINE_LOG.get(), 4), new BeehiveDecorator(.005f))).build();
+        public static final TreeConfiguration PINE_TREE = createPineTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.WEATHERED_PINE_LOG.get(), 2))).build();
+        public static final TreeConfiguration PINE_TREE_BEES = createPineTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.WEATHERED_PINE_LOG.get(), 2), new BeehiveDecorator(.005f))).build();
 
         public static SimpleBlockConfiguration createDryMossVegetation() {
             return new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
@@ -147,6 +147,9 @@ public final class WindsweptFeatures {
         public static final RegistryObject<ConfiguredFeature<?, ?>> WILD_BERRY_BUSH = CONFIGURED_FEATURES.register("wild_berry_bush", () -> new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.createPlantPatch(32, WindsweptBlocks.WILD_BERRY_BUSH.get().defaultBlockState().setValue(WildBerryBushBlock.AGE, 3))));
         public static final RegistryObject<ConfiguredFeature<?, ?>> SNOWY_SPROUTS = CONFIGURED_FEATURES.register("snowy_sprouts", () -> new ConfiguredFeature<>(SNOWY_SPROUTS_PATCH.get(), NoneFeatureConfiguration.NONE));
 
+        public static final RegistryObject<ConfiguredFeature<?, ?>> GINGER_VEGETATION = CONFIGURED_FEATURES.register("ginger_vegetation", () -> new ConfiguredFeature<>(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(WindsweptBlocks.GINGER_FLOWER.get()))));
+        public static final RegistryObject<ConfiguredFeature<?, ?>> GINGER_PATCH = CONFIGURED_FEATURES.register("ginger_patch", () -> new ConfiguredFeature<>(Feature.VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.DIRT, BlockStateProvider.simple(WindsweptBlocks.GINGER_SOIL.get()), PlacementUtils.inlinePlaced(GINGER_VEGETATION.getHolder().get()), CaveSurface.FLOOR, ConstantInt.of(1), 0f, 5, .6f, UniformInt.of(1, 2), .75f)));
+
         // Icicles //
         public static final RegistryObject<ConfiguredFeature<?, ?>> ICICLES = CONFIGURED_FEATURES.register("icicles", () -> new ConfiguredFeature<>(ICICLES_PATCH.get(), NoneFeatureConfiguration.NONE));
         public static final RegistryObject<ConfiguredFeature<?, ?>> FLOOR_ICICLES = CONFIGURED_FEATURES.register("floor_icicles", () -> new ConfiguredFeature<>(FLOOR_ICICLES_PATCH.get(), NoneFeatureConfiguration.NONE));
@@ -201,6 +204,7 @@ public final class WindsweptFeatures {
         public static final RegistryObject<PlacedFeature> SNOWY_SPROUTS = createPlantPatch("snowy_sprouts", 4, ConfiguredFeatures.SNOWY_SPROUTS);
         public static final RegistryObject<PlacedFeature> TALL_FERNS = register("tall_ferns", VegetationFeatures.PATCH_LARGE_FERN, List.of(RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
         public static final RegistryObject<PlacedFeature> FERNS = register("ferns", ConfiguredFeatures.FERNS, CountPlacement.of(10), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+        public static final RegistryObject<PlacedFeature> GINGER_PATCH = register("ginger_patch", ConfiguredFeatures.GINGER_PATCH, PlacementUtils.countExtra(0, .1f, 1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
         // Icicles //
         public static final RegistryObject<PlacedFeature> ICICLES = register("icicles", ConfiguredFeatures.ICICLES, PlacementUtils.countExtra(4, .1f, 1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());

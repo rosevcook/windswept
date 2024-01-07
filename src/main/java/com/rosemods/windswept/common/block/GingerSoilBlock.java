@@ -22,8 +22,8 @@ public class GingerSoilBlock extends Block {
 
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-        if (player.getItemInHand(hand).canPerformAction(ToolActions.SHOVEL_FLATTEN))
-            popResource(level, pos.above(), new ItemStack(WindsweptItems.GINGER_ROOT.get(), level.random.nextBoolean() ? 1 : 2));
+        if (level.getBlockState(pos.above()).isAir() && player.getItemInHand(hand).canPerformAction(ToolActions.SHOVEL_FLATTEN))
+            popResource(level, pos.above(), new ItemStack(WindsweptItems.GINGER_ROOT.get()));
 
         return InteractionResult.PASS;
     }

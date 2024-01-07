@@ -11,9 +11,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 public class PineTreeFeature extends BlueprintTreeFeature {
     public PineTreeFeature() {
@@ -51,7 +49,6 @@ public class PineTreeFeature extends BlueprintTreeFeature {
 
         // branches
         List<Direction> directions = Lists.newArrayList(Direction.Plane.HORIZONTAL);
-        Collections.shuffle(directions, new Random(rand.nextInt()));
 
         for (int y = height - 3; y > 4; y--)
             if (rand.nextInt(3) > 0) {
