@@ -17,10 +17,7 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProv
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
 
-import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Random;
 
 public class BranchDecorator extends TreeDecorator {
     public static final Codec<BranchDecorator> CODEC = RecordCodecBuilder.create(i -> i
@@ -46,37 +43,26 @@ public class BranchDecorator extends TreeDecorator {
         if (rand.nextFloat() <= .25f)
             return;
 
-        int i = context.logs().get(0).getY();
-        List<Direction> logs = Lists.newArrayList();
+        List<BlockPos> logs = context.logs();
+        List<Direction> directions = Lists.newArrayList(Direction.Plane.HORIZONTAL);
+        int height = logs.get(0).getY();
 
-        for (BlockPos pos : context.logs())
-            if (pos.getY() - i >= this.minHeight && rand.nextFloat() <= .25f) {
-                List<Direction> directions = Lists.newArrayList(Direction.Plane.HORIZONTAL);
-                logs.forEach(directions::remove);
-                Collections.shuffle(directions, new Random(rand.nextInt()));
+        for (BlockPos pos : logs)
+            if (pos.getY() - height >= this.minHeight && rand.nextFloat() <= .25f) {
+                Direction direction = directions.get(rand.nextInt(directions.size()));
+                BlockPos blockpos = pos.offset(direction.getOpposite().getStepX(), 0, direction.getOpposite().getStepZ());
+                BlockState blockState = this.state.getState(rand, blockpos).setValue(LogBlock.AXIS, direction.getAxis());
 
-                for (Direction direction : directions) {
-                    BlockPos blockpos = pos.offset(direction.getOpposite().getStepX(), 0, direction.getOpposite().getStepZ());
+                if (blockState.is(Blocks.BIRCH_LOG) && !WindsweptConfig.COMMON.birchBranches.get())
+                    return;
+                else if (context.isAir(blockpos) && context.isAir(blockpos.below()) && context.isAir(blockpos.above())) {
+                    context.setBlock(blockpos, blockState);
+                    directions.remove(direction);
 
-                    if (context.isAir(blockpos) && context.isAir(blockpos.below()) && context.isAir(blockpos.above())) {
-                        BlockState blockState = this.state.getState(rand, blockpos);
-
-                        if (blockState.is(Blocks.BIRCH_LOG) && !WindsweptConfig.COMMON.birchBranches.get())
-                            return;
-
-                        if (blockState.hasProperty(LogBlock.AXIS))
-                            blockState = blockState.setValue(LogBlock.AXIS, direction.getAxis());
-
-                        context.setBlock(blockpos, blockState);
-                        logs.add(direction);
-
-                        if (rand.nextBoolean()) break;
-                        else return;
-                    }
+                    if (directions.isEmpty() || rand.nextBoolean())
+                        return;
                 }
             }
-
-
     }
 
     public static BranchDecorator create(Block block, int minHeight) {
