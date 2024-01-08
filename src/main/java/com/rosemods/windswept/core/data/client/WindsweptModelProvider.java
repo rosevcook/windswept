@@ -314,6 +314,11 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.pottedPlantWithPottedVariant(GINGER_FLOWER, POTTED_GINGER_FLOWER);
         this.pottedPlantWithPottedVariant(BLUEBELLS, POTTED_BLUEBELLS);
 
+        // lavender
+        this.simpleCross(LAVENDER);
+        this.generatedItem(LAVENDER.get(), TextureFolder.ITEM);
+        this.pot(POTTED_LAVENDER, this.blockTexture(LAVENDER.get()));
+
         // wild berry blocks
         this.wildBerryBush(WILD_BERRY_BUSH);
         this.compressedBlock(WILD_BERRY_BASKET);

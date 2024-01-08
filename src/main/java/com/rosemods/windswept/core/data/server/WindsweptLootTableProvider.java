@@ -338,6 +338,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(MOSS_CAMPION.get());
             this.dropSelf(GINGER_FLOWER.get());
             this.dropSelf(NIGHTSHADE.get());
+            this.dropSelf(LAVENDER.get());
 
             // pots
             this.dropPottedContents(POTTED_RED_ROSE.get());
@@ -354,6 +355,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropPottedContents(POTTED_GELISOL_SPROUTS.get());
             this.dropPottedContents(POTTED_DRY_MOSSY_SPROUTS.get());
             this.dropPottedContents(POTTED_MOSSY_SPROUTS.get());
+            this.dropPottedContents(POTTED_LAVENDER.get());
 
             // wild berry
             this.add(WILD_BERRY_BUSH.get(), b -> applyExplosionDecay(b, LootTable.lootTable()

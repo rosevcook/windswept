@@ -321,6 +321,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(MOSS_CAMPION);
         this.translateBlock(GINGER_FLOWER);
         this.translateBlock(NIGHTSHADE);
+        this.translateBlock(LAVENDER);
 
         this.translateBlock(POTTED_RED_ROSE);
         this.translateBlock(POTTED_BLUE_ROSE);
@@ -336,6 +337,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(POTTED_GELISOL_SPROUTS);
         this.translateBlock(POTTED_DRY_MOSSY_SPROUTS);
         this.translateBlock(POTTED_MOSSY_SPROUTS);
+        this.translateBlock(POTTED_LAVENDER);
 
         this.translateBlock(WILD_BERRY_BUSH);
         this.add(WILD_BERRY_BASKET.get(), "Basket of Wild Berries");
@@ -413,6 +415,8 @@ public class WindsweptLangProvider extends LanguageProvider {
         // Biomes //
         this.translateBiome(WindsweptBiomes.CHESTNUT_FOREST);
         this.translateBiome(WindsweptBiomes.SNOWY_CHESTNUT_FOREST);
+        this.translateBiome(WindsweptBiomes.PINE_FOREST);
+        this.translateBiome(WindsweptBiomes.SNOWY_PINE_FOREST);
         this.translateBiome(WindsweptBiomes.TUNDRA);
 
         // Enchantments //
