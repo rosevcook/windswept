@@ -78,4 +78,5 @@ public class FallenLogFeature extends Feature<SimpleBlockConfiguration> {
     private static boolean canPlaceOn(BlockState state) {
         return state.is(BlockTags.DIRT) || state.is(Blocks.SNOW_BLOCK);
     }
+
 }
