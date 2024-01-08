@@ -23,8 +23,8 @@ public class PineTreeFeature extends BlueprintTreeFeature {
         BlockPos origin = context.origin();
         RandomSource rand = context.random();
         BlockState weathered = WindsweptBlocks.WEATHERED_PINE_LOG.get().defaultBlockState();
-        int height = rand.nextInt(11, 14);
-        int weatheredHeight = rand.nextInt(5, 7);
+        int height = rand.nextInt(10, 14);
+        int weatheredHeight = rand.nextInt(5, 8);
 
         // log
         this.addLog(origin);
@@ -50,7 +50,7 @@ public class PineTreeFeature extends BlueprintTreeFeature {
         // branches
         List<Direction> directions = Lists.newArrayList(Direction.Plane.HORIZONTAL);
 
-        for (int y = height - 3; y > 4; y--)
+        for (int y = height - 4; y > 4; y--)
             if (rand.nextInt(3) > 0) {
                 Direction direction = directions.get(rand.nextInt(directions.size()));
                 BlockPos pos = origin.above(y).relative(direction);
@@ -64,30 +64,38 @@ public class PineTreeFeature extends BlueprintTreeFeature {
                     this.addLog(pos.below());
                 }
 
-                if (rand.nextInt(3) == 0)
-                    this.addFoliageWithPinecones(pos.relative(direction, 2), rand, 3);
+                this.addFoliage(pos.above());
 
-                for (int x = -1; x <= 1; ++x)
-                    for (int z = -1; z <= 1; ++z) {
-                        BlockPos bp = pos.offset(x, 0, z);
-                        this.addFoliageWithPinecones(bp, rand, 6);
+                if (rand.nextBoolean())
+                    this.addFoliageWithPinecones(pos.relative(direction, 2), rand, 2);
 
-                        if (x == 0 || z == 0)
-                            this.addFoliage(bp.above());
-                    }
+                for (int x = -1; x <= 1; x++)
+                    for (int z = -1; z <= 1; z++)
+                        this.addFoliageWithPinecones(pos.offset(x, 0, z), rand, 6);
 
                 if (directions.isEmpty())
                     break;
             }
 
         // leaves
-        for (int y = 0; y <= 3; y++) {
-            int r = y < 3 ? y : 1;
+        if (rand.nextBoolean())
+            this.addFoliage(origin.above(height + 1));
 
-            for (int x = -r; x <= r; x++)
-                for (int z = -r; z <= r; z++)
-                    if (Math.abs(x) + Math.abs(z) <= r)
-                        this.addFoliage(origin.offset(x, (1 - y) + height, z));
+        for (int y = 1; y < 5; y++) {
+            int i = switch (y) {
+                default -> y;
+                case 3 -> 2;
+                case 4 -> 1;
+            };
+
+            for (int x = -i; x <= i; x++)
+                for (int z = -i; z <= i; z++) {
+                    int absX = Math.abs(x);
+                    int absZ = Math.abs(z);
+
+                    if (absX + absZ <= i || (absX == 1 && absZ == 1 && rand.nextInt(8) == 0))
+                        this.addFoliage(origin.offset(x, (height + 1) - y, z));
+                }
         }
 
     }
