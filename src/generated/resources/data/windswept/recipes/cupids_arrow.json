@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "windswept:lavender"
+    },
+    "F": {
+      "item": "windswept:owl_feather"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "#",
+    "S",
+    "F"
+  ],
+  "result": {
+    "count": 4,
+    "item": "windswept:cupids_arrow"
+  }
+}

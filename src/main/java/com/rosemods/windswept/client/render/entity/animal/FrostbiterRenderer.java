@@ -1,4 +1,4 @@
-package com.rosemods.windswept.client.render.entity;
+package com.rosemods.windswept.client.render.entity.animal;
 
 import com.rosemods.windswept.client.model.FrostbiterModel;
 import com.rosemods.windswept.common.entity.animal.Frostbiter;

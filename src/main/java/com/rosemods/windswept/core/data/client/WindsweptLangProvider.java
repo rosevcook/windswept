@@ -76,6 +76,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateItem(FROZEN_BRANCH);
         this.translateItem(SNOW_BOOTS);
         this.translateItem(FROST_ARROW);
+        this.add(CUPIDS_ARROW.get(), "Cupid's Arrow");
         this.add(HOLLY_BERRIES_ON_A_STICK.get(), "Holly Berries on a Stick");
         this.translateBannerPattern(SNOW_CHARGE_BANNER_PATTERN, "snow_charge");
         this.translateBannerPattern(SNOW_GOLEM_BANNER_PATTERN, "snow_golem");
@@ -396,6 +397,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateEntity(WindsweptEntityTypes.CHILLED);
         this.translateEntity(WindsweptEntityTypes.FROSTBITER);
         this.translateEntity(WindsweptEntityTypes.FROST_ARROW);
+        this.add(WindsweptEntityTypes.CUPIDS_ARROW.get(), "Cupid's Arrow");
 
         // Effects //
         this.translateEffect(WindsweptEffects.THORNS, "Causes damage to enemies when they attack you.");

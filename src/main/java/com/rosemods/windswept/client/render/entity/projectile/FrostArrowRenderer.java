@@ -1,4 +1,4 @@
-package com.rosemods.windswept.client.render.entity;
+package com.rosemods.windswept.client.render.entity.projectile;
 
 import com.rosemods.windswept.common.entity.projectile.FrostArrow;
 import com.rosemods.windswept.core.Windswept;

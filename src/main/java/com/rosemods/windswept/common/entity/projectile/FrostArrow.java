@@ -34,18 +34,18 @@ public class FrostArrow extends AbstractArrow {
     public void tick() {
         super.tick();
 
-        if (!inGround && level.isClientSide && tickCount > 2) {
+        if (!this.inGround && this.level.isClientSide && this.tickCount > 2) {
             Vec3 motion = this.getDeltaMovement();
 
             for (int i = 1; i < 3; i++) {
                 double px = getX() - motion.x * ((float) i / 3) + (Math.random() - .5d) * .1d;
                 double py = getY() - motion.y * ((float) i / 3) + (Math.random() - .5d) * .1d;
                 double pz = getZ() - motion.z * ((float) i / 3) + (Math.random() - .5d) * .1d;
-                double mx = (Math.random() - 0.5) * .03d - motion.x * .08d;
-                double my = (Math.random() - 0.5) * .03d - motion.y * .08d;
-                double mz = (Math.random() - 0.5) * .03d - motion.z * .08d;
+                double mx = (Math.random() - .5d) * .03d - motion.x * .08d;
+                double my = (Math.random() - .5d) * .03d - motion.y * .08d;
+                double mz = (Math.random() - .5d) * .03d - motion.z * .08d;
 
-                level.addParticle(ParticleTypes.SNOWFLAKE, px, py, pz, mx, my, mz);
+                this.level.addParticle(ParticleTypes.SNOWFLAKE, px, py, pz, mx, my, mz);
             }
         }
     }

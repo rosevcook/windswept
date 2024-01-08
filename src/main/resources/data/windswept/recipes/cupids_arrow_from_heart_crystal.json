@@ -1,0 +1,36 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "heart_crystals"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "#": {
+            "item": "heart_crystals:heart_crystal_shard"
+          },
+          "S": {
+            "item": "minecraft:stick"
+          },
+          "F": {
+            "item": "windswept:owl_feather"
+          }
+        },
+        "pattern": [
+          "#",
+          "S",
+          "F"
+        ],
+        "result": {
+          "count": 8,
+          "item": "windswept:cupids_arrow"
+        }
+      }
+    }
+  ]
+}
