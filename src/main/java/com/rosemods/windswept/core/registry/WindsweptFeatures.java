@@ -84,11 +84,11 @@ public final class WindsweptFeatures {
                     .add(Blocks.AIR.defaultBlockState(), 10)));
         }
 
-        public static RandomPatchConfiguration createPlantPatch(int tries, BlockState state) {
+        public static RandomPatchConfiguration createPlantPatch(int tries, BlockState... states) {
             return new RandomPatchConfiguration(tries, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
                     new SimpleBlockConfiguration(new DualNoiseProvider(new InclusiveRange<>(1, 3),
                             new NormalNoise.NoiseParameters(-10, 1d), 1f, 2345L,
-                            new NormalNoise.NoiseParameters(-3, 1d), 1f, List.of(state)))));
+                            new NormalNoise.NoiseParameters(-3, 1d), 1f, List.of(states)))));
         }
 
         private static TreeConfigurationBuilder createHollyTree() {

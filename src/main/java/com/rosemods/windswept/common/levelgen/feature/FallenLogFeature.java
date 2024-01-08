@@ -62,7 +62,7 @@ public class FallenLogFeature extends Feature<SimpleBlockConfiguration> {
                 level.setBlock(pos, log, 2);
 
                 if (rand.nextBoolean() && level.getBlockState(pos.above()).isAir())
-                    level.setBlock(pos.above(), rand.nextInt(4) == 0 ? campion : (rand.nextInt(2) == 0 ? sprouts : carpet), 2);
+                    level.setBlock(pos.above(), rand.nextInt(5) == 0 ? campion : (rand.nextInt(2) == 0 ? sprouts : carpet), 2);
 
                 BlockState below = level.getBlockState(pos.below());
                 if (below.is(WindsweptBlocks.GELISOL.get()) || below.is(Blocks.GRASS_BLOCK))

@@ -23,9 +23,9 @@ public class FloorIciclesFeature extends Feature<NoneFeatureConfiguration> {
         RandomSource rand = context.random();
         boolean generated = false;
 
-        for (int x = -1; x <= 1; ++x)
-            for (int z = -1; z <= 1; ++z)
-                for (int y = -5; y <= 2; ++y) {
+        for (int x = -1; x <= 1; x++)
+            for (int z = -1; z <= 1; z++)
+                for (int y = -5; y <= 2; y++) {
                     BlockPos pos = origin.offset(x, y, z);
 
                     if ((x == 0 || z == 0 || rand.nextInt(8) == 0) && level.isEmptyBlock(pos) && pos.getY() < level.getMaxBuildHeight() && state.canSurvive(level, pos) && IciclesFeature.canPlaceOn(level, pos.below())) {

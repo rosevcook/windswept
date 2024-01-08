@@ -26,9 +26,9 @@ public class RoseFeature extends Feature<SimpleBlockConfiguration> {
         RoseFlowerBlock block = (RoseFlowerBlock) state.getBlock();
         boolean generated = false;
 
-        for (int x = -3; x <= 3; ++x)
-            for (int z = -3; z <= 3; ++z)
-                for (int y = -3; y <= 2; ++y) {
+        for (int x = -3; x <= 3; x++)
+            for (int z = -3; z <= 3; z++)
+                for (int y = -3; y <= 2; y++) {
                     BlockPos pos = origin.offset(x, y, z);
                     boolean isSnow = level.getBlockState(pos).is(Blocks.SNOW);
 
