@@ -24,24 +24,25 @@ public class PineTreeFeature extends BlueprintTreeFeature {
         RandomSource rand = context.random();
         BlockState weathered = WindsweptBlocks.WEATHERED_PINE_LOG.get().defaultBlockState();
         int height = rand.nextInt(10, 14);
-        int weatheredHeight = rand.nextInt(5, 8);
+        int weatheredHeight = rand.nextInt(5, 9);
 
         // log
         this.addLog(origin);
+        this.addLog(origin.above());
 
-        if (rand.nextBoolean()) {
-            this.addLog(origin.above());
+        if (rand.nextInt(3) > 0 && weatheredHeight >= 6) {
+            this.addLog(origin.above(2));
 
-            if (rand.nextBoolean())
-                this.addLog(origin.above(2));
+            if (rand.nextBoolean() && weatheredHeight >= 7)
+                this.addLog(origin.above(3));
             else
-                this.addSpecialLog(origin.above(2), weathered);
+                this.addSpecialLog(origin.above(3), weathered);
         } else {
-            this.addSpecialLog(origin.above(), weathered);
             this.addSpecialLog(origin.above(2), weathered);
+            this.addSpecialLog(origin.above(3), weathered);
         }
 
-        for (int y = 3; y < height; y++)
+        for (int y = 4; y < height; y++)
             if (y < weatheredHeight)
                 this.addSpecialLog(origin.above(y), weathered);
             else
@@ -50,8 +51,8 @@ public class PineTreeFeature extends BlueprintTreeFeature {
         // branches
         List<Direction> directions = Lists.newArrayList(Direction.Plane.HORIZONTAL);
 
-        for (int y = height - 4; y > 4; y--)
-            if (rand.nextInt(3) > 0) {
+        for (int y = height - 4; y > 3; y--)
+            if (rand.nextInt(4) > 0) {
                 Direction direction = directions.get(rand.nextInt(directions.size()));
                 BlockPos pos = origin.above(y).relative(direction);
                 directions.remove(direction);
@@ -65,13 +66,14 @@ public class PineTreeFeature extends BlueprintTreeFeature {
                 }
 
                 this.addFoliage(pos.above());
+                this.addFoliage(pos.above().relative(direction));
 
                 if (rand.nextBoolean())
-                    this.addFoliageWithPinecones(pos.relative(direction, 2), rand, 2);
+                    this.addFoliageWithPinecones(pos.relative(direction, 2), true, rand.nextInt(3) + 2);
 
                 for (int x = -1; x <= 1; x++)
                     for (int z = -1; z <= 1; z++)
-                        this.addFoliageWithPinecones(pos.offset(x, 0, z), rand, 6);
+                        this.addFoliageWithPinecones(pos.offset(x, 0, z), rand.nextInt(7) == 0, rand.nextInt(3) + 1);
 
                 if (directions.isEmpty())
                     break;
@@ -88,6 +90,10 @@ public class PineTreeFeature extends BlueprintTreeFeature {
                 case 4 -> 1;
             };
 
+            if (y == 3 && rand.nextInt(3) == 0)
+                this.addFoliageWithPinecones(origin.above(height - 2).relative(Direction.Plane.HORIZONTAL
+                        .getRandomDirection(rand), 3), true, rand.nextInt(3) + 2);
+
             for (int x = -i; x <= i; x++)
                 for (int z = -i; z <= i; z++) {
                     int absX = Math.abs(x);
@@ -100,11 +106,11 @@ public class PineTreeFeature extends BlueprintTreeFeature {
 
     }
 
-    private void addFoliageWithPinecones(BlockPos pos, RandomSource rand, int chance) {
+    private void addFoliageWithPinecones(BlockPos pos, boolean place, int amount) {
         this.addFoliage(pos);
 
-        if (rand.nextInt(chance) == 0)
-            this.addSpecialFoliage(pos.below(), WindsweptBlocks.PINECONE.get().defaultBlockState().setValue(PineconeBlock.AMOUNT, rand.nextInt(3) + 1));
+        if (place)
+            this.addSpecialFoliage(pos.below(), WindsweptBlocks.PINECONE.get().defaultBlockState().setValue(PineconeBlock.AMOUNT, amount));
     }
 
 
