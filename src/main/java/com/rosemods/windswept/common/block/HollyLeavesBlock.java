@@ -7,6 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -46,7 +47,7 @@ public class HollyLeavesBlock extends BlueprintLeavesBlock {
     }
 
     public static void entityInside(float damage, Entity entity, Level level) {
-        if (!level.isClientSide && (entity.xOld != entity.getX() || entity.zOld != entity.getZ()) && entity instanceof LivingEntity && !entity.getType().is(WindsweptEntityTypeTags.HOLLY_IMMUNE)) {
+        if (!level.isClientSide && (entity.xOld != entity.getX() || entity.zOld != entity.getZ()) && entity instanceof LivingEntity && !entity.getType().is(WindsweptEntityTypeTags.HOLLY_IMMUNE) && !(entity instanceof Player player && player.isCrouching())) {
             double d0 = Math.abs(entity.getX() - entity.xOld);
             double d1 = Math.abs(entity.getZ() - entity.zOld);
             if (d0 >= .003d || d1 >= .003d)
