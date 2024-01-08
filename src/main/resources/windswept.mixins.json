@@ -10,6 +10,7 @@
     "BoatMixin",
     "DarkOakTreeGrowerMixin",
     "DrownedMixin",
+    "EnderManMixin",
     "FlowerBlockMixin",
     "FoxEatBerriesGoalMixin",
     "FoxMixin",
