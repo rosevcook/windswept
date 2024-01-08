@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "F": {
+      "item": "windswept:owl_feather"
+    },
+    "S": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    " # ",
+    "FSF",
+    " F "
+  ],
+  "result": {
+    "item": "windswept:dream_catcher"
+  }
+}

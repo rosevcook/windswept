@@ -203,6 +203,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.generatedItem(FEATHER_WING.get(), TextureFolder.BLOCK);
         this.simpleCross(FEATHER_ORNAMENT);
         this.generatedItem(FEATHER_ORNAMENT.get(), TextureFolder.BLOCK);
+        this.tallPlant(DREAM_CATCHER);
 
         this.directionalBlock(PINECONE_BLOCK.get(), this.models().cubeTop("pinecone_block", this.modLoc("block/pinecone_block"), this.modLoc("block/pinecone_block_top")));
         this.itemModel(PINECONE_BLOCK);

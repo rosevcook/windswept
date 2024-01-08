@@ -220,6 +220,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 
             this.dropSelf(FEATHER_WING.get());
             this.dropSelf(FEATHER_ORNAMENT.get());
+            this.add(DREAM_CATCHER.get(), b -> createSinglePropConditionTable(b, DoublePlantBlock.HALF, DoubleBlockHalf.UPPER));
 
             this.dropSelf(PINECONE_SHINGLES.get());
             this.dropSelf(PINECONE_SHINGLE_STAIRS.get());

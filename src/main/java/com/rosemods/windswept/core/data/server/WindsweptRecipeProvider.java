@@ -121,6 +121,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 
         ShapedRecipeBuilder.shaped(FEATHER_WING.get(), 2).define('#', PINECONE.get()).define('F', OWL_FEATHER.get()).pattern("#FF").unlockedBy(getHasName(OWL_FEATHER.get()), has(OWL_FEATHER.get())).save(consumer, getSaveLocation(FEATHER_WING.get()));
         ShapedRecipeBuilder.shaped(FEATHER_ORNAMENT.get(), 2).define('#', PINECONE.get()).define('F', OWL_FEATHER.get()).pattern("##").pattern("FF").unlockedBy(getHasName(OWL_FEATHER.get()), has(OWL_FEATHER.get())).save(consumer, getSaveLocation(FEATHER_ORNAMENT.get()));
+        ShapedRecipeBuilder.shaped(DREAM_CATCHER.get(), 1).define('#', Items.STICK).define('S', Items.STRING).define('F', OWL_FEATHER.get()).pattern(" # ").pattern("FSF").pattern(" F ").unlockedBy(getHasName(OWL_FEATHER.get()), has(OWL_FEATHER.get())).save(consumer, getSaveLocation(DREAM_CATCHER.get()));
 
         ShapelessRecipeBuilder.shapeless(POLISHED_DEEPSLATE_BUTTON.get()).requires(Items.POLISHED_DEEPSLATE).unlockedBy(getHasName(Items.POLISHED_DEEPSLATE), has(Items.POLISHED_DEEPSLATE)).save(consumer, getSaveLocation(POLISHED_DEEPSLATE_BUTTON.get()));
         ShapedRecipeBuilder.shaped(POLISHED_DEEPSLATE_PRESSURE_PLATE.get()).define('#', Items.POLISHED_DEEPSLATE).pattern("##").unlockedBy(getHasName(Items.POLISHED_DEEPSLATE), has(Items.POLISHED_DEEPSLATE)).save(consumer, getSaveLocation(POLISHED_DEEPSLATE_PRESSURE_PLATE.get()));
