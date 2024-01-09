@@ -312,7 +312,6 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(BLUE_ROSE_BUSH);
         this.translateBlock(WHITE_ROSE_BUSH);
         this.translateBlock(YELLOW_ROSE_BUSH);
-        this.translateBlock(WITHER_ROSE_BUSH);
 
         this.translateBlock(RED_ROSE);
         this.translateBlock(BLUE_ROSE);
@@ -450,7 +449,6 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.jeiInfo(BLUE_ROSE_BUSH, "Bonemeal a Blue Rose and it will grow into a Blue Rose Bush! This can also be found in Chestnut Forests");
         this.jeiInfo(WHITE_ROSE_BUSH, "Bonemeal a White Rose and it will grow into a White Rose Bush! This can also be found in Snowy Chestnut Forests");
         this.jeiInfo(YELLOW_ROSE_BUSH, "Bonemeal a Yellow Rose and it will grow into a Yellow Rose Bush!");
-        this.jeiInfo(WITHER_ROSE_BUSH, "Bonemeal a Wither Rose and it will grow into a Wither Rose Bush!");
 
         this.jeiInfo(WILD_BERRIES, "Wild Berries can be found growing in snowy biomes but are more commonly found in Groves.");
         this.jeiInfo(NIGHTSHADE, "Nightshades can be found very rarely growing in large patches under trees. They can also be brewing into Night Vision potions.");

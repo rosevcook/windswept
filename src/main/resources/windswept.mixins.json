@@ -33,8 +33,7 @@
     "TreeConfigurationBuilderMixin",
     "TreeFeatureMixin",
     "TreeFeaturesMixin",
-    "TrunkPlacerMixin",
-    "WitherRoseBlockMixin"
+    "TrunkPlacerMixin"
   ],
   "client": [
     "client.HumanoidArmorLayerMixin",

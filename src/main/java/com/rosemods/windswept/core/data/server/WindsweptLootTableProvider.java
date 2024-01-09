@@ -319,7 +319,6 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.tallFlower(BLUE_ROSE_BUSH.get());
             this.tallFlower(WHITE_ROSE_BUSH.get());
             this.tallFlower(YELLOW_ROSE_BUSH.get());
-            this.tallFlower(WITHER_ROSE_BUSH.get());
 
             // sprouts
             this.add(SNOWY_SPROUTS.get(), Blocks::createShearsOnlyDrop);

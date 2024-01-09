@@ -28,7 +28,6 @@ public class WindsweptPlugin implements IModPlugin {
         addInfo(registration, WindsweptBlocks.BLUE_ROSE_BUSH);
         addInfo(registration, WindsweptBlocks.WHITE_ROSE_BUSH);
         addInfo(registration, WindsweptBlocks.YELLOW_ROSE_BUSH);
-        addInfo(registration, WindsweptBlocks.WITHER_ROSE_BUSH);
         addInfo(registration, WindsweptItems.WILD_BERRIES);
         addInfo(registration, WindsweptBlocks.NIGHTSHADE);
         addInfo(registration, WindsweptBlocks.BLUEBELLS);

@@ -320,7 +320,6 @@
   "block.windswept.wild_berry_basket": "Basket of Wild Berries",
   "block.windswept.wild_berry_bush": "Wild Berry Bush",
   "block.windswept.will_o_the_wisp": "Will o' the Wisp",
-  "block.windswept.wither_rose_bush": "Wither Rose Bush",
   "block.windswept.yellow_rose": "Yellow Rose",
   "block.windswept.yellow_rose_bush": "Yellow Rose Bush",
   "death.attack.windswept.holly_leaves": "%1$s was ripped to death by holly leaves",
@@ -452,7 +451,6 @@
   "windswept.jei.info.white_rose_bush": "Bonemeal a White Rose and it will grow into a White Rose Bush! This can also be found in Snowy Chestnut Forests",
   "windswept.jei.info.wild_berries": "Wild Berries can be found growing in snowy biomes but are more commonly found in Groves.",
   "windswept.jei.info.wild_berry_bowl": "Wild Berry bowls condense 3 Wild Berries into a single item. They are exactly 3 times the saturation and hunger of Wild Berries.",
-  "windswept.jei.info.wither_rose_bush": "Bonemeal a Wither Rose and it will grow into a Wither Rose Bush!",
   "windswept.jei.info.wooden_bucket": "Wooden buckets are cheap buckets with a durability of 24. Durability is taken when a fluid exits the bucket.",
   "windswept.jei.info.yellow_rose": "Yellow Roses can be found in Taiga biomes. They can also be bonemealed into Yellow Rose Bushes.",
   "windswept.jei.info.yellow_rose_bush": "Bonemeal a Yellow Rose and it will grow into a Yellow Rose Bush!"
