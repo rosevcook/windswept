@@ -29,7 +29,7 @@ public final class WindsweptFoods {
     public static final FoodProperties CANDY_CANE = new FoodProperties.Builder().nutrition(3).fast().saturationMod(.6f).build();
     public static final FoodProperties GINGER_TEA = new FoodProperties.Builder().nutrition(4).alwaysEat().saturationMod(.1f).effect(() -> new MobEffectInstance(WindsweptEffects.PLENTY.get(), 300, 1), 1f).build();
     public static final FoodProperties LAVENDER_TEA = new FoodProperties.Builder().nutrition(3).alwaysEat().saturationMod(.1f).effect(() -> new MobEffectInstance(MobEffects.INVISIBILITY, 300, 0), 1f).build();
-    public static final FoodProperties LAVENDER_SCONES = new FoodProperties.Builder().nutrition(6).saturationMod(.6f).build();
+    public static final FoodProperties LAVENDER_SCONES = new FoodProperties.Builder().nutrition(5).saturationMod(.05f).build();
 
 
 }
