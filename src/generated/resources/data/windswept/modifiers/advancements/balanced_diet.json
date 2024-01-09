@@ -184,6 +184,26 @@
             },
             "trigger": "minecraft:consume_item"
           },
+          "windswept:lavender_scones": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:lavender_scones"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "windswept:lavender_tea": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:lavender_tea"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
           "windswept:mutton_pie": {
             "conditions": {
               "item": {
@@ -322,6 +342,12 @@
           ],
           [
             "windswept:ginger_tea"
+          ],
+          [
+            "windswept:lavender_scones"
+          ],
+          [
+            "windswept:lavender_tea"
           ],
           [
             "windswept:goat"

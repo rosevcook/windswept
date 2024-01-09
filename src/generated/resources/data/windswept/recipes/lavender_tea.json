@@ -1,0 +1,39 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+          }
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "minecraft:glass_bottle"
+          },
+          {
+            "item": "windswept:lavender"
+          },
+          {
+            "item": "windswept:lavender"
+          },
+          {
+            "item": "windswept:lavender"
+          },
+          {
+            "item": "windswept:lavender"
+          }
+        ],
+        "result": {
+          "item": "windswept:lavender_tea"
+        }
+      }
+    }
+  ]
+}

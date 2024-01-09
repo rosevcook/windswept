@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "item": "windswept:lavender"
+    },
+    {
+      "item": "windswept:lavender"
+    },
+    {
+      "item": "windswept:lavender"
+    },
+    {
+      "item": "windswept:lavender"
+    }
+  ],
+  "result": {
+    "item": "windswept:lavender_tea"
+  },
+  "experience": 1.0,
+  "cookingtime": 200,
+  "container": {
+    "item": "minecraft:glass_bottle"
+  }
+}

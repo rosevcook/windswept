@@ -92,6 +92,8 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateItem(GINGER_TEA);
         this.translateItem(CANDY_CANE);
         this.translateItem(OWL_FEATHER);
+        this.translateItem(LAVENDER_SCONES);
+        this.translateItem(LAVENDER_TEA);
 
         this.add(HOLLY_FURNACE_BOAT.get(), "Holly Boat with Furnace");
         this.translateItem(LARGE_HOLLY_BOAT);
