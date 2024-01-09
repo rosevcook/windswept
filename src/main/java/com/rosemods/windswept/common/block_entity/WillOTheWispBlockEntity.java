@@ -21,8 +21,8 @@ public class WillOTheWispBlockEntity extends BlockEntity implements BlockEntityT
     @Override
     public void tick(Level level, BlockPos pos, BlockState state, WillOTheWispBlockEntity blockEntity) {
         for (Direction direction : Direction.Plane.HORIZONTAL)
-            if (!level.getBlockState(pos.relative(direction)).getMaterial().isSolid())
-                for (Player player : level.getEntitiesOfClass(Player.class, expandTowards(new AABB(pos.relative(direction)), direction, 8)))
+            if (state.getValue(HorizontalDirectionalBlock.FACING) != direction && level.getBlockState(pos.relative(direction)).isAir())
+                for (Player player : level.getEntitiesOfClass(Player.class, expandTowards(new AABB(pos.relative(direction)), direction, 6)))
                     if (player.getDirection() == direction) {
                         turn(level, pos, state, direction, player);
                         return;
@@ -40,7 +40,7 @@ public class WillOTheWispBlockEntity extends BlockEntity implements BlockEntityT
             BlockState blockState = level.getBlockState(blockPos);
 
             if (blockState.is(WindsweptBlocks.WILL_O_THE_WISP.get())
-                    && blockState.getValue(HorizontalDirectionalBlock.FACING) != direction && !level.getBlockState(blockPos.relative(direction)).getMaterial().isSolid())
+                    && blockState.getValue(HorizontalDirectionalBlock.FACING) != direction && level.getBlockState(blockPos.relative(direction)).isAir())
                 level.setBlock(blockPos, blockState.setValue(HorizontalDirectionalBlock.FACING, direction), 2);
         });
     }
