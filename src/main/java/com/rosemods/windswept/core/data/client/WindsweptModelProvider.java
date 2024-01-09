@@ -204,7 +204,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.generatedItem(FEATHER_WING.get(), TextureFolder.BLOCK);
         this.simpleCross(FEATHER_ORNAMENT);
         this.generatedItem(FEATHER_ORNAMENT.get(), TextureFolder.BLOCK);
-        this.tallPlant(DREAM_CATCHER);
+        this.dreamCatcher(DREAM_CATCHER);
 
         this.directionalBlock(PINECONE_BLOCK.get(), this.models().cubeTop("pinecone_block", this.modLoc("block/pinecone_block"), this.modLoc("block/pinecone_block_top")));
         this.itemModel(PINECONE_BLOCK);
@@ -493,6 +493,16 @@ public class WindsweptModelProvider extends BlockStateProvider {
                 .partialState().with(WildBerryBushBlock.AGE, 1).addModels(new ConfiguredModel(model.apply(1), 0, 0, true))
                 .partialState().with(WildBerryBushBlock.AGE, 2).addModels(new ConfiguredModel(model.apply(2), 0, 0, true))
                 .partialState().with(WildBerryBushBlock.AGE, 3).addModels(new ConfiguredModel(model.apply(3), 0, 0, true));
+    }
+
+    private void dreamCatcher(RegistryObject<Block> block) {
+        String name = getItemName(block.get());
+        Function<String, ModelFile> model = s -> this.models().cross(name + "_" + s, this.modLoc("block/" + name + "_" + s)).renderType("cutout");
+
+        this.generatedItem(block.get(), TextureFolder.ITEM);
+        this.getVariantBuilder(block.get())
+                .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).addModels(new ConfiguredModel(model.apply("top")))
+                .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).addModels(new ConfiguredModel(model.apply("bottom")));
     }
 
     private void wreath(RegistryObject<Block> wreath) {

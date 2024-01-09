@@ -45,7 +45,7 @@ public class CupidsArrow extends AbstractArrow {
             double my = (Math.random() - .5d) * .03d - motion.y * .08d;
             double mz = (Math.random() - .5d) * .03d - motion.z * .08d;
 
-            this.level.addParticle(ParticleTypes.HAPPY_VILLAGER, px, py, pz, mx, my, mz);
+            this.level.addParticle(ParticleTypes.HEART, px, py, pz, mx, my, mz);
         }
     }
 
@@ -54,7 +54,7 @@ public class CupidsArrow extends AbstractArrow {
         if (result.getEntity() instanceof Animal animal && animal.canFallInLove())
             animal.setInLove(null);
 
-        super.onHitEntity(result);
+        //super.onHitEntity(result);
     }
 
     @Override

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "windswept:block/dream_catcher_top"
+    "layer0": "windswept:item/dream_catcher"
   }
 }
