@@ -1,6 +1,6 @@
 package com.rosemods.windswept.core.mixin;
 
-import com.rosemods.windswept.common.enchantment.SlippingCurseEnchantment;
+import com.rosemods.windswept.common.enchantment.curse.SlippingCurseEnchantment;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.LevelReader;

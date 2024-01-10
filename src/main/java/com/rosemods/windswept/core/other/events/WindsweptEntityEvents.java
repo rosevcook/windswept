@@ -8,11 +8,12 @@ import com.rosemods.windswept.core.WindsweptConfig;
 import com.rosemods.windswept.core.other.WindsweptDataProcessors;
 import com.rosemods.windswept.core.other.tags.WindsweptBlockTags;
 import com.rosemods.windswept.core.other.tags.WindsweptEntityTypeTags;
-import com.rosemods.windswept.core.registry.*;
+import com.rosemods.windswept.core.registry.WindsweptEffects;
+import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
+import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
 import com.teamabnormals.blueprint.common.world.storage.tracking.TrackedData;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintEntityTypeTags;
-import net.minecraft.core.Holder;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
@@ -25,11 +26,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.ThornsEnchantment;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.entity.SignBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.Tags;
@@ -62,14 +61,6 @@ public class WindsweptEntityEvents {
 
             if (ThornsEnchantment.shouldHit(amplifier, rand))
                 attacker.hurt(DamageSource.thorns(entity), ThornsEnchantment.getDamage(amplifier, rand));
-        }
-
-        // frost aspect
-        if (attacker instanceof LivingEntity livingEntity) {
-            int level = EnchantmentHelper.getEnchantmentLevel(WindsweptEnchantments.FROST_ASPECT.get(), livingEntity);
-
-            if (level > 0)
-                entity.setTicksFrozen(Math.min(entity.getTicksFrozen() + (70 * level), entity.getTicksRequiredToFreeze() * 2));
         }
 
     }
@@ -130,7 +121,7 @@ public class WindsweptEntityEvents {
         LevelAccessor level = event.getLevel();
         MobSpawnType reason = event.getSpawnReason();
 
-        // convert zombies in cold biomes to chilled && skeletons to strays
+        // convert zombies to chilled && skeletons to strays in cold biomes
         if (mob != null && level instanceof ServerLevel && event.getResult() != Result.DENY && mob.getY() > 60 && (reason == MobSpawnType.NATURAL || reason == MobSpawnType.CHUNK_GENERATION) && level.getBiome(mob.blockPosition()).is(Tags.Biomes.IS_SNOWY)) {
             if (mob.getType() == EntityType.ZOMBIE) {
                 mob = mob.convertTo(WindsweptEntityTypes.CHILLED.get(), true);
