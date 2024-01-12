@@ -13,7 +13,7 @@
     },
     {
       "type": "environmental:biome",
-      "tag": "windswept:is_pine_forest"
+      "tag": "windswept:is_pine_barrens"
     }
   ]
 }

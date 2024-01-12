@@ -45,10 +45,10 @@ public class WindsweptModdedBiomeSliceProvider extends ModdedBiomeSliceProvider 
         private final Climate.Parameter midInlandContinentalness = Climate.Parameter.span(0.03F, 0.3F);
         private final Climate.Parameter farInlandContinentalness = Climate.Parameter.span(0.3F, 1.0F);
         private final ResourceKey<Biome> VANILLA = BlueprintBiomes.ORIGINAL_SOURCE_MARKER.getKey();
-        private final ResourceKey<Biome>[][] MIDDLE_BIOMES = new ResourceKey[][]{{WindsweptBiomes.TUNDRA.getKey(), WindsweptBiomes.TUNDRA.getKey(), WindsweptBiomes.TUNDRA.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey(), WindsweptBiomes.CHESTNUT_FOREST.getKey()}, {VANILLA, VANILLA, VANILLA, WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.PINE_FOREST.getKey()}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
-        private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{{VANILLA, null, WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey(), null, null}, {null, null, null, null, WindsweptBiomes.PINE_FOREST.getKey()}, {VANILLA, null, null, WindsweptBiomes.PINE_FOREST.getKey(), null}, {null, null, VANILLA, VANILLA, VANILLA}, {null, null, null, null, null}};
-        private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{{WindsweptBiomes.TUNDRA.getKey(), WindsweptBiomes.TUNDRA.getKey(), WindsweptBiomes.TUNDRA.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey()}, {VANILLA, VANILLA, VANILLA, WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.PINE_FOREST.getKey()}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
-        private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{{VANILLA, null, null, null, null}, {null, null, VANILLA, VANILLA, WindsweptBiomes.PINE_FOREST.getKey()}, {null, null, VANILLA, VANILLA, null}, {null, null, null, null, null}, {VANILLA, VANILLA, null, null, null}};
+        private final ResourceKey<Biome>[][] MIDDLE_BIOMES = new ResourceKey[][]{{WindsweptBiomes.TUNDRA.getKey(), WindsweptBiomes.TUNDRA.getKey(), WindsweptBiomes.TUNDRA.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey(), WindsweptBiomes.CHESTNUT_FOREST.getKey()}, {VANILLA, VANILLA, VANILLA, WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.PINE_BARRENS.getKey()}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
+        private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{{VANILLA, null, WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey(), null, null}, {null, null, null, null, WindsweptBiomes.PINE_BARRENS.getKey()}, {VANILLA, null, null, WindsweptBiomes.PINE_BARRENS.getKey(), null}, {null, null, VANILLA, VANILLA, VANILLA}, {null, null, null, null, null}};
+        private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{{WindsweptBiomes.TUNDRA.getKey(), WindsweptBiomes.TUNDRA.getKey(), WindsweptBiomes.TUNDRA.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey(), WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey()}, {VANILLA, VANILLA, VANILLA, WindsweptBiomes.CHESTNUT_FOREST.getKey(), WindsweptBiomes.PINE_BARRENS.getKey()}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
+        private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{{VANILLA, null, null, null, null}, {null, null, VANILLA, VANILLA, WindsweptBiomes.PINE_BARRENS.getKey()}, {null, null, VANILLA, VANILLA, null}, {null, null, null, null, null}, {VANILLA, VANILLA, null, null, null}};
 
         private void addBiomesToSlice(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer) {
             this.addOffCoastBiomes(consumer);
@@ -285,7 +285,7 @@ public class WindsweptModdedBiomeSliceProvider extends ModdedBiomeSliceProvider 
             if (p_187245_ >= 3) {
                 return this.pickPlateauBiome(p_187245_, p_187246_, p_187247_);
             } else {
-                return WindsweptBiomes.SNOWY_PINE_FOREST.getKey();
+                return WindsweptBiomes.SNOWY_PINE_BARRENS.getKey();
             }
         }
 

@@ -23,7 +23,7 @@ public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
         this.tag(HAS_HOLLY_TREES).add(Biomes.OLD_GROWTH_PINE_TAIGA, Biomes.OLD_GROWTH_SPRUCE_TAIGA);
         this.tag(HAS_RARE_CHESTNUT_TREES).add(Biomes.DARK_FOREST, Biomes.TAIGA, Biomes.FOREST, Biomes.WINDSWEPT_FOREST, Biomes.OLD_GROWTH_BIRCH_FOREST, Biomes.OLD_GROWTH_SPRUCE_TAIGA, Biomes.OLD_GROWTH_PINE_TAIGA, Biomes.SNOWY_TAIGA, Biomes.BIRCH_FOREST, Biomes.FLOWER_FOREST, Biomes.WINDSWEPT_HILLS);
         this.tag(HAS_RARE_SNOWY_HOLLY_TREES).add(Biomes.FROZEN_PEAKS, Biomes.JAGGED_PEAKS, TUNDRA.getKey());
-        this.tag(HAS_RED_ROSE).add(Biomes.TAIGA, Biomes.SNOWY_TAIGA, PINE_FOREST.getKey(), SNOWY_PINE_FOREST.getKey(), Biomes.OLD_GROWTH_SPRUCE_TAIGA, Biomes.OLD_GROWTH_PINE_TAIGA);
+        this.tag(HAS_RED_ROSE).add(Biomes.TAIGA, Biomes.SNOWY_TAIGA, PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey(), Biomes.OLD_GROWTH_SPRUCE_TAIGA, Biomes.OLD_GROWTH_PINE_TAIGA);
         this.tag(HAS_BLUE_ROSE).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey());
         this.tag(HAS_WHITE_ROSE).add(SNOWY_CHESTNUT_FOREST.getKey(), Biomes.SNOWY_TAIGA);
         this.tag(HAS_YELLOW_ROSE).add(Biomes.DARK_FOREST, Biomes.OLD_GROWTH_SPRUCE_TAIGA, Biomes.OLD_GROWTH_PINE_TAIGA);
@@ -33,28 +33,28 @@ public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
         this.tag(HAS_FROZEN_VILLAGE).add(TUNDRA.getKey());
 
         this.tag(IS_CHESTNUT_FOREST).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey());
-        this.tag(IS_PINE_FOREST).add(PINE_FOREST.getKey(), SNOWY_PINE_FOREST.getKey());
+        this.tag(IS_PINE_BARRENS).add(PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey());
 
         this.tag(HAS_SPOTTED_ORANGE_MAPLE_TREES).add(CHESTNUT_FOREST.getKey());
-        this.tag(HAS_SPOTTED_RED_MAPLE_TREES).add(SNOWY_CHESTNUT_FOREST.getKey(), PINE_FOREST.getKey(), SNOWY_PINE_FOREST.getKey());
+        this.tag(HAS_SPOTTED_RED_MAPLE_TREES).add(SNOWY_CHESTNUT_FOREST.getKey(), PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey());
 
         this.tag(HAS_YAK).add(WindsweptBiomes.TUNDRA.getKey());
         this.tag(HAS_REINDEER).add(WindsweptBiomes.TUNDRA.getKey());
 
-        this.tag(BiomeTags.IS_OVERWORLD).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_FOREST.getKey(), SNOWY_PINE_FOREST.getKey(), TUNDRA.getKey());
-        this.tag(BiomeTags.IS_FOREST).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_FOREST.getKey(), SNOWY_PINE_FOREST.getKey());
-        this.tag(BiomeTags.HAS_IGLOO).add(SNOWY_CHESTNUT_FOREST.getKey(), SNOWY_PINE_FOREST.getKey(), TUNDRA.getKey());
-        this.tag(BiomeTags.HAS_VILLAGE_SNOWY).add(SNOWY_CHESTNUT_FOREST.getKey(), SNOWY_PINE_FOREST.getKey());
-        this.tag(BiomeTags.IS_TAIGA).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_FOREST.getKey(), SNOWY_PINE_FOREST.getKey());
-        this.tag(BiomeTags.HAS_RUINED_PORTAL_STANDARD).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_FOREST.getKey(), SNOWY_PINE_FOREST.getKey());
-        this.tag(BiomeTags.HAS_MINESHAFT).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_FOREST.getKey(), SNOWY_PINE_FOREST.getKey(), TUNDRA.getKey());
-        this.tag(BiomeTags.STRONGHOLD_BIASED_TO).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_FOREST.getKey(), SNOWY_PINE_FOREST.getKey(), TUNDRA.getKey());
+        this.tag(BiomeTags.IS_OVERWORLD).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey(), TUNDRA.getKey());
+        this.tag(BiomeTags.IS_FOREST).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey());
+        this.tag(BiomeTags.HAS_IGLOO).add(SNOWY_CHESTNUT_FOREST.getKey(), SNOWY_PINE_BARRENS.getKey(), TUNDRA.getKey());
+        this.tag(BiomeTags.HAS_VILLAGE_SNOWY).add(SNOWY_CHESTNUT_FOREST.getKey(), SNOWY_PINE_BARRENS.getKey());
+        this.tag(BiomeTags.IS_TAIGA).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey());
+        this.tag(BiomeTags.HAS_RUINED_PORTAL_STANDARD).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey());
+        this.tag(BiomeTags.HAS_MINESHAFT).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey(), TUNDRA.getKey());
+        this.tag(BiomeTags.STRONGHOLD_BIASED_TO).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey(), TUNDRA.getKey());
         this.tag(BiomeTags.HAS_PILLAGER_OUTPOST).add(TUNDRA.getKey());
-        this.tag(Tags.Biomes.IS_SNOWY).add(SNOWY_CHESTNUT_FOREST.getKey(), SNOWY_PINE_FOREST.getKey(), TUNDRA.getKey());
-        this.tag(Tags.Biomes.IS_COLD).add(SNOWY_CHESTNUT_FOREST.getKey(), SNOWY_PINE_FOREST.getKey(), TUNDRA.getKey());
-        this.tag(Tags.Biomes.IS_CONIFEROUS).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_FOREST.getKey(), SNOWY_PINE_FOREST.getKey());
-        this.tag(Tags.Biomes.IS_DENSE).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_FOREST.getKey(), SNOWY_PINE_FOREST.getKey());
-        this.tag(Tags.Biomes.IS_DENSE_OVERWORLD).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_FOREST.getKey(), SNOWY_PINE_FOREST.getKey());
+        this.tag(Tags.Biomes.IS_SNOWY).add(SNOWY_CHESTNUT_FOREST.getKey(), SNOWY_PINE_BARRENS.getKey(), TUNDRA.getKey());
+        this.tag(Tags.Biomes.IS_COLD).add(SNOWY_CHESTNUT_FOREST.getKey(), SNOWY_PINE_BARRENS.getKey(), TUNDRA.getKey());
+        this.tag(Tags.Biomes.IS_CONIFEROUS).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey());
+        this.tag(Tags.Biomes.IS_DENSE).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey());
+        this.tag(Tags.Biomes.IS_DENSE_OVERWORLD).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey());
     }
 
 }

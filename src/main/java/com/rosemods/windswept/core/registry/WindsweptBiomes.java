@@ -18,8 +18,8 @@ public class WindsweptBiomes {
 
     public static final BiomeSubRegistryHelper.KeyedBiome CHESTNUT_FOREST = HELPER.createBiome("chestnut_forest", () -> chestnutForest(false));
     public static final BiomeSubRegistryHelper.KeyedBiome SNOWY_CHESTNUT_FOREST = HELPER.createBiome("snowy_chestnut_forest", () -> chestnutForest(true));
-    public static final BiomeSubRegistryHelper.KeyedBiome PINE_FOREST = HELPER.createBiome("pine_forest", () -> pineForest(false));
-    public static final BiomeSubRegistryHelper.KeyedBiome SNOWY_PINE_FOREST = HELPER.createBiome("snowy_pine_forest", () -> pineForest(true));
+    public static final BiomeSubRegistryHelper.KeyedBiome PINE_BARRENS = HELPER.createBiome("pine_barrens", () -> pineBarrens(false));
+    public static final BiomeSubRegistryHelper.KeyedBiome SNOWY_PINE_BARRENS = HELPER.createBiome("snowy_pine_barrens", () -> pineBarrens(true));
     public static final BiomeSubRegistryHelper.KeyedBiome TUNDRA = HELPER.createBiome("tundra", WindsweptBiomes::tundra);
 
     // Chestnut //
@@ -57,7 +57,7 @@ public class WindsweptBiomes {
     }
 
     // Pine //
-    private static Biome pineForest(boolean snowy) {
+    private static Biome pineBarrens(boolean snowy) {
         BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder();
 
         OverworldBiomes.globalOverworldGeneration(generation);
@@ -128,6 +128,32 @@ public class WindsweptBiomes {
         return spawns;
     }
 
+    // Lavender //
+    private static Biome lavender() {
+        BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder();
+
+        OverworldBiomes.globalOverworldGeneration(generation);
+        BiomeDefaultFeatures.addDefaultOres(generation);
+        BiomeDefaultFeatures.addDefaultSoftDisks(generation);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
+        BiomeDefaultFeatures.addDefaultMushrooms(generation);
+        BiomeDefaultFeatures.addCommonBerryBushes(generation);
+
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.TALL_BIRCH_TREES.getHolder().get());
+
+        return biome(1.5f, .2f, 4159204, 329011, 12638463, Biome.Precipitation.RAIN, generation, baseLavenderSpawns()).build();
+    }
+
+    private static MobSpawnSettings.Builder baseLavenderSpawns() {
+        MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
+
+        BiomeDefaultFeatures.commonSpawns(spawns);
+        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 8, 4, 4));
+        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DONKEY, 8, 1, 2));
+
+        return spawns;
+    }
+
     // Util //
     private static Biome.BiomeBuilder biome(float temp, float downfall, int waterColor, int waterFogColor, int fogColor, Biome.Precipitation precipitation, BiomeGenerationSettings.Builder generation, MobSpawnSettings.Builder spawns) {
         return new Biome.BiomeBuilder()
@@ -145,8 +171,8 @@ public class WindsweptBiomes {
     }
 
     private static int calculateSkyColor(float temperature) {
-        float clampedTemp = Mth.clamp(temperature / 3.0F, -1.0F, 1.0F);
-        return Mth.hsvToRgb(0.62222224F - clampedTemp * 0.05F, 0.5F + clampedTemp * 0.1F, 1.0F);
+        float clampedTemp = Mth.clamp(temperature / 3f, -1f, 1f);
+        return Mth.hsvToRgb(.62f - clampedTemp * .05f, .5f + clampedTemp * .1f, 1f);
     }
 
 }
