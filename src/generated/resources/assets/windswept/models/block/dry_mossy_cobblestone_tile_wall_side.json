@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_side",
+  "textures": {
+    "wall": "windswept:block/dry_mossy_cobblestone_tiles"
+  }
+}

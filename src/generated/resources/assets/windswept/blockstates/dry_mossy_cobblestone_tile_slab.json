@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "windswept:block/dry_mossy_cobblestone_tile_slab"
+    },
+    "type=double": {
+      "model": "windswept:block/dry_mossy_cobblestone_tiles"
+    },
+    "type=top": {
+      "model": "windswept:block/dry_mossy_cobblestone_tile_slab_top"
+    }
+  }
+}

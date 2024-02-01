@@ -385,6 +385,16 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(DRY_MOSSY_STONE_BRICK_STAIRS);
         this.translateBlock(DRY_MOSSY_STONE_BRICK_WALL);
         this.translateBlock(DRY_MOSSY_STONE_BRICK_VERTICAL_SLAB);
+        this.translateBlock(DRY_MOSSY_COBBLESTONE_BRICKS);
+        this.translateBlock(DRY_MOSSY_COBBLESTONE_BRICK_SLAB);
+        this.translateBlock(DRY_MOSSY_COBBLESTONE_BRICK_STAIRS);
+        this.translateBlock(DRY_MOSSY_COBBLESTONE_BRICK_WALL);
+        this.translateBlock(DRY_MOSSY_COBBLESTONE_BRICK_VERTICAL_SLAB);
+        this.translateBlock(DRY_MOSSY_COBBLESTONE_TILES);
+        this.translateBlock(DRY_MOSSY_COBBLESTONE_TILE_SLAB);
+        this.translateBlock(DRY_MOSSY_COBBLESTONE_TILE_STAIRS);
+        this.translateBlock(DRY_MOSSY_COBBLESTONE_TILE_WALL);
+        this.translateBlock(DRY_MOSSY_COBBLESTONE_TILE_VERTICAL_SLAB);
 
         this.add(RED_MUSHROOM_BASKET.get(), "Basket of Red Mushrooms");
         this.add(BROWN_MUSHROOM_BASKET.get(), "Basket of Brown Mushrooms");

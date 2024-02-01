@@ -424,6 +424,16 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.slab(DRY_MOSSY_STONE_BRICK_SLAB, this.blockTexture(DRY_MOSSY_STONE_BRICKS.get()));
         this.wall(DRY_MOSSY_STONE_BRICK_WALL, this.blockTexture(DRY_MOSSY_STONE_BRICKS.get()));
         this.verticalSlab(DRY_MOSSY_STONE_BRICK_VERTICAL_SLAB, this.blockTexture(DRY_MOSSY_STONE_BRICKS.get()));
+        this.cubeAll(DRY_MOSSY_COBBLESTONE_BRICKS);
+        this.stairs(DRY_MOSSY_COBBLESTONE_BRICK_STAIRS, this.blockTexture(DRY_MOSSY_COBBLESTONE_BRICKS.get()));
+        this.slab(DRY_MOSSY_COBBLESTONE_BRICK_SLAB, this.blockTexture(DRY_MOSSY_COBBLESTONE_BRICKS.get()));
+        this.wall(DRY_MOSSY_COBBLESTONE_BRICK_WALL, this.blockTexture(DRY_MOSSY_COBBLESTONE_BRICKS.get()));
+        this.verticalSlab(DRY_MOSSY_COBBLESTONE_BRICK_VERTICAL_SLAB, this.blockTexture(DRY_MOSSY_COBBLESTONE_BRICKS.get()));
+        this.cubeAll(DRY_MOSSY_COBBLESTONE_TILES);
+        this.stairs(DRY_MOSSY_COBBLESTONE_TILE_STAIRS, this.blockTexture(DRY_MOSSY_COBBLESTONE_TILES.get()));
+        this.slab(DRY_MOSSY_COBBLESTONE_TILE_SLAB, this.blockTexture(DRY_MOSSY_COBBLESTONE_TILES.get()));
+        this.wall(DRY_MOSSY_COBBLESTONE_TILE_WALL, this.blockTexture(DRY_MOSSY_COBBLESTONE_TILES.get()));
+        this.verticalSlab(DRY_MOSSY_COBBLESTONE_TILE_VERTICAL_SLAB, this.blockTexture(DRY_MOSSY_COBBLESTONE_TILES.get()));
 
         // compressed blocks
         this.compressedBlock(RED_MUSHROOM_BASKET);
