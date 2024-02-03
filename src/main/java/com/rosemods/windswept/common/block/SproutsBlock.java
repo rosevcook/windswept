@@ -20,13 +20,13 @@ public class SproutsBlock extends BushBlock implements IForgeShearable {
     }
 
     @Override
-    protected boolean mayPlaceOn(BlockState state, BlockGetter getter, BlockPos pos) {
-        return canSupportCenter((LevelReader) getter, pos, Direction.UP);
+    protected boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
+        return canSupportCenter((LevelReader) level, pos, Direction.UP);
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
-        Vec3 vec3 = state.getOffset(getter, pos);
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        Vec3 vec3 = state.getOffset(level, pos);
         return SHAPE.move(vec3.x, vec3.y, vec3.z);
     }
 

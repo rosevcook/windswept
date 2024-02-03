@@ -12,12 +12,14 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class PineconeBlock extends Block {
     public static final IntegerProperty AMOUNT = IntegerProperty.create("amount", 1, 4);
     private static final VoxelShape SHAPE = Block.box(1f, 6f, 1f, 15f, 16f, 15f);
+    private static final VoxelShape SINGLE_SHAPE = Block.box(4f, 6f, 4f, 12f, 16f, 12f);
 
     public PineconeBlock(Properties properties) {
         super(properties);
@@ -26,7 +28,8 @@ public class PineconeBlock extends Block {
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return SHAPE;
+        Vec3 vec3 = state.getOffset(level, pos);
+        return (state.getValue(AMOUNT) == 1 ? SINGLE_SHAPE : SHAPE).move(vec3.x, vec3.y, vec3.z);
     }
 
     @Override
