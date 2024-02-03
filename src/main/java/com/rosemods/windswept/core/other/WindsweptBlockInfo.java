@@ -25,6 +25,7 @@ public final class WindsweptBlockInfo {
 
         DataUtil.registerCompostable(CHESTNUT_CRATE.get(), 1f);
         DataUtil.registerCompostable(ROASTED_CHESTNUT_CRATE.get(), 1f);
+        DataUtil.registerCompostable(GINGER_ROOT_CRATE.get(), 1f);
         DataUtil.registerCompostable(HOLLY_BERRY_BASKET.get(), 1f);
         DataUtil.registerCompostable(WILD_BERRY_BASKET.get(), 1f);
         DataUtil.registerCompostable(RED_MUSHROOM_BASKET.get(), 1f);
@@ -143,6 +144,7 @@ public final class WindsweptBlockInfo {
 
         DataUtil.registerFlammable(HOLLY_BERRY_BASKET.get(), 5, 20);
         DataUtil.registerFlammable(CHESTNUT_CRATE.get(), 5, 20);
+        DataUtil.registerFlammable(GINGER_ROOT_CRATE.get(), 5, 20);
         DataUtil.registerFlammable(ROASTED_CHESTNUT_CRATE.get(), 5, 20);
         DataUtil.registerFlammable(RED_MUSHROOM_BASKET.get(), 5, 20);
         DataUtil.registerFlammable(BROWN_MUSHROOM_BASKET.get(), 5, 20);

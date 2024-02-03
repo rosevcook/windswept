@@ -15,8 +15,6 @@ public class WindsweptSplashProvider extends SplashProvider {
         this.add("#WINDSWEEP");
         this.add("Super Estrogen Fanta is not on sale in Japan, yet.");
         this.add("love is the air? wrong. gas leak.");
-        this.add("La, la. Time to wake up and smell the pain.");
-        this.add("Cats aren't supposed to be purple?! ... gross ...");
     }
 
 }
