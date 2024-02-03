@@ -17,6 +17,8 @@
     "windswept:cut_dolomite_brick_stairs",
     "windswept:smooth_dolomite_stairs",
     "windswept:gingerbread_brick_stairs",
-    "windswept:glazed_gingerbread_brick_stairs"
+    "windswept:glazed_gingerbread_brick_stairs",
+    "windswept:dry_mossy_cobblestone_brick_stairs",
+    "windswept:dry_mossy_cobblestone_tile_stairs"
   ]
 }

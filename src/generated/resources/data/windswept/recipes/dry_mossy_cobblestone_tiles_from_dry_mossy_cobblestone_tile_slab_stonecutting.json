@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "windswept:dry_mossy_cobblestone_tiles"
+  },
+  "result": "windswept:dry_mossy_cobblestone_tile_slab"
+}

@@ -1,0 +1,27 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "caverns_and_chasms"
+        }
+      ],
+      "recipe": {
+  	"type": "minecraft:crafting_shapeless",
+  	"ingredients": [
+    	  {
+      	    "item": "windswept:dry_moss_block"
+    	  },
+    	  {
+      	    "item": "caverns_and_chasms:cobblestone_tiles"
+    	  }
+  	],
+        "result": {
+          "item": "windswept:dry_mossy_cobblestone_tiles"
+        }
+      }
+    }
+  ]
+}

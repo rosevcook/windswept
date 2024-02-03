@@ -79,6 +79,16 @@
     "windswept:smooth_dolomite_stairs",
     "windswept:smooth_dolomite_slab",
     "windswept:smooth_dolomite_vertical_slab",
-    "windswept:candy_cane_block"
+    "windswept:candy_cane_block",
+    "windswept:dry_mossy_cobblestone_bricks",
+    "windswept:dry_mossy_cobblestone_brick_slab",
+    "windswept:dry_mossy_cobblestone_brick_stairs",
+    "windswept:dry_mossy_cobblestone_brick_wall",
+    "windswept:dry_mossy_cobblestone_brick_vertical_slab",
+    "windswept:dry_mossy_cobblestone_tiles",
+    "windswept:dry_mossy_cobblestone_tile_slab",
+    "windswept:dry_mossy_cobblestone_tile_stairs",
+    "windswept:dry_mossy_cobblestone_tile_wall",
+    "windswept:dry_mossy_cobblestone_tile_vertical_slab"
   ]
 }

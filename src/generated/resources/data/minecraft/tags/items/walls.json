@@ -13,6 +13,8 @@
     "windswept:cut_dolomite_wall",
     "windswept:cut_dolomite_brick_wall",
     "windswept:gingerbread_brick_wall",
-    "windswept:glazed_gingerbread_brick_wall"
+    "windswept:glazed_gingerbread_brick_wall",
+    "windswept:dry_mossy_cobblestone_brick_wall",
+    "windswept:dry_mossy_cobblestone_tile_wall"
   ]
 }

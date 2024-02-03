@@ -17,6 +17,8 @@
     "windswept:cut_dolomite_brick_slab",
     "windswept:smooth_dolomite_slab",
     "windswept:gingerbread_brick_slab",
-    "windswept:glazed_gingerbread_brick_slab"
+    "windswept:glazed_gingerbread_brick_slab",
+    "windswept:dry_mossy_cobblestone_brick_slab",
+    "windswept:dry_mossy_cobblestone_tile_slab"
   ]
 }

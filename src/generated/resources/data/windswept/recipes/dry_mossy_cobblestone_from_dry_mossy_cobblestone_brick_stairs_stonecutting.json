@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "caverns_and_chasms"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "count": 1,
+        "ingredient": {
+          "item": "windswept:dry_mossy_cobblestone"
+        },
+        "result": "windswept:dry_mossy_cobblestone_brick_stairs"
+      }
+    }
+  ]
+}

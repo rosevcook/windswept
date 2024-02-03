@@ -25,7 +25,6 @@ import net.minecraftforge.common.crafting.conditions.*;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import javax.annotation.Nullable;
 import java.util.function.Consumer;
 
 import static com.rosemods.windswept.core.registry.WindsweptBlocks.*;
@@ -141,6 +140,24 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         stonecutting(ICICLE_BLOCK.get(), ICICLE_BARS.get(), 2, consumer);
         ShapedRecipeBuilder.shaped(ICE_LANTERN.get()).define('#', ICICLES.get()).define('N', NIGHTSHADE.get()).pattern("#").pattern("N").pattern("#").unlockedBy(getHasName(ICICLES.get()), has(ICICLES.get())).save(consumer, getSaveLocation(ICE_LANTERN.get()));
 
+        conditionalRecipe(ShapedRecipeBuilder.shaped(DRY_MOSSY_COBBLESTONE_BRICKS.get(), 4).define('#', DRY_MOSSY_COBBLESTONE.get()).pattern("##").pattern("##").unlockedBy(getHasName(DRY_MOSSY_COBBLESTONE.get()), has(DRY_MOSSY_COBBLESTONE.get())), new ModLoadedCondition("caverns_and_chasms"), consumer, getSaveLocation(DRY_MOSSY_COBBLESTONE_BRICKS.get()));
+        conditionalRecipe(ShapedRecipeBuilder.shaped(DRY_MOSSY_COBBLESTONE_TILES.get(), 4).define('#', DRY_MOSSY_COBBLESTONE_BRICKS.get()).pattern("##").pattern("##").unlockedBy(getHasName(DRY_MOSSY_COBBLESTONE_BRICKS.get()), has(DRY_MOSSY_COBBLESTONE_BRICKS.get())), new ModLoadedCondition("caverns_and_chasms"), consumer, getSaveLocation(DRY_MOSSY_COBBLESTONE_TILES.get()));
+        stonecutting(DRY_MOSSY_COBBLESTONE.get(), DRY_MOSSY_COBBLESTONE_BRICKS.get(), 1, new ModLoadedCondition("caverns_and_chasms"), consumer);
+        stonecutting(DRY_MOSSY_COBBLESTONE.get(), DRY_MOSSY_COBBLESTONE_BRICK_SLAB.get(), 2, new ModLoadedCondition("caverns_and_chasms"), consumer);
+        stonecutting(DRY_MOSSY_COBBLESTONE.get(), DRY_MOSSY_COBBLESTONE_BRICK_STAIRS.get(), 1, new ModLoadedCondition("caverns_and_chasms"), consumer);
+        stonecutting(DRY_MOSSY_COBBLESTONE.get(), DRY_MOSSY_COBBLESTONE_BRICK_WALL.get(), 1, new ModLoadedCondition("caverns_and_chasms"), consumer);
+        verticalSlabStonecutting(DRY_MOSSY_COBBLESTONE.get(), DRY_MOSSY_COBBLESTONE_BRICK_VERTICAL_SLAB.get(), new AndCondition(new ModLoadedCondition("caverns_and_chasms"), getQuarkCondition("vertical_slabs")), consumer);
+        stonecutting(DRY_MOSSY_COBBLESTONE.get(), DRY_MOSSY_COBBLESTONE_TILES.get(), 1, new ModLoadedCondition("caverns_and_chasms"), consumer);
+        stonecutting(DRY_MOSSY_COBBLESTONE.get(), DRY_MOSSY_COBBLESTONE_TILE_SLAB.get(), 2, new ModLoadedCondition("caverns_and_chasms"), consumer);
+        stonecutting(DRY_MOSSY_COBBLESTONE.get(), DRY_MOSSY_COBBLESTONE_TILE_STAIRS.get(), 1, new ModLoadedCondition("caverns_and_chasms"), consumer);
+        stonecutting(DRY_MOSSY_COBBLESTONE.get(), DRY_MOSSY_COBBLESTONE_TILE_WALL.get(), 1, new ModLoadedCondition("caverns_and_chasms"), consumer);
+        verticalSlabStonecutting(DRY_MOSSY_COBBLESTONE.get(), DRY_MOSSY_COBBLESTONE_TILE_VERTICAL_SLAB.get(), new AndCondition(new ModLoadedCondition("caverns_and_chasms"), getQuarkCondition("vertical_slabs")), consumer);
+        stonecutting(DRY_MOSSY_COBBLESTONE_BRICKS.get(), DRY_MOSSY_COBBLESTONE_TILES.get(), 1, new ModLoadedCondition("caverns_and_chasms"), consumer);
+        stonecutting(DRY_MOSSY_COBBLESTONE_BRICKS.get(), DRY_MOSSY_COBBLESTONE_TILE_SLAB.get(), 2, new ModLoadedCondition("caverns_and_chasms"), consumer);
+        stonecutting(DRY_MOSSY_COBBLESTONE_BRICKS.get(), DRY_MOSSY_COBBLESTONE_TILE_STAIRS.get(), 1, new ModLoadedCondition("caverns_and_chasms"), consumer);
+        stonecutting(DRY_MOSSY_COBBLESTONE_BRICKS.get(), DRY_MOSSY_COBBLESTONE_TILE_WALL.get(), 1, new ModLoadedCondition("caverns_and_chasms"), consumer);
+        verticalSlabStonecutting(DRY_MOSSY_COBBLESTONE_BRICKS.get(), DRY_MOSSY_COBBLESTONE_TILE_VERTICAL_SLAB.get(), new AndCondition(new ModLoadedCondition("caverns_and_chasms"), getQuarkCondition("vertical_slabs")), consumer);
+        
         stairs(Blocks.SNOW_BLOCK, SNOW_STAIRS.get(), consumer);
         slab(Blocks.SNOW_BLOCK, SNOW_SLAB.get(), consumer);
         verticalSlab(SNOW_VERTICAL_SLAB.get(), SNOW_SLAB.get(), consumer);
@@ -211,6 +228,8 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         blockset(null, SMOOTH_DOLOMITE.get(), null, SMOOTH_DOLOMITE_SLAB.get(), SMOOTH_DOLOMITE_STAIRS.get(), null, SMOOTH_DOLOMITE_VERTICAL_SLAB.get(), true, consumer);
         blockset(GINGERBREAD_BLOCK.get(), GINGERBREAD_BRICKS.get(), null, GINGERBREAD_BRICK_SLAB.get(), GINGERBREAD_BRICK_STAIRS.get(), GINGERBREAD_BRICK_WALL.get(), GINGERBREAD_BRICK_VERTICAL_SLAB.get(), false, consumer);
         blockset(GLAZED_GINGERBREAD_BLOCK.get(), GLAZED_GINGERBREAD_BRICKS.get(), null, GLAZED_GINGERBREAD_BRICK_SLAB.get(), GLAZED_GINGERBREAD_BRICK_STAIRS.get(), GLAZED_GINGERBREAD_BRICK_WALL.get(), GLAZED_GINGERBREAD_BRICK_VERTICAL_SLAB.get(), false, consumer);
+        blockset(null, DRY_MOSSY_COBBLESTONE_BRICKS.get(), null, DRY_MOSSY_COBBLESTONE_BRICK_SLAB.get(), DRY_MOSSY_COBBLESTONE_BRICK_STAIRS.get(), DRY_MOSSY_COBBLESTONE_BRICK_WALL.get(), DRY_MOSSY_COBBLESTONE_BRICK_VERTICAL_SLAB.get(), true, consumer);
+        blockset(null, DRY_MOSSY_COBBLESTONE_TILES.get(), null, DRY_MOSSY_COBBLESTONE_TILE_SLAB.get(), DRY_MOSSY_COBBLESTONE_TILE_STAIRS.get(), DRY_MOSSY_COBBLESTONE_TILE_WALL.get(), DRY_MOSSY_COBBLESTONE_TILE_VERTICAL_SLAB.get(), true, consumer);
 
         // wood sets
         woodSet(WindsweptItemTags.HOLLY_LOGS, HOLLY_PLANKS.get(), HOLLY_SLAB.get(), HOLLY_STAIRS.get(), HOLLY_LOG.get(), HOLLY_WOOD.get(), STRIPPED_HOLLY_LOG.get(), STRIPPED_HOLLY_WOOD.get(), HOLLY_BOATS.getFirst().get(), HOLLY_BOATS.getSecond().get(), HOLLY_BUTTON.get(), HOLLY_DOOR.get(), HOLLY_TRAPDOOR.get(), HOLLY_FENCE.get(), HOLLY_FENCE_GATE.get(), HOLLY_PRESSURE_PLATE.get(), HOLLY_SIGNS.getFirst().get(), HOLLY_VERTICAL_SLAB.get(), HOLLY_POST.get(), STRIPPED_HOLLY_POST.get(), HOLLY_BOARDS.get(), HOLLY_BEEHIVE.get(), HOLLY_LADDER.get(), HOLLY_BOOKSHELF.get(), HOLLY_CHEST.get(), HOLLY_TRAPPED_CHEST.get(), LARGE_HOLLY_BOAT.get(), HOLLY_FURNACE_BOAT.get(), VERTICAL_HOLLY_PLANKS.get(), HOLLY_CABINET.get(), consumer);
@@ -243,37 +262,53 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         conditionalRecipe(SimpleCookingRecipeBuilder.smoking(Ingredient.of(ingredient), result, .35f, 100).unlockedBy(getHasName(ingredient), has(ingredient)), condition, consumer, getSaveLocation(getName(result) + "_from_smoking"));
     }
 
-    private static void blockset(@Nullable ItemLike ingredient, Block block, @Nullable Block chiseled, Block slab, Block stairs, @Nullable Block wall, Block verticalSlab, boolean stoncutter, Consumer<FinishedRecipe> consumer) {
+    private static void blockset(ItemLike ingredient, Block block, Block chiseled, Block slab, Block stairs, Block wall, Block verticalSlab, boolean stonecutter, Consumer<FinishedRecipe> consumer) {
         if (ingredient != null)
             ShapedRecipeBuilder.shaped(block, 4).define('#', ingredient).pattern("##").pattern("##").unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, getSaveLocation(getName(block)));
-
-        if (stoncutter) {
-            stonecutting(block, slab, 2, consumer);
-            stonecutting(block, stairs, 1, consumer);
-            verticalSlabStonecutting(block, verticalSlab, consumer);
-        }
-
-        stairs(block, stairs, consumer);
-        slab(block, slab, consumer);
-        verticalSlab(verticalSlab, slab, consumer);
-
-        if (wall != null) {
-            wall(block, wall, consumer);
-
-            if (stoncutter)
-                stonecutting(block, wall, 1, consumer);
-        }
 
         if (chiseled != null) {
             ShapedRecipeBuilder.shaped(chiseled).define('#', slab).pattern("#").pattern("#").unlockedBy(getHasName(block), has(block)).save(consumer, getSaveLocation(getName(chiseled)));
 
-            if (stoncutter)
+            if (stonecutter)
                 stonecutting(block, chiseled, 1, consumer);
         }
+
+        if (slab != null) {
+            slab(block, slab, consumer);
+
+            if (stonecutter)
+                stonecutting(block, slab, 2, consumer);
+        }
+
+        if (stairs != null) {
+            stairs(block, stairs, consumer);
+
+            if (stonecutter)
+                stonecutting(block, stairs, 1, consumer);
+        }
+
+        if (wall != null) {
+            wall(block, wall, consumer);
+
+            if (stonecutter)
+                stonecutting(block, wall, 1, consumer);
+        }
+
+        if (verticalSlab != null) {
+            verticalSlab(verticalSlab, slab, consumer);
+
+            if (stonecutter)
+                verticalSlabStonecutting(block, verticalSlab, consumer);
+        }
+
+    }
+
+    private static void verticalSlabStonecutting(ItemLike block, Block verticalSlab, ICondition condition, Consumer<FinishedRecipe> consumer) {
+        conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(block), verticalSlab, 2).unlockedBy(getHasName(block), has(block)), condition, consumer, getSaveLocation(getName(verticalSlab) + "_from_" + getName(block) + "_stonecutting"));
     }
 
     private static void verticalSlabStonecutting(ItemLike block, Block verticalSlab, Consumer<FinishedRecipe> consumer) {
-        conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(block), verticalSlab, 2).unlockedBy(getHasName(block), has(block)), getQuarkCondition("vertical_slabs"), consumer, getSaveLocation(getName(verticalSlab) + "_from_" + getName(block) + "_stonecutting"));
+        verticalSlabStonecutting(block, verticalSlab, getQuarkCondition("vertical_slabs"), consumer);
     }
 
     private static void compressedBlock(Block block, ItemLike item, ICondition condition, Consumer<FinishedRecipe> consumer) {
@@ -342,6 +377,10 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 
     private static void stonecutting(ItemLike ingredient, ItemLike result, int amount, Consumer<FinishedRecipe> consumer) {
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(ingredient), result, amount).unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, getSaveLocation(getName(ingredient) + "_from_" + getName(result) + "_stonecutting"));
+    }
+
+    private static void stonecutting(ItemLike ingredient, ItemLike result, int amount, ICondition condition, Consumer<FinishedRecipe> consumer) {
+        conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(ingredient), result, amount).unlockedBy(getHasName(ingredient), has(ingredient)), condition, consumer, getSaveLocation(getName(ingredient) + "_from_" + getName(result) + "_stonecutting"));
     }
 
     private static void stairs(ItemLike ingredient, ItemLike stairs, Consumer<FinishedRecipe> consumer) {
