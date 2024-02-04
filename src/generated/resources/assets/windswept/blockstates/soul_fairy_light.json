@@ -1,16 +1,72 @@
 {
   "variants": {
-    "amount=1": {
-      "model": "windswept:block/soul_fairy_light_1"
-    },
-    "amount=2": {
-      "model": "windswept:block/soul_fairy_light_2"
-    },
-    "amount=3": {
-      "model": "windswept:block/soul_fairy_light_3"
-    },
-    "amount=4": {
-      "model": "windswept:block/soul_fairy_light_4"
-    }
+    "amount=1": [
+      {
+        "model": "windswept:block/soul_fairy_light_1"
+      },
+      {
+        "model": "windswept:block/soul_fairy_light_1",
+        "y": 90
+      },
+      {
+        "model": "windswept:block/soul_fairy_light_1",
+        "y": 180
+      },
+      {
+        "model": "windswept:block/soul_fairy_light_1",
+        "y": 270
+      }
+    ],
+    "amount=2": [
+      {
+        "model": "windswept:block/soul_fairy_light_2"
+      },
+      {
+        "model": "windswept:block/soul_fairy_light_2",
+        "y": 90
+      },
+      {
+        "model": "windswept:block/soul_fairy_light_2",
+        "y": 180
+      },
+      {
+        "model": "windswept:block/soul_fairy_light_2",
+        "y": 270
+      }
+    ],
+    "amount=3": [
+      {
+        "model": "windswept:block/soul_fairy_light_3"
+      },
+      {
+        "model": "windswept:block/soul_fairy_light_3",
+        "y": 90
+      },
+      {
+        "model": "windswept:block/soul_fairy_light_3",
+        "y": 180
+      },
+      {
+        "model": "windswept:block/soul_fairy_light_3",
+        "y": 270
+      }
+    ],
+    "amount=4": [
+      {
+        "model": "windswept:block/soul_fairy_light_4"
+      },
+      {
+        "model": "windswept:block/soul_fairy_light_4",
+        "y": 90
+      },
+      {
+        "model": "windswept:block/soul_fairy_light_4",
+        "y": 180
+      },
+      {
+        "model": "windswept:block/soul_fairy_light_4",
+        "y": 270
+      }
+    ]
   }
 }

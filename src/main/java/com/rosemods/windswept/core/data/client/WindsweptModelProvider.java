@@ -487,13 +487,17 @@ public class WindsweptModelProvider extends BlockStateProvider {
     private void hangingPinecone(RegistryObject<Block> pinecone) {
         String name = getItemName(pinecone.get());
         ResourceLocation texture = this.blockTexture(pinecone.get());
+        ModelFile model1 = this.models().withExistingParent(name + "_1", this.modLoc("block/hanging_pinecone_template_1")).texture("texture", texture);
+        ModelFile model2 = this.models().withExistingParent(name + "_2", this.modLoc("block/hanging_pinecone_template_2")).texture("texture", texture);
+        ModelFile model3 = this.models().withExistingParent(name + "_3", this.modLoc("block/hanging_pinecone_template_3")).texture("texture", texture);
+        ModelFile model4 = this.models().withExistingParent(name + "_4", this.modLoc("block/hanging_pinecone_template_4")).texture("texture", texture);
 
         this.generatedItem(pinecone.get(), TextureFolder.ITEM);
         this.getVariantBuilder(pinecone.get())
-                .partialState().with(PineconeBlock.AMOUNT, 1).addModels(new ConfiguredModel(this.models().withExistingParent(name + "_1", this.modLoc("block/hanging_pinecone_template_1")).texture("texture", texture)))
-                .partialState().with(PineconeBlock.AMOUNT, 2).addModels(new ConfiguredModel(this.models().withExistingParent(name + "_2", this.modLoc("block/hanging_pinecone_template_2")).texture("texture", texture)))
-                .partialState().with(PineconeBlock.AMOUNT, 3).addModels(new ConfiguredModel(this.models().withExistingParent(name + "_3", this.modLoc("block/hanging_pinecone_template_3")).texture("texture", texture)))
-                .partialState().with(PineconeBlock.AMOUNT, 4).addModels(new ConfiguredModel(this.models().withExistingParent(name + "_4", this.modLoc("block/hanging_pinecone_template_4")).texture("texture", texture)));
+                .partialState().with(PineconeBlock.AMOUNT, 1).addModels(new ConfiguredModel(model1), new ConfiguredModel(model1, 0, 90, false), new ConfiguredModel(model1, 0, 180, false), new ConfiguredModel(model1, 0, 270, false))
+                .partialState().with(PineconeBlock.AMOUNT, 2).addModels(new ConfiguredModel(model2), new ConfiguredModel(model2, 0, 90, false), new ConfiguredModel(model2, 0, 180, false), new ConfiguredModel(model2, 0, 270, false))
+                .partialState().with(PineconeBlock.AMOUNT, 3).addModels(new ConfiguredModel(model3), new ConfiguredModel(model3, 0, 90, false), new ConfiguredModel(model3, 0, 180, false), new ConfiguredModel(model3, 0, 270, false))
+                .partialState().with(PineconeBlock.AMOUNT, 4).addModels(new ConfiguredModel(model4), new ConfiguredModel(model4, 0, 90, false), new ConfiguredModel(model4, 0, 180, false), new ConfiguredModel(model4, 0, 270, false));
     }
 
     private void wildBerryBush(RegistryObject<Block> bush) {
