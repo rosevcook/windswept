@@ -25,6 +25,7 @@ import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration.TreeConfigurationBuilder;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
@@ -147,7 +148,7 @@ public final class WindsweptFeatures {
         public static final RegistryObject<ConfiguredFeature<?, ?>> RED_ROSE = CONFIGURED_FEATURES.register("red_rose", () -> new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.createPlantPatch(48, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(WindsweptBlocks.RED_ROSE.get().defaultBlockState(), 3).add(WindsweptBlocks.RED_ROSE_BUSH.get().defaultBlockState(), 1))))));
         public static final RegistryObject<ConfiguredFeature<?, ?>> WHITE_ROSE = CONFIGURED_FEATURES.register("white_rose", () -> new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.createPlantPatch(48, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(WindsweptBlocks.WHITE_ROSE.get().defaultBlockState(), 3).add(WindsweptBlocks.WHITE_ROSE_BUSH.get().defaultBlockState(), 1))))));
         public static final RegistryObject<ConfiguredFeature<?, ?>> BLUE_ROSE = CONFIGURED_FEATURES.register("blue_rose", () -> new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.createPlantPatch(48, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(WindsweptBlocks.BLUE_ROSE.get().defaultBlockState(), 3).add(WindsweptBlocks.BLUE_ROSE_BUSH.get().defaultBlockState(), 1))))));
-        public static final RegistryObject<ConfiguredFeature<?, ?>> YELLOW_ROSE = CONFIGURED_FEATURES.register("yellow_rose", () -> new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.createPlantPatch(48, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(WindsweptBlocks.YELLOW_ROSE_BUSH.get().defaultBlockState(), 3).add(WindsweptBlocks.YELLOW_ROSE_BUSH.get().defaultBlockState(), 1))))));
+        public static final RegistryObject<ConfiguredFeature<?, ?>> YELLOW_ROSE = CONFIGURED_FEATURES.register("yellow_rose", () -> new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.createPlantPatch(48, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(WindsweptBlocks.YELLOW_ROSE.get().defaultBlockState(), 3).add(WindsweptBlocks.YELLOW_ROSE_BUSH.get().defaultBlockState(), 1))))));
         public static final RegistryObject<ConfiguredFeature<?, ?>> FOXGLOVE = CONFIGURED_FEATURES.register("foxglove", () -> new ConfiguredFeature<>(Feature.FLOWER, Configs.createPlantPatch(64, WindsweptBlocks.FOXGLOVE.get().defaultBlockState())));
         public static final RegistryObject<ConfiguredFeature<?, ?>> FERNS = CONFIGURED_FEATURES.register("ferns", () -> new ConfiguredFeature<>(Feature.FLOWER, FeatureUtils.simpleRandomPatchConfiguration(4, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.FERN))))));
         public static final RegistryObject<ConfiguredFeature<?, ?>> LUPINE = CONFIGURED_FEATURES.register("lupine", () -> new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.createPlantPatch(64, WindsweptBlocks.LUPINE.get().defaultBlockState())));
@@ -168,11 +169,13 @@ public final class WindsweptFeatures {
         public static final RegistryObject<ConfiguredFeature<?, ?>> HOLLY_BEES = CONFIGURED_FEATURES.register("holly_bees", () -> new ConfiguredFeature<>(Feature.TREE, Configs.HOLLY_TREE_BEES));
         public static final RegistryObject<ConfiguredFeature<?, ?>> HOLLY_BUSH = CONFIGURED_FEATURES.register("holly_bush", () -> new ConfiguredFeature<>(Feature.TREE, Configs.createHollyBush().build()));
 
-        public static final RegistryObject<ConfiguredFeature<?, ?>> CHESTNUT = ConfiguredFeatures.CONFIGURED_FEATURES.register("chestnut", () -> new ConfiguredFeature<>(Feature.TREE, Configs.CHESTNUT_TREE));
-        public static final RegistryObject<ConfiguredFeature<?, ?>> CHESTNUT_BEES = ConfiguredFeatures.CONFIGURED_FEATURES.register("chestnut_bees", () -> new ConfiguredFeature<>(Feature.TREE, Configs.CHESTNUT_TREE_BEES));
+        public static final RegistryObject<ConfiguredFeature<?, ?>> CHESTNUT = CONFIGURED_FEATURES.register("chestnut", () -> new ConfiguredFeature<>(Feature.TREE, Configs.CHESTNUT_TREE));
+        public static final RegistryObject<ConfiguredFeature<?, ?>> CHESTNUT_BEES = CONFIGURED_FEATURES.register("chestnut_bees", () -> new ConfiguredFeature<>(Feature.TREE, Configs.CHESTNUT_TREE_BEES));
 
         public static final RegistryObject<ConfiguredFeature<?, ?>> PINE = CONFIGURED_FEATURES.register("pine", () -> new ConfiguredFeature<>(PINE_TREE.get(), Configs.PINE_TREE));
         public static final RegistryObject<ConfiguredFeature<?, ?>> PINE_BEES = CONFIGURED_FEATURES.register("pine_bees", () -> new ConfiguredFeature<>(PINE_TREE.get(), Configs.PINE_TREE_BEES));
+
+        public static final RegistryObject<ConfiguredFeature<?, ?>> OLD_GROWTH_PINE_TAIGA_TREES = CONFIGURED_FEATURES.register("old_growth_pine_taiga_trees", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(TreePlacements.MEGA_SPRUCE_CHECKED, .33333334f), new WeightedPlacedFeature(Placements.PINE_CHECKED.getHolder().get(), .33333334f)), TreePlacements.SPRUCE_CHECKED)));
 
         public static final RegistryObject<ConfiguredFeature<?, ?>> SMALL_DARK_OAK = CONFIGURED_FEATURES.register("small_dark_oak", () -> new ConfiguredFeature<>(Feature.TREE, Configs.SMALL_DARK_OAK_TREE));
         public static final RegistryObject<ConfiguredFeature<?, ?>> SMALL_DARK_OAK_BEES = CONFIGURED_FEATURES.register("small_dark_oak_bees", () -> new ConfiguredFeature<>(Feature.TREE, Configs.SMALL_DARK_OAK_TREE_BEES));
@@ -233,7 +236,9 @@ public final class WindsweptFeatures {
 
         public static final RegistryObject<PlacedFeature> TALL_BIRCH_TREES = register("tall_birch_trees", VegetationFeatures.BIRCH_TALL, treePlacement(PlacementUtils.countExtra(5, .1f, 1)));
         public static final RegistryObject<PlacedFeature> PINE_TREES = register("pine_trees", ConfiguredFeatures.PINE_BEES, treePlacement(PlacementUtils.countExtra(9, .1f, 1)));
+        public static final RegistryObject<PlacedFeature> PINE_CHECKED = register("pine_checked", ConfiguredFeatures.PINE_BEES, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING));
 
+        public static final RegistryObject<PlacedFeature> OLD_GROWTH_PINE_TAIGA_TREES = register("old_growth_pine_taiga_trees", ConfiguredFeatures.OLD_GROWTH_PINE_TAIGA_TREES, treePlacement(PlacementUtils.countExtra(10, .1f, 1)));
         public static final RegistryObject<PlacedFeature> MEGA_SPRUCE_TREES = register("mega_spruce_trees", TreeFeatures.MEGA_SPRUCE, treePlacement(PlacementUtils.countExtra(0, .1f, 2)));
 
         // Dry Moss //

@@ -63,6 +63,7 @@ public final class WindsweptBiomeModifier {
         addFeature("white_roses", WindsweptBiomeTags.HAS_WHITE_ROSE, GenerationStep.Decoration.VEGETAL_DECORATION, WHITE_ROSE);
         addFeature("yellow_roses", WindsweptBiomeTags.HAS_YELLOW_ROSE, GenerationStep.Decoration.VEGETAL_DECORATION, YELLOW_ROSE);
         addFeature("lush_caves_moss", Biomes.LUSH_CAVES, GenerationStep.Decoration.VEGETAL_DECORATION, LUSH_CAVES_VEGETATION);
+        addFeature("old_growth_pine_taiga_trees", Biomes.OLD_GROWTH_PINE_TAIGA, GenerationStep.Decoration.VEGETAL_DECORATION, OLD_GROWTH_PINE_TAIGA_TREES);
 
         // spawns
         addSpawn("chilled", Tags.Biomes.IS_SNOWY, WindsweptEntityTypes.CHILLED, 5, 3, 7);
@@ -72,6 +73,7 @@ public final class WindsweptBiomeModifier {
         removeFeature("taiga_default_flowers", BiomeTags.IS_TAIGA, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_DEFAULT);
         removeFeature("snowy_default_flowers", Tags.Biomes.IS_SNOWY, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_DEFAULT);
         removeFeature("lush_caves_moss", Biomes.LUSH_CAVES, GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.LUSH_CAVES_VEGETATION);
+        removeFeature("old_growth_pine_taiga_trees", Biomes.OLD_GROWTH_PINE_TAIGA, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_OLD_GROWTH_PINE_TAIGA);
 
         return JsonCodecProvider.forDatapackRegistry(event.getGenerator(), event.getExistingFileHelper(), Windswept.MOD_ID, RegistryOps.create(JsonOps.INSTANCE, access), ForgeRegistries.Keys.BIOME_MODIFIERS, modifiers);
     }
