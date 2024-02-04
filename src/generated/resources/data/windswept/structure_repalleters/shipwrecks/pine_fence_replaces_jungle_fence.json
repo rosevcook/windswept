@@ -1,8 +1,8 @@
 {
   "type": "blueprint:simple",
   "priority": "normal",
-  "replaces_block": "minecraft:jungle_log",
-  "replaces_with": "windswept:chestnut_log",
+  "replaces_block": "minecraft:jungle_fence",
+  "replaces_with": "windswept:pine_fence",
   "selector": {
     "type": "names",
     "config": [

@@ -1,8 +1,8 @@
 {
   "type": "blueprint:simple",
   "priority": "normal",
-  "replaces_block": "minecraft:jungle_trapdoor",
-  "replaces_with": "windswept:chestnut_trapdoor",
+  "replaces_block": "minecraft:jungle_door",
+  "replaces_with": "windswept:pine_door",
   "selector": {
     "type": "names",
     "config": [

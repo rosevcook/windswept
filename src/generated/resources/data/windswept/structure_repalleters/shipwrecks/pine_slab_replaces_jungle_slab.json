@@ -1,8 +1,8 @@
 {
   "type": "blueprint:simple",
   "priority": "normal",
-  "replaces_block": "minecraft:jungle_fence",
-  "replaces_with": "windswept:chestnut_fence",
+  "replaces_block": "minecraft:jungle_slab",
+  "replaces_with": "windswept:pine_slab",
   "selector": {
     "type": "names",
     "config": [

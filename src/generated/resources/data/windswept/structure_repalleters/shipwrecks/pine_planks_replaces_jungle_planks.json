@@ -1,8 +1,8 @@
 {
   "type": "blueprint:simple",
   "priority": "normal",
-  "replaces_block": "minecraft:jungle_stairs",
-  "replaces_with": "windswept:chestnut_stairs",
+  "replaces_block": "minecraft:jungle_planks",
+  "replaces_with": "windswept:pine_planks",
   "selector": {
     "type": "names",
     "config": [

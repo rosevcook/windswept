@@ -1,8 +1,8 @@
 {
   "type": "blueprint:simple",
   "priority": "normal",
-  "replaces_block": "minecraft:jungle_planks",
-  "replaces_with": "windswept:chestnut_planks",
+  "replaces_block": "minecraft:jungle_log",
+  "replaces_with": "windswept:pine_log",
   "selector": {
     "type": "names",
     "config": [

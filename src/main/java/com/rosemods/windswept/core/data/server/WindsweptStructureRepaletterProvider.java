@@ -79,13 +79,13 @@ public class WindsweptStructureRepaletterProvider extends StructureRepaletterPro
         // Shipwrecks //
         NamesResourceSelector shipwrecks = new NamesResourceSelector(SHIPWRECK.location(), SHIPWRECK_BEACHED.location());
 
-        this.register("shipwrecks/chestnut_door_replaces_jungle_door", shipwrecks, Blocks.JUNGLE_DOOR, CHESTNUT_DOOR.get());
-        this.register("shipwrecks/chestnut_fence_replaces_jungle_fence", shipwrecks, Blocks.JUNGLE_FENCE, CHESTNUT_FENCE.get());
-        this.register("shipwrecks/chestnut_log_replaces_jungle_log", shipwrecks, Blocks.JUNGLE_LOG, CHESTNUT_LOG.get());
-        this.register("shipwrecks/chestnut_planks_replaces_jungle_planks", shipwrecks, Blocks.JUNGLE_PLANKS, CHESTNUT_PLANKS.get());
-        this.register("shipwrecks/chestnut_slab_replaces_jungle_slab", shipwrecks, Blocks.JUNGLE_SLAB, CHESTNUT_SLAB.get());
-        this.register("shipwrecks/chestnut_stairs_replaces_jungle_stairs", shipwrecks, Blocks.JUNGLE_STAIRS, CHESTNUT_STAIRS.get());
-        this.register("shipwrecks/chestnut_trapdoor_replaces_jungle_trapdoor", shipwrecks, Blocks.JUNGLE_TRAPDOOR, CHESTNUT_TRAPDOOR.get());
+        this.register("shipwrecks/pine_door_replaces_jungle_door", shipwrecks, Blocks.JUNGLE_DOOR, PINE_DOOR.get());
+        this.register("shipwrecks/pine_fence_replaces_jungle_fence", shipwrecks, Blocks.JUNGLE_FENCE, PINE_FENCE.get());
+        this.register("shipwrecks/pine_log_replaces_jungle_log", shipwrecks, Blocks.JUNGLE_LOG, PINE_LOG.get());
+        this.register("shipwrecks/pine_planks_replaces_jungle_planks", shipwrecks, Blocks.JUNGLE_PLANKS, PINE_PLANKS.get());
+        this.register("shipwrecks/pine_slab_replaces_jungle_slab", shipwrecks, Blocks.JUNGLE_SLAB, PINE_SLAB.get());
+        this.register("shipwrecks/pine_stairs_replaces_jungle_stairs", shipwrecks, Blocks.JUNGLE_STAIRS, PINE_STAIRS.get());
+        this.register("shipwrecks/pine_trapdoor_replaces_jungle_trapdoor", shipwrecks, Blocks.JUNGLE_TRAPDOOR, PINE_TRAPDOOR.get());
     }
 
     private void register(ResourceKey<Structure> structure, Block replacesBlock, Block replacesWith, ICondition... conditions) {
