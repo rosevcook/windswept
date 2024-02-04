@@ -7,7 +7,7 @@ import net.minecraft.world.level.biome.Biomes;
 
 public final class WindsweptVillagerTypes {
     public static void registerVillagerTypes() {
-        VillagerTrades.TRADES.isEmpty();
+        VillagerTrades.TRADES.isEmpty(); // referenced to call trade modification event to prevent crash
         VillagerType ice = VillagerType.register("windswept:ice");
 
         VillagerType.BY_BIOME.replace(Biomes.ICE_SPIKES, ice);
