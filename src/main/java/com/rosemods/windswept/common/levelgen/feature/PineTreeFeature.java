@@ -69,11 +69,11 @@ public class PineTreeFeature extends BlueprintTreeFeature {
                 this.addFoliage(pos.above().relative(direction));
 
                 if (rand.nextBoolean())
-                    this.addFoliageWithPinecones(pos.relative(direction, 2), true, rand.nextInt(3) + 2);
+                    this.addFoliageWithPinecones(pos.relative(direction, 2), true, rand.nextInt(2) + 3);
 
                 for (int x = -1; x <= 1; x++)
                     for (int z = -1; z <= 1; z++)
-                        this.addFoliageWithPinecones(pos.offset(x, 0, z), rand.nextInt(7) == 0, rand.nextInt(3) + 1);
+                        this.addFoliageWithPinecones(pos.offset(x, 0, z), rand.nextInt(7) == 0, rand.nextInt(2) + 1);
 
                 if (directions.isEmpty())
                     break;
@@ -92,7 +92,7 @@ public class PineTreeFeature extends BlueprintTreeFeature {
 
             if (y == 3 && rand.nextInt(3) == 0)
                 this.addFoliageWithPinecones(origin.above(height - 2).relative(Direction.Plane.HORIZONTAL
-                        .getRandomDirection(rand), 3), true, rand.nextInt(3) + 2);
+                        .getRandomDirection(rand), 3), true, rand.nextInt(2) + 3);
 
             for (int x = -i; x <= i; x++)
                 for (int z = -i; z <= i; z++) {
