@@ -20,6 +20,8 @@ public class WindsweptBiomes {
     public static final BiomeSubRegistryHelper.KeyedBiome SNOWY_CHESTNUT_FOREST = HELPER.createBiome("snowy_chestnut_forest", () -> chestnutForest(true));
     public static final BiomeSubRegistryHelper.KeyedBiome PINE_BARRENS = HELPER.createBiome("pine_barrens", () -> pineBarrens(false));
     public static final BiomeSubRegistryHelper.KeyedBiome SNOWY_PINE_BARRENS = HELPER.createBiome("snowy_pine_barrens", () -> pineBarrens(true));
+    public static final BiomeSubRegistryHelper.KeyedBiome LAVENDER_FOREST = HELPER.createBiome("lavender_forest", () -> lavender(true));
+    public static final BiomeSubRegistryHelper.KeyedBiome LAVENDER_FIELD = HELPER.createBiome("lavender_field", () -> lavender(false));
     public static final BiomeSubRegistryHelper.KeyedBiome TUNDRA = HELPER.createBiome("tundra", WindsweptBiomes::tundra);
 
     // Chestnut //
@@ -102,7 +104,7 @@ public class WindsweptBiomes {
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.TUNDRA_FALLEN_LOG.getHolder().get());
         BiomeDefaultFeatures.addDefaultOres(generation);
         BiomeDefaultFeatures.addDefaultSoftDisks(generation);
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
+        //generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
         BiomeDefaultFeatures.addDefaultMushrooms(generation);
         BiomeDefaultFeatures.addCommonBerryBushes(generation);
 
@@ -129,7 +131,7 @@ public class WindsweptBiomes {
     }
 
     // Lavender //
-    private static Biome lavender() {
+    private static Biome lavender(boolean forest) {
         BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder();
 
         OverworldBiomes.globalOverworldGeneration(generation);
@@ -139,9 +141,13 @@ public class WindsweptBiomes {
         BiomeDefaultFeatures.addDefaultMushrooms(generation);
         BiomeDefaultFeatures.addCommonBerryBushes(generation);
 
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.TALL_BIRCH_TREES.getHolder().get());
+        if (forest) {
+            generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.TALL_BIRCH_TREES.getHolder().get());
+        }
 
-        return biome(1.5f, .2f, 4159204, 329011, 12638463, Biome.Precipitation.RAIN, generation, baseLavenderSpawns()).build();
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.WHITE_ROSE.getHolder().get());
+
+        return biome(.6f, .2f, 4159204, 329011, 12638463, Biome.Precipitation.RAIN, generation, baseLavenderSpawns()).build();
     }
 
     private static MobSpawnSettings.Builder baseLavenderSpawns() {
