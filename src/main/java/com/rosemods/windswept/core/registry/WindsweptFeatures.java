@@ -49,6 +49,7 @@ public final class WindsweptFeatures {
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> SNOWY_SPROUTS_PATCH = FEATURES.register("snowy_sprouts_patch", SnowySproutsFeature::new);
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> NIGHTSHADE_PATCH = FEATURES.register("nightshade_patch", NightshadeFeature::new);
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> BLUEBELL_PATCH = FEATURES.register("bluebell_patch", BluebellsFeature::new);
+    public static final RegistryObject<Feature<NoneFeatureConfiguration>> LAVENDER_PATCH = FEATURES.register("lavender_patch", LavenderFeature::new);
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> ICICLES_PATCH = FEATURES.register("icicles_patch", IciclesFeature::new);
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> FLOOR_ICICLES_PATCH = FEATURES.register("floor_icicles_patch", FloorIciclesFeature::new);
     public static final RegistryObject<Feature<SimpleBlockConfiguration>> FALLEN_LOG = FEATURES.register("fallen_log", FallenLogFeature::new);
@@ -76,6 +77,13 @@ public final class WindsweptFeatures {
             return new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
                     .add(Blocks.FLOWERING_AZALEA.defaultBlockState(), 4)
                     .add(Blocks.AZALEA.defaultBlockState(), 7)
+                    .add(Blocks.MOSS_CARPET.defaultBlockState(), 25)
+                    .add(WindsweptBlocks.MOSSY_SPROUTS.get().defaultBlockState(), 50)
+                    .add(Blocks.AIR.defaultBlockState(), 10)));
+        }
+
+        public static SimpleBlockConfiguration createLavenderMossVegetation() {
+            return new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
                     .add(Blocks.MOSS_CARPET.defaultBlockState(), 25)
                     .add(WindsweptBlocks.MOSSY_SPROUTS.get().defaultBlockState(), 50)
                     .add(Blocks.AIR.defaultBlockState(), 10)));
@@ -153,6 +161,7 @@ public final class WindsweptFeatures {
         public static final RegistryObject<ConfiguredFeature<?, ?>> FERNS = CONFIGURED_FEATURES.register("ferns", () -> new ConfiguredFeature<>(Feature.FLOWER, FeatureUtils.simpleRandomPatchConfiguration(4, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.FERN))))));
         public static final RegistryObject<ConfiguredFeature<?, ?>> LUPINE = CONFIGURED_FEATURES.register("lupine", () -> new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.createPlantPatch(64, WindsweptBlocks.LUPINE.get().defaultBlockState())));
         public static final RegistryObject<ConfiguredFeature<?, ?>> BLUEBELLS = CONFIGURED_FEATURES.register("bluebells", () -> new ConfiguredFeature<>(BLUEBELL_PATCH.get(), NoneFeatureConfiguration.NONE));
+        public static final RegistryObject<ConfiguredFeature<?, ?>> LAVENDER = CONFIGURED_FEATURES.register("lavender", () -> new ConfiguredFeature<>(LAVENDER_PATCH.get(), NoneFeatureConfiguration.NONE));
         public static final RegistryObject<ConfiguredFeature<?, ?>> NIGHTHSADE = CONFIGURED_FEATURES.register("nightshades", () -> new ConfiguredFeature<>(NIGHTSHADE_PATCH.get(), NoneFeatureConfiguration.NONE));
         public static final RegistryObject<ConfiguredFeature<?, ?>> WILD_BERRY_BUSH = CONFIGURED_FEATURES.register("wild_berry_bush", () -> new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.createPlantPatch(32, WindsweptBlocks.WILD_BERRY_BUSH.get().defaultBlockState().setValue(WildBerryBushBlock.AGE, 3))));
         public static final RegistryObject<ConfiguredFeature<?, ?>> SNOWY_SPROUTS = CONFIGURED_FEATURES.register("snowy_sprouts", () -> new ConfiguredFeature<>(SNOWY_SPROUTS_PATCH.get(), NoneFeatureConfiguration.NONE));
@@ -195,6 +204,9 @@ public final class WindsweptFeatures {
         public static final RegistryObject<ConfiguredFeature<?, ?>> MOSS_PATCH = CONFIGURED_FEATURES.register("moss_patch", () -> new ConfiguredFeature<>(Feature.VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, BlockStateProvider.simple(Blocks.MOSS_BLOCK), PlacementUtils.inlinePlaced(MOSS_VEGETATION.getHolder().get()), CaveSurface.FLOOR, ConstantInt.of(1), 0f, 5, .8f, UniformInt.of(4, 7), .3f)));
         public static final RegistryObject<ConfiguredFeature<?, ?>> MOSS_PATCH_BONEMEAL = CONFIGURED_FEATURES.register("moss_patch_bonemeal", () -> new ConfiguredFeature<>(Feature.VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, BlockStateProvider.simple(Blocks.MOSS_BLOCK), PlacementUtils.inlinePlaced(MOSS_VEGETATION.getHolder().get()), CaveSurface.FLOOR, ConstantInt.of(1), 0f, 5, .6f, UniformInt.of(1, 2), .75f)));
 
+        public static final RegistryObject<ConfiguredFeature<?, ?>> LAVENDER_MOSS_VEGETATION = CONFIGURED_FEATURES.register("lavender_moss_vegetation", () -> new ConfiguredFeature<>(Feature.SIMPLE_BLOCK, Configs.createLavenderMossVegetation()));
+        public static final RegistryObject<ConfiguredFeature<?, ?>> LAVENDER_MOSS_PATCH = CONFIGURED_FEATURES.register("lavender_moss_patch", () -> new ConfiguredFeature<>(Feature.VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, BlockStateProvider.simple(Blocks.MOSS_BLOCK), PlacementUtils.inlinePlaced(LAVENDER_MOSS_VEGETATION.getHolder().get()), CaveSurface.FLOOR, ConstantInt.of(1), 0f, 5, .6f, UniformInt.of(1, 2), .75f)));
+
         // Stone //
         public static final RegistryObject<ConfiguredFeature<OreConfiguration, ?>> SHALE = CONFIGURED_FEATURES.register("shale", () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), WindsweptBlocks.SHALE.get().defaultBlockState(), 64)));
 
@@ -210,6 +222,8 @@ public final class WindsweptFeatures {
         public static final RegistryObject<PlacedFeature> YELLOW_ROSE = createPlantPatch("yellow_rose", 16, ConfiguredFeatures.YELLOW_ROSE);
         public static final RegistryObject<PlacedFeature> FOXGLOVE = createPlantPatch("foxglove", 9, ConfiguredFeatures.FOXGLOVE);
         public static final RegistryObject<PlacedFeature> BLUEBELLS = createPlantPatch("bluebells", 4, ConfiguredFeatures.BLUEBELLS);
+        public static final RegistryObject<PlacedFeature> LAVENDER = register("lavender", ConfiguredFeatures.LAVENDER, CountPlacement.of(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+        public static final RegistryObject<PlacedFeature> LAVENDER_MOSS_PATCH = register("lavender_moss_patch", ConfiguredFeatures.LAVENDER_MOSS_PATCH, PlacementUtils.countExtra(1, .1f, 2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         public static final RegistryObject<PlacedFeature> LUPINE = createPlantPatch("lupine", 12, ConfiguredFeatures.LUPINE);
         public static final RegistryObject<PlacedFeature> NIGHTHSADE = createPlantPatch("nightshade", 340, ConfiguredFeatures.NIGHTHSADE);
         public static final RegistryObject<PlacedFeature> WILD_BERRY_BUSH = createPlantPatch("wild_berry_bush", 32, ConfiguredFeatures.WILD_BERRY_BUSH);
