@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "windswept:lavender"
+    },
+    "F": {
+      "item": "windswept:frozen_branch"
+    }
+  },
+  "pattern": [
+    "###",
+    "#F#"
+  ],
+  "result": {
+    "item": "windswept:lavender_flower_crown"
+  }
+}
