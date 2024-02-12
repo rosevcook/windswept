@@ -26,7 +26,7 @@ public class NightshadeFlowerBlock extends BlueprintFlowerBlock {
     }
 
     public static void particles(Level level, BlockPos pos, RandomSource rand) {
-        if (level.isNight() && rand.nextInt(5) == 0) {
+        if (rand.nextInt(5) == 0) {
             double d0 = pos.getX() + .55d - (rand.nextFloat() * .1f);
             double d1 = pos.getY() + .55d - (rand.nextFloat() * .1f);
             double d2 = pos.getZ() + .55d - (rand.nextFloat() * .1f);

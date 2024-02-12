@@ -52,6 +52,7 @@ public class ChestnutTrunkPlacer extends TrunkPlacer {
         // branches
         List<Integer> raisedX = Lists.newArrayList();
         List<Integer> raisedZ = Lists.newArrayList();
+
         for (int x = -2; x <= 2; x++)
             for (int z = -2; z <= 2; z++)
                 if (x == 0 || z == 0) {
