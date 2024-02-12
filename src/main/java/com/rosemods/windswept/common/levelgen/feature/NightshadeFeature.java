@@ -6,6 +6,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
@@ -40,9 +41,12 @@ public class NightshadeFeature extends Feature<NoneFeatureConfiguration> {
     }
 
     public static boolean nextToLog(WorldGenLevel level, BlockPos pos) {
-        for (Direction dir : Direction.Plane.HORIZONTAL)
-            if (level.getBlockState(pos.relative(dir)).is(BlockTags.LOGS))
+        for (Direction dir : Direction.Plane.HORIZONTAL) {
+            BlockState state = level.getBlockState(pos.relative(dir));
+
+            if (state.is(BlockTags.LOGS) && state.hasProperty(RotatedPillarBlock.AXIS) && state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y)
                 return true;
+        }
 
         return false;
     }
