@@ -15,6 +15,10 @@ import com.teamabnormals.blueprint.common.block.chest.BlueprintChestBlock;
 import com.teamabnormals.blueprint.common.block.chest.BlueprintTrappedChestBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintStandingSignBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintWallSignBlock;
+import com.teamabnormals.blueprint.common.block.thatch.ThatchBlock;
+import com.teamabnormals.blueprint.common.block.thatch.ThatchSlabBlock;
+import com.teamabnormals.blueprint.common.block.thatch.ThatchStairBlock;
+import com.teamabnormals.blueprint.common.block.thatch.ThatchVerticalSlabBlock;
 import com.teamabnormals.blueprint.common.block.wood.*;
 import com.teamabnormals.blueprint.core.util.PropertyUtil;
 import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
@@ -165,7 +169,6 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> MOSS_CAMPION = HELPER.createBlock("moss_campion", () -> new MossCampionBlock(WindsweptEffects.THORNS, 5, PropertyUtil.flower().sound(SoundType.AZALEA)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> GINGER_FLOWER = HELPER.createBlock("ginger_flower", () -> new BlueprintFlowerBlock(WindsweptEffects.PLENTY, 5, PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> NIGHTSHADE = HELPER.createBlock("nightshade", () -> new NightshadeFlowerBlock(() -> MobEffects.NIGHT_VISION, 5, BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).lightLevel(state -> 9)), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> LAVENDER = HELPER.createBlock("lavender", () -> new LavenderBlock(PropertyUtil.flower().sound(SoundType.AZALEA)), CreativeModeTab.TAB_DECORATIONS);
 
     // Tall Flowers//
     public static final RegistryObject<Block> LUPINE = HELPER.createBlock("lupine", () -> new BlueprintTallFlowerBlock(PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
@@ -173,6 +176,14 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> BLUE_ROSE_BUSH = HELPER.createInjectedBlock("blue_rose_bush", Items.ROSE_BUSH, () -> new BlueprintTallFlowerBlock(PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> WHITE_ROSE_BUSH = HELPER.createInjectedBlock("white_rose_bush", Items.ROSE_BUSH, () -> new BlueprintTallFlowerBlock(PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> YELLOW_ROSE_BUSH = HELPER.createInjectedBlock("yellow_rose_bush", Items.ROSE_BUSH, () -> new BlueprintTallFlowerBlock(PropertyUtil.flower()), CreativeModeTab.TAB_DECORATIONS);
+
+    // Lavender //
+    public static final RegistryObject<Block> LAVENDER = HELPER.createBlock("lavender", () -> new LavenderBlock(PropertyUtil.flower().sound(SoundType.AZALEA)), CreativeModeTab.TAB_DECORATIONS);
+
+    public static final RegistryObject<Block> LAVENDER_THATCH = HELPER.createBlock("lavender_thatch", () -> new ThatchBlock(Properties.LAVENDER_THATCH), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> LAVENDER_THATCH_STAIRS = HELPER.createBlock("lavender_thatch_stairs", () -> new ThatchStairBlock(LAVENDER_THATCH.get().defaultBlockState(), Properties.LAVENDER_THATCH), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> LAVENDER_THATCH_SLAB = HELPER.createBlock("lavender_thatch_slab", () -> new ThatchSlabBlock(Properties.LAVENDER_THATCH), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> LAVENDER_THATCH_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "lavender_thatch_vertical_slab", () -> new ThatchVerticalSlabBlock(Properties.LAVENDER_THATCH), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
     // Decoration Blocks //
     public static final RegistryObject<Block> HOLLY_WREATH = HELPER.createBlockWithItem("holly_wreath", () -> new WallDecorationBlock(Block.Properties.of(Material.DECORATION).instabreak().sound(SoundType.AZALEA).noCollission()), () -> new WearableBlockItem(WindsweptBlocks.HOLLY_WREATH.get(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
@@ -394,6 +405,7 @@ public class WindsweptBlocks {
         public static final BlockBehaviour.Properties LUNAROCK = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_LIGHT_BLUE).sound(SoundType.CALCITE).requiresCorrectToolForDrops().strength(.8f);
         public static final BlockBehaviour.Properties GINGERBREAD = Block.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_ORANGE).strength(2.0F, 3.0F).sound(SoundType.WOOD);
         public static final BlockBehaviour.Properties FEATHER_ORNAMENT = Block.Properties.of(Material.DECORATION, MaterialColor.COLOR_BROWN).strength(.1f).noOcclusion().noCollission().sound(SoundType.AZALEA);
+        public static final BlockBehaviour.Properties LAVENDER_THATCH = BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.COLOR_PURPLE).strength(.5f).sound(SoundType.NETHER_SPROUTS).noOcclusion();
     }
 
 }
