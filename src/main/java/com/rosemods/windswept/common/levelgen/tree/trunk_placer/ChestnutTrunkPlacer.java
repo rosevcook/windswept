@@ -43,7 +43,7 @@ public class ChestnutTrunkPlacer extends TrunkPlacer {
         List<FoliageAttachment> list = Lists.newArrayList();
 
         // trunk
-        int h = rand.nextInt(3, 9);
+        int h = rand.nextInt(3, 7);
         list.add(new FoliagePlacer.FoliageAttachment(pos.offset(0, h + 2, 0), 0, false));
 
         for (int y = 1; y < h; y++)
