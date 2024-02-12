@@ -455,27 +455,14 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.jeiInfo(MUSIC_DISC_SNOW, "Dropped by a Chilled if killed by a Skeleton.");
         this.jeiInfo(MUSIC_DISC_BUMBLEBEE, "Sometimes dropped when shearing a Beehive for Honeycombs.");
 
-        this.jeiInfo(RED_ROSE_BUSH, "Bonemeal a Red Rose and it will grow into a Red Rose Bush!");
-        this.jeiInfo(BLUE_ROSE_BUSH, "Bonemeal a Blue Rose and it will grow into a Blue Rose Bush! This can also be found in Chestnut Forests");
-        this.jeiInfo(WHITE_ROSE_BUSH, "Bonemeal a White Rose and it will grow into a White Rose Bush! This can also be found in Snowy Chestnut Forests");
-        this.jeiInfo(YELLOW_ROSE_BUSH, "Bonemeal a Yellow Rose and it will grow into a Yellow Rose Bush!");
+        this.jeiInfo(WILD_BERRIES, "Wild berries are the fruit of the wild berry bush. The plant is made unique by their ability to grow in snowy conditions. The berry can be cultivated for a juice that can regenerate health, and can be frozen to a popsicle that grants resistance to frost.");
+        this.jeiInfo(NIGHTSHADE, "Nightshades are mystical flowers found rarely growing in patches from the roots of trees. The flower emits a subtle white light; similar to the light of the moon.");
 
-        this.jeiInfo(WILD_BERRIES, "Wild Berries can be found growing in snowy biomes but are more commonly found in Groves.");
-        this.jeiInfo(NIGHTSHADE, "Nightshades can be found very rarely growing in large patches under trees. They can also be brewing into Night Vision potions.");
-        this.jeiInfo(BLUEBELLS, "Bluebells are small flowers that grow in patches in Dark Oak and Birch Forests.");
-        this.jeiInfo(FOXGLOVE, "Foxgloves are found in any Taiga biome. Foxes can sometimes be found holding them in their mouths.");
-        this.jeiInfo(SNOWY_SPROUTS, "Snowy sprouts are small plants that grow in round patches in snowy areas. They only grow on snow blocks but when collected with shears, can also be placed on grass and dirt.");
+        this.jeiInfo(CARVED_PINECONE_BLOCK, "The face of the Carved Pinecone creates a single note randomly as wind passes through them, the note produced is deeper depending on how high they are stacked.");
+        //this.jeiInfo(WILL_O_THE_WISP, "The face of the Carved Pinecone ");
 
-        this.jeiInfo(RED_ROSE, "Red Roses can be found in Taiga biomes. They can also be bonemealed into Red Rose Bushes.");
-        this.jeiInfo(BLUE_ROSE, "Blue Roses can be found in Snowy biomes. They can also be bonemealed into Blue Rose Bushes.");
-        this.jeiInfo(WHITE_ROSE, "White Roses can be found in Snowy biomes. They can also be bonemealed into White Rose Bushes.");
-        this.jeiInfo(YELLOW_ROSE, "Yellow Roses can be found in Taiga biomes. They can also be bonemealed into Yellow Rose Bushes.");
-
-        this.jeiInfo(WOODEN_BUCKET, "Wooden buckets are cheap buckets with a durability of 24. Durability is taken when a fluid exits the bucket.");
-        this.jeiInfo(SNOW_BOOTS, "Snow boots allow you to walk faster on any snowy block. They can be dyed any colour you like. They also allow you to walk on Powder Snow.");
-        this.jeiInfo(WILD_BERRY_BOWL, "Wild Berry bowls condense 3 Wild Berries into a single item. They are exactly 3 times the saturation and hunger of Wild Berries.");
-        this.jeiInfo(SWEET_BERRY_BOWL, "Sweet Berry bowls condense 3 Sweet Berries into a single item. They are exactly 3 times the saturation and hunger of Sweet Berries.");
-        this.jeiInfo(FOUL_BERRY_BOWL, "Foul Berry bowls condense 3 Foul Berries into a single item. They are exactly 3 times the saturation and hunger of Foul Berries.");
+        this.jeiInfo(WOODEN_BUCKET, "Wooden buckets are easily craft-able; but it comes at a cost to their strength. Durability is taken when fluids exit the bucket.");
+        this.jeiInfo(SNOW_BOOTS, "Snow boots allow for faster traversal through snow, and grants the wearer the ability to walk on Powder Snow. The leather can be dyed.");
     }
 
     private void translateItem(RegistryObject<? extends Item> item) {
