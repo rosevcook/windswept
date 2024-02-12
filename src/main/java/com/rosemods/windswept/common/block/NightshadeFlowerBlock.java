@@ -26,15 +26,16 @@ public class NightshadeFlowerBlock extends BlueprintFlowerBlock {
     }
 
     public static void particles(Level level, BlockPos pos, RandomSource rand) {
-        double d0 = pos.getX() + .55d - (rand.nextFloat() * .1f);
-        double d1 = pos.getY() + .55d - (rand.nextFloat() * .1f);
-        double d2 = pos.getZ() + .55d - (rand.nextFloat() * .1f);
-        double d3 = (.4f - (rand.nextFloat() + rand.nextFloat()) * .4f);
+        if (level.isNight() && rand.nextInt(5) == 0) {
+            double d0 = pos.getX() + .55d - (rand.nextFloat() * .1f);
+            double d1 = pos.getY() + .55d - (rand.nextFloat() * .1f);
+            double d2 = pos.getZ() + .55d - (rand.nextFloat() * .1f);
+            double d3 = (.4f - (rand.nextFloat() + rand.nextFloat()) * .4f);
 
-        if (rand.nextInt(5) == 0)
             level.addParticle(ParticleTypes.END_ROD, d0 + Direction.UP.getStepX() * d3,
                     d1 + Direction.UP.getStepY() * d3, d2 + Direction.UP.getStepZ() * d3,
                     rand.nextGaussian() * 0.005D, rand.nextGaussian() * .005d, rand.nextGaussian() * .005d);
+        }
     }
 
 }
