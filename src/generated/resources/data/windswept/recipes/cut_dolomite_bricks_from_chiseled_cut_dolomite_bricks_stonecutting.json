@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "windswept:cut_dolomite_bricks"
-  },
-  "result": "windswept:chiseled_cut_dolomite_bricks"
-}

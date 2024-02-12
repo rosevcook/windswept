@@ -349,47 +349,47 @@ public class WindsweptModelProvider extends BlockStateProvider {
                 .partialState().with(IceLanternBlock.FACING, Direction.WEST).addModels(ConfiguredModel.builder().modelFile(this.models().getExistingFile(this.modLoc("block/ice_lantern_side"))).rotationY(270).build());
         this.generatedItem(ICE_LANTERN.get(), TextureFolder.ITEM);
 
-        // dolomite
-        this.getVariantBuilder(DOLOMITE.get())
-                .partialState().with(DolomiteBlock.TOP, true).addModels(new ConfiguredModel(this.models().cubeBottomTop("dolomite", this.modLoc("block/dolomite"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"))))
-                .partialState().with(DolomiteBlock.TOP, false).addModels(new ConfiguredModel(this.models().cubeAll("dolomite_bottom", this.modLoc("block/dolomite_bottom"))));
-        this.simpleBlock(CUT_DOLOMITE.get(), this.models().cubeBottomTop("cut_dolomite", this.modLoc("block/cut_dolomite"), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top")));
-        this.simpleBlock(CUT_DOLOMITE_BRICKS.get(), this.models().cubeBottomTop("cut_dolomite_bricks", this.modLoc("block/cut_dolomite_bricks"), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top")));
-        this.simpleBlock(CHISELED_CUT_DOLOMITE_BRICKS.get(), this.models().cubeBottomTop("chiseled_cut_dolomite_bricks", this.modLoc("block/chiseled_cut_dolomite_bricks"), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top")));
-        this.itemModel(DOLOMITE);
-        this.itemModel(CUT_DOLOMITE);
-        this.itemModel(CUT_DOLOMITE_BRICKS);
-        this.itemModel(CHISELED_CUT_DOLOMITE_BRICKS);
+        // lunarock
+        this.getVariantBuilder(LUNAROCK.get())
+                .partialState().with(LunarockBlock.TOP, true).addModels(new ConfiguredModel(this.models().cubeBottomTop("lunarock", this.modLoc("block/lunarock"), this.modLoc("block/lunarock_bottom"), this.modLoc("block/lunarock_top"))))
+                .partialState().with(LunarockBlock.TOP, false).addModels(new ConfiguredModel(this.models().cubeAll("lunarock_bottom", this.modLoc("block/lunarock_bottom"))));
+        this.simpleBlock(CUT_LUNAROCK.get(), this.models().cubeBottomTop("cut_lunarock", this.modLoc("block/cut_lunarock"), this.modLoc("block/smooth_lunarock"), this.modLoc("block/lunarock_top")));
+        this.simpleBlock(CUT_LUNAROCK_BRICKS.get(), this.models().cubeBottomTop("cut_lunarock_bricks", this.modLoc("block/cut_lunarock_bricks"), this.modLoc("block/smooth_lunarock"), this.modLoc("block/lunarock_top")));
+        this.simpleBlock(CHISELED_CUT_LUNAROCK_BRICKS.get(), this.models().cubeBottomTop("chiseled_cut_lunarock_bricks", this.modLoc("block/chiseled_cut_lunarock_bricks"), this.modLoc("block/smooth_lunarock"), this.modLoc("block/lunarock_top")));
+        this.itemModel(LUNAROCK);
+        this.itemModel(CUT_LUNAROCK);
+        this.itemModel(CUT_LUNAROCK_BRICKS);
+        this.itemModel(CHISELED_CUT_LUNAROCK_BRICKS);
 
-        this.getVariantBuilder(DOLOMITE_SLAB.get())
-                .partialState().with(SlabBlock.TYPE, SlabType.BOTTOM).with(DolomiteSlabBlock.TOP, true).addModels(new ConfiguredModel(this.models().slab("dolomite_slab", this.modLoc("block/dolomite_slab"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"))))
-                .partialState().with(SlabBlock.TYPE, SlabType.TOP).with(DolomiteSlabBlock.TOP, true).addModels(new ConfiguredModel(this.models().slabTop("dolomite_slab_top", this.modLoc("block/dolomite_slab"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"))))
-                .partialState().with(SlabBlock.TYPE, SlabType.DOUBLE).with(DolomiteSlabBlock.TOP, true).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/dolomite"))))
-                .partialState().with(SlabBlock.TYPE, SlabType.BOTTOM).with(DolomiteSlabBlock.TOP, false).addModels(new ConfiguredModel(this.models().slab("dolomite_slab_bottom", this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_bottom"))))
-                .partialState().with(SlabBlock.TYPE, SlabType.TOP).with(DolomiteSlabBlock.TOP, false).addModels(new ConfiguredModel(this.models().slabTop("dolomite_slab_top_bottom", this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_bottom"))))
-                .partialState().with(SlabBlock.TYPE, SlabType.DOUBLE).with(DolomiteSlabBlock.TOP, false).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/dolomite_bottom"))));
-        this.models().cubeBottomTop("cut_dolomite_slab_double", this.modLoc("block/cut_dolomite_slab"), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top"));
-        this.slab(CUT_DOLOMITE_SLAB, this.modLoc("block/cut_dolomite_slab_double"), this.modLoc("block/cut_dolomite_slab"), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top"));
-        this.slab(CUT_DOLOMITE_BRICK_SLAB, this.blockTexture(CUT_DOLOMITE_BRICKS.get()), this.modLoc("block/cut_dolomite_bricks"), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top"));
-        this.itemModel(DOLOMITE_SLAB);
+        this.getVariantBuilder(LUNAROCK_SLAB.get())
+                .partialState().with(SlabBlock.TYPE, SlabType.BOTTOM).with(LunarockSlabBlock.TOP, true).addModels(new ConfiguredModel(this.models().slab("lunarock_slab", this.modLoc("block/lunarock_slab"), this.modLoc("block/lunarock_bottom"), this.modLoc("block/lunarock_top"))))
+                .partialState().with(SlabBlock.TYPE, SlabType.TOP).with(LunarockSlabBlock.TOP, true).addModels(new ConfiguredModel(this.models().slabTop("lunarock_slab_top", this.modLoc("block/lunarock_slab"), this.modLoc("block/lunarock_bottom"), this.modLoc("block/lunarock_top"))))
+                .partialState().with(SlabBlock.TYPE, SlabType.DOUBLE).with(LunarockSlabBlock.TOP, true).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/lunarock"))))
+                .partialState().with(SlabBlock.TYPE, SlabType.BOTTOM).with(LunarockSlabBlock.TOP, false).addModels(new ConfiguredModel(this.models().slab("lunarock_slab_bottom", this.modLoc("block/lunarock_bottom"), this.modLoc("block/lunarock_bottom"), this.modLoc("block/lunarock_bottom"))))
+                .partialState().with(SlabBlock.TYPE, SlabType.TOP).with(LunarockSlabBlock.TOP, false).addModels(new ConfiguredModel(this.models().slabTop("lunarock_slab_top_bottom", this.modLoc("block/lunarock_bottom"), this.modLoc("block/lunarock_bottom"), this.modLoc("block/lunarock_bottom"))))
+                .partialState().with(SlabBlock.TYPE, SlabType.DOUBLE).with(LunarockSlabBlock.TOP, false).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/lunarock_bottom"))));
+        this.models().cubeBottomTop("cut_lunarock_slab_double", this.modLoc("block/cut_lunarock_slab"), this.modLoc("block/smooth_lunarock"), this.modLoc("block/lunarock_top"));
+        this.slab(CUT_LUNAROCK_SLAB, this.modLoc("block/cut_lunarock_slab_double"), this.modLoc("block/cut_lunarock_slab"), this.modLoc("block/smooth_lunarock"), this.modLoc("block/lunarock_top"));
+        this.slab(CUT_LUNAROCK_BRICK_SLAB, this.blockTexture(CUT_LUNAROCK_BRICKS.get()), this.modLoc("block/cut_lunarock_bricks"), this.modLoc("block/smooth_lunarock"), this.modLoc("block/lunarock_top"));
+        this.itemModel(LUNAROCK_SLAB);
 
-        this.stairsInversion(DOLOMITE_STAIRS, this.blockTexture(DOLOMITE.get()), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"));
-        this.stairsInversion(CUT_DOLOMITE_STAIRS, this.blockTexture(CUT_DOLOMITE.get()), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top"));
-        this.stairsInversion(CUT_DOLOMITE_BRICK_STAIRS, this.blockTexture(CUT_DOLOMITE_BRICKS.get()), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top"));
+        this.stairsInversion(LUNAROCK_STAIRS, this.blockTexture(LUNAROCK.get()), this.modLoc("block/lunarock_bottom"), this.modLoc("block/lunarock_top"));
+        this.stairsInversion(CUT_LUNAROCK_STAIRS, this.blockTexture(CUT_LUNAROCK.get()), this.modLoc("block/smooth_lunarock"), this.modLoc("block/lunarock_top"));
+        this.stairsInversion(CUT_LUNAROCK_BRICK_STAIRS, this.blockTexture(CUT_LUNAROCK_BRICKS.get()), this.modLoc("block/smooth_lunarock"), this.modLoc("block/lunarock_top"));
 
-        this.wall(DOLOMITE_WALL, this.blockTexture(DOLOMITE.get()), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"));
-        this.wall(CUT_DOLOMITE_WALL, this.blockTexture(CUT_DOLOMITE.get()), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top"));
-        this.wall(CUT_DOLOMITE_BRICK_WALL, this.blockTexture(CUT_DOLOMITE_BRICKS.get()), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top"));
+        this.wall(LUNAROCK_WALL, this.blockTexture(LUNAROCK.get()), this.modLoc("block/lunarock_bottom"), this.modLoc("block/lunarock_top"));
+        this.wall(CUT_LUNAROCK_WALL, this.blockTexture(CUT_LUNAROCK.get()), this.modLoc("block/smooth_lunarock"), this.modLoc("block/lunarock_top"));
+        this.wall(CUT_LUNAROCK_BRICK_WALL, this.blockTexture(CUT_LUNAROCK_BRICKS.get()), this.modLoc("block/smooth_lunarock"), this.modLoc("block/lunarock_top"));
 
-        this.verticalSlab(DOLOMITE_VERTICAL_SLAB, this.blockTexture(DOLOMITE.get()), this.modLoc("block/dolomite"), this.modLoc("block/dolomite_bottom"), this.modLoc("block/dolomite_top"));
-        this.verticalSlab(CUT_DOLOMITE_VERTICAL_SLAB, this.blockTexture(CUT_DOLOMITE.get()), this.modLoc("block/cut_dolomite"), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top"));
-        this.verticalSlab(CUT_DOLOMITE_BRICK_VERTICAL_SLAB, this.blockTexture(CUT_DOLOMITE_BRICKS.get()), this.modLoc("block/cut_dolomite_bricks"), this.modLoc("block/smooth_dolomite"), this.modLoc("block/dolomite_top"));
+        this.verticalSlab(LUNAROCK_VERTICAL_SLAB, this.blockTexture(LUNAROCK.get()), this.modLoc("block/lunarock"), this.modLoc("block/lunarock_bottom"), this.modLoc("block/lunarock_top"));
+        this.verticalSlab(CUT_LUNAROCK_VERTICAL_SLAB, this.blockTexture(CUT_LUNAROCK.get()), this.modLoc("block/cut_lunarock"), this.modLoc("block/smooth_lunarock"), this.modLoc("block/lunarock_top"));
+        this.verticalSlab(CUT_LUNAROCK_BRICK_VERTICAL_SLAB, this.blockTexture(CUT_LUNAROCK_BRICKS.get()), this.modLoc("block/cut_lunarock_bricks"), this.modLoc("block/smooth_lunarock"), this.modLoc("block/lunarock_top"));
 
-        this.cubeAll(SMOOTH_DOLOMITE);
-        this.stairs(SMOOTH_DOLOMITE_STAIRS, this.blockTexture(SMOOTH_DOLOMITE.get()));
-        this.models().cubeBottomTop("smooth_dolomite_slab_double", this.modLoc("block/smooth_dolomite_slab"), this.modLoc("block/smooth_dolomite"), this.modLoc("block/smooth_dolomite"));
-        this.slab(SMOOTH_DOLOMITE_SLAB, this.modLoc("block/smooth_dolomite_slab_double"), this.modLoc("block/smooth_dolomite_slab"), this.modLoc("block/smooth_dolomite"), this.modLoc("block/smooth_dolomite"));
-        this.verticalSlab(SMOOTH_DOLOMITE_VERTICAL_SLAB, this.blockTexture(SMOOTH_DOLOMITE.get()));
+        this.cubeAll(SMOOTH_LUNAROCK);
+        this.stairs(SMOOTH_LUNAROCK_STAIRS, this.blockTexture(SMOOTH_LUNAROCK.get()));
+        this.models().cubeBottomTop("smooth_lunarock_slab_double", this.modLoc("block/smooth_lunarock_slab"), this.modLoc("block/smooth_lunarock"), this.modLoc("block/smooth_lunarock"));
+        this.slab(SMOOTH_LUNAROCK_SLAB, this.modLoc("block/smooth_lunarock_slab_double"), this.modLoc("block/smooth_lunarock_slab"), this.modLoc("block/smooth_lunarock"), this.modLoc("block/smooth_lunarock"));
+        this.verticalSlab(SMOOTH_LUNAROCK_VERTICAL_SLAB, this.blockTexture(SMOOTH_LUNAROCK.get()));
 
         // ginger
         this.cubeAll(GINGER_SOIL);

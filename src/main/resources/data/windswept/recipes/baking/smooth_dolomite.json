@@ -20,9 +20,9 @@
       "recipe": {
         "type": "clayworks:baking",
         "ingredient": {
-          "item": "windswept:dolomite"
+          "item": "windswept:lunarock"
         },
-        "result": "windswept:smooth_dolomite",
+        "result": "windswept:smooth_lunarock",
         "experience": 0.1,
         "cookingtime": 100
       }

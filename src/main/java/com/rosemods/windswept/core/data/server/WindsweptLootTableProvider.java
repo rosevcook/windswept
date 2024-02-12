@@ -377,27 +377,27 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(ICICLE_BARS.get());
             this.dropSelf(ICE_LANTERN.get());
 
-            //dolomite
-            this.dropSelf(DOLOMITE.get());
-            this.dropSelf(DOLOMITE_STAIRS.get());
-            this.add(DOLOMITE_SLAB.get(), Blocks::createSlabItemTable);
-            this.dropSelf(DOLOMITE_WALL.get());
-            this.add(DOLOMITE_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
-            this.dropSelf(CUT_DOLOMITE.get());
-            this.dropSelf(CUT_DOLOMITE_STAIRS.get());
-            this.add(CUT_DOLOMITE_SLAB.get(), Blocks::createSlabItemTable);
-            this.dropSelf(CUT_DOLOMITE_WALL.get());
-            this.add(CUT_DOLOMITE_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
-            this.dropSelf(CUT_DOLOMITE_BRICKS.get());
-            this.dropSelf(CHISELED_CUT_DOLOMITE_BRICKS.get());
-            this.dropSelf(CUT_DOLOMITE_BRICK_STAIRS.get());
-            this.add(CUT_DOLOMITE_BRICK_SLAB.get(), Blocks::createSlabItemTable);
-            this.dropSelf(CUT_DOLOMITE_BRICK_WALL.get());
-            this.add(CUT_DOLOMITE_BRICK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
-            this.dropSelf(SMOOTH_DOLOMITE.get());
-            this.dropSelf(SMOOTH_DOLOMITE_STAIRS.get());
-            this.add(SMOOTH_DOLOMITE_SLAB.get(), Blocks::createSlabItemTable);
-            this.add(SMOOTH_DOLOMITE_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+            //lunarock
+            this.dropSelf(LUNAROCK.get());
+            this.dropSelf(LUNAROCK_STAIRS.get());
+            this.add(LUNAROCK_SLAB.get(), Blocks::createSlabItemTable);
+            this.dropSelf(LUNAROCK_WALL.get());
+            this.add(LUNAROCK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+            this.dropSelf(CUT_LUNAROCK.get());
+            this.dropSelf(CUT_LUNAROCK_STAIRS.get());
+            this.add(CUT_LUNAROCK_SLAB.get(), Blocks::createSlabItemTable);
+            this.dropSelf(CUT_LUNAROCK_WALL.get());
+            this.add(CUT_LUNAROCK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+            this.dropSelf(CUT_LUNAROCK_BRICKS.get());
+            this.dropSelf(CHISELED_CUT_LUNAROCK_BRICKS.get());
+            this.dropSelf(CUT_LUNAROCK_BRICK_STAIRS.get());
+            this.add(CUT_LUNAROCK_BRICK_SLAB.get(), Blocks::createSlabItemTable);
+            this.dropSelf(CUT_LUNAROCK_BRICK_WALL.get());
+            this.add(CUT_LUNAROCK_BRICK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
+            this.dropSelf(SMOOTH_LUNAROCK.get());
+            this.dropSelf(SMOOTH_LUNAROCK_STAIRS.get());
+            this.add(SMOOTH_LUNAROCK_SLAB.get(), Blocks::createSlabItemTable);
+            this.add(SMOOTH_LUNAROCK_VERTICAL_SLAB.get(), Blocks::createVerticalSlabItemTable);
 
             // dry moss blocks
             this.dropSelf(DRY_MOSS_CARPET.get());

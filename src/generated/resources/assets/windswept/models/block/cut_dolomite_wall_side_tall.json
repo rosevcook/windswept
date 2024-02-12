@@ -1,8 +1,0 @@
-{
-  "parent": "windswept:block/template_wall_side_tall",
-  "textures": {
-    "bottom": "windswept:block/smooth_dolomite",
-    "side": "windswept:block/cut_dolomite",
-    "top": "windswept:block/dolomite_top"
-  }
-}

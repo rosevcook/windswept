@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "windswept:block/lunarock_top",
+    "side": "windswept:block/lunarock",
+    "top": "windswept:block/lunarock_bottom"
+  }
+}

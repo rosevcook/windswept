@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "top=false": {
+      "model": "windswept:block/lunarock_bottom"
+    },
+    "top=true": {
+      "model": "windswept:block/lunarock"
+    }
+  }
+}

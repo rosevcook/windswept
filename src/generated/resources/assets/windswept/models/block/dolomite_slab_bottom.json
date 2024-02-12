@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "windswept:block/dolomite_bottom",
-    "side": "windswept:block/dolomite_bottom",
-    "top": "windswept:block/dolomite_bottom"
-  }
-}

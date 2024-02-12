@@ -1,0 +1,8 @@
+{
+  "parent": "windswept:block/template_wall_side_tall",
+  "textures": {
+    "bottom": "windswept:block/lunarock_bottom",
+    "side": "windswept:block/lunarock",
+    "top": "windswept:block/lunarock_top"
+  }
+}

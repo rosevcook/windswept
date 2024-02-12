@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "windswept:dolomite"
-  },
-  "result": "windswept:cut_dolomite_stairs"
-}
