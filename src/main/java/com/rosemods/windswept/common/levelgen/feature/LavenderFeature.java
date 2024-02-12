@@ -4,6 +4,7 @@ import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
@@ -28,7 +29,7 @@ public class LavenderFeature extends Feature<NoneFeatureConfiguration> {
                 for (int y = -2; y <= 2; ++y) {
                     BlockPos pos = origin.offset(x, y, z);
 
-                    if (level.isEmptyBlock(pos) && pos.getY() < level.getMaxBuildHeight() && rand.nextInt(3) > 0 && state.canSurvive(level, pos)) {
+                    if (level.isEmptyBlock(pos) && pos.getY() < level.getMaxBuildHeight() && rand.nextBoolean() && (!level.getBlockState(pos.below()).is(Blocks.MOSS_BLOCK) || rand.nextInt(3) == 0) && state.canSurvive(level, pos)) {
                         level.setBlock(pos, state, 2);
                         generated = true;
                     }
