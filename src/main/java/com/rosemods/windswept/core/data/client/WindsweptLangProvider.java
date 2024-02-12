@@ -431,6 +431,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 
         // Attributes
         this.translateAttribute(WindsweptAttributes.SNOW_SPEED);
+        this.add(WindsweptAttributes.SPRINT_DAMAGE.get().getDescriptionId(), "Attack Damage While Sprinting");
 
         // Biomes //
         this.translateBiome(WindsweptBiomes.CHESTNUT_FOREST);

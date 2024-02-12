@@ -13,10 +13,11 @@ import net.minecraftforge.registries.RegistryObject;
 public class WindsweptAttributes {
     public static final DeferredRegister<Attribute> ATTRIBUTES = DeferredRegister.create(ForgeRegistries.ATTRIBUTES, Windswept.MOD_ID);
 
-    public static final RegistryObject<Attribute> SNOW_SPEED = ATTRIBUTES.register("snow_speed", () -> new RangedAttribute(createDescriptionId("snow_speed"), 0d, 0d, 1d));
+    public static final RegistryObject<Attribute> SNOW_SPEED = register("snow_speed");
+    public static final RegistryObject<Attribute> SPRINT_DAMAGE = register("sprint_damage");
 
-    private static String createDescriptionId(String name) {
-        return "attribute." + Windswept.MOD_ID + ".name.generic." + name;
+    private static RegistryObject<Attribute> register(String name) {
+        return ATTRIBUTES.register(name, () -> new RangedAttribute("attribute." + Windswept.MOD_ID + ".name.generic." + name, 0d, 0d, 1d));
     }
 
 }
