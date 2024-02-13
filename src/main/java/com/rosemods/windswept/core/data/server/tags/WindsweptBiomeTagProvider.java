@@ -34,15 +34,15 @@ public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
 
         this.tag(IS_CHESTNUT_FOREST).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey());
         this.tag(IS_PINE_BARRENS).add(PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey());
+        this.tag(IS_LAVENDER).add(LAVENDER_FOREST.getKey(), LAVENDER_FIELD.getKey());
 
         this.tag(HAS_SPOTTED_ORANGE_MAPLE_TREES).add(CHESTNUT_FOREST.getKey());
         this.tag(HAS_SPOTTED_RED_MAPLE_TREES).add(SNOWY_CHESTNUT_FOREST.getKey(), PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey());
 
         this.tag(HAS_YAK).add(WindsweptBiomes.TUNDRA.getKey());
-        this.tag(HAS_REINDEER).add(WindsweptBiomes.TUNDRA.getKey());
 
         this.tag(BiomeTags.IS_OVERWORLD).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey(), TUNDRA.getKey());
-        this.tag(BiomeTags.IS_FOREST).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey());
+        this.tag(BiomeTags.IS_FOREST).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey(), LAVENDER_FOREST.getKey());
         this.tag(BiomeTags.HAS_IGLOO).add(SNOWY_CHESTNUT_FOREST.getKey(), SNOWY_PINE_BARRENS.getKey(), TUNDRA.getKey());
         this.tag(BiomeTags.HAS_VILLAGE_SNOWY).add(SNOWY_CHESTNUT_FOREST.getKey(), SNOWY_PINE_BARRENS.getKey());
         this.tag(BiomeTags.IS_TAIGA).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey());

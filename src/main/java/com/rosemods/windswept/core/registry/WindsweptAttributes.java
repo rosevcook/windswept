@@ -14,6 +14,7 @@ public class WindsweptAttributes {
     public static final DeferredRegister<Attribute> ATTRIBUTES = DeferredRegister.create(ForgeRegistries.ATTRIBUTES, Windswept.MOD_ID);
 
     public static final RegistryObject<Attribute> SNOW_SPEED = register("snow_speed");
+    public static final RegistryObject<Attribute> FRAGRANCE = register("fragrance");
     public static final RegistryObject<Attribute> SPRINT_DAMAGE = register("sprint_damage");
 
     private static RegistryObject<Attribute> register(String name) {

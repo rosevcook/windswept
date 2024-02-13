@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "windswept:lavender_flower_crown"
+        "recipe": "windswept:lavender_crown"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "windswept:lavender_flower_crown"
+      "windswept:lavender_crown"
     ]
   }
 }

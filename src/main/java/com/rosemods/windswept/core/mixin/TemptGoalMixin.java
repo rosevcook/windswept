@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class TemptGoalMixin {
     @Inject(at = @At("HEAD"), method = "shouldFollow", cancellable = true)
     private void shouldFollow(LivingEntity entity, CallbackInfoReturnable<Boolean> info) {
-        if (entity.getItemBySlot(EquipmentSlot.HEAD).is(WindsweptItems.LAVENDER_FLOWER_CROWN.get()))
+        if (entity.getItemBySlot(EquipmentSlot.HEAD).is(WindsweptItems.LAVENDER_CROWN.get()))
             info.setReturnValue(true);
     }
 

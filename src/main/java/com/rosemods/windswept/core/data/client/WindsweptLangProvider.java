@@ -74,7 +74,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.add(FOUL_BERRY_BOWL.get(), "Bowl of Foul Berries");
         this.translateItem(FROZEN_FLESH);
         this.translateItem(FROZEN_BRANCH);
-        this.translateItem(LAVENDER_FLOWER_CROWN);
+        this.translateItem(LAVENDER_CROWN);
         this.translateItem(SNOW_BOOTS);
         this.translateItem(FROST_ARROW);
         this.add(CUPIDS_ARROW.get(), "Cupid's Arrow");
@@ -431,6 +431,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 
         // Attributes
         this.translateAttribute(WindsweptAttributes.SNOW_SPEED);
+        this.translateAttribute(WindsweptAttributes.FRAGRANCE);
         this.add(WindsweptAttributes.SPRINT_DAMAGE.get().getDescriptionId(), "Attack Damage While Sprinting");
 
         // Biomes //
