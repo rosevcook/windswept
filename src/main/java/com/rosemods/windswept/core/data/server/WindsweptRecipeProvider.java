@@ -120,6 +120,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         ShapedRecipeBuilder.shaped(GINGERBREAD_BLOCK.get()).define('#', GINGERBREAD_COOKIE.get()).pattern("##").pattern("##").unlockedBy(getHasName(GINGERBREAD_COOKIE.get()), has(GINGERBREAD_COOKIE.get())).save(consumer, getSaveLocation(GINGERBREAD_BLOCK.get()));
         ShapelessRecipeBuilder.shapeless(GLAZED_GINGERBREAD_BLOCK.get()).requires(GINGERBREAD_BLOCK.get()).requires(Items.SUGAR).unlockedBy(getHasName(GINGERBREAD_BLOCK.get()), has(GINGERBREAD_BLOCK.get())).save(consumer, getSaveLocation("glazed_gingerbread_block_from_sugar"));
         ShapelessRecipeBuilder.shapeless(GLAZED_GINGERBREAD_BRICKS.get()).requires(GINGERBREAD_BRICKS.get()).requires(Items.SUGAR).unlockedBy(getHasName(GINGERBREAD_BRICKS.get()), has(GINGERBREAD_BRICKS.get())).save(consumer, getSaveLocation("glazed_gingerbread_bricks_from_sugar"));
+        ShapedRecipeBuilder.shaped(LAVENDER_THATCH.get()).define('#', LAVENDER.get()).pattern("##").pattern("##").unlockedBy(getHasName(LAVENDER.get()), has(LAVENDER.get())).save(consumer, getSaveLocation(LAVENDER_THATCH.get()));
 
         ShapedRecipeBuilder.shaped(FEATHER_WING.get(), 2).define('#', PINECONE.get()).define('F', OWL_FEATHER.get()).pattern("#FF").unlockedBy(getHasName(OWL_FEATHER.get()), has(OWL_FEATHER.get())).save(consumer, getSaveLocation(FEATHER_WING.get()));
         ShapedRecipeBuilder.shaped(FEATHER_ORNAMENT.get(), 2).define('#', PINECONE.get()).define('F', OWL_FEATHER.get()).pattern("##").pattern("FF").unlockedBy(getHasName(OWL_FEATHER.get()), has(OWL_FEATHER.get())).save(consumer, getSaveLocation(FEATHER_ORNAMENT.get()));
@@ -232,7 +233,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         blockset(GLAZED_GINGERBREAD_BLOCK.get(), GLAZED_GINGERBREAD_BRICKS.get(), null, GLAZED_GINGERBREAD_BRICK_SLAB.get(), GLAZED_GINGERBREAD_BRICK_STAIRS.get(), GLAZED_GINGERBREAD_BRICK_WALL.get(), GLAZED_GINGERBREAD_BRICK_VERTICAL_SLAB.get(), false, consumer);
         blockset(null, DRY_MOSSY_COBBLESTONE_BRICKS.get(), null, DRY_MOSSY_COBBLESTONE_BRICK_SLAB.get(), DRY_MOSSY_COBBLESTONE_BRICK_STAIRS.get(), DRY_MOSSY_COBBLESTONE_BRICK_WALL.get(), DRY_MOSSY_COBBLESTONE_BRICK_VERTICAL_SLAB.get(), true, consumer);
         blockset(null, DRY_MOSSY_COBBLESTONE_TILES.get(), null, DRY_MOSSY_COBBLESTONE_TILE_SLAB.get(), DRY_MOSSY_COBBLESTONE_TILE_STAIRS.get(), DRY_MOSSY_COBBLESTONE_TILE_WALL.get(), DRY_MOSSY_COBBLESTONE_TILE_VERTICAL_SLAB.get(), true, consumer);
-        blockset(LAVENDER.get(), LAVENDER_THATCH.get(), null, LAVENDER_THATCH_SLAB.get(), LAVENDER_THATCH_STAIRS.get(), null, LAVENDER_THATCH_VERTICAL_SLAB.get(), false, consumer);
+        blockset(null, LAVENDER_THATCH.get(), null, LAVENDER_THATCH_SLAB.get(), LAVENDER_THATCH_STAIRS.get(), null, LAVENDER_THATCH_VERTICAL_SLAB.get(), false, consumer);
 
         // wood sets
         woodSet(WindsweptItemTags.HOLLY_LOGS, HOLLY_PLANKS.get(), HOLLY_SLAB.get(), HOLLY_STAIRS.get(), HOLLY_LOG.get(), HOLLY_WOOD.get(), STRIPPED_HOLLY_LOG.get(), STRIPPED_HOLLY_WOOD.get(), HOLLY_BOATS.getFirst().get(), HOLLY_BOATS.getSecond().get(), HOLLY_BUTTON.get(), HOLLY_DOOR.get(), HOLLY_TRAPDOOR.get(), HOLLY_FENCE.get(), HOLLY_FENCE_GATE.get(), HOLLY_PRESSURE_PLATE.get(), HOLLY_SIGNS.getFirst().get(), HOLLY_VERTICAL_SLAB.get(), HOLLY_POST.get(), STRIPPED_HOLLY_POST.get(), HOLLY_BOARDS.get(), HOLLY_BEEHIVE.get(), HOLLY_LADDER.get(), HOLLY_BOOKSHELF.get(), HOLLY_CHEST.get(), HOLLY_TRAPPED_CHEST.get(), LARGE_HOLLY_BOAT.get(), HOLLY_FURNACE_BOAT.get(), VERTICAL_HOLLY_PLANKS.get(), HOLLY_CABINET.get(), consumer);
@@ -268,10 +269,10 @@ public class WindsweptRecipeProvider extends RecipeProvider {
 
     private static void blockset(ItemLike ingredient, Block block, Block chiseled, Block slab, Block stairs, Block wall, Block verticalSlab, boolean stonecutter, Consumer<FinishedRecipe> consumer) {
         if (ingredient != null)
-            ShapedRecipeBuilder.shaped(block, 4).define('#', ingredient).pattern("##").pattern("##").unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, getSaveLocation(getName(block)));
+            ShapedRecipeBuilder.shaped(block, 4).define('#', ingredient).pattern("##").pattern("##").unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, getSaveLocation(block));
 
         if (chiseled != null) {
-            ShapedRecipeBuilder.shaped(chiseled).define('#', slab).pattern("#").pattern("#").unlockedBy(getHasName(block), has(block)).save(consumer, getSaveLocation(getName(chiseled)));
+            ShapedRecipeBuilder.shaped(chiseled).define('#', slab).pattern("#").pattern("#").unlockedBy(getHasName(block), has(block)).save(consumer, getSaveLocation(chiseled));
 
             if (stonecutter)
                 stonecutting(block, chiseled, 1, consumer);

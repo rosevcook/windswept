@@ -321,6 +321,11 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.generatedItem(LAVENDER.get(), TextureFolder.ITEM);
         this.pot(POTTED_LAVENDER, this.blockTexture(LAVENDER.get()));
 
+        //this.thatch(LAVENDER_THATCH);
+        //this.thatchStairs(LAVENDER_THATCH_STAIRS, this.blockTexture(LAVENDER_THATCH.get()));
+        //this.thatchSlab(LAVENDER_THATCH_SLAB, this.blockTexture(LAVENDER_THATCH.get()));
+        //this.thatchVerticalSlab(LAVENDER_THATCH_VERTICAL_SLAB, this.blockTexture(LAVENDER_THATCH.get()));
+
         // wild berry blocks
         this.wildBerryBush(WILD_BERRY_BUSH);
         this.compressedBlock(WILD_BERRY_BASKET);
@@ -859,22 +864,20 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.itemModel(thatch);
     }
 
-    private void thatchSlab(RegistryObject<Block> thatch, Supplier<Block> textureBlock) {
+    private void thatchSlab(RegistryObject<Block> thatch, ResourceLocation texture) {
         String name = getItemName(thatch.get());
-        ResourceLocation texture = this.blockTexture(textureBlock.get());
-        ResourceLocation extrudes = this.modLoc("block/" +  getItemName(textureBlock.get()) + "_extrudes");
+        ResourceLocation extrudes = new ResourceLocation(texture.getNamespace(), texture.getPath() + "_extrudes");
 
         ModelFile bottom = this.models().withExistingParent(name, "blueprint:block/thatch/thatch_slab").texture("thatch", texture).texture("extrudes", extrudes).renderType("cutout");
         ModelFile top = this.models().withExistingParent(name + "_top", "blueprint:block/thatch/thatch_slab_top").texture("thatch", texture).texture("extrudes", extrudes).renderType("cutout");
 
-        this.slabBlock((SlabBlock) thatch.get(), bottom, top, this.models().getExistingFile(ForgeRegistries.BLOCKS.getKey(textureBlock.get())));
+        this.slabBlock((SlabBlock) thatch.get(), bottom, top, this.models().getExistingFile(texture));
         this.itemModel(thatch);
     }
 
-    private void thatchStairs(RegistryObject<Block> thatch, Supplier<Block> textureBlock) {
+    private void thatchStairs(RegistryObject<Block> thatch, ResourceLocation texture) {
         String name = getItemName(thatch.get());
-        ResourceLocation texture = this.blockTexture(textureBlock.get());
-        ResourceLocation extrudes = this.modLoc("block/" +  getItemName(textureBlock.get()) + "_extrudes");
+        ResourceLocation extrudes = new ResourceLocation(texture.getNamespace(), texture.getPath() + "_extrudes");
 
         ModelFile stairs = this.models().withExistingParent(name, "blueprint:block/thatch/thatch_stairs").texture("thatch", texture).texture("extrudes", extrudes).renderType("cutout");
         ModelFile inner = this.models().withExistingParent(name + "_inner", "blueprint:block/thatch/thatch_stairs_inner").texture("thatch", texture).texture("extrudes", extrudes).renderType("cutout");
@@ -903,9 +906,8 @@ public class WindsweptModelProvider extends BlockStateProvider {
                 }, StairBlock.WATERLOGGED);
     }
 
-    private void thatchVerticalSlab(RegistryObject<Block> thatch, Supplier<Block> textureBlock) {
-        ResourceLocation texture = this.blockTexture(textureBlock.get());
-        ResourceLocation extrudes = this.modLoc("block/" +  getItemName(textureBlock.get()) + "_extrudes");
+    private void thatchVerticalSlab(RegistryObject<Block> thatch, ResourceLocation texture) {
+        ResourceLocation extrudes = new ResourceLocation(texture.getNamespace(), texture.getPath() + "_extrudes");
         ModelFile model = this.models().withExistingParent(getItemName(thatch.get()), "blueprint:block/thatch/thatch_vertical_slab").texture("thatch", texture).texture("extrudes", extrudes).renderType("cutout");
 
         this.itemModel(thatch);
