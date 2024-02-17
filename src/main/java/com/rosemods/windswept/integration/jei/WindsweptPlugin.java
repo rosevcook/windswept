@@ -1,8 +1,6 @@
 package com.rosemods.windswept.integration.jei;
 
 import com.rosemods.windswept.core.Windswept;
-import com.rosemods.windswept.core.registry.WindsweptBlocks;
-import com.rosemods.windswept.core.registry.WindsweptItems;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.VanillaTypes;
@@ -16,23 +14,27 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
+import static com.rosemods.windswept.core.registry.WindsweptBlocks.*;
+import static com.rosemods.windswept.core.registry.WindsweptItems.*;
+
 @JeiPlugin
 public class WindsweptPlugin implements IModPlugin {
 
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
-        addInfo(registration, WindsweptItems.MUSIC_DISC_RAIN);
-        addInfo(registration, WindsweptItems.MUSIC_DISC_SNOW);
-        addInfo(registration, WindsweptItems.MUSIC_DISC_BUMBLEBEE);
+        addInfo(registration, MUSIC_DISC_RAIN);
+        addInfo(registration, MUSIC_DISC_SNOW);
+        addInfo(registration, MUSIC_DISC_BUMBLEBEE);
 
-        addInfo(registration, WindsweptItems.WILD_BERRIES);
-        addInfo(registration, WindsweptBlocks.NIGHTSHADE);
+        addInfo(registration, WILD_BERRIES);
+        addInfo(registration, NIGHTSHADE);
 
-        addInfo(registration, WindsweptBlocks.CARVED_PINECONE_BLOCK);
-        addInfo(registration, WindsweptBlocks.WILL_O_THE_WISP);
+        addInfo(registration, CARVED_PINECONE_BLOCK);
+        addInfo(registration, WILL_O_THE_WISP);
 
-        addInfo(registration, WindsweptItems.WOODEN_BUCKET);
-        addInfo(registration, WindsweptItems.SNOW_BOOTS);
+        addInfo(registration, ICE_LANTERN);
+        addInfo(registration, WOODEN_BUCKET);
+        addInfo(registration, SNOW_BOOTS);
     }
 
     private static void addInfo(IRecipeRegistration registration, RegistryObject<? extends ItemLike> item) {

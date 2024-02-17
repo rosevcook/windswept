@@ -453,9 +453,9 @@ public class WindsweptLangProvider extends LanguageProvider {
                 (player, entity) -> player + " was impaled on an icicle whilst trying to escape " + entity);
 
         // Slabfish //
-        this.translateSlabfish("chestnut", "Chestnut");
-        this.translateSlabfish("grove", "Grove");
-        this.translateSlabfish("pine", "Pine");
+        this.translateSlabfish("chestnut");
+        this.translateSlabfish("grove");
+        this.translateSlabfish("pine");
 
         // JEI Info //
         this.jeiInfo(MUSIC_DISC_RAIN, "Dropped by a Drowned if killed by a Skeleton.");
@@ -468,6 +468,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.jeiInfo(CARVED_PINECONE_BLOCK, "The face of the Carved Pinecone creates a single note randomly as wind passes through them, the note produced is deeper depending on how high they are stacked.");
         //this.jeiInfo(WILL_O_THE_WISP, "The face of the Carved Pinecone ");
 
+        this.jeiInfo(ICE_LANTERN, "The Ice Lantern emits a light incapable of melting Ice and Snow.");
         this.jeiInfo(WOODEN_BUCKET, "Wooden buckets are easily craft-able; but it comes at a cost to their strength. Durability is taken when fluids exit the bucket.");
         this.jeiInfo(SNOW_BOOTS, "Snow boots allow for faster traversal through snow, and grants the wearer the ability to walk on Powder Snow. The leather can be dyed.");
     }
@@ -513,17 +514,17 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.add(effect.get().getDescriptionId() + ".description", desc);
     }
 
-    private void translateSlabfish(String type, String name) {
-        this.add("entity.environmental.slabfish.type." + type, name);
+    private void translateSlabfish(String type) {
+        this.add("entity.environmental.slabfish.type." + type, toUpper(type));
     }
 
     private void translateBannerPattern(RegistryObject<? extends Item> item, String name) {
-        String desc = StringUtils.capitaliseAllWords(name.replace('_', ' '));
+        String desc = toUpper(name);
         this.add(item.get(), "Banner Pattern");
         this.addDescription(item, desc);
 
         for (DyeColor dye : DyeColor.values())
-            this.add("block.minecraft.banner." + Windswept.MOD_ID + "." + name + "." + dye.getName(), StringUtils.capitaliseAllWords(dye.getName().replace('_', ' ')) + " " + desc);
+            this.add("block.minecraft.banner." + Windswept.MOD_ID + "." + name + "." + dye.getName(), toUpper(dye.getName()) + " " + desc);
     }
 
     private void jeiInfo(Supplier<? extends ItemLike> item, String desc) {
@@ -550,7 +551,11 @@ public class WindsweptLangProvider extends LanguageProvider {
     }
 
     private static <T> String toUpper(IForgeRegistry<T> entry, RegistryObject<? extends T> object) {
-        return StringUtils.capitaliseAllWords(entry.getKey(object.get()).getPath().replace('_', ' '));
+        return toUpper(entry.getKey(object.get()).getPath());
+    }
+
+    private static String toUpper(String string) {
+        return StringUtils.capitaliseAllWords(string.replace('_', ' '));
     }
 
 }
