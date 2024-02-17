@@ -38,14 +38,16 @@ public class CupidsArrow extends AbstractArrow {
         if (!this.inGround && this.level.isClientSide && this.tickCount > 2) {
             Vec3 motion = this.getDeltaMovement();
 
-            double px = getX() - motion.x * (1f / 3f) + (Math.random() - .5d) * .1d;
-            double py = getY() - motion.y * (1f / 3f) + (Math.random() - .5d) * .1d;
-            double pz = getZ() - motion.z * (1f / 3f) + (Math.random() - .5d) * .1d;
-            double mx = (Math.random() - .5d) * .03d - motion.x * .08d;
-            double my = (Math.random() - .5d) * .03d - motion.y * .08d;
-            double mz = (Math.random() - .5d) * .03d - motion.z * .08d;
+            for (int i = 1; i < 3; i++) {
+                double px = getX() - motion.x * ((float) i / 3) + (Math.random() - .5d) * .1d;
+                double py = getY() - motion.y * ((float) i / 3) + (Math.random() - .5d) * .1d;
+                double pz = getZ() - motion.z * ((float) i / 3) + (Math.random() - .5d) * .1d;
+                double mx = (Math.random() - .5d) * .03d - motion.x * .08d;
+                double my = (Math.random() - .5d) * .03d - motion.y * .08d;
+                double mz = (Math.random() - .5d) * .03d - motion.z * .08d;
 
-            this.level.addParticle(WindsweptParticleTypes.CUPIDS_ARROW.get(), px, py, pz, mx, my, mz);
+                this.level.addParticle(WindsweptParticleTypes.CUPIDS_ARROW.get(), px, py, pz, mx, my, mz);
+            }
         }
     }
 
