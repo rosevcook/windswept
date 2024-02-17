@@ -10,7 +10,7 @@ public class CupidsArrowParticle extends TextureSheetParticle {
     private final SpriteSet sprites;
 
     protected CupidsArrowParticle(ClientLevel level, double x, double y, double z, double xd, double yd, double zd, SpriteSet sprites) {
-        super(level, x, y, z);
+        super(level, x, y, z, xd, yd, zd);
         this.gravity = .225f;
         this.friction = 1f;
         this.sprites = sprites;
@@ -37,13 +37,7 @@ public class CupidsArrowParticle extends TextureSheetParticle {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public static class Provider implements ParticleProvider<SimpleParticleType> {
-        private final SpriteSet sprites;
-
-        public Provider(SpriteSet sprites) {
-            this.sprites = sprites;
-        }
-
+    public record Provider(SpriteSet sprites) implements ParticleProvider<SimpleParticleType> {
         @Override
         public Particle createParticle(SimpleParticleType particleType, ClientLevel level, double x, double y, double z, double xd, double yd, double zd) {
             return new CupidsArrowParticle(level, x, y, z, xd, yd, zd, this.sprites);
