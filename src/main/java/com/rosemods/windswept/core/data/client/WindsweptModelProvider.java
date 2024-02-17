@@ -318,7 +318,11 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.pottedPlantWithPottedVariant(BLUEBELLS, POTTED_BLUEBELLS);
 
         // lavender
-        //this.simpleCross(LAVENDER);
+        this.getVariantBuilder(LAVENDER.get())
+                .partialState().with(LavenderBlock.AGE, 0).addModels(new ConfiguredModel(this.models().cross("lavender_stage0", this.modLoc("block/lavender_stage0")).renderType("cutout")))
+                .partialState().with(LavenderBlock.AGE, 1).addModels(new ConfiguredModel(this.models().cross("lavender_stage1", this.modLoc("block/lavender_stage1")).renderType("cutout")))
+                .partialState().with(LavenderBlock.AGE, 2).addModels(new ConfiguredModel(this.models().cross("lavender_stage2", this.modLoc("block/lavender_stage2")).renderType("cutout")));
+
         this.generatedItem(LAVENDER.get(), TextureFolder.ITEM);
         this.pot(POTTED_LAVENDER, this.modLoc("block/lavender_stage1"));
 
