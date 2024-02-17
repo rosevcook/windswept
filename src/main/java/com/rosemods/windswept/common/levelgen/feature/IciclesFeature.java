@@ -26,6 +26,7 @@ public class IciclesFeature extends Feature<NoneFeatureConfiguration> {
         BlockState state = WindsweptBlocks.ICICLES.get().defaultBlockState();
         BlockState top = WindsweptBlocks.ICICLES.get().defaultBlockState().setValue(IciclesBlock.STATE, IciclesBlock.IcicleStates.TOP);
         BlockState bottom = WindsweptBlocks.ICICLES.get().defaultBlockState().setValue(IciclesBlock.STATE, IciclesBlock.IcicleStates.BOTTOM);
+        BlockState block = WindsweptBlocks.ICICLE_BLOCK.get().defaultBlockState();
         RandomSource rand = context.random();
         boolean generated = false;
 
@@ -37,7 +38,10 @@ public class IciclesFeature extends Feature<NoneFeatureConfiguration> {
                     if (level.getFluidState(pos).is(Fluids.LAVA))
                         return false;
 
-                    if (BluebellsFeature.shouldPlace(x, z, rand) && level.isEmptyBlock(pos) && pos.getY() < level.getMaxBuildHeight() && state.canSurvive(level, pos) && IciclesFeature.canPlaceOn(level, pos.above())) {
+                    if (BluebellsFeature.shouldPlace(x, z, rand) && level.isEmptyBlock(pos) && pos.getY() < level.getMaxBuildHeight() && state.canSurvive(level, pos) && canPlaceOn(level, pos.above())) {
+                        if (rand.nextInt(3) == 0)
+                            level.setBlock(pos.above(), block, 2);
+
                         if (rand.nextInt(3) == 0 && level.getBlockState(pos.below()).getMaterial().isReplaceable()) {
                             level.setBlock(pos, top, 2);
                             level.setBlock(pos.below(), bottom.setValue(IciclesBlock.WATERLOGGED, level.getFluidState(pos.below()).is(Fluids.WATER)), 2);
