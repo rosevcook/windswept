@@ -97,6 +97,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.generatedItem(OWL_FEATHER.get(), TextureFolder.ITEM);
         this.generatedItem(LAVENDER_SCONES.get(), TextureFolder.ITEM);
         this.generatedItem(LAVENDER_TEA.get(), TextureFolder.ITEM);
+        this.generatedItem(LAVENDER_CROWN.get(), TextureFolder.ITEM);
 
         // holly
         this.pillar(STRIPPED_HOLLY_LOG);
@@ -317,9 +318,9 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.pottedPlantWithPottedVariant(BLUEBELLS, POTTED_BLUEBELLS);
 
         // lavender
-        this.simpleCross(LAVENDER);
+        //this.simpleCross(LAVENDER);
         this.generatedItem(LAVENDER.get(), TextureFolder.ITEM);
-        this.pot(POTTED_LAVENDER, this.blockTexture(LAVENDER.get()));
+        this.pot(POTTED_LAVENDER, this.modLoc("block/lavender_stage1"));
 
         //this.thatch(LAVENDER_THATCH);
         //this.thatchStairs(LAVENDER_THATCH_STAIRS, this.blockTexture(LAVENDER_THATCH.get()));
@@ -415,6 +416,8 @@ public class WindsweptModelProvider extends BlockStateProvider {
 
         this.itemModel(GLAZED_GINGERBREAD_BLOCK);
         this.itemModel(GLAZED_GINGERBREAD_BRICKS);
+
+        this.compressedBlock(GINGER_ROOT_CRATE);
 
         // dry moss
         this.carpet(DRY_MOSS_CARPET, this.blockTexture(DRY_MOSS_BLOCK.get()));
