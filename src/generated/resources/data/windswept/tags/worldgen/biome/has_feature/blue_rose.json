@@ -1,6 +1,10 @@
 {
   "values": [
     "windswept:chestnut_forest",
-    "windswept:snowy_chestnut_forest"
+    "windswept:snowy_chestnut_forest",
+    {
+      "id": "atmospheric:kousa_jungle",
+      "required": false
+    }
   ]
 }

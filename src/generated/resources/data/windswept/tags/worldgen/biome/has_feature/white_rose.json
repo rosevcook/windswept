@@ -1,6 +1,10 @@
 {
   "values": [
     "windswept:snowy_chestnut_forest",
-    "minecraft:snowy_taiga"
+    "minecraft:snowy_taiga",
+    {
+      "id": "atmospheric:kousa_jungle",
+      "required": false
+    }
   ]
 }

@@ -3,6 +3,7 @@ package com.rosemods.windswept.core.data.server.tags;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.registry.WindsweptBiomes;
 import net.minecraft.data.tags.BiomeTagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.common.Tags;
@@ -24,8 +25,8 @@ public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
         this.tag(HAS_RARE_CHESTNUT_TREES).add(Biomes.DARK_FOREST, Biomes.TAIGA, Biomes.FOREST, Biomes.WINDSWEPT_FOREST, Biomes.OLD_GROWTH_BIRCH_FOREST, Biomes.OLD_GROWTH_SPRUCE_TAIGA, Biomes.OLD_GROWTH_PINE_TAIGA, Biomes.SNOWY_TAIGA, Biomes.BIRCH_FOREST, Biomes.FLOWER_FOREST, Biomes.WINDSWEPT_HILLS);
         this.tag(HAS_RARE_SNOWY_HOLLY_TREES).add(Biomes.FROZEN_PEAKS, Biomes.JAGGED_PEAKS, TUNDRA.getKey());
         this.tag(HAS_RED_ROSE).add(Biomes.TAIGA, Biomes.SNOWY_TAIGA, PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey(), Biomes.OLD_GROWTH_SPRUCE_TAIGA, Biomes.OLD_GROWTH_PINE_TAIGA);
-        this.tag(HAS_BLUE_ROSE).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey());
-        this.tag(HAS_WHITE_ROSE).add(SNOWY_CHESTNUT_FOREST.getKey(), Biomes.SNOWY_TAIGA);
+        this.tag(HAS_BLUE_ROSE).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey()).addOptional(new ResourceLocation("atmospheric", "kousa_jungle"));
+        this.tag(HAS_WHITE_ROSE).add(SNOWY_CHESTNUT_FOREST.getKey(), Biomes.SNOWY_TAIGA).addOptional(new ResourceLocation("atmospheric", "kousa_jungle"));
         this.tag(HAS_YELLOW_ROSE).add(Biomes.DARK_FOREST, Biomes.OLD_GROWTH_SPRUCE_TAIGA, Biomes.OLD_GROWTH_PINE_TAIGA);
 
         this.tag(HAS_GROVE_WEATHERED_HOUSE).add(Biomes.GROVE, Biomes.FROZEN_PEAKS, Biomes.JAGGED_PEAKS);
