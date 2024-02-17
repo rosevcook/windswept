@@ -33,7 +33,6 @@ import static com.rosemods.windswept.core.registry.WindsweptBlocks.*;
 import static com.rosemods.windswept.core.registry.WindsweptItems.*;
 
 public class WindsweptLangProvider extends LanguageProvider {
-
     public WindsweptLangProvider(GatherDataEvent event) {
         super(event.getGenerator(), Windswept.MOD_ID, "en_us");
     }

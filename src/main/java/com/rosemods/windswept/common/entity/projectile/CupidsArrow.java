@@ -2,7 +2,7 @@ package com.rosemods.windswept.common.entity.projectile;
 
 import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
 import com.rosemods.windswept.core.registry.WindsweptItems;
-import net.minecraft.core.particles.ParticleTypes;
+import com.rosemods.windswept.core.registry.WindsweptParticleTypes;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.Animal;
@@ -45,7 +45,7 @@ public class CupidsArrow extends AbstractArrow {
             double my = (Math.random() - .5d) * .03d - motion.y * .08d;
             double mz = (Math.random() - .5d) * .03d - motion.z * .08d;
 
-            this.level.addParticle(ParticleTypes.HEART, px, py, pz, mx, my, mz);
+            this.level.addParticle(WindsweptParticleTypes.CUPIDS_ARROW.get(), px, py, pz, mx, my, mz);
         }
     }
 
@@ -54,7 +54,7 @@ public class CupidsArrow extends AbstractArrow {
         if (result.getEntity() instanceof Animal animal && animal.canFallInLove())
             animal.setInLove(null);
 
-        //super.onHitEntity(result);
+        super.onHitEntity(result);
     }
 
     @Override

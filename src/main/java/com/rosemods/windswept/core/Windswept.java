@@ -1,9 +1,6 @@
 package com.rosemods.windswept.core;
 
-import com.rosemods.windswept.core.data.client.WindsweptLangProvider;
-import com.rosemods.windswept.core.data.client.WindsweptModelProvider;
-import com.rosemods.windswept.core.data.client.WindsweptSoundProvider;
-import com.rosemods.windswept.core.data.client.WindsweptSplashProvider;
+import com.rosemods.windswept.core.data.client.*;
 import com.rosemods.windswept.core.data.server.WindsweptLootTableProvider;
 import com.rosemods.windswept.core.data.server.WindsweptRecipeProvider;
 import com.rosemods.windswept.core.data.server.WindsweptStructureRepaletterProvider;
@@ -49,6 +46,7 @@ public class Windswept {
         WindsweptBannerPatterns.BANNER_PATTERNS.register(bus);
         WindsweptTrunkPlacers.TRUNK_PLACERS.register(bus);
         WindsweptPaintingVariants.PAINTING_VARIANTS.register(bus);
+        WindsweptParticleTypes.PARTICLE_TYPES.register(bus);
 
         bus.addListener(this::commonSetup);
         bus.addListener(this::clientSetup);
@@ -82,6 +80,7 @@ public class Windswept {
         gen.addProvider(client, new WindsweptLangProvider(event));
         gen.addProvider(client, new WindsweptModelProvider(event));
         gen.addProvider(client, new WindsweptSplashProvider(event));
+        gen.addProvider(client, new WindsweptParticleProvider(event));
 
         boolean server = event.includeServer();
         var blockTags = new WindsweptBlockTagProvider(event);
