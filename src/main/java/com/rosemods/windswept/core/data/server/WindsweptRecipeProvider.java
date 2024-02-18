@@ -78,7 +78,6 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         flowerToDye(BLUEBELLS.get(), Items.BLUE_DYE, consumer);
         flowerToDye(SNOWDROP.get(), Items.LIGHT_GRAY_DYE, consumer);
         flowerToDye(MOSS_CAMPION.get(), Items.MAGENTA_DYE, consumer);
-        flowerToDye(LAVENDER.get(), Items.PURPLE_DYE, consumer);
         flowerToDye(GINGER_FLOWER.get(), Items.RED_DYE, consumer);
         flowerToDye(NIGHTSHADE.get(), Items.LIGHT_BLUE_DYE, consumer);
         tallFlowerToDye(RED_ROSE_BUSH.get(), Items.RED_DYE, consumer);
@@ -255,6 +254,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         compressedBlock(PINECONE_BLOCK.get(), PINECONE.get(), consumer);
         compressedBlock(GINGERBREAD_COOKIE_BLOCK.get(), GINGERBREAD_COOKIE.get(), consumer);
         compressedBlock(CANDY_CANE_BLOCK.get(), CANDY_CANE.get(), consumer);
+        compressedBlock(LAVENDER_BUNDLE.get(), LAVENDER.get(), consumer);
     }
 
     private static void conditionalRecipe(RecipeBuilder recipe, ICondition condition, Consumer<FinishedRecipe> consumer, ResourceLocation id) {

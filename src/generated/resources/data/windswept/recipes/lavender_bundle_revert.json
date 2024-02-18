@@ -1,12 +1,12 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "purple_dye",
   "ingredients": [
     {
-      "item": "windswept:lavender"
+      "item": "windswept:lavender_bundle"
     }
   ],
   "result": {
-    "item": "minecraft:purple_dye"
+    "count": 9,
+    "item": "windswept:lavender"
   }
 }

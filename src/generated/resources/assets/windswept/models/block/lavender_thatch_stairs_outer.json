@@ -1,0 +1,8 @@
+{
+  "parent": "blueprint:block/thatch/thatch_stairs_outer",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "extrudes": "windswept:block/lavender_thatch_extrudes",
+    "thatch": "windswept:block/lavender_thatch"
+  }
+}

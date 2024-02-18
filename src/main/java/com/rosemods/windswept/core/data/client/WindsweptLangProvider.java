@@ -342,6 +342,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBlock(POTTED_MOSSY_SPROUTS);
         this.translateBlock(POTTED_LAVENDER);
 
+        this.translateBlock(LAVENDER_BUNDLE);
         this.translateBlock(LAVENDER_THATCH);
         this.translateBlock(LAVENDER_THATCH_STAIRS);
         this.translateBlock(LAVENDER_THATCH_SLAB);

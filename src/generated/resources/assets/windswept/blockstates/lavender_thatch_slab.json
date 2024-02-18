@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "windswept:block/lavender_thatch_slab"
+    },
+    "type=double": {
+      "model": "windswept:block/lavender_thatch"
+    },
+    "type=top": {
+      "model": "windswept:block/lavender_thatch_slab_top"
+    }
+  }
+}
