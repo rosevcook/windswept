@@ -1,5 +1,6 @@
 package com.rosemods.windswept.common.levelgen.feature;
 
+import com.rosemods.windswept.common.block.LavenderBlock;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
@@ -21,15 +22,15 @@ public class LavenderFeature extends Feature<NoneFeatureConfiguration> {
         BlockPos origin = context.origin();
         WorldGenLevel level = context.level();
         RandomSource rand = context.random();
-        BlockState state = WindsweptBlocks.LAVENDER.get().defaultBlockState();
         boolean generated = false;
 
         for (int x = -5; x <= 5; ++x)
             for (int z = -5; z <= 5; ++z)
                 for (int y = -2; y <= 2; ++y) {
                     BlockPos pos = origin.offset(x, y, z);
+                    BlockState state = WindsweptBlocks.LAVENDER.get().defaultBlockState().setValue(LavenderBlock.AGE, rand.nextInt(3));
 
-                    if (level.isEmptyBlock(pos) && pos.getY() < level.getMaxBuildHeight() && rand.nextBoolean() && (!level.getBlockState(pos.below()).is(Blocks.MOSS_BLOCK) || rand.nextInt(3) == 0) && state.canSurvive(level, pos)) {
+                    if (level.isEmptyBlock(pos) && pos.getY() < level.getMaxBuildHeight() && BluebellsFeature.shouldPlace(x, z, rand) && (!level.getBlockState(pos.below()).is(Blocks.MOSS_BLOCK) || rand.nextInt(3) == 0) && state.canSurvive(level, pos)) {
                         level.setBlock(pos, state, 2);
                         generated = true;
                     }
@@ -39,4 +40,3 @@ public class LavenderFeature extends Feature<NoneFeatureConfiguration> {
     }
 
 }
-
