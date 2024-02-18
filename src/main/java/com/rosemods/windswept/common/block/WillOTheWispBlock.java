@@ -48,18 +48,11 @@ public class WillOTheWispBlock extends HorizontalDirectionalBlock implements Ent
     @OnlyIn(Dist.CLIENT)
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource rand) {
-        BlockPos.MutableBlockPos blockPos = new BlockPos.MutableBlockPos();
-        int i = pos.getX();
-        int j = pos.getY();
-        int k = pos.getZ();
+        for (int i = 0; i < 6; i++) {
+            BlockPos blockPos = new BlockPos(pos.getX() + Mth.nextInt(rand, -7, 7), pos.getY() - rand.nextInt(7), pos.getZ() + Mth.nextInt(rand, -7, 7)).relative(state.getValue(FACING), 3);
 
-        for (int l = 0; l < 14; ++l) {
-            blockPos.set(i + Mth.nextInt(rand, -10, 10), j - rand.nextInt(10), k + Mth.nextInt(rand, -10, 10));
-            BlockState blockstate = level.getBlockState(blockPos);
-
-            if (!blockstate.isCollisionShapeFullBlock(level, blockPos))
+            if (!level.getBlockState(blockPos).isCollisionShapeFullBlock(level, blockPos))
                 level.addParticle(WindsweptParticleTypes.WILL_O_THE_WISP.get(), (double) blockPos.getX() + rand.nextDouble(), (double) blockPos.getY() + rand.nextDouble(), (double) blockPos.getZ() + rand.nextDouble(), 0d, 0d, 0d);
-
         }
     }
 

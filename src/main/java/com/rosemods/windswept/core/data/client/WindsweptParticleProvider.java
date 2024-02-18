@@ -12,7 +12,7 @@ public class WindsweptParticleProvider extends ParticleProvider {
     @Override
     protected void addParticles() {
         this.add(WindsweptParticleTypes.CUPIDS_ARROW.get(), "cupids_arrow");
-        this.add(WindsweptParticleTypes.WILL_O_THE_WISP.get(), "will_o_the_wisp0", "will_o_the_wisp1");
+        this.add(WindsweptParticleTypes.WILL_O_THE_WISP.get(), "will_o_the_wisp0", "will_o_the_wisp1", "will_o_the_wisp2");
     }
 
 }

@@ -1,9 +1,9 @@
 package com.rosemods.windswept.common.block;
 
+import com.rosemods.windswept.core.registry.WindsweptParticleTypes;
 import com.teamabnormals.blueprint.common.block.BlueprintFlowerBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.level.Level;
@@ -26,13 +26,13 @@ public class NightshadeFlowerBlock extends BlueprintFlowerBlock {
     }
 
     public static void particles(Level level, BlockPos pos, RandomSource rand) {
-        if (rand.nextInt(5) == 0) {
+        if (rand.nextInt(8) == 0) {
             double d0 = pos.getX() + .55d - (rand.nextFloat() * .1f);
             double d1 = pos.getY() + .55d - (rand.nextFloat() * .1f);
             double d2 = pos.getZ() + .55d - (rand.nextFloat() * .1f);
             double d3 = (.4f - (rand.nextFloat() + rand.nextFloat()) * .4f);
 
-            level.addParticle(ParticleTypes.END_ROD, d0 + Direction.UP.getStepX() * d3,
+            level.addParticle(WindsweptParticleTypes.WILL_O_THE_WISP.get(), d0 + Direction.UP.getStepX() * d3,
                     d1 + Direction.UP.getStepY() * d3, d2 + Direction.UP.getStepZ() * d3,
                     rand.nextGaussian() * 0.005D, rand.nextGaussian() * .005d, rand.nextGaussian() * .005d);
         }
