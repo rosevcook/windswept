@@ -75,6 +75,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateItem(FROZEN_BRANCH);
         this.translateItem(LAVENDER_CROWN);
         this.translateItem(ANTLER_HELMET);
+        this.translateItem(FEATHER_CLOAK);
         this.translateItem(SNOW_BOOTS);
         this.translateItem(FROST_ARROW);
         this.add(CUPIDS_ARROW.get(), "Cupid's Arrow");

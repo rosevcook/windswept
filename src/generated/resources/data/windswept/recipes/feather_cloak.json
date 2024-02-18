@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "windswept:owl_feather"
+    },
+    "L": {
+      "item": "minecraft:leather"
+    }
+  },
+  "pattern": [
+    "L L",
+    "#L#",
+    "###"
+  ],
+  "result": {
+    "item": "windswept:feather_cloak"
+  }
+}
