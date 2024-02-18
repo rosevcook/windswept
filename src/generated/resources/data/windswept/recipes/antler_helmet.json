@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:bone"
+    },
+    "F": {
+      "item": "windswept:frozen_branch"
+    }
+  },
+  "pattern": [
+    "F#F",
+    "# #"
+  ],
+  "result": {
+    "item": "windswept:antler_helmet"
+  }
+}

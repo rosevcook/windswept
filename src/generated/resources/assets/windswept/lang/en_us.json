@@ -1,7 +1,7 @@
 {
   "attribute.windswept.name.generic.fragrance": "Fragrance",
   "attribute.windswept.name.generic.snow_speed": "Snow Speed",
-  "attribute.windswept.name.generic.sprint_damage": "Attack Damage While Sprinting",
+  "attribute.windswept.name.generic.sprint_damage": "Attack Damage while Sprinting",
   "biome.windswept.chestnut_forest": "Chestnut Forest",
   "biome.windswept.pine_barrens": "Pine Barrens",
   "biome.windswept.snowy_chestnut_forest": "Snowy Chestnut Forest",
@@ -384,6 +384,7 @@
   "item.minecraft.tipped_arrow.effect.long_thorns": "Arrow of Prickling",
   "item.minecraft.tipped_arrow.effect.strong_thorns": "Arrow of Prickling",
   "item.minecraft.tipped_arrow.effect.thorns": "Arrow of Prickling",
+  "item.windswept.antler_helmet": "Antler Helmet",
   "item.windswept.candy_cane": "Candy Cane",
   "item.windswept.chestnut_boat": "Chestnut Boat",
   "item.windswept.chestnut_chest_boat": "Chestnut Boat with Chest",

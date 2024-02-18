@@ -27,8 +27,8 @@ import net.minecraft.world.phys.Vec3;
 import java.util.UUID;
 
 public class SnowBootsItem extends DyeableArmorItem {
-    private static final UUID SNOW_SPEED_UUID = UUID.fromString("713d8671-29b8-4600-ba51-580b91cc24cf"); //uuid for snow speed
-    private static final UUID SPEED_MODIFIER_SNOW_SPEED_UUID = UUID.fromString("c51348dc-85bf-4ac5-8428-deefefec04aa"); //uuid for speed modifier
+    private static final UUID SNOW_SPEED_UUID = UUID.fromString("713d8671-29b8-4600-ba51-580b91cc24cf");
+    private static final UUID SPEED_MODIFIER_SNOW_SPEED_UUID = UUID.fromString("c51348dc-85bf-4ac5-8428-deefefec04aa");
     public static final TargetedItemCategoryFiller FILLER = new TargetedItemCategoryFiller(() -> Items.TURTLE_HELMET);
 
     public SnowBootsItem(Properties properties) {
@@ -84,7 +84,6 @@ public class SnowBootsItem extends DyeableArmorItem {
 
         if (speed != null && speed.getModifier(SPEED_MODIFIER_SNOW_SPEED_UUID) != null)
             speed.removeModifier(SPEED_MODIFIER_SNOW_SPEED_UUID);
-
     }
 
     public static void tryAddSnowSpeed(LivingEntity entity) {
@@ -92,11 +91,11 @@ public class SnowBootsItem extends DyeableArmorItem {
             AttributeInstance speed = entity.getAttribute(Attributes.MOVEMENT_SPEED);
 
             if (speed != null) {
-                speed.addTransientModifier(new AttributeModifier(SPEED_MODIFIER_SNOW_SPEED_UUID, "Snow speed boost", .025d, AttributeModifier.Operation.ADDITION));
+                if (speed.getModifier(SPEED_MODIFIER_SNOW_SPEED_UUID) == null)
+                    speed.addTransientModifier(new AttributeModifier(SPEED_MODIFIER_SNOW_SPEED_UUID, "Snow speed boost", .025d, AttributeModifier.Operation.ADDITION));
 
                 if (entity.level.random.nextFloat() < .02f)
-                    entity.getItemBySlot(EquipmentSlot.FEET).hurtAndBreak(1, entity,
-                            e -> e.broadcastBreakEvent(EquipmentSlot.FEET));
+                    entity.getItemBySlot(EquipmentSlot.FEET).hurtAndBreak(1, entity, e -> e.broadcastBreakEvent(EquipmentSlot.FEET));
             }
         }
     }

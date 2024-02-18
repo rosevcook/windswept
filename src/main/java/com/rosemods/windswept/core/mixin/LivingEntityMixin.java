@@ -1,6 +1,7 @@
 package com.rosemods.windswept.core.mixin;
 
 import com.rosemods.windswept.common.enchantment.curse.SlippingCurseEnchantment;
+import com.rosemods.windswept.common.item.AntlerHelmetItem;
 import com.rosemods.windswept.common.item.SnowBootsItem;
 import com.rosemods.windswept.core.other.tags.WindsweptEntityTypeTags;
 import com.rosemods.windswept.core.registry.WindsweptEffects;
@@ -58,7 +59,11 @@ public abstract class LivingEntityMixin extends Entity {
         if (SnowBootsItem.shouldRemoveSnowSpeed(entity.level.getBlockState(entity.getOnPos()), entity))
             SnowBootsItem.removeSnowSpeed(entity);
 
+        if (!entity.isSprinting())
+            AntlerHelmetItem.removeSprintDamage(entity);
+
         SnowBootsItem.tryAddSnowSpeed(entity);
+        AntlerHelmetItem.tryAddSprintDamage(entity);
         SlippingCurseEnchantment.attemptDamageBoots(entity);
     }
 
