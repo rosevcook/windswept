@@ -2,9 +2,11 @@ package com.rosemods.windswept.common.item;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
+import com.rosemods.windswept.client.model.AntlerHelmetModel;
 import com.rosemods.windswept.core.other.WindsweptTiers;
 import com.rosemods.windswept.core.registry.WindsweptAttributes;
 import com.rosemods.windswept.core.registry.WindsweptItems;
+import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -15,8 +17,12 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
 import java.util.UUID;
+import java.util.function.Consumer;
 
 public class AntlerHelmetItem extends ArmorItem {
     private static final UUID SPRINT_DAMAGE_UUID = UUID.fromString("e97abdf0-cd94-45f4-8cd4-581a0a75515f");
@@ -41,6 +47,17 @@ public class AntlerHelmetItem extends ArmorItem {
     @Override
     public void fillItemCategory(CreativeModeTab tab, NonNullList<ItemStack> items) {
         SnowBootsItem.FILLER.fillItem(this, tab, items);
+    }
+
+    @Override
+    @OnlyIn(Dist.CLIENT)
+    public void initializeClient(Consumer<IClientItemExtensions> consumer) {
+        consumer.accept(new IClientItemExtensions() {
+            @Override
+            public HumanoidModel<?> getHumanoidArmorModel(LivingEntity entity, ItemStack stack, EquipmentSlot slot, HumanoidModel<?> properties) {
+                return AntlerHelmetModel.INSTANCE;
+            }
+        });
     }
 
     // Util //
