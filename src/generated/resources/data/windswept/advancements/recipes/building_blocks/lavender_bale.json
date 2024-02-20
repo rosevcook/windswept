@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_lavender_bundle": {
+    "has_lavender": {
       "conditions": {
         "items": [
           {
             "items": [
-              "windswept:lavender_bundle"
+              "windswept:lavender"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "windswept:lavender_bundle_revert"
+        "recipe": "windswept:lavender_bale"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_lavender_bundle",
+      "has_lavender",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "windswept:lavender_bundle_revert"
+      "windswept:lavender_bale"
     ]
   }
 }

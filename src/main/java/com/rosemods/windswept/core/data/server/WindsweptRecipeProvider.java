@@ -256,7 +256,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         compressedBlock(PINECONE_BLOCK.get(), PINECONE.get(), consumer);
         compressedBlock(GINGERBREAD_COOKIE_BLOCK.get(), GINGERBREAD_COOKIE.get(), consumer);
         compressedBlock(CANDY_CANE_BLOCK.get(), CANDY_CANE.get(), consumer);
-        compressedBlock(LAVENDER_BUNDLE.get(), LAVENDER.get(), consumer);
+        compressedBlock(LAVENDER_BALE.get(), LAVENDER.get(), consumer);
     }
 
     private static void conditionalRecipe(RecipeBuilder recipe, ICondition condition, Consumer<FinishedRecipe> consumer, ResourceLocation id) {

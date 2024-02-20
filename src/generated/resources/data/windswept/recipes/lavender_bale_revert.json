@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "windswept:lavender_bundle"
+      "item": "windswept:lavender_bale"
     }
   ],
   "result": {

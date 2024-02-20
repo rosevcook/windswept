@@ -358,7 +358,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropPottedContents(POTTED_LAVENDER.get());
 
             // lavender thatch
-            this.dropSelf(LAVENDER_BUNDLE.get());
+            this.dropSelf(LAVENDER_BALE.get());
             this.dropSelf(LAVENDER_THATCH.get());
             this.dropSelf(LAVENDER_THATCH_STAIRS.get());
             this.add(LAVENDER_THATCH_SLAB.get(), Blocks::createSlabItemTable);

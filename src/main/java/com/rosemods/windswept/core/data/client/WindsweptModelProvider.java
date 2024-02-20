@@ -327,7 +327,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.generatedItem(LAVENDER.get(), TextureFolder.ITEM);
         this.pot(POTTED_LAVENDER, this.modLoc("block/lavender_stage1"));
 
-        this.compressedBlock(LAVENDER_BUNDLE);
+        this.compressedBlock(LAVENDER_BALE);
         this.thatch(LAVENDER_THATCH);
         this.thatchStairs(LAVENDER_THATCH_STAIRS, this.blockTexture(LAVENDER_THATCH.get()));
         this.thatchSlab(LAVENDER_THATCH_SLAB, this.blockTexture(LAVENDER_THATCH.get()));
