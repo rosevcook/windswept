@@ -210,7 +210,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.generatedItem(FEATHER_ORNAMENT.get(), TextureFolder.BLOCK);
         this.dreamCatcher(DREAM_CATCHER);
 
-        this.directionalBlock(PINECONE_BLOCK.get(), this.models().cubeTop("pinecone_block", this.modLoc("block/pinecone_block"), this.modLoc("block/pinecone_block_top")));
+        this.pillar(PINECONE_BLOCK);
         this.itemModel(PINECONE_BLOCK);
         this.horizontalBlock(CARVED_PINECONE_BLOCK.get(), this.models().orientable("carved_pinecone_block", this.modLoc("block/pinecone_block"), this.modLoc("block/carved_pinecone_block"), this.modLoc("block/pinecone_block_top")));
         this.itemModel(CARVED_PINECONE_BLOCK);
