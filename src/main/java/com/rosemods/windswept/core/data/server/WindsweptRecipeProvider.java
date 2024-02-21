@@ -249,7 +249,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         compressedBlock(HOLLY_BERRY_BASKET.get(), HOLLY_BERRIES.get(), new OrCondition(new ModLoadedCondition("berry_good"), getQuarkCondition("berry_sack")), consumer);
         compressedBlock(CHESTNUT_CRATE.get(), CHESTNUTS.get(), getQuarkCondition("apple_crate"), consumer);
         compressedBlock(ROASTED_CHESTNUT_CRATE.get(), ROASTED_CHESTNUTS.get(), getQuarkCondition("apple_crate"), consumer);
-        compressedBlock(GINGER_ROOT_CRATE.get(), GINGER_ROOT.get(), getQuarkCondition("apple_crate"), consumer);
+        compressedBlock(GINGER_ROOT_CRATE.get(), GINGER_ROOT.get(), new OrCondition(getQuarkCondition("apple_crate"), new ModLoadedCondition("farmersdelight")), consumer);
         compressedBlock(RED_MUSHROOM_BASKET.get(), Items.RED_MUSHROOM, new OrCondition(new OrCondition(new ModLoadedCondition("berry_good"), new ModLoadedCondition("farmersdelight")), getQuarkCondition("apple_crate")), consumer);
         compressedBlock(BROWN_MUSHROOM_BASKET.get(), Items.BROWN_MUSHROOM, new OrCondition(new OrCondition(new ModLoadedCondition("berry_good"), new ModLoadedCondition("farmersdelight")), getQuarkCondition("apple_crate")), consumer);
         compressedBlock(FROZEN_FLESH_BLOCK.get(), FROZEN_FLESH.get(), consumer);

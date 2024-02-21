@@ -4,8 +4,17 @@
     {
       "conditions": [
         {
-          "type": "blueprint:quark_flag",
-          "flag": "apple_crate"
+          "type": "forge:or",
+          "values": [
+            {
+              "type": "blueprint:quark_flag",
+              "flag": "apple_crate"
+            },
+            {
+              "type": "forge:mod_loaded",
+              "modid": "farmersdelight"
+            }
+          ]
         }
       ],
       "recipe": {
