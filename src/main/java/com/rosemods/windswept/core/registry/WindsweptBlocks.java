@@ -179,7 +179,7 @@ public class WindsweptBlocks {
 
     // Lavender //
     public static final RegistryObject<Block> LAVENDER = HELPER.createBlock("lavender", () -> new LavenderBlock(PropertyUtil.flower().sound(SoundType.AZALEA)), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> LAVENDER_BALE = HELPER.createBlock("lavender_bale", () -> new BlueprintDirectionalBlock(BlockBehaviour.Properties.copy(Blocks.HAY_BLOCK)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> LAVENDER_BALE = HELPER.createBlock("lavender_bale", () -> new LavenderBaleBlock(BlockBehaviour.Properties.copy(Blocks.HAY_BLOCK)), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> LAVENDER_THATCH = HELPER.createBlock("lavender_thatch", () -> new ThatchBlock(Properties.LAVENDER_THATCH), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> LAVENDER_THATCH_STAIRS = HELPER.createBlock("lavender_thatch_stairs", () -> new ThatchStairBlock(LAVENDER_THATCH.get().defaultBlockState(), Properties.LAVENDER_THATCH), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> LAVENDER_THATCH_SLAB = HELPER.createBlock("lavender_thatch_slab", () -> new ThatchSlabBlock(Properties.LAVENDER_THATCH), CreativeModeTab.TAB_BUILDING_BLOCKS);
