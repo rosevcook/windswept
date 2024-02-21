@@ -34,7 +34,7 @@ public class WindsweptItems {
     public static final RegistryObject<Item> FROZEN_FLESH = HELPER.createItem("frozen_flesh", () -> new InjectedItem(Items.ROTTEN_FLESH, PropertyUtil.food(WindsweptFoods.FROZEN_FLESH)));
 
     // Armour //
-    public static final RegistryObject<Item> LAVENDER_CROWN = HELPER.createItem("lavender_crown", () -> new LavenderFlowerCrownItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
+    public static final RegistryObject<Item> LAVENDER_CROWN = HELPER.createItem("lavender_crown", () -> new LavenderCrownItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
     public static final RegistryObject<Item> ANTLER_HELMET = HELPER.createItem("antler_helmet", () -> new AntlerHelmetItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
     public static final RegistryObject<Item> FEATHER_CLOAK = HELPER.createItem("feather_cloak", () -> new FeatherCloakItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
     public static final RegistryObject<Item> SNOW_BOOTS = HELPER.createItem("snow_boots", () -> new SnowBootsItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));

@@ -14,10 +14,10 @@ import net.minecraft.world.item.ItemStack;
 
 import java.util.UUID;
 
-public class LavenderFlowerCrownItem extends ArmorItem {
+public class LavenderCrownItem extends ArmorItem {
     private static final UUID FRAGRANCE_UUID = UUID.fromString("1e2757d5-d814-4465-a958-36a6cdeeb624");
 
-    public LavenderFlowerCrownItem(Properties properties) {
+    public LavenderCrownItem(Properties properties) {
         super(WindsweptTiers.LAVENDER_CROWN, EquipmentSlot.HEAD, properties);
     }
 
