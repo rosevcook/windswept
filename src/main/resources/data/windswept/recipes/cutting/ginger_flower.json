@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "windswept:ginger_flower"
+      "item": "windswept:wild_ginger"
     }
   ],
   "tool": {

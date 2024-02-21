@@ -2,6 +2,6 @@
   "parent": "minecraft:block/cross",
   "render_type": "minecraft:cutout",
   "textures": {
-    "cross": "windswept:block/ginger_flower"
+    "cross": "windswept:block/wild_ginger"
   }
 }

@@ -166,7 +166,7 @@ public final class WindsweptFeatures {
         public static final RegistryObject<ConfiguredFeature<?, ?>> WILD_BERRY_BUSH = CONFIGURED_FEATURES.register("wild_berry_bush", () -> new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.createPlantPatch(32, WindsweptBlocks.WILD_BERRY_BUSH.get().defaultBlockState().setValue(WildBerryBushBlock.AGE, 3))));
         public static final RegistryObject<ConfiguredFeature<?, ?>> SNOWY_SPROUTS = CONFIGURED_FEATURES.register("snowy_sprouts", () -> new ConfiguredFeature<>(SNOWY_SPROUTS_PATCH.get(), NoneFeatureConfiguration.NONE));
 
-        public static final RegistryObject<ConfiguredFeature<?, ?>> GINGER_VEGETATION = CONFIGURED_FEATURES.register("ginger_vegetation", () -> new ConfiguredFeature<>(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(WindsweptBlocks.GINGER_FLOWER.get()))));
+        public static final RegistryObject<ConfiguredFeature<?, ?>> GINGER_VEGETATION = CONFIGURED_FEATURES.register("ginger_vegetation", () -> new ConfiguredFeature<>(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(WindsweptBlocks.WILD_GINGER.get()))));
         public static final RegistryObject<ConfiguredFeature<?, ?>> GINGER_PATCH = CONFIGURED_FEATURES.register("ginger_patch", () -> new ConfiguredFeature<>(Feature.VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.DIRT, BlockStateProvider.simple(WindsweptBlocks.GINGER_SOIL.get()), PlacementUtils.inlinePlaced(GINGER_VEGETATION.getHolder().get()), CaveSurface.FLOOR, ConstantInt.of(1), 0f, 5, .6f, UniformInt.of(1, 2), .75f)));
 
         // Icicles //
