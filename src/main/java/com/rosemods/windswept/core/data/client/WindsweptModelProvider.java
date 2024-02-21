@@ -190,7 +190,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.verticalPlanks(VERTICAL_PINE_PLANKS, this.blockTexture(PINE_PLANKS.get()));
         this.bookshelf(PINE_BOOKSHELF, PINE_PLANKS);
         this.boards(PINE_BOARDS);
-        //this.cabinet(PINE_CABINET);
+        this.cabinet(PINE_CABINET);
         this.verticalSlab(PINE_VERTICAL_SLAB, this.blockTexture(PINE_PLANKS.get()));
         this.post(PINE_POST, this.blockTexture(PINE_LOG.get()));
         this.post(WEATHERED_PINE_POST, this.blockTexture(WEATHERED_PINE_LOG.get()));
