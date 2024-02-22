@@ -28,6 +28,17 @@ public class LavenderBlock extends BushBlock implements BonemealableBlock {
     }
 
     @Override
+    public boolean isRandomlyTicking(BlockState state) {
+        return !state.getValue(PERSISTENT) && state.getValue(AGE) < 2;
+    }
+
+    @Override
+    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource rand) {
+        if (level.getRawBrightness(pos.above(), 0) >= 9)
+            this.performBonemeal(level, rand, pos, state);
+    }
+
+    @Override
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
         Vec3 vec3 = state.getOffset(getter, pos);
         return SHAPE.move(vec3.x, vec3.y, vec3.z);
