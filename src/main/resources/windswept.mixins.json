@@ -23,6 +23,7 @@
     "PlayerMixin",
     "PowderSnowBlockMixin",
     "RabbitMixin",
+    "SheepMixin",
     "SimpleWaterloggedBlockMixin",
     "SkeletonMixin",
     "SnowballMixin",
