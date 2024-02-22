@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -18,11 +19,12 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class LavenderBlock extends BushBlock implements BonemealableBlock {
     public static final IntegerProperty AGE = BlockStateProperties.AGE_2;
+    public static final BooleanProperty PERSISTENT = BlockStateProperties.PERSISTENT;
     private static final VoxelShape SHAPE = Block.box(2f, 0f, 2f, 14f, 14f, 14f);
 
     public LavenderBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(AGE, 0));
+        this.registerDefaultState(this.stateDefinition.any().setValue(AGE, 0).setValue(PERSISTENT, false));
     }
 
     @Override
@@ -33,7 +35,7 @@ public class LavenderBlock extends BushBlock implements BonemealableBlock {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(AGE);
+        builder.add(AGE, PERSISTENT);
     }
 
     @Override
@@ -48,7 +50,7 @@ public class LavenderBlock extends BushBlock implements BonemealableBlock {
 
     @Override
     public void performBonemeal(ServerLevel level, RandomSource rand, BlockPos pos, BlockState state) {
-        level.setBlock(pos, state.setValue(AGE, state.getValue(AGE) + 1), 2);
+        level.setBlock(pos, state.setValue(AGE, state.getValue(AGE) + 1).setValue(PERSISTENT, false), 2);
     }
 
 }

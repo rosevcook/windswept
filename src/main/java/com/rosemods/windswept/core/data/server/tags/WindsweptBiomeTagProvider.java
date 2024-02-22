@@ -2,6 +2,7 @@ package com.rosemods.windswept.core.data.server.tags;
 
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.registry.WindsweptBiomes;
+import com.teamabnormals.blueprint.core.other.tags.BlueprintBiomeTags;
 import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
@@ -43,6 +44,7 @@ public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
         this.tag(HAS_YAK).add(WindsweptBiomes.TUNDRA.getKey());
         this.tag(HAS_SHEEP).addTag(IS_LAVENDER).addTag(IS_PINE_BARRENS).addTag(IS_CHESTNUT_FOREST);
 
+        this.tag(BlueprintBiomeTags.IS_GRASSLAND).add(LAVENDER_FIELD.getKey());
         this.tag(BiomeTags.IS_OVERWORLD).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey(), TUNDRA.getKey());
         this.tag(BiomeTags.IS_FOREST).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey(), LAVENDER_FOREST.getKey());
         this.tag(BiomeTags.HAS_IGLOO).add(SNOWY_CHESTNUT_FOREST.getKey(), SNOWY_PINE_BARRENS.getKey(), TUNDRA.getKey());
