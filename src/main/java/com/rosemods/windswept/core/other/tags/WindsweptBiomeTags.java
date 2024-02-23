@@ -29,4 +29,6 @@ public final class WindsweptBiomeTags {
     public static final TagKey<Biome> HAS_YAK = TagUtil.biomeTag("environmental", "has_animal/yak");
     public static final TagKey<Biome> HAS_SHEEP = TagUtil.biomeTag("environmental", "has_animal/sheep");
 
+    public static final TagKey<Biome> HAS_STRAWBERRY_BUSH = TagUtil.biomeTag("neapolitan", "has_feature/strawberry_bush");
+    
 }
