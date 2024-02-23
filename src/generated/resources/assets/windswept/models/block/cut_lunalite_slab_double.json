@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "windswept:block/smooth_lunalite",
+    "side": "windswept:block/cut_lunalite_slab",
+    "top": "windswept:block/lunalite_top"
+  }
+}

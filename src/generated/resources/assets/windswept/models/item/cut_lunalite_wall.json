@@ -1,0 +1,8 @@
+{
+  "parent": "windswept:block/wall_inventory",
+  "textures": {
+    "bottom": "windswept:block/smooth_lunalite",
+    "side": "windswept:block/cut_lunalite",
+    "top": "windswept:block/lunalite_top"
+  }
+}

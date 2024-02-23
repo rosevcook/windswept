@@ -1,0 +1,46 @@
+{
+  "advancements": [
+    {
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "criteria": {
+          "has_cut_lunalite": {
+            "conditions": {
+              "items": [
+                {
+                  "items": [
+                    "windswept:cut_lunalite"
+                  ]
+                }
+              ]
+            },
+            "trigger": "minecraft:inventory_changed"
+          },
+          "has_the_recipe": {
+            "conditions": {
+              "recipe": "windswept:cut_lunalite_vertical_slab_from_cut_lunalite_stonecutting"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+          }
+        },
+        "requirements": [
+          [
+            "has_cut_lunalite",
+            "has_the_recipe"
+          ]
+        ],
+        "rewards": {
+          "recipes": [
+            "windswept:cut_lunalite_vertical_slab_from_cut_lunalite_stonecutting"
+          ]
+        }
+      },
+      "conditions": [
+        {
+          "type": "blueprint:quark_flag",
+          "flag": "vertical_slabs"
+        }
+      ]
+    }
+  ]
+}

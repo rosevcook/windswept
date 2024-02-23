@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "bottom": "windswept:block/lunarock_bottom",
-    "side": "windswept:block/lunarock",
-    "top": "windswept:block/lunarock_top"
-  }
-}

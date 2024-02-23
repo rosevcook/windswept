@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "top=false": {
+      "model": "windswept:block/lunalite_bottom"
+    },
+    "top=true": {
+      "model": "windswept:block/lunalite"
+    }
+  }
+}

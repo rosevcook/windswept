@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "windswept:block/lunalite_bottom",
+    "side": "windswept:block/lunalite_bottom",
+    "top": "windswept:block/lunalite_bottom"
+  }
+}

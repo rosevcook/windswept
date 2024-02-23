@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "top=false,type=bottom": {
+      "model": "windswept:block/lunalite_slab_bottom"
+    },
+    "top=false,type=double": {
+      "model": "windswept:block/lunalite_bottom"
+    },
+    "top=false,type=top": {
+      "model": "windswept:block/lunalite_slab_top_bottom"
+    },
+    "top=true,type=bottom": {
+      "model": "windswept:block/lunalite_slab"
+    },
+    "top=true,type=double": {
+      "model": "windswept:block/lunalite"
+    },
+    "top=true,type=top": {
+      "model": "windswept:block/lunalite_slab_top"
+    }
+  }
+}

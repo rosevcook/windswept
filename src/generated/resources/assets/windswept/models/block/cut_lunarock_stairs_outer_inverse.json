@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "windswept:block/lunarock_top",
-    "side": "windswept:block/cut_lunarock",
-    "top": "windswept:block/smooth_lunarock"
-  }
-}

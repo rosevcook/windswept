@@ -1,0 +1,8 @@
+{
+  "parent": "windswept:block/template_wall_post",
+  "textures": {
+    "bottom": "windswept:block/lunalite_bottom",
+    "side": "windswept:block/lunalite",
+    "top": "windswept:block/lunalite_top"
+  }
+}

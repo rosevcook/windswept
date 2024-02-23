@@ -309,30 +309,30 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> GLAZED_GINGERBREAD_BRICK_WALL = HELPER.createBlock("glazed_gingerbread_brick_wall", () -> new WallBlock(Properties.GINGERBREAD), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> GLAZED_GINGERBREAD_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "glazed_gingerbread_brick_vertical_slab", () -> new VerticalSlabBlock(Properties.GINGERBREAD), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
-    // Lunarock //
-    public static final RegistryObject<Block> LUNAROCK = HELPER.createBlock("lunarock", () -> new LunarockBlock(Properties.LUNAROCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> LUNAROCK_STAIRS = HELPER.createBlock("lunarock_stairs", () -> new StairBlock(LUNAROCK.get()::defaultBlockState, Properties.LUNAROCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> LUNAROCK_SLAB = HELPER.createBlock("lunarock_slab", () -> new LunarockSlabBlock(Properties.LUNAROCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> LUNAROCK_WALL = HELPER.createBlock("lunarock_wall", () -> new WallBlock(Properties.LUNAROCK), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> LUNAROCK_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "lunarock_vertical_slab", () -> new VerticalSlabBlock(Properties.LUNAROCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    // Lunalite //
+    public static final RegistryObject<Block> LUNALITE = HELPER.createBlock("lunalite", () -> new LunaliteBlock(Properties.LUNALITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> LUNALITE_STAIRS = HELPER.createBlock("lunalite_stairs", () -> new StairBlock(LUNALITE.get()::defaultBlockState, Properties.LUNALITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> LUNALITE_SLAB = HELPER.createBlock("lunalite_slab", () -> new LunaliteSlabBlock(Properties.LUNALITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> LUNALITE_WALL = HELPER.createBlock("lunalite_wall", () -> new WallBlock(Properties.LUNALITE), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> LUNALITE_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "lunalite_vertical_slab", () -> new VerticalSlabBlock(Properties.LUNALITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
-    public static final RegistryObject<Block> CUT_LUNAROCK = HELPER.createBlock("cut_lunarock", () -> new Block(Properties.LUNAROCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> CUT_LUNAROCK_STAIRS = HELPER.createBlock("cut_lunarock_stairs", () -> new StairBlock(CUT_LUNAROCK.get()::defaultBlockState, Properties.LUNAROCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> CUT_LUNAROCK_SLAB = HELPER.createBlock("cut_lunarock_slab", () -> new SlabBlock(Properties.LUNAROCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> CUT_LUNAROCK_WALL = HELPER.createBlock("cut_lunarock_wall", () -> new WallBlock(Properties.LUNAROCK), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> CUT_LUNAROCK_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "cut_lunarock_vertical_slab", () -> new VerticalSlabBlock(Properties.LUNAROCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> CUT_LUNALITE = HELPER.createBlock("cut_lunalite", () -> new Block(Properties.LUNALITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> CUT_LUNALITE_STAIRS = HELPER.createBlock("cut_lunalite_stairs", () -> new StairBlock(CUT_LUNALITE.get()::defaultBlockState, Properties.LUNALITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> CUT_LUNALITE_SLAB = HELPER.createBlock("cut_lunalite_slab", () -> new SlabBlock(Properties.LUNALITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> CUT_LUNALITE_WALL = HELPER.createBlock("cut_lunalite_wall", () -> new WallBlock(Properties.LUNALITE), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> CUT_LUNALITE_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "cut_lunalite_vertical_slab", () -> new VerticalSlabBlock(Properties.LUNALITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
-    public static final RegistryObject<Block> CUT_LUNAROCK_BRICKS = HELPER.createBlock("cut_lunarock_bricks", () -> new Block(Properties.LUNAROCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> CHISELED_CUT_LUNAROCK_BRICKS = HELPER.createBlock("chiseled_cut_lunarock_bricks", () -> new Block(Properties.LUNAROCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> CUT_LUNAROCK_BRICK_STAIRS = HELPER.createBlock("cut_lunarock_brick_stairs", () -> new StairBlock(CUT_LUNAROCK_BRICKS.get()::defaultBlockState, Properties.LUNAROCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> CUT_LUNAROCK_BRICK_SLAB = HELPER.createBlock("cut_lunarock_brick_slab", () -> new SlabBlock(Properties.LUNAROCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> CUT_LUNAROCK_BRICK_WALL = HELPER.createBlock("cut_lunarock_brick_wall", () -> new WallBlock(Properties.LUNAROCK), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> CUT_LUNAROCK_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "cut_lunarock_brick_vertical_slab", () -> new VerticalSlabBlock(Properties.LUNAROCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> CUT_LUNALITE_BRICKS = HELPER.createBlock("cut_lunalite_bricks", () -> new Block(Properties.LUNALITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> CHISELED_CUT_LUNALITE_BRICKS = HELPER.createBlock("chiseled_cut_lunalite_bricks", () -> new Block(Properties.LUNALITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> CUT_LUNALITE_BRICK_STAIRS = HELPER.createBlock("cut_lunalite_brick_stairs", () -> new StairBlock(CUT_LUNALITE_BRICKS.get()::defaultBlockState, Properties.LUNALITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> CUT_LUNALITE_BRICK_SLAB = HELPER.createBlock("cut_lunalite_brick_slab", () -> new SlabBlock(Properties.LUNALITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> CUT_LUNALITE_BRICK_WALL = HELPER.createBlock("cut_lunalite_brick_wall", () -> new WallBlock(Properties.LUNALITE), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> CUT_LUNALITE_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "cut_lunalite_brick_vertical_slab", () -> new VerticalSlabBlock(Properties.LUNALITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
-    public static final RegistryObject<Block> SMOOTH_LUNAROCK = HELPER.createBlock("smooth_lunarock", () -> new Block(Properties.LUNAROCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> SMOOTH_LUNAROCK_STAIRS = HELPER.createBlock("smooth_lunarock_stairs", () -> new StairBlock(SMOOTH_LUNAROCK.get()::defaultBlockState, Properties.LUNAROCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> SMOOTH_LUNAROCK_SLAB = HELPER.createBlock("smooth_lunarock_slab", () -> new SlabBlock(Properties.LUNAROCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> SMOOTH_LUNAROCK_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "smooth_lunarock_vertical_slab", () -> new VerticalSlabBlock(Properties.LUNAROCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> SMOOTH_LUNALITE = HELPER.createBlock("smooth_lunalite", () -> new Block(Properties.LUNALITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> SMOOTH_LUNALITE_STAIRS = HELPER.createBlock("smooth_lunalite_stairs", () -> new StairBlock(SMOOTH_LUNALITE.get()::defaultBlockState, Properties.LUNALITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> SMOOTH_LUNALITE_SLAB = HELPER.createBlock("smooth_lunalite_slab", () -> new SlabBlock(Properties.LUNALITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> SMOOTH_LUNALITE_VERTICAL_SLAB = HELPER.createCompatBlock(WindsweptConstants.QUARK, "smooth_lunalite_vertical_slab", () -> new VerticalSlabBlock(Properties.LUNALITE), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
     // Dry Mossy Blocks //
     public static final RegistryObject<Block> DRY_MOSSY_COBBLESTONE = HELPER.createInjectedBlock("dry_mossy_cobblestone", Items.MOSSY_COBBLESTONE, () -> new Block(BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
@@ -403,7 +403,7 @@ public class WindsweptBlocks {
         public static final BlockBehaviour.Properties SPROUTS = BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XZ);
         public static final BlockBehaviour.Properties PINECONE_BLOCK = Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN).strength(2f, 3f).sound(WindsweptSoundTypes.PINECONE);
         public static final BlockBehaviour.Properties SHALE = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_BLUE).sound(SoundType.DRIPSTONE_BLOCK).requiresCorrectToolForDrops().strength(1.5f, 1f);
-        public static final BlockBehaviour.Properties LUNAROCK = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_LIGHT_BLUE).sound(SoundType.CALCITE).requiresCorrectToolForDrops().strength(.8f);
+        public static final BlockBehaviour.Properties LUNALITE = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_LIGHT_BLUE).sound(SoundType.CALCITE).requiresCorrectToolForDrops().strength(.8f);
         public static final BlockBehaviour.Properties GINGERBREAD = Block.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_ORANGE).strength(2.0F, 3.0F).sound(SoundType.WOOD);
         public static final BlockBehaviour.Properties FEATHER_ORNAMENT = Block.Properties.of(Material.DECORATION, MaterialColor.COLOR_BROWN).strength(.1f).noOcclusion().noCollission().sound(SoundType.AZALEA);
         public static final BlockBehaviour.Properties LAVENDER_THATCH = BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.COLOR_PURPLE).strength(.5f).sound(SoundType.NETHER_SPROUTS).noOcclusion();

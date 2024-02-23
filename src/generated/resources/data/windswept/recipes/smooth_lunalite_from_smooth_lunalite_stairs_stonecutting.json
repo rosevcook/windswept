@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "windswept:smooth_lunalite"
+  },
+  "result": "windswept:smooth_lunalite_stairs"
+}

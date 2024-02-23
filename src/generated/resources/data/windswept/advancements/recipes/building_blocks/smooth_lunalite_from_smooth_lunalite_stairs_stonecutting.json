@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_smooth_lunalite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "windswept:smooth_lunalite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "windswept:smooth_lunalite_from_smooth_lunalite_stairs_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_smooth_lunalite",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "windswept:smooth_lunalite_from_smooth_lunalite_stairs_stonecutting"
+    ]
+  }
+}
