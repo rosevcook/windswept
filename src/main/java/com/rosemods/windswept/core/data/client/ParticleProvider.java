@@ -56,7 +56,7 @@ public abstract class ParticleProvider implements DataProvider {
 
     @Override
     public String getName() {
-        return "Particles";
+        return "Particles: " + this.modid;
     }
 
     private record ParticleDefinition(List<String> entries) {

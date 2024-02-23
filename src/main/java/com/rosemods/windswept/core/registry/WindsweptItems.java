@@ -62,7 +62,7 @@ public class WindsweptItems {
     public static final RegistryObject<Item> CHESTNUT_RISOTTO = HELPER.createItem("chestnut_risotto", () -> new BowlFoodItem((ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) ? PropertyUtil.food(WindsweptFDCompat.CHESTNUT_RISOTTO) : new Item.Properties()).craftRemainder(Items.BOWL).stacksTo(1)));
     public static final RegistryObject<Item> CHESTNUT_CHICKEN_PLATTER = HELPER.createItem("chestnut_chicken_platter", () -> new BowlFoodItem((ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.FARMERSDELIGHT) ? PropertyUtil.food(WindsweptFDCompat.CHESTNUT_CHICKEN_PLATTER) : new Item.Properties()).craftRemainder(Items.BOWL).stacksTo(1)));
 
-    public static final RegistryObject<Item> GINGER_ROOT = HELPER.createItem("ginger_root", () -> new Item(PropertyUtil.food(WindsweptFoods.GINGER_ROOT)));
+    public static final RegistryObject<Item> GINGER_ROOT = HELPER.createItem("ginger_root", () -> new ItemNameBlockItem(WindsweptBlocks.GINGER.get(), PropertyUtil.food(WindsweptFoods.GINGER_ROOT)));
     public static final RegistryObject<Item> GINGERBREAD_COOKIE = HELPER.createItem("gingerbread_cookie", () -> new InjectedItem(Items.COOKIE, PropertyUtil.food(WindsweptFoods.GINGERBREAD_COOKIE)));
     public static final RegistryObject<Item> GINGER_SORBET = HELPER.createItem("ginger_sorbet", () -> new FoodRemainderItem(() -> WindsweptBlocks.PINECONE.get(), PropertyUtil.food(WindsweptFoods.GINGER_SORBET)));
     public static final RegistryObject<Item> GINGER_TEA = HELPER.createItem("ginger_tea", () -> new DrinkableBottleItem(WindsweptFoods.GINGER_TEA));

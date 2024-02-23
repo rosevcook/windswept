@@ -2,6 +2,7 @@ package com.rosemods.windswept.core.data.server;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
+import com.rosemods.windswept.common.block.GingerCropBlock;
 import com.rosemods.windswept.common.block.PineconeBlock;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
@@ -290,6 +291,10 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(CANDY_CANE_BLOCK.get());
 
             // ginger
+            this.add(GINGER.get(), applyExplosionDecay(GINGER.get(), LootTable.lootTable()
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(GINGER_ROOT.get())))
+                    .withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(GINGER.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GingerCropBlock.AGE, 4)))
+                            .add(LootItem.lootTableItem(GINGER_ROOT.get()).apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, .5714286f, 3))))));
             this.add(GINGER_SOIL.get(), b -> dropTwoOthers(b, Items.DIRT, GINGER_ROOT.get()));
             this.dropSelf(GINGERBREAD_BLOCK.get());
             this.dropSelf(GLAZED_GINGERBREAD_BLOCK.get());

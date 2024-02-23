@@ -404,6 +404,12 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.verticalSlab(SMOOTH_LUNAROCK_VERTICAL_SLAB, this.blockTexture(SMOOTH_LUNAROCK.get()));
 
         // ginger
+        this.getVariantBuilder(GINGER.get())
+                .partialState().with(GingerCropBlock.AGE, 0).addModels(new ConfiguredModel(this.models().crop("ginger_stage0", this.modLoc("block/ginger_stage0")).renderType("cutout")))
+                .partialState().with(GingerCropBlock.AGE, 1).addModels(new ConfiguredModel(this.models().crop("ginger_stage1", this.modLoc("block/ginger_stage1")).renderType("cutout")))
+                .partialState().with(GingerCropBlock.AGE, 2).addModels(new ConfiguredModel(this.models().crop("ginger_stage2", this.modLoc("block/ginger_stage2")).renderType("cutout")))
+                .partialState().with(GingerCropBlock.AGE, 3).addModels(new ConfiguredModel(this.models().crop("ginger_stage3", this.modLoc("block/ginger_stage3")).renderType("cutout")))
+                .partialState().with(GingerCropBlock.AGE, 4).addModels(new ConfiguredModel(this.models().crop("ginger_stage4", this.modLoc("block/ginger_stage4")).renderType("cutout")));
         this.cubeAll(GINGER_SOIL);
         this.cubeAll(GINGERBREAD_BLOCK);
         this.cubeAll(GINGERBREAD_BRICKS);

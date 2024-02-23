@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "windswept:block/ginger_stage0"
+    },
+    "age=1": {
+      "model": "windswept:block/ginger_stage1"
+    },
+    "age=2": {
+      "model": "windswept:block/ginger_stage2"
+    },
+    "age=3": {
+      "model": "windswept:block/ginger_stage3"
+    },
+    "age=4": {
+      "model": "windswept:block/ginger_stage4"
+    }
+  }
+}

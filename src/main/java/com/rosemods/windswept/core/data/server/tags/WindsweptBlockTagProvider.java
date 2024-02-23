@@ -49,6 +49,7 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
         this.tag(Tags.Blocks.STONE).add(SHALE.get());
 
         //vanilla
+        this.tag(BlockTags.CROPS).add(GINGER.get());
         this.tag(BlockTags.STONE_ORE_REPLACEABLES).add(SHALE.get());
         this.tag(BlockTags.BASE_STONE_OVERWORLD).add(SHALE.get());
         this.tag(BlockTags.VALID_SPAWN).add(GELISOL.get(), DRY_MOSS_BLOCK.get());
