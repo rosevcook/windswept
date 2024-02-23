@@ -325,7 +325,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
                 .partialState().with(LavenderBlock.AGE, 2).addModels(new ConfiguredModel(this.models().cross("lavender_stage2", this.modLoc("block/lavender_stage2")).renderType("cutout")));
 
         this.generatedItem(LAVENDER.get(), TextureFolder.ITEM);
-        this.pot(POTTED_LAVENDER, this.modLoc("block/lavender_stage1"));
+        this.pot(POTTED_LAVENDER, this.modLoc("block/potted_lavender"));
 
         this.compressedBlock(LAVENDER_BALE);
         this.thatch(LAVENDER_THATCH);
