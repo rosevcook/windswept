@@ -29,7 +29,7 @@ public class SheepMixin {
         else if (biome.is(WindsweptBiomeTags.IS_LAVENDER) && rand.nextInt(4) == 0)
             sheep.setColor(DyeColor.MAGENTA);
         else if (biome.is(WindsweptBiomeTags.IS_CHESTNUT_FOREST) && rand.nextInt(3) == 0)
-            sheep.setColor(rand.nextInt(25) == 0 ? DyeColor.BLUE : DyeColor.BROWN);
+            sheep.setColor(rand.nextInt(8) == 0 ? DyeColor.BLUE : DyeColor.BROWN);
     }
 
 }

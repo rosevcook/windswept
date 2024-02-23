@@ -143,12 +143,11 @@ public class WindsweptBiomes {
         if (forest) {
             generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.COMMON_TALL_BIRCH_TREES.getHolder().get());
             generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.LAVENDER_CHESTNUT_TREES.getHolder().get());
-        } else {
+        } else
             generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.RARE_TALL_BIRCH_TREES.getHolder().get());
-        }
 
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.LAVENDER_MOSS_PATCH.getHolder().get());
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.WHITE_ROSE.getHolder().get());
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.LARGE_WHITE_ROSE.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.LAVENDER.getHolder().get());
 
         return biome(.7f, .7f, 4159204, 329011, 12638463, Biome.Precipitation.RAIN, generation, baseLavenderSpawns()).build();
