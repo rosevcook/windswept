@@ -419,7 +419,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         conditionalRecipe(ShapedRecipeBuilder.shaped(post, 8).define('#', wood).pattern("#").pattern("#").pattern("#").unlockedBy(getHasName(wood), has(wood)), getQuarkCondition("wooden_posts"), consumer, getSaveLocation(getName(post)));
     }
 
-    // Misc Util //
+    // Util //
 
     private static QuarkFlagRecipeCondition getQuarkCondition(String flag) {
         return new QuarkFlagRecipeCondition(new ResourceLocation("blueprint", "quark_flag"), flag);

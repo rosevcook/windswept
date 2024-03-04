@@ -44,6 +44,7 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
         this.tag(BlueprintBlockTags.WOODEN_VERTICAL_SLABS).add(HOLLY_VERTICAL_SLAB.get(), CHESTNUT_VERTICAL_SLAB.get(), PINE_VERTICAL_SLAB.get());
 
         //forge
+        this.tag(Tags.Blocks.BOOKSHELVES).add(HOLLY_BOOKSHELF.get(), CHESTNUT_BOOKSHELF.get(), PINE_BOOKSHELF.get());
         this.tag(Tags.Blocks.CHESTS_WOODEN).add(HOLLY_CHEST.get(), HOLLY_TRAPPED_CHEST.get(), CHESTNUT_CHEST.get(), CHESTNUT_TRAPPED_CHEST.get(), PINE_CHEST.get(), PINE_TRAPPED_CHEST.get());
         this.tag(Tags.Blocks.CHESTS_TRAPPED).add(HOLLY_TRAPPED_CHEST.get(), CHESTNUT_TRAPPED_CHEST.get(), PINE_TRAPPED_CHEST.get());
         this.tag(Tags.Blocks.STONE).add(SHALE.get());

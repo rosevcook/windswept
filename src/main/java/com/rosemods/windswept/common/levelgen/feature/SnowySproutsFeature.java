@@ -25,9 +25,9 @@ public class SnowySproutsFeature extends Feature<NoneFeatureConfiguration> {
         RandomSource rand = context.random();
         boolean generated = false;
 
-        for (int x = -5; x <= 5; ++x)
-            for (int z = -5; z <= 5; ++z)
-                for (int y = -2; y <= 2; ++y) {
+        for (int x = -5; x <= 5; x++)
+            for (int z = -5; z <= 5; z++)
+                for (int y = -2; y <= 2; y++) {
                     BlockPos pos = origin.offset(x, y, z);
 
                     if ((level.isEmptyBlock(pos) || level.getBlockState(pos).is(Blocks.SNOW)) && pos.getY() < level.getMaxBuildHeight()

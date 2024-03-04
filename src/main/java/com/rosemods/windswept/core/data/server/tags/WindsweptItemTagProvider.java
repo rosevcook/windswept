@@ -51,15 +51,15 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
         this.tag(WindsweptItemTags.COOKED_GOAT).add(COOKED_GOAT.get(), COOKED_GOAT_SHANKS.get());
         this.tag(WindsweptItemTags.BERRIES).add(WILD_BERRIES.get());
         this.tag(WindsweptItemTags.COOKED_MUTTON).add(Items.COOKED_MUTTON);
-        this.tag(Tags.Items.BOOKSHELVES).add(HOLLY_BOOKSHELF.get().asItem(), CHESTNUT_BOOKSHELF.get().asItem(), PINE_BOOKSHELF.get().asItem());
         this.tag(Tags.Items.SEEDS).addTag(WindsweptItemTags.WILD_BERRY_SEEDS);
         this.tag(Tags.Items.ARMORS_BOOTS).add(SNOW_BOOTS.get());
+        this.copy(Tags.Blocks.BOOKSHELVES, Tags.Items.BOOKSHELVES);
         this.copy(Tags.Blocks.CHESTS_WOODEN, Tags.Items.CHESTS_WOODEN);
         this.copy(Tags.Blocks.CHESTS_TRAPPED, Tags.Items.CHESTS_TRAPPED);
 
         //boatload
-        this.tag(BlueprintItemTags.FURNACE_BOATS).add(HOLLY_FURNACE_BOAT.get(), CHESTNUT_FURNACE_BOAT.get());
-        this.tag(BlueprintItemTags.LARGE_BOATS).add(LARGE_HOLLY_BOAT.get(), LARGE_CHESTNUT_BOAT.get());
+        this.tag(BlueprintItemTags.FURNACE_BOATS).add(HOLLY_FURNACE_BOAT.get(), CHESTNUT_FURNACE_BOAT.get(), PINE_FURNACE_BOAT.get());
+        this.tag(BlueprintItemTags.LARGE_BOATS).add(LARGE_HOLLY_BOAT.get(), LARGE_CHESTNUT_BOAT.get(), LARGE_PINE_BOAT.get());
 
         //vanilla
         this.tag(ItemTags.ARROWS).add(FROST_ARROW.get(), CUPIDS_ARROW.get());
