@@ -250,9 +250,9 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         compressedBlock(CHESTNUT_CRATE.get(), CHESTNUTS.get(), getQuarkCondition("apple_crate"), consumer);
         compressedBlock(ROASTED_CHESTNUT_CRATE.get(), ROASTED_CHESTNUTS.get(), getQuarkCondition("apple_crate"), consumer);
         compressedBlock(GINGER_ROOT_CRATE.get(), GINGER_ROOT.get(), new OrCondition(getQuarkCondition("apple_crate"), new ModLoadedCondition("farmersdelight")), consumer);
-        compressedBlock(RED_MUSHROOM_BASKET.get(), Items.RED_MUSHROOM, new OrCondition(new OrCondition(new ModLoadedCondition("berry_good"), new ModLoadedCondition("farmersdelight")), getQuarkCondition("apple_crate")), consumer);
-        compressedBlock(BROWN_MUSHROOM_BASKET.get(), Items.BROWN_MUSHROOM, new OrCondition(new OrCondition(new ModLoadedCondition("berry_good"), new ModLoadedCondition("farmersdelight")), getQuarkCondition("apple_crate")), consumer);
-        compressedBlock(FROZEN_FLESH_BLOCK.get(), FROZEN_FLESH.get(), consumer);
+        compressedBlock(RED_MUSHROOM_BASKET.get(), Items.RED_MUSHROOM, new OrCondition(new ModLoadedCondition("berry_good"), getQuarkCondition("apple_crate")), consumer);
+        compressedBlock(BROWN_MUSHROOM_BASKET.get(), Items.BROWN_MUSHROOM, new OrCondition(new ModLoadedCondition("berry_good"), getQuarkCondition("apple_crate")), consumer);
+        compressedBlock(FROZEN_FLESH_BLOCK.get(), FROZEN_FLESH.get(), new OrCondition(new ModLoadedCondition("caverns_and_chasms"), getQuarkCondition("apple_crate")), consumer);
         compressedBlock(PINECONE_BLOCK.get(), PINECONE.get(), consumer);
         compressedBlock(GINGERBREAD_COOKIE_BLOCK.get(), GINGERBREAD_COOKIE.get(), consumer);
         compressedBlock(CANDY_CANE_BLOCK.get(), CANDY_CANE.get(), consumer);

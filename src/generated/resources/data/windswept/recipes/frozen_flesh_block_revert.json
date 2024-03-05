@@ -1,12 +1,34 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "item": "windswept:frozen_flesh_block"
+      "conditions": [
+        {
+          "type": "forge:or",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "caverns_and_chasms"
+            },
+            {
+              "type": "blueprint:quark_flag",
+              "flag": "apple_crate"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "windswept:frozen_flesh_block"
+          }
+        ],
+        "result": {
+          "count": 9,
+          "item": "windswept:frozen_flesh"
+        }
+      }
     }
-  ],
-  "result": {
-    "count": 9,
-    "item": "windswept:frozen_flesh"
-  }
+  ]
 }

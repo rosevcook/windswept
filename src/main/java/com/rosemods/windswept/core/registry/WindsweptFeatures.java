@@ -209,7 +209,7 @@ public final class WindsweptFeatures {
         public static final RegistryObject<ConfiguredFeature<?, ?>> LAVENDER_MOSS_PATCH = CONFIGURED_FEATURES.register("lavender_moss_patch", () -> new ConfiguredFeature<>(Feature.VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, BlockStateProvider.simple(Blocks.MOSS_BLOCK), PlacementUtils.inlinePlaced(LAVENDER_MOSS_VEGETATION.getHolder().get()), CaveSurface.FLOOR, ConstantInt.of(1), 0f, 5, .6f, UniformInt.of(1, 2), .75f)));
 
         // Stone //
-        public static final RegistryObject<ConfiguredFeature<OreConfiguration, ?>> SHALE = CONFIGURED_FEATURES.register("shale", () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), WindsweptBlocks.SHALE.get().defaultBlockState(), 64)));
+        public static final RegistryObject<ConfiguredFeature<?, ?>> SHALE = CONFIGURED_FEATURES.register("shale", () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), WindsweptBlocks.SHALE.get().defaultBlockState(), 64)));
 
     }
 
