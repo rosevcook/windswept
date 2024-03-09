@@ -4,6 +4,10 @@
     "minecraft:goat",
     "minecraft:fox",
     "minecraft:horse",
-    "windswept:frostbiter"
+    "windswept:frostbiter",
+    {
+      "id": "environmental:reindeer",
+      "required": false
+    }
   ]
 }

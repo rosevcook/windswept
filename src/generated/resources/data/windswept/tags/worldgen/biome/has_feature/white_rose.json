@@ -5,6 +5,10 @@
     {
       "id": "atmospheric:kousa_jungle",
       "required": false
+    },
+    {
+      "id": "environmental:blossom_woods",
+      "required": false
     }
   ]
 }

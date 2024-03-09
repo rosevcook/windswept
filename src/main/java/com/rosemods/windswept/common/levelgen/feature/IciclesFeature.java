@@ -39,7 +39,7 @@ public class IciclesFeature extends Feature<NoneFeatureConfiguration> {
                         return false;
 
                     if (BluebellsFeature.shouldPlace(x, z, rand) && level.isEmptyBlock(pos) && pos.getY() < level.getMaxBuildHeight() && state.canSurvive(level, pos) && canPlaceOn(level, pos.above())) {
-                        if (rand.nextInt(3) == 0)
+                        if (rand.nextInt(3) == 0 && !level.getBlockState(pos.above(2)).isAir())
                             level.setBlock(pos.above(), block, 2);
 
                         if (rand.nextInt(3) == 0 && level.getBlockState(pos.below()).getMaterial().isReplaceable()) {

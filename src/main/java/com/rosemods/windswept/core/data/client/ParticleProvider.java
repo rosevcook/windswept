@@ -34,8 +34,8 @@ public abstract class ParticleProvider implements DataProvider {
     protected abstract void addParticles();
 
     protected void add(ParticleType<?> particle, String... textures) {
-        List<String> entries = Arrays.stream(textures).map(s -> new ResourceLocation(this.modid, s).toString()).toList();
-        this.particles.put(ForgeRegistries.PARTICLE_TYPES.getKey(particle).getPath(), new ParticleDefinition(entries));
+        this.particles.put(ForgeRegistries.PARTICLE_TYPES.getKey(particle).getPath(),
+                new ParticleDefinition(Arrays.stream(textures).map(s -> new ResourceLocation(this.modid, s).toString()).toList()));
     }
 
     @Override
