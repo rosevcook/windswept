@@ -252,6 +252,7 @@ public final class WindsweptFeatures {
         public static final RegistryObject<PlacedFeature> LAVENDER_CHESTNUT_TREES = register("lavender_chestnut_trees", ConfiguredFeatures.CHESTNUT_BEES, treePlacement(PlacementUtils.countExtra(2, .1f, 1)));
 
         public static final RegistryObject<PlacedFeature> TALL_BIRCH_TREES = register("tall_birch_trees", VegetationFeatures.BIRCH_TALL, treePlacement(PlacementUtils.countExtra(5, .1f, 1)));
+        public static final RegistryObject<PlacedFeature> BLOSSOM_TALL_BIRCH_TREES = register("blossom_tall_birch_trees", VegetationFeatures.BIRCH_TALL, treePlacement(PlacementUtils.countExtra(4, .1f, 1)));
         public static final RegistryObject<PlacedFeature> COMMON_TALL_BIRCH_TREES = register("common_tall_birch_trees", VegetationFeatures.BIRCH_TALL, treePlacement(PlacementUtils.countExtra(7, .1f, 1)));
         public static final RegistryObject<PlacedFeature> RARE_TALL_BIRCH_TREES = register("rare_tall_birch_trees", VegetationFeatures.BIRCH_TALL, treePlacement(PlacementUtils.countExtra(0, .1f, 1)));
         public static final RegistryObject<PlacedFeature> PINE_TREES = register("pine_trees", ConfiguredFeatures.PINE_BEES, treePlacement(PlacementUtils.countExtra(9, .1f, 1)));

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_ginger_root": {
+    "has_lapis_lazuli": {
       "conditions": {
         "items": [
           {
             "items": [
-              "windswept:ginger_root"
+              "minecraft:lapis_lazuli"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "windswept:ginger_sorbet"
+        "recipe": "windswept:lunalite"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_ginger_root",
+      "has_lapis_lazuli",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "windswept:ginger_sorbet"
+      "windswept:lunalite"
     ]
   }
 }

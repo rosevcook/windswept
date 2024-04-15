@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_owl_feather": {
+    "has_feather": {
       "conditions": {
         "items": [
           {
             "items": [
-              "windswept:owl_feather"
+              "minecraft:feather"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_owl_feather",
+      "has_feather",
       "has_the_recipe"
     ]
   ],

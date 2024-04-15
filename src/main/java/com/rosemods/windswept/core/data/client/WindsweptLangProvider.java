@@ -61,7 +61,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateItem(WILD_BERRY_COOKIE);
         this.translateItem(WILD_BERRY_JUICE);
         this.translateItem(WILD_BERRY_PIPS);
-        this.translateItem(CHRISTMAS_PUDDING_SLICE);
+        this.add(CHRISTMAS_PUDDING_SLICE.get(), "Slice of Christmas Pudding");
         this.add(SWEET_BERRY_BOWL.get(), "Bowl of Sweet Berries");
         this.add(WILD_BERRY_BOWL.get(), "Bowl of Wild Berries");
         this.translateItem(MUTTON_PIE);
@@ -75,7 +75,6 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateItem(FROZEN_BRANCH);
         this.translateItem(LAVENDER_CROWN);
         this.translateItem(ANTLER_HELMET);
-        this.translateItem(FEATHER_CLOAK);
         this.translateItem(SNOW_BOOTS);
         this.translateItem(FROST_ARROW);
         this.add(CUPIDS_ARROW.get(), "Cupid's Arrow");
@@ -90,10 +89,9 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateItem(FROSTBITER_SPAWN_EGG);
         this.translateItem(GINGER_ROOT);
         this.translateItem(GINGERBREAD_COOKIE);
-        this.translateItem(GINGER_SORBET);
+        this.translateItem(GINGER_SNOW_CONE);
         this.translateItem(GINGER_TEA);
         this.translateItem(CANDY_CANE);
-        this.translateItem(OWL_FEATHER);
         this.translateItem(LAVENDER_SCONES);
         this.translateItem(LAVENDER_TEA);
 

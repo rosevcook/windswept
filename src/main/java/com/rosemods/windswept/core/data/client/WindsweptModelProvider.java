@@ -90,15 +90,13 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.generatedItem(CHESTNUT_CHICKEN_PLATTER.get(), TextureFolder.ITEM);
         this.generatedItem(GINGER_ROOT.get(), TextureFolder.ITEM);
         this.generatedItem(GINGERBREAD_COOKIE.get(), TextureFolder.ITEM);
-        this.generatedItem(GINGER_SORBET.get(), TextureFolder.ITEM);
+        this.generatedItem(GINGER_SNOW_CONE.get(), TextureFolder.ITEM);
         this.generatedItem(GINGER_TEA.get(), TextureFolder.ITEM);
         this.handheldItem(CANDY_CANE.get(), TextureFolder.ITEM);
-        this.generatedItem(OWL_FEATHER.get(), TextureFolder.ITEM);
         this.generatedItem(LAVENDER_SCONES.get(), TextureFolder.ITEM);
         this.generatedItem(LAVENDER_TEA.get(), TextureFolder.ITEM);
         this.generatedItem(LAVENDER_CROWN.get(), TextureFolder.ITEM);
         this.generatedItem(ANTLER_HELMET.get(), TextureFolder.ITEM);
-        this.generatedItem(FEATHER_CLOAK.get(), TextureFolder.ITEM);
 
         // holly
         this.pillar(STRIPPED_HOLLY_LOG);

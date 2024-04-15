@@ -9,7 +9,7 @@ import net.minecraft.world.item.ItemStack;
 
 public class FeatherCloakItem extends ArmorItem {
     public FeatherCloakItem(Properties properties) {
-        super(WindsweptTiers.FEATHER_CLOAK, EquipmentSlot.CHEST, properties);
+        super(null, EquipmentSlot.CHEST, properties);
     }
 
     @Override

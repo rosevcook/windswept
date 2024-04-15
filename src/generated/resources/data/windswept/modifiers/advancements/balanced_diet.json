@@ -114,11 +114,11 @@
             },
             "trigger": "minecraft:consume_item"
           },
-          "windswept:ginger_sorbet": {
+          "windswept:ginger_snow_cone": {
             "conditions": {
               "item": {
                 "items": [
-                  "windswept:ginger_sorbet"
+                  "windswept:ginger_snow_cone"
                 ]
               }
             },
@@ -338,7 +338,7 @@
             "windswept:gingerbread_cookie"
           ],
           [
-            "windswept:ginger_sorbet"
+            "windswept:ginger_snow_cone"
           ],
           [
             "windswept:ginger_tea"

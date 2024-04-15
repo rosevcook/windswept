@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_owl_feather": {
+    "has_ginger_root": {
       "conditions": {
         "items": [
           {
             "items": [
-              "windswept:owl_feather"
+              "windswept:ginger_root"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "windswept:feather_cloak"
+        "recipe": "windswept:ginger_snow_cone"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_owl_feather",
+      "has_ginger_root",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "windswept:feather_cloak"
+      "windswept:ginger_snow_cone"
     ]
   }
 }

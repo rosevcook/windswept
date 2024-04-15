@@ -2,10 +2,10 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "minecraft:stick"
+      "item": "windswept:pinecone"
     },
     "F": {
-      "item": "windswept:owl_feather"
+      "item": "minecraft:feather"
     },
     "S": {
       "item": "minecraft:string"
