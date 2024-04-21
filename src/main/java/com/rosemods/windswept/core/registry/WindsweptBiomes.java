@@ -104,12 +104,13 @@ public class WindsweptBiomes {
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.TUNDRA_FALLEN_LOG.getHolder().get());
         BiomeDefaultFeatures.addDefaultOres(generation);
         BiomeDefaultFeatures.addDefaultSoftDisks(generation);
-        //generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
         BiomeDefaultFeatures.addDefaultMushrooms(generation);
         BiomeDefaultFeatures.addCommonBerryBushes(generation);
 
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.LUPINE.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.DRY_MOSS_PATCH_LARGE.getHolder().get());
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.GELISOL_PATCH.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.DRY_MOSS_ROCK.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.HOLLY_BUSH.getHolder().get());
 
@@ -146,7 +147,6 @@ public class WindsweptBiomes {
         } else
             generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.RARE_TALL_BIRCH_TREES.getHolder().get());
 
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.LAVENDER_MOSS_PATCH.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.LARGE_WHITE_ROSE.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.LAVENDER.getHolder().get());
 

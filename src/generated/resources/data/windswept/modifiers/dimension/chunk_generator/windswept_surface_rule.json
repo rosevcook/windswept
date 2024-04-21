@@ -23,8 +23,8 @@
                   "type": "minecraft:condition",
                   "if_true": {
                     "type": "minecraft:noise_threshold",
-                    "max_threshold": 0.2181818187236786,
-                    "min_threshold": 0.12121212482452393,
+                    "max_threshold": 0.06060606241226196,
+                    "min_threshold": -0.24242424964904785,
                     "noise": "minecraft:surface"
                   },
                   "then_run": {
@@ -35,7 +35,7 @@
                         "if_true": {
                           "type": "minecraft:stone_depth",
                           "add_surface_depth": false,
-                          "offset": -1,
+                          "offset": 0,
                           "secondary_depth_range": 0,
                           "surface_type": "floor"
                         },
@@ -50,10 +50,7 @@
                           "then_run": {
                             "type": "minecraft:block",
                             "result_state": {
-                              "Name": "minecraft:snow",
-                              "Properties": {
-                                "layers": "1"
-                              }
+                              "Name": "minecraft:snow_block"
                             }
                           }
                         }
@@ -69,7 +66,7 @@
                       "if_true": {
                         "type": "minecraft:noise_threshold",
                         "max_threshold": 0.3030303120613098,
-                        "min_threshold": 0.0363636389374733,
+                        "min_threshold": 0.12121212482452393,
                         "noise": "minecraft:surface"
                       },
                       "then_run": {
@@ -95,10 +92,7 @@
                               "then_run": {
                                 "type": "minecraft:block",
                                 "result_state": {
-                                  "Name": "minecraft:grass_block",
-                                  "Properties": {
-                                    "snowy": "false"
-                                  }
+                                  "Name": "minecraft:snow_block"
                                 }
                               }
                             }
@@ -129,7 +123,7 @@
                             "then_run": {
                               "type": "minecraft:block",
                               "result_state": {
-                                "Name": "windswept:gelisol",
+                                "Name": "minecraft:grass_block",
                                 "Properties": {
                                   "snowy": "false"
                                 }
