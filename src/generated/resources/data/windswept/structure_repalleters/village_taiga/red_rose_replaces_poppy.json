@@ -1,6 +1,6 @@
 {
   "type": "blueprint:simple",
-  "priority": "normal",
+  "priority": "high",
   "replaces_block": "minecraft:poppy",
   "replaces_with": "windswept:red_rose",
   "selector": "minecraft:village_taiga"

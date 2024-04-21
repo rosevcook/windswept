@@ -1,6 +1,6 @@
 {
   "type": "blueprint:simple",
-  "priority": "normal",
+  "priority": "high",
   "replaces_block": "minecraft:chest",
   "replaces_with": "windswept:chestnut_chest",
   "selector": {

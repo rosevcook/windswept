@@ -90,11 +90,11 @@ public class WindsweptStructureRepaletterProvider extends StructureRepaletterPro
 
     private void register(ResourceKey<Structure> structure, Block replacesBlock, Block replacesWith, ICondition... conditions) {
         this.registerRepaletter(structure.location().getPath() + "/" + getName(replacesWith) + "_replaces_" + getName(replacesBlock),
-                new ConditionedResourceSelector(new NamesResourceSelector(structure.location()), conditions), EventPriority.NORMAL, new SimpleStructureRepaletter(replacesBlock, replacesWith));
+                new ConditionedResourceSelector(new NamesResourceSelector(structure.location()), conditions), EventPriority.HIGH, new SimpleStructureRepaletter(replacesBlock, replacesWith));
     }
 
     private void register(String name, NamesResourceSelector structures, Block replacesBlock, Block replacesWith) {
-        this.registerRepaletter(name, new ConditionedResourceSelector(structures), EventPriority.NORMAL, new SimpleStructureRepaletter(replacesBlock, replacesWith));
+        this.registerRepaletter(name, new ConditionedResourceSelector(structures), EventPriority.HIGH, new SimpleStructureRepaletter(replacesBlock, replacesWith));
     }
 
     private static String getName(Block block) {

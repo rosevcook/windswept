@@ -1,6 +1,6 @@
 {
   "type": "blueprint:simple",
-  "priority": "normal",
+  "priority": "high",
   "replaces_block": "minecraft:oak_trapdoor",
   "replaces_with": "windswept:holly_trapdoor",
   "selector": "minecraft:igloo"

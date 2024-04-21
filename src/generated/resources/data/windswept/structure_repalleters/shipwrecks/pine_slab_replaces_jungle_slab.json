@@ -1,6 +1,6 @@
 {
   "type": "blueprint:simple",
-  "priority": "normal",
+  "priority": "high",
   "replaces_block": "minecraft:jungle_slab",
   "replaces_with": "windswept:pine_slab",
   "selector": {

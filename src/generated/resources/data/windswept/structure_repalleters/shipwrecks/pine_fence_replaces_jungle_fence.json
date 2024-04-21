@@ -1,6 +1,6 @@
 {
   "type": "blueprint:simple",
-  "priority": "normal",
+  "priority": "high",
   "replaces_block": "minecraft:jungle_fence",
   "replaces_with": "windswept:pine_fence",
   "selector": {

@@ -1,6 +1,6 @@
 {
   "type": "blueprint:simple",
-  "priority": "normal",
+  "priority": "high",
   "replaces_block": "minecraft:snow_block",
   "replaces_with": "windswept:snow_bricks",
   "selector": "minecraft:igloo"

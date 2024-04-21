@@ -1,6 +1,6 @@
 {
   "type": "blueprint:simple",
-  "priority": "normal",
+  "priority": "high",
   "replaces_block": "minecraft:blue_ice",
   "replaces_with": "windswept:packed_ice_bricks",
   "selector": "minecraft:village_snowy"

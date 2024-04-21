@@ -1,6 +1,6 @@
 {
   "type": "blueprint:simple",
-  "priority": "normal",
+  "priority": "high",
   "replaces_block": "minecraft:spruce_fence_gate",
   "replaces_with": "windswept:chestnut_fence_gate",
   "selector": "minecraft:village_snowy"

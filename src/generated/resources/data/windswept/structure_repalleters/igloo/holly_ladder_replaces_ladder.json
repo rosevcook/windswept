@@ -1,6 +1,6 @@
 {
   "type": "blueprint:simple",
-  "priority": "normal",
+  "priority": "high",
   "replaces_block": "minecraft:ladder",
   "replaces_with": "windswept:holly_ladder",
   "selector": {
