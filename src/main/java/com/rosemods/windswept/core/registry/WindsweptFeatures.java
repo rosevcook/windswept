@@ -1,7 +1,7 @@
 package com.rosemods.windswept.core.registry;
 
 import com.rosemods.windswept.common.block.WildBerryBushBlock;
-import com.rosemods.windswept.common.levelgen.SnowyGelisolFeature;
+import com.rosemods.windswept.common.levelgen.feature.SnowyGelisolFeature;
 import com.rosemods.windswept.common.levelgen.feature.*;
 import com.rosemods.windswept.common.levelgen.tree.decorator.BranchDecorator;
 import com.rosemods.windswept.common.levelgen.tree.foliage_placer.ChestnutFoliagePlacer;

@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
 
 public class FrostbiterRenderer extends MobRenderer<Frostbiter, FrostbiterModel> {
-    private static final ResourceLocation FROSTBITER_LOCATION = Windswept.location("textures/entity/frostbiter.png");
+    private static final ResourceLocation FROSTBITER_LOCATION = Windswept.location("textures/entity/frostbiter/frostbiter.png");
+    private static final ResourceLocation FROSTBITER_BABY_LOCATION = Windswept.location("textures/entity/frostbiter/frostbiter_baby.png");
 
     public FrostbiterRenderer(EntityRendererProvider.Context context) {
         super(context, new FrostbiterModel(context.bakeLayer(WindsweptModelLayers.FROSTBITER)), 1.25f);
@@ -17,7 +18,7 @@ public class FrostbiterRenderer extends MobRenderer<Frostbiter, FrostbiterModel>
 
     @Override
     public ResourceLocation getTextureLocation(Frostbiter frostbiter) {
-        return FROSTBITER_LOCATION;
+        return frostbiter.isBaby() ? FROSTBITER_BABY_LOCATION : FROSTBITER_LOCATION;
     }
 
 }
