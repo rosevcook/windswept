@@ -25,7 +25,7 @@ public class WindsweptChunkGeneratorModifierProvider extends ChunkGeneratorModif
         RuleSource snowRule = sequence(ifTrue(ON_FLOOR, ifTrue(waterBlockCheck(-1, 0), state(Blocks.SNOW_BLOCK.defaultBlockState()))));
 
         this.entry("windswept_surface_rule").selects("minecraft:overworld")
-                .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(inTundra, sequence(ifTrue(noiseRange(-2f, .5f), snowRule), sequence(ifTrue(noiseRange(1f, 2.5f), snowRule), grassRule)))), false));
+                .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(inTundra, sequence(ifTrue(noiseRange(-2f, .5f), snowRule), sequence(ifTrue(noiseRange(1f, 1.5f), snowRule), grassRule)))), false));
     }
 
     private static ConditionSource noiseRange(float low, float high) {

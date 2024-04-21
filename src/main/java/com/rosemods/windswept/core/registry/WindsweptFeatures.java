@@ -1,6 +1,7 @@
 package com.rosemods.windswept.core.registry;
 
 import com.rosemods.windswept.common.block.WildBerryBushBlock;
+import com.rosemods.windswept.common.levelgen.SnowyGelisolFeature;
 import com.rosemods.windswept.common.levelgen.feature.*;
 import com.rosemods.windswept.common.levelgen.tree.decorator.BranchDecorator;
 import com.rosemods.windswept.common.levelgen.tree.foliage_placer.ChestnutFoliagePlacer;
@@ -53,6 +54,7 @@ public final class WindsweptFeatures {
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> ICICLES_PATCH = FEATURES.register("icicles_patch", IciclesFeature::new);
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> FLOOR_ICICLES_PATCH = FEATURES.register("floor_icicles_patch", FloorIciclesFeature::new);
     public static final RegistryObject<Feature<SimpleBlockConfiguration>> FALLEN_LOG = FEATURES.register("fallen_log", FallenLogFeature::new);
+    public static final RegistryObject<Feature<NoneFeatureConfiguration>> SNOWY_GELISOL = FEATURES.register("snowy_gelisol", SnowyGelisolFeature::new);
     public static final RegistryObject<Feature<TreeConfiguration>> PINE_TREE = FEATURES.register("pine_tree", PineTreeFeature::new);
 
     public static class Configs {
@@ -67,9 +69,8 @@ public final class WindsweptFeatures {
 
         public static SimpleBlockConfiguration createDryMossVegetation() {
             return new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
-                    .add(Blocks.AIR.defaultBlockState(), 50)
+                    .add(Blocks.AIR.defaultBlockState(), 66)
                     .add(WindsweptBlocks.MOSS_CAMPION.get().defaultBlockState(), 3)
-                    .add(WindsweptBlocks.DRY_MOSS_CARPET.get().defaultBlockState(), 25)
                     .add(WindsweptBlocks.DRY_MOSSY_SPROUTS.get().defaultBlockState(), 50)));
         }
 
@@ -207,7 +208,8 @@ public final class WindsweptFeatures {
         // Gelisol //
         public static final RegistryObject<ConfiguredFeature<?, ?>> GELISOL_VEGETATION = CONFIGURED_FEATURES.register("gelisol_vegetation", () -> new ConfiguredFeature<>(Feature.SIMPLE_BLOCK, Configs.createGelisolVegetation()));
         public static final RegistryObject<ConfiguredFeature<?, ?>> GELISOL_PATCH = CONFIGURED_FEATURES.register("gelisol_patch_large", () -> new ConfiguredFeature<>(Feature.VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.DIRT, BlockStateProvider.simple(WindsweptBlocks.GELISOL.get()), PlacementUtils.inlinePlaced(GELISOL_VEGETATION.getHolder().get()), CaveSurface.FLOOR, ConstantInt.of(1), 0f, 5, .8f, UniformInt.of(4, 7), .45f)));
-        
+        public static final RegistryObject<ConfiguredFeature<?, ?>> SNOWY_GELISOL = CONFIGURED_FEATURES.register("snowy_gelisol", () -> new ConfiguredFeature<>(WindsweptFeatures.SNOWY_GELISOL.get(), NoneFeatureConfiguration.NONE));
+
         // Stone //
         public static final RegistryObject<ConfiguredFeature<?, ?>> SHALE = CONFIGURED_FEATURES.register("shale", () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), WindsweptBlocks.SHALE.get().defaultBlockState(), 64)));
 
@@ -265,8 +267,9 @@ public final class WindsweptFeatures {
         public static final RegistryObject<PlacedFeature> DRY_MOSS_PATCH_LARGE = register("dry_moss_patch_large", ConfiguredFeatures.DRY_MOSS_PATCH_LARGE, PlacementUtils.countExtra(1, .1f, 2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         public static final RegistryObject<PlacedFeature> DRY_MOSS_ROCK = register("dry_moss_rock", ConfiguredFeatures.DRY_MOSS_ROCK, RarityFilter.onAverageOnceEvery(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
-        // Gelsiol //
+        // Gelisol //
         public static final RegistryObject<PlacedFeature> GELISOL_PATCH = register("gelisol_patch_small", ConfiguredFeatures.GELISOL_PATCH, PlacementUtils.countExtra(1, .1f, 2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        public static final RegistryObject<PlacedFeature> SNOWY_GELISOL = register("snowy_gelisol", ConfiguredFeatures.SNOWY_GELISOL, PlacementUtils.countExtra(10, .1f, 1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
         // Fallen Logs //
         public static final RegistryObject<PlacedFeature> TUNDRA_FALLEN_LOG = register("tundra_fallen_log", ConfiguredFeatures.TUNDRA_FALLEN_LOG, PlacementUtils.countExtra(0, .1f, 2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
