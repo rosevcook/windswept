@@ -11,7 +11,6 @@ import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 
 public class SnowySproutsFeature extends Feature<NoneFeatureConfiguration> {
-
     public SnowySproutsFeature() {
         super(NoneFeatureConfiguration.CODEC);
     }

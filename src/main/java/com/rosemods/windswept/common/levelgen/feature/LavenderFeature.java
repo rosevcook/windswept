@@ -16,7 +16,6 @@ import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 
 public class LavenderFeature extends Feature<NoneFeatureConfiguration> {
-
     public LavenderFeature() {
         super(NoneFeatureConfiguration.CODEC);
     }
