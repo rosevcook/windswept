@@ -1,6 +1,7 @@
 package com.rosemods.windswept.common.levelgen.feature;
 
 import com.rosemods.windswept.common.block.GelisolBlock;
+import com.rosemods.windswept.core.registry.WindsweptBiomes;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
@@ -33,24 +34,24 @@ public class SnowyGelisolFeature extends Feature<NoneFeatureConfiguration> {
                 for (int y = -3; y <= 3; ++y) {
                     BlockPos pos = origin.offset(x, y, z);
 
-                    if (level.getBlockState(pos).is(Blocks.SNOW_BLOCK)) {
-                        boolean isNotSolid = !level.getBlockState(pos.above()).getMaterial().isSolid();
+                    if (level.getBlockState(pos).is(Blocks.SNOW_BLOCK) && level.getBiome(pos).is(WindsweptBiomes.TUNDRA.getKey())) {
+                        boolean isSolid = level.getBlockState(pos.above()).getMaterial().isSolid();
 
                         if (rand.nextInt(45) == 0) {
-                            level.setBlock(pos, isNotSolid ? gelisol : dirt, 2);
-
-                            if (isNotSolid)
+                            if (!isSolid) {
+                                level.setBlock(pos, gelisol, 2);
                                 level.setBlock(pos.above(), sprouts, 2);
-                        } else {
-                            boolean canSeeSky = level.canSeeSky(pos);
-
-                            if (canSeeSky) {
-                                level.setBlock(pos, isNotSolid ? snowy_gelisol : dirt, 2);
-
-                                if (isNotSolid)
-                                    level.setBlock(pos.above(), snow, 2);
                             } else
-                                level.setBlock(pos, isNotSolid ? gelisol : dirt, 2);
+                                level.setBlock(pos, dirt, 2);
+                        } else {
+                            if (level.canSeeSky(pos)) {
+                                if (!isSolid) {
+                                    level.setBlock(pos, snowy_gelisol, 2);
+                                    level.setBlock(pos.above(), snow, 2);
+                                } else
+                                    level.setBlock(pos, dirt, 2);
+                            } else
+                                level.setBlock(pos, isSolid ? dirt : gelisol, 2);
                         }
 
                         generated = true;
