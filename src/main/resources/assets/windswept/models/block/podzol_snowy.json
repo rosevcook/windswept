@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "minecraft:block/dirt",
+    "side": "windswept:block/podzol_side_snowy",
+    "top": "minecraft:block/podzol_top"
+  }
+}

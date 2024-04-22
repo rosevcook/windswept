@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "snowy=false": {
+      "model": "minecraft:block/podzol"
+    },
+    "snowy=true": {
+      "model": "windswept:block/podzol_snowy"
+    }
+  }
+}
