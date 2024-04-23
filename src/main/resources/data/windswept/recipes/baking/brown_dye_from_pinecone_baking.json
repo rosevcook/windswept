@@ -20,9 +20,9 @@
       "recipe": {
         "type": "clayworks:baking",
         "ingredient": {
-          "item": "windswept:lunarock"
+          "item": "windswept:pinecone"
         },
-        "result": "windswept:smooth_lunarock",
+        "result": "minecraft:brown_dye",
         "experience": 0.1,
         "cookingtime": 100
       }

@@ -1,0 +1,31 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "clayworks"
+            },
+            {
+              "value": "kiln",
+              "type": "clayworks:config"
+            }
+          ],
+          "type": "forge:and"
+        }
+      ],
+      "recipe": {
+        "type": "clayworks:baking",
+        "ingredient": {
+          "item": "windswept:lunalite"
+        },
+        "result": "windswept:smooth_lunalite",
+        "experience": 0.1,
+        "cookingtime": 100
+      }
+    }
+  ]
+}
