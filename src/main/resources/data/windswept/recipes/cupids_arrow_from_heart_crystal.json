@@ -18,7 +18,7 @@
             "item": "minecraft:stick"
           },
           "F": {
-            "item": "windswept:owl_feather"
+            "item": "minecraft:feather"
           }
         },
         "pattern": [
