@@ -87,7 +87,6 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.generatedItem(ROASTED_CHESTNUTS.get(), TextureFolder.ITEM);
         this.generatedItem(CHESTNUT_SOUP.get(), TextureFolder.ITEM);
         this.generatedItem(CHESTNUT_RISOTTO.get(), TextureFolder.ITEM);
-        this.generatedItem(CHESTNUT_CHICKEN_PLATTER.get(), TextureFolder.ITEM);
         this.generatedItem(GINGER_ROOT.get(), TextureFolder.ITEM);
         this.generatedItem(GINGERBREAD_COOKIE.get(), TextureFolder.ITEM);
         this.generatedItem(GINGER_SNOW_CONE.get(), TextureFolder.ITEM);

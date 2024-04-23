@@ -14,16 +14,6 @@
             },
             "trigger": "minecraft:consume_item"
           },
-          "windswept:chestnut_chicken_platter": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "windswept:chestnut_chicken_platter"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
           "windswept:chestnut_risotto": {
             "conditions": {
               "item": {
@@ -327,9 +317,6 @@
           ],
           [
             "windswept:chestnut_risotto"
-          ],
-          [
-            "windswept:chestnut_chicken_platter"
           ],
           [
             "windswept:ginger_root"
