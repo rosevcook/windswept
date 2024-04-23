@@ -19,7 +19,6 @@ import static com.rosemods.windswept.core.registry.WindsweptItems.*;
 
 @JeiPlugin
 public class WindsweptPlugin implements IModPlugin {
-
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
         addInfo(registration, MUSIC_DISC_RAIN);
