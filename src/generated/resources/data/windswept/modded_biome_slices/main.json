@@ -4864,7 +4864,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -4891,7 +4891,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -5026,7 +5026,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -5053,7 +5053,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -5620,7 +5620,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -5647,7 +5647,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -5782,7 +5782,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -5809,7 +5809,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -8644,7 +8644,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -8671,7 +8671,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -8806,7 +8806,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -8833,7 +8833,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -9400,7 +9400,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -9427,7 +9427,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -9562,7 +9562,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -9589,7 +9589,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -10156,7 +10156,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -10183,7 +10183,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -10318,7 +10318,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -10345,7 +10345,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -10858,7 +10858,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -10885,7 +10885,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -10912,7 +10912,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -10939,7 +10939,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -10966,7 +10966,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -10993,7 +10993,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -11020,7 +11020,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -11047,7 +11047,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -11074,7 +11074,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -11101,7 +11101,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -11128,7 +11128,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -11155,7 +11155,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -11182,7 +11182,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -11209,7 +11209,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -11290,7 +11290,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -11317,7 +11317,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -11398,7 +11398,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -11425,7 +11425,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -23710,7 +23710,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -23737,7 +23737,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -23818,7 +23818,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -23845,7 +23845,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -24412,7 +24412,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -24439,7 +24439,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -24520,7 +24520,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -24547,7 +24547,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -27220,7 +27220,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -27247,7 +27247,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -27328,7 +27328,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -27355,7 +27355,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -27922,7 +27922,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -27949,7 +27949,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -28030,7 +28030,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -28057,7 +28057,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -28624,7 +28624,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -28651,7 +28651,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -28732,7 +28732,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -28759,7 +28759,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -29002,7 +29002,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -29029,7 +29029,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -29164,7 +29164,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -29191,7 +29191,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -29272,7 +29272,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -29299,7 +29299,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -29326,7 +29326,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -29353,7 +29353,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -29380,7 +29380,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -29407,7 +29407,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -29434,7 +29434,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -29461,7 +29461,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -29488,7 +29488,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -29515,7 +29515,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -29542,7 +29542,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -29569,7 +29569,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -29650,7 +29650,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -29677,7 +29677,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -40612,7 +40612,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -40639,7 +40639,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -40720,7 +40720,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -40747,7 +40747,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -41206,7 +41206,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -41233,7 +41233,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -41314,7 +41314,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -41341,7 +41341,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -43582,7 +43582,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -43609,7 +43609,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -43690,7 +43690,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -43717,7 +43717,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -44176,7 +44176,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -44203,7 +44203,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -44284,7 +44284,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -44311,7 +44311,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -44770,7 +44770,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -44797,7 +44797,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -44878,7 +44878,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -44905,7 +44905,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -45202,7 +45202,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -45229,7 +45229,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -45310,7 +45310,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -45337,7 +45337,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -45364,7 +45364,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -45391,7 +45391,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -45418,7 +45418,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -45445,7 +45445,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -45472,7 +45472,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -45499,7 +45499,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -45526,7 +45526,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -45553,7 +45553,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -45688,7 +45688,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -45715,7 +45715,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -56110,7 +56110,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -56137,7 +56137,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -56218,7 +56218,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -56245,7 +56245,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -56812,7 +56812,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -56839,7 +56839,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -56920,7 +56920,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -56947,7 +56947,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -59620,7 +59620,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -59647,7 +59647,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -59728,7 +59728,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -59755,7 +59755,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -60322,7 +60322,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -60349,7 +60349,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -60430,7 +60430,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -60457,7 +60457,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -61024,7 +61024,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -61051,7 +61051,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -61132,7 +61132,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -61159,7 +61159,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -61402,7 +61402,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -61429,7 +61429,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -61564,7 +61564,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -61591,7 +61591,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -61672,7 +61672,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -61699,7 +61699,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -61726,7 +61726,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -61753,7 +61753,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -61780,7 +61780,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -61807,7 +61807,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -61834,7 +61834,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -61861,7 +61861,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -61888,7 +61888,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -61915,7 +61915,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -61942,7 +61942,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -61969,7 +61969,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -62050,7 +62050,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -62077,7 +62077,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -74092,7 +74092,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -74119,7 +74119,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -74254,7 +74254,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -74281,7 +74281,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -74848,7 +74848,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -74875,7 +74875,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -75010,7 +75010,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -75037,7 +75037,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -77872,7 +77872,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -77899,7 +77899,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -78034,7 +78034,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -78061,7 +78061,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -78628,7 +78628,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -78655,7 +78655,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -78790,7 +78790,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -78817,7 +78817,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -79384,7 +79384,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -79411,7 +79411,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -79546,7 +79546,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -79573,7 +79573,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -80086,7 +80086,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -80113,7 +80113,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -80140,7 +80140,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -80167,7 +80167,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -80194,7 +80194,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -80221,7 +80221,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -80248,7 +80248,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -80275,7 +80275,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -80302,7 +80302,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -80329,7 +80329,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -80356,7 +80356,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -80383,7 +80383,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -80410,7 +80410,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -80437,7 +80437,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -80518,7 +80518,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -80545,7 +80545,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -80626,7 +80626,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -80653,7 +80653,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -96502,7 +96502,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -96529,7 +96529,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -96556,7 +96556,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -96583,7 +96583,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -96610,7 +96610,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -96637,7 +96637,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -96664,7 +96664,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -96691,7 +96691,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -96772,7 +96772,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -96799,7 +96799,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -96880,7 +96880,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -96907,7 +96907,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -96934,7 +96934,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -96961,7 +96961,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -104224,7 +104224,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -104251,7 +104251,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -112270,7 +112270,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -112297,7 +112297,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -112324,7 +112324,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -112351,7 +112351,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -112378,7 +112378,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -112405,7 +112405,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -112432,7 +112432,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -112459,7 +112459,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -112540,7 +112540,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -112567,7 +112567,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -112702,7 +112702,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -112729,7 +112729,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -122746,7 +122746,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -122773,7 +122773,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -122908,7 +122908,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -122935,7 +122935,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -123448,7 +123448,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -123475,7 +123475,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -123610,7 +123610,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -123637,7 +123637,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -124150,7 +124150,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -124177,7 +124177,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -124312,7 +124312,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -124339,7 +124339,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -124852,7 +124852,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -124879,7 +124879,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -125014,7 +125014,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -125041,7 +125041,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -126256,7 +126256,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -126283,7 +126283,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -126418,7 +126418,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -126445,7 +126445,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -126958,7 +126958,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -126985,7 +126985,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -127120,7 +127120,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -127147,7 +127147,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -128308,7 +128308,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -128335,7 +128335,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -128362,7 +128362,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -128389,7 +128389,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -128416,7 +128416,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -128443,7 +128443,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -128470,7 +128470,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -128497,7 +128497,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -128524,7 +128524,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -128551,7 +128551,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -128578,7 +128578,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -128605,7 +128605,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -128632,7 +128632,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -128659,7 +128659,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -128686,7 +128686,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -128713,7 +128713,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -128902,7 +128902,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -128929,7 +128929,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -140512,7 +140512,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -140539,7 +140539,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -140620,7 +140620,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -140647,7 +140647,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -141214,7 +141214,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -141241,7 +141241,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -141322,7 +141322,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -141349,7 +141349,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -141916,7 +141916,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -141943,7 +141943,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -142024,7 +142024,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -142051,7 +142051,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -142618,7 +142618,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -142645,7 +142645,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -142726,7 +142726,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -142753,7 +142753,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -144022,7 +144022,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -144049,7 +144049,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -144130,7 +144130,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -144157,7 +144157,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -144724,7 +144724,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -144751,7 +144751,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -144832,7 +144832,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -144859,7 +144859,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -145804,7 +145804,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -145831,7 +145831,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -145966,7 +145966,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -145993,7 +145993,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -146074,7 +146074,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -146101,7 +146101,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -146128,7 +146128,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -146155,7 +146155,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -146182,7 +146182,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -146209,7 +146209,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -146236,7 +146236,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -146263,7 +146263,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -146290,7 +146290,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -146317,7 +146317,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -146452,7 +146452,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -146479,7 +146479,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -157414,7 +157414,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -157441,7 +157441,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -157522,7 +157522,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -157549,7 +157549,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -158008,7 +158008,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -158035,7 +158035,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -158116,7 +158116,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -158143,7 +158143,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -158602,7 +158602,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -158629,7 +158629,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -158710,7 +158710,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -158737,7 +158737,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -159196,7 +159196,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -159223,7 +159223,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -159304,7 +159304,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -159331,7 +159331,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -160384,7 +160384,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -160411,7 +160411,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -160492,7 +160492,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -160519,7 +160519,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -160978,7 +160978,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -161005,7 +161005,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -161086,7 +161086,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -161113,7 +161113,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -162004,7 +162004,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -162031,7 +162031,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -162112,7 +162112,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -162139,7 +162139,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -162166,7 +162166,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -162193,7 +162193,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -162220,7 +162220,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -162247,7 +162247,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -162274,7 +162274,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -162301,7 +162301,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -162328,7 +162328,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -162355,7 +162355,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -162490,7 +162490,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -162517,7 +162517,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -172912,7 +172912,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -172939,7 +172939,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -173020,7 +173020,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -173047,7 +173047,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -173614,7 +173614,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -173641,7 +173641,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -173722,7 +173722,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -173749,7 +173749,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -174316,7 +174316,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -174343,7 +174343,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -174424,7 +174424,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -174451,7 +174451,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -175018,7 +175018,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -175045,7 +175045,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -175126,7 +175126,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -175153,7 +175153,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -176422,7 +176422,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -176449,7 +176449,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -176530,7 +176530,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -176557,7 +176557,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -177124,7 +177124,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -177151,7 +177151,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -177232,7 +177232,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -177259,7 +177259,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -178204,7 +178204,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -178231,7 +178231,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -178366,7 +178366,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -178393,7 +178393,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -178474,7 +178474,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -178501,7 +178501,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -178528,7 +178528,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -178555,7 +178555,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.03,
@@ -178582,7 +178582,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -178609,7 +178609,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -178636,7 +178636,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -178663,7 +178663,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -178690,7 +178690,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -178717,7 +178717,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -178852,7 +178852,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -178879,7 +178879,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -190624,7 +190624,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -190651,7 +190651,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -190786,7 +190786,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -190813,7 +190813,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -191326,7 +191326,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -191353,7 +191353,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -191488,7 +191488,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -191515,7 +191515,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -192028,7 +192028,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -192055,7 +192055,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -192190,7 +192190,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -192217,7 +192217,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -192730,7 +192730,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -192757,7 +192757,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -192892,7 +192892,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -192919,7 +192919,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -194134,7 +194134,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -194161,7 +194161,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -194296,7 +194296,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -194323,7 +194323,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -194836,7 +194836,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -194863,7 +194863,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -194998,7 +194998,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -195025,7 +195025,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_field",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.3,
@@ -196186,7 +196186,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -196213,7 +196213,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -196240,7 +196240,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -196267,7 +196267,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -196294,7 +196294,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -196321,7 +196321,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -196348,7 +196348,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -196375,7 +196375,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -196402,7 +196402,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -196429,7 +196429,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "blueprint:original_source_marker",
         "parameters": {
           "continentalness": [
             0.3,
@@ -196456,7 +196456,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -196483,7 +196483,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -196510,7 +196510,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -196537,7 +196537,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             0.03,
@@ -196564,7 +196564,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -196591,7 +196591,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -196780,7 +196780,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -196807,7 +196807,7 @@
         }
       },
       {
-        "biome": "windswept:lavender_forest",
+        "biome": "windswept:lavender_meadow",
         "parameters": {
           "continentalness": [
             -0.19,

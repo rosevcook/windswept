@@ -20,8 +20,7 @@ public class WindsweptBiomes {
     public static final BiomeSubRegistryHelper.KeyedBiome SNOWY_CHESTNUT_FOREST = HELPER.createBiome("snowy_chestnut_forest", () -> chestnutForest(true));
     public static final BiomeSubRegistryHelper.KeyedBiome PINE_BARRENS = HELPER.createBiome("pine_barrens", () -> pineBarrens(false));
     public static final BiomeSubRegistryHelper.KeyedBiome SNOWY_PINE_BARRENS = HELPER.createBiome("snowy_pine_barrens", () -> pineBarrens(true));
-    public static final BiomeSubRegistryHelper.KeyedBiome LAVENDER_FOREST = HELPER.createBiome("lavender_forest", () -> lavender(true));
-    public static final BiomeSubRegistryHelper.KeyedBiome LAVENDER_FIELD = HELPER.createBiome("lavender_field", () -> lavender(false));
+    public static final BiomeSubRegistryHelper.KeyedBiome LAVENDER_MEADOW = HELPER.createBiome("lavender_meadow", WindsweptBiomes::lavender);
     public static final BiomeSubRegistryHelper.KeyedBiome TUNDRA = HELPER.createBiome("tundra", WindsweptBiomes::tundra);
 
     // Chestnut //
@@ -133,7 +132,7 @@ public class WindsweptBiomes {
     }
 
     // Lavender //
-    private static Biome lavender(boolean forest) {
+    private static Biome lavender() {
         BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder();
 
         OverworldBiomes.globalOverworldGeneration(generation);
@@ -142,11 +141,8 @@ public class WindsweptBiomes {
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
         BiomeDefaultFeatures.addDefaultMushrooms(generation);
 
-        if (forest) {
-            generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.COMMON_TALL_BIRCH_TREES.getHolder().get());
-            generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.LAVENDER_CHESTNUT_TREES.getHolder().get());
-        } else
-            generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.RARE_TALL_BIRCH_TREES.getHolder().get());
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.LAVENDER_TALL_BIRCH_TREES.getHolder().get());
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.LAVENDER_CHESTNUT_TREES.getHolder().get());
 
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.LARGE_WHITE_ROSE.getHolder().get());
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptFeatures.Placements.LAVENDER.getHolder().get());
