@@ -96,6 +96,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.generatedItem(LAVENDER_TEA.get(), TextureFolder.ITEM);
         this.generatedItem(LAVENDER_CROWN.get(), TextureFolder.ITEM);
         this.generatedItem(ANTLER_HELMET.get(), TextureFolder.ITEM);
+        this.generatedItem(PINECONE_JAM_BOTTLE.get(), TextureFolder.ITEM);
 
         // holly
         this.pillar(STRIPPED_HOLLY_LOG);

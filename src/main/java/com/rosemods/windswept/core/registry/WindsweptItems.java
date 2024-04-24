@@ -14,6 +14,7 @@ import com.teamabnormals.blueprint.common.item.BlueprintRecordItem;
 import com.teamabnormals.blueprint.common.item.InjectedItem;
 import com.teamabnormals.blueprint.core.util.PropertyUtil;
 import com.teamabnormals.blueprint.core.util.registry.ItemSubRegistryHelper;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -65,6 +66,8 @@ public class WindsweptItems {
     public static final RegistryObject<Item> GINGERBREAD_COOKIE = HELPER.createItem("gingerbread_cookie", () -> new InjectedItem(Items.COOKIE, PropertyUtil.food(WindsweptFoods.GINGERBREAD_COOKIE)));
     public static final RegistryObject<Item> GINGER_SNOW_CONE = HELPER.createItem("ginger_snow_cone", () -> new FoodRemainderItem(() -> WindsweptBlocks.PINECONE.get(), PropertyUtil.food(WindsweptFoods.GINGER_SNOW_CONE)));
     public static final RegistryObject<Item> GINGER_TEA = HELPER.createItem("ginger_tea", () -> new DrinkableBottleItem(WindsweptFoods.GINGER_TEA));
+
+    public static final RegistryObject<Item> PINECONE_JAM_BOTTLE = HELPER.createItem("pinecone_jam_bottle", () -> new DrinkableBottleItem(() -> SoundEvents.HONEY_DRINK, WindsweptFoods.PINECONE_JAM));
 
     public static final RegistryObject<Item> LAVENDER_SCONES = HELPER.createItem("lavender_scones", () -> new Item(PropertyUtil.food(WindsweptFoods.LAVENDER_SCONES)));
     public static final RegistryObject<Item> LAVENDER_TEA = HELPER.createItem("lavender_tea", () -> new DrinkableBottleItem(WindsweptFoods.LAVENDER_TEA));

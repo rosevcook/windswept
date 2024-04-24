@@ -204,6 +204,16 @@
             },
             "trigger": "minecraft:consume_item"
           },
+          "windswept:pinecone_jam_bottle": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:pinecone_jam_bottle"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
           "windswept:roasted_chestnuts": {
             "conditions": {
               "item": {
@@ -329,6 +339,9 @@
           ],
           [
             "windswept:ginger_tea"
+          ],
+          [
+            "windswept:pinecone_jam_bottle"
           ],
           [
             "windswept:lavender_scones"

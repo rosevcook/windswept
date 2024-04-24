@@ -59,6 +59,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         conditionalRecipe(ShapelessRecipeBuilder.shapeless(GINGER_TEA.get()).requires(Items.GLASS_BOTTLE).requires(GINGER_ROOT.get(), 2).requires(Items.SUGAR).unlockedBy(getHasName(GINGER_ROOT.get()), has(GINGER_ROOT.get())), new NotCondition(new ModLoadedCondition("farmersdelight")), consumer, getSaveLocation(GINGER_TEA.get()));
         conditionalRecipe(ShapelessRecipeBuilder.shapeless(LAVENDER_TEA.get()).requires(Items.GLASS_BOTTLE).requires(LAVENDER.get(), 4).unlockedBy(getHasName(LAVENDER.get()), has(LAVENDER.get())), new NotCondition(new ModLoadedCondition("farmersdelight")), consumer, getSaveLocation(LAVENDER_TEA.get()));
         ShapelessRecipeBuilder.shapeless(LAVENDER_SCONES.get(), 2).requires(Items.WHEAT).requires(LAVENDER.get()).requires(Items.WHEAT).requires(Items.SUGAR).unlockedBy(getHasName(LAVENDER.get()), has(LAVENDER.get())).save(consumer, getSaveLocation(LAVENDER_SCONES.get()));
+        ShapelessRecipeBuilder.shapeless(PINECONE_JAM_BOTTLE.get()).requires(PINECONE.get(), 6).requires(Items.SUGAR, 2).requires(Items.GLASS_BOTTLE).unlockedBy(getHasName(PINECONE.get()), has(PINECONE.get())).save(consumer, getSaveLocation(PINECONE_JAM_BOTTLE.get()));
 
         // berry bowls
         ShapelessRecipeBuilder.shapeless(WILD_BERRY_BOWL.get()).requires(Items.BOWL).requires(WILD_BERRIES.get(), 3).unlockedBy(getHasName(WILD_BERRIES.get()), has(WILD_BERRIES.get())).save(consumer, getSaveLocation(WILD_BERRY_BOWL.get()));
