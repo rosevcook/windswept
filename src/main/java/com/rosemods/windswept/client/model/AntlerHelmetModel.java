@@ -19,20 +19,18 @@ public class AntlerHelmetModel extends HumanoidModel<LivingEntity> {
     }
 
     public static LayerDefinition createBodyLayer() {
-        MeshDefinition meshdefinition = HumanoidModel.createMesh(CubeDeformation.NONE, 0.0F);
+        MeshDefinition meshdefinition = HumanoidModel.createMesh(CubeDeformation.NONE, 0f);
         PartDefinition root = meshdefinition.getRoot();
 
-        PartDefinition helmet = root.addOrReplaceChild("helmet", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -32.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.7F)), PartPose.offset(0.0F, 24.0F, 0.0F));
-        helmet.addOrReplaceChild("antlers", CubeListBuilder.create().texOffs(0, 15).addBox(-10.0F, -11.0F, 0.0F, 30.0F, 14.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-5.0F, -29.0F, 1.0F, 0.2618F, 0.0F, 0.0F));
+        PartDefinition helmet = root.addOrReplaceChild("helmet", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.7F)), PartPose.offset(0.0F, 24.0F, 0.0F));
+        helmet.addOrReplaceChild("antlers", CubeListBuilder.create().texOffs(0, 15).addBox(-10.0F, -10.5F, -0.25F, 30.0F, 14.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-5.0F, -6.0F, 1.0F, 0.2618F, 0.0F, 0.0F));
 
         return LayerDefinition.create(meshdefinition, 64, 32);
     }
 
     @Override
     public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-        this.helmet.xRot = this.head.xRot;
-        this.helmet.yRot = this.head.yRot;
-        this.helmet.zRot = this.head.zRot;
+        this.helmet.copyFrom(this.head);
         super.renderToBuffer(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
     }
 
