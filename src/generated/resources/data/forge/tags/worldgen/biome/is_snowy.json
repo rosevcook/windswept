@@ -2,6 +2,10 @@
   "values": [
     "windswept:snowy_chestnut_forest",
     "windswept:snowy_pine_barrens",
-    "windswept:tundra"
+    "windswept:tundra",
+    {
+      "id": "atmospheric:kousa_jungle",
+      "required": false
+    }
   ]
 }

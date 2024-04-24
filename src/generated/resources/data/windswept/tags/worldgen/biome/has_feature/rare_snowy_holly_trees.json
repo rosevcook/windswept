@@ -2,6 +2,9 @@
   "values": [
     "minecraft:frozen_peaks",
     "minecraft:jagged_peaks",
-    "windswept:tundra"
+    {
+      "id": "atmospheric:kousa_jungle",
+      "required": false
+    }
   ]
 }
