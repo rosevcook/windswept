@@ -34,8 +34,7 @@ public class LunaliteBlock extends Block {
     }
 
     public static boolean aboveIsLunalite(LevelAccessor level, BlockPos above) {
-        BlockState state = level.getBlockState(above);
-        return state.is(WindsweptBlockTags.LUNALITE) && canSupportCenter(level, above, Direction.DOWN);
+        return level.getBlockState(above).is(WindsweptBlockTags.LUNALITE) && canSupportCenter(level, above, Direction.DOWN);
     }
 
 }

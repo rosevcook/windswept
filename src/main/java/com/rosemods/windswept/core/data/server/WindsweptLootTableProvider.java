@@ -215,6 +215,8 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.add(CUPRIC_FAIRY_LIGHT.get(), Blocks::createPineconeTable);
             this.add(ENDER_FAIRY_LIGHT.get(), Blocks::createPineconeTable);
 
+            this.dropSelf(PINECONE_JAM_BLOCK.get());
+
             this.dropSelf(PINECONE_BLOCK.get());
             this.dropSelf(CARVED_PINECONE_BLOCK.get());
             this.dropSelf(WILL_O_THE_WISP.get());

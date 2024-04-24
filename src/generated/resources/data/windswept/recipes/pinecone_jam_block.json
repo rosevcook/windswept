@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "windswept:pinecone_jam_bottle"
+    },
+    {
+      "item": "windswept:pinecone_jam_bottle"
+    },
+    {
+      "item": "windswept:pinecone_jam_bottle"
+    },
+    {
+      "item": "windswept:pinecone_jam_bottle"
+    }
+  ],
+  "result": {
+    "item": "windswept:pinecone_jam_block"
+  }
+}
