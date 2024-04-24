@@ -60,7 +60,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         conditionalRecipe(ShapelessRecipeBuilder.shapeless(LAVENDER_TEA.get()).requires(Items.GLASS_BOTTLE).requires(LAVENDER.get(), 4).unlockedBy(getHasName(LAVENDER.get()), has(LAVENDER.get())), new NotCondition(new ModLoadedCondition("farmersdelight")), consumer, getSaveLocation(LAVENDER_TEA.get()));
         ShapelessRecipeBuilder.shapeless(LAVENDER_SCONES.get(), 2).requires(Items.WHEAT).requires(LAVENDER.get()).requires(Items.WHEAT).requires(Items.SUGAR).unlockedBy(getHasName(LAVENDER.get()), has(LAVENDER.get())).save(consumer, getSaveLocation(LAVENDER_SCONES.get()));
         ShapelessRecipeBuilder.shapeless(PINECONE_JAM_BOTTLE.get()).requires(PINECONE.get(), 6).requires(Items.SUGAR, 2).requires(Items.GLASS_BOTTLE).unlockedBy(getHasName(PINECONE.get()), has(PINECONE.get())).save(consumer, getSaveLocation(PINECONE_JAM_BOTTLE.get()));
-        ShapelessRecipeBuilder.shapeless(PINECONE_JAM_BLOCK.get()).requires(PINECONE_JAM_BOTTLE.get(), 4).unlockedBy(getHasName(PINECONE_JAM_BOTTLE.get()), has(PINECONE_JAM_BOTTLE.get())).save(consumer, getSaveLocation(PINECONE_JAM_BLOCK.get()));
+        ShapedRecipeBuilder.shaped(PINECONE_JAM_BLOCK.get()).define('#', PINECONE_JAM_BOTTLE.get()).pattern("##").pattern("##").unlockedBy(getHasName(PINECONE_JAM_BOTTLE.get()), has(PINECONE_JAM_BOTTLE.get())).save(consumer, getSaveLocation(PINECONE_JAM_BLOCK.get()));
         ShapelessRecipeBuilder.shapeless(PINECONE_JAM_BOTTLE.get(), 4).requires(PINECONE_JAM_BLOCK.get()).requires(Items.GLASS_BOTTLE, 4).unlockedBy(getHasName(PINECONE_JAM_BLOCK.get()), has(PINECONE_JAM_BLOCK.get())).save(consumer, getSaveLocation("pinecone_jam_bottle_revert"));
 
         // berry bowls

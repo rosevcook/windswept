@@ -7,8 +7,8 @@
 		"center_side": "windswept:block/pinecone_jam_center_side",
 		"center_top": "windswept:block/pinecone_jam_center_top",
 		"bottom": "windswept:block/pinecone_jam_block_bottom",
-		"particle": "windswept:block/pinecone_jam_block_side",
-		"side": "windswept:block/pinecone_jam_block_side"
+		"side": "windswept:block/pinecone_jam_block_side",
+		"particle": "#side"
 	},
 	"elements": [
 		{
