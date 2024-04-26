@@ -10,7 +10,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class NightShadeFlowerPotBlock extends FlowerPotBlock {
-
     public NightShadeFlowerPotBlock(Block block, Properties properties) {
         super(block, properties);
     }
