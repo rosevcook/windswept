@@ -44,10 +44,12 @@ public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
         this.tag(HAS_YAK).add(WindsweptBiomes.TUNDRA.getKey(), PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey());
         this.tag(HAS_REINDEER).add(WindsweptBiomes.TUNDRA.getKey());
         this.tag(HAS_SHEEP).addTag(IS_LAVENDER).addTag(IS_PINE_BARRENS).addTag(IS_CHESTNUT_FOREST);
+        this.tag(HAS_DWARF_SPRUCE_SPARSE).add(TUNDRA.getKey());
 
         this.tag(HAS_STRAWBERRY_BUSH).add(LAVENDER_MEADOW.getKey());
 
         this.tag(BlueprintBiomeTags.IS_GRASSLAND).add(LAVENDER_MEADOW.getKey());
+        this.tag(BiomeTags.IS_MOUNTAIN).add(SNOWY_PINE_BARRENS.getKey(), LAVENDER_MEADOW.getKey());
         this.tag(BiomeTags.IS_OVERWORLD).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey(), TUNDRA.getKey());
         this.tag(BiomeTags.IS_FOREST).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey(), PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey());
         this.tag(BiomeTags.HAS_IGLOO).add(SNOWY_CHESTNUT_FOREST.getKey(), SNOWY_PINE_BARRENS.getKey(), TUNDRA.getKey());
