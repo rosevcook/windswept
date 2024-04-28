@@ -35,7 +35,7 @@ public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
         this.tag(HAS_FROZEN_VILLAGE).add(TUNDRA.getKey());
 
         this.tag(IS_CHESTNUT_FOREST).add(CHESTNUT_FOREST.getKey(), SNOWY_CHESTNUT_FOREST.getKey());
-        this.tag(IS_PINE_BARRENS).add(PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey());
+        this.tag(IS_PINE_BARRENS).add(PINE_BARRENS.getKey(), SNOWY_PINE_BARRENS.getKey(), Biomes.OLD_GROWTH_PINE_TAIGA);
         this.tag(IS_LAVENDER).add(LAVENDER_MEADOW.getKey());
 
         this.tag(HAS_SPOTTED_ORANGE_MAPLE_TREES).add(CHESTNUT_FOREST.getKey());
