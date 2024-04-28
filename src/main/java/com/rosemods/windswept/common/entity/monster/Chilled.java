@@ -1,6 +1,8 @@
 package com.rosemods.windswept.common.entity.monster;
 
 import com.rosemods.windswept.core.other.WindsweptConstants;
+import com.rosemods.windswept.core.other.tags.WindsweptBiomeTags;
+import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import com.rosemods.windswept.core.registry.WindsweptEnchantments;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import net.minecraft.util.RandomSource;
@@ -63,6 +65,11 @@ public class Chilled extends Zombie {
 
             if (snow)
                 this.armorDropChances[EquipmentSlot.FEET.getIndex()] = .5f;
+        }
+
+        if (rand.nextFloat() < .1f && this.level.getBiome(this.blockPosition()).is(WindsweptBiomeTags.IS_PINE_BARRENS)) {
+            this.setItemSlot(EquipmentSlot.HEAD, WindsweptBlocks.CARVED_PINECONE_BLOCK.get().asItem().getDefaultInstance());
+            this.armorDropChances[EquipmentSlot.HEAD.getIndex()] = .5f;
         }
 
     }
