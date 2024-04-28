@@ -240,7 +240,7 @@ public final class WindsweptFeatures {
         public static final RegistryObject<PlacedFeature> ICICLES = register("icicles", ConfiguredFeatures.ICICLES, PlacementUtils.countExtra(4, .1f, 1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         public static final RegistryObject<PlacedFeature> FLOOR_ICICLES = register("floor_icicles", ConfiguredFeatures.FLOOR_ICICLES, PlacementUtils.countExtra(1, .1f, 1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
-        // Trees
+        // Trees //
         public static final RegistryObject<PlacedFeature> HOLLY_TREES = register("holly_trees", ConfiguredFeatures.HOLLY_BEES, treePlacement(PlacementUtils.countExtra(3, .1f, 1)));
         public static final RegistryObject<PlacedFeature> HOLLY_BUSH = register("holly_bush", ConfiguredFeatures.HOLLY_BUSH, treePlacement(PlacementUtils.countExtra(1, .1f, 2)));
 
