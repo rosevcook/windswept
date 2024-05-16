@@ -204,7 +204,7 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
 
     @Override
     protected void onChangedBlock(BlockPos pos) {
-        FrostWalkerEnchantment.onEntityMoved(this, this.level, pos, 2);
+        FrostWalkerEnchantment.onEntityMoved(this, this.level, pos, 0);
     }
 
     @Override
