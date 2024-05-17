@@ -10,6 +10,7 @@ import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
@@ -48,7 +49,9 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Inject(method = "canFreeze", at = @At("HEAD"), cancellable = true)
     private void canFreeze(CallbackInfoReturnable<Boolean> info) {
-        info.setReturnValue(!this.getType().is(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES) && !this.isSpectator() && !((LivingEntity) (Object) this).hasEffect(WindsweptEffects.FROST_RESISTANCE.get()));
+        LivingEntity entity = (LivingEntity) (Object) this;
+
+        info.setReturnValue(!entity.getType().is(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES) && !entity.isSpectator() && !(entity instanceof Player player && player.isCreative()) && !entity.hasEffect(WindsweptEffects.FROST_RESISTANCE.get()));
     }
 
     @Inject(method = "onChangedBlock", at = @At("TAIL"))
@@ -73,7 +76,9 @@ public abstract class LivingEntityMixin extends Entity {
 
         if (!entity.level.isClientSide && p_20991_ && entity.fallDistance > 0f) {
             SnowBootsItem.removeSnowSpeed(entity);
-            SnowBootsItem.tryAddSnowSpeed(entity);
+            if (SnowBootsItem.canApplySnowSpeed(entity))
+                SnowBootsItem.tryAddSnowSpeed(entity);
+
             SlippingCurseEnchantment.attemptDamageBoots(entity);
         }
 
