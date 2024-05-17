@@ -21,6 +21,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.DyeableArmorItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 
@@ -41,7 +42,7 @@ public class SnowBootsItem extends DyeableArmorItem {
         builder.putAll(super.getDefaultAttributeModifiers(slot));
         if (this.slot == slot)
             builder.put(WindsweptAttributes.SNOW_SPEED.get(), new AttributeModifier(SNOW_SPEED_UUID,
-                    "Snow speed modifier", .25f, AttributeModifier.Operation.MULTIPLY_BASE));
+                    "Snow speed modifier", .2f, AttributeModifier.Operation.MULTIPLY_BASE));
 
         return builder.build();
 
@@ -54,20 +55,21 @@ public class SnowBootsItem extends DyeableArmorItem {
 
     // Util //
 
-    public static boolean onSnowBlock(LivingEntity entity) {
+    public static boolean canApplySnowSpeed(LivingEntity entity) {
         BlockPos below = entity.getBlockPosBelowThatAffectsMyMovement();
 
-        return entity.level.getBlockState(below).is(WindsweptBlockTags.SNOW_BOOTS_BLOCKS) || entity.level.getBlockState(below.above()).is(WindsweptBlockTags.SNOW_BOOTS_BLOCKS);
+        return isSnowingAt(entity) || ((entity.level.getBlockState(below).is(WindsweptBlockTags.SNOW_BOOTS_BLOCKS)
+                || entity.level.getBlockState(below.above()).is(WindsweptBlockTags.SNOW_BOOTS_BLOCKS)) && !entity.level.getBlockState(entity.getOnPos()).isAir());
+    }
+
+    private static boolean isSnowingAt(LivingEntity entity) {
+        return entity.level.isRaining() && entity.level.getBiome(entity.blockPosition()).get().getPrecipitation() == Biome.Precipitation.SNOW;
     }
 
     public static boolean canSpawnSnowParticle(LivingEntity entity) {
         return entity.tickCount % 5 == 0 && entity.getDeltaMovement().x != 0d && entity.getDeltaMovement().z != 0d
-                && !entity.isSpectator() && onSnowBlock(entity)
+                && !entity.isSpectator() && canApplySnowSpeed(entity)
                 && (entity.getItemBySlot(EquipmentSlot.FEET).is(WindsweptItems.SNOW_BOOTS.get()) || entity instanceof Frostbiter);
-    }
-
-    public static boolean shouldRemoveSnowSpeed(BlockState state, LivingEntity entity) {
-        return !state.isAir() || entity.isFallFlying();
     }
 
     public static void spawnSnowParticle(LivingEntity entity) {
@@ -87,12 +89,12 @@ public class SnowBootsItem extends DyeableArmorItem {
     }
 
     public static void tryAddSnowSpeed(LivingEntity entity) {
-        if (entity.getItemBySlot(EquipmentSlot.FEET).is(WindsweptItems.SNOW_BOOTS.get()) && onSnowBlock(entity) && !entity.level.getBlockState(entity.getOnPos()).isAir()) {
+        if (entity.getItemBySlot(EquipmentSlot.FEET).is(WindsweptItems.SNOW_BOOTS.get())) {
             AttributeInstance speed = entity.getAttribute(Attributes.MOVEMENT_SPEED);
 
             if (speed != null) {
                 if (speed.getModifier(SPEED_MODIFIER_SNOW_SPEED_UUID) == null)
-                    speed.addTransientModifier(new AttributeModifier(SPEED_MODIFIER_SNOW_SPEED_UUID, "Snow speed boost", .025d, AttributeModifier.Operation.ADDITION));
+                    speed.addTransientModifier(new AttributeModifier(SPEED_MODIFIER_SNOW_SPEED_UUID, "Snow speed boost", .2f, AttributeModifier.Operation.MULTIPLY_BASE));
 
                 if (entity.level.random.nextFloat() < .02f)
                     entity.getItemBySlot(EquipmentSlot.FEET).hurtAndBreak(1, entity, e -> e.broadcastBreakEvent(EquipmentSlot.FEET));

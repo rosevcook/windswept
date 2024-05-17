@@ -20,7 +20,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin extends Entity {
-
     private LivingEntityMixin(EntityType<?> type, Level level) {
         super(type, level);
     }
@@ -56,19 +55,20 @@ public abstract class LivingEntityMixin extends Entity {
     private void onChangedBlock(BlockPos pos, CallbackInfo info) {
         LivingEntity entity = (LivingEntity) (Object) this;
 
-        if (SnowBootsItem.shouldRemoveSnowSpeed(entity.level.getBlockState(entity.getOnPos()), entity))
+        if (SnowBootsItem.canApplySnowSpeed(entity))
+            SnowBootsItem.tryAddSnowSpeed(entity);
+        else if (!entity.level.getBlockState(entity.getOnPos()).isAir() || entity.isFallFlying())
             SnowBootsItem.removeSnowSpeed(entity);
 
         if (!entity.isSprinting())
             AntlerHelmetItem.removeSprintDamage(entity);
 
-        SnowBootsItem.tryAddSnowSpeed(entity);
         AntlerHelmetItem.tryAddSprintDamage(entity);
         SlippingCurseEnchantment.attemptDamageBoots(entity);
     }
 
     @Inject(method = "checkFallDamage", at = @At("HEAD"))
-    private void checkFallDamage(double p_20990_, boolean p_20991_, BlockState state, BlockPos pos, CallbackInfo info) {
+    private void checkFallDamage(double d, boolean p_20991_, BlockState state, BlockPos pos, CallbackInfo info) {
         LivingEntity entity = (LivingEntity) (Object) this;
 
         if (!entity.level.isClientSide && p_20991_ && entity.fallDistance > 0f) {
