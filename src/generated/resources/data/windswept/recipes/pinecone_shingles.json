@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "windswept:pinecone_block"
+      "item": "windswept:pinecone"
     }
   },
   "pattern": [
@@ -10,7 +10,7 @@
     "##"
   ],
   "result": {
-    "count": 4,
+    "count": 2,
     "item": "windswept:pinecone_shingles"
   }
 }

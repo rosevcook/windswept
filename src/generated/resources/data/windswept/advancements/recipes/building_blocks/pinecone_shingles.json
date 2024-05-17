@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_pinecone_block": {
+    "has_pinecone": {
       "conditions": {
         "items": [
           {
             "items": [
-              "windswept:pinecone_block"
+              "windswept:pinecone"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_pinecone_block",
+      "has_pinecone",
       "has_the_recipe"
     ]
   ],

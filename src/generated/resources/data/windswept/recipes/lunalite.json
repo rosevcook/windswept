@@ -1,14 +1,20 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
       "item": "minecraft:calcite"
     },
-    {
+    "L": {
       "item": "minecraft:lapis_lazuli"
     }
+  },
+  "pattern": [
+    "###",
+    "#L#",
+    "###"
   ],
   "result": {
+    "count": 8,
     "item": "windswept:lunalite"
   }
 }
