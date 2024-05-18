@@ -5,10 +5,12 @@ import com.rosemods.windswept.common.item.AntlerHelmetItem;
 import com.rosemods.windswept.common.item.SnowBootsItem;
 import com.rosemods.windswept.core.other.tags.WindsweptEntityTypeTags;
 import com.rosemods.windswept.core.registry.WindsweptEffects;
+import com.rosemods.windswept.core.registry.WindsweptItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -60,10 +62,10 @@ public abstract class LivingEntityMixin extends Entity {
 
         if (SnowBootsItem.canApplySnowSpeed(entity))
             SnowBootsItem.tryAddSnowSpeed(entity);
-        else if (!entity.level.getBlockState(entity.getOnPos()).isAir() || entity.isFallFlying())
+        else if (!entity.level.getBlockState(entity.getOnPos()).isAir() || entity.isFallFlying() || !entity.getItemBySlot(EquipmentSlot.FEET).is(WindsweptItems.SNOW_BOOTS.get()))
             SnowBootsItem.removeSnowSpeed(entity);
 
-        if (!entity.isSprinting())
+        if (!entity.isSprinting() || !entity.getItemBySlot(EquipmentSlot.HEAD).is(WindsweptItems.ANTLER_HELMET.get()))
             AntlerHelmetItem.removeSprintDamage(entity);
 
         AntlerHelmetItem.tryAddSprintDamage(entity);
