@@ -26,7 +26,7 @@ public class PineTreeFeature extends BlueprintTreeFeature {
         BlockState weathered = WindsweptBlocks.WEATHERED_PINE_LOG.get().defaultBlockState();
         int height = rand.nextInt(10, 14);
         int weatheredHeight = rand.nextInt(5, 9);
-        boolean isFairy = rand.nextInt(5000) == 0;
+        boolean isFairy = rand.nextInt(3000) == 0;
 
         if (isFairy) {
             BlockState state = WindsweptBlocks.NIGHTSHADE.get().defaultBlockState();
