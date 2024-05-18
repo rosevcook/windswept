@@ -7,6 +7,7 @@ import com.teamabnormals.blueprint.common.levelgen.feature.BlueprintTreeFeature;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
@@ -25,6 +26,16 @@ public class PineTreeFeature extends BlueprintTreeFeature {
         BlockState weathered = WindsweptBlocks.WEATHERED_PINE_LOG.get().defaultBlockState();
         int height = rand.nextInt(10, 14);
         int weatheredHeight = rand.nextInt(5, 9);
+        boolean isFairy = rand.nextInt(5000) == 0;
+
+        if (isFairy) {
+            BlockState state = WindsweptBlocks.NIGHTSHADE.get().defaultBlockState();
+            WorldGenLevel level = context.level();
+
+            for (BlockPos pos : new BlockPos[]{origin.north(1), origin.south(1), origin.east(1), origin.west(1)})
+                if (state.canSurvive(level, pos))
+                    this.addSpecialFoliage(pos, state);
+        }
 
         // log
         this.addLog(origin);
@@ -58,7 +69,7 @@ public class PineTreeFeature extends BlueprintTreeFeature {
 
                 directions1.add(direction);
                 this.addFoliage(pos);
-                this.addPinecones(pos.below(), rand.nextInt(2) + 3);
+                this.addPinecones(pos.below(), rand.nextInt(2) + 3, isFairy);
             }
 
         for (int y = height - 4; y > 3; y--)
@@ -82,7 +93,7 @@ public class PineTreeFeature extends BlueprintTreeFeature {
                     BlockPos blockPos = pos.relative(direction, 2);
 
                     this.addFoliage(blockPos);
-                    this.addPinecones(blockPos.below(), rand.nextInt(2) + 3);
+                    this.addPinecones(blockPos.below(), rand.nextInt(2) + 3, isFairy);
                 }
 
                 for (int x = -1; x <= 1; x++)
@@ -90,7 +101,7 @@ public class PineTreeFeature extends BlueprintTreeFeature {
                         this.addFoliage(pos.offset(x, 0, z));
 
                         if (rand.nextInt(8) == 0)
-                            this.addPinecones(pos.offset(x, -1, z), rand.nextInt(2) + 1);
+                            this.addPinecones(pos.offset(x, -1, z), rand.nextInt(2) + 1, isFairy);
                     }
 
                 if (directions.isEmpty())
@@ -120,8 +131,8 @@ public class PineTreeFeature extends BlueprintTreeFeature {
 
     }
 
-    private void addPinecones(BlockPos pos, int amount) {
-        this.addSpecialFoliage(pos, WindsweptBlocks.PINECONE.get().defaultBlockState().setValue(PineconeBlock.AMOUNT, amount));
+    private void addPinecones(BlockPos pos, int amount, boolean isFairy) {
+        this.addSpecialFoliage(pos, (isFairy ? WindsweptBlocks.SOUL_FAIRY_LIGHT : WindsweptBlocks.PINECONE).get().defaultBlockState().setValue(PineconeBlock.AMOUNT, amount));
     }
 
     @Override
