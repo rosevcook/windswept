@@ -29,8 +29,12 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Override
     public void setTicksFrozen(int ticks) {
-        if (!((LivingEntity) (Object) this).hasEffect(WindsweptEffects.FROST_RESISTANCE.get()) && !this.getType().is(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES))
+        boolean hasFrostResist = ((LivingEntity) (Object) this).hasEffect(WindsweptEffects.FROST_RESISTANCE.get());
+
+        if (!hasFrostResist && !this.getType().is(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES))
             super.setTicksFrozen(ticks);
+        else if (hasFrostResist)
+            super.setTicksFrozen(0);
     }
 
     @Override
@@ -53,7 +57,7 @@ public abstract class LivingEntityMixin extends Entity {
     private void canFreeze(CallbackInfoReturnable<Boolean> info) {
         LivingEntity entity = (LivingEntity) (Object) this;
 
-        info.setReturnValue(!entity.getType().is(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES) && !entity.isSpectator() && !(entity instanceof Player player && player.isCreative()) && !entity.hasEffect(WindsweptEffects.FROST_RESISTANCE.get()));
+        info.setReturnValue(!entity.getType().is(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES) && !entity.isSpectator() && !entity.hasEffect(WindsweptEffects.FROST_RESISTANCE.get()));
     }
 
     @Inject(method = "onChangedBlock", at = @At("TAIL"))
