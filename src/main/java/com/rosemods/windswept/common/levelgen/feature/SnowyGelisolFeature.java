@@ -27,6 +27,7 @@ public class SnowyGelisolFeature extends Feature<NoneFeatureConfiguration> {
         BlockState snow = Blocks.SNOW.defaultBlockState();
         BlockState dirt = Blocks.DIRT.defaultBlockState();
         BlockState sprouts = WindsweptBlocks.GELISOL_SPROUTS.get().defaultBlockState();
+        BlockState snowdrop = WindsweptBlocks.SNOWDROP.get().defaultBlockState();
         boolean generated = false;
 
         for (int x = -10; x <= 10; ++x)
@@ -47,7 +48,7 @@ public class SnowyGelisolFeature extends Feature<NoneFeatureConfiguration> {
                             if (level.canSeeSky(pos)) {
                                 if (!isSolid) {
                                     level.setBlock(pos, snowy_gelisol, 2);
-                                    level.setBlock(pos.above(), snow, 2);
+                                    level.setBlock(pos.above(), rand.nextInt(180) == 0 ? snowdrop : snow, 2);
                                 } else
                                     level.setBlock(pos, dirt, 2);
                             } else
