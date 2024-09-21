@@ -29,6 +29,7 @@
     "SimpleWaterloggedBlockMixin",
     "SkeletonMixin",
     "SnowballMixin",
+    "SnowGolemMixin",
     "SnowLayerBlockMixin",
     "SnowyDirtBlockMixin",
     "SolidBucketItemMixin",
