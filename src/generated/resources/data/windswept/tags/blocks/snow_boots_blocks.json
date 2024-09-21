@@ -1,9 +1,7 @@
 {
   "values": [
     "#minecraft:snow",
-    "windswept:snow_bricks",
-    "windswept:snow_brick_slab",
-    "windswept:snow_brick_wall",
-    "windswept:snow_brick_vertical_slab"
+    "windswept:snowy_sprouts",
+    "windswept:snowdrop"
   ]
 }

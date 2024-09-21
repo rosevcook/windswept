@@ -25,7 +25,7 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
         this.tag(WindsweptBlockTags.CHESTNUT_LOGS).add(CHESTNUT_LOG.get(), CHESTNUT_WOOD.get(), STRIPPED_CHESTNUT_LOG.get(), STRIPPED_CHESTNUT_WOOD.get());
         this.tag(WindsweptBlockTags.PINE_LOGS).add(PINE_LOG.get(), PINE_WOOD.get(), WEATHERED_PINE_LOG.get(), WEATHERED_PINE_WOOD.get(), STRIPPED_PINE_LOG.get(), STRIPPED_PINE_WOOD.get());
         this.tag(WindsweptBlockTags.LUNALITE).add(LUNALITE.get(), LUNALITE_SLAB.get(), LUNALITE_STAIRS.get(), LUNALITE_WALL.get(), LUNALITE_VERTICAL_SLAB.get());
-        this.tag(WindsweptBlockTags.SNOW_BOOTS_BLOCKS).addTag(BlockTags.SNOW).add(SNOW_BRICKS.get(), SNOW_BRICK_SLAB.get(), SNOW_BRICK_WALL.get(), SNOW_BRICK_VERTICAL_SLAB.get());
+        this.tag(WindsweptBlockTags.SNOW_BOOTS_BLOCKS).addTag(BlockTags.SNOW).add(SNOWY_SPROUTS.get(), SNOWDROP.get());
         this.tag(WindsweptBlockTags.DEFAULT_WHITE_TEXT).add(HOLLY_SIGNS.getFirst().get(), HOLLY_SIGNS.getSecond().get(), Blocks.DARK_OAK_SIGN, Blocks.DARK_OAK_WALL_SIGN)
                 .addOptional(new ResourceLocation("environmental", "cherry_sign"))
                 .addOptional(new ResourceLocation("environmental", "cherry_wall_sign"))
