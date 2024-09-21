@@ -19,7 +19,7 @@ public abstract class SnowGolemMixin extends LivingEntity {
 
     @Redirect(method = "aiStep", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/Block;defaultBlockState()Lnet/minecraft/world/level/block/state/BlockState;"))
     private BlockState defaultBlockState(Block block) {
-        return this.random.nextInt(18) == 0 ? WindsweptBlocks.SNOWDROP.get().defaultBlockState() : block.defaultBlockState();
+        return this.random.nextInt(15) == 0 ? WindsweptBlocks.SNOWDROP.get().defaultBlockState() : block.defaultBlockState();
     }
 
 }

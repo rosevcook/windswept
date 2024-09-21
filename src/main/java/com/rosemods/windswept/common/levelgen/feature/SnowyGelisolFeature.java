@@ -48,7 +48,7 @@ public class SnowyGelisolFeature extends Feature<NoneFeatureConfiguration> {
                             if (level.canSeeSky(pos)) {
                                 if (!isSolid) {
                                     level.setBlock(pos, snowy_gelisol, 2);
-                                    level.setBlock(pos.above(), rand.nextInt(180) == 0 ? snowdrop : snow, 2);
+                                    level.setBlock(pos.above(), rand.nextInt(200) == 0 ? snowdrop : snow, 2);
                                 } else
                                     level.setBlock(pos, dirt, 2);
                             } else
