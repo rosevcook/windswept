@@ -3,6 +3,6 @@
   "textures": {
     "bottom": "minecraft:block/dirt",
     "side": "windswept:block/gelisol_side_snowy",
-    "top": "windswept:block/gelisol_top"
+    "top": "minecraft:block/snow"
   }
 }
