@@ -5,9 +5,13 @@ import com.rosemods.windswept.core.other.tags.WindsweptBiomeTags;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import com.rosemods.windswept.core.registry.WindsweptEnchantments;
 import com.rosemods.windswept.core.registry.WindsweptItems;
+import com.rosemods.windswept.core.registry.WindsweptSounds;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -33,6 +37,26 @@ public class Chilled extends Zombie {
     @Override
     public boolean canFreeze() {
         return false;
+    }
+
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return WindsweptSounds.CHILLED_AMBIENT.get();
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource source) {
+        return WindsweptSounds.CHILLED_HURT.get();
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return WindsweptSounds.CHILLED_DEATH.get();
+    }
+
+    @Override
+    protected SoundEvent getStepSound() {
+        return SoundEvents.HUSK_STEP;
     }
 
     @Override
