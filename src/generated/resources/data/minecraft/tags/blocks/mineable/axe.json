@@ -66,6 +66,8 @@
     "windswept:glazed_gingerbread_brick_wall",
     "windswept:glazed_gingerbread_brick_vertical_slab",
     "windswept:feather_wing",
-    "windswept:ginger_root_crate"
+    "windswept:ginger_root_crate",
+    "windswept:gingerbread_door",
+    "windswept:gingerbread_trapdoor"
   ]
 }
