@@ -344,7 +344,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(BLUEBELLS.get());
             this.dropSelf(SNOWDROP.get());
             this.dropSelf(MOSS_CAMPION.get());
-            this.dropSelf(WILD_GINGER.get());
+            this.add(WILD_GINGER.get(), Blocks::createWildGingerDrops);
             this.dropSelf(NIGHTSHADE.get());
             this.dropSelf(LAVENDER.get());
 
@@ -392,7 +392,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(ICICLE_BARS.get());
             this.dropSelf(ICE_LANTERN.get());
 
-            //lunalite
+            // lunalite
             this.dropSelf(LUNALITE.get());
             this.dropSelf(LUNALITE_STAIRS.get());
             this.add(LUNALITE_SLAB.get(), Blocks::createSlabItemTable);
@@ -467,10 +467,15 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             return getContent(ForgeRegistries.BLOCKS);
         }
 
+        protected static LootTable.Builder createWildGingerDrops(Block block) {
+            return createShearsDispatchTable(block, applyExplosionDecay(block, LootItem.lootTableItem(GINGER_ROOT.get())));
+        }
+
         private static LootTable.Builder dropTwoOthers(Block block, ItemLike other, ItemLike another) {
             return LootTable.lootTable()
-                    .withPool(applyExplosionCondition(block, LootPool.lootPool().setRolls(ConstantValue.exactly(1f)).add(LootItem.lootTableItem(other))))
-                    .withPool(applyExplosionCondition(block, LootPool.lootPool().setRolls(ConstantValue.exactly(1f)).add(LootItem.lootTableItem(another))));
+                    .withPool(applyExplosionCondition(block, LootPool.lootPool().setRolls(ConstantValue.exactly(1f)).when(HAS_SILK_TOUCH).add(LootItem.lootTableItem(block))))
+                    .withPool(applyExplosionCondition(block, LootPool.lootPool().setRolls(ConstantValue.exactly(1f)).when(HAS_NO_SILK_TOUCH).add(LootItem.lootTableItem(other))))
+                    .withPool(applyExplosionCondition(block, LootPool.lootPool().setRolls(ConstantValue.exactly(1f)).when(HAS_NO_SILK_TOUCH).add(LootItem.lootTableItem(another))));
         }
 
         private static LootTable.Builder createPineconeTable(Block block) {
