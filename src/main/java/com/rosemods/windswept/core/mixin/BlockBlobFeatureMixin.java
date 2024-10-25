@@ -1,5 +1,6 @@
 package com.rosemods.windswept.core.mixin;
 
+import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
@@ -23,6 +24,14 @@ public class BlockBlobFeatureMixin {
 
             if (instance.getBlockState(pos.below(2)).getBlock() instanceof SnowyDirtBlock)
                 instance.setBlock(pos.below(2), Blocks.DIRT.defaultBlockState(), i);
+        }
+
+        if (state.is(WindsweptBlocks.DRY_MOSSY_COBBLESTONE.get())) {
+            if (instance.getLevel().random.nextInt(5) == 0)
+                state = WindsweptBlocks.DRY_MOSS_BLOCK.get().defaultBlockState();
+
+            if (instance.getRandom().nextInt(5) == 0 && instance.getBlockState(pos.above()).isAir())
+                instance.setBlock(pos.above(), WindsweptBlocks.DRY_MOSSY_SPROUTS.get().defaultBlockState(), i);
         }
 
         return instance.setBlock(pos, state, i);
