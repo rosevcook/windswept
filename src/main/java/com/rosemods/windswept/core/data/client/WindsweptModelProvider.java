@@ -284,6 +284,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.wreath(HOLLY_WREATH);
         this.wreath(PINECONE_WREATH);
         this.wreath(VINE_WREATH);
+        //this.wreath(CHERRY_WREATH);
         this.getVariantBuilder(CHRISTMAS_PUDDING.get())
                 .partialState().with(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.FIRE).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/christmas_pudding_fire"))))
                 .partialState().with(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.FOUR).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/christmas_pudding_4"))))

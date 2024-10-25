@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "environmental"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "L": {
+            "item": "environmental:moody_cherry_leaves"
+          },
+          "B": {
+            "item": "windswept:frozen_branch"
+          }
+        },
+        "pattern": [
+          " L ",
+          "LBL",
+          " L "
+        ],
+        "result": {
+          "item": "windswept:cherry_wreath"
+        }
+      }
+    }
+  ]
+}
