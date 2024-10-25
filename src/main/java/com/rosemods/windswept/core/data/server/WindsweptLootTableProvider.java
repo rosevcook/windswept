@@ -3,6 +3,7 @@ package com.rosemods.windswept.core.data.server;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import com.rosemods.windswept.common.block.GingerCropBlock;
+import com.rosemods.windswept.common.block.LavenderBlock;
 import com.rosemods.windswept.common.block.PineconeBlock;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
@@ -346,7 +347,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(MOSS_CAMPION.get());
             this.add(WILD_GINGER.get(), Blocks::createWildGingerDrops);
             this.dropSelf(NIGHTSHADE.get());
-            this.dropSelf(LAVENDER.get());
+            this.add(LAVENDER.get(), Blocks::createLavenderTable);
 
             // pots
             this.dropPottedContents(POTTED_RED_ROSE.get());
@@ -485,6 +486,15 @@ public class WindsweptLootTableProvider extends LootTableProvider {
                                     .apply(List.of(2, 3, 4), i -> SetItemCountFunction.setCount(ConstantValue.exactly((float) i))
                                             .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
                                                     .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PineconeBlock.AMOUNT, i)))))));
+        }
+
+        private static LootTable.Builder createLavenderTable(Block block) {
+            return LootTable.lootTable()
+                    .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1f))
+                            .add(applyExplosionDecay(block, LootItem.lootTableItem(block)
+                                    .apply(List.of(0, 1, 2), i -> SetItemCountFunction.setCount(ConstantValue.exactly(i + 1f))
+                                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(LavenderBlock.AGE, i)))))));
         }
 
         private static LootTable.Builder createVerticalSlabItemTable(Block block) {
