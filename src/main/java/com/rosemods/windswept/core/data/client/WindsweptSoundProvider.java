@@ -23,8 +23,8 @@ public class WindsweptSoundProvider extends SoundDefinitionsProvider {
         this.register(MUSIC_DISC_BUMBLEBEE, "records/bumblebee", Sound::stream);
         this.register(PINECONE_NOTE, "pinecone_note", Sound::stream);
 
-        this.register(CHILLED_DEATH, "entity/chilled/death/death", 4, 1.15f);
-        this.register(CHILLED_HURT, "entity/chilled/hurt/hurt", 3, 1.1f);
+        this.register(CHILLED_DEATH, "entity/chilled/death/death", 4, 1.3f);
+        this.register(CHILLED_HURT, "entity/chilled/hurt/hurt", 3, 1.2f);
         this.register(CHILLED_AMBIENT, "entity/chilled/ambient/idle", 3, 1f);
     }
 
