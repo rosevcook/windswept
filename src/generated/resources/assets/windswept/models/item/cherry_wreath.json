@@ -1,0 +1,6 @@
+{
+  "parent": "windswept:item/wreath",
+  "textures": {
+    "layer0": "windswept:block/cherry_wreath"
+  }
+}

@@ -284,7 +284,7 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.wreath(HOLLY_WREATH);
         this.wreath(PINECONE_WREATH);
         this.wreath(VINE_WREATH);
-        //this.wreath(CHERRY_WREATH);
+        this.wreath(CHERRY_WREATH);
         this.getVariantBuilder(CHRISTMAS_PUDDING.get())
                 .partialState().with(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.FIRE).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/christmas_pudding_fire"))))
                 .partialState().with(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.FOUR).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/christmas_pudding_4"))))
@@ -406,6 +406,8 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.verticalSlab(SMOOTH_LUNALITE_VERTICAL_SLAB, this.blockTexture(SMOOTH_LUNALITE.get()));
 
         // ginger
+        //this.door(GINGERBREAD_DOOR);
+        //this.trapdoor(GINGERBREAD_TRAPDOOR);
         this.getVariantBuilder(GINGER.get())
                 .partialState().with(GingerCropBlock.AGE, 0).addModels(new ConfiguredModel(this.models().crop("ginger_stage0", this.modLoc("block/ginger_stage0")).renderType("cutout")))
                 .partialState().with(GingerCropBlock.AGE, 1).addModels(new ConfiguredModel(this.models().crop("ginger_stage1", this.modLoc("block/ginger_stage1")).renderType("cutout")))
