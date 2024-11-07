@@ -406,8 +406,8 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.verticalSlab(SMOOTH_LUNALITE_VERTICAL_SLAB, this.blockTexture(SMOOTH_LUNALITE.get()));
 
         // ginger
-        //this.door(GINGERBREAD_DOOR);
-        //this.trapdoor(GINGERBREAD_TRAPDOOR);
+        this.doorCutout(GINGERBREAD_DOOR);
+        this.trapdoorCutout(GINGERBREAD_TRAPDOOR);
         this.getVariantBuilder(GINGER.get())
                 .partialState().with(GingerCropBlock.AGE, 0).addModels(new ConfiguredModel(this.models().crop("ginger_stage0", this.modLoc("block/ginger_stage0")).renderType("cutout")))
                 .partialState().with(GingerCropBlock.AGE, 1).addModels(new ConfiguredModel(this.models().crop("ginger_stage1", this.modLoc("block/ginger_stage1")).renderType("cutout")))
