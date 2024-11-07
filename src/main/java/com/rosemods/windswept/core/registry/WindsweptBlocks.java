@@ -301,8 +301,8 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> GLAZED_GINGERBREAD_BLOCK = HELPER.createBlock("glazed_gingerbread_block", () -> new Block(Properties.GINGERBREAD), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> GINGERBREAD_COOKIE_BLOCK = HELPER.createBlock("gingerbread_cookie_block", () -> new Block(Properties.GINGERBREAD), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
-    public static final RegistryObject<Block> GINGERBREAD_DOOR = HELPER.createBlock("gingerbread_door", () -> new DoorBlock(Properties.GINGERBREAD), CreativeModeTab.TAB_REDSTONE);
-    public static final RegistryObject<Block> GINGERBREAD_TRAPDOOR = HELPER.createBlock("gingerbread_trapdoor", () -> new TrapDoorBlock(Properties.GINGERBREAD), CreativeModeTab.TAB_REDSTONE);
+    public static final RegistryObject<Block> GINGERBREAD_DOOR = HELPER.createBlock("gingerbread_door", () -> new DoorBlock(Properties.PINE.door()), CreativeModeTab.TAB_REDSTONE);
+    public static final RegistryObject<Block> GINGERBREAD_TRAPDOOR = HELPER.createBlock("gingerbread_trapdoor", () -> new TrapDoorBlock(Properties.PINE.trapdoor()), CreativeModeTab.TAB_REDSTONE);
 
     public static final RegistryObject<Block> GINGERBREAD_BRICKS = HELPER.createBlock("gingerbread_bricks", () -> new Block(Properties.GINGERBREAD), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> GINGERBREAD_BRICK_STAIRS = HELPER.createBlock("gingerbread_brick_stairs", () -> new StairBlock(GINGERBREAD_BRICKS.get()::defaultBlockState, Properties.GINGERBREAD), CreativeModeTab.TAB_BUILDING_BLOCKS);
