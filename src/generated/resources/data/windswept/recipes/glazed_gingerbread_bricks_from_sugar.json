@@ -1,14 +1,30 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "item": "windswept:gingerbread_bricks"
-    },
-    {
-      "item": "minecraft:sugar"
+      "conditions": [
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+          }
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "windswept:gingerbread_bricks"
+          },
+          {
+            "item": "minecraft:sugar"
+          }
+        ],
+        "result": {
+          "item": "windswept:glazed_gingerbread_bricks"
+        }
+      }
     }
-  ],
-  "result": {
-    "item": "windswept:glazed_gingerbread_bricks"
-  }
+  ]
 }

@@ -1,34 +1,49 @@
 {
-  "parent": "minecraft:recipes/root",
-  "criteria": {
-    "has_gingerbread_bricks": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "windswept:gingerbread_bricks"
-            ]
+  "advancements": [
+    {
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "criteria": {
+          "has_gingerbread_bricks": {
+            "conditions": {
+              "items": [
+                {
+                  "items": [
+                    "windswept:gingerbread_bricks"
+                  ]
+                }
+              ]
+            },
+            "trigger": "minecraft:inventory_changed"
+          },
+          "has_the_recipe": {
+            "conditions": {
+              "recipe": "windswept:glazed_gingerbread_bricks_from_sugar"
+            },
+            "trigger": "minecraft:recipe_unlocked"
           }
-        ]
+        },
+        "requirements": [
+          [
+            "has_gingerbread_bricks",
+            "has_the_recipe"
+          ]
+        ],
+        "rewards": {
+          "recipes": [
+            "windswept:glazed_gingerbread_bricks_from_sugar"
+          ]
+        }
       },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "windswept:glazed_gingerbread_bricks_from_sugar"
-      },
-      "trigger": "minecraft:recipe_unlocked"
+      "conditions": [
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+          }
+        }
+      ]
     }
-  },
-  "requirements": [
-    [
-      "has_gingerbread_bricks",
-      "has_the_recipe"
-    ]
-  ],
-  "rewards": {
-    "recipes": [
-      "windswept:glazed_gingerbread_bricks_from_sugar"
-    ]
-  }
+  ]
 }
