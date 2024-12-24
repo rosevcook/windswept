@@ -5,9 +5,7 @@
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
         "location": "windswept:village/frozen/streets/corner_01",
-        "processors": {
-          "processors": []
-        },
+        "processors": "windswept:street_frozen",
         "projection": "terrain_matching"
       },
       "weight": 3
@@ -16,9 +14,7 @@
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
         "location": "windswept:village/frozen/streets/corner_02",
-        "processors": {
-          "processors": []
-        },
+        "processors": "windswept:street_frozen",
         "projection": "terrain_matching"
       },
       "weight": 3
@@ -27,9 +23,7 @@
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
         "location": "windswept:village/frozen/streets/crossroad_01",
-        "processors": {
-          "processors": []
-        },
+        "processors": "windswept:street_frozen",
         "projection": "terrain_matching"
       },
       "weight": 3
@@ -38,9 +32,7 @@
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
         "location": "windswept:village/frozen/streets/crossroad_02",
-        "processors": {
-          "processors": []
-        },
+        "processors": "windswept:street_frozen",
         "projection": "terrain_matching"
       },
       "weight": 3
@@ -49,9 +41,7 @@
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
         "location": "windswept:village/frozen/streets/crossroad_03",
-        "processors": {
-          "processors": []
-        },
+        "processors": "windswept:street_frozen",
         "projection": "terrain_matching"
       },
       "weight": 2
@@ -60,9 +50,7 @@
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
         "location": "windswept:village/frozen/streets/straight_01",
-        "processors": {
-          "processors": []
-        },
+        "processors": "windswept:street_frozen",
         "projection": "terrain_matching"
       },
       "weight": 4
@@ -71,9 +59,7 @@
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
         "location": "windswept:village/frozen/streets/straight_02",
-        "processors": {
-          "processors": []
-        },
+        "processors": "windswept:street_frozen",
         "projection": "terrain_matching"
       },
       "weight": 4
@@ -82,9 +68,7 @@
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
         "location": "windswept:village/frozen/streets/straight_03",
-        "processors": {
-          "processors": []
-        },
+        "processors": "windswept:street_frozen",
         "projection": "terrain_matching"
       },
       "weight": 3
@@ -93,9 +77,7 @@
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
         "location": "windswept:village/frozen/streets/straight_04",
-        "processors": {
-          "processors": []
-        },
+        "processors": "windswept:street_frozen",
         "projection": "terrain_matching"
       },
       "weight": 3
@@ -104,9 +86,7 @@
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
         "location": "windswept:village/frozen/streets/straight_05",
-        "processors": {
-          "processors": []
-        },
+        "processors": "windswept:street_frozen",
         "projection": "terrain_matching"
       },
       "weight": 3
@@ -115,9 +95,7 @@
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
         "location": "windswept:village/frozen/streets/straight_06",
-        "processors": {
-          "processors": []
-        },
+        "processors": "windswept:street_frozen",
         "projection": "terrain_matching"
       },
       "weight": 3
@@ -126,9 +104,7 @@
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
         "location": "windswept:village/frozen/streets/straight_07",
-        "processors": {
-          "processors": []
-        },
+        "processors": "windswept:street_frozen",
         "projection": "terrain_matching"
       },
       "weight": 3
