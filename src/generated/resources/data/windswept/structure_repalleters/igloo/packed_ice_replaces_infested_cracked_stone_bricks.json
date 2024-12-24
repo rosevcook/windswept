@@ -1,0 +1,7 @@
+{
+  "type": "blueprint:simple",
+  "priority": "high",
+  "replaces_block": "minecraft:infested_cracked_stone_bricks",
+  "replaces_with": "minecraft:packed_ice",
+  "selector": "minecraft:igloo"
+}

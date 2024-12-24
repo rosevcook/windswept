@@ -34,10 +34,17 @@ public class WindsweptStructureRepaletterProvider extends StructureRepaletterPro
         this.register(IGLOO, Blocks.POTTED_CACTUS, POTTED_WHITE_ROSE.get());
         this.register(IGLOO, Blocks.SPRUCE_SLAB, HOLLY_SLAB.get());
         this.register(IGLOO, Blocks.SPRUCE_STAIRS, HOLLY_STAIRS.get());
-        this.register(IGLOO, Blocks.MOSSY_STONE_BRICKS, HOLLY_PLANKS.get());
-        this.register(IGLOO, Blocks.INFESTED_MOSSY_STONE_BRICKS, HOLLY_PLANKS.get());
+        this.register(IGLOO, Blocks.MOSSY_STONE_BRICKS, CHISELED_ICICLE_BLOCK.get());
+        this.register(IGLOO, Blocks.INFESTED_MOSSY_STONE_BRICKS, CHISELED_ICICLE_BLOCK.get());
         this.register(IGLOO, Blocks.OAK_TRAPDOOR, HOLLY_TRAPDOOR.get());
         this.register(IGLOO, Blocks.POLISHED_ANDESITE, Blocks.GOLD_BLOCK);
+        this.register(IGLOO, Blocks.IRON_BARS, ICICLE_BARS.get());
+        this.register(IGLOO, Blocks.STONE_BRICKS, PACKED_ICE_BRICKS.get());
+        this.register(IGLOO, Blocks.INFESTED_STONE_BRICKS, PACKED_ICE_BRICKS.get());
+        this.register(IGLOO, Blocks.CHISELED_STONE_BRICKS, CHISELED_PACKED_ICE_BRICKS.get());
+        this.register(IGLOO, Blocks.INFESTED_CHISELED_STONE_BRICKS, CHISELED_PACKED_ICE_BRICKS.get());
+        this.register(IGLOO, Blocks.CRACKED_STONE_BRICKS, Blocks.PACKED_ICE);
+        this.register(IGLOO, Blocks.INFESTED_CRACKED_STONE_BRICKS, Blocks.PACKED_ICE);
 
         // Villages //
         this.register(VILLAGE_TAIGA, Blocks.POTTED_SPRUCE_SAPLING, POTTED_BLUEBELLS.get());

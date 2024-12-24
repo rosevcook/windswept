@@ -2,6 +2,6 @@
   "type": "blueprint:simple",
   "priority": "high",
   "replaces_block": "minecraft:mossy_stone_bricks",
-  "replaces_with": "windswept:holly_planks",
+  "replaces_with": "windswept:chiseled_icicle_block",
   "selector": "minecraft:igloo"
 }
