@@ -1,6 +1,7 @@
 package com.rosemods.windswept.core.other.events;
 
 import com.rosemods.windswept.common.entity.monster.Chilled;
+import com.rosemods.windswept.common.entity.projectile.CupidsArrow;
 import com.rosemods.windswept.common.item.SnowBootsItem;
 import com.rosemods.windswept.common.item.WoodenMilkBucketItem;
 import com.rosemods.windswept.core.Windswept;
@@ -63,6 +64,7 @@ public class WindsweptEntityEvents {
                 attacker.hurt(DamageSource.thorns(entity), ThornsEnchantment.getDamage(amplifier, rand));
         }
 
+        CupidsArrow.entityTakeNoDamageIfStruckByArrow(event);
     }
 
     @SubscribeEvent
