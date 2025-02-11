@@ -48,6 +48,8 @@ public class Windswept {
         WindsweptPaintingVariants.PAINTING_VARIANTS.register(bus);
         WindsweptParticleTypes.PARTICLE_TYPES.register(bus);
 
+        WindsweptTrackedData.registerTrackedData();
+
         bus.addListener(this::commonSetup);
         bus.addListener(this::clientSetup);
         bus.addListener(this::dataSetup);
