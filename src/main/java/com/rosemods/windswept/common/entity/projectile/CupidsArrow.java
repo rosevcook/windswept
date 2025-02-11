@@ -19,6 +19,8 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.network.PlayMessages;
 
+import java.util.function.Consumer;
+
 public class CupidsArrow extends AbstractArrow {
 
     public CupidsArrow(EntityType<? extends CupidsArrow> type, Level level) {
@@ -61,27 +63,26 @@ public class CupidsArrow extends AbstractArrow {
     protected void onHitEntity(EntityHitResult result) {
         Entity entity = result.getEntity();
 
-        if (entity instanceof Animal animal && animal.canFallInLove() && !animal.isBaby()) {
-            IDataManager animalData = (IDataManager) animal;
-            animalData.setValue(WindsweptTrackedData.CANNOT_PANIC, true);
-
-            super.onHitEntity(result);
-            removePanicFrom(animal);
-            animal.setInLove(null);
-        }
-        else {
-            super.onHitEntity(result);
-        }
-
         if (entity instanceof LivingEntity living) {
 
             if (living.isInvertedHealAndHarm()) {
                 DamageSource source = getOwner() == null ? DamageSource.indirectMagic(living, this.getOwner()) : DamageSource.MAGIC;
-                living.hurt(source, 14.0f);
+                living.hurt(source, 8.0f);
             }
             else {
                 living.heal(6.0f);
             }
+        }
+
+        if (entity instanceof Animal animal && animal.canFallInLove() && !animal.isBaby()) {
+
+
+            super.onHitEntity(result);
+            removePanicFrom(animal, () -> super.onHitEntity(result));
+            animal.setInLove(null);
+        }
+        else {
+            super.onHitEntity(result);
         }
     }
 
@@ -90,8 +91,12 @@ public class CupidsArrow extends AbstractArrow {
         return WindsweptItems.CUPIDS_ARROW.get().getDefaultInstance();
     }
 
-    private static void removePanicFrom(Animal animal) {
+    private static void removePanicFrom(Animal animal, Runnable damageFunc) {
         // the goal police does not run
+        IDataManager animalData = (IDataManager) animal;
+        animalData.setValue(WindsweptTrackedData.CANNOT_PANIC, true);
+
+        damageFunc.run();
 
         animal.goalSelector.getRunningGoals().forEach(goal -> {
             if (goal.getGoal() instanceof PanicGoal) {
@@ -99,7 +104,6 @@ public class CupidsArrow extends AbstractArrow {
             }
         });
         animal.setLastHurtByMob(null);
-        IDataManager animalData = (IDataManager) animal;
         animalData.setValue(WindsweptTrackedData.CANNOT_PANIC, false);
     }
 
