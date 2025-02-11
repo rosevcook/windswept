@@ -77,7 +77,7 @@ public class CupidsArrow extends AbstractArrow {
 
             if (living.isInvertedHealAndHarm()) {
                 DamageSource source = getOwner() == null ? DamageSource.indirectMagic(living, this.getOwner()) : DamageSource.MAGIC;
-                living.hurt(source.bypassInvul(), 8.0f);
+                living.hurt(source, 14.0f);
             }
             else {
                 living.heal(6.0f);
@@ -105,7 +105,7 @@ public class CupidsArrow extends AbstractArrow {
 
     public static void entityTakeNoDamageIfStruckByArrow(LivingHurtEvent event) {
         if (event.getSource().getDirectEntity() instanceof CupidsArrow) {
-//            event.setAmount(0);
+            event.setAmount(0);
         }
     }
 }
