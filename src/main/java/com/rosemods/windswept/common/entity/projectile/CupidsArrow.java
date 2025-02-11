@@ -1,16 +1,22 @@
 package com.rosemods.windswept.common.entity.projectile;
 
+import com.rosemods.windswept.core.other.WindsweptTrackedData;
 import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.rosemods.windswept.core.registry.WindsweptParticleTypes;
+import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.network.PlayMessages;
 
 public class CupidsArrow extends AbstractArrow {
@@ -53,14 +59,52 @@ public class CupidsArrow extends AbstractArrow {
 
     @Override
     protected void onHitEntity(EntityHitResult result) {
-        if (result.getEntity() instanceof Animal animal && animal.canFallInLove())
-            animal.setInLove(null);
+        Entity entity = result.getEntity();
 
-        super.onHitEntity(result);
+        if (entity instanceof Animal animal && animal.canFallInLove() && !animal.isBaby()) {
+            IDataManager animalData = (IDataManager) animal;
+            animalData.setValue(WindsweptTrackedData.CANNOT_PANIC, true);
+
+            super.onHitEntity(result);
+            removePanicFrom(animal);
+            animal.setInLove(null);
+        }
+        else {
+            super.onHitEntity(result);
+        }
+
+        if (entity instanceof LivingEntity living) {
+            if (living.isInvertedHealAndHarm()) {
+                DamageSource source = getOwner() == null ? DamageSource.indirectMagic(living, this.getOwner()) : DamageSource.MAGIC;
+                living.hurt(source, 6.0f);
+            }
+            else {
+                living.heal(4.0f);
+            }
+        }
     }
 
     @Override
     protected ItemStack getPickupItem() {
-        return WindsweptItems.FROST_ARROW.get().getDefaultInstance();
+        return WindsweptItems.CUPIDS_ARROW.get().getDefaultInstance();
+    }
+
+    private static void removePanicFrom(Animal animal) {
+        // the goal police does not run
+
+        animal.goalSelector.getRunningGoals().forEach(goal -> {
+            if (goal.getGoal() instanceof PanicGoal) {
+                goal.stop();
+            }
+        });
+        animal.setLastHurtByMob(null);
+        IDataManager animalData = (IDataManager) animal;
+        animalData.setValue(WindsweptTrackedData.CANNOT_PANIC, false);
+    }
+
+    public static void entityTakeNoDamageIfStruckByArrow(LivingHurtEvent event) {
+        if (event.getSource().getDirectEntity() instanceof CupidsArrow) {
+            event.setAmount(0);
+        }
     }
 }
