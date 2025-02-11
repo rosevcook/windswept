@@ -1,10 +1,8 @@
 package com.rosemods.windswept.common.entity.projectile;
 
-import com.rosemods.windswept.core.other.WindsweptDataProcessors;
 import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.rosemods.windswept.core.registry.WindsweptParticleTypes;
-import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -65,12 +63,10 @@ public class CupidsArrow extends AbstractArrow {
             } else
                 living.heal(6.0f);
 
-            super.onHitEntity(result);
-
-            if (living instanceof Animal animal && animal.canFallInLove() && !animal.isBaby()) {
-                removePanicFrom(animal, () -> super.onHitEntity(result));
+            if (living instanceof Animal animal && animal.canFallInLove() && !animal.isBaby())
                 animal.setInLove(null);
-            }
+
+            super.onHitEntity(result);
         }
     }
 
@@ -79,21 +75,4 @@ public class CupidsArrow extends AbstractArrow {
         return WindsweptItems.CUPIDS_ARROW.get().getDefaultInstance();
     }
 
-    private static void removePanicFrom(Animal animal, Runnable damageFunc) {
-        IDataManager animalData = (IDataManager) animal;
-        animalData.setValue(WindsweptDataProcessors.CANNOT_PANIC, true);
-        damageFunc.run();
-
-        animal.goalSelector.getRunningGoals().forEach(goal -> {
-            if (goal.getGoal() instanceof PanicGoal)
-                goal.stop();
-        });
-        animal.setLastHurtByMob(null);
-        animalData.setValue(WindsweptDataProcessors.CANNOT_PANIC, false);
-    }
-
-    public static void entityTakeNoDamageIfStruckByArrow(LivingHurtEvent event) {
-        if (event.getSource().getDirectEntity() instanceof CupidsArrow)
-            event.setAmount(0);
-    }
 }

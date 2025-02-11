@@ -64,7 +64,9 @@ public class WindsweptEntityEvents {
                 attacker.hurt(DamageSource.thorns(entity), ThornsEnchantment.getDamage(amplifier, rand));
         }
 
-        CupidsArrow.entityTakeNoDamageIfStruckByArrow(event);
+        // cupids arrow
+        if (event.getSource().getDirectEntity() instanceof CupidsArrow)
+            event.setAmount(0);
     }
 
     @SubscribeEvent

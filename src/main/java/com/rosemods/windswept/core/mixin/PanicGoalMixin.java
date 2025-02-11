@@ -1,9 +1,7 @@
 package com.rosemods.windswept.core.mixin;
 
 import com.rosemods.windswept.common.entity.animal.Frostbiter;
-import com.rosemods.windswept.core.other.WindsweptDataProcessors;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
-import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
@@ -25,23 +23,20 @@ public class PanicGoalMixin {
 
     @Inject(method = "canUse", at = @At("HEAD"), cancellable = true)
     private void canUse(CallbackInfoReturnable<Boolean> info) {
-        if (((IDataManager) mob).getValue(WindsweptDataProcessors.CANNOT_PANIC))
-            info.setReturnValue(false);
-        else {
-            AABB radius = new AABB(this.mob.blockPosition()).inflate(2);
+        AABB radius = new AABB(this.mob.blockPosition()).inflate(2);
 
-            for (LivingEntity entity : this.mob.level.getEntitiesOfClass(LivingEntity.class, radius))
-                if (this.mob != entity && (entity.getItemBySlot(EquipmentSlot.HEAD).is(WindsweptBlocks.CARVED_PINECONE_BLOCK.get().asItem()) || (entity instanceof Frostbiter frostbiter && frostbiter.isVehicle()))) {
-                    info.setReturnValue(true);
-                    return;
-                }
+        for (LivingEntity entity : this.mob.level.getEntitiesOfClass(LivingEntity.class, radius))
+            if (this.mob != entity && (entity.getItemBySlot(EquipmentSlot.HEAD).is(WindsweptBlocks.CARVED_PINECONE_BLOCK.get().asItem()) || (entity instanceof Frostbiter frostbiter && frostbiter.isVehicle()))) {
+                info.setReturnValue(true);
+                return;
+            }
 
-            for (BlockState state : this.mob.level.getBlockStatesIfLoaded(radius).toList())
-                if (state.is(WindsweptBlocks.CARVED_PINECONE_BLOCK.get()) || state.is(WindsweptBlocks.WILL_O_THE_WISP.get())) {
-                    info.setReturnValue(true);
-                    return;
-                }
-        }
+        for (BlockState state : this.mob.level.getBlockStatesIfLoaded(radius).toList())
+            if (state.is(WindsweptBlocks.CARVED_PINECONE_BLOCK.get()) || state.is(WindsweptBlocks.WILL_O_THE_WISP.get())) {
+                info.setReturnValue(true);
+                return;
+            }
+
     }
 
 }
