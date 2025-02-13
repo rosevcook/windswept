@@ -68,7 +68,6 @@ public class WindsweptEntityEvents {
         if (event.getSource().getDirectEntity() instanceof CupidsArrow && !entity.isInvertedHealAndHarm()) {
             event.setAmount(0);
         }
-
     }
 
     @SubscribeEvent
