@@ -33,6 +33,7 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
                 .addOptional(new ResourceLocation("atmospheric", "grimwood_wall_sign"))
                 .addOptional(new ResourceLocation("caverns_and_chasms", "azalea_sign"))
                 .addOptional(new ResourceLocation("caverns_and_chasms", "azalea_wall_sign"));
+        this.tag(WindsweptBlockTags.PLENTY_CANNOT_PLACE);
 
         //woodworks
         this.tag(BlueprintBlockTags.LEAF_PILES).add(HOLLY_LEAF_PILE.get(), CHESTNUT_LEAF_PILE.get());

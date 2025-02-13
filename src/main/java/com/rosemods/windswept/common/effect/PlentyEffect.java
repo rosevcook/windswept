@@ -1,6 +1,7 @@
 package com.rosemods.windswept.common.effect;
 
 import com.google.common.collect.ImmutableList;
+import com.rosemods.windswept.core.other.tags.WindsweptBlockTags;
 import com.teamabnormals.blueprint.common.effect.BlueprintMobEffect;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -140,14 +141,14 @@ public class PlentyEffect extends BlueprintMobEffect {
     private static List<BlockState> flowersThatCanSpawnInBiome(Level level, BlockPos pos) {
         ImmutableList<BlockState> potentialList = level.getBiome(pos).value().getGenerationSettings().features().stream()
                 .flatMap(HolderSet::stream).map(Holder::value).flatMap(PlacedFeature::getFeatures)
-                .filter(feature -> feature.feature() == Feature.FLOWER)
                 .map(feature -> {
                     if (feature.config() instanceof RandomPatchConfiguration config) {
                         if (config.feature().value().feature().value().config() instanceof SimpleBlockConfiguration blockConfiguration) {
                             return blockConfiguration.toPlace().getState(level.random, pos);
                         } else return null;
                     } else return null;
-                }).filter(Objects::nonNull).collect(ImmutableList.toImmutableList());
+                }).filter(state -> state != null && state.is(BlockTags.SMALL_FLOWERS) && !state.is(WindsweptBlockTags.PLENTY_CANNOT_PLACE))
+                .collect(ImmutableList.toImmutableList());
 
         return potentialList.isEmpty() ? List.of(Blocks.POPPY.defaultBlockState(), Blocks.DANDELION.defaultBlockState(), Blocks.CORNFLOWER.defaultBlockState(),
                 Blocks.AZURE_BLUET.defaultBlockState(), Blocks.OXEYE_DAISY.defaultBlockState()) : potentialList;
