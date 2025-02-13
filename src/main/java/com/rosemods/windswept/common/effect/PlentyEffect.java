@@ -36,7 +36,7 @@ public class PlentyEffect extends BlueprintMobEffect {
         // affected blocks should find the farmland and also empty grass blocks,
         List<BlockState> flowerStates = flowersThatCanSpawnInBiome(level, realPos);
 
-        double modifier = 1 + (plentyAmp * 0.5);
+        double modifier = 1.6 + (plentyAmp * 0.7);
 
         for (BlockPos affectedPos : getToPlacePos(player)) {
             // account for jumping (maybe?)
@@ -49,7 +49,7 @@ public class PlentyEffect extends BlueprintMobEffect {
 //                continue;
 //            }
 
-            if (level.getRandom().nextInt((int) (20 / modifier)) == 0) {
+            if (level.getRandom().nextDouble() * 32 < modifier) {
                 BlockPos abovePos = affectedPos.above();
                 BlockState aboveState = level.getBlockState(abovePos);
 
