@@ -24,9 +24,11 @@ import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConf
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class PlentyEffect extends BlueprintMobEffect {
     protected PlentyEffect(MobEffectCategory p_19451_, int p_19452_) {
@@ -150,8 +152,11 @@ public class PlentyEffect extends BlueprintMobEffect {
                 }).filter(state -> state != null && state.is(BlockTags.SMALL_FLOWERS) && !state.is(WindsweptBlockTags.PLENTY_CANNOT_PLACE))
                 .collect(ImmutableList.toImmutableList());
 
-        return potentialList.isEmpty() ? List.of(Blocks.POPPY.defaultBlockState(), Blocks.DANDELION.defaultBlockState(), Blocks.CORNFLOWER.defaultBlockState(),
-                Blocks.AZURE_BLUET.defaultBlockState(), Blocks.OXEYE_DAISY.defaultBlockState()) : potentialList;
+        return potentialList.isEmpty() ? getDefaultFlowers() : potentialList;
+    }
 
+    private static List<BlockState> getDefaultFlowers() {
+        return ForgeRegistries.BLOCKS.getValues().stream().filter(block -> block.builtInRegistryHolder().is(WindsweptBlockTags.PLENTY_DEFAULT_FLOWERS))
+                .map(Block::defaultBlockState).collect(ImmutableList.toImmutableList());
     }
 }

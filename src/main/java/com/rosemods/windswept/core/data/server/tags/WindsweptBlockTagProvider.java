@@ -6,6 +6,7 @@ import com.teamabnormals.blueprint.core.other.tags.BlueprintBlockTags;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -34,6 +35,8 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
                 .addOptional(new ResourceLocation("caverns_and_chasms", "azalea_sign"))
                 .addOptional(new ResourceLocation("caverns_and_chasms", "azalea_wall_sign"));
         this.tag(WindsweptBlockTags.PLENTY_CANNOT_PLACE);
+        this.tag(WindsweptBlockTags.PLENTY_DEFAULT_FLOWERS).add(Blocks.POPPY, Blocks.DANDELION, Blocks.AZURE_BLUET,
+                Blocks.OXEYE_DAISY, Blocks.CORNFLOWER);
 
         //woodworks
         this.tag(BlueprintBlockTags.LEAF_PILES).add(HOLLY_LEAF_PILE.get(), CHESTNUT_LEAF_PILE.get());
