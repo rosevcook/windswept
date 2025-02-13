@@ -1,7 +1,6 @@
 package com.rosemods.windswept.common.effect;
 
 import com.google.common.collect.ImmutableList;
-import com.sun.jna.platform.win32.OaIdl;
 import com.teamabnormals.blueprint.common.effect.BlueprintMobEffect;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -19,19 +18,14 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.stream.Stream;
 
 public class PlentyEffect extends BlueprintMobEffect {
     protected PlentyEffect(MobEffectCategory p_19451_, int p_19452_) {
