@@ -1,19 +1,52 @@
 {
-  "variants": {
-    "state=1": {
-      "model": "windswept:block/christmas_pudding_1"
+  "multipart": [
+    {
+      "apply": {
+        "model": "windswept:block/christmas_pudding_4"
+      },
+      "when": {
+        "state": "4"
+      }
     },
-    "state=2": {
-      "model": "windswept:block/christmas_pudding_2"
+    {
+      "apply": {
+        "model": "windswept:block/christmas_pudding_3"
+      },
+      "when": {
+        "state": "3"
+      }
     },
-    "state=3": {
-      "model": "windswept:block/christmas_pudding_3"
+    {
+      "apply": {
+        "model": "windswept:block/christmas_pudding_2"
+      },
+      "when": {
+        "state": "2"
+      }
     },
-    "state=4": {
-      "model": "windswept:block/christmas_pudding_4"
+    {
+      "apply": {
+        "model": "windswept:block/christmas_pudding_1"
+      },
+      "when": {
+        "state": "1"
+      }
     },
-    "state=fire": {
-      "model": "windswept:block/christmas_pudding_fire"
+    {
+      "apply": {
+        "model": "windswept:block/christmas_pudding_4"
+      },
+      "when": {
+        "state": "fire"
+      }
+    },
+    {
+      "apply": {
+        "model": "windswept:block/christmas_pudding_fire"
+      },
+      "when": {
+        "state": "fire"
+      }
     }
-  }
+  ]
 }
