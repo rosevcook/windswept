@@ -1,6 +1,5 @@
 package com.rosemods.windswept.common.entity.projectile;
 
-import com.rosemods.windswept.core.other.WindsweptDataProcessors;
 import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.rosemods.windswept.core.registry.WindsweptParticleTypes;
@@ -62,7 +61,6 @@ public class CupidsArrow extends AbstractArrow {
     protected void onHitEntity(EntityHitResult result) {
         Entity entity = result.getEntity();
 
-
         if (entity instanceof Animal animal && animal.canFallInLove() && !animal.isBaby()) {
             hitAnimalWithoutPanic(animal, () -> super.onHitEntity(result));
             animal.setInLove(null);
@@ -94,7 +92,7 @@ public class CupidsArrow extends AbstractArrow {
         return WindsweptItems.CUPIDS_ARROW.get().getDefaultInstance();
     }
 
-    private static void hitAnimalWithoutPanic(Animal animal, Runnable damageFunc) {
+  private static void hitAnimalWithoutPanic(Animal animal, Runnable damageFunc) {
         // the goal police does not run
         IDataManager animalData = (IDataManager) animal;
         animalData.setValue(WindsweptDataProcessors.CANNOT_PANIC, true);
@@ -108,4 +106,5 @@ public class CupidsArrow extends AbstractArrow {
 
         animalData.setValue(WindsweptDataProcessors.CANNOT_PANIC, false);
     }
+
 }
