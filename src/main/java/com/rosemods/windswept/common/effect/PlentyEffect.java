@@ -19,7 +19,6 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
@@ -27,8 +26,6 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class PlentyEffect extends BlueprintMobEffect {
     protected PlentyEffect(MobEffectCategory p_19451_, int p_19452_) {
@@ -38,14 +35,12 @@ public class PlentyEffect extends BlueprintMobEffect {
     public static void tryLeavePlentyFlowers(Level level, LivingEntity player, BlockPos realPos, int plentyAmp) {
         // affected blocks should find the farmland and also empty grass blocks,
         List<BlockState> flowerStates = flowersThatCanSpawnInBiome(level, realPos);
-
         double modifier = 1.6 + (plentyAmp * 0.7);
 
         for (BlockPos affectedPos : getToPlacePos(player)) {
             // account for jumping (maybe?)
-            if (!player.isOnGround() && level.getBlockState(affectedPos).isAir()) {
+            if (!player.isOnGround() && level.getBlockState(affectedPos).isAir())
                 affectedPos = affectedPos.below();
-            }
 
 //            if (player.getItemInHand(InteractionHand.MAIN_HAND).is(Items.ACACIA_BOAT)) {
 //                level.setBlock(affectedPos, Blocks.DIAMOND_BLOCK.defaultBlockState(), 3);
@@ -58,15 +53,14 @@ public class PlentyEffect extends BlueprintMobEffect {
 
                 boolean didPlace = false;
 
-                if (aboveState.getBlock() instanceof CropBlock)  {
+                if (aboveState.getBlock() instanceof CropBlock) {
                     int age = aboveState.getValue(CropBlock.AGE);
                     age = Math.min(CropBlock.MAX_AGE, age + level.random.nextInt(1, 4));
                     level.setBlock(abovePos, aboveState.setValue(CropBlock.AGE, age), Block.UPDATE_ALL);
 
                     level.levelEvent(1505, abovePos, 0);
                     didPlace = true;
-                }
-                else {
+                } else {
                     BlockState flower = flowerStates.get(level.random.nextInt(flowerStates.size()));
                     // idk should it maybe work if there's snow covering
                     if (flower.canSurvive(level, abovePos) && aboveState.isAir()) {
@@ -105,9 +99,8 @@ public class PlentyEffect extends BlueprintMobEffect {
 
         // account for slabs
         double extraY = playerVec.y - Mth.floor(playerVec.y);
-        if (!player.isOnGround() || extraY <= 0.4) {
+        if (!player.isOnGround() || extraY <= 0.4)
             playerVec = playerVec.add(0, -1, 0);
-        }
 
         // default constructor floors everything
         BlockPos lowerPos = new BlockPos(playerVec);
@@ -126,8 +119,7 @@ public class PlentyEffect extends BlueprintMobEffect {
                 DoublePlantBlock.placeAt(level, tallGrass, pos, 3);
                 level.levelEvent(1505, pos, 0);
             }
-        }
-        else {
+        } else {
             BlockState grass = Blocks.GRASS.defaultBlockState();
             if (level.getBlockState(pos).isAir() && grass.canSurvive(level, pos)) {
                 level.setBlock(pos, grass, 3);
@@ -135,9 +127,9 @@ public class PlentyEffect extends BlueprintMobEffect {
             }
         }
 
-        if (level.getBlockState(pos.below()).is(BlockTags.CONVERTABLE_TO_MUD)) {
+        if (level.getBlockState(pos.below()).is(BlockTags.CONVERTABLE_TO_MUD))
             level.setBlock(pos.below(), Blocks.GRASS_BLOCK.defaultBlockState(), Block.UPDATE_ALL);
-        }
+
     }
 
     private static List<BlockState> flowersThatCanSpawnInBiome(Level level, BlockPos pos) {
@@ -156,7 +148,7 @@ public class PlentyEffect extends BlueprintMobEffect {
     }
 
     private static List<BlockState> getDefaultFlowers() {
-        return ForgeRegistries.BLOCKS.getValues().stream().filter(block -> block.builtInRegistryHolder().is(WindsweptBlockTags.PLENTY_DEFAULT_FLOWERS))
+        return ForgeRegistries.BLOCKS.getValues().stream().filter(block -> block.builtInRegistryHolder().is(BlockTags.SMALL_FLOWERS))
                 .map(Block::defaultBlockState).collect(ImmutableList.toImmutableList());
     }
 }

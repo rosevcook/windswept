@@ -9,6 +9,7 @@ public final class WindsweptDataProcessors {
     public static final TrackedData<Integer> FREEZE_CONVERT_TIME = TrackedData.Builder.create(DataProcessors.INT, () -> 0).enableSaving().build();
     public static final TrackedData<Integer> POWDER_SNOW_TIME = TrackedData.Builder.create(DataProcessors.INT, () -> 0).enableSaving().build();
     public static final TrackedData<Boolean> IS_FREEZE_CONVERTING = TrackedData.Builder.create(DataProcessors.BOOLEAN, () -> false).enableSaving().build();
+    public static final TrackedData<Boolean> CANNOT_PANIC = TrackedData.Builder.create(DataProcessors.BOOLEAN, () -> false).build();
 
     public static void registerData() {
         register("freeze_convert_time", FREEZE_CONVERT_TIME);

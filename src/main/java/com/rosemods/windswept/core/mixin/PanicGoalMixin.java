@@ -1,7 +1,9 @@
 package com.rosemods.windswept.core.mixin;
 
 import com.rosemods.windswept.common.entity.animal.Frostbiter;
+import com.rosemods.windswept.core.other.WindsweptDataProcessors;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
+import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;

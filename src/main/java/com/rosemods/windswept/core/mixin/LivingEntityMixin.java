@@ -1,6 +1,5 @@
 package com.rosemods.windswept.core.mixin;
 
-import com.rosemods.windswept.common.block.GingerCropBlock;
 import com.rosemods.windswept.common.effect.PlentyEffect;
 import com.rosemods.windswept.common.enchantment.curse.SlippingCurseEnchantment;
 import com.rosemods.windswept.common.item.AntlerHelmetItem;
@@ -17,7 +16,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -80,10 +78,8 @@ public abstract class LivingEntityMixin extends Entity {
         AntlerHelmetItem.tryAddSprintDamage(entity);
         SlippingCurseEnchantment.attemptDamageBoots(entity);
 
-        if (entity.getEffect(WindsweptEffects.PLENTY.get()) != null) {
-            int amp =  Objects.requireNonNull(entity.getEffect(WindsweptEffects.PLENTY.get())).getAmplifier();
-            PlentyEffect.tryLeavePlentyFlowers(level, entity, pos, amp);
-        }
+        if (entity.getEffect(WindsweptEffects.PLENTY.get()) != null)
+            PlentyEffect.tryLeavePlentyFlowers(level, entity, pos, entity.getEffect(WindsweptEffects.PLENTY.get()).getAmplifier());
     }
 
     @Inject(method = "checkFallDamage", at = @At("HEAD"))

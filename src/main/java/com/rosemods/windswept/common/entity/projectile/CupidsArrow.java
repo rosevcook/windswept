@@ -1,12 +1,12 @@
 package com.rosemods.windswept.common.entity.projectile;
 
+import com.rosemods.windswept.core.other.WindsweptDataProcessors;
 import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.rosemods.windswept.core.registry.WindsweptParticleTypes;
 import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -70,14 +70,13 @@ public class CupidsArrow extends AbstractArrow {
 
     @Override
     protected void doPostHurtEffects(LivingEntity living) {
-        if (this.level.isClientSide) {
+        if (this.level.isClientSide)
             for (int i = 0; i < 6; ++i) {
                 double d0 = this.level.random.nextGaussian() * 0.02D;
                 double d1 = this.level.random.nextGaussian() * 0.02D;
                 double d2 = this.level.random.nextGaussian() * 0.02D;
                 this.level.addParticle(ParticleTypes.HEART, living.getRandomX(1.0D), living.getRandomY() + 0.5D, living.getRandomZ(1.0D), d0, d1, d2);
             }
-        }
 
         if (!living.isInvertedHealAndHarm())
             living.heal(6.0f);
@@ -92,7 +91,7 @@ public class CupidsArrow extends AbstractArrow {
         return WindsweptItems.CUPIDS_ARROW.get().getDefaultInstance();
     }
 
-  private static void hitAnimalWithoutPanic(Animal animal, Runnable damageFunc) {
+    private static void hitAnimalWithoutPanic(Animal animal, Runnable damageFunc) {
         // the goal police does not run
         IDataManager animalData = (IDataManager) animal;
         animalData.setValue(WindsweptDataProcessors.CANNOT_PANIC, true);
@@ -101,7 +100,8 @@ public class CupidsArrow extends AbstractArrow {
 
         animal.setLastHurtByMob(null);
         animal.goalSelector.getRunningGoals().forEach(goal -> {
-            if (goal.getGoal() instanceof PanicGoal) goal.stop();
+            if (goal.getGoal() instanceof PanicGoal)
+                goal.stop();
         });
 
         animalData.setValue(WindsweptDataProcessors.CANNOT_PANIC, false);

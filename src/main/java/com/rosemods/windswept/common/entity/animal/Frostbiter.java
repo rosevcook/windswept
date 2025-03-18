@@ -218,8 +218,7 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
                 this.dropSaddle();
                 this.playSound(SoundEvents.SNOW_GOLEM_SHEAR);
                 stack.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(hand));
-            }
-            else if (!this.level.isClientSide)
+            } else if (!this.level.isClientSide)
                 player.startRiding(this);
 
             return InteractionResult.sidedSuccess(this.level.isClientSide);

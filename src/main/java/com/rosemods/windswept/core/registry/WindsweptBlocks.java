@@ -365,7 +365,7 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> DRY_MOSSY_COBBLESTONE_TILE_SLAB = HELPER.createInjectedBlock("dry_mossy_cobblestone_tile_slab", Items.MOSSY_STONE_BRICK_SLAB, () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICKS)), ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.CAVERNS_AND_CHASMS) ? CreativeModeTab.TAB_BUILDING_BLOCKS : null);
     public static final RegistryObject<Block> DRY_MOSSY_COBBLESTONE_TILE_WALL = HELPER.createInjectedBlock("dry_mossy_cobblestone_tile_wall", Items.MOSSY_STONE_BRICK_WALL, () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICKS)), ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.CAVERNS_AND_CHASMS) ? CreativeModeTab.TAB_BUILDING_BLOCKS : null);
     public static final RegistryObject<Block> DRY_MOSSY_COBBLESTONE_TILE_VERTICAL_SLAB = HELPER.createCompatBlock("dry_mossy_cobblestone_tile_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICKS)), CreativeModeTab.TAB_BUILDING_BLOCKS, WindsweptConstants.QUARK, WindsweptConstants.CAVERNS_AND_CHASMS);
-    
+
     // Compressed Blocks //
     public static final RegistryObject<Block> CHESTNUT_CRATE = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "chestnut_crate", () -> new WindsweptCompressedBlock(Properties.CRATE), 300, CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> ROASTED_CHESTNUT_CRATE = HELPER.createCompatFuelBlock(WindsweptConstants.QUARK, "roasted_chestnut_crate", () -> new WindsweptCompressedBlock(Properties.CRATE), 300, CreativeModeTab.TAB_DECORATIONS);
