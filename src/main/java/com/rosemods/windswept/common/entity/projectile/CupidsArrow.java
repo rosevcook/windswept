@@ -3,7 +3,11 @@ package com.rosemods.windswept.common.entity.projectile;
 import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.rosemods.windswept.core.registry.WindsweptParticleTypes;
+import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.PanicGoal;
@@ -13,7 +17,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.network.PlayMessages;
 
 public class CupidsArrow extends AbstractArrow {
@@ -56,23 +59,52 @@ public class CupidsArrow extends AbstractArrow {
 
     @Override
     protected void onHitEntity(EntityHitResult result) {
-        if (result.getEntity() instanceof LivingEntity living) {
-            if (living.isInvertedHealAndHarm()) {
-                DamageSource source = getOwner() == null ? DamageSource.indirectMagic(living, this.getOwner()) : DamageSource.MAGIC;
-                living.hurt(source, 8.0f);
-            } else
-                living.heal(6.0f);
+        Entity entity = result.getEntity();
 
-            if (living instanceof Animal animal && animal.canFallInLove() && !animal.isBaby())
-                animal.setInLove(null);
-
+        if (entity instanceof Animal animal && animal.canFallInLove() && !animal.isBaby()) {
+            hitAnimalWithoutPanic(animal, () -> super.onHitEntity(result));
+            animal.setInLove(null);
+        } else
             super.onHitEntity(result);
+    }
+
+    @Override
+    protected void doPostHurtEffects(LivingEntity living) {
+        if (this.level.isClientSide) {
+            for (int i = 0; i < 6; ++i) {
+                double d0 = this.level.random.nextGaussian() * 0.02D;
+                double d1 = this.level.random.nextGaussian() * 0.02D;
+                double d2 = this.level.random.nextGaussian() * 0.02D;
+                this.level.addParticle(ParticleTypes.HEART, living.getRandomX(1.0D), living.getRandomY() + 0.5D, living.getRandomZ(1.0D), d0, d1, d2);
+            }
+        }
+
+        if (!living.isInvertedHealAndHarm())
+            living.heal(6.0f);
+        else {
+            DamageSource source = getOwner() == null ? DamageSource.MAGIC : DamageSource.indirectMagic(living, this.getOwner());
+            living.hurt(source, 8.0f);
         }
     }
 
     @Override
     protected ItemStack getPickupItem() {
         return WindsweptItems.CUPIDS_ARROW.get().getDefaultInstance();
+    }
+
+  private static void hitAnimalWithoutPanic(Animal animal, Runnable damageFunc) {
+        // the goal police does not run
+        IDataManager animalData = (IDataManager) animal;
+        animalData.setValue(WindsweptDataProcessors.CANNOT_PANIC, true);
+
+        damageFunc.run();
+
+        animal.setLastHurtByMob(null);
+        animal.goalSelector.getRunningGoals().forEach(goal -> {
+            if (goal.getGoal() instanceof PanicGoal) goal.stop();
+        });
+
+        animalData.setValue(WindsweptDataProcessors.CANNOT_PANIC, false);
     }
 
 }

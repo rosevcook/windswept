@@ -23,6 +23,10 @@ public class PanicGoalMixin {
 
     @Inject(method = "canUse", at = @At("HEAD"), cancellable = true)
     private void canUse(CallbackInfoReturnable<Boolean> info) {
+        IDataManager iDataManager = (IDataManager) mob;
+        if (iDataManager.getValue(WindsweptDataProcessors.CANNOT_PANIC))
+            info.setReturnValue(false);
+
         AABB radius = new AABB(this.mob.blockPosition()).inflate(2);
 
         for (LivingEntity entity : this.mob.level.getEntitiesOfClass(LivingEntity.class, radius))
@@ -36,7 +40,6 @@ public class PanicGoalMixin {
                 info.setReturnValue(true);
                 return;
             }
-
     }
 
 }

@@ -28,6 +28,7 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.ResetUniversalAngerTargetGoal;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
@@ -37,6 +38,7 @@ import net.minecraft.world.item.enchantment.FrostWalkerEnchantment;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.common.Tags;
 
 import java.util.UUID;
 
@@ -212,16 +214,25 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
         ItemStack stack = player.getItemInHand(hand);
 
         if (this.isSaddled() && !this.isVehicle() && !player.isSecondaryUseActive()) {
-            if (!this.level.isClientSide)
+            if (stack.is(Tags.Items.SHEARS)) {
+                this.dropSaddle();
+                this.playSound(SoundEvents.SNOW_GOLEM_SHEAR);
+                stack.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(hand));
+            }
+            else if (!this.level.isClientSide)
                 player.startRiding(this);
 
             return InteractionResult.sidedSuccess(this.level.isClientSide);
-        } else if (stack.is(Items.BUCKET) && !this.isBaby()) {
+        }
+
+        if (stack.is(Items.BUCKET) && !this.isBaby()) {
             player.playSound(SoundEvents.COW_MILK, 1f, 1f);
             player.setItemInHand(hand, ItemUtils.createFilledResult(stack, player, Items.MILK_BUCKET.getDefaultInstance()));
 
             return InteractionResult.sidedSuccess(this.level.isClientSide);
-        } else if (!this.isTame() && stack.is(WindsweptItems.HOLLY_BERRIES.get())) {
+        }
+
+        if (!this.isTame() && stack.is(WindsweptItems.HOLLY_BERRIES.get())) {
             if (this.random.nextInt(4) == 0) {
                 this.setTame(true);
                 this.setOwnerUUID(player.getUUID());
@@ -236,13 +247,9 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
             }
 
             return InteractionResult.SUCCESS;
-        } else {
-            InteractionResult interactionresult = super.mobInteract(player, hand);
-
-            return !interactionresult.consumesAction() ? (stack.is(Items.SADDLE) ?
-                    stack.interactLivingEntity(player, this, hand) : InteractionResult.PASS) : interactionresult;
         }
 
+        return super.mobInteract(player, hand);
     }
 
     @Override
@@ -395,6 +402,19 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
         return super.getPassengersRidingOffset() * 1.25d;
     }
 
+    protected void dropSaddle() {
+        super.dropEquipment();
+        this.setSaddled(false);
+        ItemEntity saddle = new ItemEntity(this.level, this.getX(), this.getY() + 2, this.getZ(), new ItemStack(Items.SADDLE));
+        saddle.setDefaultPickUpDelay();
+        if (this.level.addFreshEntity(saddle)) {
+            saddle.setDeltaMovement(saddle.getDeltaMovement().add(
+                    (this.random.nextFloat() - this.random.nextFloat()) * 0.2F,
+                    this.random.nextFloat() * 0.1F,
+                    (this.random.nextFloat() - this.random.nextFloat()) * 0.2F));
+        }
+    }
+
     public class FrostbiterPanicGoal extends PanicGoal {
         public FrostbiterPanicGoal() {
             super(Frostbiter.this, 2.2d);
@@ -404,7 +424,6 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
         protected boolean shouldPanic() {
             return this.mob.isBaby() && super.shouldPanic();
         }
-
     }
 
     public class FrostbiterMeleeAttackGoal extends MeleeAttackGoal {

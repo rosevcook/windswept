@@ -64,9 +64,10 @@ public class WindsweptEntityEvents {
                 attacker.hurt(DamageSource.thorns(entity), ThornsEnchantment.getDamage(amplifier, rand));
         }
 
-        // cupids arrow
-        if (event.getSource().getDirectEntity() instanceof CupidsArrow)
+        // cupid arrow
+        if (event.getSource().getDirectEntity() instanceof CupidsArrow && !entity.isInvertedHealAndHarm()) {
             event.setAmount(0);
+        }
     }
 
     @SubscribeEvent

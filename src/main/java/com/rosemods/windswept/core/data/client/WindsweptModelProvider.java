@@ -19,6 +19,7 @@ import net.minecraft.world.level.block.state.properties.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.client.model.generators.MultiPartBlockStateBuilder;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -285,12 +286,18 @@ public class WindsweptModelProvider extends BlockStateProvider {
         this.wreath(PINECONE_WREATH);
         this.wreath(VINE_WREATH);
         this.wreath(CHERRY_WREATH);
-        this.getVariantBuilder(CHRISTMAS_PUDDING.get())
-                .partialState().with(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.FIRE).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/christmas_pudding_fire"))))
-                .partialState().with(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.FOUR).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/christmas_pudding_4"))))
-                .partialState().with(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.THREE).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/christmas_pudding_3"))))
-                .partialState().with(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.TWO).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/christmas_pudding_2"))))
-                .partialState().with(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.ONE).addModels(new ConfiguredModel(this.models().getExistingFile(this.modLoc("block/christmas_pudding_1"))));
+
+        MultiPartBlockStateBuilder builder = this.getMultipartBuilder(CHRISTMAS_PUDDING.get());
+        builder.part().modelFile(new ModelFile.ExistingModelFile(this.modLoc("block/christmas_pudding_4"), this.models().existingFileHelper)).addModel().condition(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.FOUR);
+        builder.part().modelFile(new ModelFile.ExistingModelFile(this.modLoc("block/christmas_pudding_3"), this.models().existingFileHelper)).addModel().condition(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.THREE);
+        builder.part().modelFile(new ModelFile.ExistingModelFile(this.modLoc("block/christmas_pudding_2"), this.models().existingFileHelper)).addModel().condition(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.TWO);
+        builder.part().modelFile(new ModelFile.ExistingModelFile(this.modLoc("block/christmas_pudding_1"), this.models().existingFileHelper)).addModel().condition(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.ONE);
+
+        builder.part().modelFile(new ModelFile.ExistingModelFile(this.modLoc("block/christmas_pudding_4"), this.models().existingFileHelper))
+                .addModel().condition(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.FIRE);
+        builder.part().modelFile(new ModelFile.ExistingModelFile(this.modLoc("block/christmas_pudding_fire"), this.models().existingFileHelper))
+                .addModel().condition(ChristmasPuddingBlock.STATE, ChristmasPuddingBlock.PuddingStates.FIRE).end();
+
         this.generatedItem(CHRISTMAS_PUDDING.get(), TextureFolder.ITEM);
         this.horizontalBlock(FROSTBITER_TROPHY.get(), this.models().getExistingFile(this.modLoc("block/frostbiter_trophy")));
         this.generatedItem(FROSTBITER_TROPHY.get(), TextureFolder.ITEM);

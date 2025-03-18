@@ -27,12 +27,21 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class ChristmasPuddingBlock extends Block {
     public static final EnumProperty<PuddingStates> STATE = EnumProperty.create("state", PuddingStates.class);
     private static final VoxelShape SHAPE = Block.box(2f, 0f, 2f, 14f, 8f, 14f);
+    private static final VoxelShape[] SHAPE_BY_BITES = {
+            Block.box(2, 0, 2, 8, 8, 8),
+            Block.box(2, 0, 2, 8, 8, 14),
+            Shapes.join(Block.box(2, 0, 2, 8, 8, 14),
+                    Block.box(8, 0, 8, 14, 8, 14), BooleanOp.OR),
+            SHAPE
+    };
 
     public ChristmasPuddingBlock(Properties properties) {
         super(properties);
@@ -41,7 +50,15 @@ public class ChristmasPuddingBlock extends Block {
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return SHAPE;
+        int index;
+        if (state.getValue(STATE) == PuddingStates.FIRE) {
+            index = 3;
+        }
+        else {
+            index = Integer.parseInt(state.getValue(STATE).getSerializedName()) - 1;
+        }
+
+        return SHAPE_BY_BITES[index];
     }
 
     @Override
