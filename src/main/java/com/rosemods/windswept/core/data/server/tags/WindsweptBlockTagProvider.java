@@ -35,6 +35,9 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
                 .addOptional(new ResourceLocation("caverns_and_chasms", "azalea_wall_sign"));
         this.tag(WindsweptBlockTags.PLENTY_CANNOT_PLACE);
 
+        //farmersdelight
+        this.tag(WindsweptBlockTags.MINEABLE_KNIFE).add(CHRISTMAS_PUDDING.get());
+
         //woodworks
         this.tag(BlueprintBlockTags.LEAF_PILES).add(HOLLY_LEAF_PILE.get(), CHESTNUT_LEAF_PILE.get());
 
