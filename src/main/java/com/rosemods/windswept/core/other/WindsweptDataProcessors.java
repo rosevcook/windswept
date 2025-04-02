@@ -15,6 +15,7 @@ public final class WindsweptDataProcessors {
         register("freeze_convert_time", FREEZE_CONVERT_TIME);
         register("powder_snow_time", POWDER_SNOW_TIME);
         register("is_freeze_converting", IS_FREEZE_CONVERTING);
+        register("cannot_panic", CANNOT_PANIC);
     }
 
     private static void register(String name, TrackedData<?> data) {
