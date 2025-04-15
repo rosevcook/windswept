@@ -1,5 +1,6 @@
 package com.rosemods.windswept.common.block;
 
+import com.rosemods.windswept.core.other.tags.WindsweptItemTags;
 import com.rosemods.windswept.core.registry.WindsweptEffects;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import net.minecraft.core.BlockPos;
@@ -54,6 +55,19 @@ public class ChristmasPuddingBlock extends Block {
         return SHAPE_BY_BITES[state.getValue(STATE).getIndex()];
     }
 
+    private void takeOneSlice(BlockState state, Player player, Level level, BlockPos pos) {
+        switch (state.getValue(STATE)) {
+            case FOUR -> level.setBlock(pos, state.setValue(STATE, PuddingStates.THREE), 3);
+            case THREE -> level.setBlock(pos, state.setValue(STATE, PuddingStates.TWO), 3);
+            case TWO -> level.setBlock(pos, state.setValue(STATE, PuddingStates.ONE), 3);
+            case ONE -> {
+                level.removeBlock(pos, false);
+                level.gameEvent(player, GameEvent.BLOCK_DESTROY, pos);
+                popResourceFromFace(level, pos.offset(.5f, -.5f, .5f), Direction.UP, WindsweptItems.HOLLY_BERRIES.get().getDefaultInstance());
+            }
+        }
+    }
+
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
         ItemStack stack = player.getItemInHand(hand);
@@ -67,22 +81,20 @@ public class ChristmasPuddingBlock extends Block {
                 stack.hurt(1, level.getRandom(), (ServerPlayer) player);
 
             return InteractionResult.SUCCESS;
+        } else if (puddingState != PuddingStates.FIRE && stack.is(WindsweptItemTags.KNIVES)) {
+            takeOneSlice(state, player, level, pos);
+            level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
+            level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
+
+            popResourceFromFace(level, pos.offset(.5f, -.5f, .5f), Direction.UP,
+                    WindsweptItems.CHRISTMAS_PUDDING_SLICE.get().getDefaultInstance());
+            return InteractionResult.SUCCESS;
         } else if (puddingState != PuddingStates.FIRE && player.canEat(false)) {
             player.awardStat(Stats.EAT_CAKE_SLICE);
             player.getFoodData().eat(2, .1f);
             player.addEffect(new MobEffectInstance(WindsweptEffects.THORNS.get(), 400, 0));
             level.gameEvent(player, GameEvent.EAT, pos);
-
-            switch (puddingState) {
-                case FOUR -> level.setBlock(pos, state.setValue(STATE, PuddingStates.THREE), 3);
-                case THREE -> level.setBlock(pos, state.setValue(STATE, PuddingStates.TWO), 3);
-                case TWO -> level.setBlock(pos, state.setValue(STATE, PuddingStates.ONE), 3);
-                case ONE -> {
-                    level.removeBlock(pos, false);
-                    level.gameEvent(player, GameEvent.BLOCK_DESTROY, pos);
-                    popResourceFromFace(level, pos.offset(.5f, -.5f, .5f), Direction.UP, WindsweptItems.HOLLY_BERRIES.get().getDefaultInstance());
-                }
-            }
+            takeOneSlice(state, player, level, pos);
 
             return InteractionResult.SUCCESS;
         } else if (puddingState == PuddingStates.FIRE && stack.isEmpty()) {

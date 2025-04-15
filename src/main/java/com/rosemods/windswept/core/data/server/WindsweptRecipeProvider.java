@@ -110,6 +110,7 @@ public class WindsweptRecipeProvider extends RecipeProvider {
         ShapedRecipeBuilder.shaped(VINE_WREATH.get()).define('#', Items.VINE).define('B', FROZEN_BRANCH.get()).pattern(" # ").pattern("#B#").pattern(" # ").unlockedBy(getHasName(Items.VINE), has(Items.VINE)).save(consumer, getSaveLocation(VINE_WREATH.get()));
 
         // blocks
+        ShapelessRecipeBuilder.shapeless(GINGER_SOIL.get()).requires(Items.DIRT).requires(GINGER_ROOT.get()).unlockedBy(getHasName(GINGER_ROOT.get()), has(GINGER_ROOT.get())).save(consumer, getSaveLocation(GINGER_SOIL.get()));
         ShapedRecipeBuilder.shaped(ICE_SHEET.get(), 12).define('#', Items.ICE).pattern("###").pattern("###").unlockedBy(getHasName(Items.ICE), has(Items.ICE)).save(consumer, getSaveLocation(ICE_SHEET.get()));
         ShapedRecipeBuilder.shaped(FROSTBITER_TROPHY.get()).define('#', FROZEN_BRANCH.get()).define('P', ItemTags.PLANKS).pattern("# #").pattern("#P#").unlockedBy(getHasName(FROZEN_BRANCH.get()), has(FROZEN_BRANCH.get())).save(consumer, getSaveLocation(FROSTBITER_TROPHY.get()));
         ShapedRecipeBuilder.shaped(DRY_MOSS_CARPET.get(), 3).define('#', DRY_MOSS_BLOCK.get()).pattern("##").unlockedBy(getHasName(DRY_MOSS_BLOCK.get()), has(DRY_MOSS_BLOCK.get())).save(consumer, getSaveLocation(DRY_MOSS_CARPET.get()));

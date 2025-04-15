@@ -1,6 +1,10 @@
 package com.rosemods.windswept.core.mixin;
 
 import com.rosemods.windswept.core.WindsweptConfig;
+import com.rosemods.windswept.core.other.WindsweptDamageSources;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -10,6 +14,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Player.class)
 public abstract class PlayerMixin extends LivingEntity {
@@ -23,4 +28,10 @@ public abstract class PlayerMixin extends LivingEntity {
             this.setTicksFrozen(this.getTicksFrozen() + (this.random.nextBoolean() ? 2 : 3));
     }
 
+    @Inject(method = "getHurtSound", at = @At("RETURN"), cancellable = true)
+    private void getHurtSound(DamageSource source, CallbackInfoReturnable<SoundEvent> cir) {
+        if (source == WindsweptDamageSources.HOLLY_LEAVES) {
+            cir.setReturnValue(SoundEvents.PLAYER_HURT_SWEET_BERRY_BUSH);
+        }
+    }
 }

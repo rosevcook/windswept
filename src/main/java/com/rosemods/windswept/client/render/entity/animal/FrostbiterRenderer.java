@@ -24,7 +24,7 @@ public class FrostbiterRenderer extends MobRenderer<Frostbiter, FrostbiterModel>
         String name = ChatFormatting.stripFormatting(frostbiter.getName().getString());
 
         if (name != null)
-            switch (name) {
+            switch (name.toLowerCase()) {
                 case "buddy":
                     return FROSTBITER_BUDDY_LOCATION;
                 case "binome":

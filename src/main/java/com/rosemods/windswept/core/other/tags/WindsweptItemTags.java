@@ -22,4 +22,5 @@ public final class WindsweptItemTags {
     public static final TagKey<Item> ROSES = TagUtil.itemTag(Windswept.MOD_ID, "roses");
     public static final TagKey<Item> WOODEN_CABINETS = TagUtil.itemTag("farmersdelight", "cabinets/wooden");
 
+    public static final TagKey<Item> KNIVES = TagUtil.itemTag("farmersdelight", "tools/knives");
 }

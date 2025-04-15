@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_glazed_gingerbread_block": {
+    "has_ginger_root": {
       "conditions": {
         "items": [
           {
             "items": [
-              "windswept:glazed_gingerbread_block"
+              "windswept:ginger_root"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "windswept:glazed_gingerbread_bricks"
+        "recipe": "windswept:ginger_soil"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_glazed_gingerbread_block",
+      "has_ginger_root",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "windswept:glazed_gingerbread_bricks"
+      "windswept:ginger_soil"
     ]
   }
 }

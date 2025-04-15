@@ -67,6 +67,7 @@ public final class WindsweptBiomeModifier {
 
         // spawns
         addSpawn("chilled", Tags.Biomes.IS_SNOWY, WindsweptEntityTypes.CHILLED, 5, 3, 7);
+        addSpawn("frostbiter", Tags.Biomes.IS_SNOWY, WindsweptEntityTypes.FROSTBITER, 3, 1, 3);
 
         // removed features
         removeFeature("grove_spruce_trees", Biomes.GROVE, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_GROVE);
