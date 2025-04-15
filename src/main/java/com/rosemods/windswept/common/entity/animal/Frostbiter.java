@@ -33,6 +33,7 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.ResetUniversalAngerTargetGoal;
+import net.minecraft.world.entity.animal.PolarBear;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -45,6 +46,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.Nullable;
@@ -68,6 +70,11 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
         this.setTame(false);
         this.setLeftAntler(true);
         this.setRightAntler(true);
+    }
+
+    @Override
+    protected AABB makeBoundingBox() {
+        return super.makeBoundingBox();
     }
 
     @Override
@@ -253,6 +260,7 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
                 this.usePlayerItem(player, hand, stack);
                 this.level.broadcastEntityEvent(this, (byte) 6);
             }
+            this.level.playSound(null, this.getX(), this.getY(), this.getZ(), this.getEatingSound(stack), this.getSoundSource(), 1.0F, 1.0F + (this.random.nextFloat() - this.random.nextFloat()) * 0.2F);
 
             return InteractionResult.SUCCESS;
         }
@@ -316,6 +324,11 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
     @Override
     protected float getStandingEyeHeight(Pose pos, EntityDimensions dimensions) {
         return this.isBaby() ? dimensions.height * .95f : 1.3f;
+    }
+
+    @Override
+    public SoundEvent getEatingSound(ItemStack p_21202_) {
+        return SoundEvents.LLAMA_EAT;
     }
 
     public static AttributeSupplier.Builder createFrostbiterAttributes() {
