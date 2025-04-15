@@ -32,7 +32,6 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import vectorwing.farmersdelight.common.tag.ModTags;
 
 public class ChristmasPuddingBlock extends Block {
     public static final EnumProperty<PuddingStates> STATE = EnumProperty.create("state", PuddingStates.class);

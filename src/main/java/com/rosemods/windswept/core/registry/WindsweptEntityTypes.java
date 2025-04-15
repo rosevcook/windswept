@@ -44,7 +44,7 @@ public class WindsweptEntityTypes {
     @SubscribeEvent
     public static void registerSpawns(SpawnPlacementRegisterEvent event) {
         event.register(CHILLED.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.AND);
-        event.register(FROSTBITER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules, SpawnPlacementRegisterEvent.Operation.AND);
+        event.register(FROSTBITER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Frostbiter::checkFrostbiterSpawnRules, SpawnPlacementRegisterEvent.Operation.AND);
     }
 
     @OnlyIn(Dist.CLIENT)

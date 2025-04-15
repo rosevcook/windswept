@@ -7,6 +7,7 @@ import com.rosemods.windswept.core.registry.WindsweptPlayableEndimations;
 import com.teamabnormals.blueprint.core.endimator.Endimatable;
 import com.teamabnormals.blueprint.core.util.NetworkUtil;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -15,8 +16,12 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BiomeTags;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.util.TimeUtil;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
@@ -36,9 +41,13 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.enchantment.FrostWalkerEnchantment;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.Tags;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;
 
@@ -414,6 +423,24 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
         }
     }
 
+    public static boolean checkFrostbiterSpawnRules(EntityType<Frostbiter> frostbiter, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+        Holder<Biome> holder = level.getBiome(pos);
+        if (!holder.is(BiomeTags.POLAR_BEARS_SPAWN_ON_ALTERNATE_BLOCKS)) {
+            return checkAnimalSpawnRules(frostbiter, level, spawnType, pos, random);
+        } else {
+            return isBrightEnoughToSpawn(level, pos) && level.getBlockState(pos.below()).is(BlockTags.POLAR_BEARS_SPAWNABLE_ON_ALTERNATE);
+        }
+    }
+
+    @Override
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance diff, MobSpawnType spawnType, @Nullable SpawnGroupData spawnGroupData, @Nullable CompoundTag tag) {
+        if (spawnGroupData == null) {
+            spawnGroupData = new AgeableMob.AgeableMobGroupData(1.0F);
+        }
+
+        return super.finalizeSpawn(level, diff, spawnType, spawnGroupData, tag);
+    }
+
     public class FrostbiterPanicGoal extends PanicGoal {
         public FrostbiterPanicGoal() {
             super(Frostbiter.this, 2.2d);
@@ -437,5 +464,4 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
         }
 
     }
-
 }
