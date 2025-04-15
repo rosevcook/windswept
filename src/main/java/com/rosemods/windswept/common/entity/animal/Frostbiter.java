@@ -247,22 +247,27 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
             return InteractionResult.sidedSuccess(this.level.isClientSide);
         }
 
-        if (!this.isTame() && stack.is(WindsweptItems.HOLLY_BERRIES.get())) {
-            if (this.random.nextInt(4) == 0) {
-                this.setTame(true);
-                this.setOwnerUUID(player.getUUID());
-                this.usePlayerItem(player, hand, stack);
-                this.navigation.stop();
-                this.level.broadcastEntityEvent(this, (byte) 7);
+        if (stack.is(WindsweptItems.HOLLY_BERRIES.get())) {
+            if (!this.isTame()) {
+                if (this.random.nextInt(4) == 0) {
+                    this.setTame(true);
+                    this.setOwnerUUID(player.getUUID());
+                    this.usePlayerItem(player, hand, stack);
+                    this.navigation.stop();
+                    this.level.broadcastEntityEvent(this, (byte) 7);
 
-                //this.setOrderedToSit(true);
-            } else {
-                this.usePlayerItem(player, hand, stack);
-                this.level.broadcastEntityEvent(this, (byte) 6);
+                    //this.setOrderedToSit(true);
+                } else {
+                    this.usePlayerItem(player, hand, stack);
+                    this.level.broadcastEntityEvent(this, (byte) 6);
+                }
+                this.level.playSound(null, this.getX(), this.getY(), this.getZ(), this.getEatingSound(stack), this.getSoundSource(), 1.0F, 1.0F + (this.random.nextFloat() - this.random.nextFloat()) * 0.2F);
+
+                return InteractionResult.SUCCESS;
             }
-            this.level.playSound(null, this.getX(), this.getY(), this.getZ(), this.getEatingSound(stack), this.getSoundSource(), 1.0F, 1.0F + (this.random.nextFloat() - this.random.nextFloat()) * 0.2F);
-
-            return InteractionResult.SUCCESS;
+            else if (this.canFallInLove()) {
+                this.level.playSound(null, this.getX(), this.getY(), this.getZ(), this.getEatingSound(stack), this.getSoundSource(), 1.0F, 1.0F + (this.random.nextFloat() - this.random.nextFloat()) * 0.2F);
+            }
         }
 
         return super.mobInteract(player, hand);
