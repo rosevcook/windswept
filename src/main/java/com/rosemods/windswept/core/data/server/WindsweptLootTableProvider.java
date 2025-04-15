@@ -2,10 +2,12 @@ package com.rosemods.windswept.core.data.server;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
+import com.rosemods.windswept.common.block.ChristmasPuddingBlock;
 import com.rosemods.windswept.common.block.GingerCropBlock;
 import com.rosemods.windswept.common.block.LavenderBlock;
 import com.rosemods.windswept.common.block.PineconeBlock;
 import com.rosemods.windswept.core.Windswept;
+import com.rosemods.windswept.core.other.tags.WindsweptItemTags;
 import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock;
 import com.teamabnormals.blueprint.common.block.VerticalSlabBlock.VerticalSlabType;
@@ -26,6 +28,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.SweetBerryBushBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -42,6 +45,7 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
+import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
 import java.util.Map;
@@ -52,6 +56,7 @@ import java.util.stream.Collectors;
 
 import static com.rosemods.windswept.core.registry.WindsweptBlocks.*;
 import static com.rosemods.windswept.core.registry.WindsweptItems.*;
+import static net.minecraft.world.item.Items.*;
 
 public class WindsweptLootTableProvider extends LootTableProvider {
     private final Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet> blockTables = Pair.of(Blocks::new, LootContextParamSets.BLOCK);
@@ -317,7 +322,14 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 
             // decoration
             this.dropSelf(FROSTBITER_TROPHY.get());
-            this.add(CHRISTMAS_PUDDING.get(), LootTable.lootTable());
+            this.add(CHRISTMAS_PUDDING.get(), LootTable.lootTable().withPool(LootPool.lootPool()
+                    .add(LootItem.lootTableItem(CHRISTMAS_PUDDING_SLICE.get())
+                            .apply(ChristmasPuddingBlock.STATE.getPossibleValues(), value -> SetItemCountFunction
+                                    .setCount(ConstantValue.exactly(value.getIndex() + 1), false)
+                                    .when(stateCond(CHRISTMAS_PUDDING, ChristmasPuddingBlock.STATE, value))))
+                    .when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(WindsweptItemTags.KNIVES)))
+            ).withPool(LootPool.lootPool().add(LootItem.lootTableItem(HOLLY_BERRIES.get()))));
+
             this.dropSelf(HOLLY_WREATH.get());
             this.dropSelf(PINECONE_WREATH.get());
             this.dropSelf(VINE_WREATH.get());
@@ -508,6 +520,10 @@ public class WindsweptLootTableProvider extends LootTableProvider {
                                                             .hasProperty(VerticalSlabBlock.TYPE, VerticalSlabType.DOUBLE)))))));
         }
 
+        private static <V extends Comparable<V>> LootItemCondition.Builder stateCond(RegistryObject<? extends Block> block, Property<V> property, V v) {
+            return LootItemBlockStatePropertyCondition.hasBlockStateProperties(block.get())
+                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(property, v.toString()));
+        }
     }
 
     private static class Entities extends EntityLoot {
@@ -574,6 +590,18 @@ public class WindsweptLootTableProvider extends LootTableProvider {
                     .add(LootItem.lootTableItem(Items.BIRCH_SAPLING).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
                     .add(LootItem.lootTableItem(WOODEN_BUCKET.get()).setWeight(1).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))))
             ), builder);
+
+            register("village/village_frozen_house", LootTable.lootTable().withPool(LootPool.lootPool().setRolls(UniformGenerator.between(3f, 8f))
+                    .add(LootItem.lootTableItem(Items.EMERALD).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 4))))
+                    .add(LootItem.lootTableItem(GINGER_ROOT.get()).setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 4))))
+                    .add(LootItem.lootTableItem(SHALE.get()).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(3, 7))))
+                    .add(LootItem.lootTableItem(HOLLY_LOG.get()).setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+                    .add(LootItem.lootTableItem(BLUE_ICE_BRICKS.get()).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 3))))
+                    .add(LootItem.lootTableItem(BEETROOT_SEEDS).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 4))))
+                    .add(LootItem.lootTableItem(COAL).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 4))))
+                    .add(LootItem.lootTableItem(BLACK_WOOL).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 4))))
+                    .add(LootItem.lootTableItem(SNOWBALL).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 4))))
+                    .add(LootItem.lootTableItem(BEETROOT_SOUP))), builder);
         }
 
         private static void register(String name, LootTable.Builder lootTable, BiConsumer<ResourceLocation, Builder> builder) {

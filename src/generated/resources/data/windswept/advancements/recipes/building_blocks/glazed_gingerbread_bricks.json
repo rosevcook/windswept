@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_gingerbread_bricks": {
+    "has_glazed_gingerbread_block": {
       "conditions": {
         "items": [
           {
             "items": [
-              "windswept:gingerbread_bricks"
+              "windswept:glazed_gingerbread_block"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_gingerbread_bricks",
+      "has_glazed_gingerbread_block",
       "has_the_recipe"
     ]
   ],

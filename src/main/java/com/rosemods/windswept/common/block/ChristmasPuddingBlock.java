@@ -26,7 +26,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.BooleanOp;
@@ -107,16 +106,6 @@ public class ChristmasPuddingBlock extends Block {
         }
 
         return InteractionResult.PASS;
-    }
-
-    @Override
-    public void playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
-        if (player.getItemInHand(InteractionHand.MAIN_HAND).is(ModTags.KNIVES)) {
-            int number = state.getValue(STATE).getIndex() + 1;
-            popResourceFromFace(level, pos.offset(.5f, -.5f, .5f), Direction.UP,
-                    new ItemStack(WindsweptItems.CHRISTMAS_PUDDING_SLICE.get(), number));
-        }
-        super.playerWillDestroy(level, pos, state, player);
     }
 
     @Override
