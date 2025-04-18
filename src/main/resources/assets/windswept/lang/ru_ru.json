@@ -133,7 +133,7 @@
   "block.windswept.chestnut_leaves": "Каштановые листья",
   "block.windswept.chestnut_log": "Каштановое бревно",
   "block.windswept.weathered_pine_log": "Шелушеное сосновое бревно",
-  "block.windswept.weathered_pine_post": "Шелушеный сосновый стооб",
+  "block.windswept.weathered_pine_post": "Шелушеный сосновый столб",
   "block.windswept.weathered_pine_wood": "Шелушеная сосна",
   "block.windswept.chestnut_planks": "Каштановые доски",
   "block.windswept.chestnut_post": "Каштановый столб",
@@ -238,7 +238,7 @@
   "block.windswept.stripped_pine_wood": "Обтёсанная сосновая древесина",
 
   "block.windswept.pinecone": "Шишка",
-  "block.windswept.pinecone_block": "Шишковый блок",
+  "block.windswept.pinecone_block": "Блок шишки",
   "block.windswept.pinecone_jam_block": "Блок шишкового варенья",
   "block.windswept.pinecone_shingle_slab": "Плита из шишковой черепицы",
   "block.windswept.pinecone_shingle_stairs": "Ступеньки из шишковой черепицы",
@@ -485,13 +485,13 @@
   "entity.environmental.slabfish.type.grove": "Роща",
   "entity.environmental.slabfish.type.pine": "Сосновый",
 
-  "windswept.jei.info.carved_pinecone_block": "Лицевая часть вырезанного шишкового блока издаёт одну случайную ноту, когда ветер проходит через него; нота получается более глубокой в зависимости от того, насколько высоко они наставленны.",
+  "windswept.jei.info.carved_pinecone_block": "Лицевая сторона вырезанного блока шишки издаёт одну случайную ноту, когда через нее проходит ветер. Нота зависит от высоты и количества блоков друг на друге.",
   "windswept.jei.info.ice_lantern": "Ледяная лампа издаёт свет, что не способен растворить снег и лёд.",
-  "windswept.jei.info.music_disc_bumblebee": "С небольшим шансом выпадает при сборе пчелиных сот в ульях.",
-  "windswept.jei.info.music_disc_rain": "Выпадает, когда скелет застреливает утопленника.",
-  "windswept.jei.info.music_disc_snow": "Выпадает, когда скелет застреливает замёрзшего.",
+  "windswept.jei.info.music_disc_bumblebee": "С небольшим шансом выпадает при сборе пчелиных сот.",
+  "windswept.jei.info.music_disc_rain": "Выпадает, когда скелет убивает утопленника.",
+  "windswept.jei.info.music_disc_snow": "Выпадает, когда скелет убивает замёрзшего.",
   "windswept.jei.info.nightshade": "Паслёны - это мистические цветы, которые изредка растут на корнях деревьев. Цветок излучает едва заметный белый свет, схожий с лунным.",
   "windswept.jei.info.snow_boots": "Снегоступы позволяют путешествовать быстрее по снегу, а также дают возможность ходить по рыхлому снегу. Окрашиваемые.",
   "windswept.jei.info.wild_berries": "Дикие ягоды - это плоды куста диких ягод, которые способны расти в снежных условиях. Могут быть использованы для сока, что даёт регенерацию здоровья, а также заморозить для приготовления ягодного льда, дающего морозостойкость.", 
-  "windswept.jei.info.wooden_bucket": "Деревянные вёдра просты в изготовлении, но имеют недостаток, заключающийся в их прочности, которая тратится при каждом выливании жидкости." 
+  "windswept.jei.info.wooden_bucket": "Деревянные вёдра просты в изготовлении, но их недостатком является прочность, которая тратится каждый раз, когда вы выливаете жидкость." 
 }
