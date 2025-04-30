@@ -59,21 +59,25 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> implements
         boolean isShaking = frostbiter.isEndimationPlaying(WindsweptPlayableEndimations.FROSTBITER_SHAKE);
         boolean isEating = frostbiter.isEndimationPlaying(WindsweptPlayableEndimations.FROSTBITER_SHAKE);
 
-        this.rightLeg.xRot = Mth.cos(limbSwing * .6662f) * .9f * limbSwingAmount;
-        this.leftLeg.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * limbSwingAmount;
+        this.rightLeg.xRot = Mth.cos(limbSwing * .6662f) * .9f * limbSwingAmount * 0.5f;
+        this.leftLeg.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * limbSwingAmount * 0.5f;
 
         if (!isEating) {
-            this.rightArm.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * limbSwingAmount;
-            this.leftArm.xRot = Mth.cos(limbSwing * .6662f) * .9f * limbSwingAmount;
+            this.rightArm.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * limbSwingAmount * 0.5f;
+            this.leftArm.xRot = Mth.cos(limbSwing * .6662f) * .9f * limbSwingAmount * 0.5f;
 
-            this.tail.yRot = Mth.cos(limbSwing * .6662f + Mth.PI) * limbSwingAmount;
-            this.tail.zRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .1f * limbSwingAmount;
+            this.tail.yRot = Mth.cos(limbSwing * .5212f + Mth.PI) * limbSwingAmount * 0.5f;
+            this.tail.zRot = Mth.cos(limbSwing * .5212f + Mth.PI) * .1f * limbSwingAmount * 0.5f;
 
-            float limbAngle = limbSwing * 0.5212f;
-            float intensity = 0.1f;
+            float limbAngle = limbSwing * .5212f;
+            float intensity = .1f;
             this.body.zRot = (float) Math.cbrt(Mth.cos(limbAngle)) * intensity * limbSwingAmount;
-            this.body.y = 2.0F;
-            this.body.y -= 2.0F * Mth.cos(limbSwing * 1.5F) * 2.0F * limbSwingAmount * intensity;
+            this.body.y = 1.0F;
+            this.body.y -= 1.0F * Mth.cos(limbSwing * 1.5F) * 2.0F * limbSwingAmount * intensity;
+
+            this.head.zRot = (float) Math.cbrt(Mth.cos(limbAngle)) * intensity * 0.3f * limbSwingAmount;
+            this.head.y = 1.0F;
+            this.head.y -= 1.0F * Mth.cos(limbSwing * 1.5F) * 2.0F * limbSwingAmount * intensity * 0.3f;
 
             if (!isShaking) {
                 this.head.yRot = headPitch * ((float) Math.PI / 180f);

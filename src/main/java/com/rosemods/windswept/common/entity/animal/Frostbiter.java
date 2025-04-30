@@ -1,6 +1,7 @@
 package com.rosemods.windswept.common.entity.animal;
 
 import com.rosemods.windswept.common.entity.ai.goal.FrostbiterEatFlowersGoal;
+import com.rosemods.windswept.common.entity.ai.goal.FrostbiterShakeGoal;
 import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.rosemods.windswept.core.registry.WindsweptPlayableEndimations;
@@ -33,7 +34,6 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.ResetUniversalAngerTargetGoal;
-import net.minecraft.world.entity.animal.PolarBear;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -49,6 +49,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.Tags;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;
@@ -61,8 +62,6 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
     private static final EntityDataAccessor<Integer> ANGER_TIME = SynchedEntityData.defineId(Frostbiter.class, EntityDataSerializers.INT);
     private static final UniformInt ANGER_RANGE = TimeUtil.rangeOfSeconds(20, 39);
     private final ItemBasedSteering steering = new ItemBasedSteering(this.entityData, BOOST_TIME, SADDLED);
-    private int dropDelay;
-    private boolean hasJustDropped;
     private UUID lastHurtBy;
 
     public Frostbiter(EntityType<? extends Frostbiter> type, Level level) {
@@ -70,11 +69,6 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
         this.setTame(false);
         this.setLeftAntler(true);
         this.setRightAntler(true);
-    }
-
-    @Override
-    protected AABB makeBoundingBox() {
-        return super.makeBoundingBox();
     }
 
     @Override
@@ -117,6 +111,7 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
         this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, .7f));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 6f));
         this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(8, new FrostbiterShakeGoal(this));
 
         this.targetSelector.addGoal(0, new OwnerHurtByTargetGoal(this));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, false, this::isAngryAt));
@@ -132,35 +127,6 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
             this.lastHurtByPlayerTime = this.tickCount;
 
         super.customServerAiStep();
-    }
-
-    @Override
-    public void tick() {
-        super.tick();
-
-        if (!this.isNoAi()) {
-            this.tickAntlerShaking();
-        }
-
-    }
-
-    private void tickAntlerShaking() {
-        boolean isShaking = this.isEndimationPlaying(WindsweptPlayableEndimations.FROSTBITER_SHAKE);
-
-        if (isShaking)
-            this.dropDelay++;
-        else {
-            this.dropDelay = 0;
-            this.hasJustDropped = false;
-        }
-
-        if (this.hasAntlers() && !this.hasJustDropped && !this.isVehicle())
-            if (this.dropDelay == 0 && this.random.nextInt(5000) == 0 && this.isNoEndimationPlaying()) {
-                NetworkUtil.setPlayingAnimation(this, WindsweptPlayableEndimations.FROSTBITER_SHAKE);
-                this.getNavigation().stop();
-            } else if (this.dropDelay == 8 && isShaking)
-                this.dropRandomAntler();
-
     }
 
     public void setLeftAntler(boolean has) {
@@ -183,20 +149,6 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
         return (this.entityData.get(LEFT_ANTLER) || this.entityData.get(RIGHT_ANTLER)) && !this.isBaby();
     }
 
-    private void dropRandomAntler() {
-        if (this.hasAntlers()) {
-            if (this.random.nextBoolean())
-                this.setLeftAntler(false);
-            else
-                this.setRightAntler(false);
-        } else if (this.hasRightAntler())
-            this.setRightAntler(false);
-        else if (this.hasLeftAntler())
-            this.setLeftAntler(false);
-
-        this.hasJustDropped = true;
-        this.spawnAtLocation(WindsweptItems.FROZEN_BRANCH.get(), 1);
-    }
 
     public void growRandomAntler() {
         if (!this.hasAntlers()) {
@@ -208,6 +160,20 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
             this.setRightAntler(true);
         else if (!this.hasLeftAntler())
             this.setLeftAntler(true);
+    }
+
+    public void dropRandomAntler() {
+        if (this.hasAntlers()) {
+            if (this.random.nextBoolean())
+                this.setLeftAntler(false);
+            else
+                this.setRightAntler(false);
+        } else if (this.hasRightAntler())
+            this.setRightAntler(false);
+        else if (this.hasLeftAntler())
+            this.setLeftAntler(false);
+
+        this.spawnAtLocation(WindsweptItems.FROZEN_BRANCH.get(), 1);
     }
 
     @Override
@@ -309,11 +275,11 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
     }
 
     @Override
-    public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob mob) {
+    public AgeableMob getBreedOffspring(@NotNull ServerLevel level, AgeableMob mob) {
         Frostbiter biter = WindsweptEntityTypes.FROSTBITER.get().create(level);
 
         UUID uuid = this.getOwnerUUID();
-        if (uuid != null) {
+        if (uuid != null && biter != null) {
             biter.setOwnerUUID(uuid);
             biter.setTame(true);
         }

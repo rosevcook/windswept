@@ -4,7 +4,9 @@ import com.rosemods.windswept.common.entity.animal.Frostbiter;
 import com.rosemods.windswept.core.registry.WindsweptPlayableEndimations;
 import com.teamabnormals.blueprint.core.util.NetworkUtil;
 import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.ai.goal.Goal;
 
 import java.util.EnumSet;
@@ -33,6 +35,7 @@ public class FrostbiterEatFlowersGoal extends Goal {
         this.tick = this.adjustedTickDelay(40);
         this.frostbiter.level.broadcastEntityEvent(this.frostbiter, (byte) 10);
         this.frostbiter.getNavigation().stop();
+        this.frostbiter.playSound(SoundEvents.BELL_BLOCK, 1.0f, 0.5f);
         NetworkUtil.setPlayingAnimation(this.frostbiter, WindsweptPlayableEndimations.FROSTBITER_EAT);
     }
 
@@ -54,7 +57,7 @@ public class FrostbiterEatFlowersGoal extends Goal {
                 this.frostbiter.growRandomAntler();
 
                 if (this.frostbiter.isBaby())
-                    this.frostbiter.ageUp(Frostbiter.getSpeedUpSecondsWhenFeeding(-this.frostbiter.getAge()), true);
+                    this.frostbiter.ageUp(AgeableMob.getSpeedUpSecondsWhenFeeding(-this.frostbiter.getAge()), true);
             }
         }
     }
@@ -62,5 +65,4 @@ public class FrostbiterEatFlowersGoal extends Goal {
     private boolean isFoodAt(BlockPos pos) {
         return this.frostbiter.level.getBlockState(pos).is(BlockTags.FLOWERS);
     }
-
 }
