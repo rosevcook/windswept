@@ -70,15 +70,18 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> implements
             this.tail.zRot = Mth.cos(limbSwing * .5212f + Mth.PI) * .1f * limbSwingAmount * 0.5f;
 
             float limbAngle = limbSwing * .5212f;
-            float intensity = .05f;
+            float intensity = .025f;
+            float yIntensity = .15f;
             if (frostbiter.isVehicle()) {
                 this.head.xRot = headPitch * (Mth.PI / 180f);
                 this.head.yRot = headPitch * (Mth.PI / 180f);
                 this.body.y = 1.0f;
+                this.head.y = 1.0f;
             }
 
-            this.body.zRot = (float) Math.cbrt(Mth.cos(limbAngle)) * intensity * limbSwingAmount;
-            this.body.y -= 1.0F * Mth.cos(limbSwing * 1.5F / 2) * 2.0F * limbSwingAmount * intensity;
+            this.body.zRot = Mth.cos(limbAngle) * intensity * limbSwingAmount;
+            this.body.y -= 1.0F * Mth.cos(limbSwing * 1.5F / 2) * 2.0F * limbSwingAmount * yIntensity;
+            this.head.y -= 1.0F * Mth.cos(limbSwing * 1.5F / 2) * 2.0F * limbSwingAmount * yIntensity;
 
             if (!isShaking) {
                 this.head.yRot = headPitch * (Mth.PI / 180f);
