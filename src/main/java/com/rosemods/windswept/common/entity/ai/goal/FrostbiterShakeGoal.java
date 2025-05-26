@@ -12,9 +12,17 @@ public class FrostbiterShakeGoal extends Goal {
     private final Frostbiter frostbiter;
     private int tick;
 
+    public FrostbiterShakeGoal(Frostbiter frostbiter) {
+        this.frostbiter = frostbiter;
+        this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK, Goal.Flag.JUMP));
+    }
+
     @Override
     public boolean canUse() {
-        return this.frostbiter.isNoEndimationPlaying() && frostbiter.hasAntlers() && !this.frostbiter.isVehicle();
+        return this.frostbiter.getRandom().nextInt(10) == 0 &&
+                this.frostbiter.isNoEndimationPlaying() &&
+                frostbiter.hasAntlers() &&
+                !this.frostbiter.isVehicle();
     }
 
     @Override
@@ -22,10 +30,7 @@ public class FrostbiterShakeGoal extends Goal {
         return this.tick > 0;
     }
 
-    public FrostbiterShakeGoal(Frostbiter frostbiter) {
-        this.frostbiter = frostbiter;
-        this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK, Goal.Flag.JUMP));
-    }
+
 
     @Override
     public void start() {

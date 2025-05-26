@@ -66,17 +66,23 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> implements
             this.rightArm.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * limbSwingAmount * 0.5f;
             this.leftArm.xRot = Mth.cos(limbSwing * .6662f) * .9f * limbSwingAmount * 0.5f;
 
-            this.tail.yRot = Mth.cos(limbSwing * .5212f + Mth.PI) * limbSwingAmount * 0.5f;
-            this.tail.zRot = Mth.cos(limbSwing * .5212f + Mth.PI) * .1f * limbSwingAmount * 0.5f;
+
 
             float limbAngle = limbSwing * .5212f;
-            float intensity = .025f;
+            float intensity = .1f;
             float yIntensity = .15f;
             if (frostbiter.isVehicle()) {
                 this.head.xRot = headPitch * (Mth.PI / 180f);
                 this.head.yRot = headPitch * (Mth.PI / 180f);
                 this.body.y = 1.0f;
                 this.head.y = 1.0f;
+
+                this.tail.yRot = Mth.cos(limbSwing * .5212f + Mth.PI) * limbSwingAmount * 0.25f;
+                this.tail.zRot = Mth.cos(limbSwing * .5212f + Mth.PI) * .1f * limbSwingAmount * 0.25f;
+            }
+            else {
+                this.tail.yRot = Mth.cos(limbSwing * .5212f + Mth.PI) * limbSwingAmount * 0.5f;
+                this.tail.zRot = Mth.cos(limbSwing * .5212f + Mth.PI) * .1f * limbSwingAmount * 0.5f;
             }
 
             this.body.zRot = Mth.cos(limbAngle) * intensity * limbSwingAmount;
