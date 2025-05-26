@@ -59,18 +59,16 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> implements
         boolean isShaking = frostbiter.isEndimationPlaying(WindsweptPlayableEndimations.FROSTBITER_SHAKE);
         boolean isEating = frostbiter.isEndimationPlaying(WindsweptPlayableEndimations.FROSTBITER_SHAKE);
 
-        this.rightLeg.xRot = Mth.cos(limbSwing * .6662f) * .9f * limbSwingAmount * 0.5f;
-        this.leftLeg.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * limbSwingAmount * 0.5f;
+        this.rightLeg.xRot = Mth.cos(limbSwing * .6662f) * .9f * limbSwingAmount;
+        this.leftLeg.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * limbSwingAmount;
 
         if (!isEating) {
-            this.rightArm.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * limbSwingAmount * 0.5f;
-            this.leftArm.xRot = Mth.cos(limbSwing * .6662f) * .9f * limbSwingAmount * 0.5f;
-
-
-
             float limbAngle = limbSwing * .5212f;
             float intensity = .1f;
             float yIntensity = .15f;
+
+            this.rightArm.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * limbSwingAmount;
+            this.leftArm.xRot = Mth.cos(limbSwing * .6662f) * .9f * limbSwingAmount;
             if (frostbiter.isVehicle()) {
                 this.head.xRot = headPitch * (Mth.PI / 180f);
                 this.head.yRot = headPitch * (Mth.PI / 180f);
@@ -79,6 +77,11 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> implements
 
                 this.tail.yRot = Mth.cos(limbSwing * .5212f + Mth.PI) * limbSwingAmount * 0.25f;
                 this.tail.zRot = Mth.cos(limbSwing * .5212f + Mth.PI) * .1f * limbSwingAmount * 0.25f;
+
+                this.rightArm.xRot *= 0.5f;
+                this.leftArm.xRot *= 0.5f;
+                this.leftLeg.xRot *= 0.5f;
+                this.rightLeg.xRot *= 0.5f;
             }
             else {
                 this.tail.yRot = Mth.cos(limbSwing * .5212f + Mth.PI) * limbSwingAmount * 0.5f;

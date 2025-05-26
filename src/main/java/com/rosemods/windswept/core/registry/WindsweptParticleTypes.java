@@ -1,9 +1,13 @@
 package com.rosemods.windswept.core.registry;
 
 import com.rosemods.windswept.client.particle.CupidsArrowParticle;
+import com.rosemods.windswept.client.particle.FrostLeafParticle;
 import com.rosemods.windswept.client.particle.WillOTheWispParticle;
 import com.rosemods.windswept.core.Windswept;
+import com.teamabnormals.autumnity.client.particle.FallingMapleLeafParticle;
+import net.minecraft.client.particle.DripParticle;
 import net.minecraft.client.particle.HeartParticle;
+import net.minecraft.client.particle.SuspendedParticle;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -27,7 +31,7 @@ public class WindsweptParticleTypes {
     public static void register(RegisterParticleProvidersEvent event) {
         event.register(CUPIDS_ARROW.get(), CupidsArrowParticle.Provider::new);
         event.register(WILL_O_THE_WISP.get(), WillOTheWispParticle.Provider::new);
-        event.register(FROST_LEAF.get(), HeartParticle.Provider::new);
+        event.register(FROST_LEAF.get(), FrostLeafParticle.Provider::new);
     }
 
 }

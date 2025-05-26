@@ -35,7 +35,6 @@ public class FrostbiterEatFlowersGoal extends Goal {
         this.tick = this.adjustedTickDelay(40);
         this.frostbiter.level.broadcastEntityEvent(this.frostbiter, (byte) 10);
         this.frostbiter.getNavigation().stop();
-        this.frostbiter.playSound(SoundEvents.BELL_BLOCK, 1.0f, 0.5f);
         NetworkUtil.setPlayingAnimation(this.frostbiter, WindsweptPlayableEndimations.FROSTBITER_EAT);
     }
 
@@ -59,6 +58,12 @@ public class FrostbiterEatFlowersGoal extends Goal {
                 if (this.frostbiter.isBaby())
                     this.frostbiter.ageUp(AgeableMob.getSpeedUpSecondsWhenFeeding(-this.frostbiter.getAge()), true);
             }
+        }
+
+        if (tick % 2 == 0 &&
+                tick > adjustedTickDelay(10)  &&
+                tick < adjustedTickDelay(30)) {
+            this.frostbiter.playSound(SoundEvents.BELL_BLOCK, 0.5f, 0.5f);
         }
     }
 

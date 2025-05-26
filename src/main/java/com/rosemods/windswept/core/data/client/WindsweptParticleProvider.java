@@ -15,5 +15,4 @@ public class WindsweptParticleProvider extends ParticleProvider {
         this.add(WindsweptParticleTypes.WILL_O_THE_WISP.get(), "will_o_the_wisp0", "will_o_the_wisp1", "will_o_the_wisp2");
         this.add(WindsweptParticleTypes.FROST_LEAF.get(), "frost_leaf0", "frost_leaf1", "frost_leaf2");
     }
-
 }
