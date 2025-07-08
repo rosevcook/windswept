@@ -38,14 +38,8 @@ public class PlentyEffect extends BlueprintMobEffect {
         double modifier = 1.6 + (plentyAmp * 0.7);
 
         for (BlockPos affectedPos : getToPlacePos(player)) {
-            // account for jumping (maybe?)
             if (!player.isOnGround() && level.getBlockState(affectedPos).isAir())
                 affectedPos = affectedPos.below();
-
-//            if (player.getItemInHand(InteractionHand.MAIN_HAND).is(Items.ACACIA_BOAT)) {
-//                level.setBlock(affectedPos, Blocks.DIAMOND_BLOCK.defaultBlockState(), 3);
-//                continue;
-//            }
 
             if (level.getRandom().nextDouble() * 32 < modifier) {
                 BlockPos abovePos = affectedPos.above();
@@ -62,7 +56,7 @@ public class PlentyEffect extends BlueprintMobEffect {
                     didPlace = true;
                 } else {
                     BlockState flower = flowerStates.get(level.random.nextInt(flowerStates.size()));
-                    // idk should it maybe work if there's snow covering
+
                     if (flower.canSurvive(level, abovePos) && aboveState.isAir()) {
                         if (level.getBlockState(affectedPos).is(BlockTags.CONVERTABLE_TO_MUD))
                             level.setBlock(affectedPos, Blocks.GRASS_BLOCK.defaultBlockState(), Block.UPDATE_ALL);
@@ -78,7 +72,6 @@ public class PlentyEffect extends BlueprintMobEffect {
                     }
                 }
 
-                // add particles please please please fuck holy shit
                 if (level instanceof ServerLevel sLevel && didPlace)
                     for (int i = 0; i < 9; i++) {
                         double d0 = level.random.nextGaussian() * 0.02D;

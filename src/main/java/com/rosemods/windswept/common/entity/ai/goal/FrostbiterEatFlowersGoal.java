@@ -8,6 +8,9 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.ai.goal.Goal;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.event.ForgeEventFactory;
 
 import java.util.EnumSet;
 
@@ -22,7 +25,8 @@ public class FrostbiterEatFlowersGoal extends Goal {
 
     @Override
     public boolean canUse() {
-        return this.frostbiter.isNoEndimationPlaying() && this.isFoodAt(this.frostbiter.blockPosition()) && !this.frostbiter.isVehicle();
+        return this.frostbiter.getRandom().nextInt(100) == 0 &&
+                this.frostbiter.isNoEndimationPlaying() && this.isFoodAt(this.frostbiter.blockPosition()) && !this.frostbiter.isVehicle();
     }
 
     @Override
@@ -51,19 +55,23 @@ public class FrostbiterEatFlowersGoal extends Goal {
             BlockPos pos = this.frostbiter.blockPosition();
 
             if (this.isFoodAt(pos)) {
-                this.frostbiter.level.destroyBlock(pos, false);
-                this.frostbiter.ate();
-                this.frostbiter.growRandomAntler();
+                if (ForgeEventFactory.getMobGriefingEvent(frostbiter.level, frostbiter)){
+                    this.frostbiter.level.destroyBlock(pos, false);
+                    this.frostbiter.ate();
+                    this.frostbiter.growRandomAntler();
 
-                if (this.frostbiter.isBaby())
-                    this.frostbiter.ageUp(AgeableMob.getSpeedUpSecondsWhenFeeding(-this.frostbiter.getAge()), true);
+                    if (this.frostbiter.isBaby())
+                        this.frostbiter.ageUp(AgeableMob.getSpeedUpSecondsWhenFeeding(-this.frostbiter.getAge()), true);
+                }
             }
         }
 
-        if (tick % 2 == 0 &&
-                tick > adjustedTickDelay(10)  &&
-                tick < adjustedTickDelay(30)) {
-            this.frostbiter.playSound(SoundEvents.BELL_BLOCK, 0.5f, 0.5f);
+        if (frostbiter.isTame()) {
+            if (tick % 2 == 0 &&
+                    tick > adjustedTickDelay(10)  &&
+                    tick < adjustedTickDelay(30)) {
+                this.frostbiter.playSound(SoundEvents.BELL_BLOCK, 0.5f, 0.5f);
+            }
         }
     }
 
