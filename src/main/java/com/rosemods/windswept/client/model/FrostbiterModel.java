@@ -59,29 +59,36 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> implements
         boolean isShaking = frostbiter.isEndimationPlaying(WindsweptPlayableEndimations.FROSTBITER_SHAKE);
         boolean isEating = frostbiter.isEndimationPlaying(WindsweptPlayableEndimations.FROSTBITER_SHAKE);
 
-        this.rightLeg.xRot = Mth.cos(limbSwing * .6662f) * .9f * limbSwingAmount;
-        this.leftLeg.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * limbSwingAmount;
+        float smallLimbSwingAmount = Math.min(limbSwingAmount, 0.2f);
+
+        this.rightLeg.xRot = Mth.cos(limbSwing * .6662f) * .9f * smallLimbSwingAmount;
+        this.leftLeg.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * smallLimbSwingAmount;
+        this.leftLeg.y = 2 + Mth.sin(limbSwing * .6662f) * smallLimbSwingAmount * 2;
+        this.rightLeg.y = 2 + Mth.sin(limbSwing * .6662f) * smallLimbSwingAmount * 2;
 
         if (!isEating) {
             float limbAngle = limbSwing * .5212f;
             float intensity = .1f;
             float yIntensity = .15f;
 
-            this.rightArm.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * limbSwingAmount;
-            this.leftArm.xRot = Mth.cos(limbSwing * .6662f) * .9f * limbSwingAmount;
+            this.rightArm.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .5f * limbSwingAmount;
+            this.leftArm.xRot = Mth.cos(limbSwing * .6662f) * .5f * limbSwingAmount;
+
+            this.rightArm.y = Mth.sin(limbSwing * .6662f) * smallLimbSwingAmount * 2;
+            this.leftArm.y = Mth.sin(limbSwing * .6662f) * smallLimbSwingAmount * 2;
+            this.rightArm.zRot = .25f * smallLimbSwingAmount;
+            this.leftArm.zRot = -.25f * smallLimbSwingAmount;
+
+
             if (frostbiter.isVehicle()) {
                 this.head.xRot = headPitch * (Mth.PI / 180f);
                 this.head.yRot = headPitch * (Mth.PI / 180f);
                 this.body.y = 1.0f;
                 this.head.y = 1.0f;
 
+
                 this.tail.yRot = Mth.cos(limbSwing * .5212f + Mth.PI) * limbSwingAmount * 0.25f;
                 this.tail.zRot = Mth.cos(limbSwing * .5212f + Mth.PI) * .1f * limbSwingAmount * 0.25f;
-
-                this.rightArm.xRot *= 0.5f;
-                this.leftArm.xRot *= 0.5f;
-                this.leftLeg.xRot *= 0.5f;
-                this.rightLeg.xRot *= 0.5f;
             }
             else {
                 this.tail.yRot = Mth.cos(limbSwing * .5212f + Mth.PI) * limbSwingAmount * 0.5f;
