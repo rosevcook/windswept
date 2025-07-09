@@ -6,6 +6,7 @@ import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.teamabnormals.blueprint.core.endimator.Endimatable;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -59,7 +60,7 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
     private static final EntityDataAccessor<Integer> BOOST_TIME = SynchedEntityData.defineId(Frostbiter.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> ANGER_TIME = SynchedEntityData.defineId(Frostbiter.class, EntityDataSerializers.INT);
     private static final UniformInt ANGER_RANGE = TimeUtil.rangeOfSeconds(20, 39);
-    private static final Predicate<Entity> FROSTBITER_SHOULD_KB = ent -> EntitySelector.NO_CREATIVE_OR_SPECTATOR.test(ent) && !ent.isPassenger() && ent.getType() != WindsweptEntityTypes.FROSTBITER.get();
+    private static final Predicate<Entity> FROSTBITER_SHOULD_KB = ent -> EntitySelector.NO_CREATIVE_OR_SPECTATOR.test(ent) && !ent.isPassenger() && ent.getType() != WindsweptEntityTypes.FROSTBITER.get() && ent.isAlive();
     private final ItemBasedSteering steering = new ItemBasedSteering(this.entityData, BOOST_TIME, SADDLED);
     private UUID lastHurtBy;
 
@@ -306,7 +307,7 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
                 .add(Attributes.ARMOR, 4f)
                 .add(Attributes.ATTACK_DAMAGE, 5f)
                 .add(Attributes.MAX_HEALTH, 40f)
-                .add(Attributes.MOVEMENT_SPEED, .22f)
+                .add(Attributes.MOVEMENT_SPEED, .44f)
                 .add(Attributes.ATTACK_KNOCKBACK, 1.2f);
     }
 
@@ -355,16 +356,16 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
 
     private void doRidingKnockback() {
         if (this.isVehicle() && this.isAlive() && this.level.getGameTime() % 5 == 1) {
-
             List<LivingEntity> menInBoundingBox = this.level.getEntitiesOfClass(LivingEntity.class, this.getBoundingBox().inflate(1.6d), FROSTBITER_SHOULD_KB);
 
             for (LivingEntity entity : menInBoundingBox) {
                 entity.setTicksFrozen(entity.getTicksFrozen() + 65);
-                Vec3 deltaPos = entity.position().subtract(this.position());
-                deltaPos = new Vec3(deltaPos.x, 0, deltaPos.z).normalize().scale(4 + level.getRandom().nextDouble() / 2);
+                Vec3 deltaPos = entity.position().subtract(this.position()).with(Direction.Axis.Y, 0)
+                        .normalize().scale(1.5f + level.getRandom().nextDouble() / 2)
+                        .scale(this.getAttributeValue(Attributes.ATTACK_KNOCKBACK));
 
                 entity.knockback(deltaPos.length(), -deltaPos.x, -deltaPos.z);
-                entity.hurt(DamageSource.mobAttack(this), (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getBaseValue() / 2);
+                entity.hurt(DamageSource.mobAttack(this), (float) this.getAttributeValue(Attributes.ATTACK_DAMAGE) / 2);
 
                 this.playSound(SoundEvents.GOAT_RAM_IMPACT, 2.0f, 1.0f);
             }
