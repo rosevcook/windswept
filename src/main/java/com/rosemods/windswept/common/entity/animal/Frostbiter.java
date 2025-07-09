@@ -46,10 +46,11 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.Tags;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.UUID;
+import java.util.function.Predicate;
 
 public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob, ItemSteerable, Saddleable {
     private static final EntityDataAccessor<Boolean> LEFT_ANTLER = SynchedEntityData.defineId(Frostbiter.class, EntityDataSerializers.BOOLEAN);
@@ -101,7 +102,6 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new FrostbiterPanicGoal());
         this.goalSelector.addGoal(2, new FrostbiterMeleeAttackGoal());
-        this.goalSelector.addGoal(1, new PanicGoal(this, 1f));
         this.goalSelector.addGoal(2, new BreedGoal(this, 1f));
         this.goalSelector.addGoal(3, new TemptGoal(this, 1.15f, Ingredient.of(WindsweptItems.HOLLY_BERRIES.get(), WindsweptItems.HOLLY_BERRIES_ON_A_STICK.get()), false));
         this.goalSelector.addGoal(4, new FollowParentGoal(this, 1f));
@@ -273,7 +273,7 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
     }
 
     @Override
-    public AgeableMob getBreedOffspring(@NotNull ServerLevel level, AgeableMob mob) {
+    public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob mob) {
         Frostbiter biter = WindsweptEntityTypes.FROSTBITER.get().create(level);
 
         UUID uuid = this.getOwnerUUID();
@@ -343,6 +343,33 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
 
     private boolean canBeControlledBy(Player player) {
         return this.isSaddled() && (player.getMainHandItem().is(WindsweptItems.HOLLY_BERRIES_ON_A_STICK.get()) || player.getOffhandItem().is(WindsweptItems.HOLLY_BERRIES_ON_A_STICK.get()));
+    }
+
+    @Override
+    public void tick() {
+        doRidingKnockback();
+
+        super.tick();
+    }
+
+    private void doRidingKnockback() {
+        if (this.isVehicle() && this.isAlive() && this.level.getGameTime() % 5 == 1) {
+            Vec3 speed = this.getDeltaMovement();
+            Predicate<Entity> canKnockback = ent -> EntitySelector.NO_CREATIVE_OR_SPECTATOR.test(ent) && !ent.getPassengers().contains(this) &&
+                    ent.getType() != WindsweptEntityTypes.FROSTBITER.get();
+
+            List<LivingEntity> menInBoundingBox = this.level.getEntitiesOfClass(LivingEntity.class, this.getBoundingBox().inflate(1.6d), canKnockback);
+
+            for (LivingEntity entity : menInBoundingBox) {
+                entity.setTicksFrozen(entity.getTicksFrozen() + 65);
+                Vec3 deltaPos = entity.position().subtract(this.position());
+                deltaPos = new Vec3(deltaPos.x, 0, deltaPos.z).normalize().scale(4 + level.getRandom().nextDouble() / 2);
+                this.playSound(SoundEvents.GOAT_RAM_IMPACT, 2.0f, 1.0f);
+
+                entity.knockback(deltaPos.length(), -deltaPos.x, -deltaPos.z);
+                entity.hurt(DamageSource.mobAttack(this), (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getBaseValue() / 2);
+            }
+        }
     }
 
     @Override
