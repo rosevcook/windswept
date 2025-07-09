@@ -35,6 +35,7 @@ import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.ResetUniversalAngerTargetGoal;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.Items;
@@ -173,8 +174,23 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
         else if (this.hasLeftAntler())
             this.setLeftAntler(false);
 
-        this.spawnAtLocation(WindsweptItems.FROZEN_BRANCH.get(), 1);
+        Vec3 branchPos = this.position().add(this.getLookAngle().scale(1.5)).relative(Direction.UP, this.getEyeHeight() + 0.75f);
+        spawnItemFancy(WindsweptItems.FROZEN_BRANCH.get(), branchPos, SoundEvents.GOAT_HORN_BREAK);
     }
+
+    private boolean spawnItemFancy(Item item, Vec3 spawnPos, SoundEvent sound) {
+        ItemEntity itemEntity = new ItemEntity(this.level, spawnPos.x, spawnPos.y, spawnPos.z, new ItemStack(item));
+        boolean success = this.level.addFreshEntity(itemEntity);
+        if (success) {
+            this.playSound(sound);
+            itemEntity.setDeltaMovement(itemEntity.getDeltaMovement()
+                    .add((this.random.nextFloat() - this.random.nextFloat()) * 0.2F,
+                            this.random.nextFloat() * 0.1F,
+                            (this.random.nextFloat() - this.random.nextFloat()) * 0.2F));
+        }
+        return success;
+    }
+
 
     @Override
     public boolean doHurtTarget(Entity entity) {
@@ -350,7 +366,6 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
     @Override
     public void tick() {
         doRidingKnockback();
-
         super.tick();
     }
 
@@ -422,14 +437,7 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
     protected void dropSaddle() {
         super.dropEquipment();
         this.setSaddled(false);
-        ItemEntity saddle = new ItemEntity(this.level, this.getX(), this.getY() + 2, this.getZ(), new ItemStack(Items.SADDLE));
-        saddle.setDefaultPickUpDelay();
-        if (this.level.addFreshEntity(saddle)) {
-            saddle.setDeltaMovement(saddle.getDeltaMovement().add(
-                    (this.random.nextFloat() - this.random.nextFloat()) * 0.2F,
-                    this.random.nextFloat() * 0.1F,
-                    (this.random.nextFloat() - this.random.nextFloat()) * 0.2F));
-        }
+        spawnItemFancy(Items.SADDLE, this.position().relative(Direction.UP, 2), SoundEvents.SNOW_GOLEM_SHEAR);
     }
 
     public static boolean checkFrostbiterSpawnRules(EntityType<Frostbiter> frostbiter, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {

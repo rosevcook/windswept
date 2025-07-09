@@ -59,7 +59,8 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> implements
         boolean isShaking = frostbiter.isEndimationPlaying(WindsweptPlayableEndimations.FROSTBITER_SHAKE);
         boolean isEating = frostbiter.isEndimationPlaying(WindsweptPlayableEndimations.FROSTBITER_SHAKE);
 
-        float smallLimbSwingAmount = Math.min(limbSwingAmount, 0.2f);
+        float smallLimbSwingAmount = Math.min(limbSwingAmount, 0.15f);
+        float largeLimbSwingAmount = Math.min(limbSwingAmount, 0.5f);
 
         this.rightLeg.xRot = Mth.cos(limbSwing * .6662f) * .9f * smallLimbSwingAmount;
         this.leftLeg.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * smallLimbSwingAmount;
@@ -71,8 +72,8 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> implements
             float intensity = .1f;
             float yIntensity = .15f;
 
-            this.rightArm.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .5f * limbSwingAmount;
-            this.leftArm.xRot = Mth.cos(limbSwing * .6662f) * .5f * limbSwingAmount;
+            this.rightArm.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .5f * largeLimbSwingAmount;
+            this.leftArm.xRot = Mth.cos(limbSwing * .6662f) * .5f * largeLimbSwingAmount;
 
             this.rightArm.y = Mth.sin(limbSwing * .6662f) * smallLimbSwingAmount * 2;
             this.leftArm.y = Mth.sin(limbSwing * .6662f) * smallLimbSwingAmount * 2;
@@ -91,8 +92,8 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> implements
                 this.tail.zRot = Mth.cos(limbSwing * .5212f + Mth.PI) * .1f * limbSwingAmount * 0.25f;
             }
             else {
-                this.tail.yRot = Mth.cos(limbSwing * .5212f + Mth.PI) * limbSwingAmount * 0.5f;
-                this.tail.zRot = Mth.cos(limbSwing * .5212f + Mth.PI) * .1f * limbSwingAmount * 0.5f;
+                this.tail.yRot = Mth.cos(limbSwing * .5212f + Mth.PI) * largeLimbSwingAmount * 0.5f;
+                this.tail.zRot = Mth.cos(limbSwing * .5212f + Mth.PI) * .1f * largeLimbSwingAmount * 0.5f;
             }
 
             this.body.zRot = Mth.cos(limbAngle) * intensity * limbSwingAmount;
