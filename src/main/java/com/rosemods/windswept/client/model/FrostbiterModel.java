@@ -59,24 +59,49 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> implements
         boolean isShaking = frostbiter.isEndimationPlaying(WindsweptPlayableEndimations.FROSTBITER_SHAKE);
         boolean isEating = frostbiter.isEndimationPlaying(WindsweptPlayableEndimations.FROSTBITER_SHAKE);
 
-        this.rightLeg.xRot = Mth.cos(limbSwing * .6662f) * .9f * limbSwingAmount;
-        this.leftLeg.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * limbSwingAmount;
+        float smallLimbSwingAmount = Math.min(limbSwingAmount, 0.15f);
+        float largeLimbSwingAmount = Math.min(limbSwingAmount, 0.5f);
+
+        this.rightLeg.xRot = Mth.cos(limbSwing * .6662f) * .9f * smallLimbSwingAmount;
+        this.leftLeg.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * smallLimbSwingAmount;
+        this.leftLeg.y = 2 + Mth.sin(limbSwing * .6662f) * smallLimbSwingAmount * 2;
+        this.rightLeg.y = 2 + Mth.sin(limbSwing * .6662f) * smallLimbSwingAmount * 2;
 
         if (!isEating) {
-            this.rightArm.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * limbSwingAmount;
-            this.leftArm.xRot = Mth.cos(limbSwing * .6662f) * .9f * limbSwingAmount;
+            float limbAngle = limbSwing * .5212f;
+            float intensity = .1f;
+            float yIntensity = .15f;
 
-            this.tail.yRot = Mth.cos(limbSwing * .6662f + Mth.PI) * limbSwingAmount;
-            this.tail.zRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .1f * limbSwingAmount;
+            this.rightArm.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .5f * largeLimbSwingAmount;
+            this.leftArm.xRot = Mth.cos(limbSwing * .6662f) * .5f * largeLimbSwingAmount;
 
-            float limbAngle = limbSwing * 0.5212f;
-            float intensity = 0.1f;
-            this.body.zRot = (float) Math.cbrt(Mth.cos(limbAngle)) * intensity * limbSwingAmount;
-            this.body.y = 2.0F;
-            this.body.y -= 2.0F * Mth.cos(limbSwing * 1.5F) * 2.0F * limbSwingAmount * intensity;
+            this.rightArm.y = Mth.sin(limbSwing * .6662f) * smallLimbSwingAmount * 2;
+            this.leftArm.y = Mth.sin(limbSwing * .6662f) * smallLimbSwingAmount * 2;
+            this.rightArm.zRot = .25f * smallLimbSwingAmount;
+            this.leftArm.zRot = -.25f * smallLimbSwingAmount;
+
+
+            if (frostbiter.isVehicle()) {
+                this.head.xRot = headPitch * (Mth.PI / 180f);
+                this.head.yRot = headPitch * (Mth.PI / 180f);
+                this.body.y = 1.0f;
+                this.head.y = 1.0f;
+
+
+                this.tail.yRot = Mth.cos(limbSwing * .5212f + Mth.PI) * limbSwingAmount * 0.25f;
+                this.tail.zRot = Mth.cos(limbSwing * .5212f + Mth.PI) * .1f * limbSwingAmount * 0.25f;
+            }
+            else {
+                this.tail.yRot = Mth.cos(limbSwing * .5212f + Mth.PI) * largeLimbSwingAmount * 0.5f;
+                this.tail.zRot = Mth.cos(limbSwing * .5212f + Mth.PI) * .1f * largeLimbSwingAmount * 0.5f;
+            }
+
+            this.body.zRot = Mth.cos(limbAngle) * intensity * limbSwingAmount;
+            this.body.y -= 1.0F * Mth.cos(limbSwing * 1.5F / 2) * 2.0F * limbSwingAmount * yIntensity;
+            this.head.y -= 1.0F * Mth.cos(limbSwing * 1.5F / 2) * 2.0F * limbSwingAmount * yIntensity;
 
             if (!isShaking) {
-                this.head.yRot = headPitch * ((float) Math.PI / 180f);
+                this.head.yRot = headPitch * (Mth.PI / 180f);
                 this.bell.zRot = Mth.cos(limbSwing * .6662f) * .3f * limbSwingAmount;
             }
         }
