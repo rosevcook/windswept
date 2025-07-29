@@ -1,7 +1,7 @@
 package com.rosemods.windswept.client.render.entity.animal;
 
 import com.rosemods.windswept.client.model.FrostbiterModel;
-import com.rosemods.windswept.common.entity.animal.Frostbiter;
+import com.rosemods.windswept.common.entity.Frostbiter;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.other.WindsweptModelLayers;
 import net.minecraft.ChatFormatting;

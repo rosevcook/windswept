@@ -11,4 +11,5 @@ public class PineTreeGrower extends AbstractTreeGrower {
     protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource rand, boolean bees) {
         return (bees ? WindsweptFeatures.ConfiguredFeatures.PINE_BEES : WindsweptFeatures.ConfiguredFeatures.PINE).getHolder().get();
     }
+
 }

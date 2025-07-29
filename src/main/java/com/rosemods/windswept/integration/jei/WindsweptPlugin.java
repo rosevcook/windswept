@@ -24,13 +24,9 @@ public class WindsweptPlugin implements IModPlugin {
         addInfo(registration, MUSIC_DISC_RAIN);
         addInfo(registration, MUSIC_DISC_SNOW);
         addInfo(registration, MUSIC_DISC_BUMBLEBEE);
-
         addInfo(registration, WILD_BERRIES);
         addInfo(registration, NIGHTSHADE);
-
         addInfo(registration, CARVED_PINECONE_BLOCK);
-        addInfo(registration, WILL_O_THE_WISP);
-
         addInfo(registration, ICE_LANTERN);
         addInfo(registration, WOODEN_BUCKET);
         addInfo(registration, SNOW_BOOTS);

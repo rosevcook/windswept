@@ -34,4 +34,5 @@ public class FrostLeafParticle extends TextureSheetParticle {
         }
 
     }
+
 }

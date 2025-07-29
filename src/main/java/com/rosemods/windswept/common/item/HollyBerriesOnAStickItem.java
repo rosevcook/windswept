@@ -1,6 +1,6 @@
 package com.rosemods.windswept.common.item;
 
-import com.rosemods.windswept.common.entity.animal.Frostbiter;
+import com.rosemods.windswept.common.entity.Frostbiter;
 import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
 import com.teamabnormals.blueprint.core.util.item.filling.TargetedItemCategoryFiller;
 import net.minecraft.core.NonNullList;

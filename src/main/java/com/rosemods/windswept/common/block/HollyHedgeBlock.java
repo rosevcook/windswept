@@ -1,6 +1,5 @@
 package com.rosemods.windswept.common.block;
 
-import com.rosemods.windswept.core.other.WindsweptDamageSources;
 import com.teamabnormals.blueprint.common.block.HedgeBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;

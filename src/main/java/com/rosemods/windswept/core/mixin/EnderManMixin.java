@@ -15,4 +15,5 @@ public class EnderManMixin {
         if (player.getInventory().armor.get(3).is(WindsweptBlocks.CARVED_PINECONE_BLOCK.get().asItem()))
             info.setReturnValue(true);
     }
+
 }

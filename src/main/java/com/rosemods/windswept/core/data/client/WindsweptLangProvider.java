@@ -57,7 +57,6 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.add(GOAT_SHANKS.get(), "Raw Chevon Shanks");
         this.add(COOKED_GOAT_SHANKS.get(), "Cooked Chevon Shanks");
         this.add(FOUL_BERRY_BOWL.get(), "Bowl of Foul Berries");
-        this.add(CUPIDS_ARROW.get(), "Cupid's Arrow");
         this.add(HOLLY_BERRIES_ON_A_STICK.get(), "Holly Berries on a Stick");
         this.translateBannerPattern(SNOW_CHARGE_BANNER_PATTERN, "snow_charge");
         this.translateBannerPattern(SNOW_GOLEM_BANNER_PATTERN, "snow_golem");
@@ -90,13 +89,10 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.add(BROWN_MUSHROOM_BASKET.get(), "Basket of Brown Mushrooms");
         this.add(GLOW_SHROOM_BASKET.get(), "Basket of Glow Shrooms");
 
-        // Entities //
-        this.add(WindsweptEntityTypes.CUPIDS_ARROW.get(), "Cupid's Arrow");
 
         // Effects //
         this.translateEffect(WindsweptEffects.THORNS, "Causes damage to enemies when they attack you.");
         this.translateEffect(WindsweptEffects.FROST_RESISTANCE, "Grants immunity to frost. Allows for walking on Powder Snow. Stops Entity Conversion in Powder Snow.");
-        this.translateEffect(WindsweptEffects.PLENTY, "idk yet.");
 
         this.translatePotion(WindsweptEffects.THORNS_POTION, "Prickling");
         this.translatePotion(WindsweptEffects.LONG_THORNS_POTION, "Prickling");
@@ -136,7 +132,6 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.jeiInfo(NIGHTSHADE, "Nightshades are mystical flowers found rarely growing in patches from the roots of trees. The flower emits a subtle white light; similar to the light of the moon.");
 
         this.jeiInfo(CARVED_PINECONE_BLOCK, "The face of the Carved Pinecone creates a single note randomly as wind passes through them, the note produced is deeper depending on how high they are stacked.");
-        //this.jeiInfo(WILL_O_THE_WISP, "The face of the Carved Pinecone ");
 
         this.jeiInfo(ICE_LANTERN, "The Ice Lantern emits a light incapable of melting Ice and Snow.");
         this.jeiInfo(WOODEN_BUCKET, "Wooden buckets are easily craft-able; but it comes at a cost to their strength. Durability is taken when fluids exit the bucket.");

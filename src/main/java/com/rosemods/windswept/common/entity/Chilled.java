@@ -1,4 +1,4 @@
-package com.rosemods.windswept.common.entity.monster;
+package com.rosemods.windswept.common.entity;
 
 import com.rosemods.windswept.core.other.WindsweptConstants;
 import com.rosemods.windswept.core.other.tags.WindsweptBiomeTags;

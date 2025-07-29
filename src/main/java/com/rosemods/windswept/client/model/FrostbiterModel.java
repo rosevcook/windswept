@@ -2,7 +2,7 @@ package com.rosemods.windswept.client.model;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.rosemods.windswept.common.entity.animal.Frostbiter;
+import com.rosemods.windswept.common.entity.Frostbiter;
 import com.rosemods.windswept.core.registry.WindsweptPlayableEndimations;
 import com.teamabnormals.blueprint.core.endimator.Endimator;
 import com.teamabnormals.blueprint.core.endimator.entity.EndimatorEntityModel;
@@ -81,10 +81,9 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> implements
             this.leftArm.zRot = -.25f * smallLimbSwingAmount;
 
 
-            if (frostbiter.isVehicle()) {
+            if (frostbiter.hasControllingPassenger()) {
                 this.head.xRot = headPitch * (Mth.PI / 180f);
                 this.head.yRot = headPitch * (Mth.PI / 180f);
-                this.body.y = 1.0f;
                 this.head.y = 1.0f;
 
 

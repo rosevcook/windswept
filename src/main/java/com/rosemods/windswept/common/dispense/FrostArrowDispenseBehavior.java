@@ -1,6 +1,6 @@
 package com.rosemods.windswept.common.dispense;
 
-import com.rosemods.windswept.common.entity.projectile.FrostArrow;
+import com.rosemods.windswept.common.entity.FrostArrow;
 import net.minecraft.core.Position;
 import net.minecraft.core.dispenser.AbstractProjectileDispenseBehavior;
 import net.minecraft.world.entity.projectile.AbstractArrow;

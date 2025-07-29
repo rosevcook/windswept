@@ -1,0 +1,10 @@
+{
+  "values": [
+    "minecraft:grass",
+    "windswept:snowy_sprouts",
+    "windswept:dry_mossy_sprouts",
+    "windswept:mossy_sprouts",
+    "windswept:gelisol_sprouts",
+    "#minecraft:flowers"
+  ]
+}

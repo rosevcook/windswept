@@ -1,7 +1,6 @@
 package com.rosemods.windswept.core.other;
 
 import com.rosemods.windswept.common.block.IWoodenBucketPickupBlock;
-import com.rosemods.windswept.common.dispense.CupidsArrowDispenseBehavior;
 import com.rosemods.windswept.common.dispense.FrostArrowDispenseBehavior;
 import com.rosemods.windswept.common.item.WoodenBucketItem;
 import net.minecraft.core.BlockPos;
@@ -22,7 +21,6 @@ public final class WindsweptDispenseBehaviors {
         DispenserBlock.registerBehavior(WOODEN_WATER_BUCKET.get(), WindsweptDispenseBehaviors::emptyWaterBucket);
         DispenserBlock.registerBehavior(WOODEN_POWDER_SNOW_BUCKET.get(), WindsweptDispenseBehaviors::emptyPowderSnowBucket);
         DispenserBlock.registerBehavior(FROST_ARROW.get(), new FrostArrowDispenseBehavior());
-        DispenserBlock.registerBehavior(CUPIDS_ARROW.get(), new CupidsArrowDispenseBehavior());
     }
 
     private static ItemStack fillBucket(BlockSource source, ItemStack stack) {

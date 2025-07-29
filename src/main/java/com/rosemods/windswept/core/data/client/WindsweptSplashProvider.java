@@ -12,8 +12,7 @@ public class WindsweptSplashProvider extends SplashProvider {
     @Override
     protected void registerSplashes() {
         this.add("#WINDSWEEP");
-        this.add("Super Estrogen Fanta is not on sale in Japan, yet.");
-        this.add("love is the air? wrong. gas leak.");
+        this.add("new update out in 3-4");
     }
 
 }

@@ -1,13 +1,13 @@
-package com.rosemods.windswept.common.entity.animal;
+package com.rosemods.windswept.common.entity;
 
-import com.rosemods.windswept.common.entity.ai.goal.FrostbiterEatFlowersGoal;
+import com.rosemods.windswept.common.entity.ai.goal.FrostbiterEatGoal;
 import com.rosemods.windswept.common.entity.ai.goal.FrostbiterShakeGoal;
 import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
 import com.rosemods.windswept.core.registry.WindsweptItems;
+import com.rosemods.windswept.core.registry.WindsweptParticleTypes;
 import com.teamabnormals.blueprint.core.endimator.Endimatable;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.Holder;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -44,7 +44,6 @@ import net.minecraft.world.item.enchantment.FrostWalkerEnchantment;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.Tags;
@@ -112,7 +111,7 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 6f));
         this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(8, new FrostbiterShakeGoal(this));
-        this.goalSelector.addGoal(8, new FrostbiterEatFlowersGoal(this));
+        this.goalSelector.addGoal(8, new FrostbiterEatGoal(this));
 
         this.targetSelector.addGoal(0, new OwnerHurtByTargetGoal(this));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, false, this::isAngryAt));
@@ -161,6 +160,8 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
             this.setRightAntler(true);
         else if (!this.hasLeftAntler())
             this.setLeftAntler(true);
+
+        this.spawnAntlerParticle();
     }
 
     public void dropRandomAntler() {
@@ -174,8 +175,21 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
         else if (this.hasLeftAntler())
             this.setLeftAntler(false);
 
-        Vec3 branchPos = this.position().add(this.getLookAngle().scale(1.5)).relative(Direction.UP, this.getEyeHeight() + 0.75f);
-        spawnItemFancy(WindsweptItems.FROZEN_BRANCH.get(), branchPos, SoundEvents.GOAT_HORN_BREAK);
+        this.spawnItemFancy(WindsweptItems.FROZEN_BRANCH.get(), this.position().add(this.getLookAngle()
+                .scale(1.5f)).relative(Direction.UP, this.getEyeHeight() + .75f), SoundEvents.GOAT_HORN_BREAK);
+    }
+
+    public void spawnAntlerParticle() {
+        Vec3 lookAngle = this.getLookAngle();
+
+        for (int i = 0; i < 5; i++) {
+            Vec3 vector = new Vec3(this.getRandomX(.25f), this.getRandomY(), this.getRandomZ(.25f)).add(lookAngle);
+
+            if (this.level instanceof ServerLevel level1)
+                level1.sendParticles(WindsweptParticleTypes.FROST_LEAF.get(),
+                        vector.x, vector.y, vector.z, 1,
+                        0f,0f, 0f, 0f);
+        }
     }
 
     private boolean spawnItemFancy(Item item, Vec3 spawnPos, SoundEvent sound) {
@@ -246,8 +260,7 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
                 this.level.playSound(null, this.getX(), this.getY(), this.getZ(), this.getEatingSound(stack), this.getSoundSource(), 1.0F, 1.0F + (this.random.nextFloat() - this.random.nextFloat()) * 0.2F);
 
                 return InteractionResult.SUCCESS;
-            }
-            else if (this.canFallInLove()) {
+            } else if (this.canFallInLove()) {
                 this.level.playSound(null, this.getX(), this.getY(), this.getZ(), this.getEatingSound(stack), this.getSoundSource(), 1.0F, 1.0F + (this.random.nextFloat() - this.random.nextFloat()) * 0.2F);
             }
         }
@@ -323,7 +336,7 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
                 .add(Attributes.ARMOR, 4f)
                 .add(Attributes.ATTACK_DAMAGE, 5f)
                 .add(Attributes.MAX_HEALTH, 40f)
-                .add(Attributes.MOVEMENT_SPEED, .44f)
+                .add(Attributes.MOVEMENT_SPEED, .24f)
                 .add(Attributes.ATTACK_KNOCKBACK, 1.2f);
     }
 
@@ -441,26 +454,18 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
     }
 
     public static boolean checkFrostbiterSpawnRules(EntityType<Frostbiter> frostbiter, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
-        Holder<Biome> holder = level.getBiome(pos);
-        if (!holder.is(BiomeTags.POLAR_BEARS_SPAWN_ON_ALTERNATE_BLOCKS)) {
-            return checkAnimalSpawnRules(frostbiter, level, spawnType, pos, random);
-        } else {
-            return isBrightEnoughToSpawn(level, pos) && level.getBlockState(pos.below()).is(BlockTags.POLAR_BEARS_SPAWNABLE_ON_ALTERNATE);
-        }
+        return level.getBiome(pos).is(BiomeTags.POLAR_BEARS_SPAWN_ON_ALTERNATE_BLOCKS) ? isBrightEnoughToSpawn(level, pos)
+                && level.getBlockState(pos.below()).is(BlockTags.POLAR_BEARS_SPAWNABLE_ON_ALTERNATE) : checkAnimalSpawnRules(frostbiter, level, spawnType, pos, random);
     }
 
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance diff, MobSpawnType spawnType, @Nullable SpawnGroupData spawnGroupData, @Nullable CompoundTag tag) {
-        if (spawnGroupData == null) {
-            spawnGroupData = new AgeableMob.AgeableMobGroupData(1.0F);
-        }
-
-        return super.finalizeSpawn(level, diff, spawnType, spawnGroupData, tag);
+        return super.finalizeSpawn(level, diff, spawnType, spawnGroupData != null ? spawnGroupData : new AgeableMob.AgeableMobGroupData(1f), tag);
     }
 
     public class FrostbiterPanicGoal extends PanicGoal {
         public FrostbiterPanicGoal() {
-            super(Frostbiter.this, 2.2d);
+            super(Frostbiter.this, 1.35d);
         }
 
         @Override

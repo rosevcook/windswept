@@ -1,6 +1,6 @@
 package com.rosemods.windswept.core.mixin;
 
-import com.rosemods.windswept.common.entity.projectile.FrostArrow;
+import com.rosemods.windswept.common.entity.FrostArrow;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Stray;
 import net.minecraft.world.entity.projectile.AbstractArrow;

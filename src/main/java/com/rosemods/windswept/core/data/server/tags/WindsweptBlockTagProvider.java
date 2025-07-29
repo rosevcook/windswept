@@ -33,7 +33,7 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
                 .addOptional(new ResourceLocation("atmospheric", "grimwood_wall_sign"))
                 .addOptional(new ResourceLocation("caverns_and_chasms", "azalea_sign"))
                 .addOptional(new ResourceLocation("caverns_and_chasms", "azalea_wall_sign"));
-        this.tag(WindsweptBlockTags.PLENTY_CANNOT_PLACE);
+        this.tag(WindsweptBlockTags.FROSTBITER_FOOD).add(Blocks.GRASS, SNOWY_SPROUTS.get(), DRY_MOSSY_SPROUTS.get(), MOSSY_SPROUTS.get(), GELISOL_SPROUTS.get()).addTag(BlockTags.FLOWERS);
 
         //farmersdelight
         this.tag(WindsweptBlockTags.MINEABLE_KNIFE).add(CHRISTMAS_PUDDING.get());

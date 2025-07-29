@@ -1,4 +1,4 @@
-package com.rosemods.windswept.common.entity.projectile;
+package com.rosemods.windswept.common.entity;
 
 import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
 import com.rosemods.windswept.core.registry.WindsweptItems;

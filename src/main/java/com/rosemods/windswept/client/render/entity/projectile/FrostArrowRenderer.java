@@ -1,6 +1,6 @@
 package com.rosemods.windswept.client.render.entity.projectile;
 
-import com.rosemods.windswept.common.entity.projectile.FrostArrow;
+import com.rosemods.windswept.common.entity.FrostArrow;
 import com.rosemods.windswept.core.Windswept;
 import net.minecraft.client.renderer.entity.ArrowRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;

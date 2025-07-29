@@ -1,6 +1,5 @@
 package com.rosemods.windswept.core.mixin;
 
-import com.rosemods.windswept.common.effect.PlentyEffect;
 import com.rosemods.windswept.common.enchantment.curse.SlippingCurseEnchantment;
 import com.rosemods.windswept.common.item.AntlerHelmetItem;
 import com.rosemods.windswept.common.item.SnowBootsItem;
@@ -20,8 +19,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
-import java.util.Objects;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin extends Entity {
@@ -77,9 +74,6 @@ public abstract class LivingEntityMixin extends Entity {
 
         AntlerHelmetItem.tryAddSprintDamage(entity);
         SlippingCurseEnchantment.attemptDamageBoots(entity);
-
-        if (entity.getEffect(WindsweptEffects.PLENTY.get()) != null)
-            PlentyEffect.tryLeavePlentyFlowers(level, entity, pos, entity.getEffect(WindsweptEffects.PLENTY.get()).getAmplifier());
     }
 
     @Inject(method = "checkFallDamage", at = @At("HEAD"))
