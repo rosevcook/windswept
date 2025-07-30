@@ -16,4 +16,5 @@ public class SpruceTreeGrowerMixin {
     private void getConfiguredMegaFeature(RandomSource rand, CallbackInfoReturnable<Holder<? extends ConfiguredFeature<?, ?>>> info) {
         info.setReturnValue(TreeFeatures.MEGA_SPRUCE);
     }
+
 }

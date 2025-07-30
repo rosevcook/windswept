@@ -59,8 +59,8 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> implements
         boolean isShaking = frostbiter.isEndimationPlaying(WindsweptPlayableEndimations.FROSTBITER_SHAKE);
         boolean isEating = frostbiter.isEndimationPlaying(WindsweptPlayableEndimations.FROSTBITER_SHAKE);
 
-        float smallLimbSwingAmount = Math.min(limbSwingAmount, 0.15f);
-        float largeLimbSwingAmount = Math.min(limbSwingAmount, 0.5f);
+        float smallLimbSwingAmount = Math.min(limbSwingAmount, .15f);
+        float largeLimbSwingAmount = Math.min(limbSwingAmount, .5f);
 
         this.rightLeg.xRot = Mth.cos(limbSwing * .6662f) * .9f * smallLimbSwingAmount;
         this.leftLeg.xRot = Mth.cos(limbSwing * .6662f + Mth.PI) * .9f * smallLimbSwingAmount;
@@ -84,20 +84,18 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> implements
             if (frostbiter.hasControllingPassenger()) {
                 this.head.xRot = headPitch * (Mth.PI / 180f);
                 this.head.yRot = headPitch * (Mth.PI / 180f);
-                this.head.y = 1.0f;
+                this.head.y = 1f;
 
-
-                this.tail.yRot = Mth.cos(limbSwing * .5212f + Mth.PI) * limbSwingAmount * 0.25f;
-                this.tail.zRot = Mth.cos(limbSwing * .5212f + Mth.PI) * .1f * limbSwingAmount * 0.25f;
-            }
-            else {
-                this.tail.yRot = Mth.cos(limbSwing * .5212f + Mth.PI) * largeLimbSwingAmount * 0.5f;
-                this.tail.zRot = Mth.cos(limbSwing * .5212f + Mth.PI) * .1f * largeLimbSwingAmount * 0.5f;
+                this.tail.yRot = Mth.cos(limbSwing * .5212f + Mth.PI) * limbSwingAmount * .25f;
+                this.tail.zRot = Mth.cos(limbSwing * .5212f + Mth.PI) * .1f * limbSwingAmount * .25f;
+            } else {
+                this.tail.yRot = Mth.cos(limbSwing * .5212f + Mth.PI) * largeLimbSwingAmount * .5f;
+                this.tail.zRot = Mth.cos(limbSwing * .5212f + Mth.PI) * .1f * largeLimbSwingAmount * .5f;
             }
 
             this.body.zRot = Mth.cos(limbAngle) * intensity * limbSwingAmount;
-            this.body.y -= 1.0F * Mth.cos(limbSwing * 1.5F / 2) * 2.0F * limbSwingAmount * yIntensity;
-            this.head.y -= 1.0F * Mth.cos(limbSwing * 1.5F / 2) * 2.0F * limbSwingAmount * yIntensity;
+            this.body.y -= 1f * Mth.cos(limbSwing * 1.5f / 2) * 2f * limbSwingAmount * yIntensity;
+            this.head.y -= 1f * Mth.cos(limbSwing * 1.5f / 2) * 2f * limbSwingAmount * yIntensity;
 
             if (!isShaking) {
                 this.head.yRot = headPitch * (Mth.PI / 180f);
@@ -150,4 +148,5 @@ public class FrostbiterModel extends EndimatorEntityModel<Frostbiter> implements
     public ModelPart getHead() {
         return this.head;
     }
+
 }

@@ -12,7 +12,7 @@ public class WillOTheWispParticle extends TextureSheetParticle {
         super(level, x, y, z);
         this.setSize(.01f, .01f);
         this.pickSprite(sprites);
-        this.quadSize *= this.random.nextFloat() * .6F + .6F;
+        this.quadSize *= this.random.nextFloat() * .6f + .6f;
         this.lifetime = Mth.randomBetweenInclusive(level.random, 500, 1000);
         this.hasPhysics = false;
         this.friction = 1f;

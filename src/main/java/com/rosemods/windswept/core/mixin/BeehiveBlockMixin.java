@@ -18,4 +18,5 @@ public class BeehiveBlockMixin {
         if (level.random.nextFloat() < WindsweptConfig.COMMON.bumblebeeDiscChance.get())
             Block.popResourceFromFace(level, pos, level.getBlockState(pos).getValue(BeehiveBlock.FACING), WindsweptItems.MUSIC_DISC_BUMBLEBEE.get().getDefaultInstance());
     }
+
 }

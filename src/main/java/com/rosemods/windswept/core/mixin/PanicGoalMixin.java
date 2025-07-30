@@ -26,7 +26,7 @@ public class PanicGoalMixin {
         AABB radius = new AABB(this.mob.blockPosition()).inflate(2);
 
         for (LivingEntity entity : this.mob.level.getEntitiesOfClass(LivingEntity.class, radius))
-            if (this.mob != entity && (entity.getItemBySlot(EquipmentSlot.HEAD).is(WindsweptBlocks.CARVED_PINECONE_BLOCK.get().asItem()) || (entity instanceof Frostbiter frostbiter && frostbiter.isVehicle()))) {
+            if (this.mob != entity && (entity.getItemBySlot(EquipmentSlot.HEAD).is(WindsweptBlocks.CARVED_PINECONE_BLOCK.get().asItem()) || (entity instanceof Frostbiter frostbiter && frostbiter.hasControllingPassenger()))) {
                 info.setReturnValue(true);
                 return;
             }

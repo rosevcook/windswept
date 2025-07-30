@@ -11,6 +11,7 @@ import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 
 public class BluebellsFeature extends Feature<NoneFeatureConfiguration> {
+
     public BluebellsFeature() {
         super(NoneFeatureConfiguration.CODEC);
     }

@@ -11,8 +11,8 @@ public class FrostLeafParticle extends TextureSheetParticle {
         super(level, x, y, z, xd, yd, zd);
 
         this.setSpriteFromAge(spriteSet);
-        this.gravity = 0.5f;
-        this.friction = 0.95f;
+        this.gravity = .5f;
+        this.friction = .95f;
         this.lifetime = 40 + level.random.nextInt(20);
     }
 

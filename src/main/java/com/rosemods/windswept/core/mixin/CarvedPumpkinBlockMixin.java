@@ -46,7 +46,7 @@ public class CarvedPumpkinBlockMixin {
 
             if (pineconegolem != null) {
                 float yRot = state.getValue(CarvedPumpkinBlock.FACING).toYRot();
-                pineconegolem.moveTo((double) belowpos.getX() + 0.5D, (double) belowpos.getY() + 0.05D, (double) belowpos.getZ() + 0.5D);
+                pineconegolem.moveTo((double) belowpos.getX() + .5D, (double) belowpos.getY() + .05D, (double) belowpos.getZ() + .5D);
                 pineconegolem.yHeadRot = yRot;
                 pineconegolem.yBodyRot = yRot;
                 level.addFreshEntity(pineconegolem);
@@ -61,4 +61,5 @@ public class CarvedPumpkinBlockMixin {
             }
         }
     }
+
 }

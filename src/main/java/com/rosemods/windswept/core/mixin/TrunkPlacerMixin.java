@@ -24,4 +24,5 @@ public class TrunkPlacerMixin {
         if (((LevelReader) level).getBlockState(pos.below()).getMaterial().isReplaceable() && WindsweptConfig.COMMON.roots.get() && (config.forceDirt || level.isStateAtPosition(pos, Feature::isDirt)))
             states.accept(pos.below(), Blocks.HANGING_ROOTS.defaultBlockState());
     }
+
 }

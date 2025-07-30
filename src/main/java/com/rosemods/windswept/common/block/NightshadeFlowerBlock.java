@@ -34,7 +34,7 @@ public class NightshadeFlowerBlock extends BlueprintFlowerBlock {
 
             level.addParticle(ParticleTypes.END_ROD, d0 + Direction.UP.getStepX() * d3,
                     d1 + Direction.UP.getStepY() * d3, d2 + Direction.UP.getStepZ() * d3,
-                    rand.nextGaussian() * 0.005D, rand.nextGaussian() * .005d, rand.nextGaussian() * .005d);
+                    rand.nextGaussian() * .005D, rand.nextGaussian() * .005d, rand.nextGaussian() * .005d);
         }
     }
 

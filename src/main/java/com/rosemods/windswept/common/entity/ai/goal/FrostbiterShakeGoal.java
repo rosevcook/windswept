@@ -52,7 +52,7 @@ public class FrostbiterShakeGoal extends Goal {
         if (tick > adjustedTickDelay(24)) this.frostbiter.spawnAntlerParticle();
 
         if (frostbiter.isTame() && tick % 2 == 0 && tick > adjustedTickDelay(20) && tick < adjustedTickDelay(30))
-            this.frostbiter.playSound(SoundEvents.BELL_BLOCK, 0.5f, 0.5f);
+            this.frostbiter.playSound(SoundEvents.BELL_BLOCK, .5f, .5f);
 
     }
 

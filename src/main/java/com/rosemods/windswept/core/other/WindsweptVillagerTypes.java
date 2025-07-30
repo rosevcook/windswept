@@ -19,4 +19,5 @@ public final class WindsweptVillagerTypes {
         VillagerType.BY_BIOME.put(WindsweptBiomes.SNOWY_PINE_BARRENS.getKey(), VillagerType.SNOW);
         VillagerType.BY_BIOME.put(WindsweptBiomes.SNOWY_CHESTNUT_FOREST.getKey(), VillagerType.SNOW);
     }
+
 }

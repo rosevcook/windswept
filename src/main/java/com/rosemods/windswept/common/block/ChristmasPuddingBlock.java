@@ -84,7 +84,7 @@ public class ChristmasPuddingBlock extends Block {
         } else if (puddingState != PuddingStates.FIRE && stack.is(WindsweptItemTags.KNIVES)) {
             takeOneSlice(state, player, level, pos);
             level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
-            level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
+            level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, .8f, .8f);
 
             popResourceFromFace(level, pos.offset(.5f, -.5f, .5f), Direction.UP,
                     WindsweptItems.CHRISTMAS_PUDDING_SLICE.get().getDefaultInstance());

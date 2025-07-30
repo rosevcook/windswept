@@ -34,6 +34,7 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.ResetUniversalAngerTargetGoal;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -49,7 +50,6 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 import java.util.UUID;
 import java.util.function.Predicate;
 
@@ -60,7 +60,7 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
     private static final EntityDataAccessor<Integer> BOOST_TIME = SynchedEntityData.defineId(Frostbiter.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> ANGER_TIME = SynchedEntityData.defineId(Frostbiter.class, EntityDataSerializers.INT);
     private static final UniformInt ANGER_RANGE = TimeUtil.rangeOfSeconds(20, 39);
-    private static final Predicate<Entity> FROSTBITER_SHOULD_KB = ent -> EntitySelector.NO_CREATIVE_OR_SPECTATOR.test(ent) && !ent.isPassenger() && ent.getType() != WindsweptEntityTypes.FROSTBITER.get() && ent.isAlive();
+    private static final Predicate<Entity> FROSTBITER_SHOULD_KB = e -> EntitySelector.NO_CREATIVE_OR_SPECTATOR.test(e) && !e.isPassenger() && e.isAlive() && e instanceof Monster;
     private final ItemBasedSteering steering = new ItemBasedSteering(this.entityData, BOOST_TIME, SADDLED);
     private UUID lastHurtBy;
 
@@ -187,22 +187,23 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
 
             if (this.level instanceof ServerLevel level1)
                 level1.sendParticles(WindsweptParticleTypes.FROST_LEAF.get(),
-                        vector.x, vector.y, vector.z, 1,
-                        0f,0f, 0f, 0f);
+                        vector.x, vector.y, vector.z, 1, 0f, 0f, 0f, 0f);
         }
     }
 
     private boolean spawnItemFancy(Item item, Vec3 spawnPos, SoundEvent sound) {
-        ItemEntity itemEntity = new ItemEntity(this.level, spawnPos.x, spawnPos.y, spawnPos.z, new ItemStack(item));
-        boolean success = this.level.addFreshEntity(itemEntity);
-        if (success) {
+        ItemEntity entity = new ItemEntity(this.level, spawnPos.x, spawnPos.y, spawnPos.z, new ItemStack(item));
+
+        if (this.level.addFreshEntity(entity)) {
+            entity.setDeltaMovement(entity.getDeltaMovement().add(
+                    (this.random.nextFloat() - this.random.nextFloat()) * .2f,
+                    this.random.nextFloat() * .1f,
+                    (this.random.nextFloat() - this.random.nextFloat()) * .2f));
             this.playSound(sound);
-            itemEntity.setDeltaMovement(itemEntity.getDeltaMovement()
-                    .add((this.random.nextFloat() - this.random.nextFloat()) * 0.2F,
-                            this.random.nextFloat() * 0.1F,
-                            (this.random.nextFloat() - this.random.nextFloat()) * 0.2F));
+            return true;
         }
-        return success;
+
+        return false;
     }
 
 
@@ -251,17 +252,15 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
                     this.usePlayerItem(player, hand, stack);
                     this.navigation.stop();
                     this.level.broadcastEntityEvent(this, (byte) 7);
-
-                    //this.setOrderedToSit(true);
                 } else {
                     this.usePlayerItem(player, hand, stack);
                     this.level.broadcastEntityEvent(this, (byte) 6);
                 }
-                this.level.playSound(null, this.getX(), this.getY(), this.getZ(), this.getEatingSound(stack), this.getSoundSource(), 1.0F, 1.0F + (this.random.nextFloat() - this.random.nextFloat()) * 0.2F);
+                this.level.playSound(null, this.getX(), this.getY(), this.getZ(), this.getEatingSound(stack), this.getSoundSource(), 1f, 1f + (this.random.nextFloat() - this.random.nextFloat()) * .2f);
 
                 return InteractionResult.SUCCESS;
             } else if (this.canFallInLove()) {
-                this.level.playSound(null, this.getX(), this.getY(), this.getZ(), this.getEatingSound(stack), this.getSoundSource(), 1.0F, 1.0F + (this.random.nextFloat() - this.random.nextFloat()) * 0.2F);
+                this.level.playSound(null, this.getX(), this.getY(), this.getZ(), this.getEatingSound(stack), this.getSoundSource(), 1f, 1f + (this.random.nextFloat() - this.random.nextFloat()) * .2f);
             }
         }
 
@@ -367,9 +366,7 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
 
     @Override
     public Entity getControllingPassenger() {
-        Entity entity = this.getFirstPassenger();
-
-        return entity instanceof Player player && this.canBeControlledBy(player) ? entity : null;
+        return this.getFirstPassenger() instanceof Player player && this.canBeControlledBy(player) ? player : null;
     }
 
     private boolean canBeControlledBy(Player player) {
@@ -378,31 +375,26 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
 
     @Override
     public void tick() {
-        doRidingKnockback();
-        super.tick();
-    }
-
-    private void doRidingKnockback() {
-        if (this.isVehicle() && this.isAlive() && this.level.getGameTime() % 5 == 1) {
-            List<LivingEntity> menInBoundingBox = this.level.getEntitiesOfClass(LivingEntity.class, this.getBoundingBox().inflate(1.6d), FROSTBITER_SHOULD_KB);
-
-            for (LivingEntity entity : menInBoundingBox) {
+        if (this.level.getGameTime() % 5 == 1 && this.hasControllingPassenger() && this.isAlive())
+            for (LivingEntity entity : this.level.getEntitiesOfClass(LivingEntity.class, this.getBoundingBox().inflate(1.6d), FROSTBITER_SHOULD_KB)) {
                 entity.setTicksFrozen(entity.getTicksFrozen() + 65);
-                Vec3 deltaPos = entity.position().subtract(this.position()).with(Direction.Axis.Y, 0)
-                        .normalize().scale(1.5f + level.getRandom().nextDouble() / 2)
+                Vec3 deltaPos = entity.position().subtract(this.position()).with(Direction.Axis.Y, 0f)
+                        .normalize().scale(1.5f + level.getRandom().nextDouble() / 2f)
                         .scale(this.getAttributeValue(Attributes.ATTACK_KNOCKBACK));
 
                 entity.knockback(deltaPos.length(), -deltaPos.x, -deltaPos.z);
-                entity.hurt(DamageSource.mobAttack(this), (float) this.getAttributeValue(Attributes.ATTACK_DAMAGE) / 2);
+                entity.hurt(DamageSource.mobAttack(this), (float) this.getAttributeValue(Attributes.ATTACK_DAMAGE) / 2f);
 
-                this.playSound(SoundEvents.GOAT_RAM_IMPACT, 2.0f, 1.0f);
+                this.playSound(SoundEvents.GOAT_RAM_IMPACT, 2f, 1f);
             }
-        }
+
+
+        super.tick();
     }
 
     @Override
     public boolean boost() {
-        return this.steering.boost(this.getRandom());
+        return this.steering.boost(this.random);
     }
 
     @Override
@@ -450,7 +442,7 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
     protected void dropSaddle() {
         super.dropEquipment();
         this.setSaddled(false);
-        spawnItemFancy(Items.SADDLE, this.position().relative(Direction.UP, 2), SoundEvents.SNOW_GOLEM_SHEAR);
+        this.spawnItemFancy(Items.SADDLE, this.position().relative(Direction.UP, 2), SoundEvents.SNOW_GOLEM_SHEAR);
     }
 
     public static boolean checkFrostbiterSpawnRules(EntityType<Frostbiter> frostbiter, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
@@ -486,4 +478,5 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
         }
 
     }
+
 }

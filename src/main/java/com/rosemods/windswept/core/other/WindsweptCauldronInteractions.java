@@ -70,7 +70,7 @@ public final class WindsweptCauldronInteractions {
                 player.awardStat(Stats.USE_CAULDRON);
                 player.awardStat(Stats.ITEM_USED.get(stack.getItem()));
                 level.setBlockAndUpdate(pos, Blocks.CAULDRON.defaultBlockState());
-                level.playSound(null, pos, sound, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.playSound(null, pos, sound, SoundSource.BLOCKS, 1f, 1f);
                 level.gameEvent(null, GameEvent.FLUID_PICKUP, pos);
             }
 

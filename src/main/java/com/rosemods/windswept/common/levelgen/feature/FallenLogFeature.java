@@ -17,6 +17,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConf
 import java.util.List;
 
 public class FallenLogFeature extends Feature<SimpleBlockConfiguration> {
+
     public FallenLogFeature() {
         super(SimpleBlockConfiguration.CODEC);
     }

@@ -15,6 +15,7 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.Tags;
 
 public class IciclesFeature extends Feature<NoneFeatureConfiguration> {
+
     public IciclesFeature() {
         super(NoneFeatureConfiguration.CODEC);
     }

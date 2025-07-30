@@ -18,4 +18,5 @@ public class WindsweptCabinetBlock extends CabinetBlock {
     public void fillItemCategory(CreativeModeTab group, NonNullList<ItemStack> items) {
         FILLER.fillItem(this.asItem(), group, items);
     }
+
 }

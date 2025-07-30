@@ -9,28 +9,37 @@
   },
   "entity.chilled.ambient": {
     "sounds": [
-      "windswept:entity/chilled/ambient/idle1",
-      "windswept:entity/chilled/ambient/idle2",
-      "windswept:entity/chilled/ambient/idle3"
+      {
+        "name": "windswept:entity/chilled/ambient/idle1",
+        "volume": 1.3
+      },
+      {
+        "name": "windswept:entity/chilled/ambient/idle2",
+        "volume": 1.3
+      },
+      {
+        "name": "windswept:entity/chilled/ambient/idle3",
+        "volume": 1.3
+      }
     ]
   },
   "entity.chilled.death": {
     "sounds": [
       {
         "name": "windswept:entity/chilled/death/death1",
-        "volume": 1.3
+        "volume": 1.6
       },
       {
         "name": "windswept:entity/chilled/death/death2",
-        "volume": 1.3
+        "volume": 1.6
       },
       {
         "name": "windswept:entity/chilled/death/death3",
-        "volume": 1.3
+        "volume": 1.6
       },
       {
         "name": "windswept:entity/chilled/death/death4",
-        "volume": 1.3
+        "volume": 1.6
       }
     ]
   },
@@ -38,15 +47,15 @@
     "sounds": [
       {
         "name": "windswept:entity/chilled/hurt/hurt1",
-        "volume": 1.2
+        "volume": 1.5
       },
       {
         "name": "windswept:entity/chilled/hurt/hurt2",
-        "volume": 1.2
+        "volume": 1.5
       },
       {
         "name": "windswept:entity/chilled/hurt/hurt3",
-        "volume": 1.2
+        "volume": 1.5
       }
     ]
   },

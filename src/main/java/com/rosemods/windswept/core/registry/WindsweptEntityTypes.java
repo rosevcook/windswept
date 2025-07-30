@@ -1,8 +1,8 @@
 package com.rosemods.windswept.core.registry;
 
-import com.rosemods.windswept.client.render.entity.animal.FrostbiterRenderer;
-import com.rosemods.windswept.client.render.entity.monster.ChilledRenderer;
-import com.rosemods.windswept.client.render.entity.projectile.FrostArrowRenderer;
+import com.rosemods.windswept.client.render.entity.FrostbiterRenderer;
+import com.rosemods.windswept.client.render.entity.ChilledRenderer;
+import com.rosemods.windswept.client.render.entity.FrostArrowRenderer;
 import com.rosemods.windswept.common.entity.Frostbiter;
 import com.rosemods.windswept.common.entity.Chilled;
 import com.rosemods.windswept.common.entity.FrostArrow;

@@ -411,7 +411,7 @@ public class WindsweptBlocks {
         public static final BlockBehaviour.Properties PINECONE_BLOCK = Block.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN).strength(2f, 3f).sound(WindsweptSoundTypes.PINECONE);
         public static final BlockBehaviour.Properties SHALE = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_BLUE).sound(SoundType.DRIPSTONE_BLOCK).requiresCorrectToolForDrops().strength(1.5f, 1f);
         public static final BlockBehaviour.Properties LUNALITE = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_LIGHT_BLUE).sound(SoundType.CALCITE).requiresCorrectToolForDrops().strength(.8f);
-        public static final BlockBehaviour.Properties GINGERBREAD = Block.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_ORANGE).strength(2.0F, 3.0F).sound(SoundType.WOOD);
+        public static final BlockBehaviour.Properties GINGERBREAD = Block.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_ORANGE).strength(2f, 3f).sound(SoundType.WOOD);
         public static final BlockBehaviour.Properties FEATHER_ORNAMENT = Block.Properties.of(Material.DECORATION, MaterialColor.COLOR_BROWN).strength(.1f).noOcclusion().noCollission().sound(SoundType.AZALEA);
         public static final BlockBehaviour.Properties LAVENDER_THATCH = BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.COLOR_PURPLE).strength(.5f).sound(SoundType.NETHER_SPROUTS).noOcclusion();
     }

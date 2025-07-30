@@ -13,6 +13,7 @@ import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 
 public class FloorIciclesFeature extends Feature<NoneFeatureConfiguration> {
+
     public FloorIciclesFeature() {
         super(NoneFeatureConfiguration.CODEC);
     }
