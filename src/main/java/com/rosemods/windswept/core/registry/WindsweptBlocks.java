@@ -27,6 +27,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -210,7 +211,7 @@ public class WindsweptBlocks {
 
     public static final RegistryObject<Block> PINECONE_BLOCK = HELPER.createBlock("pinecone_block", () -> new PineconeBlockBlock(Properties.PINECONE_BLOCK), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> CARVED_PINECONE_BLOCK = HELPER.createBlockWithItem("carved_pinecone_block", () -> new CarvedPineconeBlock(BlockBehaviour.Properties.copy(PINECONE_BLOCK.get()).randomTicks()), () -> new WearableBlockItem(WindsweptBlocks.CARVED_PINECONE_BLOCK.get(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
-    public static final RegistryObject<Block> WILL_O_THE_WISP = HELPER.createBlock("will_o_the_wisp", () -> new WillOTheWispBlock(BlockBehaviour.Properties.copy(PINECONE_BLOCK.get()).lightLevel(s -> 10)), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> WILL_O_THE_WISP = HELPER.createBlock("will_o_the_wisp", () -> new WillOTheWispBlock(BlockBehaviour.Properties.copy(PINECONE_BLOCK.get()).lightLevel(s -> 10)), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS).rarity(Rarity.RARE));
 
     public static final RegistryObject<Block> PINECONE_SHINGLES = HELPER.createBlock("pinecone_shingles", () -> new Block(Properties.PINECONE_BLOCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> PINECONE_SHINGLE_STAIRS = HELPER.createBlock("pinecone_shingle_stairs", () -> new StairBlock(PINECONE_SHINGLES.get()::defaultBlockState, Properties.PINECONE_BLOCK), CreativeModeTab.TAB_BUILDING_BLOCKS);

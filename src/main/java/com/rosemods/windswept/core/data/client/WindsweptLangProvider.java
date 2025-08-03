@@ -104,7 +104,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         // Attributes
         this.translateAttribute(WindsweptAttributes.SNOW_SPEED);
         this.translateAttribute(WindsweptAttributes.FRAGRANCE);
-        this.add(WindsweptAttributes.SPRINT_DAMAGE.get().getDescriptionId(), "Attack Damage while Sprinting");
+        this.add(WindsweptAttributes.SPRINT_DAMAGE.get().getDescriptionId(), "Kinetic Damage");
 
         // Enchantments //
         this.translateEnchantment(WindsweptEnchantments.SLIPPING_CURSE, "Curse of Slipping", "Causes the wearer to slip on any block as if it was ice whilst damaging the boots.");
@@ -127,12 +127,10 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.jeiInfo(MUSIC_DISC_RAIN, "Dropped by a Drowned if killed by a Skeleton.");
         this.jeiInfo(MUSIC_DISC_SNOW, "Dropped by a Chilled if killed by a Skeleton.");
         this.jeiInfo(MUSIC_DISC_BUMBLEBEE, "Sometimes dropped when shearing a Beehive for Honeycombs.");
-
         this.jeiInfo(WILD_BERRIES, "Wild berries are the fruit of the wild berry bush. The plant is made unique by their ability to grow in snowy conditions. The berry can be cultivated for a juice that can regenerate health, and can be frozen to a popsicle that grants resistance to frost.");
-        this.jeiInfo(NIGHTSHADE, "Nightshades are mystical flowers found rarely growing in patches from the roots of trees. The flower emits a subtle white light; similar to the light of the moon.");
-
-        this.jeiInfo(CARVED_PINECONE_BLOCK, "The face of the Carved Pinecone creates a single note randomly as wind passes through them, the note produced is deeper depending on how high they are stacked.");
-
+        this.jeiInfo(NIGHTSHADE, "Nightshades are mystical flowers found rarely growing in patches from the roots of trees. The flower emits a subtle white light.");
+        this.jeiInfo(CARVED_PINECONE_BLOCK, "The face of the Carved Pinecone creates a single note randomly as wind passes through them, the note produced is deeper depending on how high they are stacked on top of pinecone blocks. \n(Is activated through random tick, right clicking, or redstone)");
+        this.jeiInfo(WILL_O_THE_WISP, "Will watch you when your back is turned.");
         this.jeiInfo(ICE_LANTERN, "The Ice Lantern emits a light incapable of melting Ice and Snow.");
         this.jeiInfo(WOODEN_BUCKET, "Wooden buckets are easily craft-able; but it comes at a cost to their strength. Durability is taken when fluids exit the bucket.");
         this.jeiInfo(SNOW_BOOTS, "Snow boots allow for faster traversal through snow, and grants the wearer the ability to walk on Powder Snow. The leather can be dyed.");

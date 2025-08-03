@@ -1,7 +1,7 @@
 {
   "attribute.windswept.name.generic.fragrance": "Fragrance",
   "attribute.windswept.name.generic.snow_speed": "Snow Speed",
-  "attribute.windswept.name.generic.sprint_damage": "Attack Damage while Sprinting",
+  "attribute.windswept.name.generic.sprint_damage": "Kinetic Damage",
   "biome.windswept.chestnut_forest": "Chestnut Forest",
   "biome.windswept.lavender_meadow": "Lavender Meadow",
   "biome.windswept.pine_barrens": "Pine Barrens",
@@ -452,13 +452,14 @@
   "item.windswept.wooden_milk_bucket": "Wooden Milk Bucket",
   "item.windswept.wooden_powder_snow_bucket": "Wooden Powder Snow Bucket",
   "item.windswept.wooden_water_bucket": "Wooden Water Bucket",
-  "windswept.jei.info.carved_pinecone_block": "The face of the Carved Pinecone creates a single note randomly as wind passes through them, the note produced is deeper depending on how high they are stacked.",
+  "windswept.jei.info.carved_pinecone_block": "The face of the Carved Pinecone creates a single note randomly as wind passes through them, the note produced is deeper depending on how high they are stacked on top of pinecone blocks. \n(Is activated through random tick, right clicking, or redstone)",
   "windswept.jei.info.ice_lantern": "The Ice Lantern emits a light incapable of melting Ice and Snow.",
   "windswept.jei.info.music_disc_bumblebee": "Sometimes dropped when shearing a Beehive for Honeycombs.",
   "windswept.jei.info.music_disc_rain": "Dropped by a Drowned if killed by a Skeleton.",
   "windswept.jei.info.music_disc_snow": "Dropped by a Chilled if killed by a Skeleton.",
-  "windswept.jei.info.nightshade": "Nightshades are mystical flowers found rarely growing in patches from the roots of trees. The flower emits a subtle white light; similar to the light of the moon.",
+  "windswept.jei.info.nightshade": "Nightshades are mystical flowers found rarely growing in patches from the roots of trees. The flower emits a subtle white light.",
   "windswept.jei.info.snow_boots": "Snow boots allow for faster traversal through snow, and grants the wearer the ability to walk on Powder Snow. The leather can be dyed.",
   "windswept.jei.info.wild_berries": "Wild berries are the fruit of the wild berry bush. The plant is made unique by their ability to grow in snowy conditions. The berry can be cultivated for a juice that can regenerate health, and can be frozen to a popsicle that grants resistance to frost.",
+  "windswept.jei.info.will_o_the_wisp": "Will watch you when not your back is turned.",
   "windswept.jei.info.wooden_bucket": "Wooden buckets are easily craft-able; but it comes at a cost to their strength. Durability is taken when fluids exit the bucket."
 }

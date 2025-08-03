@@ -6,7 +6,6 @@
   "refmap": "windswept.refmap.json",
   "mixins": [
     "BeehiveBlockMixin",
-    "BlockBlobFeatureMixin",
     "BlockMixin",
     "BoatMixin",
     "CarvedPumpkinBlockMixin",

@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "windswept:pine_totem",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 1631237826,
+    "spacing": 10,
+    "separation": 1
+  }
+}

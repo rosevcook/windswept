@@ -17,7 +17,7 @@ license = "All Rights Reserved"
 [[dependencies.windswept]]
     modId = "forge"
     mandatory = true
-    versionRange = "[43.2.0,)"
+    versionRange = "[43.5.0,)"
     ordering = "NONE"
     side = "BOTH"
 

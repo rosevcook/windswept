@@ -22,7 +22,6 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.LiquidBlockContainer;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.Fluid;
@@ -90,10 +89,6 @@ public class WoodenBucketItem extends BucketItem implements Wearable {
     @Override
     public int getMaxDamage(ItemStack stack) {
         return WindsweptConfig.COMMON.woodenBucketDurabilty.get();
-    }
-
-    private boolean canBlockContainFluid(Level level, BlockPos pos, BlockState state) {
-        return state.getBlock() instanceof LiquidBlockContainer container && container.canPlaceLiquid(level, pos, state, this.getFluid());
     }
 
     @Override
