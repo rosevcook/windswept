@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:grove",
+  "features": [
+    "windswept:holly_trees_on_snow",
+    "windswept:spruce_trees_on_snow"
+  ],
+  "step": "vegetal_decoration"
+}

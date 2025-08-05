@@ -1,0 +1,8 @@
+{
+  "repaletter": {
+    "type": "blueprint:simple",
+    "replaces_block": "minecraft:stripped_spruce_log",
+    "replaces_with": "windswept:stripped_chestnut_log"
+  },
+  "structures": "minecraft:village_snowy"
+}

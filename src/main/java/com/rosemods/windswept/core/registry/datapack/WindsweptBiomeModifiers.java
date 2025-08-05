@@ -6,6 +6,8 @@ import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.placement.CavePlacements;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
@@ -22,6 +24,7 @@ import net.minecraftforge.common.world.ForgeBiomeModifiers.AddFeaturesBiomeModif
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
+import java.util.Set;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -55,11 +58,11 @@ public final class WindsweptBiomeModifiers {
         addSpawn(context, "frostbiter", Tags.Biomes.IS_SNOWY, new MobSpawnSettings.SpawnerData(WindsweptEntityTypes.FROSTBITER.get(), 3, 1, 3));
 
         // removed features
-        //removeFeature("grove_spruce_trees", Biomes.GROVE, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_GROVE);
-        //removeFeature("taiga_default_flowers", BiomeTags.IS_TAIGA, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_DEFAULT);
-        //removeFeature("snowy_default_flowers", Tags.Biomes.IS_SNOWY, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_DEFAULT);
-        //removeFeature("lush_caves_moss", Biomes.LUSH_CAVES, GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.LUSH_CAVES_VEGETATION);
-        //removeFeature("old_growth_pine_taiga_trees", Biomes.OLD_GROWTH_PINE_TAIGA, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_OLD_GROWTH_PINE_TAIGA);
+        removeFeature(context, "grove_spruce_trees", Biomes.GROVE, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_GROVE);
+        removeFeature(context, "taiga_default_flowers", BiomeTags.IS_TAIGA, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_DEFAULT);
+        removeFeature(context, "snowy_default_flowers", Tags.Biomes.IS_SNOWY, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_DEFAULT);
+        removeFeature(context, "lush_caves_moss", Biomes.LUSH_CAVES, GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.LUSH_CAVES_VEGETATION);
+        removeFeature(context, "old_growth_pine_taiga_trees", Biomes.OLD_GROWTH_PINE_TAIGA, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_OLD_GROWTH_PINE_TAIGA);
 
     }
 
@@ -71,6 +74,16 @@ public final class WindsweptBiomeModifiers {
     @SafeVarargs
     private static void addFeature(BootstapContext<BiomeModifier> context, String name, ResourceKey<Biome> biome, Decoration step, ResourceKey<PlacedFeature>... features) {
         register(context, "add_feature/" + name, () -> new AddFeaturesBiomeModifier(HolderSet.direct(context.lookup(Registries.BIOME).getOrThrow(biome)), featureSet(context, features), step));
+    }
+
+    @SafeVarargs
+    private static void removeFeature(BootstapContext<BiomeModifier> context, String name, TagKey<Biome> biomes, GenerationStep.Decoration step, ResourceKey<PlacedFeature>... features) {
+        register(context, "removed_features/" + name, () -> new ForgeBiomeModifiers.RemoveFeaturesBiomeModifier(context.lookup(Registries.BIOME).getOrThrow(biomes), featureSet(context, features), Set.of(step)));
+    }
+
+    @SafeVarargs
+    private static void removeFeature(BootstapContext<BiomeModifier> context, String name, ResourceKey<Biome> biome, GenerationStep.Decoration step, ResourceKey<PlacedFeature>... features) {
+        register(context, "removed_features/" + name, () -> new ForgeBiomeModifiers.RemoveFeaturesBiomeModifier(HolderSet.direct(context.lookup(Registries.BIOME).getOrThrow(biome)), featureSet(context, features), Set.of(step)));
     }
 
     private static void addSpawn(BootstapContext<BiomeModifier> context, String name, TagKey<Biome> biomes, MobSpawnSettings.SpawnerData... spawns) {

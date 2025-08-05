@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:grove",
+  "features": "windswept:wild_berry_bush_common",
+  "step": "vegetal_decoration"
+}

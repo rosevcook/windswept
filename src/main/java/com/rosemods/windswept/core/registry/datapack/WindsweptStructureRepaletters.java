@@ -81,17 +81,17 @@ public final class WindsweptStructureRepaletters {
         register(context, structures, Blocks.JUNGLE_TRAPDOOR, PINE_TRAPDOOR.get(), SHIPWRECK, SHIPWRECK_BEACHED);
 
         //mod compat
-        ICondition woodworks = new OrCondition(new ModLoadedCondition("quark"), new ModLoadedCondition("woodworks"));
+        ICondition woodworks = new ModLoadedCondition("woodworks");
         ICondition farmersDelight = new ModLoadedCondition("farmersdelight");
 
-        register(context, structures, Blocks.BOOKSHELF, HOLLY_BOOKSHELF.get(), woodworks, GROVE_WEATHERED_HOUSE);
-        register(context, structures, Blocks.CHEST, HOLLY_CHEST.get(), woodworks, GROVE_WEATHERED_HOUSE);
-        register(context, structures, Blocks.LADDER, HOLLY_LADDER.get(), woodworks, GROVE_WEATHERED_HOUSE);
-        register(context, structures, Blocks.LADDER, CHESTNUT_LADDER.get(), woodworks, CHESTNUT_WEATHERED_HOUSE);
-        register(context, structures, Blocks.BOOKSHELF, HOLLY_BOOKSHELF.get(), woodworks, VILLAGE_FROZEN);
-        register(context, structures, Blocks.CHEST, HOLLY_CHEST.get(), woodworks, VILLAGE_FROZEN);
-        register(context, structures, Blocks.LADDER, HOLLY_LADDER.get(), woodworks, VILLAGE_FROZEN);
-        register(context, structures, Blocks.WHEAT, ModBlocks.CABBAGE_CROP.get(), farmersDelight, VILLAGE_FROZEN);
+        //register(context, structures, Blocks.BOOKSHELF, HOLLY_BOOKSHELF.get(), woodworks, GROVE_WEATHERED_HOUSE);
+        //register(context, structures, Blocks.CHEST, HOLLY_CHEST.get(), woodworks, GROVE_WEATHERED_HOUSE);
+        //register(context, structures, Blocks.LADDER, HOLLY_LADDER.get(), woodworks, GROVE_WEATHERED_HOUSE);
+        //register(context, structures, Blocks.LADDER, CHESTNUT_LADDER.get(), woodworks, CHESTNUT_WEATHERED_HOUSE);
+        //register(context, structures, Blocks.BOOKSHELF, HOLLY_BOOKSHELF.get(), woodworks, VILLAGE_FROZEN);
+        //register(context, structures, Blocks.CHEST, HOLLY_CHEST.get(), woodworks, VILLAGE_FROZEN);
+        //register(context, structures, Blocks.LADDER, HOLLY_LADDER.get(), woodworks, VILLAGE_FROZEN);
+        //register(context, structures, Blocks.WHEAT, ModBlocks.CABBAGE_CROP.get(), farmersDelight, VILLAGE_FROZEN);
         register(context, structures, Blocks.CHEST, HOLLY_CHEST.get(), woodworks, IGLOO);
         register(context, structures, Blocks.LADDER, HOLLY_LADDER.get(), woodworks, IGLOO);
         register(context, structures, Blocks.CHEST, CHESTNUT_CHEST.get(), woodworks, VILLAGE_SNOWY);
@@ -102,16 +102,21 @@ public final class WindsweptStructureRepaletters {
 
     @SafeVarargs
     private static void register(BootstapContext<StructureRepaletterEntry> context, HolderGetter<Structure> structures, Block replacesBlock, Block replacesWith, ICondition condition, ResourceKey<Structure>... selector) {
-        context.register(createKey(getName(replacesBlock, replacesWith, selector)), new StructureRepaletterEntry(BlueprintHolderSets.conditional(HolderSet.direct(Stream.of(selector).map(structures::getOrThrow)
-                .collect(Collectors.toList())), condition), Optional.empty(), false, new SimpleStructureRepaletter(replacesBlock, replacesWith)));
+        register(context, getName(replacesBlock, replacesWith, selector), replacesBlock, replacesWith,
+                BlueprintHolderSets.conditional(HolderSet.direct(Stream.of(selector).map(structures::getOrThrow).collect(Collectors.toList())), condition));
     }
 
     @SafeVarargs
     private static void register(BootstapContext<StructureRepaletterEntry> context, HolderGetter<Structure> structures, Block replacesBlock, Block replacesWith, ResourceKey<Structure>... selector) {
-        context.register(createKey(getName(replacesBlock, replacesWith, selector)), new StructureRepaletterEntry(HolderSet.direct(Stream.of(selector).map(structures::getOrThrow)
-                .collect(Collectors.toList())), Optional.empty(), false, new SimpleStructureRepaletter(replacesBlock, replacesWith)));
+        register(context, getName(replacesBlock, replacesWith, selector), replacesBlock, replacesWith,
+                HolderSet.direct(Stream.of(selector).map(structures::getOrThrow).collect(Collectors.toList())));
     }
 
+    private static void register(BootstapContext<StructureRepaletterEntry> context, String name, Block replacesBlock, Block replacesWith, HolderSet<Structure> structures) {
+        context.register(createKey(name), new StructureRepaletterEntry(structures, Optional.empty(), false, new SimpleStructureRepaletter(replacesBlock, replacesWith)));
+    }
+
+    @SafeVarargs
     private static String getName(Block replacesBlock, Block replacesWith, ResourceKey<Structure>... selector) {
         return selector[0].location().getPath() + "/" + ForgeRegistries.BLOCKS.getKey(replacesWith).getPath() + "_replaces_" + ForgeRegistries.BLOCKS.getKey(replacesBlock).getPath();
     }

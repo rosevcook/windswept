@@ -17,8 +17,8 @@ public class WindsweptDatapackProvider extends DatapackBuiltinEntriesProvider {
             .add(Registries.CONFIGURED_FEATURE, WindsweptConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, WindsweptPlacedFeatures::bootstrap)
             .add(Registries.BIOME, WindsweptBiomes::bootstrap)
-            //.add(ForgeRegistries.Keys.BIOME_MODIFIERS, WindsweptBiomeModifiers::bootstrap)
-            //.add(BlueprintDataPackRegistries.STRUCTURE_REPALETTERS, WindsweptStructureRepaletters::bootstrap)
+            .add(ForgeRegistries.Keys.BIOME_MODIFIERS, WindsweptBiomeModifiers::bootstrap)
+            .add(BlueprintDataPackRegistries.STRUCTURE_REPALETTERS, WindsweptStructureRepaletters::bootstrap)
             .add(Registries.DAMAGE_TYPE, WindsweptDamageTypes::bootstrap)
         ;
     public WindsweptDatapackProvider(GatherDataEvent event) {

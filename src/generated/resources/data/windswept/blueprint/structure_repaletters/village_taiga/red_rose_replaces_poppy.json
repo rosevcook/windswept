@@ -1,0 +1,8 @@
+{
+  "repaletter": {
+    "type": "blueprint:simple",
+    "replaces_block": "minecraft:poppy",
+    "replaces_with": "windswept:red_rose"
+  },
+  "structures": "minecraft:village_taiga"
+}

@@ -1,0 +1,8 @@
+{
+  "repaletter": {
+    "type": "blueprint:simple",
+    "replaces_block": "minecraft:mossy_stone_bricks",
+    "replaces_with": "windswept:chiseled_icicle_block"
+  },
+  "structures": "minecraft:igloo"
+}

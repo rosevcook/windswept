@@ -1,0 +1,17 @@
+{
+  "repaletter": {
+    "type": "blueprint:simple",
+    "replaces_block": "minecraft:chest",
+    "replaces_with": "windswept:chestnut_chest"
+  },
+  "structures": {
+    "type": "blueprint:conditional",
+    "conditions": [
+      {
+        "type": "forge:mod_loaded",
+        "modid": "woodworks"
+      }
+    ],
+    "value": "minecraft:village_snowy"
+  }
+}

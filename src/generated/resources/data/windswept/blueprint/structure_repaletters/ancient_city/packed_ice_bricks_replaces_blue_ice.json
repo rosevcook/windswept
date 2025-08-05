@@ -1,0 +1,8 @@
+{
+  "repaletter": {
+    "type": "blueprint:simple",
+    "replaces_block": "minecraft:blue_ice",
+    "replaces_with": "windswept:packed_ice_bricks"
+  },
+  "structures": "minecraft:ancient_city"
+}

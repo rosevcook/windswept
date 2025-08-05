@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:old_growth_pine_taiga",
+  "features": "windswept:old_growth_pine_taiga_trees",
+  "step": "vegetal_decoration"
+}
