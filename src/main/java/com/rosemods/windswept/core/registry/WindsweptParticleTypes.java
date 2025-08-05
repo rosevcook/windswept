@@ -23,8 +23,8 @@ public class WindsweptParticleTypes {
 
     @SubscribeEvent
     public static void register(RegisterParticleProvidersEvent event) {
-        event.register(WILL_O_THE_WISP.get(), WillOTheWispParticle.Provider::new);
-        event.register(FROST_LEAF.get(), FrostLeafParticle.Provider::new);
+        event.registerSpriteSet(WILL_O_THE_WISP.get(), WillOTheWispParticle.Provider::new);
+        event.registerSpriteSet(FROST_LEAF.get(), FrostLeafParticle.Provider::new);
     }
 
 }

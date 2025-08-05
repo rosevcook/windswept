@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:wild_berry_juice"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -10,19 +10,14 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shapeless",
+        "category": "misc",
         "ingredients": [
           {
             "item": "minecraft:bowl"
           },
-          {
-            "item": "autumnity:foul_berries"
-          },
-          {
-            "item": "autumnity:foul_berries"
-          },
-          {
-            "item": "autumnity:foul_berries"
-          }
+          [],
+          [],
+          []
         ],
         "result": {
           "item": "windswept:foul_berry_bowl"

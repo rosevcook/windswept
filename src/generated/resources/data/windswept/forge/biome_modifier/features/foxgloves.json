@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#minecraft:is_taiga",
-  "features": "windswept:foxglove",
-  "step": "vegetal_decoration"
-}

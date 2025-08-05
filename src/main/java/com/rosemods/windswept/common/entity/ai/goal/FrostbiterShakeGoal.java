@@ -34,7 +34,7 @@ public class FrostbiterShakeGoal extends Goal {
     @Override
     public void start() {
         this.tick = this.adjustedTickDelay(40);
-        this.frostbiter.level.broadcastEntityEvent(this.frostbiter, (byte) 10);
+        this.frostbiter.level().broadcastEntityEvent(this.frostbiter, (byte) 10);
         this.frostbiter.getNavigation().stop();
         NetworkUtil.setPlayingAnimation(this.frostbiter, WindsweptPlayableEndimations.FROSTBITER_SHAKE);
     }

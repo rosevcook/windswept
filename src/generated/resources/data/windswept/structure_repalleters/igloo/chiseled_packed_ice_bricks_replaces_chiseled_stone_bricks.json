@@ -1,7 +1,0 @@
-{
-  "type": "blueprint:simple",
-  "priority": "high",
-  "replaces_block": "minecraft:chiseled_stone_bricks",
-  "replaces_with": "windswept:chiseled_packed_ice_bricks",
-  "selector": "minecraft:igloo"
-}

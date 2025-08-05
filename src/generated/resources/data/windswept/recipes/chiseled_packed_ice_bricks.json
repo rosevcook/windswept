@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "windswept:packed_ice_brick_slab"
@@ -11,5 +12,6 @@
   ],
   "result": {
     "item": "windswept:chiseled_packed_ice_bricks"
-  }
+  },
+  "show_notification": true
 }

@@ -1,10 +1,12 @@
 package com.rosemods.windswept.core.data.server.tags;
 
 import com.rosemods.windswept.core.Windswept;
+import com.rosemods.windswept.core.data.server.WindsweptDatapackProvider;
 import com.rosemods.windswept.core.other.tags.WindsweptBlockTags;
 import com.rosemods.windswept.core.other.tags.WindsweptItemTags;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintBlockTags;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintItemTags;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -17,24 +19,17 @@ import static com.rosemods.windswept.core.registry.WindsweptItems.*;
 
 public class WindsweptItemTagProvider extends ItemTagsProvider {
 
-    public WindsweptItemTagProvider(GatherDataEvent event, WindsweptBlockTagProvider blockTags) {
-        super(event.getGenerator(), blockTags, Windswept.MOD_ID, event.getExistingFileHelper());
+    public WindsweptItemTagProvider(GatherDataEvent event, WindsweptBlockTagProvider blockTags, WindsweptDatapackProvider dataPack) {
+        super(event.getGenerator().getPackOutput(), dataPack.getRegistryProvider(), blockTags.contentsGetter(), Windswept.MOD_ID, event.getExistingFileHelper());
     }
 
     @Override
-    protected void addTags() {
+    protected void addTags(HolderLookup.Provider provider) {
         //windswept
         this.tag(WindsweptItemTags.ROSES).add(RED_ROSE.get().asItem(), BLUE_ROSE.get().asItem(), WHITE_ROSE.get().asItem(), YELLOW_ROSE.get().asItem(), Items.WITHER_ROSE, Items.ROSE_BUSH, RED_ROSE_BUSH.get().asItem(), BLUE_ROSE_BUSH.get().asItem(), WHITE_ROSE_BUSH.get().asItem(), YELLOW_ROSE_BUSH.get().asItem());
         this.copy(WindsweptBlockTags.HOLLY_LOGS, WindsweptItemTags.HOLLY_LOGS);
         this.copy(WindsweptBlockTags.CHESTNUT_LOGS, WindsweptItemTags.CHESTNUT_LOGS);
         this.copy(WindsweptBlockTags.PINE_LOGS, WindsweptItemTags.PINE_LOGS);
-
-        //quark
-        this.tag(BlueprintItemTags.BOATABLE_CHESTS).add(HOLLY_CHEST.get().asItem(), CHESTNUT_CHEST.get().asItem(), PINE_CHEST.get().asItem());
-        this.tag(BlueprintItemTags.REVERTABLE_CHESTS).add(HOLLY_CHEST.get().asItem(), CHESTNUT_CHEST.get().asItem(), PINE_CHEST.get().asItem());
-        this.copy(BlueprintBlockTags.LADDERS, BlueprintItemTags.LADDERS);
-        this.copy(BlueprintBlockTags.VERTICAL_SLABS, BlueprintItemTags.VERTICAL_SLABS);
-        this.copy(BlueprintBlockTags.WOODEN_VERTICAL_SLABS, BlueprintItemTags.WOODEN_VERTICAL_SLABS);
 
         //farmers delight
         this.tag(WindsweptItemTags.CABBAGE_ROLL_INGREDIENTS).addTag(WindsweptItemTags.RAW_GOAT);
@@ -56,6 +51,7 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
         this.copy(Tags.Blocks.BOOKSHELVES, Tags.Items.BOOKSHELVES);
         this.copy(Tags.Blocks.CHESTS_WOODEN, Tags.Items.CHESTS_WOODEN);
         this.copy(Tags.Blocks.CHESTS_TRAPPED, Tags.Items.CHESTS_TRAPPED);
+        this.copy(BlueprintBlockTags.LADDERS, BlueprintItemTags.LADDERS);
 
         //boatload
         this.tag(BlueprintItemTags.FURNACE_BOATS).add(HOLLY_FURNACE_BOAT.get(), CHESTNUT_FURNACE_BOAT.get(), PINE_FURNACE_BOAT.get());

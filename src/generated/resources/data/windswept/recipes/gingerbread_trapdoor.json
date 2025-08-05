@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "windswept:gingerbread_cookie"
@@ -12,5 +13,6 @@
   "result": {
     "count": 2,
     "item": "windswept:gingerbread_trapdoor"
-  }
+  },
+  "show_notification": true
 }

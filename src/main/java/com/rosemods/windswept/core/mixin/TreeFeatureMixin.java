@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class TreeFeatureMixin {
     @Inject(method = "validTreePos", at = @At("RETURN"), cancellable = true)
     private static void validTreePos(LevelSimulatedReader reader, BlockPos pos, CallbackInfoReturnable<Boolean> info) {
-        info.setReturnValue(info.getReturnValue() || reader.isStateAtPosition(pos, state -> state.getMaterial().isReplaceable()));
+        info.setReturnValue(info.getReturnValue() || reader.isStateAtPosition(pos, state -> state.canBeReplaced()));
     }
 
 }

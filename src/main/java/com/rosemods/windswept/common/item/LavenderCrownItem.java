@@ -18,23 +18,18 @@ public class LavenderCrownItem extends ArmorItem {
     private static final UUID FRAGRANCE_UUID = UUID.fromString("1e2757d5-d814-4465-a958-36a6cdeeb624");
 
     public LavenderCrownItem(Properties properties) {
-        super(WindsweptTiers.LAVENDER_CROWN, EquipmentSlot.HEAD, properties);
+        super(WindsweptTiers.LAVENDER_CROWN, Type.HELMET, properties);
     }
 
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 
-        if (this.slot == slot)
+        //if (this.slot == slot)
             builder.put(WindsweptAttributes.FRAGRANCE.get(), new AttributeModifier(FRAGRANCE_UUID, "Fragrance modifier", 1, AttributeModifier.Operation.ADDITION));
 
         return builder.build();
 
-    }
-
-    @Override
-    public void fillItemCategory(CreativeModeTab tab, NonNullList<ItemStack> items) {
-        SnowBootsItem.FILLER.fillItem(this, tab, items);
     }
 
 }

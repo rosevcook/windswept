@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:wild_berry_popsicle"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

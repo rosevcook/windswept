@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "key": {
     "#": {
       "item": "minecraft:bone"
@@ -14,5 +15,6 @@
   ],
   "result": {
     "item": "windswept:antler_helmet"
-  }
+  },
+  "show_notification": true
 }

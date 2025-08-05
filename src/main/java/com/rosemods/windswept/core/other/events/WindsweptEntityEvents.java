@@ -1,6 +1,5 @@
 package com.rosemods.windswept.core.other.events;
 
-import com.rosemods.windswept.common.entity.Chilled;
 import com.rosemods.windswept.common.item.SnowBootsItem;
 import com.rosemods.windswept.common.item.WoodenMilkBucketItem;
 import com.rosemods.windswept.core.Windswept;
@@ -14,31 +13,28 @@ import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
 import com.teamabnormals.blueprint.common.world.storage.tracking.TrackedData;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintEntityTypeTags;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Rabbit;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.ThornsEnchantment;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.entity.SignBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.entity.living.BabyEntitySpawnEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.level.BlockEvent;
-import net.minecraftforge.eventbus.api.Event.Result;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
@@ -60,7 +56,7 @@ public class WindsweptEntityEvents {
             RandomSource rand = entity.getRandom();
 
             if (ThornsEnchantment.shouldHit(amplifier, rand))
-                attacker.hurt(DamageSource.thorns(entity), ThornsEnchantment.getDamage(amplifier, rand));
+                attacker.hurt(attacker.damageSources().thorns(entity), ThornsEnchantment.getDamage(amplifier, rand));
         }
 
     }
@@ -92,8 +88,10 @@ public class WindsweptEntityEvents {
         if (state.is(WindsweptBlockTags.DEFAULT_WHITE_TEXT)) {
             SignBlockEntity sign = (SignBlockEntity) event.getLevel().getBlockEntity(event.getPos());
 
-            if (sign != null)
-                sign.setColor(DyeColor.WHITE);
+            if (sign != null) {
+                sign.getFrontText().setColor(DyeColor.WHITE);
+                sign.getBackText().setColor(DyeColor.WHITE);
+            }
         }
     }
 
@@ -107,7 +105,7 @@ public class WindsweptEntityEvents {
                 Rabbit baby = EntityType.RABBIT.create(level);
                 if (baby != null) {
                     baby.setBaby(true);
-                    baby.setRabbitType(level.random.nextBoolean() ? parent.getRabbitType() : parentB.getRabbitType());
+                    baby.setVariant(level.random.nextBoolean() ? parent.getVariant() : parentB.getVariant());
                     baby.moveTo(parent.getX(), parent.getY(), parent.getZ(), 0f, 0f);
                     level.addFreshEntity(baby);
                 }
@@ -115,6 +113,7 @@ public class WindsweptEntityEvents {
         }
     }
 
+    /*
     @SubscribeEvent
     public static void onLivingSpawn(LivingSpawnEvent.CheckSpawn event) {
         Mob mob = event.getEntity();
@@ -137,6 +136,7 @@ public class WindsweptEntityEvents {
         }
 
     }
+     */
 
     @SubscribeEvent
     public static void onEntityTick(LivingEvent.LivingTickEvent event) {
@@ -153,14 +153,14 @@ public class WindsweptEntityEvents {
         if (entity.getType().is(WindsweptEntityTypeTags.CONVERT_TO_CHILLED) && entity instanceof Mob mob) {
             IDataManager data = (IDataManager) mob;
 
-            if (!mob.level.isClientSide && mob.isAlive() && !mob.isNoAi()) {
+            if (!mob.level().isClientSide && mob.isAlive() && !mob.isNoAi()) {
                 if (data.getValue(WindsweptDataProcessors.IS_FREEZE_CONVERTING)) {
                     ammendData(data, WindsweptDataProcessors.FREEZE_CONVERT_TIME, -1);
                     if (data.getValue(WindsweptDataProcessors.FREEZE_CONVERT_TIME) < 0) {
                         mob.convertTo(WindsweptEntityTypes.CHILLED.get(), true);
                         data.clean();
                         if (!mob.isSilent())
-                            mob.level.levelEvent(null, 1048, mob.blockPosition(), 0);
+                            mob.level().levelEvent(null, 1048, mob.blockPosition(), 0);
                     }
                 } else if (mob.isInPowderSnow) {
                     ammendData(data, WindsweptDataProcessors.POWDER_SNOW_TIME, 1);

@@ -1,5 +1,5 @@
 {
-  "parent": "blueprint:block/thatch/thatch_stairs_inner",
+  "parent": "blueprint:block/template_thatch_stairs_inner",
   "render_type": "minecraft:cutout",
   "textures": {
     "extrudes": "windswept:block/lavender_thatch_extrudes",

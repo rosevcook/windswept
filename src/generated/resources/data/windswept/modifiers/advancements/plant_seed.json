@@ -6,7 +6,12 @@
         "criteria": {
           "windswept:wild_berry_bush": {
             "conditions": {
-              "block": "windswept:wild_berry_bush"
+              "location": [
+                {
+                  "block": "windswept:wild_berry_bush",
+                  "condition": "minecraft:block_state_property"
+                }
+              ]
             },
             "trigger": "minecraft:placed_block"
           }

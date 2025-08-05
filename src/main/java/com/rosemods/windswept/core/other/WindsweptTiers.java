@@ -2,7 +2,6 @@ package com.rosemods.windswept.core.other;
 
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
-import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.teamabnormals.blueprint.core.api.BlueprintArmorMaterial;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Items;

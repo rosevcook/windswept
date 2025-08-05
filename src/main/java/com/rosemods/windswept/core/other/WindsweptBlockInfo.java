@@ -54,9 +54,6 @@ public final class WindsweptBlockInfo {
         DataUtil.registerCompostable(HOLLY_SAPLING.get(), .3f);
         DataUtil.registerCompostable(CHESTNUT_SAPLING.get(), .3f);
         DataUtil.registerCompostable(PINE_SAPLING.get(), .3f);
-        DataUtil.registerCompostable(HOLLY_LEAF_CARPET.get(), .3f);
-        DataUtil.registerCompostable(CHESTNUT_LEAF_CARPET.get(), .3f);
-        DataUtil.registerCompostable(PINE_LEAF_CARPET.get(), .3f);
 
         DataUtil.registerCompostable(SNOWY_SPROUTS.get(), .5f);
         DataUtil.registerCompostable(GELISOL_SPROUTS.get(), .5f);
@@ -79,20 +76,14 @@ public final class WindsweptBlockInfo {
         DataUtil.registerFlammable(HOLLY_LOG.get(), 5, 5);
         DataUtil.registerFlammable(HOLLY_WOOD.get(), 5, 5);
         DataUtil.registerFlammable(HOLLY_PLANKS.get(), 5, 20);
-        DataUtil.registerFlammable(VERTICAL_HOLLY_PLANKS.get(), 5, 20);
         DataUtil.registerFlammable(HOLLY_SLAB.get(), 5, 20);
         DataUtil.registerFlammable(HOLLY_STAIRS.get(), 5, 20);
         DataUtil.registerFlammable(HOLLY_FENCE.get(), 5, 20);
         DataUtil.registerFlammable(HOLLY_FENCE_GATE.get(), 5, 20);
         DataUtil.registerFlammable(HOLLY_BOARDS.get(), 5, 20);
         DataUtil.registerFlammable(HOLLY_LEAVES.get(), 30, 60);
-        DataUtil.registerFlammable(HOLLY_LEAF_CARPET.get(), 30, 60);
-        DataUtil.registerFlammable(HOLLY_VERTICAL_SLAB.get(), 5, 20);
         DataUtil.registerFlammable(HOLLY_BOOKSHELF.get(), 30, 20);
         DataUtil.registerFlammable(HOLLY_BEEHIVE.get(), 5, 20);
-        DataUtil.registerFlammable(HOLLY_POST.get(), 5, 20);
-        DataUtil.registerFlammable(STRIPPED_HOLLY_POST.get(), 5, 20);
-        DataUtil.registerFlammable(HOLLY_HEDGE.get(), 5, 20);
         DataUtil.registerFlammable(HOLLY_LEAF_PILE.get(), 30, 60);
 
         DataUtil.registerFlammable(STRIPPED_CHESTNUT_LOG.get(), 5, 5);
@@ -100,20 +91,14 @@ public final class WindsweptBlockInfo {
         DataUtil.registerFlammable(CHESTNUT_LOG.get(), 5, 5);
         DataUtil.registerFlammable(CHESTNUT_WOOD.get(), 5, 5);
         DataUtil.registerFlammable(CHESTNUT_PLANKS.get(), 5, 20);
-        DataUtil.registerFlammable(VERTICAL_CHESTNUT_PLANKS.get(), 5, 20);
         DataUtil.registerFlammable(CHESTNUT_SLAB.get(), 5, 20);
         DataUtil.registerFlammable(CHESTNUT_STAIRS.get(), 5, 20);
         DataUtil.registerFlammable(CHESTNUT_FENCE.get(), 5, 20);
         DataUtil.registerFlammable(CHESTNUT_FENCE_GATE.get(), 5, 20);
         DataUtil.registerFlammable(CHESTNUT_BOARDS.get(), 5, 20);
         DataUtil.registerFlammable(CHESTNUT_LEAVES.get(), 30, 60);
-        DataUtil.registerFlammable(CHESTNUT_LEAF_CARPET.get(), 30, 60);
-        DataUtil.registerFlammable(CHESTNUT_VERTICAL_SLAB.get(), 5, 20);
         DataUtil.registerFlammable(CHESTNUT_BOOKSHELF.get(), 30, 20);
         DataUtil.registerFlammable(CHESTNUT_BEEHIVE.get(), 5, 20);
-        DataUtil.registerFlammable(CHESTNUT_POST.get(), 5, 20);
-        DataUtil.registerFlammable(STRIPPED_CHESTNUT_POST.get(), 5, 20);
-        DataUtil.registerFlammable(CHESTNUT_HEDGE.get(), 5, 20);
         DataUtil.registerFlammable(CHESTNUT_LEAF_PILE.get(), 30, 60);
 
         DataUtil.registerFlammable(STRIPPED_PINE_LOG.get(), 5, 5);
@@ -121,20 +106,14 @@ public final class WindsweptBlockInfo {
         DataUtil.registerFlammable(PINE_LOG.get(), 5, 5);
         DataUtil.registerFlammable(PINE_WOOD.get(), 5, 5);
         DataUtil.registerFlammable(PINE_PLANKS.get(), 5, 20);
-        DataUtil.registerFlammable(VERTICAL_PINE_PLANKS.get(), 5, 20);
         DataUtil.registerFlammable(PINE_SLAB.get(), 5, 20);
         DataUtil.registerFlammable(PINE_STAIRS.get(), 5, 20);
         DataUtil.registerFlammable(PINE_FENCE.get(), 5, 20);
         DataUtil.registerFlammable(PINE_FENCE_GATE.get(), 5, 20);
         DataUtil.registerFlammable(PINE_BOARDS.get(), 5, 20);
         DataUtil.registerFlammable(PINE_LEAVES.get(), 30, 60);
-        DataUtil.registerFlammable(PINE_LEAF_CARPET.get(), 30, 60);
-        DataUtil.registerFlammable(PINE_VERTICAL_SLAB.get(), 5, 20);
         DataUtil.registerFlammable(PINE_BOOKSHELF.get(), 30, 20);
         DataUtil.registerFlammable(PINE_BEEHIVE.get(), 5, 20);
-        DataUtil.registerFlammable(PINE_POST.get(), 5, 20);
-        DataUtil.registerFlammable(STRIPPED_PINE_POST.get(), 5, 20);
-        DataUtil.registerFlammable(PINE_HEDGE.get(), 5, 20);
         DataUtil.registerFlammable(PINE_LEAF_PILE.get(), 30, 60);
 
         DataUtil.registerFlammable(PINECONE_BLOCK.get(), 5, 20);

@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:polished_shale"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

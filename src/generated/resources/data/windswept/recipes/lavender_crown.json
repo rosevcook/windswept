@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "key": {
     "#": {
       "item": "windswept:lavender"
@@ -14,5 +15,6 @@
   ],
   "result": {
     "item": "windswept:lavender_crown"
-  }
+  },
+  "show_notification": true
 }

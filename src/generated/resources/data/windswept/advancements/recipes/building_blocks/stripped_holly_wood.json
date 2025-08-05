@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:stripped_holly_wood"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

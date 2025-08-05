@@ -1,25 +1,14 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "leaf_pile",
+  "ingredients": [
     {
-      "conditions": [
-        {
-          "type": "forge:mod_loaded",
-          "modid": "woodworks"
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:crafting_shapeless",
-        "ingredients": [
-          {
-            "item": "windswept:holly_leaves"
-          }
-        ],
-        "result": {
-          "count": 4,
-          "item": "windswept:holly_leaf_pile"
-        }
-      }
+      "item": "windswept:holly_leaves"
     }
-  ]
+  ],
+  "result": {
+    "count": 4,
+    "item": "windswept:holly_leaf_pile"
+  }
 }

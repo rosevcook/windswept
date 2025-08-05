@@ -1,6 +1,5 @@
 package com.rosemods.windswept.common.item;
 
-import com.teamabnormals.blueprint.common.item.InjectedItem;
 import com.teamabnormals.blueprint.core.util.PropertyUtil;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;
@@ -15,15 +14,15 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 
-public class BerryBowlItem extends InjectedItem {
+public class BerryBowlItem extends Item {
     private final Item container;
 
-    public BerryBowlItem(Item followItem, FoodProperties food) {
-        this(followItem, Items.BOWL, PropertyUtil.food(food));
+    public BerryBowlItem(FoodProperties food) {
+        this(Items.BOWL, PropertyUtil.food(food));
     }
 
-    public BerryBowlItem(Item followItem, Item container, Properties properties) {
-        super(followItem, properties.craftRemainder(container));
+    public BerryBowlItem(Item container, Properties properties) {
+        super(properties.craftRemainder(container));
         this.container = container;
     }
 

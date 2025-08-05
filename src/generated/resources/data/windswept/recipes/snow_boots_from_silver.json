@@ -13,6 +13,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "equipment",
         "key": {
           "#": {
             "tag": "forge:ingots/silver"
@@ -28,7 +29,8 @@
         ],
         "result": {
           "item": "windswept:snow_boots"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

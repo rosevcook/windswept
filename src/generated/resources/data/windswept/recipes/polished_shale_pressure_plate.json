@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "redstone",
   "key": {
     "#": {
       "item": "windswept:polished_shale"
@@ -10,5 +11,6 @@
   ],
   "result": {
     "item": "windswept:polished_shale_pressure_plate"
-  }
+  },
+  "show_notification": true
 }

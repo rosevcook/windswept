@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#windswept:has_feature/white_rose",
-  "features": "windswept:white_rose",
-  "step": "vegetal_decoration"
-}

@@ -15,6 +15,6 @@ public class StrayMixin {
     @Inject(method = "getArrow", at = @At("HEAD"), cancellable = true)
     private void getArrow(ItemStack stack, float damage, CallbackInfoReturnable<AbstractArrow> info) {
         LivingEntity entity = (LivingEntity) (Object) this;
-        info.setReturnValue(new FrostArrow(entity.level, entity));
+        info.setReturnValue(new FrostArrow(entity.level(), entity));
     }
 }

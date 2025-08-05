@@ -10,6 +10,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shapeless",
+        "category": "misc",
         "ingredients": [
           {
             "item": "windswept:foul_berry_bowl"
@@ -17,7 +18,7 @@
         ],
         "result": {
           "count": 3,
-          "item": "autumnity:foul_berries"
+          "item": "minecraft:air"
         }
       }
     }

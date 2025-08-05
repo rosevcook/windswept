@@ -1,7 +1,0 @@
-{
-  "type": "blueprint:simple",
-  "priority": "high",
-  "replaces_block": "minecraft:iron_bars",
-  "replaces_with": "windswept:icicle_bars",
-  "selector": "minecraft:igloo"
-}

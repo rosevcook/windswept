@@ -10,6 +10,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "group": "wooden_boards",
         "key": {
           "#": {
@@ -24,7 +25,8 @@
         "result": {
           "count": 3,
           "item": "windswept:pine_boards"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

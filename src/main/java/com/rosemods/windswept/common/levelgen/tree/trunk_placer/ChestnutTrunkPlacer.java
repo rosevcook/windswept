@@ -6,12 +6,12 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.rosemods.windswept.core.WindsweptConfig;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import com.rosemods.windswept.core.registry.WindsweptTrunkPlacers;
-import com.teamabnormals.blueprint.common.block.wood.LogBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
@@ -82,13 +82,13 @@ public class ChestnutTrunkPlacer extends TrunkPlacer {
                                 else raisedZ.add((int) Math.signum(z));
                             }
 
-                            this.placeLog(level, consumer, rand, pos.offset(posX, posY, posZ), config, s -> s.setValue(LogBlock.AXIS, finalX != 0 ? Direction.Axis.X : Direction.Axis.Z));
+                            this.placeLog(level, consumer, rand, pos.offset(posX, posY, posZ), config, s -> s.setValue(RotatedPillarBlock.AXIS, finalX != 0 ? Direction.Axis.X : Direction.Axis.Z));
                         }
 
                         list.add(new FoliagePlacer.FoliageAttachment(pos.offset(posX, posY, posZ), 0, false));
                     }
 
-                    this.placeLog(level, consumer, rand, pos.offset(x, y, z), config, s -> finalX != 0 || finalZ != 0 ? s.setValue(LogBlock.AXIS, finalX != 0 ? Direction.Axis.X : Direction.Axis.Z) : s);
+                    this.placeLog(level, consumer, rand, pos.offset(x, y, z), config, s -> finalX != 0 || finalZ != 0 ? s.setValue(RotatedPillarBlock.AXIS, finalX != 0 ? Direction.Axis.X : Direction.Axis.Z) : s);
                 }
 
         // roots
@@ -98,11 +98,11 @@ public class ChestnutTrunkPlacer extends TrunkPlacer {
                     this.placeLog(level, consumer, rand, pos.offset(x, 0, z), config);
                     int grassCheck = -1;
 
-                    if (level.isStateAtPosition(pos.offset(x, -1, z), state -> !state.getMaterial().isSolid())) {
+                    if (level.isStateAtPosition(pos.offset(x, -1, z), state -> !state.isSolid())) {
                         this.placeLog(level, consumer, rand, pos.offset(x, -1, z), config);
                         grassCheck--;
 
-                        if (level.isStateAtPosition(pos.offset(x, -2, z), state -> state.getMaterial().isReplaceable()) && WindsweptConfig.COMMON.roots.get())
+                        if (level.isStateAtPosition(pos.offset(x, -2, z), state -> state.canBeReplaced()) && WindsweptConfig.COMMON.roots.get())
                             consumer.accept(pos.offset(x, -2, z), Blocks.HANGING_ROOTS.defaultBlockState());
                     }
 

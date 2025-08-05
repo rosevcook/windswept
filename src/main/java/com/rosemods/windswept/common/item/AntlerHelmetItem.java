@@ -29,7 +29,7 @@ public class AntlerHelmetItem extends ArmorItem {
     private static final UUID ATTACK_DAMAGE_UUID = UUID.fromString("cd559dfd-c166-4043-b9eb-a69e85abb04b");
 
     public AntlerHelmetItem(Properties properties) {
-        super(WindsweptTiers.ANTLER_HELMET, EquipmentSlot.HEAD, properties);
+        super(WindsweptTiers.ANTLER_HELMET, Type.HELMET, properties);
     }
 
     @Override
@@ -37,16 +37,11 @@ public class AntlerHelmetItem extends ArmorItem {
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
         builder.putAll(super.getDefaultAttributeModifiers(slot));
 
-        if (this.slot == slot)
+        //if (this.slot == slot)
             builder.put(WindsweptAttributes.SPRINT_DAMAGE.get(), new AttributeModifier(SPRINT_DAMAGE_UUID, "Sprint damage modifier", 4, AttributeModifier.Operation.ADDITION));
 
         return builder.build();
 
-    }
-
-    @Override
-    public void fillItemCategory(CreativeModeTab tab, NonNullList<ItemStack> items) {
-        SnowBootsItem.FILLER.fillItem(this, tab, items);
     }
 
     @Override

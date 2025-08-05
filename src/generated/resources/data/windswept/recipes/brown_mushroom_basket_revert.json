@@ -4,21 +4,13 @@
     {
       "conditions": [
         {
-          "type": "forge:or",
-          "values": [
-            {
-              "type": "forge:mod_loaded",
-              "modid": "berry_good"
-            },
-            {
-              "type": "blueprint:quark_flag",
-              "flag": "apple_crate"
-            }
-          ]
+          "type": "forge:mod_loaded",
+          "modid": "berry_good"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shapeless",
+        "category": "misc",
         "ingredients": [
           {
             "item": "windswept:brown_mushroom_basket"

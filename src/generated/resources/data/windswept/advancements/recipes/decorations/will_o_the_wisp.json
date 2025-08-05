@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:will_o_the_wisp"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

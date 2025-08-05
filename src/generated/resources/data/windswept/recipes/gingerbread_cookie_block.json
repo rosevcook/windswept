@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "#": {
       "item": "windswept:gingerbread_cookie"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "windswept:gingerbread_cookie_block"
-  }
+  },
+  "show_notification": true
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:brown_dye_from_pinecone_smelting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

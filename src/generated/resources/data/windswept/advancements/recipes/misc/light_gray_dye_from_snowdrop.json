@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:light_gray_dye_from_snowdrop"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

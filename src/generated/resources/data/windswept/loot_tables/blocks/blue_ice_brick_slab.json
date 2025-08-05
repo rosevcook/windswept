@@ -30,5 +30,6 @@
       ],
       "rolls": 1.0
     }
-  ]
+  ],
+  "random_sequence": "windswept:blocks/blue_ice_brick_slab"
 }

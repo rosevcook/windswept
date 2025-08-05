@@ -29,10 +29,10 @@ public abstract class FoxEatBerriesGoalMixin extends MoveToBlockGoal {
 
     @Inject(method = "onReachedTarget", at = @At("HEAD"))
     private void onReachedTarget(CallbackInfo ci) {
-        BlockState state = this.mob.level.getBlockState(this.blockPos);
+        BlockState state = this.mob.level().getBlockState(this.blockPos);
 
-        if (ForgeEventFactory.getMobGriefingEvent(this.mob.level, this.mob) && state.is(WindsweptBlocks.WILD_BERRY_BUSH.get())) {
-            int amount = 1 + this.mob.level.random.nextInt(2);
+        if (ForgeEventFactory.getMobGriefingEvent(this.mob.level(), this.mob) && state.is(WindsweptBlocks.WILD_BERRY_BUSH.get())) {
+            int amount = 1 + this.mob.getRandom().nextInt(2);
 
             if (this.mob.getItemBySlot(EquipmentSlot.MAINHAND).isEmpty()) {
                 this.mob.setItemSlot(EquipmentSlot.MAINHAND, WindsweptItems.WILD_BERRIES.get().getDefaultInstance());
@@ -40,10 +40,10 @@ public abstract class FoxEatBerriesGoalMixin extends MoveToBlockGoal {
             }
 
             if (amount > 0)
-                Block.popResource(this.mob.level, this.blockPos, new ItemStack(WindsweptItems.WILD_BERRIES.get(), amount));
+                Block.popResource(this.mob.level(), this.blockPos, new ItemStack(WindsweptItems.WILD_BERRIES.get(), amount));
 
             this.mob.playSound(SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, 1f, 1f);
-            this.mob.level.setBlock(this.blockPos, state.setValue(WildBerryBushBlock.AGE, 1), 2);
+            this.mob.level().setBlock(this.blockPos, state.setValue(WildBerryBushBlock.AGE, 1), 2);
         }
 
     }

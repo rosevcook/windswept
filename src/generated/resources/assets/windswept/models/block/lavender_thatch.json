@@ -1,5 +1,5 @@
 {
-  "parent": "blueprint:block/thatch/thatch",
+  "parent": "blueprint:block/template_thatch",
   "render_type": "minecraft:cutout",
   "textures": {
     "extrudes": "windswept:block/lavender_thatch_extrudes",

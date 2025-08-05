@@ -10,6 +10,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "group": "wooden_chests",
         "key": {
           "#": {
@@ -25,7 +26,8 @@
         ],
         "result": {
           "item": "windswept:large_chestnut_boat"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

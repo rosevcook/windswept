@@ -1,6 +1,0 @@
-{
-  "type": "forge:remove_features",
-  "biomes": "minecraft:lush_caves",
-  "features": "minecraft:lush_caves_vegetation",
-  "steps": "vegetal_decoration"
-}

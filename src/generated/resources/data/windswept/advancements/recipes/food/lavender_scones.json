@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:lavender_scones"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

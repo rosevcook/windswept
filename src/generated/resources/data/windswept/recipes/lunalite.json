@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "minecraft:calcite"
@@ -16,5 +17,6 @@
   "result": {
     "count": 8,
     "item": "windswept:lunalite"
-  }
+  },
+  "show_notification": true
 }

@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "windswept:icicle_block"
@@ -12,5 +13,6 @@
   "result": {
     "count": 2,
     "item": "windswept:chiseled_icicle_block"
-  }
+  },
+  "show_notification": true
 }

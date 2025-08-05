@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#windswept:has_feature/rare_snowy_holly_trees",
-  "features": "windswept:rare_holly_trees_on_snow",
-  "step": "vegetal_decoration"
-}

@@ -1,21 +1,22 @@
 package com.rosemods.windswept.common.block;
 
-import com.teamabnormals.blueprint.common.block.BlueprintFlowerBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BonemealableBlock;
+import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.TallFlowerBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.function.Supplier;
 
-public class RoseFlowerBlock extends BlueprintFlowerBlock implements BonemealableBlock {
+public class RoseFlowerBlock extends FlowerBlock implements BonemealableBlock {
     private final Supplier<Block> tall;
 
     public RoseFlowerBlock(Supplier<Block> tall, Supplier<MobEffect> stewEffect, int stewEffectDuration, Properties properties) {
@@ -31,9 +32,10 @@ public class RoseFlowerBlock extends BlueprintFlowerBlock implements Bonemealabl
         return this.tall.get();
     }
 
+
     @Override
-    public boolean isValidBonemealTarget(BlockGetter getter, BlockPos pos, BlockState state, boolean isClient) {
-        return getter.getBlockState(pos.above()).getMaterial().isReplaceable();
+    public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos blockPos, BlockState blockState, boolean b) {
+        return levelReader.getBlockState(blockPos.above()).canBeReplaced();
     }
 
     @Override

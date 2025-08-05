@@ -1,9 +1,7 @@
 package com.rosemods.windswept.common.item;
 
 import com.teamabnormals.blueprint.core.util.PropertyUtil;
-import com.teamabnormals.blueprint.core.util.item.filling.TargetedItemCategoryFiller;
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.core.NonNullList;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -13,7 +11,6 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.HoneyBottleItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -22,7 +19,6 @@ import net.minecraft.world.level.Level;
 import java.util.function.Supplier;
 
 public class DrinkableBottleItem extends HoneyBottleItem {
-    private static final TargetedItemCategoryFiller FILLER = new TargetedItemCategoryFiller(() -> Items.HONEY_BOTTLE);
     private final Supplier<SoundEvent> drinkSound;
 
     public DrinkableBottleItem(Supplier<SoundEvent> drinkSound, FoodProperties food) {
@@ -76,9 +72,5 @@ public class DrinkableBottleItem extends HoneyBottleItem {
         return 32;
     }
 
-    @Override
-    public void fillItemCategory(CreativeModeTab group, NonNullList<ItemStack> items) {
-        FILLER.fillItem(this, group, items);
-    }
 
 }

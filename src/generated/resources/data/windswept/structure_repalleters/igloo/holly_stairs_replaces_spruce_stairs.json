@@ -1,7 +1,0 @@
-{
-  "type": "blueprint:simple",
-  "priority": "high",
-  "replaces_block": "minecraft:spruce_stairs",
-  "replaces_with": "windswept:holly_stairs",
-  "selector": "minecraft:igloo"
-}

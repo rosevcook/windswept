@@ -5,12 +5,12 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.rosemods.windswept.core.WindsweptConfig;
 import com.rosemods.windswept.core.registry.WindsweptTreeDecorators;
-import com.teamabnormals.blueprint.common.block.wood.LogBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider;
@@ -51,7 +51,7 @@ public class BranchDecorator extends TreeDecorator {
             if (pos.getY() - height >= this.minHeight && rand.nextFloat() <= .25f) {
                 Direction direction = directions.get(rand.nextInt(directions.size()));
                 BlockPos blockpos = pos.offset(direction.getOpposite().getStepX(), 0, direction.getOpposite().getStepZ());
-                BlockState blockState = this.state.getState(rand, blockpos).setValue(LogBlock.AXIS, direction.getAxis());
+                BlockState blockState = this.state.getState(rand, blockpos).setValue(RotatedPillarBlock.AXIS, direction.getAxis());
 
                 if (blockState.is(Blocks.BIRCH_LOG) && !WindsweptConfig.COMMON.birchBranches.get())
                     return;

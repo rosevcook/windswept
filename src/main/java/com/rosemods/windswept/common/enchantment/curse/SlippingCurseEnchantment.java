@@ -47,7 +47,7 @@ public class SlippingCurseEnchantment extends Enchantment {
     }
 
     public static void attemptDamageBoots(LivingEntity entity) {
-        if (hasSlipping(entity) && entity.level.random.nextFloat() < .02f && entity.hasItemInSlot(EquipmentSlot.FEET))
+        if (hasSlipping(entity) && entity.level().random.nextFloat() < .02f && entity.hasItemInSlot(EquipmentSlot.FEET))
             entity.getItemBySlot(EquipmentSlot.FEET).hurtAndBreak(1, entity, e -> e.broadcastBreakEvent(EquipmentSlot.FEET));
     }
 

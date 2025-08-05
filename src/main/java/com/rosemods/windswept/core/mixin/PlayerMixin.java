@@ -1,7 +1,7 @@
 package com.rosemods.windswept.core.mixin;
 
 import com.rosemods.windswept.core.WindsweptConfig;
-import com.rosemods.windswept.core.other.WindsweptDamageSources;
+import com.rosemods.windswept.core.registry.datapack.WindsweptDamageTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -24,14 +24,14 @@ public abstract class PlayerMixin extends LivingEntity {
 
     @Inject(method = "aiStep", at = @At("TAIL"))
     private void aiStep(CallbackInfo info) {
-        if (!this.level.isClientSide && !this.isInPowderSnow && !this.isDeadOrDying() && this.canFreeze() && this.isUnderWater() && WindsweptConfig.COMMON.freezingWater.get() && this.level.getBiome(this.blockPosition()).is(Tags.Biomes.IS_SNOWY) && this.blockPosition().getY() > 0)
+        if (!this.level().isClientSide && !this.isInPowderSnow && !this.isDeadOrDying() && this.canFreeze() && this.isUnderWater() && WindsweptConfig.COMMON.freezingWater.get() && this.level().getBiome(this.blockPosition()).is(Tags.Biomes.IS_SNOWY) && this.blockPosition().getY() > 0)
             this.setTicksFrozen(this.getTicksFrozen() + (this.random.nextBoolean() ? 2 : 3));
     }
 
     @Inject(method = "getHurtSound", at = @At("RETURN"), cancellable = true)
     private void getHurtSound(DamageSource source, CallbackInfoReturnable<SoundEvent> cir) {
-        if (source == WindsweptDamageSources.HOLLY_LEAVES) {
+        if (source.is(WindsweptDamageTypes.HOLLY_LEAVES))
             cir.setReturnValue(SoundEvents.PLAYER_HURT_SWEET_BERRY_BUSH);
-        }
     }
+
 }

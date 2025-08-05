@@ -28,5 +28,6 @@
     "recipes": [
       "windswept:holly_planks"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

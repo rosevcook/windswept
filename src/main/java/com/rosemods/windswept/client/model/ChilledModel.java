@@ -1,9 +1,10 @@
 package com.rosemods.windswept.client.model;
 
-import com.google.common.collect.ImmutableList;
 import com.rosemods.windswept.common.entity.Chilled;
 import net.minecraft.client.model.ZombieModel;
 import net.minecraft.client.model.geom.ModelPart;
+
+import java.util.List;
 
 public class ChilledModel extends ZombieModel<Chilled> {
     public ChilledModel(ModelPart root) {
@@ -12,7 +13,7 @@ public class ChilledModel extends ZombieModel<Chilled> {
 
     @Override
     protected Iterable<ModelPart> headParts() {
-        return ImmutableList.of(this.head, this.hat);
+        return List.of(this.head, this.hat);
     }
 
 }

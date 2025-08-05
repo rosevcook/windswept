@@ -10,6 +10,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "key": {
           "#": {
             "item": "windswept:holly_slab"
@@ -25,7 +26,8 @@
         ],
         "result": {
           "item": "windswept:holly_cabinet"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

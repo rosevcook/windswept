@@ -1,6 +1,0 @@
-{
-  "type": "forge:remove_features",
-  "biomes": "minecraft:grove",
-  "features": "minecraft:trees_grove",
-  "steps": "vegetal_decoration"
-}

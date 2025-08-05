@@ -1,7 +1,8 @@
 package com.rosemods.windswept.common.block;
 
-import com.rosemods.windswept.core.registry.WindsweptFeatures;
+import com.rosemods.windswept.core.registry.datapack.WindsweptConfiguredFeatures;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.MossBlock;
@@ -14,7 +15,9 @@ public class DryMossBlock extends MossBlock {
 
     @Override
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
-        WindsweptFeatures.ConfiguredFeatures.DRY_MOSS_PATCH_SMALL.get().place(level, level.getChunkSource().getGenerator(), random, pos.above());
+        level.registryAccess().registry(Registries.CONFIGURED_FEATURE)
+                .flatMap(r -> r.getHolder(WindsweptConfiguredFeatures.DRY_MOSS_PATCH_SMALL))
+                .ifPresent(f -> f.value().place(level, level.getChunkSource().getGenerator(), random, pos.above()));
     }
 
 }

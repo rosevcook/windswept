@@ -1,24 +1,42 @@
 package com.rosemods.windswept.common.item;
 
 import com.rosemods.windswept.common.entity.Frostbiter;
-import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
-import com.teamabnormals.blueprint.core.util.item.filling.TargetedItemCategoryFiller;
-import net.minecraft.core.NonNullList;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.FoodOnAStickItem;
+import net.minecraft.stats.Stats;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
 
-public class HollyBerriesOnAStickItem extends FoodOnAStickItem<Frostbiter> {
-    private static final TargetedItemCategoryFiller FILLER = new TargetedItemCategoryFiller(() -> Items.CARROT_ON_A_STICK);
-
-    public HollyBerriesOnAStickItem(Properties properties, int consumeItemDamage) {
-        super(properties, WindsweptEntityTypes.FROSTBITER.get(), consumeItemDamage);
+public class HollyBerriesOnAStickItem extends Item {
+    public HollyBerriesOnAStickItem(Properties properties) {
+        super(properties);
     }
 
     @Override
-    public void fillItemCategory(CreativeModeTab group, NonNullList<ItemStack> items) {
-        FILLER.fillItem(this, group, items);
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+        ItemStack stack = player.getItemInHand(hand);
+
+        if (level.isClientSide)
+            return InteractionResultHolder.pass(stack);
+
+        if (player.isPassenger() && player.getControlledVehicle() instanceof Frostbiter frostbiter && frostbiter.boost()) {
+            stack.hurtAndBreak(7, player, p -> p.broadcastBreakEvent(hand));
+
+            if (stack.isEmpty()) {
+                ItemStack rod = new ItemStack(Items.FISHING_ROD);
+                rod.setTag(stack.getTag());
+                return InteractionResultHolder.success(rod);
+            }
+
+            return InteractionResultHolder.success(stack);
+        }
+
+        player.awardStat(Stats.ITEM_USED.get(this));
+        return InteractionResultHolder.pass(stack);
+
     }
 
 }

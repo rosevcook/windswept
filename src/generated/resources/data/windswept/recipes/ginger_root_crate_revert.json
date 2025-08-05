@@ -4,21 +4,13 @@
     {
       "conditions": [
         {
-          "type": "forge:or",
-          "values": [
-            {
-              "type": "blueprint:quark_flag",
-              "flag": "apple_crate"
-            },
-            {
-              "type": "forge:mod_loaded",
-              "modid": "farmersdelight"
-            }
-          ]
+          "type": "forge:mod_loaded",
+          "modid": "farmersdelight"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shapeless",
+        "category": "misc",
         "ingredients": [
           {
             "item": "windswept:ginger_root_crate"

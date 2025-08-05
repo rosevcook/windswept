@@ -4,21 +4,13 @@
     {
       "conditions": [
         {
-          "type": "forge:or",
-          "values": [
-            {
-              "type": "forge:mod_loaded",
-              "modid": "woodworks"
-            },
-            {
-              "type": "blueprint:quark_flag",
-              "flag": "variant_bookshelves"
-            }
-          ]
+          "type": "forge:mod_loaded",
+          "modid": "woodworks"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "group": "wooden_bookshelves",
         "key": {
           "#": {
@@ -35,7 +27,8 @@
         ],
         "result": {
           "item": "windswept:holly_bookshelf"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

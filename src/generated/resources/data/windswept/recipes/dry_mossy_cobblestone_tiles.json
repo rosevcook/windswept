@@ -10,6 +10,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "building",
         "key": {
           "#": {
             "item": "windswept:dry_mossy_cobblestone_bricks"
@@ -22,7 +23,8 @@
         "result": {
           "count": 4,
           "item": "windswept:dry_mossy_cobblestone_tiles"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

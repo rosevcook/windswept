@@ -17,20 +17,20 @@ license = "All Rights Reserved"
 [[dependencies.windswept]]
     modId = "forge"
     mandatory = true
-    versionRange = "[43.5.0,)"
+    versionRange = "[47.1.0,)"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.windswept]]
     modId = "minecraft"
     mandatory = true
-    versionRange = "[1.19.2,)"
+    versionRange = "[1.20.1,)"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.windswept]]
     modId = "blueprint"
     mandatory = true
-    versionRange = "[6.2.0,)"
+    versionRange = "[7.0.0,)"
     ordering = "BEFORE"
     side = "BOTH"

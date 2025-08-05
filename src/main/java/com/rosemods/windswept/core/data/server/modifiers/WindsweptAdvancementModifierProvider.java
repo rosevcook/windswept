@@ -1,6 +1,7 @@
 package com.rosemods.windswept.core.data.server.modifiers;
 
 import com.rosemods.windswept.core.Windswept;
+import com.rosemods.windswept.core.data.server.WindsweptDatapackProvider;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import com.rosemods.windswept.core.registry.WindsweptEffects;
 import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
@@ -10,6 +11,7 @@ import com.teamabnormals.blueprint.common.advancement.modification.modifiers.Cri
 import com.teamabnormals.blueprint.common.advancement.modification.modifiers.EffectsChangedModifier;
 import net.minecraft.advancements.RequirementsStrategy;
 import net.minecraft.advancements.critereon.*;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -21,12 +23,12 @@ import java.util.List;
 
 public class WindsweptAdvancementModifierProvider extends AdvancementModifierProvider {
 
-    public WindsweptAdvancementModifierProvider(GatherDataEvent event) {
-        super(event.getGenerator(), Windswept.MOD_ID);
+    public WindsweptAdvancementModifierProvider(GatherDataEvent event, WindsweptDatapackProvider dataPack) {
+        super(Windswept.MOD_ID, event.getGenerator().getPackOutput(), dataPack.getRegistryProvider());
     }
 
     @Override
-    protected void registerEntries() {
+    protected void registerEntries(HolderLookup.Provider provider) {
         final List<Block> seedsBlocks = List.of(WindsweptBlocks.WILD_BERRY_BUSH.get());
         final List<EntityType<?>> killedMobs = List.of(WindsweptEntityTypes.CHILLED.get());
 
@@ -65,7 +67,7 @@ public class WindsweptAdvancementModifierProvider extends AdvancementModifierPro
 
     private CriteriaModifier.Builder seedsBlocks(List<Block> seedsBlocksIn) {
         CriteriaModifier.Builder seedsBlocks = this.builder();
-        seedsBlocksIn.forEach(s -> seedsBlocks.addCriterion(ForgeRegistries.BLOCKS.getKey(s).getPath(), PlacedBlockTrigger.TriggerInstance.placedBlock(s)));
+        seedsBlocksIn.forEach(s -> seedsBlocks.addCriterion(ForgeRegistries.BLOCKS.getKey(s).getPath(), ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(s)));
         return seedsBlocks;
     }
 

@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:sweet_berry_bowl_revert"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

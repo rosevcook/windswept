@@ -71,7 +71,7 @@ public class Chilled extends Zombie {
 
     @Override
     protected void populateDefaultEquipmentSlots(RandomSource rand, DifficultyInstance difficulty) {
-        float chance = this.level.getDifficulty() == Difficulty.HARD ? .5f : .33f;
+        float chance = this.level().getDifficulty() == Difficulty.HARD ? .5f : .33f;
 
         if (rand.nextFloat() < chance)
             this.setItemSlot(EquipmentSlot.HEAD, Items.LEATHER_HELMET.getDefaultInstance());
@@ -91,7 +91,7 @@ public class Chilled extends Zombie {
                 this.armorDropChances[EquipmentSlot.FEET.getIndex()] = .5f;
         }
 
-        if (rand.nextFloat() < .1f && this.level.getBiome(this.blockPosition()).is(WindsweptBiomeTags.IS_PINE_BARRENS)) {
+        if (rand.nextFloat() < .1f && this.level().getBiome(this.blockPosition()).is(WindsweptBiomeTags.IS_PINE_BARRENS)) {
             this.setItemSlot(EquipmentSlot.HEAD, WindsweptBlocks.CARVED_PINECONE_BLOCK.get().asItem().getDefaultInstance());
             this.armorDropChances[EquipmentSlot.HEAD.getIndex()] = .5f;
         }
@@ -140,7 +140,7 @@ public class Chilled extends Zombie {
         this.convertToZombieType(EntityType.ZOMBIE);
 
         if (!this.isSilent())
-            this.level.levelEvent(null, 1041, this.blockPosition(), 0);
+            this.level().levelEvent(null, 1041, this.blockPosition(), 0);
     }
 
 }

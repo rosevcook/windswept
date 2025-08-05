@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:shale_slab"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

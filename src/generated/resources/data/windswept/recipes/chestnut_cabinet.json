@@ -10,6 +10,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "key": {
           "#": {
             "item": "windswept:chestnut_slab"
@@ -25,7 +26,8 @@
         ],
         "result": {
           "item": "windswept:chestnut_cabinet"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

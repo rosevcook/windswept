@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:simple_block",
+  "config": {
+    "to_place": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "minecraft:air"
+          },
+          "weight": 66
+        },
+        {
+          "data": {
+            "Name": "windswept:gelisol_sprouts"
+          },
+          "weight": 33
+        }
+      ]
+    }
+  }
+}

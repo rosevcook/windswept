@@ -1,6 +1,6 @@
 package com.rosemods.windswept.core.mixin;
 
-import com.rosemods.windswept.core.registry.WindsweptBiomes;
+import com.rosemods.windswept.core.registry.datapack.WindsweptBiomes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.MobSpawnType;
@@ -18,7 +18,7 @@ public class LlamaMixin {
     private void finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType type, SpawnGroupData spawnGroupData, CompoundTag tag, CallbackInfoReturnable<SpawnGroupData> info) {
         Llama llama = (Llama) (Object) this;
 
-        if (level.getBiome(llama.blockPosition()).is(WindsweptBiomes.TUNDRA.getKey()))
-            llama.setVariant(1);
+        if (level.getBiome(llama.blockPosition()).is(WindsweptBiomes.TUNDRA))
+            llama.setVariant(Llama.Variant.WHITE);
     }
 }

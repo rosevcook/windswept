@@ -2,13 +2,13 @@ package com.rosemods.windswept.common.levelgen.feature;
 
 import com.google.common.collect.Lists;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
-import com.teamabnormals.blueprint.common.block.wood.LogBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
@@ -47,13 +47,13 @@ public class FallenLogFeature extends Feature<SimpleBlockConfiguration> {
             BlockPos pos = origin.relative(axis, i);
             BlockState state = level.getBlockState(pos);
 
-            if ((state.getMaterial().isReplaceable() || state.is(WindsweptBlocks.DRY_MOSS_CARPET.get())) && pos.getY() < level.getMaxBuildHeight() && canPlaceOn(level.getBlockState(pos.below())))
+            if ((state.canBeReplaced() || state.is(WindsweptBlocks.DRY_MOSS_CARPET.get())) && pos.getY() < level.getMaxBuildHeight() && canPlaceOn(level.getBlockState(pos.below())))
                 logs.add(pos);
             else
                 break;
         }
 
-        BlockState log = context.config().toPlace().getState(rand, origin).setValue(LogBlock.AXIS, axis);
+        BlockState log = context.config().toPlace().getState(rand, origin).setValue(RotatedPillarBlock.AXIS, axis);
         BlockState carpet = WindsweptBlocks.DRY_MOSS_CARPET.get().defaultBlockState();
         BlockState sprouts = WindsweptBlocks.DRY_MOSSY_SPROUTS.get().defaultBlockState();
         BlockState campion = WindsweptBlocks.MOSS_CAMPION.get().defaultBlockState();

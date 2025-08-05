@@ -10,6 +10,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "key": {
           "#": {
             "item": "minecraft:melon_slice"
@@ -28,7 +29,8 @@
         ],
         "result": {
           "item": "farmersdelight:melon_popsicle"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

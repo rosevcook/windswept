@@ -74,16 +74,6 @@
             },
             "trigger": "minecraft:consume_item"
           },
-          "windswept:foul_berry_bowl": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "windswept:foul_berry_bowl"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
           "windswept:frozen_flesh": {
             "conditions": {
               "item": {
@@ -312,9 +302,6 @@
           ],
           [
             "windswept:sweet_berry_bowl"
-          ],
-          [
-            "windswept:foul_berry_bowl"
           ],
           [
             "windswept:chestnuts"

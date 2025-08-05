@@ -1,11 +1,13 @@
 package com.rosemods.windswept.core.data.server.modifiers;
 
 import com.rosemods.windswept.core.Windswept;
+import com.rosemods.windswept.core.data.server.WindsweptDatapackProvider;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.teamabnormals.blueprint.common.loot.modification.LootModifierProvider;
 import com.teamabnormals.blueprint.common.loot.modification.modifiers.LootPoolsModifier;
 import net.minecraft.advancements.critereon.EntityFlagsPredicate;
 import net.minecraft.advancements.critereon.EntityPredicate;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
@@ -30,12 +32,12 @@ import java.util.function.Consumer;
 
 public class WindsweptLootModifierProvider extends LootModifierProvider {
 
-    public WindsweptLootModifierProvider(GatherDataEvent event) {
-        super(event.getGenerator(), Windswept.MOD_ID);
+    public WindsweptLootModifierProvider(GatherDataEvent event, WindsweptDatapackProvider dataPack) {
+        super(Windswept.MOD_ID, event.getGenerator().getPackOutput(), dataPack.getRegistryProvider());
     }
 
     @Override
-    protected void registerEntries() {
+    protected void registerEntries(HolderLookup.Provider provider) {
         // goat meat
         this.entry("goat_meat").selects("entities/goat").addModifier(new LootPoolsModifier(Collections.singletonList(LootPool.lootPool().name("windswept:goat").setRolls(ConstantValue.exactly(1f))
                 .add(LootItem.lootTableItem(WindsweptItems.GOAT.get())

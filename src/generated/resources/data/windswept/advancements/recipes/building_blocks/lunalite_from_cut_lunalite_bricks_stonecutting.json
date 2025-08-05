@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:lunalite_from_cut_lunalite_bricks_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

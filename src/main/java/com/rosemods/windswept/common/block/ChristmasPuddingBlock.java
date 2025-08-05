@@ -63,7 +63,7 @@ public class ChristmasPuddingBlock extends Block {
             case ONE -> {
                 level.removeBlock(pos, false);
                 level.gameEvent(player, GameEvent.BLOCK_DESTROY, pos);
-                popResourceFromFace(level, pos.offset(.5f, -.5f, .5f), Direction.UP, WindsweptItems.HOLLY_BERRIES.get().getDefaultInstance());
+                popResourceFromFace(level, pos/*.offset(.5f, -.5f, .5f)*/, Direction.UP, WindsweptItems.HOLLY_BERRIES.get().getDefaultInstance());
             }
         }
     }
@@ -86,7 +86,7 @@ public class ChristmasPuddingBlock extends Block {
             level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
             level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, .8f, .8f);
 
-            popResourceFromFace(level, pos.offset(.5f, -.5f, .5f), Direction.UP,
+            popResourceFromFace(level, pos/*.offset(.5f, -.5f, .5f)*/, Direction.UP,
                     WindsweptItems.CHRISTMAS_PUDDING_SLICE.get().getDefaultInstance());
             return InteractionResult.SUCCESS;
         } else if (puddingState != PuddingStates.FIRE && player.canEat(false)) {
@@ -109,7 +109,7 @@ public class ChristmasPuddingBlock extends Block {
 
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        return level.getBlockState(pos.below()).getMaterial().isSolid();
+        return level.getBlockState(pos.below()).isSolid();
     }
 
     @Override

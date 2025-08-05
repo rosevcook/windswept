@@ -1,6 +1,0 @@
-{
-  "type": "forge:remove_features",
-  "biomes": "minecraft:old_growth_pine_taiga",
-  "features": "minecraft:trees_old_growth_pine_taiga",
-  "steps": "vegetal_decoration"
-}

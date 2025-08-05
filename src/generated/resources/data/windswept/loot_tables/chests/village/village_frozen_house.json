@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:block",
+  "type": "minecraft:chest",
   "pools": [
     {
       "bonus_rolls": 0.0,
@@ -159,5 +159,6 @@
         "min": 3.0
       }
     }
-  ]
+  ],
+  "random_sequence": "windswept:chests/village/village_frozen_house"
 }

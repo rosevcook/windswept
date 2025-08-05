@@ -28,5 +28,6 @@
     "recipes": [
       "windswept:chestnut_planks"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -6,7 +6,7 @@ import net.minecraftforge.data.event.GatherDataEvent;
 
 public class WindsweptParticleProvider extends ParticleProvider {
     public WindsweptParticleProvider(GatherDataEvent event) {
-        super(event.getGenerator(), Windswept.MOD_ID);
+        super(event.getGenerator().getPackOutput(), Windswept.MOD_ID);
     }
 
     @Override

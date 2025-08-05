@@ -3,15 +3,18 @@ package com.rosemods.windswept.core.data.client;
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.util.Pair;
 import com.rosemods.windswept.core.Windswept;
-import com.rosemods.windswept.core.other.WindsweptDamageSources;
 import com.rosemods.windswept.core.registry.WindsweptAttributes;
 import com.rosemods.windswept.core.registry.WindsweptEffects;
 import com.rosemods.windswept.core.registry.WindsweptEnchantments;
-import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
+import com.rosemods.windswept.core.registry.datapack.WindsweptDamageTypes;
 import com.rosemods.windswept.integration.jei.WindsweptPlugin;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintStandingSignBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintWallSignBlock;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -40,7 +43,7 @@ public class WindsweptLangProvider extends LanguageProvider {
     private final List<String> keys = Lists.newArrayList();
 
     public WindsweptLangProvider(GatherDataEvent event) {
-        super(event.getGenerator(), Windswept.MOD_ID, "en_us");
+        super(event.getGenerator().getPackOutput(), Windswept.MOD_ID, "en_us");
     }
 
     @Override
@@ -70,16 +73,13 @@ public class WindsweptLangProvider extends LanguageProvider {
 
         // Blocks //
         this.translateSign(HOLLY_SIGNS, "holly");
-        this.add(HOLLY_HEDGE.get(), "Holly Leaf Hedge");
         this.add(HOLLY_LEAF_PILE.get(), "Pile of Holly Leaves");
         this.add(HOLLY_BERRY_BASKET.get(), "Basket of Holly Berries");
         this.translateSign(CHESTNUT_SIGNS, "chestnut");
-        this.add(CHESTNUT_HEDGE.get(), "Chestnut Leaf Hedge");
         this.add(CHESTNUT_LEAF_PILE.get(), "Pile of Chestnut Leaves");
         this.add(CHESTNUT_CRATE.get(), "Crate of Chestnuts");
         this.add(ROASTED_CHESTNUT_CRATE.get(), "Crate of Roasted Chestnuts");
         this.translateSign(PINE_SIGNS, "pine");
-        this.add(PINE_HEDGE.get(), "Pine Leaf Hedge");
         this.add(PINE_LEAF_PILE.get(), "Pile of Pine Leaves");
         this.add(WILL_O_THE_WISP.get(), "Will o' the Wisp");
         this.add("block.windswept.snow_carpet", "Snow Carpet");
@@ -110,11 +110,11 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateEnchantment(WindsweptEnchantments.SLIPPING_CURSE, "Curse of Slipping", "Causes the wearer to slip on any block as if it was ice whilst damaging the boots.");
 
         // Damage Sources //
-        this.translateDamageSource(WindsweptDamageSources.HOLLY_LEAVES,
+        this.translateDamageType(WindsweptDamageTypes.HOLLY_LEAVES,
                 player -> player + " was ripped to death by holly leaves",
                 (player, entity) -> player + " was ripped to death by holly leaves whilst trying to escape " + entity);
 
-        this.translateDamageSource(WindsweptDamageSources.ICICLE,
+        this.translateDamageType(WindsweptDamageTypes.ICICLE,
                 player -> player + " was impaled on an icicle",
                 (player, entity) -> player + " was impaled on an icicle whilst trying to escape " + entity);
 
@@ -139,7 +139,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateRegistry(ForgeRegistries.BLOCKS, Block::getDescriptionId);
         this.translateRegistry(ForgeRegistries.ITEMS, Item::getDescriptionId);
         this.translateRegistry(ForgeRegistries.ENTITY_TYPES, EntityType::getDescriptionId);
-        this.translateRegistry(ForgeRegistries.BIOMES, b -> "biome." + Windswept.MOD_ID + "." + ForgeRegistries.BIOMES.getKey(b).getPath());
+        //this.translateRegistry(ForgeRegistries.BIOMES, b -> "biome." + Windswept.MOD_ID + "." + ForgeRegistries.BIOMES.getKey(b).getPath());
     }
 
 
@@ -202,9 +202,9 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.add(WindsweptPlugin.getDesc(item), desc);
     }
 
-    private void translateDamageSource(DamageSource source, Function<String, String> death, BiFunction<String, String, String> killed) {
-        this.add("death.attack." + source.getMsgId(), death.apply("%1$s"));
-        this.add("death.attack." + source.getMsgId() + ".player", killed.apply("%1$s", "%2$s"));
+    private void translateDamageType(ResourceKey<DamageType> source, Function<String, String> death, BiFunction<String, String, String> killed) {
+        //this.add("death.attack." + source.msgId(), death.apply("%1$s"));
+        //this.add("death.attack." + source.msgId() + ".player", killed.apply("%1$s", "%2$s"));
     }
 
     private void translatePotion(RegistryObject<? extends Potion> potion, String effect) {

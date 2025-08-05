@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "#": {
       "item": "windswept:wild_berries"
@@ -18,5 +19,6 @@
   ],
   "result": {
     "item": "windswept:wild_berry_popsicle"
-  }
+  },
+  "show_notification": true
 }

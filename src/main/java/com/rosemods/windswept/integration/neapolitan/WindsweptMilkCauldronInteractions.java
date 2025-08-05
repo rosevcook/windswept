@@ -2,8 +2,8 @@ package com.rosemods.windswept.integration.neapolitan;
 
 import com.rosemods.windswept.core.other.WindsweptCauldronInteractions;
 import com.rosemods.windswept.core.registry.WindsweptItems;
-import com.teamabnormals.neapolitan.common.block.MilkCauldronBlock;
 import com.teamabnormals.neapolitan.core.NeapolitanConfig;
+import com.teamabnormals.neapolitan.core.other.NeapolitanCauldronInteractions;
 import com.teamabnormals.neapolitan.core.registry.NeapolitanBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.cauldron.CauldronInteraction;
@@ -17,7 +17,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public final class WindsweptMilkCauldronInteractions {
     public static void registerCauldronInteractions() {
-        MilkCauldronBlock.MILK.put(WindsweptItems.WOODEN_BUCKET.get(), WindsweptMilkCauldronInteractions::emptyMilkCauldron);
+        NeapolitanCauldronInteractions.MILK.map().put(WindsweptItems.WOODEN_BUCKET.get(), WindsweptMilkCauldronInteractions::emptyMilkCauldron);
         CauldronInteraction.EMPTY.put(WindsweptItems.WOODEN_MILK_BUCKET.get(), WindsweptMilkCauldronInteractions::fillMilkCauldron);
     }
 

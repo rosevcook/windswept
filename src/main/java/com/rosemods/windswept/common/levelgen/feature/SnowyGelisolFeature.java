@@ -1,7 +1,7 @@
 package com.rosemods.windswept.common.levelgen.feature;
 
 import com.rosemods.windswept.common.block.GelisolBlock;
-import com.rosemods.windswept.core.registry.WindsweptBiomes;
+import com.rosemods.windswept.core.registry.datapack.WindsweptBiomes;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
@@ -35,8 +35,8 @@ public class SnowyGelisolFeature extends Feature<NoneFeatureConfiguration> {
                 for (int y = -3; y <= 3; ++y) {
                     BlockPos pos = origin.offset(x, y, z);
 
-                    if (level.getBlockState(pos).is(Blocks.SNOW_BLOCK) && level.getBiome(pos).is(WindsweptBiomes.TUNDRA.getKey())) {
-                        boolean isSolid = level.getBlockState(pos.above()).getMaterial().isSolid();
+                    if (level.getBlockState(pos).is(Blocks.SNOW_BLOCK) && level.getBiome(pos).is(WindsweptBiomes.TUNDRA)) {
+                        boolean isSolid = level.getBlockState(pos.above()).isSolid();
 
                         if (rand.nextInt(45) == 0) {
                             if (!isSolid) {
