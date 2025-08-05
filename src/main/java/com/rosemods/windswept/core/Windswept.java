@@ -63,6 +63,7 @@ public class Windswept {
             WindsweptEffects.registerPotionRecipes();
             WindsweptDispenseBehaviors.registerDispenseBehaviors();
             WindsweptCauldronInteractions.registerCauldronInteractions();
+            WindsweptCreativeTabs.setupTabEditors();
         });
     }
 

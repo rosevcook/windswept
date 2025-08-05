@@ -99,7 +99,7 @@ public class Chilled extends Zombie {
     }
 
     public void cncCompat(RandomSource random) {
-        if (ModList.get().isLoaded(WindsweptConstants.CAVERNS_AND_CHASMS)) {
+        if (ModList.get().isLoaded("caverns_and_chasms")) {
             if (random.nextFloat() < .075f)
                 this.setItemSlot(EquipmentSlot.MAINHAND, randomDurability(random, random.nextBoolean() ? WindsweptConstants.getItem("caverns_and_chasms", "silver_sword") : WindsweptConstants.getItem("caverns_and_chasms", "silver_shovel")));
             else if (random.nextFloat() < .05f) {

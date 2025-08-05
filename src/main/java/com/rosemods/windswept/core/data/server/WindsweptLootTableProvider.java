@@ -108,7 +108,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(HOLLY_BOARDS.get());
             this.dropSelf(HOLLY_CABINET.get());
             this.dropSelf(HOLLY_CHEST.get());
-            this.dropSelf(HOLLY_TRAPPED_CHEST.get());
+            this.dropSelf(TRAPPED_HOLLY_CHEST.get());
 
             this.add(HOLLY_LEAVES.get(), b -> createLeavesDrops(b, HOLLY_SAPLING
                     .get(), .05f, .0625f, .083333336f, .1f).withPool(LootPool.lootPool()
@@ -147,7 +147,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(CHESTNUT_BOARDS.get());
             this.dropSelf(CHESTNUT_CABINET.get());
             this.dropSelf(CHESTNUT_CHEST.get());
-            this.dropSelf(CHESTNUT_TRAPPED_CHEST.get());
+            this.dropSelf(TRAPPED_CHESTNUT_CHEST.get());
 
             this.add(CHESTNUT_LEAVES.get(), b -> createLeavesDrops(b, CHESTNUT_SAPLING
                     .get(), .05f, .0625f, .083333336f, .1f).withPool(LootPool.lootPool()
@@ -188,7 +188,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(PINE_BOARDS.get());
             this.dropSelf(PINE_CABINET.get());
             this.dropSelf(PINE_CHEST.get());
-            this.dropSelf(PINE_TRAPPED_CHEST.get());
+            this.dropSelf(TRAPPED_PINE_CHEST.get());
 
             this.add(PINE_LEAVES.get(), b -> createLeavesDrops(b, PINE_SAPLING.get(), .05f, .0625f, .083333336f, .1f));
             this.leafPile(PINE_LEAF_PILE.get());

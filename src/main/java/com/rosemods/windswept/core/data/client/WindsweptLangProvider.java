@@ -49,9 +49,9 @@ public class WindsweptLangProvider extends LanguageProvider {
     @Override
     protected void addTranslations() {
         // Items //
-        this.add(HOLLY_BOATS.getSecond().get(), "Holly Boat with Chest");
-        this.add(CHESTNUT_BOATS.getSecond().get(), "Chestnut Boat with Chest");
-        this.add(PINE_BOATS.getSecond().get(), "Pine Boat with Chest");
+        this.add(HOLLY_BOAT.getSecond().get(), "Holly Boat with Chest");
+        this.add(CHESTNUT_BOAT.getSecond().get(), "Chestnut Boat with Chest");
+        this.add(PINE_BOAT.getSecond().get(), "Pine Boat with Chest");
         this.add(CHRISTMAS_PUDDING_SLICE.get(), "Slice of Christmas Pudding");
         this.add(SWEET_BERRY_BOWL.get(), "Bowl of Sweet Berries");
         this.add(WILD_BERRY_BOWL.get(), "Bowl of Wild Berries");

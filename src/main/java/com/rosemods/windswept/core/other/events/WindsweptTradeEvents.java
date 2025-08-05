@@ -51,10 +51,10 @@ public class WindsweptTradeEvents {
                     VillagerType ice = BuiltInRegistries.VILLAGER_TYPE.get(Windswept.location("ice"));
 
                     if (!trade.trades.containsKey(ice))
-                        newTrades.put(ice, WindsweptItems.HOLLY_BOATS.getFirst().get());
+                        newTrades.put(ice, WindsweptItems.HOLLY_BOAT.getFirst().get());
 
                     if (newTrades.get(VillagerType.SNOW) == Items.SPRUCE_BOAT)
-                        newTrades.replace(VillagerType.SNOW, WindsweptItems.CHESTNUT_BOATS.getFirst().get());
+                        newTrades.replace(VillagerType.SNOW, WindsweptItems.CHESTNUT_BOAT.getFirst().get());
 
                     trade.trades = ImmutableMap.copyOf(newTrades);
                 }

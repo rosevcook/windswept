@@ -6,16 +6,25 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public final class WindsweptConstants {
-    public static final boolean IN_DEV = false;
-    public static final String BERRY_GOOD = modId("berry_good");
-    public static final String WOODWORKS = modId("woodworks");
-    public static final String BOATLOAD = modId("boatload");
-    public static final String NEAPOLITAN = modId("neapolitan");
-    public static final String FARMERSDELIGHT = modId("farmersdelight");
-    public static final String AUTUMNITY = modId("autumnity");
-    public static final String CAVERNS_AND_CHASMS = modId("caverns_and_chasms");
-    public static final String ENDERGETIC = modId("endergetic");
-    public static final String ENVIRONMENTAL = modId("environmental");
+    public static final String BERRY_GOOD = "berry_good";
+    public static final String WOODWORKS = "woodworks";
+    public static final String BOATLOAD = "boatload";
+    public static final String NEAPOLITAN = "neapolitan";
+    public static final String FARMERSDELIGHT = "farmersdelight";
+    public static final String AUTUMNITY = "autumnity";
+    public static final String CAVERNS_AND_CHASMS = "caverns_and_chasms";
+    public static final String ENDERGETIC = "endergetic";
+    public static final String ENVIRONMENTAL = "environmental";
+
+    public static final ResourceLocation BAMBOO_LADDER = new ResourceLocation("woodworks", "bamboo_ladder");
+    public static final ResourceLocation BAMBOO_BEEHIVE = new ResourceLocation("woodworks", "bamboo_beehive");
+    public static final ResourceLocation BAMBOO_BOOKSHELF = new ResourceLocation("woodworks", "bamboo_bookshelf");
+    public static final ResourceLocation BAMBOO_CLOSET = new ResourceLocation("woodworks", "bamboo_closet");
+    public static final ResourceLocation TRAPPED_BAMBOO_CLOSET = new ResourceLocation("woodworks", "trapped_bamboo_closet");
+    public static final ResourceLocation FOUL_BERRIES = new ResourceLocation("autumnity", "foul_berries");
+    public static final ResourceLocation MOSSY_COBBLESTONE_BRICK_WALL = new ResourceLocation("caverns_and_chasms", "mossy_cobblestone_brick_wall");
+    public static final ResourceLocation MOSSY_COBBLESTONE_TILE_WALL = new ResourceLocation("caverns_and_chasms", "mossy_cobblestone_tile_wall");
+
 
     public static Item getItem(String modid, String path) {
         return ForgeRegistries.ITEMS.getValue(new ResourceLocation(modid, path));
@@ -23,10 +32,6 @@ public final class WindsweptConstants {
 
     public static Block getBlock(String modid, String path) {
         return ForgeRegistries.BLOCKS.getValue(new ResourceLocation(modid, path));
-    }
-
-    private static String modId(String modId) {
-        return IN_DEV ? "minecraft" : modId;
     }
 
 }

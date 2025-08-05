@@ -77,11 +77,11 @@ sourceSets.main.resources {
 dependencies {
     minecraft "net.minecraftforge:forge:${project.minecraft}-${project.forge}"
     implementation fg.deobf("com.teamabnormals:blueprint:${project.minecraft}-${project.blueprint}")
-    implementation fg.deobf("com.teamabnormals:clayworks:${project.minecraft}-${project.clayworks}")
-    implementation fg.deobf("com.teamabnormals:boatload:${project.minecraft}-${project.boatload}")
-    implementation fg.deobf("com.teamabnormals:gallery:${project.minecraft}-${project.gallery}")
+    compileOnly fg.deobf("com.teamabnormals:clayworks:${project.minecraft}-${project.clayworks}")
+    compileOnly fg.deobf("com.teamabnormals:boatload:${project.minecraft}-${project.boatload}")
+    compileOnly fg.deobf("com.teamabnormals:gallery:${project.minecraft}-${project.gallery}")
     implementation fg.deobf("curse.maven:farmers_delight-398521:${project.farmersDelight}")
-    implementation fg.deobf("curse.maven:neapolitan-382016:${project.neapolitan}")
+    compileOnly fg.deobf("curse.maven:neapolitan-382016:${project.neapolitan}")
 
     compileOnly fg.deobf("mezz.jei:jei-${project.minecraft}-common-api:${project.jei}")
     compileOnly fg.deobf("mezz.jei:jei-${project.minecraft}-forge-api:${project.jei}")

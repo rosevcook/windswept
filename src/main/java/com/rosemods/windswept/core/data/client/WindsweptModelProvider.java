@@ -37,12 +37,12 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         // item models
-        this.generatedItem(HOLLY_BOATS.getFirst().get(), TextureFolder.ITEM);
-        this.generatedItem(HOLLY_BOATS.getSecond().get(), TextureFolder.ITEM);
-        this.generatedItem(CHESTNUT_BOATS.getFirst().get(), TextureFolder.ITEM);
-        this.generatedItem(CHESTNUT_BOATS.getSecond().get(), TextureFolder.ITEM);
-        this.generatedItem(PINE_BOATS.getFirst().get(), TextureFolder.ITEM);
-        this.generatedItem(PINE_BOATS.getSecond().get(), TextureFolder.ITEM);
+        this.generatedItem(HOLLY_BOAT.getFirst().get(), TextureFolder.ITEM);
+        this.generatedItem(HOLLY_BOAT.getSecond().get(), TextureFolder.ITEM);
+        this.generatedItem(CHESTNUT_BOAT.getFirst().get(), TextureFolder.ITEM);
+        this.generatedItem(CHESTNUT_BOAT.getSecond().get(), TextureFolder.ITEM);
+        this.generatedItem(PINE_BOAT.getFirst().get(), TextureFolder.ITEM);
+        this.generatedItem(PINE_BOAT.getSecond().get(), TextureFolder.ITEM);
         this.generatedItem(HOLLY_BERRIES.get(), TextureFolder.ITEM);
         this.generatedItem(WOODEN_BUCKET.get(), TextureFolder.ITEM);
         this.generatedItem(WOODEN_MILK_BUCKET.get(), TextureFolder.ITEM);
@@ -120,7 +120,7 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.bookshelf(HOLLY_BOOKSHELF, HOLLY_PLANKS);
         this.boards(HOLLY_BOARDS);
         this.cabinet(HOLLY_CABINET);
-        this.chests(HOLLY_CHEST, HOLLY_TRAPPED_CHEST, this.blockTexture(HOLLY_PLANKS.get()));
+        this.chests(HOLLY_CHEST, TRAPPED_HOLLY_CHEST, this.blockTexture(HOLLY_PLANKS.get()));
         this.compressedBlock(HOLLY_BERRY_BASKET);
         this.hangingSignBlocks(STRIPPED_HOLLY_LOG, HOLLY_HANGING_SIGNS);
 
@@ -147,7 +147,7 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.bookshelf(CHESTNUT_BOOKSHELF, CHESTNUT_PLANKS);
         this.boards(CHESTNUT_BOARDS);
         this.cabinet(CHESTNUT_CABINET);
-        this.chests(CHESTNUT_CHEST, CHESTNUT_TRAPPED_CHEST, this.blockTexture(CHESTNUT_PLANKS.get()));
+        this.chests(CHESTNUT_CHEST, TRAPPED_CHESTNUT_CHEST, this.blockTexture(CHESTNUT_PLANKS.get()));
         this.hangingSignBlocks(STRIPPED_CHESTNUT_LOG, CHESTNUT_HANGING_SIGNS);
 
         // pine
@@ -175,7 +175,7 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.bookshelf(PINE_BOOKSHELF, PINE_PLANKS);
         this.boards(PINE_BOARDS);
         this.cabinet(PINE_CABINET);
-        this.chests(PINE_CHEST, PINE_TRAPPED_CHEST, this.blockTexture(PINE_PLANKS.get()));
+        this.chests(PINE_CHEST, TRAPPED_PINE_CHEST, this.blockTexture(PINE_PLANKS.get()));
         this.hangingSignBlocks(STRIPPED_PINE_LOG, PINE_HANGING_SIGNS);
 
         // pinecone
