@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class ItemInHandRendererMixin {
     @Inject(method = "renderItem", at = @At("HEAD"), cancellable = true)
     private void renderItem(LivingEntity entity, ItemStack stack, ItemDisplayContext context, boolean p_270203_, PoseStack poseStack, MultiBufferSource source, int p_270103_, CallbackInfo info) {
-        if (stack.is(WindsweptItems.WOODEN_BUCKET.get()))
+        if (stack.is(WindsweptItems.WOODEN_BUCKET.get()) && context == ItemDisplayContext.HEAD)
             info.cancel();
     }
 

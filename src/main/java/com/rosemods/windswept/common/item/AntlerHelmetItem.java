@@ -37,7 +37,7 @@ public class AntlerHelmetItem extends ArmorItem {
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
         builder.putAll(super.getDefaultAttributeModifiers(slot));
 
-        //if (this.slot == slot)
+        if (slot == this.type.getSlot())
             builder.put(WindsweptAttributes.SPRINT_DAMAGE.get(), new AttributeModifier(SPRINT_DAMAGE_UUID, "Sprint damage modifier", 4, AttributeModifier.Operation.ADDITION));
 
         return builder.build();

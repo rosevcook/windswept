@@ -34,7 +34,8 @@ public class SnowBootsItem extends DyeableArmorItem {
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
         builder.putAll(super.getDefaultAttributeModifiers(slot));
-        //if (this.slot == slot)
+
+        if (slot == this.type.getSlot())
             builder.put(WindsweptAttributes.SNOW_SPEED.get(), new AttributeModifier(SNOW_SPEED_UUID,
                     "Snow speed modifier", .2f, AttributeModifier.Operation.MULTIPLY_BASE));
 
