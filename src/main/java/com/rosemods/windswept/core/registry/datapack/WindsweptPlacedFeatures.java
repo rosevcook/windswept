@@ -126,7 +126,7 @@ public final class WindsweptPlacedFeatures {
     }
 
     private static List<PlacementModifier> treeOnSnowPlacement(PlacementModifier modifier) {
-        return List.of(modifier, InSquarePlacement.spread(), VegetationPlacements.TREE_THRESHOLD, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome(), EnvironmentScanPlacement.scanningFor(Direction.UP, BlockPredicate.not(BlockPredicate.matchesBlocks(Blocks.POWDER_SNOW)), 8)/*, BlockPredicateFilter.forPredicate(TreePlacements.SNOW_TREE_PREDICATE)*/);
+        return List.of(modifier, InSquarePlacement.spread(), VegetationPlacements.TREE_THRESHOLD, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome(), EnvironmentScanPlacement.scanningFor(Direction.UP, BlockPredicate.not(BlockPredicate.matchesBlocks(Blocks.POWDER_SNOW)), 8), BlockPredicateFilter.forPredicate(BlockPredicate.matchesBlocks(Direction.DOWN.getNormal(), Blocks.SNOW_BLOCK, Blocks.POWDER_SNOW)));
     }
 
 }

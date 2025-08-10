@@ -42,6 +42,21 @@
           "blocks": "minecraft:powder_snow"
         }
       }
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:matching_blocks",
+        "blocks": [
+          "minecraft:snow_block",
+          "minecraft:powder_snow"
+        ],
+        "offset": [
+          0,
+          -1,
+          0
+        ]
+      }
     }
   ]
 }
