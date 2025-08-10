@@ -81,6 +81,7 @@ public class Windswept {
         gen.addProvider(client, new WindsweptModelProvider(event));
         gen.addProvider(client, new WindsweptSplashProvider(event));
         gen.addProvider(client, new WindsweptParticleProvider(event));
+        gen.addProvider(client, new WindsweptSpriteSourceProvider(event));
 
         WindsweptDatapackProvider dataPack;
         WindsweptBlockTagProvider blockTags;
@@ -89,12 +90,12 @@ public class Windswept {
         gen.addProvider(server, new WindsweptItemTagProvider(event, blockTags, dataPack));
         gen.addProvider(server, new WindsweptEntityTagProvider(event, dataPack));
         gen.addProvider(server, new WindsweptBiomeTagProvider(event, dataPack));
+        gen.addProvider(server, new WindsweptTrimMaterialTagsProvider(event, dataPack));
         gen.addProvider(server, new WindsweptBannerPatternTagProvider(event, dataPack));
         gen.addProvider(server, new WindsweptLootTableProvider(event));
         gen.addProvider(server, new WindsweptRecipeProvider(event));
         gen.addProvider(server, new WindsweptAdvancementModifierProvider(event, dataPack));
         gen.addProvider(server, new WindsweptLootModifierProvider(event, dataPack));
-        //gen.addProvider(server, new WindsweptModdedBiomeSliceProvider(event, dataPack));
         gen.addProvider(server, new WindsweptPaintingVariantTagsProvider(event, dataPack));
         gen.addProvider(server, new WindsweptChunkGeneratorModifierProvider(event, dataPack));
     }

@@ -1,0 +1,19 @@
+{
+  "sources": [
+    {
+      "type": "blueprint:paletted_permutations",
+      "palette_key": "clayworks:entity/decorated_pot_trim_palettes/trim_palette",
+      "permutations": {
+        "windswept_icicles": "windswept:entity/decorated_pot_trim_palettes/icicles",
+        "windswept_pinecone": "windswept:entity/decorated_pot_trim_palettes/pinecone"
+      },
+      "sources": [
+        {
+          "type": "minecraft:directory",
+          "prefix": "entity/decorated_pot_trim_patterns/",
+          "source": "entity/decorated_pot_trim_patterns"
+        }
+      ]
+    }
+  ]
+}

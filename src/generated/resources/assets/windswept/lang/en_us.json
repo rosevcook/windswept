@@ -405,6 +405,8 @@
   "item.windswept.wooden_milk_bucket": "Wooden Milk Bucket",
   "item.windswept.wooden_powder_snow_bucket": "Wooden Powder Snow Bucket",
   "item.windswept.wooden_water_bucket": "Wooden Water Bucket",
+  "trim_material.windswept.icicles": "Icicles Material",
+  "trim_material.windswept.pinecone": "Pinecone Material",
   "windswept.jei.info.carved_pinecone_block": "The face of the Carved Pinecone creates a single note randomly as wind passes through them, the note produced is deeper depending on how high they are stacked on top of pinecone blocks. \n(Is activated through random tick, right clicking, or redstone)",
   "windswept.jei.info.ice_lantern": "The Ice Lantern emits a light incapable of melting Ice and Snow.",
   "windswept.jei.info.music_disc_bumblebee": "Sometimes dropped when shearing a Beehive for Honeycombs.",

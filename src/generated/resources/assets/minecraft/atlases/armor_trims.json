@@ -1,0 +1,19 @@
+{
+  "sources": [
+    {
+      "type": "blueprint:paletted_permutations",
+      "palette_key": "minecraft:trims/color_palettes/trim_palette",
+      "permutations": {
+        "windswept_icicles": "windswept:trims/color_palettes/icicles",
+        "windswept_pinecone": "windswept:trims/color_palettes/pinecone"
+      },
+      "sources": [
+        {
+          "type": "minecraft:directory",
+          "prefix": "trims/models/armor/",
+          "source": "trims/models/armor"
+        }
+      ]
+    }
+  ]
+}

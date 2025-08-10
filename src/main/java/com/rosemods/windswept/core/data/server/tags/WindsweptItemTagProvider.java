@@ -58,6 +58,7 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
         this.tag(BlueprintItemTags.LARGE_BOATS).add(LARGE_HOLLY_BOAT.get(), LARGE_CHESTNUT_BOAT.get(), LARGE_PINE_BOAT.get());
 
         //vanilla
+        this.tag(ItemTags.TRIM_MATERIALS).add(ICICLES.get().asItem(), PINECONE.get().asItem());
         this.tag(ItemTags.ARROWS).add(FROST_ARROW.get());
         this.tag(ItemTags.FOX_FOOD).add(WILD_BERRIES.get());
         this.tag(ItemTags.BOATS).add(HOLLY_BOAT.getFirst().get(), CHESTNUT_BOAT.getFirst().get(), PINE_BOAT.getFirst().get());

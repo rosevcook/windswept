@@ -7,6 +7,7 @@ import com.rosemods.windswept.core.registry.WindsweptAttributes;
 import com.rosemods.windswept.core.registry.WindsweptEffects;
 import com.rosemods.windswept.core.registry.WindsweptEnchantments;
 import com.rosemods.windswept.core.registry.datapack.WindsweptDamageTypes;
+import com.rosemods.windswept.core.registry.datapack.WindsweptTrimMaterials;
 import com.rosemods.windswept.integration.jei.WindsweptPlugin;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintStandingSignBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintWallSignBlock;
@@ -21,6 +22,7 @@ import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.alchemy.Potion;
+import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
@@ -123,6 +125,10 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateSlabfish("grove");
         this.translateSlabfish("pine");
 
+        // Trim Materials //
+        this.translateTrimMaterial(WindsweptTrimMaterials.ICICLES, "Icicles Material");
+        this.translateTrimMaterial(WindsweptTrimMaterials.PINECONE, "Pinecone Material");
+
         // JEI Info //
         this.jeiInfo(MUSIC_DISC_RAIN, "Dropped by a Drowned if killed by a Skeleton.");
         this.jeiInfo(MUSIC_DISC_SNOW, "Dropped by a Chilled if killed by a Skeleton.");
@@ -164,6 +170,10 @@ public class WindsweptLangProvider extends LanguageProvider {
         String descId = enchantment.get().getDescriptionId();
         this.add(descId, name);
         this.add(descId + ".desc", desc);
+    }
+
+    private void translateTrimMaterial(ResourceKey<TrimMaterial> material, String name) {
+        this.add("trim_material." + material.location().toString().replace(':', '.'), name);
     }
 
     private void translateMusicDisc(RegistryObject<? extends Item> item, String desc) {
