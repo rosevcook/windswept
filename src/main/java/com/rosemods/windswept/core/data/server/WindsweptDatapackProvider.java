@@ -17,10 +17,10 @@ public class WindsweptDatapackProvider extends DatapackBuiltinEntriesProvider {
             .add(Registries.CONFIGURED_FEATURE, WindsweptConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, WindsweptPlacedFeatures::bootstrap)
             .add(Registries.BIOME, WindsweptBiomes::bootstrap)
+            .add(BlueprintDataPackRegistries.MODDED_BIOME_SLICES, WindsweptBiomeSlices::bootstrap)
             .add(ForgeRegistries.Keys.BIOME_MODIFIERS, WindsweptBiomeModifiers::bootstrap)
             .add(BlueprintDataPackRegistries.STRUCTURE_REPALETTERS, WindsweptStructureRepaletters::bootstrap)
-            .add(Registries.DAMAGE_TYPE, WindsweptDamageTypes::bootstrap)
-        ;
+            .add(Registries.DAMAGE_TYPE, WindsweptDamageTypes::bootstrap);
     public WindsweptDatapackProvider(GatherDataEvent event) {
         super(event.getGenerator().getPackOutput(), event.getLookupProvider(), BUILDER, Set.of(Windswept.MOD_ID, "minecraft"));
     }

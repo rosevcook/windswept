@@ -1,26 +1,13 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
     {
-      "conditions": [
-        {
-          "type": "forge:mod_loaded",
-          "modid": "caverns_and_chasms"
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:crafting_shapeless",
-        "category": "misc",
-        "ingredients": [
-          {
-            "item": "windswept:frozen_flesh_block"
-          }
-        ],
-        "result": {
-          "count": 9,
-          "item": "windswept:frozen_flesh"
-        }
-      }
+      "item": "windswept:frozen_flesh_block"
     }
-  ]
+  ],
+  "result": {
+    "count": 9,
+    "item": "windswept:frozen_flesh"
+  }
 }

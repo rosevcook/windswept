@@ -17,8 +17,6 @@ public final class WindsweptItemTags {
     public static final TagKey<Item> SILVER_INGOT = TagUtil.itemTag("forge", "ingots/silver");
     public static final TagKey<Item> BERRIES = TagUtil.itemTag("forge", "berries");
     public static final TagKey<Item> COOKED_MUTTON = TagUtil.itemTag("forge", "cooked_mutton");
-    public static final TagKey<Item> COOKED_CHICKEN = TagUtil.itemTag("forge", "cooked_chicken");
-    public static final TagKey<Item> COOKED_BACON = TagUtil.itemTag("forge", "cooked_bacon");
     public static final TagKey<Item> ROSES = TagUtil.itemTag(Windswept.MOD_ID, "roses");
     public static final TagKey<Item> WOODEN_CABINETS = TagUtil.itemTag("farmersdelight", "cabinets/wooden");
 

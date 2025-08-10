@@ -90,6 +90,7 @@ public final class WindsweptCreativeTabs {
                 .addItemsAfter(Ingredient.of(Blocks.HONEY_BLOCK), PINECONE_JAM_BLOCK)
                 .addItemsAfter(Ingredient.of(Items.SWEET_BERRIES), WILD_BERRIES)
                 .addItemsAfter(Ingredient.of(Blocks.HAY_BLOCK), LAVENDER_BALE, PINECONE_BLOCK)
+                .addItemsBefore(Ingredient.of(Blocks.COBWEB), FROZEN_FLESH_BLOCK)
 
                 .tab(REDSTONE_BLOCKS)
                 .addItemsAfter(Ingredient.of(Blocks.HONEY_BLOCK), PINECONE_JAM_BLOCK)

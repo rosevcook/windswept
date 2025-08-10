@@ -7,13 +7,10 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public final class WindsweptConstants {
     public static final String BERRY_GOOD = "berry_good";
-    public static final String WOODWORKS = "woodworks";
     public static final String BOATLOAD = "boatload";
     public static final String NEAPOLITAN = "neapolitan";
     public static final String FARMERSDELIGHT = "farmersdelight";
     public static final String AUTUMNITY = "autumnity";
-    public static final String CAVERNS_AND_CHASMS = "caverns_and_chasms";
-    public static final String ENDERGETIC = "endergetic";
     public static final String ENVIRONMENTAL = "environmental";
 
     public static final ResourceLocation BAMBOO_LADDER = new ResourceLocation("woodworks", "bamboo_ladder");

@@ -1,7 +1,6 @@
 package com.rosemods.windswept.core.registry.datapack;
 
 import com.rosemods.windswept.core.Windswept;
-import com.rosemods.windswept.core.registry.WindsweptFeatures;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;

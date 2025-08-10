@@ -1,31 +1,60 @@
-package com.rosemods.windswept.core.data.server.modifiers;
+package com.rosemods.windswept.core.registry.datapack;
 
 import com.mojang.datafixers.util.Pair;
 import com.rosemods.windswept.core.Windswept;
-import com.rosemods.windswept.core.registry.datapack.WindsweptBiomes;
+import com.teamabnormals.blueprint.common.world.modification.ModdedBiomeSlice;
 import com.teamabnormals.blueprint.core.registry.BlueprintBiomes;
+import com.teamabnormals.blueprint.core.registry.BlueprintDataPackRegistries;
 import com.teamabnormals.blueprint.core.util.BiomeUtil;
+import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.dimension.LevelStem;
-import net.minecraftforge.data.event.GatherDataEvent;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
-public class WindsweptModdedBiomeSliceProvider {/* extends ModdedBiomeSliceProvider {
+import static com.rosemods.windswept.core.registry.datapack.WindsweptBiomes.*;
+public final class WindsweptBiomeSlices {
+    public static final ResourceKey<ModdedBiomeSlice> CHESTNUT_SLICE = createKey("chestnut");
+    public static final ResourceKey<ModdedBiomeSlice> PINE_SLICE = createKey("pine");
+    public static final ResourceKey<ModdedBiomeSlice> TUNDRA_SLICE = createKey("tundra");
+    public static final ResourceKey<ModdedBiomeSlice> LAVENDER_SLICE = createKey("lavender");
 
-    public WindsweptModdedBiomeSliceProvider(GatherDataEvent event) {
-        super(event.getGenerator(), Windswept.MOD_ID);
-    }
+    public static final ResourceKey<Biome> CHESTNUT_FOREST_AREA = WindsweptBiomes.createKey("chestnut_forest_area");
+    public static final ResourceKey<Biome> SNOWY_CHESTNUT_FOREST_AREA = WindsweptBiomes.createKey("snowy_chestnut_forest_area");
+    public static final ResourceKey<Biome> PINE_BARRENS_AREA = WindsweptBiomes.createKey("pine_barrens_area");
+    public static final ResourceKey<Biome> SNOWY_PINE_BARRENS_AREA = WindsweptBiomes.createKey("snowy_pine_barrens_area");
+    public static final ResourceKey<Biome> LAVENDER_MEADOW_AREA = WindsweptBiomes.createKey("lavender_meadow_area");
+    public static final ResourceKey<Biome> TUNDRA_AREA = WindsweptBiomes.createKey("tundra_area");
 
-    @Override
-    protected void registerSlices() {
+    public static void bootstrap(BootstapContext<ModdedBiomeSlice> context) {
         List<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> entries = new ArrayList<>();
         new WindsweptBiomeBuilder().addBiomesToSlice(entries::add);
-        this.registerSlice("main", 4, new BiomeUtil.MultiNoiseModdedBiomeProvider(new Climate.ParameterList<>(entries)), LevelStem.OVERWORLD.location());
+
+        context.register(CHESTNUT_SLICE, new ModdedBiomeSlice(30, BiomeUtil.MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
+                .area(CHESTNUT_FOREST_AREA, CHESTNUT_FOREST)
+                .area(SNOWY_CHESTNUT_FOREST_AREA, SNOWY_CHESTNUT_FOREST)
+                .build(), LevelStem.OVERWORLD));
+
+        context.register(PINE_SLICE, new ModdedBiomeSlice(30, BiomeUtil.MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
+                .area(PINE_BARRENS_AREA, PINE_BARRENS)
+                .area(SNOWY_PINE_BARRENS_AREA, SNOWY_PINE_BARRENS)
+                .build(), LevelStem.OVERWORLD));
+
+        context.register(TUNDRA_SLICE, new ModdedBiomeSlice(5, BiomeUtil.MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
+                .area(TUNDRA_AREA, TUNDRA)
+                .build(), LevelStem.OVERWORLD));
+
+        context.register(LAVENDER_SLICE, new ModdedBiomeSlice(25, BiomeUtil.MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
+                .area(LAVENDER_MEADOW_AREA, LAVENDER_MEADOW)
+                .build(), LevelStem.OVERWORLD));
+    }
+
+    private static ResourceKey<ModdedBiomeSlice> createKey(String name) {
+        return ResourceKey.create(BlueprintDataPackRegistries.MODDED_BIOME_SLICES, Windswept.location(name));
     }
 
     private static final class WindsweptBiomeBuilder {
@@ -44,10 +73,10 @@ public class WindsweptModdedBiomeSliceProvider {/* extends ModdedBiomeSliceProvi
         private final Climate.Parameter midInlandContinentalness = Climate.Parameter.span(.03f, .3f);
         private final Climate.Parameter farInlandContinentalness = Climate.Parameter.span(.3f, 1f);
         private final ResourceKey<Biome> VANILLA = BlueprintBiomes.ORIGINAL_SOURCE_MARKER;
-        private final ResourceKey<Biome>[][] MIDDLE_BIOMES = new ResourceKey[][]{{WindsweptBiomes.TUNDRA, WindsweptBiomes.TUNDRA, WindsweptBiomes.TUNDRA, WindsweptBiomes.SNOWY_CHESTNUT_FOREST, WindsweptBiomes.CHESTNUT_FOREST}, {VANILLA, VANILLA, VANILLA, WindsweptBiomes.CHESTNUT_FOREST, WindsweptBiomes.PINE_BARRENS}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
-        private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{{VANILLA, null, WindsweptBiomes.SNOWY_CHESTNUT_FOREST, null, null}, {null, null, null, null, WindsweptBiomes.PINE_BARRENS}, {VANILLA, null, null, WindsweptBiomes.LAVENDER_MEADOW, null}, {null, null, VANILLA, VANILLA, VANILLA}, {null, null, null, null, null}};
-        private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{{WindsweptBiomes.TUNDRA, WindsweptBiomes.TUNDRA, WindsweptBiomes.TUNDRA, WindsweptBiomes.SNOWY_CHESTNUT_FOREST, WindsweptBiomes.SNOWY_CHESTNUT_FOREST}, {WindsweptBiomes.LAVENDER_MEADOW, WindsweptBiomes.LAVENDER_MEADOW, VANILLA, WindsweptBiomes.CHESTNUT_FOREST, WindsweptBiomes.PINE_BARRENS}, {WindsweptBiomes.LAVENDER_MEADOW, WindsweptBiomes.LAVENDER_MEADOW, WindsweptBiomes.LAVENDER_MEADOW, WindsweptBiomes.LAVENDER_MEADOW, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
-        private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{{VANILLA, null, null, null, null}, {null, null, WindsweptBiomes.LAVENDER_MEADOW, WindsweptBiomes.LAVENDER_MEADOW, VANILLA}, {null, null, VANILLA, VANILLA, null}, {null, null, null, null, null}, {VANILLA, VANILLA, null, null, null}};
+        private final ResourceKey<Biome>[][] MIDDLE_BIOMES = new ResourceKey[][]{{TUNDRA, TUNDRA, TUNDRA, SNOWY_CHESTNUT_FOREST, CHESTNUT_FOREST}, {VANILLA, VANILLA, VANILLA, CHESTNUT_FOREST, PINE_BARRENS}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
+        private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{{VANILLA, null, SNOWY_CHESTNUT_FOREST, null, null}, {null, null, null, null, PINE_BARRENS}, {VANILLA, null, null, LAVENDER_MEADOW, null}, {null, null, VANILLA, VANILLA, VANILLA}, {null, null, null, null, null}};
+        private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{{TUNDRA, TUNDRA, TUNDRA, SNOWY_CHESTNUT_FOREST, SNOWY_CHESTNUT_FOREST}, {LAVENDER_MEADOW, LAVENDER_MEADOW, VANILLA, CHESTNUT_FOREST, PINE_BARRENS}, {LAVENDER_MEADOW, LAVENDER_MEADOW, LAVENDER_MEADOW, LAVENDER_MEADOW, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
+        private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{{VANILLA, null, null, null, null}, {null, null, LAVENDER_MEADOW, LAVENDER_MEADOW, VANILLA}, {null, null, VANILLA, VANILLA, null}, {null, null, null, null, null}, {VANILLA, VANILLA, null, null, null}};
 
         private void addBiomesToSlice(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer) {
             this.addOffCoastBiomes(consumer);
@@ -284,7 +313,7 @@ public class WindsweptModdedBiomeSliceProvider {/* extends ModdedBiomeSliceProvi
             if (p_187245_ >= 3) {
                 return this.pickPlateauBiome(p_187245_, p_187246_, p_187247_);
             } else {
-                return WindsweptBiomes.SNOWY_PINE_BARRENS;
+                return SNOWY_PINE_BARRENS;
             }
         }
 
@@ -303,6 +332,4 @@ public class WindsweptModdedBiomeSliceProvider {/* extends ModdedBiomeSliceProvi
 
     }
 
-
-*/
 }
