@@ -131,8 +131,8 @@ public class WindsweptLangProvider extends LanguageProvider {
 
         // Paintings //
         this.translatePainting(WindsweptPaintingVariants.CLIFFSIDE, "Binome");
-        this.translatePainting(WindsweptPaintingVariants.TUNDRA, "Yapetto");
-        this.translatePainting(WindsweptPaintingVariants.DRESS_CODES, "Yapetto");
+        this.translatePainting(WindsweptPaintingVariants.TUNDRA, "Yapettoshen");
+        this.translatePainting(WindsweptPaintingVariants.DRESS_CODES, "Yapettoshen");
 
         // Biomes //
         this.translateBiome(WindsweptBiomes.CHESTNUT_FOREST);
