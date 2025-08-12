@@ -25,7 +25,7 @@ public class LavenderCrownItem extends ArmorItem {
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 
-        //if (this.slot == slot)
+        if (this.type.getSlot() == slot)
             builder.put(WindsweptAttributes.FRAGRANCE.get(), new AttributeModifier(FRAGRANCE_UUID, "Fragrance modifier", 1, AttributeModifier.Operation.ADDITION));
 
         return builder.build();

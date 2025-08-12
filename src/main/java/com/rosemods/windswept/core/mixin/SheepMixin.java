@@ -1,6 +1,7 @@
 package com.rosemods.windswept.core.mixin;
 
 import com.rosemods.windswept.core.other.tags.WindsweptBiomeTags;
+import com.rosemods.windswept.core.registry.datapack.WindsweptBiomes;
 import net.minecraft.core.Holder;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.RandomSource;
@@ -25,9 +26,9 @@ public class SheepMixin {
         Holder<Biome> biome = level.getBiome(sheep.blockPosition());
 
         if (biome.is(WindsweptBiomeTags.IS_PINE_BARRENS))
-            sheep.setColor(rand.nextInt(4) == 0 ? DyeColor.ORANGE : DyeColor.BROWN);
+            sheep.setColor(rand.nextInt(4) == 0 && biome.is(WindsweptBiomes.PINE_BARRENS) ? DyeColor.ORANGE : DyeColor.BROWN);
         else if (biome.is(WindsweptBiomeTags.IS_LAVENDER) && rand.nextInt(4) == 0)
-            sheep.setColor(DyeColor.MAGENTA);
+            sheep.setColor(DyeColor.PURPLE);
         else if (biome.is(WindsweptBiomeTags.IS_CHESTNUT_FOREST) && rand.nextInt(3) == 0)
             sheep.setColor(rand.nextInt(8) == 0 ? DyeColor.BLUE : DyeColor.BROWN);
     }

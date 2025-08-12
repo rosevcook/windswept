@@ -21,7 +21,8 @@ public final class WindsweptBiomes {
     public static final ResourceKey<Biome> SNOWY_CHESTNUT_FOREST = createKey("snowy_chestnut_forest");
     public static final ResourceKey<Biome> PINE_BARRENS = createKey("pine_barrens");
     public static final ResourceKey<Biome> SNOWY_PINE_BARRENS = createKey("snowy_pine_barrens");
-    public static final ResourceKey<Biome> LAVENDER_MEADOW = createKey("lavender_meadow");
+    public static final ResourceKey<Biome> LAVENDER_HILLS = createKey("lavender_hills");
+    public static final ResourceKey<Biome> LAVENDER_PLAINS = createKey("lavender_plains");
     public static final ResourceKey<Biome> TUNDRA = createKey("tundra");
 
     public static void bootstrap(BootstapContext<Biome> context) {
@@ -32,7 +33,8 @@ public final class WindsweptBiomes {
         context.register(SNOWY_CHESTNUT_FOREST, chestnutForest(true, features, carvers));
         context.register(PINE_BARRENS, pineBarrens(false, features, carvers));
         context.register(SNOWY_PINE_BARRENS, pineBarrens(true, features, carvers));
-        context.register(LAVENDER_MEADOW, lavender(features, carvers));
+        context.register(LAVENDER_HILLS, lavender(true, features, carvers));
+        context.register(LAVENDER_PLAINS, lavender(false, features, carvers));
         context.register(TUNDRA, tundra(features, carvers));
     }
 
@@ -149,7 +151,7 @@ public final class WindsweptBiomes {
     }
 
     // Lavender //
-    private static Biome lavender(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
+    private static Biome lavender(boolean hills, HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
         BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder(features, carvers);
 
         OverworldBiomes.globalOverworldGeneration(generation);
@@ -158,8 +160,11 @@ public final class WindsweptBiomes {
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
         BiomeDefaultFeatures.addDefaultMushrooms(generation);
 
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.LAVENDER_TALL_BIRCH_TREES);
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.LAVENDER_CHESTNUT_TREES);
+        if (hills) {
+            generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.LAVENDER_TALL_BIRCH_TREES);
+            generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.LAVENDER_CHESTNUT_TREES);
+        } else
+            generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.LAVENDER_PLAINS_TREES);
 
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.LARGE_WHITE_ROSE);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.LAVENDER);

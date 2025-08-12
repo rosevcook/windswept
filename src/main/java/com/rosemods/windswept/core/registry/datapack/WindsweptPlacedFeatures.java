@@ -47,6 +47,7 @@ public final class WindsweptPlacedFeatures {
     public static final ResourceKey<PlacedFeature> LAVENDER_CHESTNUT_TREES = createKey("lavender_chestnut_trees");
     public static final ResourceKey<PlacedFeature> TALL_BIRCH_TREES = createKey("tall_birch_trees");
     public static final ResourceKey<PlacedFeature> LAVENDER_TALL_BIRCH_TREES = createKey("lavender_tall_birch_trees");
+    public static final ResourceKey<PlacedFeature> LAVENDER_PLAINS_TREES = createKey("lavender_plains_trees");
     public static final ResourceKey<PlacedFeature> PINE_TREES = createKey("pine_trees");
     public static final ResourceKey<PlacedFeature> PINE_CHECKED = createKey("pine_checked");
     public static final ResourceKey<PlacedFeature> OLD_GROWTH_PINE_TAIGA_TREES = createKey("old_growth_pine_taiga_trees");
@@ -90,6 +91,7 @@ public final class WindsweptPlacedFeatures {
         register(context, LAVENDER_CHESTNUT_TREES, WindsweptConfiguredFeatures.CHESTNUT_BEES, treePlacement(PlacementUtils.countExtra(2, .1f, 1)));
         register(context, TALL_BIRCH_TREES, VegetationFeatures.BIRCH_TALL, treePlacement(PlacementUtils.countExtra(5, .1f, 1)));
         register(context, LAVENDER_TALL_BIRCH_TREES, VegetationFeatures.BIRCH_TALL, treePlacement(PlacementUtils.countExtra(4, .1f, 1)));
+        register(context, LAVENDER_PLAINS_TREES, TreeFeatures.BIRCH_BEES_005, treePlacement(PlacementUtils.countExtra(0, .1f, 2)));
         register(context, PINE_TREES, WindsweptConfiguredFeatures.PINE_BEES, treePlacement(PlacementUtils.countExtra(9, .1f, 1)));
         register(context, PINE_CHECKED, WindsweptConfiguredFeatures.PINE_BEES, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING));
         register(context, OLD_GROWTH_PINE_TAIGA_TREES, WindsweptConfiguredFeatures.OLD_GROWTH_PINE_TAIGA_TREES, treePlacement(PlacementUtils.countExtra(10, .1f, 1)));
