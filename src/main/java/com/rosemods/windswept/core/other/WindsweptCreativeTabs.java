@@ -2,12 +2,10 @@ package com.rosemods.windswept.core.other;
 
 import com.rosemods.windswept.core.Windswept;
 import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
-import com.teamabnormals.blueprint.core.util.item.ItemStackUtil;
 import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
@@ -16,7 +14,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.util.function.Predicate;
 
 import static com.rosemods.windswept.core.registry.WindsweptBlocks.*;
-import static com.rosemods.windswept.core.registry.WindsweptBlocks.BLUE_ICE_BRICKS;
 import static com.rosemods.windswept.core.registry.WindsweptItems.*;
 import static net.minecraft.world.item.CreativeModeTabs.*;
 
@@ -94,9 +91,8 @@ public final class WindsweptCreativeTabs {
                 .addItemsAfter(Ingredient.of(Blocks.SUGAR_CANE), LAVENDER, ICICLES)
                 .addItemsAfter(Ingredient.of(Blocks.HONEY_BLOCK), PINECONE_JAM_BLOCK)
                 .addItemsAfter(Ingredient.of(Items.SWEET_BERRIES), WILD_BERRIES)
-                .addItemsAfter(Ingredient.of(Blocks.HAY_BLOCK), LAVENDER_BALE, CHESTNUT_CRATE, ROASTED_CHESTNUT_CRATE, GINGER_ROOT_CRATE, HOLLY_BERRY_BASKET,
-                        WILD_BERRY_BASKET)
-                .addItemsBefore(Ingredient.of(Blocks.COBWEB), FROZEN_FLESH_BLOCK)
+                .addItemsAfter(Ingredient.of(Blocks.HAY_BLOCK), LAVENDER_BALE, CHESTNUT_CRATE, ROASTED_CHESTNUT_CRATE, GINGER_ROOT_CRATE, HOLLY_BERRY_BASKET, WILD_BERRY_BASKET)
+                .addItemsBefore(modLoaded(Blocks.COBWEB, "caverns_and_chasms"), FROZEN_FLESH_BLOCK)
                 .addItemsAfter(Ingredient.of(Blocks.FLOWERING_AZALEA), HOLLY_WREATH, VINE_WREATH, PINECONE_WREATH, CHERRY_WREATH)
 
                 .tab(REDSTONE_BLOCKS)

@@ -243,7 +243,7 @@ public class WindsweptRecipeProvider extends BlueprintRecipeProvider {
         compressedBlock(CHESTNUT_CRATE.get(), CHESTNUTS.get(), consumer);
         compressedBlock(ROASTED_CHESTNUT_CRATE.get(), ROASTED_CHESTNUTS.get(), consumer);
         compressedBlock(GINGER_ROOT_CRATE.get(), GINGER_ROOT.get(), consumer);
-        compressedBlock(FROZEN_FLESH_BLOCK.get(), FROZEN_FLESH.get(), consumer);
+        compressedBlock(FROZEN_FLESH_BLOCK.get(), FROZEN_FLESH.get(), new ModLoadedCondition("caverns_and_chasms"), consumer);
         compressedBlock(PINECONE_BLOCK.get(), PINECONE.get(), consumer);
         compressedBlock(GINGERBREAD_COOKIE_BLOCK.get(), GINGERBREAD_COOKIE.get(), consumer);
         compressedBlock(CANDY_CANE_BLOCK.get(), CANDY_CANE.get(), consumer);
