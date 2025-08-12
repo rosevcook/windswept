@@ -430,6 +430,11 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
             this.level().playSound(null, this, SoundEvents.HORSE_SADDLE, sound, .5f, 1f);
     }
 
+    @Override
+    protected float getRiddenSpeed(Player player) {
+        return (float)this.getAttributeValue(Attributes.MOVEMENT_SPEED) * .6f;
+    }
+
     private void setSaddled(boolean saddled) {
         this.entityData.set(SADDLED, saddled);
     }

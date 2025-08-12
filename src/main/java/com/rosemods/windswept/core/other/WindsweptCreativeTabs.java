@@ -53,6 +53,8 @@ public final class WindsweptCreativeTabs {
                         () -> Blocks.BLUE_ICE, BLUE_ICE_STAIRS, PACKED_ICE_SLAB, BLUE_ICE_BRICKS, CHISELED_BLUE_ICE_BRICKS, BLUE_ICE_BRICK_STAIRS, BLUE_ICE_BRICK_SLAB, BLUE_ICE_BRICK_WALL,
                         () -> Blocks.SNOW_BLOCK, SNOW_STAIRS, SNOW_SLAB, SNOW_BRICKS, SNOW_BRICK_STAIRS, SNOW_BRICK_SLAB, SNOW_BRICK_WALL,
                         LAVENDER_THATCH, LAVENDER_THATCH_STAIRS, LAVENDER_THATCH_SLAB)
+                .addItemsAfter(modLoaded(WindsweptConstants.MOSSY_COBBLESTONE_BRICK_WALL, "caverns_and_chasms"), DRY_MOSSY_COBBLESTONE_BRICKS, DRY_MOSSY_COBBLESTONE_BRICK_STAIRS, DRY_MOSSY_COBBLESTONE_BRICK_SLAB, DRY_MOSSY_COBBLESTONE_BRICK_WALL)
+                .addItemsAfter(modLoaded(WindsweptConstants.MOSSY_COBBLESTONE_TILE_WALL, "caverns_and_chasms"), DRY_MOSSY_COBBLESTONE_TILES, DRY_MOSSY_COBBLESTONE_TILE_STAIRS, DRY_MOSSY_COBBLESTONE_TILE_SLAB, DRY_MOSSY_COBBLESTONE_TILE_WALL)
 
                 .tab(FUNCTIONAL_BLOCKS)
                 .addItemsBefore(Ingredient.of(Blocks.BAMBOO_SIGN),
@@ -63,9 +65,12 @@ public final class WindsweptCreativeTabs {
                 .addItemsBefore(modLoaded(Blocks.ANVIL, "caverns_and_chasms"), CUPRIC_FAIRY_LIGHT)
                 .addItemsBefore(modLoaded(Blocks.ANVIL, "endergetic"), ENDER_FAIRY_LIGHT)
                 .addItemsBefore(Ingredient.of(Blocks.CHAIN), ICE_LANTERN)
-                .addItemsAfter(Ingredient.of(Blocks.JUKEBOX), CARVED_PINECONE_BLOCK, WILL_O_THE_WISP, FEATHER_WING, FEATHER_ORNAMENT, DREAM_CATCHER,
-                        PINECONE_WREATH, HOLLY_WREATH, VINE_WREATH, CHERRY_WREATH, FROSTBITER_TROPHY)
+                .addItemsAfter(Ingredient.of(Blocks.JUKEBOX), CARVED_PINECONE_BLOCK, WILL_O_THE_WISP, FEATHER_WING, FEATHER_ORNAMENT, DREAM_CATCHER, FROSTBITER_TROPHY)
                 .addItemsAfter(modLoaded(Blocks.BARREL, "farmersdelight"), HOLLY_CABINET, CHESTNUT_CABINET, PINE_CABINET)
+                .addItemsBefore(modLoaded(Blocks.LADDER/*WindsweptConstants.BAMBOO_LADDER*/, "woodworks"), HOLLY_LADDER, CHESTNUT_LADDER, PINE_LADDER)
+                .addItemsBefore(modLoaded(Blocks.BEEHIVE/*WindsweptConstants.BAMBOO_BEEHIVE*/, "woodworks"), HOLLY_BEEHIVE, CHESTNUT_BEEHIVE, PINE_BEEHIVE)
+                .addItemsBefore(modLoaded(Blocks.BOOKSHELF/*WindsweptConstants.BAMBOO_BOOKSHELF*/, "woodworks"), HOLLY_BOOKSHELF, /*CHISELED_HOLLY_BOOKSHELF, */CHESTNUT_BOOKSHELF, /*CHISELED_CHESTNUT_BOOKSHELF, */PINE_BOOKSHELF/*, CHISELED_PINE_BOOKSHELF*/)
+                .addItemsBefore(modLoaded(Blocks.CHEST/*WindsweptConstants.BAMBOO_CLOSET*/, "woodworks"), HOLLY_CHEST, CHESTNUT_CHEST, PINE_CHEST)
 
                 .tab(NATURAL_BLOCKS)
                 .addItemsAfter(Ingredient.of(Blocks.PODZOL), GELISOL)
@@ -85,16 +90,20 @@ public final class WindsweptCreativeTabs {
                         BLUE_ROSE, BLUE_ROSE_BUSH, RED_ROSE, RED_ROSE_BUSH, WHITE_ROSE, WHITE_ROSE_BUSH)
                 .addItemsBefore(Ingredient.of(Blocks.CRIMSON_ROOTS), MOSSY_SPROUTS, DRY_MOSSY_SPROUTS, SNOWY_SPROUTS, GELISOL_SPROUTS, WILD_GINGER)
                 .addItemsAfter(Ingredient.of(Blocks.SUNFLOWER), LUPINE)
-                .addItemsAfter(Ingredient.of(Blocks.BAMBOO), PINECONE, ICICLES)
-                .addItemsAfter(Ingredient.of(Blocks.SUGAR_CANE), LAVENDER)
+                .addItemsAfter(Ingredient.of(Blocks.BAMBOO), PINECONE, PINECONE_BLOCK, FEATHER_WING, FEATHER_ORNAMENT, DREAM_CATCHER)
+                .addItemsAfter(Ingredient.of(Blocks.SUGAR_CANE), LAVENDER, ICICLES)
                 .addItemsAfter(Ingredient.of(Blocks.HONEY_BLOCK), PINECONE_JAM_BLOCK)
                 .addItemsAfter(Ingredient.of(Items.SWEET_BERRIES), WILD_BERRIES)
-                .addItemsAfter(Ingredient.of(Blocks.HAY_BLOCK), LAVENDER_BALE, PINECONE_BLOCK)
+                .addItemsAfter(Ingredient.of(Blocks.HAY_BLOCK), LAVENDER_BALE, CHESTNUT_CRATE, ROASTED_CHESTNUT_CRATE, GINGER_ROOT_CRATE, HOLLY_BERRY_BASKET,
+                        WILD_BERRY_BASKET, RED_MUSHROOM_BASKET, BROWN_MUSHROOM_BASKET)
+                .addItemsAfter(modLoaded(Blocks.HAY_BLOCK, "quark"), GLOW_SHROOM_BASKET)
                 .addItemsBefore(Ingredient.of(Blocks.COBWEB), FROZEN_FLESH_BLOCK)
+                .addItemsAfter(Ingredient.of(Blocks.FLOWERING_AZALEA), HOLLY_WREATH, VINE_WREATH, PINECONE_WREATH, CHERRY_WREATH)
 
                 .tab(REDSTONE_BLOCKS)
                 .addItemsAfter(Ingredient.of(Blocks.HONEY_BLOCK), PINECONE_JAM_BLOCK)
                 .addItemsAfter(Ingredient.of(Blocks.NOTE_BLOCK), CARVED_PINECONE_BLOCK)
+                .addItemsBefore(modLoaded(Blocks.TRAPPED_CHEST/*WindsweptConstants.TRAPPED_BAMBOO_CLOSET*/, "woodworks"), TRAPPED_HOLLY_CHEST, TRAPPED_CHESTNUT_CHEST, TRAPPED_PINE_CHEST)
 
                 .tab(COMBAT)
                 .addItemsAfter(Ingredient.of(Items.SPECTRAL_ARROW), FROST_ARROW)
@@ -103,8 +112,7 @@ public final class WindsweptCreativeTabs {
                 .tab(INGREDIENTS)
                 .addItemsAfter(Ingredient.of(Items.HONEYCOMB), PINECONE, HOLLY_BERRIES)
                 .addItemsAfter(Ingredient.of(Items.WHEAT), LAVENDER)
-                .addItemsAfter(Ingredient.of(Items.GLOW_INK_SAC), FROZEN_BRANCH)
-                .addItemsAfter(Ingredient.of(Items.SNOWBALL), ICICLES)
+                .addItemsAfter(Ingredient.of(Items.SNOWBALL), ICICLES, FROZEN_BRANCH)
                 .addItemsAfter(Ingredient.of(Items.PIGLIN_BANNER_PATTERN), SNOW_GOLEM_BANNER_PATTERN, SNOW_CHARGE_BANNER_PATTERN, ROSE_FLOWER_BANNER_PATTERN)
 
                 .tab(TOOLS_AND_UTILITIES)
@@ -131,45 +139,21 @@ public final class WindsweptCreativeTabs {
                 .addItemsAfter(Ingredient.of(Items.COOKED_MUTTON), GOAT, COOKED_GOAT)
                 .addItemsAfter(Ingredient.of(Items.MILK_BUCKET), WOODEN_MILK_BUCKET)
                 .addItemsAfter(Ingredient.of(Items.ROTTEN_FLESH), FROZEN_FLESH)
+                .addItemsAfter(modLoaded(COOKED_GOAT.get(), "farmersdelight"), GOAT_SHANKS, COOKED_GOAT_SHANKS)
+                .addItemsAfter(modLoaded(CHRISTMAS_PUDDING.get(), "farmersdelight"), CHRISTMAS_PUDDING_SLICE)
+                .addItemsAfter(modLoaded(CHESTNUT_SOUP.get(), "farmersdelight"), CHESTNUT_RISOTTO)
+                .addItemsAfter(modLoaded(WindsweptConstants.FOUL_BERRIES, "autumnity"), FOUL_BERRY_BOWL)
 
                 .tab(SPAWN_EGGS)
                 .addSpawnEggsAlphabetically(CHILLED_SPAWN_EGG, FROSTBITER_SPAWN_EGG);
-
-        CreativeModeTabContentsPopulator.mod("woodworks_1")
-                .tab(FUNCTIONAL_BLOCKS)
-                .addItemsBefore(ofID(WindsweptConstants.BAMBOO_LADDER), HOLLY_LADDER, CHESTNUT_LADDER, PINE_LADDER)
-                .addItemsBefore(ofID(WindsweptConstants.BAMBOO_BEEHIVE), HOLLY_BEEHIVE, CHESTNUT_BEEHIVE, PINE_BEEHIVE)
-                .addItemsBefore(ofID(WindsweptConstants.BAMBOO_BOOKSHELF), HOLLY_BOOKSHELF, /*CHISELED_HOLLY_BOOKSHELF, */CHESTNUT_BOOKSHELF, /*CHISELED_CHESTNUT_BOOKSHELF, */PINE_BOOKSHELF/*, CHISELED_PINE_BOOKSHELF*/)
-                .addItemsBefore(ofID(WindsweptConstants.BAMBOO_CLOSET), HOLLY_CHEST, CHESTNUT_CHEST, PINE_CHEST)
-                .tab(REDSTONE_BLOCKS)
-                .addItemsBefore(ofID(WindsweptConstants.TRAPPED_BAMBOO_CLOSET), TRAPPED_HOLLY_CHEST, TRAPPED_CHESTNUT_CHEST, TRAPPED_PINE_CHEST);
-
-        CreativeModeTabContentsPopulator.mod("autumnity_1")
-                .tab(FOOD_AND_DRINKS)
-                .addItemsAfter(ofID(WindsweptConstants.FOUL_BERRIES), FOUL_BERRY_BOWL);
-
-        CreativeModeTabContentsPopulator.mod("farmersdelight_1")
-                .tab(FOOD_AND_DRINKS)
-                .addItemsAfter(Ingredient.of(COOKED_GOAT.get()), GOAT_SHANKS, COOKED_GOAT_SHANKS)
-                .addItemsAfter(Ingredient.of(CHRISTMAS_PUDDING.get()), CHRISTMAS_PUDDING_SLICE)
-                .addItemsAfter(Ingredient.of(CHESTNUT_SOUP.get()), CHESTNUT_RISOTTO);
-
-        CreativeModeTabContentsPopulator.mod("caverns_and_chasms_1")
-                .tab(BUILDING_BLOCKS)
-                .addItemsAfter(ofID(WindsweptConstants.MOSSY_COBBLESTONE_BRICK_WALL), DRY_MOSSY_COBBLESTONE_BRICKS, DRY_MOSSY_COBBLESTONE_BRICK_STAIRS, DRY_MOSSY_COBBLESTONE_BRICK_SLAB, DRY_MOSSY_COBBLESTONE_BRICK_WALL)
-                .addItemsAfter(ofID(WindsweptConstants.MOSSY_COBBLESTONE_TILE_WALL), DRY_MOSSY_COBBLESTONE_TILES, DRY_MOSSY_COBBLESTONE_TILE_STAIRS, DRY_MOSSY_COBBLESTONE_TILE_SLAB, DRY_MOSSY_COBBLESTONE_TILE_WALL);
     }
 
     private static Predicate<ItemStack> modLoaded(ItemLike item, String... modids) {
         return stack -> Ingredient.of(item).test(stack) && BlockSubRegistryHelper.areModsLoaded(modids);
     }
 
-    public static Predicate<ItemStack> ofID(ResourceLocation location, ItemLike fallback, String... modids) {
-        return stack -> (BlockSubRegistryHelper.areModsLoaded(modids) ? Ingredient.of(ForgeRegistries.ITEMS.getValue(location)) : Ingredient.of(fallback)).test(stack);
-    }
-
-    public static Predicate<ItemStack> ofID(ResourceLocation location, String... modids) {
-        return stack -> (BlockSubRegistryHelper.areModsLoaded(modids) && Ingredient.of(ForgeRegistries.ITEMS.getValue(location)).test(stack));
+    public static Predicate<ItemStack> modLoaded(ResourceLocation location, String... modids) {
+        return modLoaded(ForgeRegistries.ITEMS.getValue(location), modids);
     }
 
 }

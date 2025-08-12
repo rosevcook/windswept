@@ -1,26 +1,13 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
     {
-      "conditions": [
-        {
-          "type": "forge:mod_loaded",
-          "modid": "berry_good"
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:crafting_shapeless",
-        "category": "misc",
-        "ingredients": [
-          {
-            "item": "windswept:brown_mushroom_basket"
-          }
-        ],
-        "result": {
-          "count": 9,
-          "item": "minecraft:brown_mushroom"
-        }
-      }
+      "item": "windswept:brown_mushroom_basket"
     }
-  ]
+  ],
+  "result": {
+    "count": 9,
+    "item": "minecraft:brown_mushroom"
+  }
 }

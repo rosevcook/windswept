@@ -8,6 +8,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public final class WindsweptAutumnityCompat {
     public static final FoodProperties FOUL_BERRY_BOWL = new FoodProperties.Builder().nutrition(3).saturationMod(.2f).effect(
-            () -> new MobEffectInstance(ForgeRegistries.MOB_EFFECTS.getValue(new ResourceLocation(WindsweptConstants.AUTUMNITY, "foul_taste")), 960, 0), 1f).build();
+            () -> new MobEffectInstance(ForgeRegistries.MOB_EFFECTS.getValue(new ResourceLocation("autumnity", "foul_taste")), 960, 0), 1f).build();
 
 }

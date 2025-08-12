@@ -5,10 +5,6 @@ import com.rosemods.windswept.core.other.WindsweptConstants;
 import com.rosemods.windswept.core.other.tags.WindsweptItemTags;
 import com.teamabnormals.blueprint.core.data.server.BlueprintRecipeProvider;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintItemTags;
-import net.minecraft.advancements.critereon.EntityPredicate;
-import net.minecraft.advancements.critereon.InventoryChangeTrigger;
-import net.minecraft.advancements.critereon.ItemPredicate;
-import net.minecraft.advancements.critereon.MinMaxBounds;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
@@ -21,7 +17,10 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
-import net.minecraftforge.common.crafting.conditions.*;
+import net.minecraftforge.common.crafting.conditions.ICondition;
+import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
+import net.minecraftforge.common.crafting.conditions.NotCondition;
+import net.minecraftforge.common.crafting.conditions.TagEmptyCondition;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -242,13 +241,13 @@ public class WindsweptRecipeProvider extends BlueprintRecipeProvider {
         leafPileRecipes(consumer, PINE_LEAVES.get(), PINE_LEAF_PILE.get());
 
         // compressed blocks
-        compressedBlock(WILD_BERRY_BASKET.get(), WILD_BERRIES.get(), new ModLoadedCondition("berry_good"), consumer);
-        compressedBlock(HOLLY_BERRY_BASKET.get(), HOLLY_BERRIES.get(), new ModLoadedCondition("berry_good"), consumer);
+        compressedBlock(WILD_BERRY_BASKET.get(), WILD_BERRIES.get(), consumer);
+        compressedBlock(HOLLY_BERRY_BASKET.get(), HOLLY_BERRIES.get(), consumer);
         compressedBlock(CHESTNUT_CRATE.get(), CHESTNUTS.get(), consumer);
-        compressedBlock(ROASTED_CHESTNUT_CRATE.get(), ROASTED_CHESTNUTS.get(),  consumer);
-        compressedBlock(GINGER_ROOT_CRATE.get(), GINGER_ROOT.get(), new ModLoadedCondition("farmersdelight"), consumer);
-        compressedBlock(RED_MUSHROOM_BASKET.get(), Items.RED_MUSHROOM, new ModLoadedCondition("berry_good"), consumer);
-        compressedBlock(BROWN_MUSHROOM_BASKET.get(), Items.BROWN_MUSHROOM, new ModLoadedCondition("berry_good"), consumer);
+        compressedBlock(ROASTED_CHESTNUT_CRATE.get(), ROASTED_CHESTNUTS.get(), consumer);
+        compressedBlock(GINGER_ROOT_CRATE.get(), GINGER_ROOT.get(), consumer);
+        compressedBlock(RED_MUSHROOM_BASKET.get(), Items.RED_MUSHROOM, consumer);
+        compressedBlock(BROWN_MUSHROOM_BASKET.get(), Items.BROWN_MUSHROOM, consumer);
         compressedBlock(FROZEN_FLESH_BLOCK.get(), FROZEN_FLESH.get(), consumer);
         compressedBlock(PINECONE_BLOCK.get(), PINECONE.get(), consumer);
         compressedBlock(GINGERBREAD_COOKIE_BLOCK.get(), GINGERBREAD_COOKIE.get(), consumer);

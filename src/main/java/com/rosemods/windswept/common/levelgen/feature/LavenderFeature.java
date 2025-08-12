@@ -46,7 +46,7 @@ public class LavenderFeature extends Feature<NoneFeatureConfiguration> {
     }
 
     private static Block getTallGrass(RandomSource rand) {
-        return rand.nextInt(4) == 0 && ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.ENVIRONMENTAL) ? WindsweptConstants.getBlock("environmental", "giant_tall_grass") : Blocks.TALL_GRASS;
+        return rand.nextInt(4) == 0 && ItemSubRegistryHelper.areModsLoaded("environmental") ? WindsweptConstants.getBlock("environmental", "giant_tall_grass") : Blocks.TALL_GRASS;
     }
 
 }

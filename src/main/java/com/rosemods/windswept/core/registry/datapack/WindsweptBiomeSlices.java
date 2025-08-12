@@ -73,10 +73,10 @@ public final class WindsweptBiomeSlices {
         private final Climate.Parameter midInlandContinentalness = Climate.Parameter.span(.03f, .3f);
         private final Climate.Parameter farInlandContinentalness = Climate.Parameter.span(.3f, 1f);
         private final ResourceKey<Biome> VANILLA = BlueprintBiomes.ORIGINAL_SOURCE_MARKER;
-        private final ResourceKey<Biome>[][] MIDDLE_BIOMES = new ResourceKey[][]{{TUNDRA, TUNDRA, TUNDRA, SNOWY_CHESTNUT_FOREST, CHESTNUT_FOREST}, {VANILLA, VANILLA, VANILLA, CHESTNUT_FOREST, PINE_BARRENS}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
-        private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{{VANILLA, null, SNOWY_CHESTNUT_FOREST, null, null}, {null, null, null, null, PINE_BARRENS}, {VANILLA, null, null, LAVENDER_MEADOW, null}, {null, null, VANILLA, VANILLA, VANILLA}, {null, null, null, null, null}};
-        private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{{TUNDRA, TUNDRA, TUNDRA, SNOWY_CHESTNUT_FOREST, SNOWY_CHESTNUT_FOREST}, {LAVENDER_MEADOW, LAVENDER_MEADOW, VANILLA, CHESTNUT_FOREST, PINE_BARRENS}, {LAVENDER_MEADOW, LAVENDER_MEADOW, LAVENDER_MEADOW, LAVENDER_MEADOW, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
-        private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{{VANILLA, null, null, null, null}, {null, null, LAVENDER_MEADOW, LAVENDER_MEADOW, VANILLA}, {null, null, VANILLA, VANILLA, null}, {null, null, null, null, null}, {VANILLA, VANILLA, null, null, null}};
+        private final ResourceKey<Biome>[][] MIDDLE_BIOMES = new ResourceKey[][]{{TUNDRA_AREA, TUNDRA_AREA, TUNDRA_AREA, SNOWY_CHESTNUT_FOREST_AREA, CHESTNUT_FOREST_AREA}, {VANILLA, VANILLA, VANILLA, CHESTNUT_FOREST_AREA, PINE_BARRENS_AREA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
+        private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{{VANILLA, null, SNOWY_CHESTNUT_FOREST_AREA, null, null}, {null, null, null, null, PINE_BARRENS_AREA}, {VANILLA, null, null, LAVENDER_MEADOW_AREA, null}, {null, null, VANILLA, VANILLA, VANILLA}, {null, null, null, null, null}};
+        private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{{TUNDRA_AREA, TUNDRA_AREA, TUNDRA_AREA, SNOWY_CHESTNUT_FOREST_AREA, SNOWY_CHESTNUT_FOREST_AREA}, {LAVENDER_MEADOW_AREA, LAVENDER_MEADOW_AREA, VANILLA, CHESTNUT_FOREST_AREA, PINE_BARRENS_AREA}, {LAVENDER_MEADOW_AREA, LAVENDER_MEADOW_AREA, LAVENDER_MEADOW_AREA, LAVENDER_MEADOW_AREA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
+        private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{{VANILLA, null, null, null, null}, {null, null, LAVENDER_MEADOW_AREA, LAVENDER_MEADOW_AREA, VANILLA}, {null, null, VANILLA, VANILLA, null}, {null, null, null, null, null}, {VANILLA, VANILLA, null, null, null}};
 
         private void addBiomesToSlice(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer) {
             this.addOffCoastBiomes(consumer);
@@ -313,7 +313,7 @@ public final class WindsweptBiomeSlices {
             if (p_187245_ >= 3) {
                 return this.pickPlateauBiome(p_187245_, p_187246_, p_187247_);
             } else {
-                return SNOWY_PINE_BARRENS;
+                return SNOWY_PINE_BARRENS_AREA;
             }
         }
 

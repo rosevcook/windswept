@@ -12,7 +12,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.util.Set;
 
 public class WindsweptDatapackProvider extends DatapackBuiltinEntriesProvider {
-    public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
+    private static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
             .add(Registries.CONFIGURED_FEATURE, WindsweptConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, WindsweptPlacedFeatures::bootstrap)
             .add(Registries.BIOME, WindsweptBiomes::bootstrap)

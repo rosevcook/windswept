@@ -6,13 +6,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public final class WindsweptConstants {
-    public static final String BERRY_GOOD = "berry_good";
-    public static final String BOATLOAD = "boatload";
-    public static final String NEAPOLITAN = "neapolitan";
-    public static final String FARMERSDELIGHT = "farmersdelight";
-    public static final String AUTUMNITY = "autumnity";
-    public static final String ENVIRONMENTAL = "environmental";
-
     public static final ResourceLocation BAMBOO_LADDER = new ResourceLocation("woodworks", "bamboo_ladder");
     public static final ResourceLocation BAMBOO_BEEHIVE = new ResourceLocation("woodworks", "bamboo_beehive");
     public static final ResourceLocation BAMBOO_BOOKSHELF = new ResourceLocation("woodworks", "bamboo_bookshelf");

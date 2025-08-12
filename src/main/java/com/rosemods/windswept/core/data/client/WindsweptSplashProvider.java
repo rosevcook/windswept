@@ -12,7 +12,6 @@ public class WindsweptSplashProvider extends SplashProvider {
     @Override
     protected void registerSplashes() {
         this.add("#WINDSWEEP");
-        this.add("new update out in 3-4");
     }
 
 }

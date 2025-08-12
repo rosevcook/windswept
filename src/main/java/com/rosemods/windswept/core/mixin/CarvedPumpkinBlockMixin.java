@@ -26,7 +26,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class CarvedPumpkinBlockMixin {
     @Inject(method = "canSpawnGolem", at = @At("RETURN"), cancellable = true)
     private void canSpawnGolem(LevelReader level, BlockPos pos, CallbackInfoReturnable<Boolean> info) {
-        if (level.getBlockState(pos.below()).is(WindsweptBlocks.PINECONE_BLOCK.get()) && ModList.get().isLoaded(WindsweptConstants.ENVIRONMENTAL))
+        if (level.getBlockState(pos.below()).is(WindsweptBlocks.PINECONE_BLOCK.get()) && ModList.get().isLoaded("environmental"))
             info.setReturnValue(true);
     }
 
@@ -35,14 +35,14 @@ public class CarvedPumpkinBlockMixin {
         BlockPos belowpos = pos.below();
         BlockState belowstate = level.getBlockState(belowpos);
 
-        if (belowstate.is(WindsweptBlocks.PINECONE_BLOCK.get()) && ModList.get().isLoaded(WindsweptConstants.ENVIRONMENTAL)) {
+        if (belowstate.is(WindsweptBlocks.PINECONE_BLOCK.get()) && ModList.get().isLoaded("environmental")) {
             BlockState state = level.getBlockState(pos);
             level.setBlock(pos, Blocks.AIR.defaultBlockState(), 2);
             level.setBlock(belowpos, Blocks.AIR.defaultBlockState(), 2);
             level.levelEvent(2001, pos, Block.getId(state));
             level.levelEvent(2001, belowpos, Block.getId(belowstate));
 
-            LivingEntity pineconegolem = (LivingEntity) ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation(WindsweptConstants.ENVIRONMENTAL, "pinecone_golem")).create(level);
+            LivingEntity pineconegolem = (LivingEntity) ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation("environmental", "pinecone_golem")).create(level);
 
             if (pineconegolem != null) {
                 float yRot = state.getValue(CarvedPumpkinBlock.FACING).toYRot();

@@ -2,9 +2,5 @@
   {
     "type": "blueprint:literal",
     "text": "#WINDSWEEP"
-  },
-  {
-    "type": "blueprint:literal",
-    "text": "new update out in 3-4"
   }
 ]

@@ -6,6 +6,8 @@ import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.registry.WindsweptAttributes;
 import com.rosemods.windswept.core.registry.WindsweptEffects;
 import com.rosemods.windswept.core.registry.WindsweptEnchantments;
+import com.rosemods.windswept.core.registry.WindsweptPaintingVariants;
+import com.rosemods.windswept.core.registry.datapack.WindsweptBiomes;
 import com.rosemods.windswept.core.registry.datapack.WindsweptDamageTypes;
 import com.rosemods.windswept.core.registry.datapack.WindsweptTrimMaterials;
 import com.rosemods.windswept.integration.jei.WindsweptPlugin;
@@ -19,12 +21,14 @@ import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.decoration.PaintingVariant;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -129,6 +133,19 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateTrimMaterial(WindsweptTrimMaterials.ICICLES, "Icicles Material");
         this.translateTrimMaterial(WindsweptTrimMaterials.PINECONE, "Pinecone Material");
 
+        // Paintings //
+        this.translatePainting(WindsweptPaintingVariants.CLIFFSIDE, "Binome");
+        this.translatePainting(WindsweptPaintingVariants.TUNDRA, "Yapetto");
+        this.translatePainting(WindsweptPaintingVariants.DRESS_CODES, "Yapetto");
+
+        // Biomes //
+        this.translateBiome(WindsweptBiomes.CHESTNUT_FOREST);
+        this.translateBiome(WindsweptBiomes.SNOWY_CHESTNUT_FOREST);
+        this.translateBiome(WindsweptBiomes.PINE_BARRENS);
+        this.translateBiome(WindsweptBiomes.SNOWY_PINE_BARRENS);
+        this.translateBiome(WindsweptBiomes.LAVENDER_MEADOW);
+        this.translateBiome(WindsweptBiomes.TUNDRA);
+
         // JEI Info //
         this.jeiInfo(MUSIC_DISC_RAIN, "Dropped by a Drowned if killed by a Skeleton.");
         this.jeiInfo(MUSIC_DISC_SNOW, "Dropped by a Chilled if killed by a Skeleton.");
@@ -145,7 +162,6 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateRegistry(ForgeRegistries.BLOCKS, Block::getDescriptionId);
         this.translateRegistry(ForgeRegistries.ITEMS, Item::getDescriptionId);
         this.translateRegistry(ForgeRegistries.ENTITY_TYPES, EntityType::getDescriptionId);
-        //this.translateRegistry(ForgeRegistries.BIOMES, b -> "biome." + Windswept.MOD_ID + "." + ForgeRegistries.BIOMES.getKey(b).getPath());
     }
 
 
@@ -172,8 +188,19 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.add(descId + ".desc", desc);
     }
 
+    private void translateBiome(ResourceKey<Biome> biome) {
+        String name = biome.location().getPath();
+        this.add("biome." + Windswept.MOD_ID + "." + name, toUpper(name));
+    }
+
     private void translateTrimMaterial(ResourceKey<TrimMaterial> material, String name) {
         this.add("trim_material." + material.location().toString().replace(':', '.'), name);
+    }
+
+    private void translatePainting(RegistryObject<PaintingVariant> painting, String author) {
+        String name = ForgeRegistries.PAINTING_VARIANTS.getKey(painting.get()).getPath();
+        this.add("painting." + Windswept.MOD_ID + "." + name + ".title", toUpper(name));
+        this.add("painting." + Windswept.MOD_ID + "." + name + ".author", author);
     }
 
     private void translateMusicDisc(RegistryObject<? extends Item> item, String desc) {

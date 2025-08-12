@@ -1,26 +1,13 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
     {
-      "conditions": [
-        {
-          "type": "forge:mod_loaded",
-          "modid": "berry_good"
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:crafting_shapeless",
-        "category": "misc",
-        "ingredients": [
-          {
-            "item": "windswept:wild_berry_basket"
-          }
-        ],
-        "result": {
-          "count": 9,
-          "item": "windswept:wild_berries"
-        }
-      }
+      "item": "windswept:wild_berry_basket"
     }
-  ]
+  ],
+  "result": {
+    "count": 9,
+    "item": "windswept:wild_berries"
+  }
 }

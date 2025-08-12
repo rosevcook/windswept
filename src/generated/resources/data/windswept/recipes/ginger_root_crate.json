@@ -1,31 +1,18 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
-    {
-      "conditions": [
-        {
-          "type": "forge:mod_loaded",
-          "modid": "farmersdelight"
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:crafting_shaped",
-        "category": "misc",
-        "key": {
-          "#": {
-            "item": "windswept:ginger_root"
-          }
-        },
-        "pattern": [
-          "###",
-          "###",
-          "###"
-        ],
-        "result": {
-          "item": "windswept:ginger_root_crate"
-        },
-        "show_notification": true
-      }
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "windswept:ginger_root"
     }
-  ]
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "windswept:ginger_root_crate"
+  },
+  "show_notification": true
 }
