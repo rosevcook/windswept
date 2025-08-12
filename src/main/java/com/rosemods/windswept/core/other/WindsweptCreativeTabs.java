@@ -95,8 +95,7 @@ public final class WindsweptCreativeTabs {
                 .addItemsAfter(Ingredient.of(Blocks.HONEY_BLOCK), PINECONE_JAM_BLOCK)
                 .addItemsAfter(Ingredient.of(Items.SWEET_BERRIES), WILD_BERRIES)
                 .addItemsAfter(Ingredient.of(Blocks.HAY_BLOCK), LAVENDER_BALE, CHESTNUT_CRATE, ROASTED_CHESTNUT_CRATE, GINGER_ROOT_CRATE, HOLLY_BERRY_BASKET,
-                        WILD_BERRY_BASKET, RED_MUSHROOM_BASKET, BROWN_MUSHROOM_BASKET)
-                .addItemsAfter(modLoaded(Blocks.HAY_BLOCK, "quark"), GLOW_SHROOM_BASKET)
+                        WILD_BERRY_BASKET)
                 .addItemsBefore(Ingredient.of(Blocks.COBWEB), FROZEN_FLESH_BLOCK)
                 .addItemsAfter(Ingredient.of(Blocks.FLOWERING_AZALEA), HOLLY_WREATH, VINE_WREATH, PINECONE_WREATH, CHERRY_WREATH)
 
@@ -142,7 +141,6 @@ public final class WindsweptCreativeTabs {
                 .addItemsAfter(modLoaded(COOKED_GOAT.get(), "farmersdelight"), GOAT_SHANKS, COOKED_GOAT_SHANKS)
                 .addItemsAfter(modLoaded(CHRISTMAS_PUDDING.get(), "farmersdelight"), CHRISTMAS_PUDDING_SLICE)
                 .addItemsAfter(modLoaded(CHESTNUT_SOUP.get(), "farmersdelight"), CHESTNUT_RISOTTO)
-                .addItemsAfter(modLoaded(WindsweptConstants.FOUL_BERRIES, "autumnity"), FOUL_BERRY_BOWL)
 
                 .tab(SPAWN_EGGS)
                 .addSpawnEggsAlphabetically(CHILLED_SPAWN_EGG, FROSTBITER_SPAWN_EGG);

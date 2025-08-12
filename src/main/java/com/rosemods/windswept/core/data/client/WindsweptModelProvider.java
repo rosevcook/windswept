@@ -61,7 +61,6 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.generatedItem(GOAT_STEW.get(), TextureFolder.ITEM);
         this.generatedItem(GOAT_SHANKS.get(), TextureFolder.ITEM);
         this.generatedItem(COOKED_GOAT_SHANKS.get(), TextureFolder.ITEM);
-        this.generatedItem(FOUL_BERRY_BOWL.get(), TextureFolder.ITEM);
         this.generatedItem(WILD_BERRY_PIPS.get(), TextureFolder.ITEM);
         this.generatedItemWithOverlay(SNOW_BOOTS.get());
         this.generatedItem(FROST_ARROW.get(), TextureFolder.ITEM);
@@ -427,9 +426,6 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.wall(DRY_MOSSY_COBBLESTONE_TILE_WALL, this.blockTexture(DRY_MOSSY_COBBLESTONE_TILES.get()));
 
         // compressed blocks
-        this.compressedBlock(RED_MUSHROOM_BASKET);
-        this.compressedBlock(BROWN_MUSHROOM_BASKET);
-        this.compressedBlock(GLOW_SHROOM_BASKET);
         this.cubeAll(FROZEN_FLESH_BLOCK);
         this.compressedBlock(CHESTNUT_CRATE);
         this.compressedBlock(ROASTED_CHESTNUT_CRATE);

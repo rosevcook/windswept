@@ -67,9 +67,6 @@ public class WindsweptRecipeProvider extends BlueprintRecipeProvider {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, WILD_BERRIES.get(), 3).requires(WILD_BERRY_BOWL.get()).unlockedBy(getHasName(WILD_BERRY_BOWL.get()), has(WILD_BERRY_BOWL.get())).save(consumer, getSaveLocation("wild_berry_bowl_revert"));
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, SWEET_BERRY_BOWL.get()).requires(Items.BOWL).requires(Items.SWEET_BERRIES, 3).unlockedBy(getHasName(Items.SWEET_BERRIES), has(Items.SWEET_BERRIES)).save(consumer, getSaveLocation(SWEET_BERRY_BOWL.get()));
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, Items.SWEET_BERRIES, 3).requires(SWEET_BERRY_BOWL.get()).unlockedBy(getHasName(SWEET_BERRY_BOWL.get()), has(SWEET_BERRY_BOWL.get())).save(consumer, getSaveLocation("sweet_berry_bowl_revert"));
-        Item foulBerries = WindsweptConstants.getItem("autumnity", "foul_berries");
-        conditionalRecipe(ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, FOUL_BERRY_BOWL.get()).requires(Items.BOWL).requires(foulBerries, 3).unlockedBy("has_foul_berries", has(foulBerries)), new ModLoadedCondition("autumnity"), consumer, getSaveLocation(FOUL_BERRY_BOWL.get()));
-        conditionalRecipe(ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, foulBerries, 3).requires(FOUL_BERRY_BOWL.get()).unlockedBy(getHasName(FOUL_BERRY_BOWL.get()), has(FOUL_BERRY_BOWL.get())), new ModLoadedCondition("autumnity"), consumer, getSaveLocation("foul_berry_bowl_revert"));
 
         // dyes
         flowerToDye(RED_ROSE.get(), Items.RED_DYE, consumer);
@@ -246,8 +243,6 @@ public class WindsweptRecipeProvider extends BlueprintRecipeProvider {
         compressedBlock(CHESTNUT_CRATE.get(), CHESTNUTS.get(), consumer);
         compressedBlock(ROASTED_CHESTNUT_CRATE.get(), ROASTED_CHESTNUTS.get(), consumer);
         compressedBlock(GINGER_ROOT_CRATE.get(), GINGER_ROOT.get(), consumer);
-        compressedBlock(RED_MUSHROOM_BASKET.get(), Items.RED_MUSHROOM, consumer);
-        compressedBlock(BROWN_MUSHROOM_BASKET.get(), Items.BROWN_MUSHROOM, consumer);
         compressedBlock(FROZEN_FLESH_BLOCK.get(), FROZEN_FLESH.get(), consumer);
         compressedBlock(PINECONE_BLOCK.get(), PINECONE.get(), consumer);
         compressedBlock(GINGERBREAD_COOKIE_BLOCK.get(), GINGERBREAD_COOKIE.get(), consumer);

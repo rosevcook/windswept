@@ -1,13 +1,10 @@
 package com.rosemods.windswept.core.registry;
 
 import com.mojang.datafixers.util.Pair;
-import com.rosemods.windswept.common.entity.Frostbiter;
 import com.rosemods.windswept.common.item.*;
 import com.rosemods.windswept.core.Windswept;
-import com.rosemods.windswept.core.other.WindsweptConstants;
 import com.rosemods.windswept.core.other.WindsweptFoods;
 import com.rosemods.windswept.core.other.tags.WindsweptBannerPatternTags;
-import com.rosemods.windswept.integration.autumnity.WindsweptAutumnityCompat;
 import com.rosemods.windswept.integration.boatload.WindsweptBoatTypes;
 import com.rosemods.windswept.integration.farmers_delight.WindsweptFDCompat;
 import com.teamabnormals.blueprint.common.item.BlueprintRecordItem;
@@ -53,7 +50,6 @@ public class WindsweptItems {
     public static final RegistryObject<Item> WILD_BERRY_COOKIE = HELPER.createItem("wild_berry_cookie", () -> new Item(PropertyUtil.food(WindsweptFoods.WILD_BERRY_COOKIE)));
     public static final RegistryObject<Item> WILD_BERRY_BOWL = HELPER.createItem("wild_berry_bowl", () -> new BerryBowlItem(WindsweptFoods.BERRY_BOWL));
     public static final RegistryObject<Item> SWEET_BERRY_BOWL = HELPER.createItem("sweet_berry_bowl", () -> new BerryBowlItem(WindsweptFoods.BERRY_BOWL));
-    public static final RegistryObject<Item> FOUL_BERRY_BOWL = HELPER.createItem("foul_berry_bowl", () -> new BerryBowlItem(Items.BOWL, new Item.Properties().food(ItemSubRegistryHelper.areModsLoaded("autumnity") ? WindsweptAutumnityCompat.FOUL_BERRY_BOWL : null)));
 
     public static final RegistryObject<Item> CHESTNUTS = HELPER.createItem("chestnuts", () -> new Item(PropertyUtil.food(WindsweptFoods.CHESTNUTS)));
     public static final RegistryObject<Item> ROASTED_CHESTNUTS = HELPER.createItem("roasted_chestnuts", () -> new Item(PropertyUtil.food(WindsweptFoods.ROASTED_CHESTNUTS)));

@@ -11,10 +11,8 @@ public final class WindsweptConstants {
     public static final ResourceLocation BAMBOO_BOOKSHELF = new ResourceLocation("woodworks", "bamboo_bookshelf");
     public static final ResourceLocation BAMBOO_CLOSET = new ResourceLocation("woodworks", "bamboo_closet");
     public static final ResourceLocation TRAPPED_BAMBOO_CLOSET = new ResourceLocation("woodworks", "trapped_bamboo_closet");
-    public static final ResourceLocation FOUL_BERRIES = new ResourceLocation("autumnity", "foul_berries");
     public static final ResourceLocation MOSSY_COBBLESTONE_BRICK_WALL = new ResourceLocation("caverns_and_chasms", "mossy_cobblestone_brick_wall");
     public static final ResourceLocation MOSSY_COBBLESTONE_TILE_WALL = new ResourceLocation("caverns_and_chasms", "mossy_cobblestone_tile_wall");
-
 
     public static Item getItem(String modid, String path) {
         return ForgeRegistries.ITEMS.getValue(new ResourceLocation(modid, path));

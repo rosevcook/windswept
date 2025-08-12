@@ -410,11 +410,6 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.add(DRY_MOSSY_COBBLESTONE_TILE_SLAB.get(), this::createSlabItemTable);
             this.dropSelf(DRY_MOSSY_COBBLESTONE_TILE_WALL.get());
 
-            // mushroom crates
-            this.dropSelf(RED_MUSHROOM_BASKET.get());
-            this.dropSelf(BROWN_MUSHROOM_BASKET.get());
-            this.dropSelf(GLOW_SHROOM_BASKET.get());
-
             // misc
             this.add(GELISOL.get(), b -> createSingleItemTableWithSilkTouch(b, net.minecraft.world.level.block.Blocks.DIRT));
             this.add(GELISOL_PATH.get(), b -> createSingleItemTableWithSilkTouch(b, net.minecraft.world.level.block.Blocks.DIRT));

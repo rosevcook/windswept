@@ -65,7 +65,6 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.add(COOKED_GOAT.get(), "Cooked Chevon");
         this.add(GOAT_SHANKS.get(), "Raw Chevon Shanks");
         this.add(COOKED_GOAT_SHANKS.get(), "Cooked Chevon Shanks");
-        this.add(FOUL_BERRY_BOWL.get(), "Bowl of Foul Berries");
         this.add(HOLLY_BERRIES_ON_A_STICK.get(), "Holly Berries on a Stick");
         this.translateBannerPattern(SNOW_CHARGE_BANNER_PATTERN, "snow_charge");
         this.translateBannerPattern(SNOW_GOLEM_BANNER_PATTERN, "snow_golem");
@@ -91,9 +90,6 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.add("block.windswept.snow_carpet", "Snow Carpet");
         this.add(GINGER_ROOT_CRATE.get(), "Crate of Ginger Roots");
         this.add(WILD_BERRY_BASKET.get(), "Basket of Wild Berries");
-        this.add(RED_MUSHROOM_BASKET.get(), "Basket of Red Mushrooms");
-        this.add(BROWN_MUSHROOM_BASKET.get(), "Basket of Brown Mushrooms");
-        this.add(GLOW_SHROOM_BASKET.get(), "Basket of Glow Shrooms");
 
 
         // Effects //

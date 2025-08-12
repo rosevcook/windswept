@@ -341,9 +341,6 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> GINGER_ROOT_CRATE = HELPER.createFuelBlock("ginger_root_crate", () -> new WindsweptCompressedBlock(Properties.CRATE), 300);
     public static final RegistryObject<Block> HOLLY_BERRY_BASKET = HELPER.createFuelBlock("holly_berry_basket", () -> new WindsweptCompressedBlock(Properties.CRATE), 300);
     public static final RegistryObject<Block> WILD_BERRY_BASKET = HELPER.createFuelBlock("wild_berry_basket", () -> new WindsweptCompressedBlock(Properties.CRATE), 300);
-    public static final RegistryObject<Block> RED_MUSHROOM_BASKET = HELPER.createFuelBlock("red_mushroom_basket", () -> new WindsweptCompressedBlock(Properties.CRATE), 300);
-    public static final RegistryObject<Block> BROWN_MUSHROOM_BASKET = HELPER.createFuelBlock("brown_mushroom_basket", () -> new WindsweptCompressedBlock(Properties.CRATE), 300);
-    public static final RegistryObject<Block> GLOW_SHROOM_BASKET = HELPER.createFuelBlock("glow_shroom_basket", () -> new WindsweptCompressedBlock(BlockBehaviour.Properties.of().strength(1.5f).sound(SoundType.WOOD).lightLevel(s -> 12)), 300);
     public static final RegistryObject<Block> FROZEN_FLESH_BLOCK = HELPER.createBlock("frozen_flesh_block", () -> new Block(BlockBehaviour.Properties.of().strength(.8f).sound(SoundType.CORAL_BLOCK)));
 
     // Pots //
