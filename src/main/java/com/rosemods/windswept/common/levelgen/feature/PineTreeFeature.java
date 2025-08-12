@@ -8,6 +8,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
@@ -27,6 +28,9 @@ public class PineTreeFeature extends BlueprintTreeFeature {
         int height = rand.nextInt(10, 14);
         int weatheredHeight = rand.nextInt(5, 9);
         boolean isFairy = rand.nextInt(3000) == 0;
+
+        if (rand.nextBoolean() && context.level().getBiome(context.origin()).is(Biomes.OLD_GROWTH_PINE_TAIGA))
+            weathered = WindsweptBlocks.PINE_LOG.get().defaultBlockState();
 
         if (isFairy) {
             BlockState state = WindsweptBlocks.NIGHTSHADE.get().defaultBlockState();
