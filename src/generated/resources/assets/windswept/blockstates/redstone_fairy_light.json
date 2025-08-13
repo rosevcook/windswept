@@ -1,0 +1,140 @@
+{
+  "variants": {
+    "amount=1,lit=false": [
+      {
+        "model": "windswept:block/redstone_fairy_light_off_1"
+      },
+      {
+        "model": "windswept:block/redstone_fairy_light_off_1",
+        "y": 90
+      },
+      {
+        "model": "windswept:block/redstone_fairy_light_off_1",
+        "y": 180
+      },
+      {
+        "model": "windswept:block/redstone_fairy_light_off_1",
+        "y": 270
+      }
+    ],
+    "amount=1,lit=true": [
+      {
+        "model": "windswept:block/redstone_fairy_light_1"
+      },
+      {
+        "model": "windswept:block/redstone_fairy_light_1",
+        "y": 90
+      },
+      {
+        "model": "windswept:block/redstone_fairy_light_1",
+        "y": 180
+      },
+      {
+        "model": "windswept:block/redstone_fairy_light_1",
+        "y": 270
+      }
+    ],
+    "amount=2,lit=false": [
+      {
+        "model": "windswept:block/redstone_fairy_light_off_2"
+      },
+      {
+        "model": "windswept:block/redstone_fairy_light_off_2",
+        "y": 90
+      },
+      {
+        "model": "windswept:block/redstone_fairy_light_off_2",
+        "y": 180
+      },
+      {
+        "model": "windswept:block/redstone_fairy_light_off_2",
+        "y": 270
+      }
+    ],
+    "amount=2,lit=true": [
+      {
+        "model": "windswept:block/redstone_fairy_light_2"
+      },
+      {
+        "model": "windswept:block/redstone_fairy_light_2",
+        "y": 90
+      },
+      {
+        "model": "windswept:block/redstone_fairy_light_2",
+        "y": 180
+      },
+      {
+        "model": "windswept:block/redstone_fairy_light_2",
+        "y": 270
+      }
+    ],
+    "amount=3,lit=false": [
+      {
+        "model": "windswept:block/redstone_fairy_light_off_3"
+      },
+      {
+        "model": "windswept:block/redstone_fairy_light_off_3",
+        "y": 90
+      },
+      {
+        "model": "windswept:block/redstone_fairy_light_off_3",
+        "y": 180
+      },
+      {
+        "model": "windswept:block/redstone_fairy_light_off_3",
+        "y": 270
+      }
+    ],
+    "amount=3,lit=true": [
+      {
+        "model": "windswept:block/redstone_fairy_light_3"
+      },
+      {
+        "model": "windswept:block/redstone_fairy_light_3",
+        "y": 90
+      },
+      {
+        "model": "windswept:block/redstone_fairy_light_3",
+        "y": 180
+      },
+      {
+        "model": "windswept:block/redstone_fairy_light_3",
+        "y": 270
+      }
+    ],
+    "amount=4,lit=false": [
+      {
+        "model": "windswept:block/redstone_fairy_light_off_4"
+      },
+      {
+        "model": "windswept:block/redstone_fairy_light_off_4",
+        "y": 90
+      },
+      {
+        "model": "windswept:block/redstone_fairy_light_off_4",
+        "y": 180
+      },
+      {
+        "model": "windswept:block/redstone_fairy_light_off_4",
+        "y": 270
+      }
+    ],
+    "amount=4,lit=true": [
+      {
+        "model": "windswept:block/redstone_fairy_light_4"
+      },
+      {
+        "model": "windswept:block/redstone_fairy_light_4",
+        "y": 90
+      },
+      {
+        "model": "windswept:block/redstone_fairy_light_4",
+        "y": 180
+      },
+      {
+        "model": "windswept:block/redstone_fairy_light_4",
+        "y": 270
+      }
+    ]
+  }
+}

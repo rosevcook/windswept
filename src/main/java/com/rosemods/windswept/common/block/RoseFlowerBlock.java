@@ -32,7 +32,6 @@ public class RoseFlowerBlock extends FlowerBlock implements BonemealableBlock {
         return this.tall.get();
     }
 
-
     @Override
     public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos blockPos, BlockState blockState, boolean b) {
         return levelReader.getBlockState(blockPos.above()).canBeReplaced();

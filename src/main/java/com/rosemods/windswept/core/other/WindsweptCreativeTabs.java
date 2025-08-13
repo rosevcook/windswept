@@ -61,6 +61,7 @@ public final class WindsweptCreativeTabs {
                 .addItemsBefore(Ingredient.of(Blocks.ANVIL), FAIRY_LIGHT, SOUL_FAIRY_LIGHT)
                 .addItemsBefore(modLoaded(Blocks.ANVIL, "caverns_and_chasms"), CUPRIC_FAIRY_LIGHT)
                 .addItemsBefore(modLoaded(Blocks.ANVIL, "endergetic"), ENDER_FAIRY_LIGHT)
+                .addItemsBefore(Ingredient.of(Blocks.ANVIL), REDSTONE_FAIRY_LIGHT)
                 .addItemsBefore(Ingredient.of(Blocks.CHAIN), ICE_LANTERN)
                 .addItemsAfter(Ingredient.of(Blocks.JUKEBOX), CARVED_PINECONE_BLOCK, WILL_O_THE_WISP, FEATHER_WING, FEATHER_ORNAMENT, DREAM_CATCHER, FROSTBITER_TROPHY)
                 .addItemsAfter(modLoaded(Blocks.BARREL, "farmersdelight"), HOLLY_CABINET, CHESTNUT_CABINET, PINE_CABINET)
@@ -102,6 +103,7 @@ public final class WindsweptCreativeTabs {
                 .addItemsAfter(Ingredient.of(Blocks.FLOWERING_AZALEA), HOLLY_WREATH, VINE_WREATH, PINECONE_WREATH, CHERRY_WREATH)
 
                 .tab(REDSTONE_BLOCKS)
+                .addItemsAfter(Ingredient.of(Blocks.COMPARATOR), REDSTONE_FAIRY_LIGHT)
                 .addItemsAfter(Ingredient.of(Blocks.HONEY_BLOCK), PINECONE_JAM_BLOCK)
                 .addItemsAfter(Ingredient.of(Blocks.NOTE_BLOCK), CARVED_PINECONE_BLOCK)
                 .addItemsBefore(modLoaded(Blocks.TRAPPED_CHEST/*WindsweptConstants.TRAPPED_BAMBOO_CLOSET*/, "woodworks"), TRAPPED_HOLLY_CHEST, TRAPPED_CHESTNUT_CHEST, TRAPPED_PINE_CHEST)
