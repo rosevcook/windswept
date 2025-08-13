@@ -1,6 +1,6 @@
 package com.rosemods.windswept.common.block;
 
-import com.rosemods.windswept.core.registry.WindsweptBlocks;
+import com.rosemods.windswept.core.other.tags.WindsweptBlockTags;
 import com.rosemods.windswept.core.registry.WindsweptSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -49,8 +49,8 @@ public class CarvedPineconeBlock extends HorizontalDirectionalBlock {
             int below = 0;
             int above = 0;
 
-            for (; isPinecone(level.getBlockState(pos.below(below + 1))); below++) ;
-            for (; isPinecone(level.getBlockState(pos.above(above + 1))); above++) ;
+            for (; level.getBlockState(pos.below(below + 1)).is(WindsweptBlockTags.PINECONE_NOTE_BLOCKS); below++) ;
+            for (; level.getBlockState(pos.above(above + 1)).is(WindsweptBlockTags.PINECONE_NOTE_BLOCKS); above++) ;
 
             int pitch = KEY[(KEY.length - 1) - ((below + above) % KEY.length)];
 
@@ -77,10 +77,6 @@ public class CarvedPineconeBlock extends HorizontalDirectionalBlock {
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING);
-    }
-
-    private static boolean isPinecone(BlockState state) {
-        return state.is(WindsweptBlocks.PINECONE_BLOCK.get()) || state.is(WindsweptBlocks.PINECONE_SHINGLES.get());
     }
 
 }

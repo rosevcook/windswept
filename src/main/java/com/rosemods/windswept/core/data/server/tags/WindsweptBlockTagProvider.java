@@ -29,12 +29,13 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
         this.tag(WindsweptBlockTags.LUNALITE).add(LUNALITE.get(), LUNALITE_SLAB.get(), LUNALITE_STAIRS.get(), LUNALITE_WALL.get());
         this.tag(WindsweptBlockTags.SNOW_BOOTS_BLOCKS).addTag(BlockTags.SNOW).add(SNOWY_SPROUTS.get(), SNOWDROP.get());
         this.tag(WindsweptBlockTags.FROSTBITER_FOOD).add(Blocks.GRASS, SNOWY_SPROUTS.get(), DRY_MOSSY_SPROUTS.get(), MOSSY_SPROUTS.get(), GELISOL_SPROUTS.get()).addTag(BlockTags.FLOWERS);
+        this.tag(WindsweptBlockTags.PINECONE_NOTE_BLOCKS).add(CARVED_PINECONE_BLOCK.get(), PINECONE_BLOCK.get(), PINECONE_SHINGLES.get(), WHITE_PINECONE_SHINGLES.get(), LIGHT_GRAY_PINECONE_SHINGLES.get(), GRAY_PINECONE_SHINGLES.get(), BLACK_PINECONE_SHINGLES.get(), BROWN_PINECONE_SHINGLES.get(), RED_PINECONE_SHINGLES.get(), ORANGE_PINECONE_SHINGLES.get(), YELLOW_PINECONE_SHINGLES.get(), LIME_PINECONE_SHINGLES.get(), GREEN_PINECONE_SHINGLES.get(), CYAN_PINECONE_SHINGLES.get(), LIGHT_BLUE_PINECONE_SHINGLES.get(), BLUE_PINECONE_SHINGLES.get(), PURPLE_PINECONE_SHINGLES.get(), MAGENTA_PINECONE_SHINGLES.get(), PINK_PINECONE_SHINGLES.get());
 
         //farmersdelight
         this.tag(WindsweptBlockTags.MINEABLE_KNIFE).add(CHRISTMAS_PUDDING.get());
 
         //woodworks
-        this.tag(BlueprintBlockTags.LEAF_PILES).add(HOLLY_LEAF_PILE.get(), CHESTNUT_LEAF_PILE.get());
+        this.tag(BlueprintBlockTags.LEAF_PILES).add(HOLLY_LEAF_PILE.get(), CHESTNUT_LEAF_PILE.get(), PINE_LEAF_PILE.get());
 
         //forge
         this.tag(Tags.Blocks.BOOKSHELVES).add(HOLLY_BOOKSHELF.get(), CHESTNUT_BOOKSHELF.get(), PINE_BOOKSHELF.get());

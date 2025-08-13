@@ -12,6 +12,7 @@ public final class WindsweptBlockTags {
     public static final TagKey<Block> LUNALITE = TagUtil.blockTag(Windswept.MOD_ID, "lunalite");
     public static final TagKey<Block> SNOW_BOOTS_BLOCKS = TagUtil.blockTag(Windswept.MOD_ID, "snow_boots_blocks");
     public static final TagKey<Block> FROSTBITER_FOOD = TagUtil.blockTag(Windswept.MOD_ID, "frostbiter_food");
+    public static final TagKey<Block> PINECONE_NOTE_BLOCKS = TagUtil.blockTag(Windswept.MOD_ID, "pinecone_note_blocks");
 
     public static final TagKey<Block> MINEABLE_KNIFE = TagUtil.blockTag("farmersdelight", "mineable/knife");
 }
