@@ -20,6 +20,22 @@
     "windswept:glazed_gingerbread_brick_stairs",
     "windswept:dry_mossy_cobblestone_brick_stairs",
     "windswept:dry_mossy_cobblestone_tile_stairs",
-    "windswept:lavender_thatch_stairs"
+    "windswept:lavender_thatch_stairs",
+    "windswept:white_pinecone_shingle_stairs",
+    "windswept:light_gray_pinecone_shingle_stairs",
+    "windswept:gray_pinecone_shingle_stairs",
+    "windswept:black_pinecone_shingle_stairs",
+    "windswept:brown_pinecone_shingle_stairs",
+    "windswept:red_pinecone_shingle_stairs",
+    "windswept:orange_pinecone_shingle_stairs",
+    "windswept:yellow_pinecone_shingle_stairs",
+    "windswept:lime_pinecone_shingle_stairs",
+    "windswept:green_pinecone_shingle_stairs",
+    "windswept:cyan_pinecone_shingle_stairs",
+    "windswept:light_blue_pinecone_shingle_stairs",
+    "windswept:blue_pinecone_shingle_stairs",
+    "windswept:purple_pinecone_shingle_stairs",
+    "windswept:magenta_pinecone_shingle_stairs",
+    "windswept:pink_pinecone_shingle_stairs"
   ]
 }

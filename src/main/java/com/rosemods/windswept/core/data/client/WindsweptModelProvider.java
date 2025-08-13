@@ -199,10 +199,60 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.itemModel(CARVED_PINECONE_BLOCK);
         this.horizontalBlock(WILL_O_THE_WISP.get(), this.models().orientable("will_o_the_wisp", this.modLoc("block/pinecone_block"), this.modLoc("block/will_o_the_wisp"), this.modLoc("block/pinecone_block_top")));
         this.itemModel(WILL_O_THE_WISP);
+
+        // pinecone shingles
         this.cubeAll(PINECONE_SHINGLES);
         this.stairs(PINECONE_SHINGLE_STAIRS, this.blockTexture(PINECONE_SHINGLES.get()));
         this.slab(PINECONE_SHINGLE_SLAB, this.blockTexture(PINECONE_SHINGLES.get()));
-        this.wall(PINECONE_SHINGLE_WALL, this.blockTexture(PINECONE_SHINGLES.get()));
+
+        this.cubeAll(WHITE_PINECONE_SHINGLES);
+        this.stairs(WHITE_PINECONE_SHINGLE_STAIRS, this.blockTexture(WHITE_PINECONE_SHINGLES.get()));
+        this.slab(WHITE_PINECONE_SHINGLE_SLAB, this.blockTexture(WHITE_PINECONE_SHINGLES.get()));
+        this.cubeAll(LIGHT_GRAY_PINECONE_SHINGLES);
+        this.stairs(LIGHT_GRAY_PINECONE_SHINGLE_STAIRS, this.blockTexture(LIGHT_GRAY_PINECONE_SHINGLES.get()));
+        this.slab(LIGHT_GRAY_PINECONE_SHINGLE_SLAB, this.blockTexture(LIGHT_GRAY_PINECONE_SHINGLES.get()));
+        this.cubeAll(GRAY_PINECONE_SHINGLES);
+        this.stairs(GRAY_PINECONE_SHINGLE_STAIRS, this.blockTexture(GRAY_PINECONE_SHINGLES.get()));
+        this.slab(GRAY_PINECONE_SHINGLE_SLAB, this.blockTexture(GRAY_PINECONE_SHINGLES.get()));
+        this.cubeAll(BLACK_PINECONE_SHINGLES);
+        this.stairs(BLACK_PINECONE_SHINGLE_STAIRS, this.blockTexture(BLACK_PINECONE_SHINGLES.get()));
+        this.slab(BLACK_PINECONE_SHINGLE_SLAB, this.blockTexture(BLACK_PINECONE_SHINGLES.get()));
+        this.cubeAll(BROWN_PINECONE_SHINGLES);
+        this.stairs(BROWN_PINECONE_SHINGLE_STAIRS, this.blockTexture(BROWN_PINECONE_SHINGLES.get()));
+        this.slab(BROWN_PINECONE_SHINGLE_SLAB, this.blockTexture(BROWN_PINECONE_SHINGLES.get()));
+        this.cubeAll(RED_PINECONE_SHINGLES);
+        this.stairs(RED_PINECONE_SHINGLE_STAIRS, this.blockTexture(RED_PINECONE_SHINGLES.get()));
+        this.slab(RED_PINECONE_SHINGLE_SLAB, this.blockTexture(RED_PINECONE_SHINGLES.get()));
+        this.cubeAll(ORANGE_PINECONE_SHINGLES);
+        this.stairs(ORANGE_PINECONE_SHINGLE_STAIRS, this.blockTexture(ORANGE_PINECONE_SHINGLES.get()));
+        this.slab(ORANGE_PINECONE_SHINGLE_SLAB, this.blockTexture(ORANGE_PINECONE_SHINGLES.get()));
+        this.cubeAll(YELLOW_PINECONE_SHINGLES);
+        this.stairs(YELLOW_PINECONE_SHINGLE_STAIRS, this.blockTexture(YELLOW_PINECONE_SHINGLES.get()));
+        this.slab(YELLOW_PINECONE_SHINGLE_SLAB, this.blockTexture(YELLOW_PINECONE_SHINGLES.get()));
+        this.cubeAll(LIME_PINECONE_SHINGLES);
+        this.stairs(LIME_PINECONE_SHINGLE_STAIRS, this.blockTexture(LIME_PINECONE_SHINGLES.get()));
+        this.slab(LIME_PINECONE_SHINGLE_SLAB, this.blockTexture(LIME_PINECONE_SHINGLES.get()));
+        this.cubeAll(GREEN_PINECONE_SHINGLES);
+        this.stairs(GREEN_PINECONE_SHINGLE_STAIRS, this.blockTexture(GREEN_PINECONE_SHINGLES.get()));
+        this.slab(GREEN_PINECONE_SHINGLE_SLAB, this.blockTexture(GREEN_PINECONE_SHINGLES.get()));
+        this.cubeAll(CYAN_PINECONE_SHINGLES);
+        this.stairs(CYAN_PINECONE_SHINGLE_STAIRS, this.blockTexture(CYAN_PINECONE_SHINGLES.get()));
+        this.slab(CYAN_PINECONE_SHINGLE_SLAB, this.blockTexture(CYAN_PINECONE_SHINGLES.get()));
+        this.cubeAll(LIGHT_BLUE_PINECONE_SHINGLES);
+        this.stairs(LIGHT_BLUE_PINECONE_SHINGLE_STAIRS, this.blockTexture(LIGHT_BLUE_PINECONE_SHINGLES.get()));
+        this.slab(LIGHT_BLUE_PINECONE_SHINGLE_SLAB, this.blockTexture(LIGHT_BLUE_PINECONE_SHINGLES.get()));
+        this.cubeAll(BLUE_PINECONE_SHINGLES);
+        this.stairs(BLUE_PINECONE_SHINGLE_STAIRS, this.blockTexture(BLUE_PINECONE_SHINGLES.get()));
+        this.slab(BLUE_PINECONE_SHINGLE_SLAB, this.blockTexture(BLUE_PINECONE_SHINGLES.get()));
+        this.cubeAll(PURPLE_PINECONE_SHINGLES);
+        this.stairs(PURPLE_PINECONE_SHINGLE_STAIRS, this.blockTexture(PURPLE_PINECONE_SHINGLES.get()));
+        this.slab(PURPLE_PINECONE_SHINGLE_SLAB, this.blockTexture(PURPLE_PINECONE_SHINGLES.get()));
+        this.cubeAll(MAGENTA_PINECONE_SHINGLES);
+        this.stairs(MAGENTA_PINECONE_SHINGLE_STAIRS, this.blockTexture(MAGENTA_PINECONE_SHINGLES.get()));
+        this.slab(MAGENTA_PINECONE_SHINGLE_SLAB, this.blockTexture(MAGENTA_PINECONE_SHINGLES.get()));
+        this.cubeAll(PINK_PINECONE_SHINGLES);
+        this.stairs(PINK_PINECONE_SHINGLE_STAIRS, this.blockTexture(PINK_PINECONE_SHINGLES.get()));
+        this.slab(PINK_PINECONE_SHINGLE_SLAB, this.blockTexture(PINK_PINECONE_SHINGLES.get()));
 
         // snow
         this.stairs(SNOW_STAIRS, this.mcLoc("block/snow"));

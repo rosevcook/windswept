@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_orange_pinecone_shingles": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "windswept:orange_pinecone_shingles"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "windswept:orange_pinecone_shingle_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_orange_pinecone_shingles",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "windswept:orange_pinecone_shingle_slab"
+    ]
+  },
+  "sends_telemetry_event": false
+}

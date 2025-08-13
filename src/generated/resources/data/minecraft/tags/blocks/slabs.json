@@ -20,6 +20,22 @@
     "windswept:glazed_gingerbread_brick_slab",
     "windswept:dry_mossy_cobblestone_brick_slab",
     "windswept:dry_mossy_cobblestone_tile_slab",
-    "windswept:lavender_thatch_slab"
+    "windswept:lavender_thatch_slab",
+    "windswept:white_pinecone_shingle_slab",
+    "windswept:light_gray_pinecone_shingle_slab",
+    "windswept:gray_pinecone_shingle_slab",
+    "windswept:black_pinecone_shingle_slab",
+    "windswept:brown_pinecone_shingle_slab",
+    "windswept:red_pinecone_shingle_slab",
+    "windswept:orange_pinecone_shingle_slab",
+    "windswept:yellow_pinecone_shingle_slab",
+    "windswept:lime_pinecone_shingle_slab",
+    "windswept:green_pinecone_shingle_slab",
+    "windswept:cyan_pinecone_shingle_slab",
+    "windswept:light_blue_pinecone_shingle_slab",
+    "windswept:blue_pinecone_shingle_slab",
+    "windswept:purple_pinecone_shingle_slab",
+    "windswept:magenta_pinecone_shingle_slab",
+    "windswept:pink_pinecone_shingle_slab"
   ]
 }
