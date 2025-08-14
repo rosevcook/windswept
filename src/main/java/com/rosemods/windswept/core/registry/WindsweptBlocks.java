@@ -34,10 +34,8 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
-import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -281,13 +279,6 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> POLISHED_SHALE_BRICK_STAIRS = HELPER.createBlock("polished_shale_brick_stairs", () -> new StairBlock(POLISHED_SHALE_BRICKS.get()::defaultBlockState, Properties.SHALE));
     public static final RegistryObject<Block> POLISHED_SHALE_BRICK_SLAB = HELPER.createBlock("polished_shale_brick_slab", () -> new SlabBlock(Properties.SHALE));
     public static final RegistryObject<Block> POLISHED_SHALE_BRICK_WALL = HELPER.createBlock("polished_shale_brick_wall", () -> new WallBlock(Properties.SHALE));
-
-    public static final RegistryObject<Block> POLISHED_SHALE_PRESSURE_PLATE = HELPER.createBlock("polished_shale_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BLUE).forceSolidOn().sound(SoundType.DRIPSTONE_BLOCK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().noCollission().strength(.5f).pushReaction(PushReaction.DESTROY), BlockSetType.POLISHED_BLACKSTONE));
-    public static final RegistryObject<Block> POLISHED_SHALE_BUTTON = HELPER.createBlock("polished_shale_button", () -> new ButtonBlock(BlockBehaviour.Properties.of().noCollission().strength(.5f).sound(SoundType.DRIPSTONE_BLOCK).pushReaction(PushReaction.DESTROY), BlockSetType.STONE, 20, false));
-
-    // Deepslate //
-    public static final RegistryObject<Block> POLISHED_DEEPSLATE_PRESSURE_PLATE = HELPER.createBlock("polished_deepslate_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).forceSolidOn().sound(SoundType.POLISHED_DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().noCollission().strength(.5f).pushReaction(PushReaction.DESTROY), BlockSetType.POLISHED_BLACKSTONE));
-    public static final RegistryObject<Block> POLISHED_DEEPSLATE_BUTTON = HELPER.createBlock("polished_deepslate_button", () -> new ButtonBlock(BlockBehaviour.Properties.of().noCollission().strength(.5f).sound(SoundType.POLISHED_DEEPSLATE).pushReaction(PushReaction.DESTROY), BlockSetType.STONE, 20, false));
 
     // Packed Ice Blocks //
     public static final RegistryObject<Block> PACKED_ICE_STAIRS = HELPER.createBlock("packed_ice_stairs", () -> new StairBlock(Blocks.PACKED_ICE::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.PACKED_ICE)));

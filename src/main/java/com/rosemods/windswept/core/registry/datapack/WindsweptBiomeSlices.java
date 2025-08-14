@@ -45,7 +45,7 @@ public final class WindsweptBiomeSlices {
                 .area(SNOWY_PINE_BARRENS_AREA, SNOWY_PINE_BARRENS)
                 .build(), LevelStem.OVERWORLD));
 
-        context.register(LAVENDER_SLICE, new ModdedBiomeSlice(25, BiomeUtil.MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
+        context.register(LAVENDER_SLICE, new ModdedBiomeSlice(16, BiomeUtil.MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
                 .area(LAVENDER_HILLS_AREA, LAVENDER_HILLS)
                 .area(LAVENDER_PLAINS_AREA, LAVENDER_PLAINS)
                 .build(), LevelStem.OVERWORLD));

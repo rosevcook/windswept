@@ -20,7 +20,6 @@ public class WindsweptParticleTypes {
     public static final RegistryObject<SimpleParticleType> WILL_O_THE_WISP = PARTICLE_TYPES.register("will_o_the_wisp", () -> new SimpleParticleType(false));
     public static final RegistryObject<SimpleParticleType> FROST_LEAF = PARTICLE_TYPES.register("frost_leaf", () -> new SimpleParticleType(false));
 
-
     @SubscribeEvent
     public static void register(RegisterParticleProvidersEvent event) {
         event.registerSpriteSet(WILL_O_THE_WISP.get(), WillOTheWispParticle.Provider::new);

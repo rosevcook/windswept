@@ -1,8 +1,0 @@
-{
-  "repaletter": {
-    "type": "blueprint:simple",
-    "replaces_block": "minecraft:stone_pressure_plate",
-    "replaces_with": "windswept:polished_deepslate_pressure_plate"
-  },
-  "structures": "minecraft:ancient_city"
-}

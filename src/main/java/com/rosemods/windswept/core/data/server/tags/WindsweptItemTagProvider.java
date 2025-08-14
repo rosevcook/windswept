@@ -64,6 +64,7 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
         this.tag(ItemTags.BOATS).add(HOLLY_BOAT.getFirst().get(), CHESTNUT_BOAT.getFirst().get(), PINE_BOAT.getFirst().get());
         this.tag(ItemTags.CHEST_BOATS).add(HOLLY_BOAT.getSecond().get(), CHESTNUT_BOAT.getSecond().get(), PINE_BOAT.getSecond().get());
         this.tag(ItemTags.SIGNS).add(HOLLY_SIGNS.getFirst().get().asItem(), CHESTNUT_SIGNS.getFirst().get().asItem(), PINE_SIGNS.getFirst().get().asItem());
+        this.tag(ItemTags.HANGING_SIGNS).add(HOLLY_HANGING_SIGNS.getFirst().get().asItem(), CHESTNUT_HANGING_SIGNS.getFirst().get().asItem(), PINE_HANGING_SIGNS.getFirst().get().asItem());
         this.tag(ItemTags.MUSIC_DISCS).add(MUSIC_DISC_RAIN.get(), MUSIC_DISC_SNOW.get(), MUSIC_DISC_BUMBLEBEE.get());
         this.copy(BlockTags.LEAVES, ItemTags.LEAVES);
         this.copy(BlockTags.LOGS_THAT_BURN, ItemTags.LOGS_THAT_BURN);
@@ -75,7 +76,6 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
         this.copy(BlockTags.STAIRS, ItemTags.STAIRS);
         this.copy(BlockTags.WALLS, ItemTags.WALLS);
         this.copy(BlockTags.WOODEN_BUTTONS, ItemTags.WOODEN_BUTTONS);
-        this.copy(BlockTags.BUTTONS, ItemTags.BUTTONS);
         this.copy(BlockTags.WOODEN_DOORS, ItemTags.WOODEN_DOORS);
         this.copy(BlockTags.DOORS, ItemTags.DOORS);
         this.copy(BlockTags.WOODEN_TRAPDOORS, ItemTags.WOODEN_TRAPDOORS);

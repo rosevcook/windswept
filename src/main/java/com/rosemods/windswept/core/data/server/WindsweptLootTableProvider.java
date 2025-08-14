@@ -305,12 +305,6 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(POLISHED_SHALE_BRICK_STAIRS.get());
             this.add(POLISHED_SHALE_BRICK_SLAB.get(), this::createSlabItemTable);
             this.dropSelf(POLISHED_SHALE_BRICK_WALL.get());
-            this.dropSelf(POLISHED_SHALE_PRESSURE_PLATE.get());
-            this.dropSelf(POLISHED_SHALE_BUTTON.get());
-
-            // deepslate
-            this.dropSelf(POLISHED_DEEPSLATE_PRESSURE_PLATE.get());
-            this.dropSelf(POLISHED_DEEPSLATE_BUTTON.get());
 
             // candy cane
             this.dropSelf(CANDY_CANE_BLOCK.get());

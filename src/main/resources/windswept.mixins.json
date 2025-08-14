@@ -33,9 +33,7 @@
     "SpruceTreeGrowerMixin",
     "StrayMixin",
     "TemptGoalMixin",
-    "TreeConfigurationBuilderMixin",
     "TreeFeatureMixin",
-    "TreeFeaturesMixin",
     "TrunkPlacerMixin",
     "ZombieMixin"
   ],

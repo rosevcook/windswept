@@ -169,7 +169,7 @@ public final class WindsweptBiomes {
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.LARGE_WHITE_ROSE);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.LAVENDER);
 
-        return biome(.7f, .7f, 4159204, 329011, 12638463, true, generation, baseLavenderSpawns()).build();
+        return biome(.4f, .7f, 4159204, 329011, 12638463, true, generation, baseLavenderSpawns()).build();
     }
 
     private static MobSpawnSettings.Builder baseLavenderSpawns() {

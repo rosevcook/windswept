@@ -296,12 +296,6 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.stairs(POLISHED_SHALE_BRICK_STAIRS, this.blockTexture(POLISHED_SHALE_BRICKS.get()));
         this.slab(POLISHED_SHALE_BRICK_SLAB, this.blockTexture(POLISHED_SHALE_BRICKS.get()));
         this.wall(POLISHED_SHALE_BRICK_WALL, this.blockTexture(POLISHED_SHALE_BRICKS.get()));
-        this.pressurePlate(POLISHED_SHALE_PRESSURE_PLATE, this.blockTexture(POLISHED_SHALE.get()));
-        this.button(POLISHED_SHALE_BUTTON, this.blockTexture(POLISHED_SHALE.get()));
-
-        // deepslate
-        this.pressurePlate(POLISHED_DEEPSLATE_PRESSURE_PLATE, this.blockTexture(Blocks.POLISHED_DEEPSLATE));
-        this.button(POLISHED_DEEPSLATE_BUTTON, this.blockTexture(Blocks.POLISHED_DEEPSLATE));
 
         // decorations
         this.wreath(HOLLY_WREATH);

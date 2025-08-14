@@ -49,6 +49,7 @@ public final class WindsweptStructureRepaletters {
         register(context, structures, Blocks.INFESTED_CHISELED_STONE_BRICKS, CHISELED_PACKED_ICE_BRICKS.get(), IGLOO);
         register(context, structures, Blocks.CRACKED_STONE_BRICKS, Blocks.PACKED_ICE, IGLOO);
         register(context, structures, Blocks.INFESTED_CRACKED_STONE_BRICKS, Blocks.PACKED_ICE, IGLOO);
+        register(context, structures, Blocks.REDSTONE_TORCH, ICE_LANTERN.get(), IGLOO);
 
         //villages
         register(context, structures, Blocks.POTTED_SPRUCE_SAPLING, POTTED_BLUEBELLS.get(), VILLAGE_TAIGA);
@@ -56,10 +57,6 @@ public final class WindsweptStructureRepaletters {
         register(context, structures, Blocks.POPPY, RED_ROSE.get(), VILLAGE_TAIGA);
         register(context, structures, Blocks.LIGHT_GRAY_WOOL, SNOW_BRICKS.get(), VILLAGE_TAIGA);
         register(context, structures, Blocks.BLUE_ICE, PACKED_ICE_BRICKS.get(), VILLAGE_TAIGA);
-
-        //ancient city
-        register(context, structures, Blocks.STONE_PRESSURE_PLATE, POLISHED_DEEPSLATE_PRESSURE_PLATE.get(), ANCIENT_CITY);
-        register(context, structures, Blocks.BLUE_ICE, PACKED_ICE_BRICKS.get(), ANCIENT_CITY);
 
         //chestnut in snowy village
         register(context, structures, Blocks.SPRUCE_PLANKS, CHESTNUT_PLANKS.get(), VILLAGE_SNOWY);
