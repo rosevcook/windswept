@@ -272,6 +272,8 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.add(SNOW_BRICK_SLAB.get(), this::createSlabItemTable);
             this.dropSelf(SNOW_BRICK_WALL.get());
 
+            this.add(SUSPICIOUS_SNOW.get(), LootTable.lootTable());
+
             // packed ice blocks
             this.dropSelf(PACKED_ICE_STAIRS.get());
             this.add(PACKED_ICE_SLAB.get(), this::createSlabItemTable);

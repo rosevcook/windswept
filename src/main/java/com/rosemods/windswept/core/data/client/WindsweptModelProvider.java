@@ -15,7 +15,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.*;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.MultiPartBlockStateBuilder;
@@ -267,6 +266,7 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.stairs(SNOW_BRICK_STAIRS, this.blockTexture(SNOW_BRICKS.get()));
         this.slab(SNOW_BRICK_SLAB, this.blockTexture(SNOW_BRICKS.get()));
         this.wall(SNOW_BRICK_WALL, this.blockTexture(SNOW_BRICKS.get()));
+        this.suspiciousBlock(SUSPICIOUS_SNOW);
 
         // packed ice
         this.stairs(PACKED_ICE_STAIRS, this.blockTexture(Blocks.PACKED_ICE));
@@ -612,6 +612,17 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.generatedItem(block.get(), TextureFolder.BLOCK);
     }
 
+    private void suspiciousBlock(RegistryObject<Block> block) {
+        String name = getBlockName(block.get());
+
+        this.itemModels().withExistingParent(name, this.modLoc("block/" + name + "_0"));
+        this.getVariantBuilder(block.get())
+                .partialState().with(BlockStateProperties.DUSTED, 0).addModels(new ConfiguredModel(this.models().cubeAll(name + "_0", this.modLoc("block/" + name + "_0"))))
+                .partialState().with(BlockStateProperties.DUSTED, 1).addModels(new ConfiguredModel(this.models().cubeAll(name + "_1", this.modLoc("block/" + name + "_1"))))
+                .partialState().with(BlockStateProperties.DUSTED, 2).addModels(new ConfiguredModel(this.models().cubeAll(name + "_2", this.modLoc("block/" + name + "_2"))))
+                .partialState().with(BlockStateProperties.DUSTED, 3).addModels(new ConfiguredModel(this.models().cubeAll(name + "_3", this.modLoc("block/" + name + "_3"))));
+    }
+
     private void tallPlant(RegistryObject<Block> flower) {
         String name = getItemName(flower.get());
         Function<String, ModelFile> model = s -> this.models().cross(name + "_" + s, this.modLoc("block/" + name + "_" + s)).renderType("cutout");
@@ -899,7 +910,8 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
 
                     if (shape == StairsShape.INNER_LEFT || shape == StairsShape.OUTER_LEFT) yRot += 270;
                     if (half == Half.TOP && shape == StairsShape.STRAIGHT) yRot += 180;
-                    if (half == Half.TOP && (shape == StairsShape.INNER_LEFT || shape == StairsShape.INNER_RIGHT)) yRot += 90;
+                    if (half == Half.TOP && (shape == StairsShape.INNER_LEFT || shape == StairsShape.INNER_RIGHT))
+                        yRot += 90;
 
                     yRot %= 360;
 

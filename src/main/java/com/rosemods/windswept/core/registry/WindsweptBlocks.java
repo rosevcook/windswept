@@ -310,6 +310,8 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> SNOW_BRICK_SLAB = HELPER.createBlock("snow_brick_slab", () -> new SlabBlock(Properties.SNOW_BRICKS));
     public static final RegistryObject<Block> SNOW_BRICK_WALL = HELPER.createBlock("snow_brick_wall", () -> new WallBlock(Properties.SNOW_BRICKS));
 
+    public static final RegistryObject<Block> SUSPICIOUS_SNOW = HELPER.createBlock("suspicious_snow", () -> new BrushableBlock(Blocks.SNOW_BLOCK, BlockBehaviour.Properties.copy(Blocks.SNOW_BLOCK), SoundEvents.BRUSH_SAND, SoundEvents.BRUSH_SAND_COMPLETED));
+
     // Candy Cane Blocks //
     public static final RegistryObject<Block> CANDY_CANE_BLOCK = HELPER.createBlock("candy_cane_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.QUARTZ_PILLAR)));
 
