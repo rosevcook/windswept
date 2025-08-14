@@ -29,7 +29,7 @@ public class PineTreeFeature extends BlueprintTreeFeature {
         int weatheredHeight = rand.nextInt(5, 9);
         boolean isFairy = rand.nextInt(3000) == 0;
 
-        if (rand.nextBoolean() && context.level().getBiome(context.origin()).is(Biomes.OLD_GROWTH_PINE_TAIGA))
+        if (rand.nextBoolean() || context.level().getBiome(context.origin()).is(Biomes.OLD_GROWTH_PINE_TAIGA))
             weathered = WindsweptBlocks.PINE_LOG.get().defaultBlockState();
 
         if (isFairy) {

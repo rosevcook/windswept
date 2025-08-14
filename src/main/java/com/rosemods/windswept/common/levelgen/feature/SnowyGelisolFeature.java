@@ -22,7 +22,7 @@ public class SnowyGelisolFeature extends Feature<NoneFeatureConfiguration> {
         BlockPos origin = context.origin();
         WorldGenLevel level = context.level();
         RandomSource rand = context.random();
-        BlockState snowy_gelisol = WindsweptBlocks.GELISOL.get().defaultBlockState().setValue(GelisolBlock.SNOWY, true);
+        BlockState snowyGelisol = WindsweptBlocks.GELISOL.get().defaultBlockState().setValue(GelisolBlock.SNOWY, true);
         BlockState gelisol = WindsweptBlocks.GELISOL.get().defaultBlockState();
         BlockState snow = Blocks.SNOW.defaultBlockState();
         BlockState dirt = Blocks.DIRT.defaultBlockState();
@@ -36,24 +36,22 @@ public class SnowyGelisolFeature extends Feature<NoneFeatureConfiguration> {
                     BlockPos pos = origin.offset(x, y, z);
 
                     if (level.getBlockState(pos).is(Blocks.SNOW_BLOCK) && level.getBiome(pos).is(WindsweptBiomes.TUNDRA)) {
-                        boolean isSolid = level.getBlockState(pos.above()).isSolid();
+                        BlockState above = level.getBlockState(pos.above());
 
-                        if (rand.nextInt(45) == 0) {
-                            if (!isSolid) {
+                        if (!above.isSolid()) {
+                            if (rand.nextInt(45) == 0) {
                                 level.setBlock(pos, gelisol, 2);
-                                level.setBlock(pos.above(), sprouts, 2);
-                            } else
-                                level.setBlock(pos, dirt, 2);
-                        } else {
-                            if (level.getBlockState(pos.above()).isAir()) {
-                                if (!isSolid) {
-                                    level.setBlock(pos, snowy_gelisol, 2);
+
+                                if (above.isAir())
+                                    level.setBlock(pos.above(), sprouts, 2);
+                            } else {
+                                level.setBlock(pos, snowyGelisol, 2);
+
+                                if (above.isAir())
                                     level.setBlock(pos.above(), rand.nextInt(200) == 0 ? snowdrop : snow, 2);
-                                } else
-                                    level.setBlock(pos, dirt, 2);
-                            } else
-                                level.setBlock(pos, isSolid ? dirt : gelisol, 2);
-                        }
+                            }
+                        } else
+                            level.setBlock(pos, dirt, 2);
 
                         generated = true;
                     }

@@ -28,7 +28,7 @@ public class SheepMixin {
         if (biome.is(WindsweptBiomeTags.IS_PINE_BARRENS))
             sheep.setColor(rand.nextInt(4) == 0 && biome.is(WindsweptBiomes.PINE_BARRENS) ? DyeColor.ORANGE : DyeColor.BROWN);
         else if (biome.is(WindsweptBiomeTags.IS_LAVENDER) && rand.nextInt(4) == 0)
-            sheep.setColor(DyeColor.PURPLE);
+            sheep.setColor(rand.nextBoolean() ? DyeColor.PURPLE : DyeColor.MAGENTA);
         else if (biome.is(WindsweptBiomeTags.IS_CHESTNUT_FOREST) && rand.nextInt(3) == 0)
             sheep.setColor(rand.nextInt(8) == 0 ? DyeColor.BLUE : DyeColor.BROWN);
     }

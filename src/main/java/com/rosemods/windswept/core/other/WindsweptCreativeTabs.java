@@ -64,10 +64,10 @@ public final class WindsweptCreativeTabs {
                 .addItemsBefore(Ingredient.of(Blocks.CHAIN), ICE_LANTERN)
                 .addItemsAfter(Ingredient.of(Blocks.JUKEBOX), CARVED_PINECONE_BLOCK, WILL_O_THE_WISP, FEATHER_WING, FEATHER_ORNAMENT, DREAM_CATCHER, FROSTBITER_TROPHY)
                 .addItemsAfter(modLoaded(Blocks.BARREL, "farmersdelight"), HOLLY_CABINET, CHESTNUT_CABINET, PINE_CABINET)
-                .addItemsBefore(modLoaded(Blocks.LADDER/*WindsweptConstants.BAMBOO_LADDER*/, "woodworks"), HOLLY_LADDER, CHESTNUT_LADDER, PINE_LADDER)
-                .addItemsBefore(modLoaded(Blocks.BEEHIVE/*WindsweptConstants.BAMBOO_BEEHIVE*/, "woodworks"), HOLLY_BEEHIVE, CHESTNUT_BEEHIVE, PINE_BEEHIVE)
-                .addItemsBefore(Ingredient.of(Blocks.BOOKSHELF), HOLLY_BOOKSHELF, /*CHISELED_HOLLY_BOOKSHELF, */CHESTNUT_BOOKSHELF, /*CHISELED_CHESTNUT_BOOKSHELF, */PINE_BOOKSHELF/*, CHISELED_PINE_BOOKSHELF*/)
-                .addItemsBefore(modLoaded(Blocks.CHEST/*WindsweptConstants.BAMBOO_CLOSET*/, "woodworks"), HOLLY_CHEST, CHESTNUT_CHEST, PINE_CHEST)
+                .addItemsAfter(modLoaded(Blocks.LADDER/*WindsweptConstants.BAMBOO_LADDER*/, "woodworks"), HOLLY_LADDER, CHESTNUT_LADDER, PINE_LADDER)
+                .addItemsAfter(modLoaded(Blocks.BEEHIVE/*WindsweptConstants.BAMBOO_BEEHIVE*/, "woodworks"), HOLLY_BEEHIVE, CHESTNUT_BEEHIVE, PINE_BEEHIVE)
+                .addItemsAfter(Ingredient.of(Blocks.BOOKSHELF), HOLLY_BOOKSHELF, /*CHISELED_HOLLY_BOOKSHELF, */CHESTNUT_BOOKSHELF, /*CHISELED_CHESTNUT_BOOKSHELF, */PINE_BOOKSHELF/*, CHISELED_PINE_BOOKSHELF*/)
+                .addItemsAfter(modLoaded(Blocks.CHEST/*WindsweptConstants.BAMBOO_CLOSET*/, "woodworks"), HOLLY_CHEST, CHESTNUT_CHEST, PINE_CHEST)
 
                 .tab(COLORED_BLOCKS)
                 .addItemsAfter(Ingredient.of(Blocks.PINK_CARPET), WHITE_PINECONE_SHINGLES, LIGHT_GRAY_PINECONE_SHINGLES, GRAY_PINECONE_SHINGLES, BLACK_PINECONE_SHINGLES, BROWN_PINECONE_SHINGLES, RED_PINECONE_SHINGLES, ORANGE_PINECONE_SHINGLES, YELLOW_PINECONE_SHINGLES, LIME_PINECONE_SHINGLES, GREEN_PINECONE_SHINGLES, CYAN_PINECONE_SHINGLES, LIGHT_BLUE_PINECONE_SHINGLES, BLUE_PINECONE_SHINGLES, PURPLE_PINECONE_SHINGLES, MAGENTA_PINECONE_SHINGLES, PINK_PINECONE_SHINGLES,
@@ -105,7 +105,7 @@ public final class WindsweptCreativeTabs {
                 .addItemsAfter(Ingredient.of(Blocks.COMPARATOR), REDSTONE_FAIRY_LIGHT)
                 .addItemsAfter(Ingredient.of(Blocks.HONEY_BLOCK), PINECONE_JAM_BLOCK)
                 .addItemsAfter(Ingredient.of(Blocks.NOTE_BLOCK), CARVED_PINECONE_BLOCK)
-                .addItemsBefore(modLoaded(Blocks.TRAPPED_CHEST/*WindsweptConstants.TRAPPED_BAMBOO_CLOSET*/, "woodworks"), TRAPPED_HOLLY_CHEST, TRAPPED_CHESTNUT_CHEST, TRAPPED_PINE_CHEST)
+                .addItemsAfter(modLoaded(Blocks.TRAPPED_CHEST/*WindsweptConstants.TRAPPED_BAMBOO_CLOSET*/, "woodworks"), TRAPPED_HOLLY_CHEST, TRAPPED_CHESTNUT_CHEST, TRAPPED_PINE_CHEST)
 
                 .tab(COMBAT)
                 .addItemsAfter(Ingredient.of(Items.SPECTRAL_ARROW), FROST_ARROW)

@@ -5,7 +5,6 @@ import com.rosemods.windswept.core.data.server.WindsweptDatapackProvider;
 import com.rosemods.windswept.core.other.tags.WindsweptBlockTags;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintBlockTags;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
@@ -33,6 +32,9 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
 
         //farmersdelight
         this.tag(WindsweptBlockTags.MINEABLE_KNIFE).add(CHRISTMAS_PUDDING.get());
+
+        //environmental
+        this.tag(WindsweptBlockTags.PINECONE_GOLEM_BASE_BLOCKS).add(PINECONE_BLOCK.get());
 
         //woodworks
         this.tag(BlueprintBlockTags.LEAF_PILES).add(HOLLY_LEAF_PILE.get(), CHESTNUT_LEAF_PILE.get(), PINE_LEAF_PILE.get());

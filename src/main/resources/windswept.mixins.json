@@ -8,7 +8,6 @@
     "BeehiveBlockMixin",
     "BlockMixin",
     "BoatMixin",
-    "CarvedPumpkinBlockMixin",
     "DrownedMixin",
     "EnderManMixin",
     "FlowerBlockMixin",

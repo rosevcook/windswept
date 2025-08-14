@@ -21,6 +21,7 @@ import static com.rosemods.windswept.core.registry.WindsweptItems.*;
 public class WindsweptPlugin implements IModPlugin {
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
+        addInfo(registration, FROZEN_BRANCH);
         addInfo(registration, MUSIC_DISC_RAIN);
         addInfo(registration, MUSIC_DISC_SNOW);
         addInfo(registration, MUSIC_DISC_BUMBLEBEE);

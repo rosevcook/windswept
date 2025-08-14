@@ -15,4 +15,5 @@ public final class WindsweptBlockTags {
     public static final TagKey<Block> PINECONE_NOTE_BLOCKS = TagUtil.blockTag(Windswept.MOD_ID, "pinecone_note_blocks");
 
     public static final TagKey<Block> MINEABLE_KNIFE = TagUtil.blockTag("farmersdelight", "mineable/knife");
+    public static final TagKey<Block> PINECONE_GOLEM_BASE_BLOCKS = TagUtil.blockTag("environmental", "pinecone_golem_base_blocks");
 }
