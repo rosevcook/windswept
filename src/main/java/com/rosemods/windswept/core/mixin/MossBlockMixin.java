@@ -19,7 +19,6 @@ public class MossBlockMixin {
         level.registryAccess().registry(Registries.CONFIGURED_FEATURE)
                 .flatMap(r -> r.getHolder(WindsweptConfiguredFeatures.MOSS_PATCH_BONEMEAL))
                 .ifPresent(f -> f.value().place(level, level.getChunkSource().getGenerator(), random, pos.above()));
-
         info.cancel();
     }
 

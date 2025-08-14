@@ -29,7 +29,6 @@
     "SnowLayerBlockMixin",
     "SnowyDirtBlockMixin",
     "SolidBucketItemMixin",
-    "SpruceTreeGrowerMixin",
     "StrayMixin",
     "TemptGoalMixin",
     "TreeFeatureMixin",
