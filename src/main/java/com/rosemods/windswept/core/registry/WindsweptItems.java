@@ -75,6 +75,13 @@ public class WindsweptItems {
 
     public static final RegistryObject<Item> CHRISTMAS_PUDDING_SLICE = HELPER.createItem("christmas_pudding_slice", () -> new Item(new Item.Properties().food(WindsweptFoods.CAKE_SLICE)));
 
+    // Pottery Sherds //
+    public static final RegistryObject<Item> HOOT_POTTERY_SHERD = HELPER.createItem("hoot_pottery_sherd", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> PLUMAGE_POTTERY_SHERD = HELPER.createItem("plumage_pottery_sherd", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> OFFSHOOT_POTTERY_SHERD = HELPER.createItem("offshoot_pottery_sherd", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> FLAKE_POTTERY_SHERD = HELPER.createItem("flake_pottery_sherd", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DRUPES_POTTERY_SHERD = HELPER.createItem("drupes_pottery_sherd", () -> new Item(new Item.Properties()));
+
     // Banner Patterns //
     public static final RegistryObject<Item> SNOW_GOLEM_BANNER_PATTERN = HELPER.createItem("snow_golem_banner_pattern", () -> new BannerPatternItem(WindsweptBannerPatternTags.SNOW_GOLEM, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> SNOW_CHARGE_BANNER_PATTERN = HELPER.createItem("snow_charge_banner_pattern", () -> new BannerPatternItem(WindsweptBannerPatternTags.SNOW_CHARGE, new Item.Properties().stacksTo(1)));

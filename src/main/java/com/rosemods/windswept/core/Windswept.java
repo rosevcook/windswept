@@ -45,6 +45,7 @@ public class Windswept {
         WindsweptTrunkPlacers.TRUNK_PLACERS.register(bus);
         WindsweptPaintingVariants.PAINTING_VARIANTS.register(bus);
         WindsweptParticleTypes.PARTICLE_TYPES.register(bus);
+        WindsweptPotPatterns.DECORATED_POT_PATTERNS.register(bus);
 
         bus.addListener(this::commonSetup);
         bus.addListener(this::clientSetup);
@@ -64,6 +65,7 @@ public class Windswept {
             WindsweptDispenseBehaviors.registerDispenseBehaviors();
             WindsweptCauldronInteractions.registerCauldronInteractions();
             WindsweptCreativeTabs.setupTabEditors();
+            WindsweptPotPatterns.registerPatterns();
         });
     }
 

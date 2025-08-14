@@ -67,6 +67,11 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.itemOnAStick(HOLLY_BERRIES_ON_A_STICK.get(), TextureFolder.ITEM);
         this.generatedItem(FROZEN_FLESH.get(), TextureFolder.ITEM);
         this.generatedItem(FROZEN_BRANCH.get(), TextureFolder.ITEM);
+        this.generatedItem(HOOT_POTTERY_SHERD.get(), TextureFolder.ITEM);
+        this.generatedItem(PLUMAGE_POTTERY_SHERD.get(), TextureFolder.ITEM);
+        this.generatedItem(OFFSHOOT_POTTERY_SHERD.get(), TextureFolder.ITEM);
+        this.generatedItem(FLAKE_POTTERY_SHERD.get(), TextureFolder.ITEM);
+        this.generatedItem(DRUPES_POTTERY_SHERD.get(), TextureFolder.ITEM);
         this.generatedItem(SNOW_GOLEM_BANNER_PATTERN.get(), TextureFolder.ITEM);
         this.generatedItem(SNOW_CHARGE_BANNER_PATTERN.get(), TextureFolder.ITEM);
         this.generatedItem(ROSE_FLOWER_BANNER_PATTERN.get(), TextureFolder.ITEM);

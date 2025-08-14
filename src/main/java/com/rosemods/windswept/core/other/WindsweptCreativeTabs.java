@@ -117,6 +117,7 @@ public final class WindsweptCreativeTabs {
                 .addItemsAfter(Ingredient.of(Items.WHEAT), LAVENDER)
                 .addItemsAfter(Ingredient.of(Items.SNOWBALL), ICICLES, FROZEN_BRANCH)
                 .addItemsAfter(Ingredient.of(Items.PIGLIN_BANNER_PATTERN), SNOW_GOLEM_BANNER_PATTERN, SNOW_CHARGE_BANNER_PATTERN, ROSE_FLOWER_BANNER_PATTERN)
+                .addItemsAfter(Ingredient.of(Items.SNORT_POTTERY_SHERD), HOOT_POTTERY_SHERD, PLUMAGE_POTTERY_SHERD, OFFSHOOT_POTTERY_SHERD, FLAKE_POTTERY_SHERD, DRUPES_POTTERY_SHERD)
 
                 .tab(TOOLS_AND_UTILITIES)
                 .addItemsBefore(Ingredient.of(Items.BAMBOO_RAFT), HOLLY_BOAT.getFirst(), HOLLY_BOAT.getSecond())
