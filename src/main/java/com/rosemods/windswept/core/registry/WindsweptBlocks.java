@@ -261,6 +261,7 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> ICICLE_TRAPDOOR = HELPER.createBlock("icicle_trapdoor", () -> new TrapDoorBlock(Block.Properties.of().mapColor(MapColor.ICE).strength(3f).sound(SoundType.GLASS).noOcclusion().isValidSpawn(PropertyUtil::never), Properties.ICICLE_SET));
     public static final RegistryObject<Block> ICICLE_BARS = HELPER.createBlock("icicle_bars", () -> new IronBarsBlock(BlockBehaviour.Properties.copy(Blocks.PACKED_ICE).strength(2f)));
     public static final RegistryObject<Block> ICE_LANTERN = HELPER.createBlock("ice_lantern", () -> new IceLanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN).lightLevel(s -> 13)));
+    public static final RegistryObject<Block> ICE_CHAIN = HELPER.createBlock("ice_chain", () -> new ChainBlock(BlockBehaviour.Properties.copy(Blocks.CHAIN)));
 
     // Shale //
     public static final RegistryObject<Block> SHALE = HELPER.createBlock("shale", () -> new Block(Properties.SHALE));

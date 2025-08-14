@@ -384,6 +384,7 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
                 .partialState().with(IceLanternBlock.FACING, Direction.EAST).addModels(ConfiguredModel.builder().modelFile(this.models().getExistingFile(this.modLoc("block/ice_lantern_side"))).rotationY(90).build())
                 .partialState().with(IceLanternBlock.FACING, Direction.WEST).addModels(ConfiguredModel.builder().modelFile(this.models().getExistingFile(this.modLoc("block/ice_lantern_side"))).rotationY(270).build());
         this.generatedItem(ICE_LANTERN.get(), TextureFolder.ITEM);
+        this.chain(ICE_CHAIN);
 
         // lunalite
         this.getVariantBuilder(LUNALITE.get())
@@ -565,6 +566,17 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
                 .partialState().with(WildBerryBushBlock.AGE, 1).addModels(new ConfiguredModel(model.apply(1), 0, 0, true))
                 .partialState().with(WildBerryBushBlock.AGE, 2).addModels(new ConfiguredModel(model.apply(2), 0, 0, true))
                 .partialState().with(WildBerryBushBlock.AGE, 3).addModels(new ConfiguredModel(model.apply(3), 0, 0, true));
+    }
+
+    private void chain(RegistryObject<Block> chain) {
+        ResourceLocation texture = this.blockTexture(chain.get());
+        ModelFile model = this.models().withExistingParent(getItemName(chain.get()), this.mcLoc("block/chain")).texture("all", texture).texture("particle", texture).renderType("cutout");
+
+        this.generatedItem(chain.get(), TextureFolder.ITEM);
+        this.getVariantBuilder(chain.get())
+                .partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.Y).modelForState().modelFile(model).addModel()
+                .partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.Z).modelForState().modelFile(model).rotationX(90).addModel()
+                .partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.X).modelForState().modelFile(model).rotationX(90).rotationY(90).addModel();
     }
 
     private void dreamCatcher(RegistryObject<Block> block) {

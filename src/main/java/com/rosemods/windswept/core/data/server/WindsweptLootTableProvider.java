@@ -414,6 +414,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(ICICLE_TRAPDOOR.get());
             this.dropSelf(ICICLE_BARS.get());
             this.dropSelf(ICE_LANTERN.get());
+            this.dropSelf(ICE_CHAIN.get());
 
             // lunalite
             this.dropSelf(LUNALITE.get());

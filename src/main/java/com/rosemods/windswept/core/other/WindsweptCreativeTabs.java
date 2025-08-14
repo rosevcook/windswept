@@ -62,6 +62,7 @@ public final class WindsweptCreativeTabs {
                 .addItemsBefore(modLoaded(Blocks.ANVIL, "endergetic"), ENDER_FAIRY_LIGHT)
                 .addItemsBefore(Ingredient.of(Blocks.ANVIL), REDSTONE_FAIRY_LIGHT)
                 .addItemsBefore(Ingredient.of(Blocks.CHAIN), ICE_LANTERN)
+                .addItemsAfter(Ingredient.of(Blocks.CHAIN), ICE_CHAIN)
                 .addItemsAfter(Ingredient.of(Blocks.JUKEBOX), CARVED_PINECONE_BLOCK, WILL_O_THE_WISP, FEATHER_WING, FEATHER_ORNAMENT, DREAM_CATCHER, FROSTBITER_TROPHY)
                 .addItemsAfter(modLoaded(Blocks.BARREL, "farmersdelight"), HOLLY_CABINET, CHESTNUT_CABINET, PINE_CABINET)
                 .addItemsAfter(modLoaded(Blocks.LADDER/*WindsweptConstants.BAMBOO_LADDER*/, "woodworks"), HOLLY_LADDER, CHESTNUT_LADDER, PINE_LADDER)

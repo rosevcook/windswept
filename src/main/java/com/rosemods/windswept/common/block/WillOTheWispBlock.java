@@ -4,6 +4,7 @@ import com.rosemods.windswept.common.block_entity.WillOTheWispBlockEntity;
 import com.rosemods.windswept.core.registry.WindsweptParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -52,7 +53,7 @@ public class WillOTheWispBlock extends HorizontalDirectionalBlock implements Ent
             BlockPos blockPos = new BlockPos(pos.getX() + Mth.nextInt(rand, -7, 7), pos.getY() - rand.nextInt(7), pos.getZ() + Mth.nextInt(rand, -7, 7)).relative(state.getValue(FACING), 3);
 
             if (!level.getBlockState(blockPos).isCollisionShapeFullBlock(level, blockPos))
-                level.addParticle(WindsweptParticleTypes.WILL_O_THE_WISP.get(), (double) blockPos.getX() + rand.nextDouble(), (double) blockPos.getY() + rand.nextDouble(), (double) blockPos.getZ() + rand.nextDouble(), 0d, 0d, 0d);
+                level.addParticle(rand.nextInt(10) == 0 ? ParticleTypes.END_ROD : WindsweptParticleTypes.WILL_O_THE_WISP.get(), (double) blockPos.getX() + rand.nextDouble(), (double) blockPos.getY() + rand.nextDouble(), (double) blockPos.getZ() + rand.nextDouble(), 0d, 0d, 0d);
         }
     }
 

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/chain",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "all": "windswept:block/ice_chain",
+    "particle": "windswept:block/ice_chain"
+  }
+}
