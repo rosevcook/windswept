@@ -111,7 +111,7 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.fence(HOLLY_FENCE, this.blockTexture(HOLLY_PLANKS.get()));
         this.fenceGate(HOLLY_FENCE_GATE, this.blockTexture(HOLLY_PLANKS.get()));
         this.pressurePlate(HOLLY_PRESSURE_PLATE, this.blockTexture(HOLLY_PLANKS.get()));
-        this.door(HOLLY_DOOR);
+        this.doorCutout(HOLLY_DOOR);
         this.trapdoor(HOLLY_TRAPDOOR);
         this.button(HOLLY_BUTTON, this.blockTexture(HOLLY_PLANKS.get()));
         this.signs(HOLLY_SIGNS, HOLLY_PLANKS);
@@ -615,12 +615,12 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
     private void suspiciousBlock(RegistryObject<Block> block) {
         String name = getBlockName(block.get());
 
-        this.itemModels().withExistingParent(name, this.modLoc("block/" + name + "_0"));
         this.getVariantBuilder(block.get())
                 .partialState().with(BlockStateProperties.DUSTED, 0).addModels(new ConfiguredModel(this.models().cubeAll(name + "_0", this.modLoc("block/" + name + "_0"))))
                 .partialState().with(BlockStateProperties.DUSTED, 1).addModels(new ConfiguredModel(this.models().cubeAll(name + "_1", this.modLoc("block/" + name + "_1"))))
                 .partialState().with(BlockStateProperties.DUSTED, 2).addModels(new ConfiguredModel(this.models().cubeAll(name + "_2", this.modLoc("block/" + name + "_2"))))
                 .partialState().with(BlockStateProperties.DUSTED, 3).addModels(new ConfiguredModel(this.models().cubeAll(name + "_3", this.modLoc("block/" + name + "_3"))));
+        this.itemModels().withExistingParent(name, this.modLoc("block/" + name + "_0"));
     }
 
     private void tallPlant(RegistryObject<Block> flower) {
