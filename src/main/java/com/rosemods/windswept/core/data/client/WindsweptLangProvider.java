@@ -75,6 +75,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.add(HOLLY_FURNACE_BOAT.get(), "Holly Boat with Furnace");
         this.add(CHESTNUT_FURNACE_BOAT.get(), "Chestnut Boat with Furnace");
         this.add(PINE_FURNACE_BOAT.get(), "Pine Boat with Furnace");
+        this.addDescription(FEATHER_CLOAK, "Wearer will become invisible whilst crouching");
 
         // Blocks //
         this.translateSign(HOLLY_SIGNS, "holly");

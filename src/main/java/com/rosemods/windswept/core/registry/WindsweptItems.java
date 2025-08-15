@@ -24,7 +24,7 @@ public class WindsweptItems {
     // Misc //
     public static final RegistryObject<Item> HOLLY_BERRIES = HELPER.createItem("holly_berries", () -> new Item(new Item.Properties().food(WindsweptFoods.HOLLY_BERRIES)));
     public static final RegistryObject<Item> HOLLY_BERRIES_ON_A_STICK = HELPER.createItem("holly_berries_on_a_stick", () -> new HollyBerriesOnAStickItem(new Item.Properties().durability(25)));
-    //public static final RegistryObject<Item> OWL_FEATHER = HELPER.createItem("owl_feather", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ELDER_FEATHER = HELPER.createItem("elder_feather", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> FROST_ARROW = HELPER.createItem("frost_arrow", () -> new FrostArrowItem(new Item.Properties()));
     public static final RegistryObject<Item> FROZEN_BRANCH = HELPER.createItem("frozen_branch", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> FROZEN_FLESH = HELPER.createItem("frozen_flesh", () -> new Item(PropertyUtil.food(WindsweptFoods.FROZEN_FLESH)));
@@ -32,7 +32,7 @@ public class WindsweptItems {
     // Armour //
     public static final RegistryObject<Item> LAVENDER_CROWN = HELPER.createItem("lavender_crown", () -> new LavenderCrownItem(new Item.Properties()));
     public static final RegistryObject<Item> ANTLER_HELMET = HELPER.createItem("antler_helmet", () -> new AntlerHelmetItem(new Item.Properties()));
-    //public static final RegistryObject<Item> FEATHER_CLOAK = HELPER.createItem("feather_cloak", () -> new FeatherCloakItem(new Item.Properties()));
+    public static final RegistryObject<Item> FEATHER_CLOAK = HELPER.createItem("feather_cloak", () -> new FeatherCloakItem(new Item.Properties()));
     public static final RegistryObject<Item> SNOW_BOOTS = HELPER.createItem("snow_boots", () -> new SnowBootsItem(new Item.Properties()));
 
     // Wooden Buckets //

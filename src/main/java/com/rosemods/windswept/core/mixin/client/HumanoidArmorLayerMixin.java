@@ -14,6 +14,7 @@ import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -27,16 +28,23 @@ public abstract class HumanoidArmorLayerMixin<T extends LivingEntity, M extends 
     }
 
     @Inject(method = "renderArmorPiece", at = @At("HEAD"), cancellable = true)
-    private void renderArmorPiece(PoseStack pose, MultiBufferSource source, T entity, EquipmentSlot slot, int p_117123_, A model, CallbackInfo info) {
+    private void renderArmorPiece(PoseStack pose, MultiBufferSource source, T entity, EquipmentSlot slot, int i, A model, CallbackInfo info) {
+        ItemStack stack = entity.getItemBySlot(slot);
+
         if (entity.getItemBySlot(slot).is(WindsweptItems.WOODEN_BUCKET.get())) {
             this.getParentModel().copyPropertiesTo(model);
             model.head.visible = true;
             model.hat.visible = true;
 
             VertexConsumer vertexconsumer = ItemRenderer.getArmorFoilBuffer(source, RenderType.armorCutoutNoCull(Windswept.location("textures/models/armor/wooden_bucket_layer_1.png")), false, false);
-            model.renderToBuffer(pose, vertexconsumer, p_117123_, OverlayTexture.NO_OVERLAY, 1f, 1f, 1f, 1f);
+            model.renderToBuffer(pose, vertexconsumer, i, OverlayTexture.NO_OVERLAY, 1f, 1f, 1f, 1f);
 
             info.cancel();
+        } else if (stack.isEmpty() && slot == EquipmentSlot.LEGS &&entity.getItemBySlot(EquipmentSlot.CHEST).is(WindsweptItems.FEATHER_CLOAK.get())) {
+            this.getParentModel().copyPropertiesTo(model);
+
+            VertexConsumer vertexconsumer = ItemRenderer.getArmorFoilBuffer(source, RenderType.armorCutoutNoCull(Windswept.location("textures/models/armor/feather_cloak_layer_1.png")), false, false);
+            model.renderToBuffer(pose, vertexconsumer, i, OverlayTexture.NO_OVERLAY, 1f, 1f, 1f, 1f);
         }
     }
 

@@ -6,14 +6,14 @@
       "item": "windswept:pinecone"
     },
     "F": {
-      "item": "minecraft:feather"
+      "item": "windswept:elder_feather"
     }
   },
   "pattern": [
     "#FF"
   ],
   "result": {
-    "count": 2,
+    "count": 8,
     "item": "windswept:feather_wing"
   },
   "show_notification": true

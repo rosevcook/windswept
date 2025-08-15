@@ -47,11 +47,14 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
         this.tag(WindsweptItemTags.BERRIES).add(WILD_BERRIES.get());
         this.tag(WindsweptItemTags.COOKED_MUTTON).add(Items.COOKED_MUTTON);
         this.tag(Tags.Items.SEEDS).addTag(WindsweptItemTags.WILD_BERRY_SEEDS);
+        this.tag(Tags.Items.ARMORS_HELMETS).add(ANTLER_HELMET.get(), LAVENDER_CROWN.get());
+        this.tag(Tags.Items.ARMORS_CHESTPLATES).add(FEATHER_CLOAK.get());
         this.tag(Tags.Items.ARMORS_BOOTS).add(SNOW_BOOTS.get());
         this.copy(Tags.Blocks.BOOKSHELVES, Tags.Items.BOOKSHELVES);
         this.copy(Tags.Blocks.CHESTS_WOODEN, Tags.Items.CHESTS_WOODEN);
         this.copy(Tags.Blocks.CHESTS_TRAPPED, Tags.Items.CHESTS_TRAPPED);
         this.copy(BlueprintBlockTags.LADDERS, BlueprintItemTags.LADDERS);
+        this.tag(Tags.Items.FEATHERS).add(ELDER_FEATHER.get());
 
         //boatload
         this.tag(BlueprintItemTags.FURNACE_BOATS).add(HOLLY_FURNACE_BOAT.get(), CHESTNUT_FURNACE_BOAT.get(), PINE_FURNACE_BOAT.get());

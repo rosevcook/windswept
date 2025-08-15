@@ -111,12 +111,12 @@ public final class WindsweptCreativeTabs {
 
                 .tab(COMBAT)
                 .addItemsAfter(Ingredient.of(Items.SPECTRAL_ARROW), FROST_ARROW)
-                .addItemsAfter(Ingredient.of(Items.TURTLE_HELMET), ANTLER_HELMET, SNOW_BOOTS, LAVENDER_CROWN)
+                .addItemsAfter(Ingredient.of(Items.TURTLE_HELMET), ANTLER_HELMET, FEATHER_CLOAK, SNOW_BOOTS, LAVENDER_CROWN)
 
                 .tab(INGREDIENTS)
                 .addItemsAfter(Ingredient.of(Items.HONEYCOMB), PINECONE, HOLLY_BERRIES)
                 .addItemsAfter(Ingredient.of(Items.WHEAT), LAVENDER)
-                .addItemsAfter(Ingredient.of(Items.SNOWBALL), ICICLES, FROZEN_BRANCH)
+                .addItemsAfter(Ingredient.of(Items.SNOWBALL), ICICLES, FROZEN_BRANCH, ELDER_FEATHER)
                 .addItemsAfter(Ingredient.of(Items.PIGLIN_BANNER_PATTERN), SNOW_GOLEM_BANNER_PATTERN, SNOW_CHARGE_BANNER_PATTERN, ROSE_FLOWER_BANNER_PATTERN)
                 .addItemsAfter(Ingredient.of(Items.SNORT_POTTERY_SHERD), HOOT_POTTERY_SHERD, PLUMAGE_POTTERY_SHERD, OFFSHOOT_POTTERY_SHERD, FLAKE_POTTERY_SHERD, DRUPES_POTTERY_SHERD)
 

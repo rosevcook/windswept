@@ -27,6 +27,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.ThornsEnchantment;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraftforge.client.event.RenderLivingEvent;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.entity.living.BabyEntitySpawnEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
@@ -81,6 +82,14 @@ public class WindsweptEntityEvents {
             event.setCanceled(true);
         }
 
+    }
+
+    @SubscribeEvent
+    public static void livingRender(RenderLivingEvent.Pre<?, ?> event) {
+        LivingEntity entity = event.getEntity();
+
+        if (entity.isCrouching() && entity.getItemBySlot(EquipmentSlot.CHEST).is(WindsweptItems.FEATHER_CLOAK.get()))
+            event.setCanceled(true);
     }
 
     @SubscribeEvent

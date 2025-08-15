@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "windswept:dream_catcher"
+        "recipe": "windswept:feather_cloak"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "windswept:dream_catcher"
+      "windswept:feather_cloak"
     ]
   },
   "sends_telemetry_event": false
