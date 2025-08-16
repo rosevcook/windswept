@@ -1,11 +1,11 @@
 {
-  "name": "windswept:pine_totem",
+  "name": "windswept:snowy_pine_totem",
   "fallback": "minecraft:empty",
   "elements": [
     {
       "weight": 1,
       "element": {
-        "location": "windswept:pine_totem",
+        "location": "windswept:snowy_pine_totem",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

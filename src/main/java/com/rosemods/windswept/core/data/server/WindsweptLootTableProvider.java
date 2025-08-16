@@ -18,7 +18,6 @@ import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -61,7 +60,8 @@ public class WindsweptLootTableProvider extends LootTableProvider {
         super(event.getGenerator().getPackOutput(), BuiltInLootTables.all(), ImmutableList.of(
                 new LootTableProvider.SubProviderEntry(WindsweptBlockLoot::new, LootContextParamSets.BLOCK),
                 new LootTableProvider.SubProviderEntry(WindsweptEntityLoot::new, LootContextParamSets.ENTITY),
-                new LootTableProvider.SubProviderEntry(WindsweptChestLoot::new, LootContextParamSets.CHEST)
+                new LootTableProvider.SubProviderEntry(WindsweptChestLoot::new, LootContextParamSets.CHEST),
+                new LootTableProvider.SubProviderEntry(WindsweptArchaeologyLoot::new, LootContextParamSets.ARCHAEOLOGY)
         ));
     }
 
@@ -534,9 +534,9 @@ public class WindsweptLootTableProvider extends LootTableProvider {
                                     .apply(SetItemCountFunction.setCount(UniformGenerator.between(-3f, 1f)))
                                     .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0f, 1f)))))
                     .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1f))
-                            .add(LootItem.lootTableItem(Items.GOLD_INGOT))
-                            .add(LootItem.lootTableItem(Items.BEETROOT))
-                            .add(LootItem.lootTableItem(Items.APPLE)
+                            .add(LootItem.lootTableItem(GOLD_INGOT))
+                            .add(LootItem.lootTableItem(BEETROOT))
+                            .add(LootItem.lootTableItem(APPLE)
                                     .apply(SmeltItemFunction.smelted().when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS, ENTITY_ON_FIRE))))
                             .when(LootItemKilledByPlayerCondition.killedByPlayer())
                             .when(LootItemRandomChanceWithLootingCondition.randomChanceAndLootingBoost(.025f, .01f)))
@@ -560,28 +560,28 @@ public class WindsweptLootTableProvider extends LootTableProvider {
         @Override
         public void generate(BiConsumer<ResourceLocation, Builder> builder) {
             register("grove_weathered_house", LootTable.lootTable().withPool(LootPool.lootPool().setRolls(UniformGenerator.between(4f, 8f))
-                    .add(LootItem.lootTableItem(Items.GOLD_INGOT).setWeight(1).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
+                    .add(LootItem.lootTableItem(GOLD_INGOT).setWeight(1).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
                     .add(LootItem.lootTableItem(SNOWY_SPROUTS.get()).setWeight(4).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 4f))))
                     .add(LootItem.lootTableItem(SNOW_BOOTS.get()).setWeight(1).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))))
-                    .add(LootItem.lootTableItem(Items.BOOK).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
+                    .add(LootItem.lootTableItem(BOOK).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
                     .add(LootItem.lootTableItem(WOODEN_BUCKET.get()).setWeight(1).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))))
                     .add(LootItem.lootTableItem(WILD_BERRY_POPSICLE.get()).setWeight(1))
                     .add(LootItem.lootTableItem(WILD_BERRIES.get()).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(2f, 3f))))
                     .add(LootItem.lootTableItem(ICICLES.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
-                    .add(LootItem.lootTableItem(Items.SNOWBALL).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
-                    .add(LootItem.lootTableItem(Items.COBWEB).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
+                    .add(LootItem.lootTableItem(SNOWBALL).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
+                    .add(LootItem.lootTableItem(COBWEB).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
                     .add(LootItem.lootTableItem(HOLLY_SAPLING.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
                     .add(LootItem.lootTableItem(COOKED_GOAT.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
             ), builder);
 
             register("chestnut_weathered_house", LootTable.lootTable().withPool(LootPool.lootPool().setRolls(UniformGenerator.between(2f, 5f))
-                    .add(LootItem.lootTableItem(Items.EMERALD).setWeight(1).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
-                    .add(LootItem.lootTableItem(Items.FERN).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 4f))))
-                    .add(LootItem.lootTableItem(Items.SWEET_BERRIES).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
+                    .add(LootItem.lootTableItem(EMERALD).setWeight(1).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
+                    .add(LootItem.lootTableItem(FERN).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 4f))))
+                    .add(LootItem.lootTableItem(SWEET_BERRIES).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
                     .add(LootItem.lootTableItem(CHESTNUT_LOG.get()).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
-                    .add(LootItem.lootTableItem(Items.COBWEB).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
+                    .add(LootItem.lootTableItem(COBWEB).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
                     .add(LootItem.lootTableItem(CHESTNUT_SAPLING.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
-                    .add(LootItem.lootTableItem(Items.BIRCH_SAPLING).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
+                    .add(LootItem.lootTableItem(BIRCH_SAPLING).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
                     .add(LootItem.lootTableItem(WOODEN_BUCKET.get()).setWeight(1).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))))
             ), builder);
 
@@ -600,6 +600,46 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 
         private static void register(String name, LootTable.Builder lootTable, BiConsumer<ResourceLocation, Builder> builder) {
             builder.accept(Windswept.location("chests/" + name), lootTable);
+        }
+
+    }
+
+    private static class WindsweptArchaeologyLoot implements LootTableSubProvider {
+
+        @Override
+        public void generate(BiConsumer<ResourceLocation, Builder> builder) {
+            register("pine_totem", LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1f))
+                    .add(LootItem.lootTableItem(HOOT_POTTERY_SHERD.get()).setWeight(3))
+                    .add(LootItem.lootTableItem(PLUMAGE_POTTERY_SHERD.get()).setWeight(4))
+                    .add(LootItem.lootTableItem(ELDER_FEATHER.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
+                    .add(LootItem.lootTableItem(PINECONE.get()).setWeight(1))
+                    .add(LootItem.lootTableItem(EMERALD).setWeight(1))
+                    .add(LootItem.lootTableItem(STICK).setWeight(1))
+            ), builder);
+
+            register("snowy_pine_totem", LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1f))
+                    .add(LootItem.lootTableItem(HOOT_POTTERY_SHERD.get()).setWeight(3))
+                    .add(LootItem.lootTableItem(FLAKE_POTTERY_SHERD.get()).setWeight(3))
+                    .add(LootItem.lootTableItem(PLUMAGE_POTTERY_SHERD.get()).setWeight(4))
+                    .add(LootItem.lootTableItem(ELDER_FEATHER.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
+                    .add(LootItem.lootTableItem(PINECONE.get()).setWeight(1))
+                    .add(LootItem.lootTableItem(EMERALD).setWeight(1))
+                    .add(LootItem.lootTableItem(STICK).setWeight(1))
+            ), builder);
+
+            register("grove_weathered_house", LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1f))
+                    .add(LootItem.lootTableItem(FLAKE_POTTERY_SHERD.get()).setWeight(3))
+                    .add(LootItem.lootTableItem(OFFSHOOT_POTTERY_SHERD.get()).setWeight(3))
+                    .add(LootItem.lootTableItem(DRUPES_POTTERY_SHERD.get()).setWeight(3))
+                    .add(LootItem.lootTableItem(ELDER_FEATHER.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
+                    .add(LootItem.lootTableItem(HOLLY_BERRIES.get()).setWeight(1))
+                    .add(LootItem.lootTableItem(EMERALD).setWeight(1))
+                    .add(LootItem.lootTableItem(STICK).setWeight(1))
+            ), builder);
+        }
+
+        private static void register(String name, LootTable.Builder lootTable, BiConsumer<ResourceLocation, Builder> builder) {
+            builder.accept(Windswept.location("archaeology/" + name), lootTable);
         }
 
     }

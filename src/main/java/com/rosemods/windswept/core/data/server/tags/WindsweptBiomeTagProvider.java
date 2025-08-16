@@ -35,6 +35,8 @@ public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
         this.tag(HAS_GROVE_WEATHERED_HOUSE).add(Biomes.GROVE, Biomes.FROZEN_PEAKS, Biomes.JAGGED_PEAKS);
         this.tag(HAS_CHESTNUT_WEATHERED_HOUSE).add(CHESTNUT_FOREST, SNOWY_CHESTNUT_FOREST);
         this.tag(HAS_FROZEN_VILLAGE).add(TUNDRA);
+        this.tag(HAS_PINE_TOTEM).add(PINE_BARRENS, Biomes.OLD_GROWTH_PINE_TAIGA);
+        this.tag(HAS_SNOWY_PINE_TOTEM).add(SNOWY_PINE_BARRENS);
 
         this.tag(IS_CHESTNUT_FOREST).add(CHESTNUT_FOREST, SNOWY_CHESTNUT_FOREST);
         this.tag(IS_PINE_BARRENS).add(PINE_BARRENS, SNOWY_PINE_BARRENS, Biomes.OLD_GROWTH_PINE_TAIGA);

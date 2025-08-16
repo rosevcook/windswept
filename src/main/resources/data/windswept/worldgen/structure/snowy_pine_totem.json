@@ -1,8 +1,8 @@
 {
   "type": "minecraft:jigsaw",
-  "start_pool": "windswept:pine_totem",
+  "start_pool": "windswept:snowy_pine_totem",
   "size": 1,
-  "biomes": "#windswept:has_structure/pine_totem",
+  "biomes": "#windswept:has_structure/snowy_pine_totem",
   "adapt_noise": true,
   "step": "surface_structures",
   "max_distance_from_center": 80,
