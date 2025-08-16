@@ -17,7 +17,8 @@ public class WindsweptPaintingVariantTagsProvider extends PaintingVariantTagsPro
 
     @Override
     public void addTags(HolderLookup.Provider provider) {
-        this.tag(PaintingVariantTags.PLACEABLE).add(CLIFFSIDE.getKey(), TUNDRA.getKey(), DRESS_CODES.getKey());
+        this.tag(PaintingVariantTags.PLACEABLE).add(CLIFFSIDE.getKey(), DRESS_CODES.getKey(),
+                ECOTONAL_PAREIDOLIA.getKey(), THE_FOILS.getKey(), AURORAE.getKey(), HEARTH_RUG.getKey(), ALLU_PINE.getKey());
     }
 
 }
