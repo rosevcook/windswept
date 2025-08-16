@@ -23,7 +23,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class PineconeJamBlock extends HalfTransparentBlock implements SimpleWaterloggedBlock {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-    private static final VoxelShape SHAPE = Block.box(4f, 4f, 4f, 12f, 12f, 12f);
+    private static final VoxelShape SHAPE = Block.box(5f, 5f, 5f, 11f, 11f, 11f);
 
     public PineconeJamBlock(Properties properties) {
         super(properties);
