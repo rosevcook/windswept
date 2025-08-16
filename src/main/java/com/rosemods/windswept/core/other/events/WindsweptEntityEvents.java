@@ -1,6 +1,7 @@
 package com.rosemods.windswept.core.other.events;
 
 import com.rosemods.windswept.common.entity.Chilled;
+import com.rosemods.windswept.common.item.FeatherCloakItem;
 import com.rosemods.windswept.common.item.SnowBootsItem;
 import com.rosemods.windswept.common.item.WoodenMilkBucketItem;
 import com.rosemods.windswept.core.Windswept;
@@ -87,8 +88,9 @@ public class WindsweptEntityEvents {
     @SubscribeEvent
     public static void livingRender(RenderLivingEvent.Pre<?, ?> event) {
         LivingEntity entity = event.getEntity();
+        IDataManager data = (IDataManager) entity;
 
-        if (entity.isCrouching() && entity.getItemBySlot(EquipmentSlot.CHEST).is(WindsweptItems.FEATHER_CLOAK.get()))
+        if (data.getValue(WindsweptDataProcessors.CLOAKED))
             event.setCanceled(true);
     }
 
@@ -135,6 +137,7 @@ public class WindsweptEntityEvents {
     @SubscribeEvent
     public static void onEntityTick(LivingEvent.LivingTickEvent event) {
         LivingEntity entity = event.getEntity();
+        IDataManager data = (IDataManager) entity;
 
         if (entity == null)
             return;
@@ -143,11 +146,18 @@ public class WindsweptEntityEvents {
         if (SnowBootsItem.canSpawnSnowParticle(entity))
             SnowBootsItem.spawnSnowParticle(entity);
 
-        // chilled conversion in powder snow
-        if (entity.getType().is(WindsweptEntityTypeTags.CONVERT_TO_CHILLED) && entity instanceof Mob mob) {
-            IDataManager data = (IDataManager) mob;
 
-            if (!mob.level().isClientSide && mob.isAlive() && !mob.isNoAi()) {
+        if (!entity.level().isClientSide) {
+            boolean flag = entity.isCrouching() && entity.getItemBySlot(EquipmentSlot.CHEST).is(WindsweptItems.FEATHER_CLOAK.get());
+
+            if (flag != data.getValue(WindsweptDataProcessors.CLOAKED)) {
+                data.setValue(WindsweptDataProcessors.CLOAKED, flag);
+                FeatherCloakItem.spawnFeatherCloakParticle(entity);
+            }
+        }
+
+        // chilled conversion in powder snow
+        if (entity.getType().is(WindsweptEntityTypeTags.CONVERT_TO_CHILLED) && entity instanceof Mob mob && !mob.level().isClientSide && mob.isAlive() && !mob.isNoAi()) {
                 if (data.getValue(WindsweptDataProcessors.IS_FREEZE_CONVERTING)) {
                     ammendData(data, WindsweptDataProcessors.FREEZE_CONVERT_TIME, -1);
                     if (data.getValue(WindsweptDataProcessors.FREEZE_CONVERT_TIME) < 0) {
@@ -164,7 +174,6 @@ public class WindsweptEntityEvents {
                     }
                 } else
                     data.setValue(WindsweptDataProcessors.POWDER_SNOW_TIME, -1);
-            }
         }
 
     }

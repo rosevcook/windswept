@@ -3,6 +3,7 @@ package com.rosemods.windswept.core.registry;
 import com.rosemods.windswept.client.particle.FrostLeafParticle;
 import com.rosemods.windswept.client.particle.WillOTheWispParticle;
 import com.rosemods.windswept.core.Windswept;
+import net.minecraft.client.particle.EndRodParticle;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -19,11 +20,13 @@ public class WindsweptParticleTypes {
 
     public static final RegistryObject<SimpleParticleType> WILL_O_THE_WISP = PARTICLE_TYPES.register("will_o_the_wisp", () -> new SimpleParticleType(false));
     public static final RegistryObject<SimpleParticleType> FROST_LEAF = PARTICLE_TYPES.register("frost_leaf", () -> new SimpleParticleType(false));
+    public static final RegistryObject<SimpleParticleType> FEATHER_CLOAK = PARTICLE_TYPES.register("feather_cloak", () -> new SimpleParticleType(false));
 
     @SubscribeEvent
     public static void register(RegisterParticleProvidersEvent event) {
         event.registerSpriteSet(WILL_O_THE_WISP.get(), WillOTheWispParticle.Provider::new);
         event.registerSpriteSet(FROST_LEAF.get(), FrostLeafParticle.Provider::new);
+        event.registerSpriteSet(FEATHER_CLOAK.get(), EndRodParticle.Provider::new);
     }
 
 }

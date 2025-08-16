@@ -7,6 +7,7 @@ import net.minecraft.util.Mth;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+@OnlyIn(Dist.CLIENT)
 public class WillOTheWispParticle extends TextureSheetParticle {
     protected WillOTheWispParticle(ClientLevel level, double x, double y, double z, SpriteSet sprites) {
         super(level, x, y, z);

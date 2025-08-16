@@ -6,6 +6,7 @@ import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+@OnlyIn(Dist.CLIENT)
 public class FrostLeafParticle extends TextureSheetParticle {
     protected FrostLeafParticle(ClientLevel level, SpriteSet spriteSet, double x, double y, double z, double xd, double yd, double zd) {
         super(level, x, y, z, xd, yd, zd);
