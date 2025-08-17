@@ -39,7 +39,7 @@ public final class WindsweptBiomeModifiers {
         addFeature(context, "foxgloves", BiomeTags.IS_TAIGA, GenerationStep.Decoration.VEGETAL_DECORATION, FOXGLOVE);
         addFeature(context, "holly_trees", WindsweptBiomeTags.HAS_HOLLY_TREES, GenerationStep.Decoration.VEGETAL_DECORATION, HOLLY_TREES);
         addFeature(context, "grove_holly_trees", Biomes.GROVE, GenerationStep.Decoration.VEGETAL_DECORATION, HOLLY_TREES_ON_SNOW, SPRUCE_TREES_ON_SNOW);
-        addFeature(context, "wild_berries", Tags.Biomes.IS_SNOWY, GenerationStep.Decoration.VEGETAL_DECORATION, WILD_BERRY_BUSH);
+        addFeature(context, "wild_berries", WindsweptBiomeTags.HAS_WILD_BERRIES, GenerationStep.Decoration.VEGETAL_DECORATION, WILD_BERRY_BUSH);
         addFeature(context, "common_wild_berries", Biomes.GROVE, GenerationStep.Decoration.VEGETAL_DECORATION, WILD_BERRY_BUSH_COMMON);
         addFeature(context, "nightshades", BiomeTags.IS_OVERWORLD, GenerationStep.Decoration.VEGETAL_DECORATION, NIGHTHSADE);
         addFeature(context, "rare_chestnut_trees", WindsweptBiomeTags.HAS_RARE_CHESTNUT_TREES, GenerationStep.Decoration.VEGETAL_DECORATION, RARE_CHESTNUT_TREES);

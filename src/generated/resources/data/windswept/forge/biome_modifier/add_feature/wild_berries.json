@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#forge:is_snowy",
+  "biomes": "#windswept:has_feature/wild_berries",
   "features": "windswept:wild_berry_bush",
   "step": "vegetal_decoration"
 }
