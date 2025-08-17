@@ -1,10 +1,9 @@
 package com.rosemods.windswept.common.block;
 
-import com.rosemods.windswept.core.other.tags.WindsweptEntityTypeTags;
 import com.rosemods.windswept.core.registry.datapack.WindsweptDamageTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -16,7 +15,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class HollyLeavesBlock extends LeavesBlock {
-    private static final VoxelShape AABB = box(1f, 1f, 1f, 15f, 15f, 15f);
+    private static final VoxelShape AABB = box(1f, 0f, 1f, 15f, 15f, 15f);
 
     public HollyLeavesBlock(Properties properties) {
         super(properties);
@@ -39,9 +38,10 @@ public class HollyLeavesBlock extends LeavesBlock {
     }
 
     public static void entityInside(float damage, Entity entity, Level level) {
-        if (!level.isClientSide && (entity.xOld != entity.getX() || entity.zOld != entity.getZ()) && entity instanceof LivingEntity && !entity.getType().is(WindsweptEntityTypeTags.HOLLY_IMMUNE) && !(entity instanceof Player player && player.isCrouching())) {
+        if (!level.isClientSide && (entity.xOld != entity.getX() || entity.zOld != entity.getZ()) && ((entity instanceof Player player && !player.isCrouching()) || entity instanceof Villager)) {
             double d0 = Math.abs(entity.getX() - entity.xOld);
             double d1 = Math.abs(entity.getZ() - entity.zOld);
+
             if (d0 >= .003d || d1 >= .003d)
                 entity.hurt(entity.damageSources().source(WindsweptDamageTypes.HOLLY_LEAVES), damage);
         }
