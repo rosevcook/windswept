@@ -44,12 +44,8 @@ public class WindsweptItems {
     // Food //
     public static final RegistryObject<Item> WILD_BERRIES = HELPER.createItem("wild_berries", ItemSubRegistryHelper.areModsLoaded("berry_good") ? () -> new Item(PropertyUtil.food(WindsweptFoods.WILD_BERRIES)) : () -> new ItemNameBlockItem(WindsweptBlocks.WILD_BERRY_BUSH.get(), PropertyUtil.food(WindsweptFoods.WILD_BERRIES)));
     public static final RegistryObject<Item> WILD_BERRY_PIPS = HELPER.createItem("wild_berry_pips", ItemSubRegistryHelper.areModsLoaded("berry_good") ? () -> new ItemNameBlockItem(WindsweptBlocks.WILD_BERRY_BUSH.get(), new Item.Properties()) : () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> WILD_BERRY_JUICE = HELPER.createItem("wild_berry_juice", () -> new DrinkableBottleItem(WindsweptFoods.WILD_BERRY_JUICE));
     public static final RegistryObject<Item> WILD_BERRY_POPSICLE = HELPER.createItem("wild_berry_popsicle", () -> new FoodRemainderItem(() -> Items.STICK, PropertyUtil.food(WindsweptFoods.WILD_BERRY_POPSICLE)));
     public static final RegistryObject<Item> CANDY_CANE = HELPER.createItem("candy_cane", () -> new Item(PropertyUtil.food(WindsweptFoods.CANDY_CANE)));
-    public static final RegistryObject<Item> WILD_BERRY_COOKIE = HELPER.createItem("wild_berry_cookie", () -> new Item(PropertyUtil.food(WindsweptFoods.WILD_BERRY_COOKIE)));
-    public static final RegistryObject<Item> WILD_BERRY_BOWL = HELPER.createItem("wild_berry_bowl", () -> new BerryBowlItem(WindsweptFoods.BERRY_BOWL));
-    public static final RegistryObject<Item> SWEET_BERRY_BOWL = HELPER.createItem("sweet_berry_bowl", () -> new BerryBowlItem(WindsweptFoods.BERRY_BOWL));
 
     public static final RegistryObject<Item> CHESTNUTS = HELPER.createItem("chestnuts", () -> new Item(PropertyUtil.food(WindsweptFoods.CHESTNUTS)));
     public static final RegistryObject<Item> ROASTED_CHESTNUTS = HELPER.createItem("roasted_chestnuts", () -> new Item(PropertyUtil.food(WindsweptFoods.ROASTED_CHESTNUTS)));
@@ -58,12 +54,14 @@ public class WindsweptItems {
 
     public static final RegistryObject<Item> GINGER_ROOT = HELPER.createItem("ginger_root", () -> new ItemNameBlockItem(WindsweptBlocks.GINGER.get(), PropertyUtil.food(WindsweptFoods.GINGER_ROOT)));
     public static final RegistryObject<Item> GINGERBREAD_COOKIE = HELPER.createItem("gingerbread_cookie", () -> new Item(PropertyUtil.food(WindsweptFoods.GINGERBREAD_COOKIE)));
-    public static final RegistryObject<Item> GINGER_SNOW_CONE = HELPER.createItem("ginger_snow_cone", () -> new FoodRemainderItem(() -> WindsweptBlocks.PINECONE.get(), PropertyUtil.food(WindsweptFoods.GINGER_SNOW_CONE)));
     public static final RegistryObject<Item> GINGER_TEA = HELPER.createItem("ginger_tea", () -> new DrinkableBottleItem(WindsweptFoods.GINGER_TEA));
+
+    public static final RegistryObject<Item> SPICY_SNOW_CONE = HELPER.createItem("spicy_snow_cone", () -> new FoodRemainderItem(() -> WindsweptBlocks.PINECONE.get(), PropertyUtil.food(WindsweptFoods.SPICY_SNOW_CONE)));
+    public static final RegistryObject<Item> SWEET_SNOW_CONE = HELPER.createItem("sweet_snow_cone", () -> new FoodRemainderItem(() -> WindsweptBlocks.PINECONE.get(), PropertyUtil.food(WindsweptFoods.SWEET_SNOW_CONE)));
+    public static final RegistryObject<Item> MINTY_SNOW_CONE = HELPER.createItem("minty_snow_cone", () -> new FoodRemainderItem(() -> WindsweptBlocks.PINECONE.get(), PropertyUtil.food(WindsweptFoods.MINY_SNOW_CONE)));
 
     public static final RegistryObject<Item> PINECONE_JAM_BOTTLE = HELPER.createItem("pinecone_jam_bottle", () -> new DrinkableBottleItem(() -> SoundEvents.HONEY_DRINK, WindsweptFoods.PINECONE_JAM));
 
-    public static final RegistryObject<Item> LAVENDER_SCONES = HELPER.createItem("lavender_scones", () -> new Item(PropertyUtil.food(WindsweptFoods.LAVENDER_SCONES)));
     public static final RegistryObject<Item> LAVENDER_TEA = HELPER.createItem("lavender_tea", () -> new DrinkableBottleItem(WindsweptFoods.LAVENDER_TEA));
 
     public static final RegistryObject<Item> GOAT = HELPER.createItem("goat", () -> new Item(PropertyUtil.food(WindsweptFoods.GOAT)));

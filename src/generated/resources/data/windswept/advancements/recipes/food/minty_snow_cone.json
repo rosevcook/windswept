@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "windswept:ginger_snow_cone"
+        "recipe": "windswept:minty_snow_cone"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "windswept:ginger_snow_cone"
+      "windswept:minty_snow_cone"
     ]
   },
   "sends_telemetry_event": false

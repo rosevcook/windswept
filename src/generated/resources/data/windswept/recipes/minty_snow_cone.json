@@ -3,20 +3,22 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "minecraft:wheat"
+      "item": "windswept:pinecone"
     },
     {
       "item": "windswept:lavender"
     },
     {
-      "item": "minecraft:wheat"
+      "item": "minecraft:cocoa_beans"
+    },
+    {
+      "item": "minecraft:snowball"
     },
     {
       "item": "minecraft:sugar"
     }
   ],
   "result": {
-    "count": 2,
-    "item": "windswept:lavender_scones"
+    "item": "windswept:minty_snow_cone"
   }
 }

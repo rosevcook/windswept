@@ -51,10 +51,6 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.generatedItem(FEATHER_CLOAK.get(), TextureFolder.ITEM);
         this.generatedItem(WILD_BERRIES.get(), TextureFolder.ITEM);
         this.itemOnAStick(WILD_BERRY_POPSICLE.get(), TextureFolder.ITEM);
-        this.generatedItem(WILD_BERRY_COOKIE.get(), TextureFolder.ITEM);
-        this.generatedItem(WILD_BERRY_JUICE.get(), TextureFolder.ITEM);
-        this.generatedItem(WILD_BERRY_BOWL.get(), TextureFolder.ITEM);
-        this.generatedItem(SWEET_BERRY_BOWL.get(), TextureFolder.ITEM);
         this.generatedItem(CHRISTMAS_PUDDING_SLICE.get(), TextureFolder.ITEM);
         this.generatedItem(MUTTON_PIE.get(), TextureFolder.ITEM);
         this.generatedItem(GOAT.get(), TextureFolder.ITEM);
@@ -93,10 +89,11 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.generatedItem(CHESTNUT_RISOTTO.get(), TextureFolder.ITEM);
         this.generatedItem(GINGER_ROOT.get(), TextureFolder.ITEM);
         this.generatedItem(GINGERBREAD_COOKIE.get(), TextureFolder.ITEM);
-        this.generatedItem(GINGER_SNOW_CONE.get(), TextureFolder.ITEM);
+        this.generatedItem(SPICY_SNOW_CONE.get(), TextureFolder.ITEM);
+        this.generatedItem(SWEET_SNOW_CONE.get(), TextureFolder.ITEM);
+        this.generatedItem(MINTY_SNOW_CONE.get(), TextureFolder.ITEM);
         this.generatedItem(GINGER_TEA.get(), TextureFolder.ITEM);
         this.handheldItem(CANDY_CANE.get(), TextureFolder.ITEM);
-        this.generatedItem(LAVENDER_SCONES.get(), TextureFolder.ITEM);
         this.generatedItem(LAVENDER_TEA.get(), TextureFolder.ITEM);
         this.generatedItem(LAVENDER_CROWN.get(), TextureFolder.ITEM);
         this.generatedItem(ANTLER_HELMET.get(), TextureFolder.ITEM);

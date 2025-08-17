@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_lavender": {
+    "has_ginger_root": {
       "conditions": {
         "items": [
           {
             "items": [
-              "windswept:lavender"
+              "windswept:ginger_root"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "windswept:lavender_scones"
+        "recipe": "windswept:spicy_snow_cone"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_lavender",
+      "has_ginger_root",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "windswept:lavender_scones"
+      "windswept:spicy_snow_cone"
     ]
   },
   "sends_telemetry_event": false

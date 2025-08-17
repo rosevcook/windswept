@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "windswept:item/sweet_berry_bowl"
+    "layer0": "windswept:item/sweet_snow_cone"
   }
 }
