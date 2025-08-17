@@ -3,10 +3,6 @@
     "windswept:snowy_chestnut_forest",
     "windswept:snowy_pine_barrens",
     "windswept:tundra",
-    "minecraft:deep_frozen_ocean",
-    {
-      "id": "atmospheric:kousa_jungle",
-      "required": false
-    }
+    "minecraft:deep_frozen_ocean"
   ]
 }
