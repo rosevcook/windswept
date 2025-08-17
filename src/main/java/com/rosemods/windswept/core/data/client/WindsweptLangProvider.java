@@ -92,7 +92,6 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.add(GINGER_ROOT_CRATE.get(), "Crate of Ginger Roots");
         this.add(WILD_BERRY_BASKET.get(), "Basket of Wild Berries");
 
-
         // Effects //
         this.translateEffect(WindsweptEffects.THORNS, "Causes damage to enemies when they attack you.");
         this.translateEffect(WindsweptEffects.FROST_RESISTANCE, "Grants immunity to frost. Allows for walking on Powder Snow. Stops Entity Conversion in Powder Snow.");
@@ -255,8 +254,8 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.add("item.caverns_and_chasms.tether_potion.effect." + name, "Tether Potion of " + effect);
     }
 
-    private void addDescription(RegistryObject<? extends Item> item, String desc) {
-        this.add(item.get().getDescriptionId() + ".desc", desc);
+    private void addDescription(RegistryObject<? extends ItemLike> item, String desc) {
+        this.add(item.get().asItem().getDescriptionId() + ".desc", desc);
     }
 
     private static <T> String toUpper(IForgeRegistry<T> registry, RegistryObject<? extends T> object) {

@@ -128,7 +128,7 @@ public class PineTreeFeature extends BlueprintTreeFeature {
     }
 
     private void addPinecones(BlockPos pos, int amount, boolean isFairy) {
-        this.addSpecialFoliage(pos, (isFairy ? WindsweptBlocks.SOUL_FAIRY_LIGHT : WindsweptBlocks.PINECONE).get().defaultBlockState().setValue(PineconeBlock.AMOUNT, amount));
+        this.addSpecialFoliage(pos, (isFairy ? WindsweptBlocks.NIGHT_FAIRY_LIGHT : WindsweptBlocks.PINECONE).get().defaultBlockState().setValue(PineconeBlock.AMOUNT, amount));
     }
 
     @Override

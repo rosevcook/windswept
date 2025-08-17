@@ -134,6 +134,7 @@ public class WindsweptRecipeProvider extends BlueprintRecipeProvider {
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, FAIRY_LIGHT.get()).requires(PINECONE.get()).requires(Items.TORCH).unlockedBy(getHasName(PINECONE.get()), has(PINECONE.get())).save(consumer, getSaveLocation(FAIRY_LIGHT.get()));
         ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, SOUL_FAIRY_LIGHT.get()).requires(PINECONE.get()).requires(Items.SOUL_TORCH).unlockedBy(getHasName(PINECONE.get()), has(PINECONE.get())).save(consumer, getSaveLocation(SOUL_FAIRY_LIGHT.get()));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, NIGHT_FAIRY_LIGHT.get()).requires(PINECONE.get()).requires(NIGHTSHADE.get()).unlockedBy(getHasName(PINECONE.get()), has(PINECONE.get())).save(consumer, getSaveLocation(NIGHT_FAIRY_LIGHT.get()));
         ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, REDSTONE_FAIRY_LIGHT.get()).requires(PINECONE.get()).requires(Items.REDSTONE_TORCH).unlockedBy(getHasName(PINECONE.get()), has(PINECONE.get())).save(consumer, getSaveLocation(REDSTONE_FAIRY_LIGHT.get()));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ICICLE_BLOCK.get(), 2).define('#', ICICLES.get()).pattern("##").pattern("##").unlockedBy(getHasName(ICICLES.get()), has(ICICLES.get())).save(consumer, getSaveLocation(ICICLE_BLOCK.get()));

@@ -189,7 +189,8 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.hangingPinecone(SOUL_FAIRY_LIGHT);
         this.hangingPinecone(CUPRIC_FAIRY_LIGHT);
         this.hangingPinecone(ENDER_FAIRY_LIGHT);
-        this.redstoneFairyLight(REDSTONE_FAIRY_LIGHT);
+        this.offFairyLight(NIGHT_FAIRY_LIGHT);
+        this.offFairyLight(REDSTONE_FAIRY_LIGHT);
 
         this.simpleBlock(PINECONE_JAM_BLOCK.get(), this.models().getExistingFile(this.modLoc("block/pinecone_jam_block")));
         this.itemModel(PINECONE_JAM_BLOCK);
@@ -540,7 +541,7 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
                 .partialState().with(PineconeBlock.AMOUNT, 4).addModels(new ConfiguredModel(model4), new ConfiguredModel(model4, 0, 90, false), new ConfiguredModel(model4, 0, 180, false), new ConfiguredModel(model4, 0, 270, false));
     }
 
-    private void redstoneFairyLight(RegistryObject<Block> pinecone) {
+    private void offFairyLight(RegistryObject<Block> pinecone) {
         String name = getItemName(pinecone.get());
         ResourceLocation texture = this.blockTexture(pinecone.get());
         ResourceLocation textureOff = new ResourceLocation(texture.getNamespace(), texture.getPath() + "_off");
@@ -555,14 +556,14 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
 
         this.generatedItem(pinecone.get(), TextureFolder.ITEM);
         this.getVariantBuilder(pinecone.get())
-                .partialState().with(PineconeBlock.AMOUNT, 1).with(RedstoneFairyLightBlock.LIT, true).addModels(new ConfiguredModel(model1), new ConfiguredModel(model1, 0, 90, false), new ConfiguredModel(model1, 0, 180, false), new ConfiguredModel(model1, 0, 270, false))
-                .partialState().with(PineconeBlock.AMOUNT, 2).with(RedstoneFairyLightBlock.LIT, true).addModels(new ConfiguredModel(model2), new ConfiguredModel(model2, 0, 90, false), new ConfiguredModel(model2, 0, 180, false), new ConfiguredModel(model2, 0, 270, false))
-                .partialState().with(PineconeBlock.AMOUNT, 3).with(RedstoneFairyLightBlock.LIT, true).addModels(new ConfiguredModel(model3), new ConfiguredModel(model3, 0, 90, false), new ConfiguredModel(model3, 0, 180, false), new ConfiguredModel(model3, 0, 270, false))
-                .partialState().with(PineconeBlock.AMOUNT, 4).with(RedstoneFairyLightBlock.LIT, true).addModels(new ConfiguredModel(model4), new ConfiguredModel(model4, 0, 90, false), new ConfiguredModel(model4, 0, 180, false), new ConfiguredModel(model4, 0, 270, false))
-                .partialState().with(PineconeBlock.AMOUNT, 1).with(RedstoneFairyLightBlock.LIT, false).addModels(new ConfiguredModel(modelOff1), new ConfiguredModel(modelOff1, 0, 90, false), new ConfiguredModel(modelOff1, 0, 180, false), new ConfiguredModel(modelOff1, 0, 270, false))
-                .partialState().with(PineconeBlock.AMOUNT, 2).with(RedstoneFairyLightBlock.LIT, false).addModels(new ConfiguredModel(modelOff2), new ConfiguredModel(modelOff2, 0, 90, false), new ConfiguredModel(modelOff2, 0, 180, false), new ConfiguredModel(modelOff2, 0, 270, false))
-                .partialState().with(PineconeBlock.AMOUNT, 3).with(RedstoneFairyLightBlock.LIT, false).addModels(new ConfiguredModel(modelOff3), new ConfiguredModel(modelOff3, 0, 90, false), new ConfiguredModel(modelOff3, 0, 180, false), new ConfiguredModel(modelOff3, 0, 270, false))
-                .partialState().with(PineconeBlock.AMOUNT, 4).with(RedstoneFairyLightBlock.LIT, false).addModels(new ConfiguredModel(modelOff4), new ConfiguredModel(modelOff4, 0, 90, false), new ConfiguredModel(modelOff4, 0, 180, false), new ConfiguredModel(modelOff4, 0, 270, false));
+                .partialState().with(PineconeBlock.AMOUNT, 1).with(BlockStateProperties.LIT, true).addModels(new ConfiguredModel(model1), new ConfiguredModel(model1, 0, 90, false), new ConfiguredModel(model1, 0, 180, false), new ConfiguredModel(model1, 0, 270, false))
+                .partialState().with(PineconeBlock.AMOUNT, 2).with(BlockStateProperties.LIT, true).addModels(new ConfiguredModel(model2), new ConfiguredModel(model2, 0, 90, false), new ConfiguredModel(model2, 0, 180, false), new ConfiguredModel(model2, 0, 270, false))
+                .partialState().with(PineconeBlock.AMOUNT, 3).with(BlockStateProperties.LIT, true).addModels(new ConfiguredModel(model3), new ConfiguredModel(model3, 0, 90, false), new ConfiguredModel(model3, 0, 180, false), new ConfiguredModel(model3, 0, 270, false))
+                .partialState().with(PineconeBlock.AMOUNT, 4).with(BlockStateProperties.LIT, true).addModels(new ConfiguredModel(model4), new ConfiguredModel(model4, 0, 90, false), new ConfiguredModel(model4, 0, 180, false), new ConfiguredModel(model4, 0, 270, false))
+                .partialState().with(PineconeBlock.AMOUNT, 1).with(BlockStateProperties.LIT, false).addModels(new ConfiguredModel(modelOff1), new ConfiguredModel(modelOff1, 0, 90, false), new ConfiguredModel(modelOff1, 0, 180, false), new ConfiguredModel(modelOff1, 0, 270, false))
+                .partialState().with(PineconeBlock.AMOUNT, 2).with(BlockStateProperties.LIT, false).addModels(new ConfiguredModel(modelOff2), new ConfiguredModel(modelOff2, 0, 90, false), new ConfiguredModel(modelOff2, 0, 180, false), new ConfiguredModel(modelOff2, 0, 270, false))
+                .partialState().with(PineconeBlock.AMOUNT, 3).with(BlockStateProperties.LIT, false).addModels(new ConfiguredModel(modelOff3), new ConfiguredModel(modelOff3, 0, 90, false), new ConfiguredModel(modelOff3, 0, 180, false), new ConfiguredModel(modelOff3, 0, 270, false))
+                .partialState().with(PineconeBlock.AMOUNT, 4).with(BlockStateProperties.LIT, false).addModels(new ConfiguredModel(modelOff4), new ConfiguredModel(modelOff4, 0, 90, false), new ConfiguredModel(modelOff4, 0, 180, false), new ConfiguredModel(modelOff4, 0, 270, false));
     }
 
     private void wildBerryBush(RegistryObject<Block> bush) {

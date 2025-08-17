@@ -9,17 +9,15 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 
-public class WillOTheWispBlockEntity extends BlockEntity implements BlockEntityTicker<WillOTheWispBlockEntity> {
+public class WillOTheWispBlockEntity extends BlockEntity {
     public WillOTheWispBlockEntity(BlockPos pos, BlockState state) {
         super(WindsweptBlockEntities.WILL_O_THE_WISP.get(), pos, state);
     }
 
-    @Override
-    public void tick(Level level, BlockPos pos, BlockState state, WillOTheWispBlockEntity blockEntity) {
+    public static void tick(Level level, BlockPos pos, BlockState state, WillOTheWispBlockEntity blockEntity) {
         for (Direction direction : Direction.Plane.HORIZONTAL)
             if (state.getValue(HorizontalDirectionalBlock.FACING) != direction && level.getBlockState(pos.relative(direction)).isAir())
                 for (Player player : level.getEntitiesOfClass(Player.class, expandTowards(new AABB(pos.relative(direction)), direction, 6)))

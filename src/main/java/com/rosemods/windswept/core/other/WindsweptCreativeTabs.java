@@ -60,7 +60,7 @@ public final class WindsweptCreativeTabs {
                 .addItemsBefore(Ingredient.of(Blocks.ANVIL), FAIRY_LIGHT, SOUL_FAIRY_LIGHT)
                 .addItemsBefore(modLoaded(Blocks.ANVIL, "caverns_and_chasms"), CUPRIC_FAIRY_LIGHT)
                 .addItemsBefore(modLoaded(Blocks.ANVIL, "endergetic"), ENDER_FAIRY_LIGHT)
-                .addItemsBefore(Ingredient.of(Blocks.ANVIL), REDSTONE_FAIRY_LIGHT)
+                .addItemsBefore(Ingredient.of(Blocks.ANVIL), NIGHT_FAIRY_LIGHT, REDSTONE_FAIRY_LIGHT)
                 .addItemsBefore(Ingredient.of(Blocks.CHAIN), ICE_LANTERN)
                 .addItemsAfter(Ingredient.of(Blocks.CHAIN), ICE_CHAIN)
                 .addItemsAfter(Ingredient.of(Blocks.JUKEBOX), CARVED_PINECONE_BLOCK, WILL_O_THE_WISP, FEATHER_WING, FEATHER_ORNAMENT, DREAM_CATCHER, FROSTBITER_TROPHY)
@@ -115,8 +115,9 @@ public final class WindsweptCreativeTabs {
 
                 .tab(INGREDIENTS)
                 .addItemsAfter(Ingredient.of(Items.HONEYCOMB), PINECONE, HOLLY_BERRIES)
+                .addItemsAfter(Ingredient.of(Items.FEATHER), ELDER_FEATHER)
                 .addItemsAfter(Ingredient.of(Items.WHEAT), LAVENDER)
-                .addItemsAfter(Ingredient.of(Items.SNOWBALL), ICICLES, FROZEN_BRANCH, ELDER_FEATHER)
+                .addItemsAfter(Ingredient.of(Items.SNOWBALL), ICICLES, FROZEN_BRANCH)
                 .addItemsAfter(Ingredient.of(Items.PIGLIN_BANNER_PATTERN), SNOW_GOLEM_BANNER_PATTERN, SNOW_CHARGE_BANNER_PATTERN, ROSE_FLOWER_BANNER_PATTERN)
                 .addItemsAfter(Ingredient.of(Items.SNORT_POTTERY_SHERD), HOOT_POTTERY_SHERD, PLUMAGE_POTTERY_SHERD, OFFSHOOT_POTTERY_SHERD, FLAKE_POTTERY_SHERD, DRUPES_POTTERY_SHERD)
 

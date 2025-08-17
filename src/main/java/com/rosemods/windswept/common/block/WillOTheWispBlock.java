@@ -1,6 +1,7 @@
 package com.rosemods.windswept.common.block;
 
 import com.rosemods.windswept.common.block_entity.WillOTheWispBlockEntity;
+import com.rosemods.windswept.core.registry.WindsweptBlockEntities;
 import com.rosemods.windswept.core.registry.WindsweptParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -9,6 +10,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
@@ -43,7 +45,7 @@ public class WillOTheWispBlock extends HorizontalDirectionalBlock implements Ent
 
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-        return (BlockEntityTicker<T>) this.newBlockEntity(new BlockPos(0, 0, 0), state);
+        return !level.isClientSide ? BaseEntityBlock.createTickerHelper(type, WindsweptBlockEntities.WILL_O_THE_WISP.get(), WillOTheWispBlockEntity::tick) : null;
     }
 
     @OnlyIn(Dist.CLIENT)

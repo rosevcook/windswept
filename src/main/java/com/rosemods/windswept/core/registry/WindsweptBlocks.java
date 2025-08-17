@@ -190,6 +190,7 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> SOUL_FAIRY_LIGHT = HELPER.createBlock("soul_fairy_light", () -> new PineconeBlock(BlockBehaviour.Properties.copy(PINECONE.get()).lightLevel(s -> 10)));
     public static final RegistryObject<Block> CUPRIC_FAIRY_LIGHT = HELPER.createBlock("cupric_fairy_light", () -> new PineconeBlock(BlockBehaviour.Properties.copy(PINECONE.get()).lightLevel(s -> 10)));
     public static final RegistryObject<Block> ENDER_FAIRY_LIGHT = HELPER.createBlock("ender_fairy_light", () -> new PineconeBlock(BlockBehaviour.Properties.copy(PINECONE.get()).lightLevel(s -> 14)));
+    public static final RegistryObject<Block> NIGHT_FAIRY_LIGHT = HELPER.createBlock("night_fairy_light", () -> new NightFairyLightBlock(BlockBehaviour.Properties.copy(PINECONE.get()).lightLevel(s -> s.getValue(NightFairyLightBlock.LIT) ? 9 : 0)));
     public static final RegistryObject<Block> REDSTONE_FAIRY_LIGHT = HELPER.createBlock("redstone_fairy_light", () -> new RedstoneFairyLightBlock(BlockBehaviour.Properties.copy(PINECONE.get()).lightLevel(s -> s.getValue(RedstoneFairyLightBlock.LIT) ? 7 : 0)));
 
     public static final RegistryObject<Block> FEATHER_WING = HELPER.createBlock("feather_wing", () -> new FeatherWingBlock(Block.Properties.of().mapColor(MapColor.COLOR_BROWN).strength(.1f).noOcclusion().noCollission().sound(WindsweptSoundTypes.PINECONE)));

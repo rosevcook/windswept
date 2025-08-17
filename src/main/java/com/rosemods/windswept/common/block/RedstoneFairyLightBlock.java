@@ -12,16 +12,16 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.RedstoneTorchBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class RedstoneFairyLightBlock extends PineconeBlock {
-    public static final BooleanProperty LIT = RedstoneTorchBlock.LIT;
+    public static final BooleanProperty LIT = BlockStateProperties.LIT;
 
     public RedstoneFairyLightBlock(Properties properties) {
         super(properties);
@@ -61,9 +61,9 @@ public class RedstoneFairyLightBlock extends PineconeBlock {
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         if (state.getValue(LIT)) {
-            double d0 = (double)pos.getX() + .5d + (random.nextDouble() - .5d) * .8d;
-            double d1 = (double)pos.getY() + .7d + (random.nextDouble() - .5d) * .3d;
-            double d2 = (double)pos.getZ() + .5d + (random.nextDouble() - .5d) * .8d;
+            double d0 = (double) pos.getX() + .5d + (random.nextDouble() - .5d) * .8d;
+            double d1 = (double) pos.getY() + .7d + (random.nextDouble() - .5d) * .3d;
+            double d2 = (double) pos.getZ() + .5d + (random.nextDouble() - .5d) * .8d;
             level.addParticle(DustParticleOptions.REDSTONE, d0, d1, d2, 0d, 0d, 0d);
         }
     }
