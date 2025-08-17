@@ -93,7 +93,10 @@ public final class WindsweptBiomes {
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.FERNS);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.LUPINE);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.GINGER_PATCH);
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.DRY_MOSS_PATCH_SMALL);
+
+        if (!snowy)
+            generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.DRY_MOSS_PATCH_SMALL);
+
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.DRY_MOSS_ROCK);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.HOLLY_BUSH);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.PINE_TREES);
