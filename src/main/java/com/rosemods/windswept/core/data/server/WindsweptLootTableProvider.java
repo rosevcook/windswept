@@ -23,10 +23,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.DoublePlantBlock;
-import net.minecraft.world.level.block.SweetBerryBushBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.storage.loot.*;
@@ -374,6 +371,13 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.add(WILD_GINGER.get(), this::createWildGingerDrops);
             this.dropSelf(NIGHTSHADE.get());
             this.add(LAVENDER.get(), this::createLavenderTable);
+            this.dropSelf(MIMOSA.get());
+
+            this.dropSelf(FLOWERING_ACACIA_SAPLING.get());
+            this.dropPottedContents(POTTED_FLOWERING_ACACIA_SAPLING.get());
+            this.add(FLOWERING_ACACIA_LEAVES.get(), b -> createLeavesDrops(b, FLOWERING_ACACIA_SAPLING.get(), .05f, .0625f, .083333336f, .1f));
+            this.leafPile(FLOWERING_ACACIA_LEAF_PILE.get());
+            this.add(YELLOW_PETALS.get(), this::createPetalsTable);
 
             // pots
             this.dropPottedContents(POTTED_RED_ROSE.get());
@@ -391,6 +395,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropPottedContents(POTTED_DRY_MOSSY_SPROUTS.get());
             this.dropPottedContents(POTTED_MOSSY_SPROUTS.get());
             this.dropPottedContents(POTTED_LAVENDER.get());
+            this.dropPottedContents(POTTED_MIMOSA.get());
 
             // lavender thatch
             this.dropSelf(LAVENDER_BALE.get());
@@ -499,6 +504,15 @@ public class WindsweptLootTableProvider extends LootTableProvider {
                                     .apply(List.of(2, 3, 4), i -> SetItemCountFunction.setCount(ConstantValue.exactly((float) i))
                                             .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
                                                     .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PineconeBlock.AMOUNT, i)))))));
+        }
+
+        private LootTable.Builder createPetalsTable(Block block) {
+            return LootTable.lootTable()
+                    .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1f))
+                            .add(applyExplosionDecay(block, LootItem.lootTableItem(block)
+                                    .apply(List.of(2, 3, 4), i -> SetItemCountFunction.setCount(ConstantValue.exactly((float) i))
+                                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PinkPetalsBlock.AMOUNT, i)))))));
         }
 
         private LootTable.Builder createLavenderTable(Block block) {

@@ -72,6 +72,8 @@ public class WindsweptRecipeProvider extends BlueprintRecipeProvider {
         flowerToDye(MOSS_CAMPION.get(), Items.MAGENTA_DYE, consumer);
         flowerToDye(WILD_GINGER.get(), Items.RED_DYE, consumer);
         flowerToDye(NIGHTSHADE.get(), Items.LIGHT_BLUE_DYE, consumer);
+        flowerToDye(YELLOW_PETALS.get(), Items.YELLOW_DYE, consumer);
+        flowerToDye(MIMOSA.get(), Items.YELLOW_DYE, consumer);
         tallFlowerToDye(RED_ROSE_BUSH.get(), Items.RED_DYE, consumer);
         tallFlowerToDye(BLUE_ROSE_BUSH.get(), Items.BLUE_DYE, consumer);
         tallFlowerToDye(WHITE_ROSE_BUSH.get(), Items.WHITE_DYE, consumer);

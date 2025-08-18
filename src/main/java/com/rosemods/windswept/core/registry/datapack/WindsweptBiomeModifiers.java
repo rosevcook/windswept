@@ -52,6 +52,8 @@ public final class WindsweptBiomeModifiers {
         addFeature(context, "yellow_roses", WindsweptBiomeTags.HAS_YELLOW_ROSE, GenerationStep.Decoration.VEGETAL_DECORATION, YELLOW_ROSE);
         addFeature(context, "lush_caves_moss", Biomes.LUSH_CAVES, GenerationStep.Decoration.VEGETAL_DECORATION, LUSH_CAVES_VEGETATION);
         addFeature(context, "old_growth_pine_taiga_trees", Biomes.OLD_GROWTH_PINE_TAIGA, GenerationStep.Decoration.VEGETAL_DECORATION, OLD_GROWTH_PINE_TAIGA_TREES);
+        addFeature(context, "yellow_petals", Biomes.WINDSWEPT_SAVANNA, Decoration.VEGETAL_DECORATION, YELLOW_PETALS);
+        addFeature(context, "windswept_savanna_trees", Biomes.WINDSWEPT_SAVANNA, Decoration.VEGETAL_DECORATION, WINDSWEPT_SAVANNA_TREES);
 
         // spawns
         addSpawn(context, "chilled", Tags.Biomes.IS_SNOWY, new MobSpawnSettings.SpawnerData(WindsweptEntityTypes.CHILLED.get(), 5, 3, 7));
@@ -63,7 +65,7 @@ public final class WindsweptBiomeModifiers {
         removeFeature(context, "snowy_default_flowers", Tags.Biomes.IS_SNOWY, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_DEFAULT);
         removeFeature(context, "lush_caves_moss", Biomes.LUSH_CAVES, GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.LUSH_CAVES_VEGETATION);
         removeFeature(context, "old_growth_pine_taiga_trees", Biomes.OLD_GROWTH_PINE_TAIGA, GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_OLD_GROWTH_PINE_TAIGA);
-
+        removeFeature(context, "windswept_savanna_trees", Biomes.WINDSWEPT_SAVANNA, Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_WINDSWEPT_SAVANNA);
     }
 
     @SafeVarargs

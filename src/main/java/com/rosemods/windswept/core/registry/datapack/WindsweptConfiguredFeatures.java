@@ -2,11 +2,13 @@ package com.rosemods.windswept.core.registry.datapack;
 
 import com.rosemods.windswept.common.block.WildBerryBushBlock;
 import com.rosemods.windswept.common.levelgen.tree.decorator.BranchDecorator;
+import com.rosemods.windswept.common.levelgen.tree.decorator.MimosaDecorator;
 import com.rosemods.windswept.common.levelgen.tree.foliage_placer.ChestnutFoliagePlacer;
 import com.rosemods.windswept.common.levelgen.tree.trunk_placer.ChestnutTrunkPlacer;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import com.rosemods.windswept.core.registry.WindsweptFeatures;
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -19,17 +21,20 @@ import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.PinkPetalsBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BushFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.BeehiveDecorator;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
@@ -46,6 +51,7 @@ public final class WindsweptConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> BLUE_ROSE = createKey("blue_rose");
     public static final ResourceKey<ConfiguredFeature<?, ?>> YELLOW_ROSE = createKey("yellow_rose");
     public static final ResourceKey<ConfiguredFeature<?, ?>> FOXGLOVE = createKey("foxglove");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> YELLOW_PETALS = createKey("yellow_petals");
     public static final ResourceKey<ConfiguredFeature<?, ?>> FERNS = createKey("ferns");
     public static final ResourceKey<ConfiguredFeature<?, ?>> LUPINE = createKey("lupine");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BLUEBELLS = createKey("bluebells");
@@ -64,7 +70,10 @@ public final class WindsweptConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> CHESTNUT_BEES = createKey("chestnut_bees");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PINE = createKey("pine");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PINE_BEES = createKey("pine_bees");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FLOWERING_ACACIA = createKey("flowering_acacia");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FLOWERING_ACACIA_BEES = createKey("flowering_acacia_bees");
     public static final ResourceKey<ConfiguredFeature<?, ?>> OLD_GROWTH_PINE_TAIGA_TREES = createKey("old_growth_pine_taiga_trees");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> WINDSWEPT_SAVANNA_TREES = createKey("windswept_savanna_trees");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TUNDRA_FALLEN_LOG = createKey("tundra_fallen_log");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PINE_FALLEN_LOG = createKey("pine_fallen_log");
     public static final ResourceKey<ConfiguredFeature<?, ?>> DRY_MOSS_ROCK = createKey("dry_moss_rock");
@@ -89,6 +98,12 @@ public final class WindsweptConfiguredFeatures {
         context.register(BLUE_ROSE, new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.createPlantPatch(48, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(WindsweptBlocks.BLUE_ROSE.get().defaultBlockState(), 3).add(WindsweptBlocks.BLUE_ROSE_BUSH.get().defaultBlockState(), 1))))));
         context.register(YELLOW_ROSE, new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.createPlantPatch(48, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(WindsweptBlocks.YELLOW_ROSE.get().defaultBlockState(), 3).add(WindsweptBlocks.YELLOW_ROSE_BUSH.get().defaultBlockState(), 1))))));
         context.register(FOXGLOVE, new ConfiguredFeature<>(Feature.FLOWER, Configs.createPlantPatch(64, WindsweptBlocks.FOXGLOVE.get().defaultBlockState())));
+        SimpleWeightedRandomList.Builder<BlockState> builder = SimpleWeightedRandomList.builder();
+        for(int i = 1; i <= 4; ++i)
+            for(Direction direction : Direction.Plane.HORIZONTAL)
+                builder.add(WindsweptBlocks.YELLOW_PETALS.get().defaultBlockState().setValue(PinkPetalsBlock.AMOUNT, Integer.valueOf(i)).setValue(PinkPetalsBlock.FACING, direction), 1);
+
+        context.register(YELLOW_PETALS, new ConfiguredFeature<>(Feature.FLOWER, new RandomPatchConfiguration(96, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(builder))))));
         context.register(FERNS, new ConfiguredFeature<>(Feature.FLOWER, FeatureUtils.simpleRandomPatchConfiguration(4, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.FERN))))));
         context.register(LUPINE, new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.createPlantPatch(64, WindsweptBlocks.LUPINE.get().defaultBlockState())));
         context.register(BLUEBELLS, new ConfiguredFeature<>(BLUEBELL_PATCH.get(), NoneFeatureConfiguration.NONE));
@@ -107,7 +122,10 @@ public final class WindsweptConfiguredFeatures {
         context.register(CHESTNUT_BEES, new ConfiguredFeature<>(Feature.TREE, Configs.CHESTNUT_TREE_BEES));
         context.register(PINE, new ConfiguredFeature<>(PINE_TREE.get(), Configs.PINE_TREE));
         context.register(PINE_BEES, new ConfiguredFeature<>(PINE_TREE.get(), Configs.PINE_TREE_BEES));
+        context.register(FLOWERING_ACACIA, new ConfiguredFeature<>(Feature.TREE, Configs.FLOWERING_ACACIA_TREE));
+        context.register(FLOWERING_ACACIA_BEES, new ConfiguredFeature<>(Feature.TREE, Configs.FLOWERING_ACACIA_TREE_BEES));
         context.register(OLD_GROWTH_PINE_TAIGA_TREES, new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(placed.getOrThrow(TreePlacements.MEGA_SPRUCE_CHECKED), .33333334f), new WeightedPlacedFeature(placed.getOrThrow(WindsweptPlacedFeatures.PINE_CHECKED), .33333334f)), placed.getOrThrow(TreePlacements.SPRUCE_CHECKED))));
+        context.register(WINDSWEPT_SAVANNA_TREES, new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(placed.getOrThrow(TreePlacements.ACACIA_CHECKED), .25f)), placed.getOrThrow(WindsweptPlacedFeatures.FLOWERING_ACACIA_CHECKED))));
         context.register(TUNDRA_FALLEN_LOG, new ConfiguredFeature<>(WindsweptFeatures.FALLEN_LOG.get(), new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(WindsweptBlocks.HOLLY_LOG.get().defaultBlockState(), 1).add(Blocks.SPRUCE_LOG.defaultBlockState(), 1)))));
         context.register(PINE_FALLEN_LOG, new ConfiguredFeature<>(WindsweptFeatures.FALLEN_LOG.get(), new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(WindsweptBlocks.WEATHERED_PINE_LOG.get().defaultBlockState(), 3).add(WindsweptBlocks.PINE_LOG.get().defaultBlockState(), 1)))));
         context.register(DRY_MOSS_ROCK, new ConfiguredFeature<>(Feature.FOREST_ROCK, new BlockStateConfiguration(WindsweptBlocks.DRY_MOSSY_COBBLESTONE.get().defaultBlockState())));
@@ -134,6 +152,8 @@ public final class WindsweptConfiguredFeatures {
         public static final TreeConfiguration CHESTNUT_TREE_BEES = createChestnutTree().decorators(List.of(new BeehiveDecorator(.005f))).build();
         public static final TreeConfiguration PINE_TREE = createPineTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.PINE_LOG.get(), 2))).build();
         public static final TreeConfiguration PINE_TREE_BEES = createPineTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.PINE_LOG.get(), 2), new BeehiveDecorator(.005f))).build();
+        public static final TreeConfiguration FLOWERING_ACACIA_TREE = createFloweringAcaciaTree().decorators(List.of(MimosaDecorator.INSTANCE)).build();
+        public static final TreeConfiguration FLOWERING_ACACIA_TREE_BEES = createFloweringAcaciaTree().decorators(List.of(MimosaDecorator.INSTANCE, new BeehiveDecorator(.02f))).build();
 
         public static SimpleBlockConfiguration createDryMossVegetation() {
             return new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
@@ -203,6 +223,16 @@ public final class WindsweptConfiguredFeatures {
                     new ChestnutFoliagePlacer(),
                     new TwoLayersFeatureSize(1, 0, 1))
                     .forceDirt();
+        }
+
+        private static TreeConfiguration.TreeConfigurationBuilder createFloweringAcaciaTree() {
+            return new TreeConfiguration.TreeConfigurationBuilder(
+                    BlockStateProvider.simple(Blocks.ACACIA_LOG),
+                    new ForkingTrunkPlacer(5, 2, 2),
+                    new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(WindsweptBlocks.FLOWERING_ACACIA_LEAVES.get().defaultBlockState(), 3).add(Blocks.ACACIA_LEAVES.defaultBlockState(), 1)),
+                    new AcaciaFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0)),
+                    new TwoLayersFeatureSize(1, 0, 2))
+                    .ignoreVines();
         }
 
     }

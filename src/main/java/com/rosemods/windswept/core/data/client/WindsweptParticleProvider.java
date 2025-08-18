@@ -1,8 +1,12 @@
 package com.rosemods.windswept.core.data.client;
 
 import com.rosemods.windswept.core.Windswept;
-import com.rosemods.windswept.core.registry.WindsweptParticleTypes;
+import net.minecraft.core.particles.ParticleType;
 import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
+
+import static com.rosemods.windswept.core.registry.WindsweptParticleTypes.*;
 
 public class WindsweptParticleProvider extends ParticleProvider {
     public WindsweptParticleProvider(GatherDataEvent event) {
@@ -11,10 +15,20 @@ public class WindsweptParticleProvider extends ParticleProvider {
 
     @Override
     protected void addParticles() {
-        this.add(WindsweptParticleTypes.WILL_O_THE_WISP.get(), "will_o_the_wisp_0", "will_o_the_wisp_1", "will_o_the_wisp_2");
-        this.add(WindsweptParticleTypes.FROST_LEAF.get(), "frost_leaf_0", "frost_leaf_1", "frost_leaf_2");
-        this.add(WindsweptParticleTypes.FEATHER_CLOAK.get(), "feather_cloak_0", "feather_cloak_1", "feather_cloak_2",
-                "feather_cloak_3", "feather_cloak_4", "feather_cloak_5", "feather_cloak_6", "feather_cloak_7", "feather_cloak_8", "feather_cloak_9");
+        this.add(WILL_O_THE_WISP, 3);
+        this.add(FROST_LEAF, 3);
+        this.add(FEATHER_CLOAK, 10);
+        this.add(ACACIA_LEAVES, 12);
+    }
+
+    private <T extends ParticleType<?>> void add(RegistryObject<T> particle, int amount) {
+        String name = ForgeRegistries.PARTICLE_TYPES.getKey(particle.get()).getPath();
+        String[] textures = new String[amount];
+
+        for (int i = 0; i < amount; i++)
+            textures[i] = name + "_" + i;
+
+        this.add(particle.get(), textures);
     }
 
 }

@@ -90,8 +90,8 @@ public final class WindsweptCreativeTabs {
                 .addItemsBefore(modLoaded(Blocks.AZALEA_LEAVES, "woodworks"), CHESTNUT_LEAF_PILE)
                 .addItemsBefore(Ingredient.of(Blocks.AZALEA_LEAVES), PINE_LEAVES)
                 .addItemsBefore(modLoaded(Blocks.AZALEA_LEAVES, "woodworks"), PINE_LEAF_PILE)
-                .addItemsAfter(Ingredient.of(Blocks.LILY_OF_THE_VALLEY), FOXGLOVE, MOSS_CAMPION, SNOWDROP, NIGHTSHADE, BLUEBELLS,
-                        BLUE_ROSE, BLUE_ROSE_BUSH, RED_ROSE, RED_ROSE_BUSH, WHITE_ROSE, WHITE_ROSE_BUSH)
+                .addItemsAfter(Ingredient.of(Blocks.LILY_OF_THE_VALLEY), FOXGLOVE, MOSS_CAMPION, MIMOSA, SNOWDROP, NIGHTSHADE, BLUEBELLS,
+                        BLUE_ROSE, BLUE_ROSE_BUSH, RED_ROSE, RED_ROSE_BUSH, WHITE_ROSE, WHITE_ROSE_BUSH, YELLOW_ROSE, YELLOW_ROSE_BUSH)
                 .addItemsBefore(Ingredient.of(Blocks.CRIMSON_ROOTS), MOSSY_SPROUTS, DRY_MOSSY_SPROUTS, SNOWY_SPROUTS, GELISOL_SPROUTS, WILD_GINGER)
                 .addItemsAfter(Ingredient.of(Blocks.SUNFLOWER), LUPINE)
                 .addItemsAfter(Ingredient.of(Blocks.BAMBOO), PINECONE, PINECONE_BLOCK, FEATHER_WING, FEATHER_ORNAMENT, DREAM_CATCHER)
@@ -102,6 +102,10 @@ public final class WindsweptCreativeTabs {
                 .addItemsAfter(Ingredient.of(Blocks.HAY_BLOCK), LAVENDER_BALE, CHESTNUT_CRATE, ROASTED_CHESTNUT_CRATE, GINGER_ROOT_CRATE, HOLLY_BERRY_BASKET, WILD_BERRY_BASKET)
                 .addItemsBefore(modLoaded(Blocks.COBWEB, "caverns_and_chasms"), FROZEN_FLESH_BLOCK)
                 .addItemsAfter(Ingredient.of(Blocks.FLOWERING_AZALEA), HOLLY_WREATH, VINE_WREATH, PINECONE_WREATH, CHERRY_WREATH)
+                .addItemsAfter(Ingredient.of(Blocks.ACACIA_SAPLING), FLOWERING_ACACIA_SAPLING)
+                .addItemsAfter(Ingredient.of(Blocks.ACACIA_LEAVES), FLOWERING_ACACIA_LEAVES)
+                .addItemsAfter(modLoaded(Blocks.ACACIA_LEAVES, "woodworks"), FLOWERING_ACACIA_LEAF_PILE)
+                .addItemsAfter(Ingredient.of(Blocks.PINK_PETALS), YELLOW_PETALS)
 
                 .tab(REDSTONE_BLOCKS)
                 .addItemsAfter(Ingredient.of(Blocks.COMPARATOR), REDSTONE_FAIRY_LIGHT)

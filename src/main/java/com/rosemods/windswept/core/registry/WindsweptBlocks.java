@@ -3,6 +3,7 @@ package com.rosemods.windswept.core.registry;
 import com.mojang.datafixers.util.Pair;
 import com.rosemods.windswept.common.block.*;
 import com.rosemods.windswept.common.block.grower.ChestnutTreeGrower;
+import com.rosemods.windswept.common.block.grower.FloweringAcaciaTreeGrower;
 import com.rosemods.windswept.common.block.grower.HollyTreeGrower;
 import com.rosemods.windswept.common.block.grower.PineTreeGrower;
 import com.rosemods.windswept.common.item.WearableBlockItem;
@@ -158,6 +159,7 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> MOSS_CAMPION = HELPER.createBlock("moss_campion", () -> new MossCampionBlock(WindsweptEffects.THORNS, 5, PropertyUtil.flower().sound(SoundType.AZALEA)));
     public static final RegistryObject<Block> WILD_GINGER = HELPER.createBlock("wild_ginger", () -> new FlowerBlock(() -> MobEffects.DAMAGE_BOOST, 5, PropertyUtil.flower()));
     public static final RegistryObject<Block> NIGHTSHADE = HELPER.createBlock("nightshade", () -> new NightshadeFlowerBlock(() -> MobEffects.NIGHT_VISION, 5, BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).lightLevel(state -> 9)));
+    public static final RegistryObject<Block> MIMOSA = HELPER.createBlock("mimosa", () -> new MimosaBlock(() -> MobEffects.FIRE_RESISTANCE, 5, PropertyUtil.flower().sound(SoundType.NETHER_SPROUTS)));
 
     // Tall Flowers//
     public static final RegistryObject<Block> LUPINE = HELPER.createBlock("lupine", () -> new TallFlowerBlock(PropertyUtil.flower()));
@@ -172,6 +174,13 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> LAVENDER_THATCH = HELPER.createBlock("lavender_thatch", () -> new ThatchBlock(Properties.LAVENDER_THATCH));
     public static final RegistryObject<Block> LAVENDER_THATCH_STAIRS = HELPER.createBlock("lavender_thatch_stairs", () -> new ThatchStairBlock(LAVENDER_THATCH.get().defaultBlockState(), Properties.LAVENDER_THATCH));
     public static final RegistryObject<Block> LAVENDER_THATCH_SLAB = HELPER.createBlock("lavender_thatch_slab", () -> new ThatchSlabBlock(Properties.LAVENDER_THATCH));
+
+    // Acacia //
+    public static final RegistryObject<Block> FLOWERING_ACACIA_SAPLING = HELPER.createBlock("flowering_acacia_sapling", () -> new SaplingBlock(new FloweringAcaciaTreeGrower(), PropertyUtil.sapling()));
+    public static final RegistryObject<Block> POTTED_FLOWERING_ACACIA_SAPLING = HELPER.createBlockNoItem("potted_flowering_acacia_sapling", () -> new FlowerPotBlock(FLOWERING_ACACIA_SAPLING.get(), PropertyUtil.flowerPot()));
+    public static final RegistryObject<Block> FLOWERING_ACACIA_LEAVES = HELPER.createBlock("flowering_acacia_leaves", () -> new FloweringAcaciaLeavesBlock(Properties.HOLLY.leaves()));
+    public static final RegistryObject<Block> FLOWERING_ACACIA_LEAF_PILE = HELPER.createBlock("flowering_acacia_leaf_pile", () -> new LeafPileBlock(Properties.HOLLY.leafPile()));
+    public static final RegistryObject<Block> YELLOW_PETALS = HELPER.createBlock("yellow_petals", () -> new PinkPetalsBlock(BlockBehaviour.Properties.copy(Blocks.PINK_PETALS)));
 
     // Decoration Blocks //
     public static final RegistryObject<Block> HOLLY_WREATH = HELPER.createBlockWithItem("holly_wreath", () -> new WallDecorationBlock(Block.Properties.of().instabreak().sound(SoundType.AZALEA).noCollission()), () -> new WearableBlockItem(WindsweptBlocks.HOLLY_WREATH.get(), new Item.Properties()));
@@ -403,6 +412,7 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> POTTED_DRY_MOSSY_SPROUTS = HELPER.createBlockNoItem("potted_dry_mossy_sprouts", () -> new FlowerPotBlock(DRY_MOSSY_SPROUTS.get(), PropertyUtil.flowerPot()));
     public static final RegistryObject<Block> POTTED_MOSSY_SPROUTS = HELPER.createBlockNoItem("potted_mossy_sprouts", () -> new FlowerPotBlock(MOSSY_SPROUTS.get(), PropertyUtil.flowerPot()));
     public static final RegistryObject<Block> POTTED_LAVENDER = HELPER.createBlockNoItem("potted_lavender", () -> new FlowerPotBlock(LAVENDER.get(), PropertyUtil.flowerPot()));
+    public static final RegistryObject<Block> POTTED_MIMOSA = HELPER.createBlockNoItem("potted_mimosa", () -> new FlowerPotBlock(MIMOSA.get(), PropertyUtil.flowerPot()));
 
     // Misc //
     public static final RegistryObject<Block> WILD_BERRY_BUSH = HELPER.createBlockNoItem("wild_berry_bush", () -> new WildBerryBushBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH).offsetType(BlockBehaviour.OffsetType.XZ)));

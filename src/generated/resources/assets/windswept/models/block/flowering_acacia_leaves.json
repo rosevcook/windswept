@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "windswept:block/flowering_acacia_leaves"
+  }
+}

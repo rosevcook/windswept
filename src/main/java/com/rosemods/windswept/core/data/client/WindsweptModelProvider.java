@@ -348,6 +348,10 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.pottedPlantWithPottedVariant(WILD_GINGER, POTTED_WILD_GINGER);
         this.pottedPlantWithPottedVariant(BLUEBELLS, POTTED_BLUEBELLS);
 
+        this.pot(POTTED_MIMOSA, this.modLoc("block/potted_mimosa"));
+        this.simpleCross(MIMOSA);
+        this.generatedItem(MIMOSA.get(), TextureFolder.ITEM);
+
         // lavender
         this.getVariantBuilder(LAVENDER.get())
                 .partialState().with(LavenderBlock.AGE, 0).addModels(new ConfiguredModel(this.models().cross("lavender_stage0", this.modLoc("block/lavender_stage0")).renderType("cutout")))
@@ -361,6 +365,12 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.thatch(LAVENDER_THATCH);
         this.thatchStairs(LAVENDER_THATCH_STAIRS, this.blockTexture(LAVENDER_THATCH.get()));
         this.thatchSlab(LAVENDER_THATCH_SLAB, this.blockTexture(LAVENDER_THATCH.get()));
+
+        // acacia
+        this.pottedPlant(FLOWERING_ACACIA_SAPLING, POTTED_FLOWERING_ACACIA_SAPLING);
+        this.leaves(FLOWERING_ACACIA_LEAVES);
+        this.leafPile(FLOWERING_ACACIA_LEAF_PILE, this.blockTexture(FLOWERING_ACACIA_LEAVES.get()), true);
+        this.petals(YELLOW_PETALS);
 
         // wild berry blocks
         this.wildBerryBush(WILD_BERRY_BUSH);
@@ -582,6 +592,18 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
                 .partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.Y).modelForState().modelFile(model).addModel()
                 .partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.Z).modelForState().modelFile(model).rotationX(90).addModel()
                 .partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.X).modelForState().modelFile(model).rotationX(90).rotationY(90).addModel();
+    }
+
+    private void petals(RegistryObject<Block> petals) {
+        String name = getItemName(petals.get());
+        ResourceLocation texture = this.blockTexture(petals.get());
+        ResourceLocation stem = new ResourceLocation(texture.getNamespace(), texture.getPath() + "_stem");
+        ModelFile model1 = this.models().withExistingParent(name + "_1", this.mcLoc("block/flowerbed_1")).texture("stem", stem).texture("flowerbed", texture).renderType("cutout");
+        ModelFile model2 = this.models().withExistingParent(name + "_2", this.mcLoc("block/flowerbed_2")).texture("stem", stem).texture("flowerbed", texture).renderType("cutout");
+        ModelFile model3 = this.models().withExistingParent(name + "_3", this.mcLoc("block/flowerbed_3")).texture("stem", stem).texture("flowerbed", texture).renderType("cutout");
+        ModelFile model4 = this.models().withExistingParent(name + "_4", this.mcLoc("block/flowerbed_4")).texture("stem", stem).texture("flowerbed", texture).renderType("cutout");
+
+        this.generatedItem(petals.get(), TextureFolder.ITEM);
     }
 
     private void dreamCatcher(RegistryObject<Block> block) {

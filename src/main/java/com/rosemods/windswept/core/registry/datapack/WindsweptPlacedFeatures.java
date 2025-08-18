@@ -25,6 +25,7 @@ public final class WindsweptPlacedFeatures {
     public static final ResourceKey<PlacedFeature> BLUE_ROSE = createKey("blue_rose");
     public static final ResourceKey<PlacedFeature> YELLOW_ROSE = createKey("yellow_rose");
     public static final ResourceKey<PlacedFeature> FOXGLOVE = createKey("foxglove");
+    public static final ResourceKey<PlacedFeature> YELLOW_PETALS = createKey("yellow_petals");
     public static final ResourceKey<PlacedFeature> BLUEBELLS = createKey("bluebells");
     public static final ResourceKey<PlacedFeature> LAVENDER = createKey("lavender");
     public static final ResourceKey<PlacedFeature> LUPINE = createKey("lupine");
@@ -50,7 +51,9 @@ public final class WindsweptPlacedFeatures {
     public static final ResourceKey<PlacedFeature> LAVENDER_PLAINS_TREES = createKey("lavender_plains_trees");
     public static final ResourceKey<PlacedFeature> PINE_TREES = createKey("pine_trees");
     public static final ResourceKey<PlacedFeature> PINE_CHECKED = createKey("pine_checked");
+    public static final ResourceKey<PlacedFeature> FLOWERING_ACACIA_CHECKED = createKey("flowering_acacia_checked");
     public static final ResourceKey<PlacedFeature> OLD_GROWTH_PINE_TAIGA_TREES = createKey("old_growth_pine_taiga_trees");
+    public static final ResourceKey<PlacedFeature> WINDSWEPT_SAVANNA_TREES = createKey("windswept_savanna_trees");
     public static final ResourceKey<PlacedFeature> MEGA_SPRUCE_TREES = createKey("mega_spruce_trees");
     public static final ResourceKey<PlacedFeature> DRY_MOSS_PATCH_SMALL = createKey("dry_moss_patch_small");
     public static final ResourceKey<PlacedFeature> DRY_MOSS_PATCH_LARGE = createKey("dry_moss_patch_large");
@@ -69,6 +72,7 @@ public final class WindsweptPlacedFeatures {
         createPlantPatch(context, BLUE_ROSE, 16, WindsweptConfiguredFeatures.BLUE_ROSE);
         createPlantPatch(context, YELLOW_ROSE, 16, WindsweptConfiguredFeatures.YELLOW_ROSE);
         createPlantPatch(context, FOXGLOVE, 9, WindsweptConfiguredFeatures.FOXGLOVE);
+        register(context, YELLOW_PETALS, WindsweptConfiguredFeatures.YELLOW_PETALS, NoiseThresholdCountPlacement.of(-0.8D, 5, 10), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         createPlantPatch(context, BLUEBELLS, 4, WindsweptConfiguredFeatures.BLUEBELLS);
         register(context, LAVENDER, WindsweptConfiguredFeatures.LAVENDER, CountPlacement.of(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
         createPlantPatch(context, LUPINE, 12, WindsweptConfiguredFeatures.LUPINE);
@@ -94,8 +98,10 @@ public final class WindsweptPlacedFeatures {
         register(context, LAVENDER_PLAINS_TREES, TreeFeatures.BIRCH_BEES_005, treePlacement(PlacementUtils.countExtra(0, .1f, 2)));
         register(context, PINE_TREES, WindsweptConfiguredFeatures.PINE_BEES, treePlacement(PlacementUtils.countExtra(9, .1f, 1)));
         register(context, PINE_CHECKED, WindsweptConfiguredFeatures.PINE_BEES, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING));
+        register(context, FLOWERING_ACACIA_CHECKED, WindsweptConfiguredFeatures.FLOWERING_ACACIA_BEES, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING));
         register(context, OLD_GROWTH_PINE_TAIGA_TREES, WindsweptConfiguredFeatures.OLD_GROWTH_PINE_TAIGA_TREES, treePlacement(PlacementUtils.countExtra(10, .1f, 1)));
         register(context, MEGA_SPRUCE_TREES, TreeFeatures.MEGA_SPRUCE, treePlacement(PlacementUtils.countExtra(0, .1f, 2)));
+        register(context, WINDSWEPT_SAVANNA_TREES, WindsweptConfiguredFeatures.WINDSWEPT_SAVANNA_TREES, treePlacement(PlacementUtils.countExtra(2, 0.1F, 1)));
         register(context, DRY_MOSS_PATCH_SMALL, WindsweptConfiguredFeatures.DRY_MOSS_PATCH_SMALL, PlacementUtils.countExtra(1, .1f, 2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         register(context, DRY_MOSS_PATCH_LARGE, WindsweptConfiguredFeatures.DRY_MOSS_PATCH_LARGE, PlacementUtils.countExtra(1, .1f, 2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         register(context, DRY_MOSS_ROCK, WindsweptConfiguredFeatures.DRY_MOSS_ROCK, RarityFilter.onAverageOnceEvery(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());

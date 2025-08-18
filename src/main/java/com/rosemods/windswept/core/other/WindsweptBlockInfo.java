@@ -38,6 +38,7 @@ public final class WindsweptBlockInfo {
         DataUtil.registerCompostable(MOSS_CAMPION.get(), .65f);
         DataUtil.registerCompostable(NIGHTSHADE.get(), .65f);
         DataUtil.registerCompostable(BLUEBELLS.get(), .65f);
+        DataUtil.registerCompostable(YELLOW_PETALS.get(), .3f);
 
         DataUtil.registerCompostable(RED_ROSE_BUSH.get(), .65f);
         DataUtil.registerCompostable(BLUE_ROSE_BUSH.get(), .65f);

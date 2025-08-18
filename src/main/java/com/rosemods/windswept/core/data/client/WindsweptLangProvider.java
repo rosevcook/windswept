@@ -85,6 +85,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.add(ROASTED_CHESTNUT_CRATE.get(), "Crate of Roasted Chestnuts");
         this.translateSign(PINE_SIGNS, "pine");
         this.add(PINE_LEAF_PILE.get(), "Pile of Pine Leaves");
+        this.add(FLOWERING_ACACIA_LEAF_PILE.get(), "Pile of Flowering Acacia Leaves");
         this.add(WILL_O_THE_WISP.get(), "Will o' the Wisp");
         this.add("block.windswept.snow_carpet", "Snow Carpet");
         this.add(GINGER_ROOT_CRATE.get(), "Crate of Ginger Roots");
