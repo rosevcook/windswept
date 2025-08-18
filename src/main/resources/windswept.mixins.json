@@ -13,6 +13,7 @@
     "FlowerBlockMixin",
     "FoxEatBerriesGoalMixin",
     "FoxMixin",
+    "GoatMixin",
     "IceBlockMixin",
     "LiquidBlockMixin",
     "LivingEntityMixin",
@@ -36,6 +37,7 @@
     "ZombieMixin"
   ],
   "client": [
+    "client.GoatRendererMixin",
     "client.HumanoidArmorLayerMixin",
     "client.ItemInHandRendererMixin",
     "client.LivingEntityRendererMixin",

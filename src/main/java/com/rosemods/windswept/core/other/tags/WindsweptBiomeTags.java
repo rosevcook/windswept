@@ -26,6 +26,8 @@ public final class WindsweptBiomeTags {
     public static final TagKey<Biome> IS_PINE_BARRENS = TagUtil.biomeTag(Windswept.MOD_ID, "is_pine_barrens");
     public static final TagKey<Biome> IS_LAVENDER = TagUtil.biomeTag(Windswept.MOD_ID, "is_lavender");
 
+    public static final TagKey<Biome> HAS_BROWN_GOAT = TagUtil.biomeTag(Windswept.MOD_ID, "has_brown_goat");
+
     public static final TagKey<Biome> HAS_SPOTTED_ORANGE_MAPLE_TREES = TagUtil.biomeTag("autumnity", "has_feature/spotted_maple_tree/orange");
     public static final TagKey<Biome> HAS_SPOTTED_RED_MAPLE_TREES = TagUtil.biomeTag("autumnity", "has_feature/spotted_maple_tree/red");
 

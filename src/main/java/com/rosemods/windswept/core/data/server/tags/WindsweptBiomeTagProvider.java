@@ -31,6 +31,7 @@ public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
         this.tag(HAS_WHITE_ROSE).add(SNOWY_CHESTNUT_FOREST, SNOWY_TAIGA, CHERRY_GROVE).addOptional(new ResourceLocation("atmospheric", "kousa_jungle")).addOptional(new ResourceLocation("environmental", "blossom_woods"));
         this.tag(HAS_YELLOW_ROSE).add(DARK_FOREST, OLD_GROWTH_SPRUCE_TAIGA, OLD_GROWTH_PINE_TAIGA, PINE_BARRENS, SNOWY_PINE_BARRENS);
         this.tag(HAS_WILD_BERRIES).add(SNOWY_PLAINS, SNOWY_SLOPES, JAGGED_PEAKS, FROZEN_PEAKS, GROVE);
+        this.tag(HAS_BROWN_GOAT).add(TUNDRA);
 
         this.tag(HAS_GROVE_WEATHERED_HOUSE).add(GROVE, FROZEN_PEAKS, JAGGED_PEAKS);
         this.tag(HAS_CHESTNUT_WEATHERED_HOUSE).add(CHESTNUT_FOREST, SNOWY_CHESTNUT_FOREST);
