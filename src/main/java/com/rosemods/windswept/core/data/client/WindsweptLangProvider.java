@@ -141,7 +141,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBiome(WindsweptBiomes.PINE_BARRENS);
         this.translateBiome(WindsweptBiomes.SNOWY_PINE_BARRENS);
         this.translateBiome(WindsweptBiomes.LAVENDER_HILLS);
-        this.translateBiome(WindsweptBiomes.LAVENDER_PLAINS);
+        this.translateBiome(WindsweptBiomes.LAVENDER_FIELDS);
         this.translateBiome(WindsweptBiomes.TUNDRA);
 
         // JEI Info //
