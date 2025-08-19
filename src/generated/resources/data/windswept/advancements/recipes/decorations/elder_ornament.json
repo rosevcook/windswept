@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "windswept:feather_wing"
+        "recipe": "windswept:elder_ornament"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "windswept:feather_wing"
+      "windswept:elder_ornament"
     ]
   },
   "sends_telemetry_event": false

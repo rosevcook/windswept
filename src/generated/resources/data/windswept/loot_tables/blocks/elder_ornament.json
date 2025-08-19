@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "windswept:feather_ornament"
+          "name": "windswept:elder_ornament"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "windswept:blocks/feather_ornament"
+  "random_sequence": "windswept:blocks/elder_ornament"
 }

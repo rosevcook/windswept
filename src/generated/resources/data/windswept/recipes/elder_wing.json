@@ -3,19 +3,18 @@
   "category": "misc",
   "key": {
     "#": {
-      "item": "windswept:pinecone"
+      "item": "minecraft:stick"
     },
     "F": {
       "item": "windswept:elder_feather"
     }
   },
   "pattern": [
-    "##",
-    "FF"
+    "#FF"
   ],
   "result": {
     "count": 8,
-    "item": "windswept:feather_ornament"
+    "item": "windswept:elder_wing"
   },
   "show_notification": true
 }

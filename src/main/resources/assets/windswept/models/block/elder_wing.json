@@ -2,7 +2,7 @@
 	"render_type": "minecraft:cutout",
 	"ambientocclusion": false,
 	"textures": {
-		"texture": "windswept:block/feather_wing",
+		"texture": "windswept:block/elder_wing",
 		"particle": "#texture"
 	},
 	"elements": [

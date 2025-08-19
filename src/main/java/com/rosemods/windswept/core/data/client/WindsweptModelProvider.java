@@ -192,10 +192,10 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.simpleBlock(PINECONE_JAM_BLOCK.get(), this.models().getExistingFile(this.modLoc("block/pinecone_jam_block")));
         this.itemModel(PINECONE_JAM_BLOCK);
 
-        this.horizontalBlock(FEATHER_WING.get(), this.models().getExistingFile(this.modLoc("block/feather_wing")));
-        this.generatedItem(FEATHER_WING.get(), TextureFolder.BLOCK);
-        this.simpleCross(FEATHER_ORNAMENT);
-        this.generatedItem(FEATHER_ORNAMENT.get(), TextureFolder.BLOCK);
+        this.horizontalBlock(ELDER_WING.get(), this.models().getExistingFile(this.modLoc("block/elder_wing")));
+        this.generatedItem(ELDER_WING.get(), TextureFolder.BLOCK);
+        this.simpleCross(ELDER_ORNAMENT);
+        this.generatedItem(ELDER_ORNAMENT.get(), TextureFolder.BLOCK);
         this.dreamCatcher(DREAM_CATCHER);
 
         this.pillar(PINECONE_BLOCK);

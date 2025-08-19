@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "windswept:feather_wing"
+          "name": "windswept:elder_wing"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "windswept:blocks/feather_wing"
+  "random_sequence": "windswept:blocks/elder_wing"
 }

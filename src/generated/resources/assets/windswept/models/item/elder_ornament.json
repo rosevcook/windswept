@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "windswept:block/feather_wing"
+    "layer0": "windswept:block/elder_ornament"
   }
 }
