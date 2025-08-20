@@ -1,7 +1,7 @@
 {
-  "parent": "blueprint:block/tinted_leaf_pile",
-  "render_type": "minecraft:cutout",
+  "parent": "windswept:block/overlay_leaf_pile",
   "textures": {
-    "all": "windswept:block/flowering_acacia_leaves"
+    "all": "windswept:block/flowering_acacia_leaves",
+    "overlay": "windswept:block/flowering_acacia_leaves_overlay"
   }
 }

@@ -27,7 +27,7 @@ import java.util.List;
 
 @EventBusSubscriber(modid = Windswept.MOD_ID, bus = Bus.MOD, value = Dist.CLIENT)
 public class WindsweptClientEvents {
-    private static final List<RegistryObject<Block>> FOLIAGE_COLOR_BLOCKS = Arrays.asList(WindsweptBlocks.CHESTNUT_LEAVES, WindsweptBlocks.CHESTNUT_LEAF_PILE);//, WindsweptBlocks.FLOWERING_ACACIA_LEAVES, WindsweptBlocks.FLOWERING_ACACIA_LEAF_PILE);
+    private static final List<RegistryObject<Block>> FOLIAGE_COLOR_BLOCKS = Arrays.asList(WindsweptBlocks.CHESTNUT_LEAVES, WindsweptBlocks.CHESTNUT_LEAF_PILE, WindsweptBlocks.FLOWERING_ACACIA_LEAVES, WindsweptBlocks.FLOWERING_ACACIA_LEAF_PILE);
     private static final List<RegistryObject<Block>> GRASS_COLOR_BLOCKS = Arrays.asList(WindsweptBlocks.YELLOW_PETALS);
 
     @SubscribeEvent

@@ -369,8 +369,8 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
 
         // acacia
         this.pottedPlant(FLOWERING_ACACIA_SAPLING, POTTED_FLOWERING_ACACIA_SAPLING);
-        this.leaves(FLOWERING_ACACIA_LEAVES);
-        this.leafPile(FLOWERING_ACACIA_LEAF_PILE, this.blockTexture(FLOWERING_ACACIA_LEAVES.get()), true);
+        this.overlayLeaves(FLOWERING_ACACIA_LEAVES);
+        this.overlayLeafPile(FLOWERING_ACACIA_LEAF_PILE, this.blockTexture(FLOWERING_ACACIA_LEAVES.get()));
         this.petals(YELLOW_PETALS);
 
         // wild berry blocks
@@ -815,6 +815,14 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.itemModel(leaves);
     }
 
+    private void overlayLeaves(RegistryObject<Block> leaves) {
+        ResourceLocation texture = this.blockTexture(leaves.get());
+        ResourceLocation overlay = new ResourceLocation(texture.getNamespace(), texture.getPath() + "_overlay");
+
+        this.simpleBlock(leaves.get(), this.models().withExistingParent(getItemName(leaves.get()), "windswept:block/overlay_leaves").texture("all", texture).texture("overlay", overlay));
+        this.itemModel(leaves);
+    }
+
     private void simpleCross(RegistryObject<Block> block) {
         this.simpleBlock(block.get(), this.models().cross(getItemName(block.get()), this.blockTexture(block.get())).renderType("cutout"));
     }
@@ -871,6 +879,20 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         ModelFile model = this.models().withExistingParent(getItemName(leafPile.get()), "blueprint:block/" + (tinted ? "tinted_" : "") + "leaf_pile").texture("all", texture).renderType("cutout");
 
         this.itemModels().withExistingParent(getItemName(leafPile.get()), "item/generated").texture("layer0", texture);
+        this.getMultipartBuilder(leafPile.get())
+                .part().modelFile(model).uvLock(true).rotationX(270).addModel().condition(BlockStateProperties.UP, true).end()
+                .part().modelFile(model).uvLock(true).rotationX(90).addModel().condition(BlockStateProperties.DOWN, true).end()
+                .part().modelFile(model).addModel().condition(BlockStateProperties.NORTH, true).end()
+                .part().modelFile(model).uvLock(true).rotationY(180).addModel().condition(BlockStateProperties.SOUTH, true).end()
+                .part().modelFile(model).uvLock(true).rotationY(90).addModel().condition(BlockStateProperties.EAST, true).end()
+                .part().modelFile(model).uvLock(true).rotationY(270).addModel().condition(BlockStateProperties.WEST, true).end();
+    }
+
+    private void overlayLeafPile(RegistryObject<Block> leafPile, ResourceLocation texture) {
+        ResourceLocation overlay = new ResourceLocation(texture.getNamespace(), texture.getPath() + "_overlay");
+        ModelFile model = this.models().withExistingParent(getItemName(leafPile.get()), "windswept:block/overlay_leaf_pile").texture("all", texture).texture("overlay", overlay);
+
+        this.itemModels().withExistingParent(getItemName(leafPile.get()), "item/generated").texture("layer0", texture).texture("layer1", overlay);
         this.getMultipartBuilder(leafPile.get())
                 .part().modelFile(model).uvLock(true).rotationX(270).addModel().condition(BlockStateProperties.UP, true).end()
                 .part().modelFile(model).uvLock(true).rotationX(90).addModel().condition(BlockStateProperties.DOWN, true).end()
