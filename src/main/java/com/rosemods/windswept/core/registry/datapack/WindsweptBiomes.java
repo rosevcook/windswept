@@ -204,7 +204,7 @@ public final class WindsweptBiomes {
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.FLOWERING_SAVANNA_TREES);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.COMMON_LIONS_TAIL);
 
-        return biome(2f, 0f, 4159204, 329011, 12638463, false, generation, baseSavannaSpawns()).build();
+        return biome(1.7f, 0f, 4159204, 329011, 12638463, true, generation, baseSavannaSpawns()).build();
     }
 
     private static MobSpawnSettings.Builder baseSavannaSpawns() {
