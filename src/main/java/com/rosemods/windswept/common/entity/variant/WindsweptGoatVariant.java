@@ -14,7 +14,8 @@ import java.util.function.IntFunction;
 public enum WindsweptGoatVariant implements StringRepresentable {
     WHITE(0, "white", new ResourceLocation("textures/entity/goat/goat.png")),
     BROWN(1, "brown", Windswept.location("textures/entity/goat/brown.png")),
-    GRAY(2, "gray", Windswept.location("textures/entity/goat/gray.png"));
+    GRAY(2, "gray", Windswept.location("textures/entity/goat/gray.png")),
+    ALPINE(3, "alpine", Windswept.location("textures/entity/goat/alpine.png"));
 
     public static final EntityDataAccessor<Integer> DATA_TYPE_ID = SynchedEntityData.defineId(Goat.class, EntityDataSerializers.INT);
     private static final IntFunction<WindsweptGoatVariant> BY_ID = ByIdMap.sparse(WindsweptGoatVariant::id, values(), WHITE);
