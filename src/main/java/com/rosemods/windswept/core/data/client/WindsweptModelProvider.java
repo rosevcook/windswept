@@ -336,6 +336,7 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.tallPlant(WHITE_ROSE_BUSH);
         this.tallPlant(YELLOW_ROSE_BUSH);
         this.tallPlant(LUPINE);
+        this.tallPlant(LIONS_TAIL);
 
         this.pottedPlant(RED_ROSE, POTTED_RED_ROSE);
         this.pottedPlant(BLUE_ROSE, POTTED_BLUE_ROSE);

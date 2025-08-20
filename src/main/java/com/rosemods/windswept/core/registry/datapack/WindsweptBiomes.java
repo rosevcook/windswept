@@ -24,6 +24,7 @@ public final class WindsweptBiomes {
     public static final ResourceKey<Biome> LAVENDER_HILLS = createKey("lavender_hills");
     public static final ResourceKey<Biome> LAVENDER_FIELDS = createKey("lavender_fields");
     public static final ResourceKey<Biome> TUNDRA = createKey("tundra");
+    public static final ResourceKey<Biome> FLOWERING_SAVANNA = createKey("flowering_savanna");
 
     public static void bootstrap(BootstapContext<Biome> context) {
         HolderGetter<PlacedFeature> features = context.lookup(Registries.PLACED_FEATURE);
@@ -36,6 +37,7 @@ public final class WindsweptBiomes {
         context.register(LAVENDER_HILLS, lavender(true, features, carvers));
         context.register(LAVENDER_FIELDS, lavender(false, features, carvers));
         context.register(TUNDRA, tundra(features, carvers));
+        context.register(FLOWERING_SAVANNA, savanna(features, carvers));
     }
 
     public static ResourceKey<Biome> createKey(String name) {
@@ -136,10 +138,10 @@ public final class WindsweptBiomes {
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.DRY_MOSS_ROCK);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.HOLLY_BUSH);
 
-        return biome(1f, .2f, 4159204, 329011, 12638463, false, generation, basTundraSpawns()).build();
+        return biome(1f, .2f, 4159204, 329011, 12638463, false, generation, baseTundraSpawns()).build();
     }
 
-    private static MobSpawnSettings.Builder basTundraSpawns() {
+    private static MobSpawnSettings.Builder baseTundraSpawns() {
         MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
 
         BiomeDefaultFeatures.commonSpawns(spawns);
@@ -182,6 +184,35 @@ public final class WindsweptBiomes {
         spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 15, 4, 4));
         spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 8, 4, 4));
         spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DONKEY, 8, 1, 2));
+
+        return spawns;
+    }
+
+    // Savanna //
+
+    private static Biome savanna(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
+        BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder(features, carvers);
+        OverworldBiomes.globalOverworldGeneration(generation);
+        BiomeDefaultFeatures.addDefaultOres(generation);
+        BiomeDefaultFeatures.addDefaultSoftDisks(generation);
+        BiomeDefaultFeatures.addDefaultFlowers(generation);
+        BiomeDefaultFeatures.addShatteredSavannaGrass(generation);
+        BiomeDefaultFeatures.addDefaultMushrooms(generation);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
+
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.YELLOW_PETALS);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.FLOWERING_SAVANNA_TREES);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.COMMON_LIONS_TAIL);
+
+        return biome(2f, 0f, 4159204, 329011, 12638463, false, generation, baseSavannaSpawns()).build();
+    }
+
+    private static MobSpawnSettings.Builder baseSavannaSpawns() {
+        MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.farmAnimals(spawns);
+        BiomeDefaultFeatures.commonSpawns(spawns);
+        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.HORSE, 1, 2, 6)).addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DONKEY, 1, 1, 1));
+        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.LLAMA, 8, 4, 4));
 
         return spawns;
     }

@@ -143,6 +143,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateBiome(WindsweptBiomes.LAVENDER_HILLS);
         this.translateBiome(WindsweptBiomes.LAVENDER_FIELDS);
         this.translateBiome(WindsweptBiomes.TUNDRA);
+        this.translateBiome(WindsweptBiomes.FLOWERING_SAVANNA);
 
         // JEI Info //
         this.jeiInfo(FROZEN_BRANCH, "Tamed Frostbiters will shed their antlers.");

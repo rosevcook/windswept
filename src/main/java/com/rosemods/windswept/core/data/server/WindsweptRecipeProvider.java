@@ -79,6 +79,7 @@ public class WindsweptRecipeProvider extends BlueprintRecipeProvider {
         tallFlowerToDye(WHITE_ROSE_BUSH.get(), Items.WHITE_DYE, consumer);
         tallFlowerToDye(YELLOW_ROSE_BUSH.get(), Items.YELLOW_DYE, consumer);
         tallFlowerToDye(LUPINE.get(), Items.PURPLE_DYE, consumer);
+        tallFlowerToDye(LIONS_TAIL.get(), Items.ORANGE_DYE, consumer);
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(PINECONE.get()), RecipeCategory.MISC, Items.BROWN_DYE, .35f, 200).unlockedBy(getHasName(PINECONE.get()), has(PINECONE.get())).save(consumer, getSaveLocation("brown_dye_from_pinecone_smelting"));
 
         // other items

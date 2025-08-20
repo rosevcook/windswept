@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "minecraft:windswept_savanna",
-  "features": "windswept:windswept_savanna_trees",
-  "step": "vegetal_decoration"
-}

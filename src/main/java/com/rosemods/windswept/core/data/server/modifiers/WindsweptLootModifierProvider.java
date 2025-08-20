@@ -70,7 +70,6 @@ public class WindsweptLootModifierProvider extends LootModifierProvider {
         // chests
         this.chestEntry("village_taiga_house", "chests/village/village_taiga_house", WindsweptItems.MUTTON_PIE, b -> b.setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(-1, 2))));
         this.chestEntry("village_snowy_house", "chests/village/village_snowy_house", WindsweptItems.MUTTON_PIE, b -> b.setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(-1, 2))));
-        this.chestEntry("village_savanna_house", "chests/village/village_savanna_house", WindsweptBlocks.YELLOW_PETALS, b -> b.setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 12))));
         this.chestEntry("underwater_ruin_small", "chests/underwater_ruin_small", WindsweptItems.WOODEN_BUCKET, b -> b.setWeight(2).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))));
         this.chestEntry("village_fisher", "chests/village/village_fisher", WindsweptItems.WOODEN_WATER_BUCKET, b -> b.setWeight(2).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))));
         this.entry("village_savanna_house").selects("chests/village/village_savanna_house").addModifier(new LootPoolsModifier(List.of(LootPool.lootPool().name(Windswept.MOD_ID + ":village_savanna_house").setRolls(UniformGenerator.between(1f, 3f))

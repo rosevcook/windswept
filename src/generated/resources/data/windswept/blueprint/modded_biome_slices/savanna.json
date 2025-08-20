@@ -5,8 +5,7 @@
   "provider": {
     "type": "blueprint:multi_noise",
     "areas": {
-      "windswept:chestnut_forest_area": "windswept:chestnut_forest",
-      "windswept:snowy_chestnut_forest_area": "windswept:snowy_chestnut_forest"
+      "windswept:flowering_savanna_area": "windswept:flowering_savanna"
     },
     "biomes": [
       {
@@ -204624,5 +204623,5 @@
     ],
     "only_map_from_areas": true
   },
-  "weight": 30
+  "weight": 20
 }

@@ -60,7 +60,6 @@ public final class WindsweptStructureRepaletters {
         register(context, structures, Blocks.ACACIA_SAPLING, MIMOSA.get(), VILLAGE_SAVANNA);
         register(context, structures, Blocks.POPPY, YELLOW_PETALS.get(), VILLAGE_SAVANNA);
         register(context, structures, Blocks.ACACIA_PRESSURE_PLATE, POTTED_MIMOSA.get(), VILLAGE_SAVANNA);
-        register(context, structures, Blocks.WHITE_CARPET, POTTED_MIMOSA.get(), VILLAGE_SAVANNA);
 
         //chestnut in snowy village
         register(context, structures, Blocks.SPRUCE_PLANKS, CHESTNUT_PLANKS.get(), VILLAGE_SNOWY);

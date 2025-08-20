@@ -348,6 +348,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 
             // tall plants
             this.tallFlower(LUPINE.get());
+            this.tallFlower(LIONS_TAIL.get());
             this.tallFlower(RED_ROSE_BUSH.get());
             this.tallFlower(BLUE_ROSE_BUSH.get());
             this.tallFlower(WHITE_ROSE_BUSH.get());

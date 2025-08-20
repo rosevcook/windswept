@@ -163,6 +163,7 @@ public class WindsweptBlocks {
 
     // Tall Flowers//
     public static final RegistryObject<Block> LUPINE = HELPER.createBlock("lupine", () -> new TallFlowerBlock(PropertyUtil.flower()));
+    public static final RegistryObject<Block> LIONS_TAIL = HELPER.createBlock("lions_tail", () -> new TallFlowerBlock(PropertyUtil.flower()));
     public static final RegistryObject<Block> RED_ROSE_BUSH = HELPER.createBlock("red_rose_bush", () -> new TallFlowerBlock(PropertyUtil.flower()));
     public static final RegistryObject<Block> BLUE_ROSE_BUSH = HELPER.createBlock("blue_rose_bush", () -> new TallFlowerBlock(PropertyUtil.flower()));
     public static final RegistryObject<Block> WHITE_ROSE_BUSH = HELPER.createBlock("white_rose_bush", () -> new TallFlowerBlock(PropertyUtil.flower()));

@@ -1,6 +1,0 @@
-{
-  "type": "forge:remove_features",
-  "biomes": "minecraft:windswept_savanna",
-  "features": "minecraft:trees_windswept_savanna",
-  "steps": "vegetal_decoration"
-}

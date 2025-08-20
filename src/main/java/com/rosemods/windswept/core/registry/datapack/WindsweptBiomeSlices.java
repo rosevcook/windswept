@@ -22,6 +22,7 @@ public final class WindsweptBiomeSlices {
     public static final ResourceKey<ModdedBiomeSlice> PINE_SLICE = createKey("pine");
     public static final ResourceKey<ModdedBiomeSlice> TUNDRA_SLICE = createKey("tundra");
     public static final ResourceKey<ModdedBiomeSlice> LAVENDER_SLICE = createKey("lavender");
+    public static final ResourceKey<ModdedBiomeSlice> SAVANNA_SLICE = createKey("savanna");
 
     public static final ResourceKey<Biome> CHESTNUT_FOREST_AREA = WindsweptBiomes.createKey("chestnut_forest_area");
     public static final ResourceKey<Biome> SNOWY_CHESTNUT_FOREST_AREA = WindsweptBiomes.createKey("snowy_chestnut_forest_area");
@@ -30,6 +31,7 @@ public final class WindsweptBiomeSlices {
     public static final ResourceKey<Biome> LAVENDER_HILLS_AREA = WindsweptBiomes.createKey("lavender_hills_area");
     public static final ResourceKey<Biome> LAVENDER_FIELDS_AREA = WindsweptBiomes.createKey("lavender_fields_area");
     public static final ResourceKey<Biome> TUNDRA_AREA = WindsweptBiomes.createKey("tundra_area");
+    public static final ResourceKey<Biome> FLOWERING_SAVANNA_AREA = WindsweptBiomes.createKey("flowering_savanna_area");
 
     public static void bootstrap(BootstapContext<ModdedBiomeSlice> context) {
         List<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> entries = new ArrayList<>();
@@ -50,8 +52,12 @@ public final class WindsweptBiomeSlices {
                 .area(LAVENDER_FIELDS_AREA, LAVENDER_FIELDS)
                 .build(), LevelStem.OVERWORLD));
 
-        context.register(TUNDRA_SLICE, new ModdedBiomeSlice(5, BiomeUtil.MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
+        context.register(TUNDRA_SLICE, new ModdedBiomeSlice(8, BiomeUtil.MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
                 .area(TUNDRA_AREA, TUNDRA)
+                .build(), LevelStem.OVERWORLD));
+
+        context.register(SAVANNA_SLICE, new ModdedBiomeSlice(20, BiomeUtil.MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
+                .area(FLOWERING_SAVANNA_AREA, FLOWERING_SAVANNA)
                 .build(), LevelStem.OVERWORLD));
     }
 
@@ -75,9 +81,9 @@ public final class WindsweptBiomeSlices {
         private final Climate.Parameter midInlandContinentalness = Climate.Parameter.span(.03f, .3f);
         private final Climate.Parameter farInlandContinentalness = Climate.Parameter.span(.3f, 1f);
         private final ResourceKey<Biome> VANILLA = BlueprintBiomes.ORIGINAL_SOURCE_MARKER;
-        private final ResourceKey<Biome>[][] MIDDLE_BIOMES = new ResourceKey[][]{{TUNDRA_AREA, TUNDRA_AREA, TUNDRA_AREA, SNOWY_CHESTNUT_FOREST_AREA, CHESTNUT_FOREST_AREA}, {LAVENDER_FIELDS_AREA, LAVENDER_FIELDS_AREA, VANILLA, CHESTNUT_FOREST_AREA, PINE_BARRENS_AREA}, {VANILLA, LAVENDER_FIELDS_AREA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
+        private final ResourceKey<Biome>[][] MIDDLE_BIOMES = new ResourceKey[][]{{TUNDRA_AREA, TUNDRA_AREA, TUNDRA_AREA, SNOWY_CHESTNUT_FOREST_AREA, CHESTNUT_FOREST_AREA}, {LAVENDER_FIELDS_AREA, LAVENDER_FIELDS_AREA, VANILLA, CHESTNUT_FOREST_AREA, PINE_BARRENS_AREA}, {VANILLA, LAVENDER_FIELDS_AREA, VANILLA, VANILLA, VANILLA}, {FLOWERING_SAVANNA_AREA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
         private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{{VANILLA, null, SNOWY_CHESTNUT_FOREST_AREA, null, null}, {null, null, null, null, PINE_BARRENS_AREA}, {LAVENDER_FIELDS_AREA, null, null, LAVENDER_HILLS_AREA, null}, {null, null, LAVENDER_FIELDS_AREA, VANILLA, VANILLA}, {null, null, null, null, null}};
-        private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{{TUNDRA_AREA, TUNDRA_AREA, TUNDRA_AREA, SNOWY_CHESTNUT_FOREST_AREA, SNOWY_CHESTNUT_FOREST_AREA}, {LAVENDER_HILLS_AREA, LAVENDER_HILLS_AREA, VANILLA, CHESTNUT_FOREST_AREA, PINE_BARRENS_AREA}, {LAVENDER_HILLS_AREA, LAVENDER_HILLS_AREA, LAVENDER_HILLS_AREA, LAVENDER_HILLS_AREA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
+        private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{{TUNDRA_AREA, TUNDRA_AREA, TUNDRA_AREA, SNOWY_CHESTNUT_FOREST_AREA, SNOWY_CHESTNUT_FOREST_AREA}, {LAVENDER_HILLS_AREA, LAVENDER_HILLS_AREA, VANILLA, CHESTNUT_FOREST_AREA, PINE_BARRENS_AREA}, {LAVENDER_HILLS_AREA, LAVENDER_HILLS_AREA, LAVENDER_HILLS_AREA, LAVENDER_HILLS_AREA, VANILLA}, {FLOWERING_SAVANNA_AREA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
         private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{{VANILLA, null, null, null, null}, {null, null, LAVENDER_HILLS_AREA, LAVENDER_HILLS_AREA, VANILLA}, {null, null, VANILLA, VANILLA, null}, {null, null, null, null, null}, {VANILLA, VANILLA, null, null, null}};
 
         private void addBiomesToSlice(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer) {
@@ -294,7 +300,7 @@ public final class WindsweptBiomeSlices {
         }
 
         private ResourceKey<Biome> maybePickWindsweptSavannaBiome(int p_201991_, int p_201992_, Climate.Parameter p_201993_, ResourceKey<Biome> p_201994_) {
-            return p_201991_ > 1 && p_201992_ < 4 && p_201993_.max() >= 0L ? VANILLA : p_201994_;
+            return p_201991_ > 1 && p_201992_ < 4 && p_201993_.max() >= 0L ? FLOWERING_SAVANNA_AREA : p_201994_;
         }
 
         private ResourceKey<Biome> pickShatteredCoastBiome(int temperatureIndex, int humidityIndex, Climate.Parameter p_187225_) {

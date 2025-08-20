@@ -54,6 +54,7 @@ public final class WindsweptConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> YELLOW_PETALS = createKey("yellow_petals");
     public static final ResourceKey<ConfiguredFeature<?, ?>> FERNS = createKey("ferns");
     public static final ResourceKey<ConfiguredFeature<?, ?>> LUPINE = createKey("lupine");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LIONS_TAIL = createKey("lions_tail");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BLUEBELLS = createKey("bluebells");
     public static final ResourceKey<ConfiguredFeature<?, ?>> LAVENDER = createKey("lavender");
     public static final ResourceKey<ConfiguredFeature<?, ?>> NIGHTHSADE = createKey("nightshades");
@@ -73,7 +74,7 @@ public final class WindsweptConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> FLOWERING_ACACIA = createKey("flowering_acacia");
     public static final ResourceKey<ConfiguredFeature<?, ?>> FLOWERING_ACACIA_BEES = createKey("flowering_acacia_bees");
     public static final ResourceKey<ConfiguredFeature<?, ?>> OLD_GROWTH_PINE_TAIGA_TREES = createKey("old_growth_pine_taiga_trees");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> WINDSWEPT_SAVANNA_TREES = createKey("windswept_savanna_trees");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FLOWERING_SAVANNA_TREES = createKey("windswept_savanna_trees");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TUNDRA_FALLEN_LOG = createKey("tundra_fallen_log");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PINE_FALLEN_LOG = createKey("pine_fallen_log");
     public static final ResourceKey<ConfiguredFeature<?, ?>> DRY_MOSS_ROCK = createKey("dry_moss_rock");
@@ -106,6 +107,7 @@ public final class WindsweptConfiguredFeatures {
         context.register(YELLOW_PETALS, new ConfiguredFeature<>(Feature.FLOWER, new RandomPatchConfiguration(96, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(builder))))));
         context.register(FERNS, new ConfiguredFeature<>(Feature.FLOWER, FeatureUtils.simpleRandomPatchConfiguration(4, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.FERN))))));
         context.register(LUPINE, new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.createPlantPatch(64, WindsweptBlocks.LUPINE.get().defaultBlockState())));
+        context.register(LIONS_TAIL, new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.createPlantPatch(64, WindsweptBlocks.LIONS_TAIL.get().defaultBlockState())));
         context.register(BLUEBELLS, new ConfiguredFeature<>(BLUEBELL_PATCH.get(), NoneFeatureConfiguration.NONE));
         context.register(LAVENDER, new ConfiguredFeature<>(LAVENDER_PATCH.get(), NoneFeatureConfiguration.NONE));
         context.register(NIGHTHSADE, new ConfiguredFeature<>(NIGHTSHADE_PATCH.get(), NoneFeatureConfiguration.NONE));
@@ -125,7 +127,7 @@ public final class WindsweptConfiguredFeatures {
         context.register(FLOWERING_ACACIA, new ConfiguredFeature<>(Feature.TREE, Configs.FLOWERING_ACACIA_TREE));
         context.register(FLOWERING_ACACIA_BEES, new ConfiguredFeature<>(Feature.TREE, Configs.FLOWERING_ACACIA_TREE_BEES));
         context.register(OLD_GROWTH_PINE_TAIGA_TREES, new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(placed.getOrThrow(TreePlacements.MEGA_SPRUCE_CHECKED), .33333334f), new WeightedPlacedFeature(placed.getOrThrow(WindsweptPlacedFeatures.PINE_CHECKED), .33333334f)), placed.getOrThrow(TreePlacements.SPRUCE_CHECKED))));
-        context.register(WINDSWEPT_SAVANNA_TREES, new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(placed.getOrThrow(TreePlacements.ACACIA_CHECKED), .25f)), placed.getOrThrow(WindsweptPlacedFeatures.FLOWERING_ACACIA_CHECKED))));
+        context.register(FLOWERING_SAVANNA_TREES, new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(placed.getOrThrow(TreePlacements.ACACIA_CHECKED), .25f)), placed.getOrThrow(WindsweptPlacedFeatures.FLOWERING_ACACIA_CHECKED))));
         context.register(TUNDRA_FALLEN_LOG, new ConfiguredFeature<>(WindsweptFeatures.FALLEN_LOG.get(), new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(WindsweptBlocks.HOLLY_LOG.get().defaultBlockState(), 1).add(Blocks.SPRUCE_LOG.defaultBlockState(), 1)))));
         context.register(PINE_FALLEN_LOG, new ConfiguredFeature<>(WindsweptFeatures.FALLEN_LOG.get(), new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(WindsweptBlocks.WEATHERED_PINE_LOG.get().defaultBlockState(), 3).add(WindsweptBlocks.PINE_LOG.get().defaultBlockState(), 1)))));
         context.register(DRY_MOSS_ROCK, new ConfiguredFeature<>(Feature.FOREST_ROCK, new BlockStateConfiguration(WindsweptBlocks.DRY_MOSSY_COBBLESTONE.get().defaultBlockState())));

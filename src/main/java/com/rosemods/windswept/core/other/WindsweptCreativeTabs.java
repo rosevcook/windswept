@@ -93,7 +93,7 @@ public final class WindsweptCreativeTabs {
                 .addItemsAfter(Ingredient.of(Blocks.LILY_OF_THE_VALLEY), FOXGLOVE, MOSS_CAMPION, MIMOSA, SNOWDROP, NIGHTSHADE, BLUEBELLS,
                         BLUE_ROSE, BLUE_ROSE_BUSH, RED_ROSE, RED_ROSE_BUSH, WHITE_ROSE, WHITE_ROSE_BUSH, YELLOW_ROSE, YELLOW_ROSE_BUSH)
                 .addItemsBefore(Ingredient.of(Blocks.CRIMSON_ROOTS), MOSSY_SPROUTS, DRY_MOSSY_SPROUTS, SNOWY_SPROUTS, GELISOL_SPROUTS, WILD_GINGER)
-                .addItemsAfter(Ingredient.of(Blocks.SUNFLOWER), LUPINE)
+                .addItemsAfter(Ingredient.of(Blocks.SUNFLOWER), LIONS_TAIL, LUPINE)
                 .addItemsAfter(Ingredient.of(Blocks.BAMBOO), PINECONE, PINECONE_BLOCK, ELDER_WING, ELDER_ORNAMENT, DREAM_CATCHER)
                 .addItemsAfter(Ingredient.of(Blocks.SUGAR_CANE), LAVENDER, ICICLES)
                 .addItemsAfter(Ingredient.of(Blocks.HONEY_BLOCK), PINECONE_JAM_BLOCK)
