@@ -325,10 +325,10 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.iceSheet(ICE_SHEET, this.blockTexture(Blocks.ICE));
 
         // sprouts
-        this.pottedPlantWithPottedVariant(SNOWY_SPROUTS, POTTED_SNOWY_SPROUTS);
-        this.pottedPlantWithPottedVariant(GELISOL_SPROUTS, POTTED_GELISOL_SPROUTS);
-        this.pottedPlantWithPottedVariant(DRY_MOSSY_SPROUTS, POTTED_DRY_MOSSY_SPROUTS);
-        this.pottedPlantWithPottedVariant(MOSSY_SPROUTS, POTTED_MOSSY_SPROUTS);
+        this.pottedPlantWithPottedVariant(SNOWY_SPROUTS, POTTED_SNOWY_SPROUTS, TextureFolder.ITEM);
+        this.pottedPlantWithPottedVariant(GELISOL_SPROUTS, POTTED_GELISOL_SPROUTS, TextureFolder.BLOCK);
+        this.pottedPlantWithPottedVariant(DRY_MOSSY_SPROUTS, POTTED_DRY_MOSSY_SPROUTS, TextureFolder.ITEM);
+        this.pottedPlantWithPottedVariant(MOSSY_SPROUTS, POTTED_MOSSY_SPROUTS, TextureFolder.ITEM);
 
         // flowers
         this.tallPlant(RED_ROSE_BUSH);
@@ -344,14 +344,11 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.pottedPlant(YELLOW_ROSE, POTTED_YELLOW_ROSE);
         this.pottedPlant(FOXGLOVE, POTTED_FOXGLOVE);
         this.pottedPlant(NIGHTSHADE, POTTED_NIGHTSHADE);
-        this.pottedPlantWithPottedVariant(SNOWDROP, POTTED_SNOWDROP);
-        this.pottedPlantWithPottedVariant(MOSS_CAMPION, POTTED_MOSS_CAMPION);
-        this.pottedPlantWithPottedVariant(WILD_GINGER, POTTED_WILD_GINGER);
-        this.pottedPlantWithPottedVariant(BLUEBELLS, POTTED_BLUEBELLS);
-
-        this.pot(POTTED_MIMOSA, this.modLoc("block/potted_mimosa"));
-        this.simpleCross(MIMOSA);
-        this.generatedItem(MIMOSA.get(), TextureFolder.ITEM);
+        this.pottedPlantWithPottedVariant(SNOWDROP, POTTED_SNOWDROP, TextureFolder.BLOCK);
+        this.pottedPlantWithPottedVariant(MOSS_CAMPION, POTTED_MOSS_CAMPION, TextureFolder.BLOCK);
+        this.pottedPlantWithPottedVariant(WILD_GINGER, POTTED_WILD_GINGER, TextureFolder.BLOCK);
+        this.pottedPlantWithPottedVariant(BLUEBELLS, POTTED_BLUEBELLS, TextureFolder.BLOCK);
+        this.pottedPlantWithPottedVariant(MIMOSA, POTTED_MIMOSA, TextureFolder.ITEM);
 
         // lavender
         this.getVariantBuilder(LAVENDER.get())
@@ -662,10 +659,10 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.generatedItem(plant.get(), TextureFolder.BLOCK);
     }
 
-    private void pottedPlantWithPottedVariant(RegistryObject<Block> plant, RegistryObject<Block> pot) {
+    private void pottedPlantWithPottedVariant(RegistryObject<Block> plant, RegistryObject<Block> pot, TextureFolder itemFolder) {
         this.pot(pot, this.modLoc("block/potted_" + getItemName(plant.get())));
         this.simpleCross(plant);
-        this.generatedItem(plant.get(), TextureFolder.BLOCK);
+        this.generatedItem(plant.get(), itemFolder);
     }
 
     private void pot(RegistryObject<Block> pot, ResourceLocation texture) {
