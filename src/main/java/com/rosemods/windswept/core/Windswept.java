@@ -70,7 +70,10 @@ public class Windswept {
     }
 
     private void clientSetup(FMLClientSetupEvent event) {
-        event.enqueueWork(WindsweptEntityTypes::registerClient);
+        event.enqueueWork(() -> {
+            WindsweptEntityTypes.registerClient();
+            WindsweptBlockEntities.registerClient();
+        });
     }
 
     private void dataSetup(GatherDataEvent event) {
