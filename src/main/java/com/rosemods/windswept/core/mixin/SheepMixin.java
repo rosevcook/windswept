@@ -32,7 +32,7 @@ public class SheepMixin {
             sheep.setColor(rand.nextBoolean() ? DyeColor.PURPLE : DyeColor.MAGENTA);
         else if (biome.is(WindsweptBiomeTags.IS_CHESTNUT_FOREST) && rand.nextInt(3) == 0)
             sheep.setColor(rand.nextInt(8) == 0 ? DyeColor.BLUE : DyeColor.BROWN);
-        else if (biome.is(BiomeTags.IS_SAVANNA) && rand.nextInt(3) == 0)
+        else if (biome.is(BiomeTags.IS_SAVANNA) && rand.nextInt(biome.is(WindsweptBiomes.FLOWERING_SAVANNA) ? 3 : 8) == 0)
             sheep.setColor(DyeColor.YELLOW);
     }
 
