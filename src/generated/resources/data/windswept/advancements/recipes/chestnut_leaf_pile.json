@@ -4,12 +4,12 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_pine_planks": {
+          "has_chestnut_leaves": {
             "conditions": {
               "items": [
                 {
                   "items": [
-                    "windswept:pine_planks"
+                    "windswept:chestnut_leaves"
                   ]
                 }
               ]
@@ -18,20 +18,20 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "windswept:pine_trapped_chest"
+              "recipe": "windswept:chestnut_leaf_pile"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
           [
-            "has_pine_planks",
+            "has_chestnut_leaves",
             "has_the_recipe"
           ]
         ],
         "rewards": {
           "recipes": [
-            "windswept:pine_trapped_chest"
+            "windswept:chestnut_leaf_pile"
           ]
         },
         "sends_telemetry_event": false

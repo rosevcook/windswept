@@ -22,7 +22,6 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Rabbit;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.ThornsEnchantment;
@@ -69,17 +68,14 @@ public class WindsweptEntityEvents {
     public static void onEntityInteract(PlayerInteractEvent.EntityInteract event) {
         ItemStack stack = event.getItemStack();
         Entity target = event.getTarget();
-        Player player = event.getEntity();
-        Level level = event.getLevel();
-        InteractionHand hand = event.getHand();
 
         // milk animal with wooden bucket
         if (stack.is(WindsweptItems.WOODEN_BUCKET.get()) && target.getType().is(BlueprintEntityTypeTags.MILKABLE)) {
             if (target instanceof Animal animal && animal.isBaby())
                 return;
 
-            WoodenMilkBucketItem.milkAnimal(player, hand, stack);
-            event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide));
+            WoodenMilkBucketItem.milkAnimal(event.getEntity(), event.getHand(), stack);
+            event.setCancellationResult(InteractionResult.sidedSuccess(event.getLevel().isClientSide));
             event.setCanceled(true);
         }
 
@@ -158,22 +154,22 @@ public class WindsweptEntityEvents {
 
         // chilled conversion in powder snow
         if (entity.getType().is(WindsweptEntityTypeTags.CONVERT_TO_CHILLED) && entity instanceof Mob mob && !mob.level().isClientSide && mob.isAlive() && !mob.isNoAi()) {
-                if (data.getValue(WindsweptDataProcessors.IS_FREEZE_CONVERTING)) {
-                    ammendData(data, WindsweptDataProcessors.FREEZE_CONVERT_TIME, -1);
-                    if (data.getValue(WindsweptDataProcessors.FREEZE_CONVERT_TIME) < 0) {
-                        mob.convertTo(WindsweptEntityTypes.CHILLED.get(), true);
-                        data.clean();
-                        if (!mob.isSilent())
-                            mob.level().levelEvent(null, 1048, mob.blockPosition(), 0);
-                    }
-                } else if (mob.isInPowderSnow) {
-                    ammendData(data, WindsweptDataProcessors.POWDER_SNOW_TIME, 1);
-                    if (data.getValue(WindsweptDataProcessors.POWDER_SNOW_TIME) >= 140) {
-                        data.setValue(WindsweptDataProcessors.FREEZE_CONVERT_TIME, 300);
-                        data.setValue(WindsweptDataProcessors.IS_FREEZE_CONVERTING, true);
-                    }
-                } else
-                    data.setValue(WindsweptDataProcessors.POWDER_SNOW_TIME, -1);
+            if (data.getValue(WindsweptDataProcessors.IS_FREEZE_CONVERTING)) {
+                ammendData(data, WindsweptDataProcessors.FREEZE_CONVERT_TIME, -1);
+                if (data.getValue(WindsweptDataProcessors.FREEZE_CONVERT_TIME) < 0) {
+                    mob.convertTo(WindsweptEntityTypes.CHILLED.get(), true);
+                    data.clean();
+                    if (!mob.isSilent())
+                        mob.level().levelEvent(null, 1048, mob.blockPosition(), 0);
+                }
+            } else if (mob.isInPowderSnow) {
+                ammendData(data, WindsweptDataProcessors.POWDER_SNOW_TIME, 1);
+                if (data.getValue(WindsweptDataProcessors.POWDER_SNOW_TIME) >= 140) {
+                    data.setValue(WindsweptDataProcessors.FREEZE_CONVERT_TIME, 300);
+                    data.setValue(WindsweptDataProcessors.IS_FREEZE_CONVERTING, true);
+                }
+            } else
+                data.setValue(WindsweptDataProcessors.POWDER_SNOW_TIME, -1);
         }
 
     }

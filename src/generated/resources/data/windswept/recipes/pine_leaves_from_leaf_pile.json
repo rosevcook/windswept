@@ -9,19 +9,21 @@
         }
       ],
       "recipe": {
-        "type": "minecraft:crafting_shapeless",
+        "type": "minecraft:crafting_shaped",
         "category": "misc",
-        "ingredients": [
-          {
-            "item": "windswept:pine_chest"
-          },
-          {
-            "item": "minecraft:tripwire_hook"
+        "key": {
+          "#": {
+            "item": "windswept:pine_leaf_pile"
           }
+        },
+        "pattern": [
+          "##",
+          "##"
         ],
         "result": {
-          "item": "windswept:pine_trapped_chest"
-        }
+          "item": "windswept:pine_leaves"
+        },
+        "show_notification": true
       }
     }
   ]

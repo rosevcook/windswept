@@ -90,6 +90,7 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.add("block.windswept.snow_carpet", "Snow Carpet");
         this.add(GINGER_ROOT_CRATE.get(), "Crate of Ginger Roots");
         this.add(WILD_BERRY_BASKET.get(), "Basket of Wild Berries");
+        this.add(LIONS_TAIL.get(), "Lion's Tail");
 
         // Effects //
         this.translateEffect(WindsweptEffects.THORNS, "Causes damage to enemies when they attack you.");

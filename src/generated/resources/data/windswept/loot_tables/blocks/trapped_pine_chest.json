@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "windswept:chestnut_trapped_chest"
+          "name": "windswept:trapped_pine_chest"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "windswept:blocks/chestnut_trapped_chest"
+  "random_sequence": "windswept:blocks/trapped_pine_chest"
 }

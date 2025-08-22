@@ -18,7 +18,7 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "windswept:holly_trapped_chest"
+              "recipe": "windswept:trapped_holly_chest"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
@@ -31,7 +31,7 @@
         ],
         "rewards": {
           "recipes": [
-            "windswept:holly_trapped_chest"
+            "windswept:trapped_holly_chest"
           ]
         },
         "sends_telemetry_event": false

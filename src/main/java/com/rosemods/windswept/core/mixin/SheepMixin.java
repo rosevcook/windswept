@@ -4,6 +4,7 @@ import com.rosemods.windswept.core.other.tags.WindsweptBiomeTags;
 import com.rosemods.windswept.core.registry.datapack.WindsweptBiomes;
 import net.minecraft.core.Holder;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.MobSpawnType;
@@ -31,6 +32,8 @@ public class SheepMixin {
             sheep.setColor(rand.nextBoolean() ? DyeColor.PURPLE : DyeColor.MAGENTA);
         else if (biome.is(WindsweptBiomeTags.IS_CHESTNUT_FOREST) && rand.nextInt(3) == 0)
             sheep.setColor(rand.nextInt(8) == 0 ? DyeColor.BLUE : DyeColor.BROWN);
+        else if (biome.is(BiomeTags.IS_SAVANNA) && rand.nextInt(3) == 0)
+            sheep.setColor(DyeColor.YELLOW);
     }
 
 }

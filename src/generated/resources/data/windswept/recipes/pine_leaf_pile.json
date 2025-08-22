@@ -1,14 +1,26 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "group": "leaf_pile",
-  "ingredients": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "item": "windswept:pine_leaves"
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "woodworks"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "ingredients": [
+          {
+            "item": "windswept:pine_leaves"
+          }
+        ],
+        "result": {
+          "count": 4,
+          "item": "windswept:pine_leaf_pile"
+        }
+      }
     }
-  ],
-  "result": {
-    "count": 4,
-    "item": "windswept:pine_leaf_pile"
-  }
+  ]
 }

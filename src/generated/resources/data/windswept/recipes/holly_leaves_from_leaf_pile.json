@@ -9,17 +9,21 @@
         }
       ],
       "recipe": {
-        "type": "minecraft:crafting_shapeless",
+        "type": "minecraft:crafting_shaped",
         "category": "misc",
-        "ingredients": [
-          {
-            "item": "windswept:holly_leaves"
+        "key": {
+          "#": {
+            "item": "windswept:holly_leaf_pile"
           }
+        },
+        "pattern": [
+          "##",
+          "##"
         ],
         "result": {
-          "count": 4,
-          "item": "windswept:holly_leaf_pile"
-        }
+          "item": "windswept:holly_leaves"
+        },
+        "show_notification": true
       }
     }
   ]

@@ -8,6 +8,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public final class WindsweptConstants {
     public static final ResourceLocation MOSSY_COBBLESTONE_BRICK_WALL = new ResourceLocation("caverns_and_chasms", "mossy_cobblestone_brick_wall");
     public static final ResourceLocation MOSSY_COBBLESTONE_TILE_WALL = new ResourceLocation("caverns_and_chasms", "mossy_cobblestone_tile_wall");
+    public static final ResourceLocation SWEET_BERRY_PIPS = new ResourceLocation("berry_good", "sweet_berry_pips");
 
     public static Item getItem(String modid, String path) {
         return ForgeRegistries.ITEMS.getValue(new ResourceLocation(modid, path));

@@ -48,7 +48,7 @@ public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
 
         this.tag(HAS_YAK).add(TUNDRA, PINE_BARRENS, SNOWY_PINE_BARRENS);
         this.tag(HAS_REINDEER).add(TUNDRA);
-        this.tag(HAS_SHEEP).addTag(IS_LAVENDER).addTag(IS_PINE_BARRENS).addTag(IS_CHESTNUT_FOREST);
+        this.tag(HAS_SHEEP).addTag(IS_LAVENDER).addTag(IS_PINE_BARRENS).addTag(IS_CHESTNUT_FOREST).add(FLOWERING_SAVANNA);
         this.tag(HAS_DWARF_SPRUCE_SPARSE).add(TUNDRA);
 
         this.tag(BlueprintBiomeTags.IS_GRASSLAND).add(LAVENDER_HILLS, LAVENDER_FIELDS);

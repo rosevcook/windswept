@@ -1,10 +1,10 @@
 {
   "values": [
     "windswept:holly_chest",
-    "windswept:holly_trapped_chest",
+    "windswept:trapped_holly_chest",
     "windswept:chestnut_chest",
-    "windswept:chestnut_trapped_chest",
+    "windswept:trapped_chestnut_chest",
     "windswept:pine_chest",
-    "windswept:pine_trapped_chest"
+    "windswept:trapped_pine_chest"
   ]
 }

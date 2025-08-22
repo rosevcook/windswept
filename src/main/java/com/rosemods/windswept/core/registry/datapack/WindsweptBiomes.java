@@ -204,15 +204,17 @@ public final class WindsweptBiomes {
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.FLOWERING_SAVANNA_TREES);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WindsweptPlacedFeatures.COMMON_LIONS_TAIL);
 
-        return biome(1.7f, 0f, 4159204, 329011, 12638463, true, generation, baseSavannaSpawns()).build();
+        return biome(1.2f, 0f, 4159204, 329011, 12638463, true, generation, baseSavannaSpawns()).build();
     }
 
     private static MobSpawnSettings.Builder baseSavannaSpawns() {
         MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
         BiomeDefaultFeatures.farmAnimals(spawns);
         BiomeDefaultFeatures.commonSpawns(spawns);
-        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.HORSE, 1, 2, 6)).addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DONKEY, 1, 1, 1));
+        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.HORSE, 1, 2, 6));
+        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DONKEY, 1, 1, 1));
         spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.LLAMA, 8, 4, 4));
+        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 12, 4, 4));
 
         return spawns;
     }

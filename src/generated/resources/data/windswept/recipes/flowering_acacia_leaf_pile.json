@@ -13,12 +13,12 @@
         "category": "misc",
         "ingredients": [
           {
-            "item": "windswept:holly_leaves"
+            "item": "windswept:flowering_acacia_leaves"
           }
         ],
         "result": {
           "count": 4,
-          "item": "windswept:holly_leaf_pile"
+          "item": "windswept:flowering_acacia_leaf_pile"
         }
       }
     }

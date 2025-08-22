@@ -119,7 +119,7 @@ public final class WindsweptConfiguredFeatures {
         context.register(FLOOR_ICICLES, new ConfiguredFeature<>(FLOOR_ICICLES_PATCH.get(), NoneFeatureConfiguration.NONE));
         context.register(HOLLY, new ConfiguredFeature<>(Feature.TREE, Configs.HOLLY_TREE));
         context.register(HOLLY_BEES, new ConfiguredFeature<>(Feature.TREE, Configs.HOLLY_TREE_BEES));
-        context.register(HOLLY_BUSH, new ConfiguredFeature<>(Feature.TREE, Configs.createHollyBush().build()));
+        context.register(HOLLY_BUSH, new ConfiguredFeature<>(Feature.TREE, Configs.HOLLY_BUSH));
         context.register(CHESTNUT, new ConfiguredFeature<>(Feature.TREE, Configs.CHESTNUT_TREE));
         context.register(CHESTNUT_BEES, new ConfiguredFeature<>(Feature.TREE, Configs.CHESTNUT_TREE_BEES));
         context.register(PINE, new ConfiguredFeature<>(PINE_TREE.get(), Configs.PINE_TREE));
@@ -149,13 +149,14 @@ public final class WindsweptConfiguredFeatures {
 
     private static class Configs {
         public static final TreeConfiguration HOLLY_TREE = createHollyTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.HOLLY_LOG.get(), 2))).build();
-        public static final TreeConfiguration HOLLY_TREE_BEES = createHollyTree().decorators(List.of(new BeehiveDecorator(.01f), BranchDecorator.create(WindsweptBlocks.HOLLY_LOG.get(), 2))).build();
+        public static final TreeConfiguration HOLLY_TREE_BEES = createHollyTree().decorators(List.of(new BeehiveDecorator(.005f), BranchDecorator.create(WindsweptBlocks.HOLLY_LOG.get(), 2))).build();
+        public static final TreeConfiguration HOLLY_BUSH = createHollyBush().build();
         public static final TreeConfiguration CHESTNUT_TREE = createChestnutTree().build();
         public static final TreeConfiguration CHESTNUT_TREE_BEES = createChestnutTree().decorators(List.of(new BeehiveDecorator(.005f))).build();
         public static final TreeConfiguration PINE_TREE = createPineTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.PINE_LOG.get(), 2))).build();
         public static final TreeConfiguration PINE_TREE_BEES = createPineTree().decorators(List.of(BranchDecorator.create(WindsweptBlocks.PINE_LOG.get(), 2), new BeehiveDecorator(.005f))).build();
         public static final TreeConfiguration FLOWERING_ACACIA_TREE = createFloweringAcaciaTree().decorators(List.of(MimosaDecorator.INSTANCE)).build();
-        public static final TreeConfiguration FLOWERING_ACACIA_TREE_BEES = createFloweringAcaciaTree().decorators(List.of(MimosaDecorator.INSTANCE, new BeehiveDecorator(.02f))).build();
+        public static final TreeConfiguration FLOWERING_ACACIA_TREE_BEES = createFloweringAcaciaTree().decorators(List.of(MimosaDecorator.INSTANCE, new BeehiveDecorator(.05f))).build();
 
         public static SimpleBlockConfiguration createDryMossVegetation() {
             return new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()

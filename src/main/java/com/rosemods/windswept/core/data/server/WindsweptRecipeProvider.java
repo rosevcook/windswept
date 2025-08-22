@@ -260,9 +260,10 @@ public class WindsweptRecipeProvider extends BlueprintRecipeProvider {
         woodSet(WindsweptItemTags.HOLLY_LOGS, HOLLY_PLANKS.get(), HOLLY_SLAB.get(), HOLLY_STAIRS.get(), HOLLY_LOG.get(), HOLLY_WOOD.get(), STRIPPED_HOLLY_LOG.get(), STRIPPED_HOLLY_WOOD.get(), HOLLY_BOAT.getFirst().get(), HOLLY_BOAT.getSecond().get(), HOLLY_BUTTON.get(), HOLLY_DOOR.get(), HOLLY_TRAPDOOR.get(), HOLLY_FENCE.get(), HOLLY_FENCE_GATE.get(), HOLLY_PRESSURE_PLATE.get(), HOLLY_SIGNS.getFirst().get(), HOLLY_BOARDS.get(), HOLLY_BEEHIVE.get(), HOLLY_LADDER.get(), HOLLY_BOOKSHELF.get(), HOLLY_CHEST.get(), TRAPPED_HOLLY_CHEST.get(), LARGE_HOLLY_BOAT.get(), HOLLY_FURNACE_BOAT.get(), HOLLY_CABINET.get(), HOLLY_HANGING_SIGNS.getFirst().get(), consumer);
         woodSet(WindsweptItemTags.CHESTNUT_LOGS, CHESTNUT_PLANKS.get(), CHESTNUT_SLAB.get(), CHESTNUT_STAIRS.get(), CHESTNUT_LOG.get(), CHESTNUT_WOOD.get(), STRIPPED_CHESTNUT_LOG.get(), STRIPPED_CHESTNUT_WOOD.get(), CHESTNUT_BOAT.getFirst().get(), CHESTNUT_BOAT.getSecond().get(), CHESTNUT_BUTTON.get(), CHESTNUT_DOOR.get(), CHESTNUT_TRAPDOOR.get(), CHESTNUT_FENCE.get(), CHESTNUT_FENCE_GATE.get(), CHESTNUT_PRESSURE_PLATE.get(), CHESTNUT_SIGNS.getFirst().get(), CHESTNUT_BOARDS.get(), CHESTNUT_BEEHIVE.get(), CHESTNUT_LADDER.get(), CHESTNUT_BOOKSHELF.get(), CHESTNUT_CHEST.get(), TRAPPED_CHESTNUT_CHEST.get(), LARGE_CHESTNUT_BOAT.get(), CHESTNUT_FURNACE_BOAT.get(), CHESTNUT_CABINET.get(), CHESTNUT_HANGING_SIGNS.getFirst().get(), consumer);
         woodSet(WindsweptItemTags.PINE_LOGS, PINE_PLANKS.get(), PINE_SLAB.get(), PINE_STAIRS.get(), PINE_LOG.get(), PINE_WOOD.get(), STRIPPED_PINE_LOG.get(), STRIPPED_PINE_WOOD.get(), PINE_BOAT.getFirst().get(), PINE_BOAT.getSecond().get(), PINE_BUTTON.get(), PINE_DOOR.get(), PINE_TRAPDOOR.get(), PINE_FENCE.get(), PINE_FENCE_GATE.get(), PINE_PRESSURE_PLATE.get(), PINE_SIGNS.getFirst().get(), PINE_BOARDS.get(), PINE_BEEHIVE.get(), PINE_LADDER.get(), PINE_BOOKSHELF.get(), PINE_CHEST.get(), TRAPPED_PINE_CHEST.get(), LARGE_PINE_BOAT.get(), PINE_FURNACE_BOAT.get(), PINE_CABINET.get(), PINE_HANGING_SIGNS.getFirst().get(), consumer);
-        leafPileRecipes(consumer, HOLLY_LEAVES.get(), HOLLY_LEAF_PILE.get());
-        leafPileRecipes(consumer, CHESTNUT_LEAVES.get(), CHESTNUT_LEAF_PILE.get());
-        leafPileRecipes(consumer, PINE_LEAVES.get(), PINE_LEAF_PILE.get());
+        leafPile(HOLLY_LEAVES.get(), HOLLY_LEAF_PILE.get(), consumer);
+        leafPile(CHESTNUT_LEAVES.get(), CHESTNUT_LEAF_PILE.get(), consumer);
+        leafPile(PINE_LEAVES.get(), PINE_LEAF_PILE.get(), consumer);
+        leafPile(FLOWERING_ACACIA_LEAVES.get(), FLOWERING_ACACIA_LEAF_PILE.get(), consumer);
 
         // compressed blocks
         compressedBlock(WILD_BERRY_BASKET.get(), WILD_BERRIES.get(), consumer);
@@ -319,6 +320,11 @@ public class WindsweptRecipeProvider extends BlueprintRecipeProvider {
                 stonecutting(block, wall, 1, consumer);
         }
 
+    }
+
+    private static void leafPile(ItemLike leaves, ItemLike leafPile, Consumer<FinishedRecipe> consumer) {
+        conditionalRecipe(ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, leafPile, 4).requires(leaves).unlockedBy(getHasName(leaves), has(leaves)), new ModLoadedCondition("woodworks"), consumer, getSaveLocation(leafPile));
+        conditionalRecipe(ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, leaves).define('#', leafPile).pattern("##").pattern("##").unlockedBy(getHasName(leafPile), has(leafPile)), new ModLoadedCondition("woodworks"), consumer, getSaveLocation(getItemName(leaves) + "_from_leaf_pile"));
     }
 
     private static void compressedBlock(Block block, ItemLike item, ICondition condition, Consumer<FinishedRecipe> consumer) {
