@@ -80,7 +80,6 @@ dependencies {
     implementation fg.deobf("com.teamabnormals:clayworks:${project.minecraft}-${project.clayworks}")
     compileOnly fg.deobf("com.teamabnormals:boatload:${project.minecraft}-${project.boatload}")
     compileOnly fg.deobf("com.teamabnormals:gallery:${project.minecraft}-${project.gallery}")
-    implementation fg.deobf("curse.maven:farmers_delight-398521:${project.farmersDelight}")
     compileOnly fg.deobf("curse.maven:neapolitan-382016:${project.neapolitan}")
 
     compileOnly fg.deobf("mezz.jei:jei-${project.minecraft}-common-api:${project.jei}")

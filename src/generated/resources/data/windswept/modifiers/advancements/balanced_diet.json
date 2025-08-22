@@ -14,16 +14,6 @@
             },
             "trigger": "minecraft:consume_item"
           },
-          "windswept:chestnut_risotto": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "windswept:chestnut_risotto"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
           "windswept:chestnut_soup": {
             "conditions": {
               "item": {
@@ -44,31 +34,11 @@
             },
             "trigger": "minecraft:consume_item"
           },
-          "windswept:christmas_pudding_slice": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "windswept:christmas_pudding_slice"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
           "windswept:cooked_goat": {
             "conditions": {
               "item": {
                 "items": [
                   "windswept:cooked_goat"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
-          "windswept:cooked_goat_shanks": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "windswept:cooked_goat_shanks"
                 ]
               }
             },
@@ -119,16 +89,6 @@
               "item": {
                 "items": [
                   "windswept:goat"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
-          "windswept:goat_shanks": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "windswept:goat_shanks"
                 ]
               }
             },
@@ -233,16 +193,6 @@
               }
             },
             "trigger": "minecraft:consume_item"
-          },
-          "windswept:wild_berry_popsicle": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "windswept:wild_berry_popsicle"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
           }
         },
         "requirements": [
@@ -256,9 +206,6 @@
             "windswept:wild_berries"
           ],
           [
-            "windswept:wild_berry_popsicle"
-          ],
-          [
             "windswept:candy_cane"
           ],
           [
@@ -269,9 +216,6 @@
           ],
           [
             "windswept:chestnut_soup"
-          ],
-          [
-            "windswept:chestnut_risotto"
           ],
           [
             "windswept:ginger_root"
@@ -304,19 +248,10 @@
             "windswept:cooked_goat"
           ],
           [
-            "windswept:goat_shanks"
-          ],
-          [
-            "windswept:cooked_goat_shanks"
-          ],
-          [
             "windswept:goat_stew"
           ],
           [
             "windswept:mutton_pie"
-          ],
-          [
-            "windswept:christmas_pudding_slice"
           ]
         ],
         "should_replace_requirements": false

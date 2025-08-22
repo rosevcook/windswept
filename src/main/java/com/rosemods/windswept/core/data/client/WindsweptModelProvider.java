@@ -50,14 +50,10 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.generatedItem(ELDER_FEATHER.get(), TextureFolder.ITEM);
         this.generatedItem(FEATHER_CLOAK.get(), TextureFolder.ITEM);
         this.generatedItem(WILD_BERRIES.get(), TextureFolder.ITEM);
-        this.itemOnAStick(WILD_BERRY_POPSICLE.get(), TextureFolder.ITEM);
-        this.generatedItem(CHRISTMAS_PUDDING_SLICE.get(), TextureFolder.ITEM);
         this.generatedItem(MUTTON_PIE.get(), TextureFolder.ITEM);
         this.generatedItem(GOAT.get(), TextureFolder.ITEM);
         this.generatedItem(COOKED_GOAT.get(), TextureFolder.ITEM);
         this.generatedItem(GOAT_STEW.get(), TextureFolder.ITEM);
-        this.generatedItem(GOAT_SHANKS.get(), TextureFolder.ITEM);
-        this.generatedItem(COOKED_GOAT_SHANKS.get(), TextureFolder.ITEM);
         this.generatedItem(WILD_BERRY_PIPS.get(), TextureFolder.ITEM);
         this.generatedItemWithOverlay(SNOW_BOOTS.get());
         this.generatedItem(FROST_ARROW.get(), TextureFolder.ITEM);
@@ -86,7 +82,6 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.generatedItem(CHESTNUTS.get(), TextureFolder.ITEM);
         this.generatedItem(ROASTED_CHESTNUTS.get(), TextureFolder.ITEM);
         this.generatedItem(CHESTNUT_SOUP.get(), TextureFolder.ITEM);
-        this.generatedItem(CHESTNUT_RISOTTO.get(), TextureFolder.ITEM);
         this.generatedItem(GINGER_ROOT.get(), TextureFolder.ITEM);
         this.generatedItem(GINGERBREAD_COOKIE.get(), TextureFolder.ITEM);
         this.generatedItem(SPICY_SNOW_CONE.get(), TextureFolder.ITEM);
@@ -121,7 +116,6 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.ladder(HOLLY_LADDER);
         this.bookshelf(HOLLY_BOOKSHELF, HOLLY_PLANKS);
         this.boards(HOLLY_BOARDS);
-        this.cabinet(HOLLY_CABINET);
         this.chests(HOLLY_CHEST, TRAPPED_HOLLY_CHEST, this.blockTexture(HOLLY_PLANKS.get()));
         this.compressedBlock(HOLLY_BERRY_BASKET);
         this.hangingSignBlocks(STRIPPED_HOLLY_LOG, HOLLY_HANGING_SIGNS);
@@ -148,7 +142,6 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.ladder(CHESTNUT_LADDER);
         this.bookshelf(CHESTNUT_BOOKSHELF, CHESTNUT_PLANKS);
         this.boards(CHESTNUT_BOARDS);
-        this.cabinet(CHESTNUT_CABINET);
         this.chests(CHESTNUT_CHEST, TRAPPED_CHESTNUT_CHEST, this.blockTexture(CHESTNUT_PLANKS.get()));
         this.hangingSignBlocks(STRIPPED_CHESTNUT_LOG, CHESTNUT_HANGING_SIGNS);
 
@@ -176,7 +169,6 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.ladder(PINE_LADDER);
         this.bookshelf(PINE_BOOKSHELF, PINE_PLANKS);
         this.boards(PINE_BOARDS);
-        this.cabinet(PINE_CABINET);
         this.chests(PINE_CHEST, TRAPPED_PINE_CHEST, this.blockTexture(PINE_PLANKS.get()));
         this.hangingSignBlocks(STRIPPED_PINE_LOG, PINE_HANGING_SIGNS);
 

@@ -15,9 +15,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
-import net.minecraftforge.common.crafting.conditions.OrCondition;
 import net.minecraftforge.registries.ForgeRegistries;
-import vectorwing.farmersdelight.common.registry.ModBlocks;
 
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -91,7 +89,6 @@ public final class WindsweptStructureRepaletters {
         //register(context, structures, Blocks.BOOKSHELF, HOLLY_BOOKSHELF.get(), woodworks, VILLAGE_FROZEN);
         //register(context, structures, Blocks.CHEST, HOLLY_CHEST.get(), woodworks, VILLAGE_FROZEN);
         //register(context, structures, Blocks.LADDER, HOLLY_LADDER.get(), woodworks, VILLAGE_FROZEN);
-        //register(context, structures, Blocks.WHEAT, ModBlocks.CABBAGE_CROP.get(), farmersDelight, VILLAGE_FROZEN);
         register(context, structures, Blocks.CHEST, HOLLY_CHEST.get(), woodworks, IGLOO);
         register(context, structures, Blocks.LADDER, HOLLY_LADDER.get(), woodworks, IGLOO);
         register(context, structures, Blocks.CHEST, CHESTNUT_CHEST.get(), woodworks, VILLAGE_SNOWY);

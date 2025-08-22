@@ -64,7 +64,6 @@ public final class WindsweptCreativeTabs {
                 .addItemsBefore(Ingredient.of(Blocks.CHAIN), ICE_LANTERN)
                 .addItemsAfter(Ingredient.of(Blocks.CHAIN), ICE_CHAIN)
                 .addItemsAfter(Ingredient.of(Blocks.JUKEBOX), CARVED_PINECONE_BLOCK, WILL_O_THE_WISP, ELDER_WING, ELDER_ORNAMENT, DREAM_CATCHER, FROSTBITER_TROPHY)
-                .addItemsAfter(modLoaded(Blocks.BARREL, "farmersdelight"), HOLLY_CABINET, CHESTNUT_CABINET, PINE_CABINET)
                 .addItemsAfter(modLoaded(Blocks.LADDER/*WindsweptConstants.BAMBOO_LADDER*/, "woodworks"), HOLLY_LADDER, CHESTNUT_LADDER, PINE_LADDER)
                 .addItemsAfter(modLoaded(Blocks.BEEHIVE/*WindsweptConstants.BAMBOO_BEEHIVE*/, "woodworks"), HOLLY_BEEHIVE, CHESTNUT_BEEHIVE, PINE_BEEHIVE)
                 .addItemsAfter(Ingredient.of(Blocks.BOOKSHELF), HOLLY_BOOKSHELF, /*CHISELED_HOLLY_BOOKSHELF, */CHESTNUT_BOOKSHELF, /*CHISELED_CHESTNUT_BOOKSHELF, */PINE_BOOKSHELF/*, CHISELED_PINE_BOOKSHELF*/)
@@ -141,7 +140,7 @@ public final class WindsweptCreativeTabs {
                 .addItemsAfter(Ingredient.of(Items.HONEY_BOTTLE), PINECONE_JAM_BOTTLE, LAVENDER_TEA, GINGER_TEA)
                 .addItemsBefore(Ingredient.of(Items.CAKE), CANDY_CANE)
                 .addItemsAfter(Ingredient.of(Items.COOKIE), GINGERBREAD_COOKIE)
-                .addItemsAfter(Ingredient.of(Items.SWEET_BERRIES), WILD_BERRIES, WILD_BERRY_POPSICLE)
+                .addItemsAfter(Ingredient.of(Items.SWEET_BERRIES), WILD_BERRIES)
                 .addItemsAfter(Ingredient.of(Items.GOLDEN_CARROT), CHESTNUTS, ROASTED_CHESTNUTS)
                 .addItemsAfter(Ingredient.of(Items.RABBIT_STEW), CHESTNUT_SOUP, GOAT_STEW)
                 .addItemsAfter(Ingredient.of(Items.PUMPKIN_PIE), MUTTON_PIE)
@@ -150,9 +149,6 @@ public final class WindsweptCreativeTabs {
                 .addItemsAfter(Ingredient.of(Items.COOKED_MUTTON), GOAT, COOKED_GOAT)
                 .addItemsAfter(Ingredient.of(Items.MILK_BUCKET), WOODEN_MILK_BUCKET)
                 .addItemsAfter(Ingredient.of(Items.ROTTEN_FLESH), FROZEN_FLESH)
-                .addItemsAfter(modLoaded(COOKED_GOAT.get(), "farmersdelight"), GOAT_SHANKS, COOKED_GOAT_SHANKS)
-                .addItemsAfter(modLoaded(CHRISTMAS_PUDDING.get(), "farmersdelight"), CHRISTMAS_PUDDING_SLICE)
-                .addItemsAfter(modLoaded(CHESTNUT_SOUP.get(), "farmersdelight"), CHESTNUT_RISOTTO)
 
                 .tab(SPAWN_EGGS)
                 .addSpawnEggsAlphabetically(CHILLED_SPAWN_EGG, FROSTBITER_SPAWN_EGG);

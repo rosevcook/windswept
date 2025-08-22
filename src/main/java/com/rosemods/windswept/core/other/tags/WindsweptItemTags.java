@@ -13,12 +13,10 @@ public final class WindsweptItemTags {
     public static final TagKey<Item> MILK = TagUtil.itemTag("forge", "milk");
     public static final TagKey<Item> RAW_GOAT = TagUtil.itemTag("forge", "raw_goat");
     public static final TagKey<Item> COOKED_GOAT = TagUtil.itemTag("forge", "cooked_goat");
-    public static final TagKey<Item> CABBAGE_ROLL_INGREDIENTS = TagUtil.itemTag("farmersdelight", "cabbage_roll_ingredients");
     public static final TagKey<Item> SILVER_INGOT = TagUtil.itemTag("forge", "ingots/silver");
     public static final TagKey<Item> BERRIES = TagUtil.itemTag("forge", "berries");
     public static final TagKey<Item> COOKED_MUTTON = TagUtil.itemTag("forge", "cooked_mutton");
     public static final TagKey<Item> ROSES = TagUtil.itemTag(Windswept.MOD_ID, "roses");
-    public static final TagKey<Item> WOODEN_CABINETS = TagUtil.itemTag("farmersdelight", "cabinets/wooden");
 
     public static final TagKey<Item> KNIVES = TagUtil.itemTag("farmersdelight", "tools/knives");
 }

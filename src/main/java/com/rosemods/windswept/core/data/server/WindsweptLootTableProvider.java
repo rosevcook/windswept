@@ -103,7 +103,6 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(HOLLY_LADDER.get());
             this.bookshelf(HOLLY_BOOKSHELF.get());
             this.dropSelf(HOLLY_BOARDS.get());
-            this.dropSelf(HOLLY_CABINET.get());
             this.dropSelf(HOLLY_CHEST.get());
             this.dropSelf(TRAPPED_HOLLY_CHEST.get());
 
@@ -142,7 +141,6 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(CHESTNUT_LADDER.get());
             this.bookshelf(CHESTNUT_BOOKSHELF.get());
             this.dropSelf(CHESTNUT_BOARDS.get());
-            this.dropSelf(CHESTNUT_CABINET.get());
             this.dropSelf(CHESTNUT_CHEST.get());
             this.dropSelf(TRAPPED_CHESTNUT_CHEST.get());
 
@@ -183,7 +181,6 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropSelf(PINE_LADDER.get());
             this.bookshelf(PINE_BOOKSHELF.get());
             this.dropSelf(PINE_BOARDS.get());
-            this.dropSelf(PINE_CABINET.get());
             this.dropSelf(PINE_CHEST.get());
             this.dropSelf(TRAPPED_PINE_CHEST.get());
 
@@ -332,6 +329,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 
             // decoration
             this.dropSelf(FROSTBITER_TROPHY.get());
+            /*
             this.add(CHRISTMAS_PUDDING.get(), LootTable.lootTable().withPool(LootPool.lootPool()
                     .add(LootItem.lootTableItem(CHRISTMAS_PUDDING_SLICE.get())
                             .apply(ChristmasPuddingBlock.STATE.getPossibleValues(), value -> SetItemCountFunction
@@ -339,6 +337,8 @@ public class WindsweptLootTableProvider extends LootTableProvider {
                                     .when(stateCond(CHRISTMAS_PUDDING, ChristmasPuddingBlock.STATE, value))))
                     .when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(WindsweptItemTags.KNIVES)))
             ).withPool(LootPool.lootPool().add(LootItem.lootTableItem(HOLLY_BERRIES.get()))));
+             */
+            this.add(CHRISTMAS_PUDDING.get(), noDrop());
 
             this.dropSelf(HOLLY_WREATH.get());
             this.dropSelf(PINECONE_WREATH.get());
@@ -581,7 +581,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
                     .add(LootItem.lootTableItem(SNOW_BOOTS.get()).setWeight(1).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))))
                     .add(LootItem.lootTableItem(BOOK).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
                     .add(LootItem.lootTableItem(WOODEN_BUCKET.get()).setWeight(1).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(3, 20))))
-                    .add(LootItem.lootTableItem(WILD_BERRY_POPSICLE.get()).setWeight(1))
+                    .add(LootItem.lootTableItem(SWEET_SNOW_CONE.get()).setWeight(1))
                     .add(LootItem.lootTableItem(WILD_BERRIES.get()).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(2f, 3f))))
                     .add(LootItem.lootTableItem(ICICLES.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))
                     .add(LootItem.lootTableItem(SNOWBALL).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f))))

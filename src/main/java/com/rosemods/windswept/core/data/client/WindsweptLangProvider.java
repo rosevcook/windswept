@@ -58,11 +58,9 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.add(HOLLY_BOAT.getSecond().get(), "Holly Boat with Chest");
         this.add(CHESTNUT_BOAT.getSecond().get(), "Chestnut Boat with Chest");
         this.add(PINE_BOAT.getSecond().get(), "Pine Boat with Chest");
-        this.add(CHRISTMAS_PUDDING_SLICE.get(), "Slice of Christmas Pudding");
         this.add(GOAT.get(), "Raw Chevon");
         this.add(COOKED_GOAT.get(), "Cooked Chevon");
-        this.add(GOAT_SHANKS.get(), "Raw Chevon Shanks");
-        this.add(COOKED_GOAT_SHANKS.get(), "Cooked Chevon Shanks");
+
         this.add(HOLLY_BERRIES_ON_A_STICK.get(), "Holly Berries on a Stick");
         this.translateBannerPattern(SNOW_CHARGE_BANNER_PATTERN, "snow_charge");
         this.translateBannerPattern(SNOW_GOLEM_BANNER_PATTERN, "snow_golem");

@@ -31,10 +31,6 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
         this.copy(WindsweptBlockTags.CHESTNUT_LOGS, WindsweptItemTags.CHESTNUT_LOGS);
         this.copy(WindsweptBlockTags.PINE_LOGS, WindsweptItemTags.PINE_LOGS);
 
-        //farmers delight
-        this.tag(WindsweptItemTags.CABBAGE_ROLL_INGREDIENTS).addTag(WindsweptItemTags.RAW_GOAT);
-        this.tag(WindsweptItemTags.WOODEN_CABINETS).add(HOLLY_CABINET.get().asItem(), CHESTNUT_CABINET.get().asItem(), PINE_CABINET.get().asItem());
-
         //forge
         this.tag(BlueprintItemTags.BUCKETS_EMPTY).add(WOODEN_BUCKET.get());
         this.tag(BlueprintItemTags.BUCKETS_MILK).add(WOODEN_MILK_BUCKET.get());
@@ -42,8 +38,8 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
         this.tag(BlueprintItemTags.BUCKETS_WATER).add(WOODEN_WATER_BUCKET.get());
         this.tag(WindsweptItemTags.MILK).addTag(BlueprintItemTags.BUCKETS_MILK);
         this.tag(WindsweptItemTags.WILD_BERRY_SEEDS).add(WILD_BERRY_PIPS.get());
-        this.tag(WindsweptItemTags.RAW_GOAT).add(GOAT.get(), GOAT_SHANKS.get());
-        this.tag(WindsweptItemTags.COOKED_GOAT).add(COOKED_GOAT.get(), COOKED_GOAT_SHANKS.get());
+        this.tag(WindsweptItemTags.RAW_GOAT).add(GOAT.get());
+        this.tag(WindsweptItemTags.COOKED_GOAT).add(COOKED_GOAT.get());
         this.tag(WindsweptItemTags.BERRIES).add(WILD_BERRIES.get());
         this.tag(WindsweptItemTags.COOKED_MUTTON).add(Items.COOKED_MUTTON);
         this.tag(Tags.Items.SEEDS).addTag(WindsweptItemTags.WILD_BERRY_SEEDS);

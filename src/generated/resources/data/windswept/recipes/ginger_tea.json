@@ -7,7 +7,7 @@
           "type": "forge:not",
           "value": {
             "type": "forge:mod_loaded",
-            "modid": "farmersdelight"
+            "modid": "windswept_delights"
           }
         }
       ],
