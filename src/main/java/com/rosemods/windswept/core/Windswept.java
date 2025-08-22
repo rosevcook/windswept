@@ -92,6 +92,7 @@ public class Windswept {
         gen.addProvider(server, new WindsweptItemTagProvider(event, blockTags, dataPack));
         gen.addProvider(server, new WindsweptEntityTagProvider(event, dataPack));
         gen.addProvider(server, new WindsweptBiomeTagProvider(event, dataPack));
+        gen.addProvider(server, new WindsweptStructureTagsProvider(event, dataPack));
         gen.addProvider(server, new WindsweptTrimMaterialTagsProvider(event, dataPack));
         gen.addProvider(server, new WindsweptBannerPatternTagProvider(event, dataPack));
         gen.addProvider(server, new WindsweptLootTableProvider(event));
