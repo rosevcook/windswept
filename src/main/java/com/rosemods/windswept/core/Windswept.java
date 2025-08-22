@@ -4,7 +4,9 @@ import com.rosemods.windswept.core.data.client.*;
 import com.rosemods.windswept.core.data.server.WindsweptDatapackProvider;
 import com.rosemods.windswept.core.data.server.WindsweptLootTableProvider;
 import com.rosemods.windswept.core.data.server.WindsweptRecipeProvider;
-import com.rosemods.windswept.core.data.server.modifiers.*;
+import com.rosemods.windswept.core.data.server.modifiers.WindsweptAdvancementModifierProvider;
+import com.rosemods.windswept.core.data.server.modifiers.WindsweptChunkGeneratorModifierProvider;
+import com.rosemods.windswept.core.data.server.modifiers.WindsweptLootModifierProvider;
 import com.rosemods.windswept.core.data.server.tags.*;
 import com.rosemods.windswept.core.other.*;
 import com.rosemods.windswept.core.registry.*;
@@ -18,7 +20,6 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -48,7 +49,6 @@ public class Windswept {
         WindsweptPotPatterns.DECORATED_POT_PATTERNS.register(bus);
 
         bus.addListener(this::commonSetup);
-        bus.addListener(this::clientSetup);
         bus.addListener(this::dataSetup);
 
         context.registerConfig(ModConfig.Type.COMMON, WindsweptConfig.COMMON_SPEC);
@@ -66,13 +66,6 @@ public class Windswept {
             WindsweptCauldronInteractions.registerCauldronInteractions();
             WindsweptCreativeTabs.setupTabEditors();
             WindsweptPotPatterns.registerPatterns();
-        });
-    }
-
-    private void clientSetup(FMLClientSetupEvent event) {
-        event.enqueueWork(() -> {
-            WindsweptEntityTypes.registerClient();
-            WindsweptBlockEntities.registerClient();
         });
     }
 

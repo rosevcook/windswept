@@ -1,22 +1,16 @@
 package com.rosemods.windswept.core.registry;
 
-import com.rosemods.windswept.client.render.entity.FrostbiterRenderer;
-import com.rosemods.windswept.client.render.entity.ChilledRenderer;
-import com.rosemods.windswept.client.render.entity.FrostArrowRenderer;
-import com.rosemods.windswept.common.entity.Frostbiter;
 import com.rosemods.windswept.common.entity.Chilled;
 import com.rosemods.windswept.common.entity.FrostArrow;
+import com.rosemods.windswept.common.entity.Frostbiter;
 import com.rosemods.windswept.core.Windswept;
 import com.teamabnormals.blueprint.core.util.registry.EntitySubRegistryHelper;
-import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.level.levelgen.Heightmap;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -41,13 +35,6 @@ public class WindsweptEntityTypes {
     public static void registerSpawns(SpawnPlacementRegisterEvent event) {
         event.register(CHILLED.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.AND);
         event.register(FROSTBITER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Frostbiter::checkFrostbiterSpawnRules, SpawnPlacementRegisterEvent.Operation.AND);
-    }
-
-    @OnlyIn(Dist.CLIENT)
-    public static void registerClient() {
-        EntityRenderers.register(CHILLED.get(), ChilledRenderer::new);
-        EntityRenderers.register(FROSTBITER.get(), FrostbiterRenderer::new);
-        EntityRenderers.register(FROST_ARROW.get(), FrostArrowRenderer::new);
     }
 
 }
