@@ -26,7 +26,7 @@ public class GelisolBlock extends SnowyDirtBlock implements BonemealableBlock {
     @Override
     public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos blockPos, BlockState blockState, boolean b) {
         BlockState above = levelReader.getBlockState(blockPos.above());
-        return above.canBeReplaced() && !above.is(WindsweptBlocks.GELISOL_SPROUTS.get());
+        return above.canBeReplaced() && !above.is(WindsweptBlocks.GELISOL_GRASS.get());
     }
 
     @Override
@@ -47,7 +47,7 @@ public class GelisolBlock extends SnowyDirtBlock implements BonemealableBlock {
             }
 
             if (level.getBlockState(blockPos).isAir() && level.getBlockState(blockPos.below()).is(this))
-                level.setBlock(blockPos, WindsweptBlocks.GELISOL_SPROUTS.get().defaultBlockState(), 3);
+                level.setBlock(blockPos, WindsweptBlocks.GELISOL_GRASS.get().defaultBlockState(), 3);
         }
 
     }

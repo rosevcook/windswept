@@ -54,7 +54,7 @@ public final class WindsweptBlockInfo {
         DataUtil.registerCompostable(PINE_SAPLING.get(), .3f);
 
         DataUtil.registerCompostable(SNOWY_SPROUTS.get(), .5f);
-        DataUtil.registerCompostable(GELISOL_SPROUTS.get(), .5f);
+        DataUtil.registerCompostable(GELISOL_GRASS.get(), .5f);
         DataUtil.registerCompostable(DRY_MOSSY_SPROUTS.get(), .5f);
         DataUtil.registerCompostable(MOSSY_SPROUTS.get(), .5f);
 
@@ -126,7 +126,7 @@ public final class WindsweptBlockInfo {
 
         DataUtil.registerFlammable(WILD_BERRY_BUSH.get(), 60, 100);
         DataUtil.registerFlammable(SNOWY_SPROUTS.get(), 60, 100);
-        DataUtil.registerFlammable(GELISOL_SPROUTS.get(), 60, 100);
+        DataUtil.registerFlammable(GELISOL_GRASS.get(), 60, 100);
         DataUtil.registerFlammable(DRY_MOSSY_SPROUTS.get(), 60, 100);
         DataUtil.registerFlammable(RED_ROSE.get(), 60, 100);
         DataUtil.registerFlammable(BLUE_ROSE.get(), 60, 100);

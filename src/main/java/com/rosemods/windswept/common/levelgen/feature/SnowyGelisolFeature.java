@@ -26,7 +26,7 @@ public class SnowyGelisolFeature extends Feature<NoneFeatureConfiguration> {
         BlockState gelisol = WindsweptBlocks.GELISOL.get().defaultBlockState();
         BlockState snow = Blocks.SNOW.defaultBlockState();
         BlockState dirt = Blocks.DIRT.defaultBlockState();
-        BlockState sprouts = WindsweptBlocks.GELISOL_SPROUTS.get().defaultBlockState();
+        BlockState sprouts = WindsweptBlocks.GELISOL_GRASS.get().defaultBlockState();
         BlockState snowdrop = WindsweptBlocks.SNOWDROP.get().defaultBlockState();
         boolean generated = false;
 

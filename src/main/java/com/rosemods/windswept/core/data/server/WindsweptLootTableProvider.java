@@ -356,7 +356,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
 
             // sprouts
             this.add(SNOWY_SPROUTS.get(), WindsweptBlockLoot::createShearsOnlyDrop);
-            this.add(GELISOL_SPROUTS.get(), WindsweptBlockLoot::createShearsOnlyDrop);
+            this.add(GELISOL_GRASS.get(), WindsweptBlockLoot::createShearsOnlyDrop);
             this.add(DRY_MOSSY_SPROUTS.get(), WindsweptBlockLoot::createShearsOnlyDrop);
             this.add(MOSSY_SPROUTS.get(), WindsweptBlockLoot::createShearsOnlyDrop);
 
@@ -392,7 +392,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.dropPottedContents(POTTED_WILD_GINGER.get());
             this.dropPottedContents(POTTED_NIGHTSHADE.get());
             this.dropPottedContents(POTTED_SNOWY_SPROUTS.get());
-            this.dropPottedContents(POTTED_GELISOL_SPROUTS.get());
+            this.dropPottedContents(POTTED_GELISOL_GRASS.get());
             this.dropPottedContents(POTTED_DRY_MOSSY_SPROUTS.get());
             this.dropPottedContents(POTTED_MOSSY_SPROUTS.get());
             this.dropPottedContents(POTTED_LAVENDER.get());

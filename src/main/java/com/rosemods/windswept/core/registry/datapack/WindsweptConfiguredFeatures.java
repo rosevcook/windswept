@@ -168,7 +168,7 @@ public final class WindsweptConfiguredFeatures {
         public static SimpleBlockConfiguration createGelisolVegetation() {
             return new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
                     .add(Blocks.AIR.defaultBlockState(), 66)
-                    .add(WindsweptBlocks.GELISOL_SPROUTS.get().defaultBlockState(), 33)));
+                    .add(WindsweptBlocks.GELISOL_GRASS.get().defaultBlockState(), 33)));
         }
 
         public static SimpleBlockConfiguration createMossVegetation() {

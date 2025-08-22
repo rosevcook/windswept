@@ -82,6 +82,7 @@ public final class WindsweptCreativeTabs {
                 .addItemsAfter(Ingredient.of(Blocks.ROOTED_DIRT), GINGER_SOIL)
                 .addItemsAfter(Ingredient.of(Blocks.MOSS_BLOCK), DRY_MOSS_BLOCK)
                 .addItemsAfter(Ingredient.of(Blocks.MOSS_CARPET), DRY_MOSS_CARPET)
+                .addItemsAfter(Ingredient.of(Blocks.FERN), GELISOL_GRASS)
                 .addItemsBefore(Ingredient.of(Blocks.MUSHROOM_STEM), HOLLY_LOG, CHESTNUT_LOG, PINE_LOG, WEATHERED_PINE_LOG)
                 .addItemsBefore(Ingredient.of(Blocks.AZALEA), HOLLY_SAPLING, CHESTNUT_SAPLING, PINE_SAPLING)
                 .addItemsBefore(Ingredient.of(Blocks.AZALEA_LEAVES), HOLLY_LEAVES)
@@ -92,7 +93,7 @@ public final class WindsweptCreativeTabs {
                 .addItemsBefore(modLoaded(Blocks.AZALEA_LEAVES, "woodworks"), PINE_LEAF_PILE)
                 .addItemsAfter(Ingredient.of(Blocks.LILY_OF_THE_VALLEY), FOXGLOVE, MOSS_CAMPION, MIMOSA, SNOWDROP, NIGHTSHADE, BLUEBELLS,
                         BLUE_ROSE, BLUE_ROSE_BUSH, RED_ROSE, RED_ROSE_BUSH, WHITE_ROSE, WHITE_ROSE_BUSH, YELLOW_ROSE, YELLOW_ROSE_BUSH)
-                .addItemsBefore(Ingredient.of(Blocks.CRIMSON_ROOTS), MOSSY_SPROUTS, DRY_MOSSY_SPROUTS, SNOWY_SPROUTS, GELISOL_SPROUTS, WILD_GINGER)
+                .addItemsBefore(Ingredient.of(Blocks.CRIMSON_ROOTS), MOSSY_SPROUTS, DRY_MOSSY_SPROUTS, SNOWY_SPROUTS, WILD_GINGER)
                 .addItemsAfter(Ingredient.of(Blocks.SUNFLOWER), LIONS_TAIL, LUPINE)
                 .addItemsAfter(Ingredient.of(Blocks.BAMBOO), PINECONE, PINECONE_BLOCK, ELDER_WING, ELDER_ORNAMENT, DREAM_CATCHER)
                 .addItemsAfter(Ingredient.of(Blocks.SUGAR_CANE), LAVENDER, ICICLES)

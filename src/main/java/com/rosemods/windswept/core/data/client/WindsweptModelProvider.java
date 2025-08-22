@@ -326,7 +326,7 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
 
         // sprouts
         this.pottedPlantWithPottedVariant(SNOWY_SPROUTS, POTTED_SNOWY_SPROUTS, TextureFolder.ITEM);
-        this.pottedPlantWithPottedVariant(GELISOL_SPROUTS, POTTED_GELISOL_SPROUTS, TextureFolder.BLOCK);
+        this.pottedPlantWithPottedVariant(GELISOL_GRASS, POTTED_GELISOL_GRASS, TextureFolder.BLOCK);
         this.pottedPlantWithPottedVariant(DRY_MOSSY_SPROUTS, POTTED_DRY_MOSSY_SPROUTS, TextureFolder.ITEM);
         this.pottedPlantWithPottedVariant(MOSSY_SPROUTS, POTTED_MOSSY_SPROUTS, TextureFolder.ITEM);
 

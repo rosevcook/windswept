@@ -26,11 +26,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "windswept:gelisol_sprouts"
+          "name": "windswept:gelisol_grass"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "windswept:blocks/potted_gelisol_sprouts"
+  "random_sequence": "windswept:blocks/potted_gelisol_grass"
 }

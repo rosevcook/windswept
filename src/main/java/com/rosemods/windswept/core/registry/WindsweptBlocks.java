@@ -143,7 +143,7 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> DRY_MOSS_BLOCK = HELPER.createBlock("dry_moss_block", () -> new DryMossBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_BLOCK)));
 
     // Gelisol Blocks //
-    public static final RegistryObject<Block> GELISOL_SPROUTS = HELPER.createBlock("gelisol_sprouts", () -> new SproutsBlock(Properties.SPROUTS));
+    public static final RegistryObject<Block> GELISOL_GRASS = HELPER.createBlock("gelisol_grass", () -> new SproutsBlock(Properties.SPROUTS));
     public static final RegistryObject<Block> GELISOL = HELPER.createBlock("gelisol", () -> new GelisolBlock(BlockBehaviour.Properties.copy(Blocks.PODZOL)));
     public static final RegistryObject<Block> GELISOL_PATH = HELPER.createBlock("gelisol_path", () -> new DirtPathBlock(BlockBehaviour.Properties.copy(Blocks.DIRT_PATH)));
 
@@ -409,7 +409,7 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> POTTED_WILD_GINGER = HELPER.createBlockNoItem("potted_wild_ginger", () -> new FlowerPotBlock(WILD_GINGER.get(), PropertyUtil.flowerPot()));
     public static final RegistryObject<Block> POTTED_NIGHTSHADE = HELPER.createBlockNoItem("potted_nightshade", () -> new NightShadeFlowerPotBlock(NIGHTSHADE.get(), BlockBehaviour.Properties.of().instabreak().noOcclusion().lightLevel(state -> 9)));
     public static final RegistryObject<Block> POTTED_SNOWY_SPROUTS = HELPER.createBlockNoItem("potted_snowy_sprouts", () -> new FlowerPotBlock(SNOWY_SPROUTS.get(), PropertyUtil.flowerPot()));
-    public static final RegistryObject<Block> POTTED_GELISOL_SPROUTS = HELPER.createBlockNoItem("potted_gelisol_sprouts", () -> new FlowerPotBlock(GELISOL_SPROUTS.get(), PropertyUtil.flowerPot()));
+    public static final RegistryObject<Block> POTTED_GELISOL_GRASS = HELPER.createBlockNoItem("potted_gelisol_grass", () -> new FlowerPotBlock(GELISOL_GRASS.get(), PropertyUtil.flowerPot()));
     public static final RegistryObject<Block> POTTED_DRY_MOSSY_SPROUTS = HELPER.createBlockNoItem("potted_dry_mossy_sprouts", () -> new FlowerPotBlock(DRY_MOSSY_SPROUTS.get(), PropertyUtil.flowerPot()));
     public static final RegistryObject<Block> POTTED_MOSSY_SPROUTS = HELPER.createBlockNoItem("potted_mossy_sprouts", () -> new FlowerPotBlock(MOSSY_SPROUTS.get(), PropertyUtil.flowerPot()));
     public static final RegistryObject<Block> POTTED_LAVENDER = HELPER.createBlockNoItem("potted_lavender", () -> new FlowerPotBlock(LAVENDER.get(), PropertyUtil.flowerPot()));
