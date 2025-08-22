@@ -7,6 +7,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.data.event.GatherDataEvent;
 
@@ -23,6 +24,7 @@ public class WindsweptBiomeTagProvider extends BiomeTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         this.tag(HAS_BLUEBELLS).add(DARK_FOREST, BIRCH_FOREST, OLD_GROWTH_BIRCH_FOREST, OLD_GROWTH_BIRCH_FOREST, OLD_GROWTH_SPRUCE_TAIGA, CHESTNUT_FOREST, SNOWY_CHESTNUT_FOREST);
+        this.tag(HAS_LIONS_TAIL).addTag(BiomeTags.IS_SAVANNA).add(WOODED_BADLANDS).addOptional(new ResourceLocation("atmospheric", "spiny_thicket"));
         //this.tag(HAS_HOLLY_TREES).add(Biomes.OLD_GROWTH_PINE_TAIGA, Biomes.OLD_GROWTH_SPRUCE_TAIGA);
         this.tag(HAS_RARE_CHESTNUT_TREES).add(DARK_FOREST, TAIGA, FOREST, WINDSWEPT_FOREST, OLD_GROWTH_BIRCH_FOREST, OLD_GROWTH_SPRUCE_TAIGA, OLD_GROWTH_PINE_TAIGA, SNOWY_TAIGA, BIRCH_FOREST, FLOWER_FOREST, WINDSWEPT_HILLS);
         this.tag(HAS_RARE_SNOWY_HOLLY_TREES).add(FROZEN_PEAKS, JAGGED_PEAKS).addOptional(new ResourceLocation("atmospheric", "kousa_jungle"));

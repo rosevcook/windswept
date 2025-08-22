@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#minecraft:is_savanna",
+  "biomes": "#windswept:has_feature/lions_tail",
   "features": "windswept:lions_tail",
   "step": "vegetal_decoration"
 }

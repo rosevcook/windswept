@@ -52,7 +52,7 @@ public final class WindsweptBiomeModifiers {
         addFeature(context, "lush_caves_moss", Biomes.LUSH_CAVES, Decoration.VEGETAL_DECORATION, LUSH_CAVES_VEGETATION);
         addFeature(context, "old_growth_pine_taiga_trees", Biomes.OLD_GROWTH_PINE_TAIGA, Decoration.VEGETAL_DECORATION, OLD_GROWTH_PINE_TAIGA_TREES);
         addFeature(context, "rare_flowering_acacia_trees", BiomeTags.IS_SAVANNA, Decoration.VEGETAL_DECORATION, RARE_FLOWERING_ACACIA_TREES);
-        addFeature(context, "lions_tails", BiomeTags.IS_SAVANNA, Decoration.VEGETAL_DECORATION, LIONS_TAIL);
+        addFeature(context, "lions_tails", WindsweptBiomeTags.HAS_LIONS_TAIL, Decoration.VEGETAL_DECORATION, LIONS_TAIL);
         addFeature(context, "rare_yellow_petals", BiomeTags.IS_SAVANNA, Decoration.VEGETAL_DECORATION, RARE_YELLOW_PETALS);
 
         // spawns
