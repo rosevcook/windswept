@@ -27,7 +27,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.ThornsEnchantment;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraftforge.client.event.RenderLivingEvent;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.entity.living.BabyEntitySpawnEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
@@ -79,15 +78,6 @@ public class WindsweptEntityEvents {
             event.setCanceled(true);
         }
 
-    }
-
-    @SubscribeEvent
-    public static void livingRender(RenderLivingEvent.Pre<?, ?> event) {
-        LivingEntity entity = event.getEntity();
-        IDataManager data = (IDataManager) entity;
-
-        if (data.getValue(WindsweptDataProcessors.CLOAKED))
-            event.setCanceled(true);
     }
 
     @SubscribeEvent
