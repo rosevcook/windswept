@@ -42,15 +42,17 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
         this.tag(WindsweptItemTags.COOKED_GOAT).add(COOKED_GOAT.get());
         this.tag(WindsweptItemTags.BERRIES).add(WILD_BERRIES.get());
         this.tag(WindsweptItemTags.COOKED_MUTTON).add(Items.COOKED_MUTTON);
+        this.tag(WindsweptItemTags.STRIPPED_LOGS).add(STRIPPED_HOLLY_LOG.get().asItem(), STRIPPED_CHESTNUT_LOG.get().asItem(), STRIPPED_PINE_LOG.get().asItem());
+        this.tag(WindsweptItemTags.STRIPPED_WOOD).add(STRIPPED_HOLLY_WOOD.get().asItem(), STRIPPED_CHESTNUT_WOOD.get().asItem(), STRIPPED_PINE_WOOD.get().asItem());
         this.tag(Tags.Items.SEEDS).addTag(WindsweptItemTags.WILD_BERRY_SEEDS);
         this.tag(Tags.Items.ARMORS_HELMETS).add(ANTLER_HELMET.get(), LAVENDER_CROWN.get());
         this.tag(Tags.Items.ARMORS_CHESTPLATES).add(FEATHER_CLOAK.get());
         this.tag(Tags.Items.ARMORS_BOOTS).add(SNOW_BOOTS.get());
+        this.tag(Tags.Items.FEATHERS).add(ELDER_FEATHER.get());
         this.copy(Tags.Blocks.BOOKSHELVES, Tags.Items.BOOKSHELVES);
         this.copy(Tags.Blocks.CHESTS_WOODEN, Tags.Items.CHESTS_WOODEN);
         this.copy(Tags.Blocks.CHESTS_TRAPPED, Tags.Items.CHESTS_TRAPPED);
         this.copy(BlueprintBlockTags.LADDERS, BlueprintItemTags.LADDERS);
-        this.tag(Tags.Items.FEATHERS).add(ELDER_FEATHER.get());
 
         //boatload
         this.tag(BlueprintItemTags.FURNACE_BOATS).add(HOLLY_FURNACE_BOAT.get(), CHESTNUT_FURNACE_BOAT.get(), PINE_FURNACE_BOAT.get());
