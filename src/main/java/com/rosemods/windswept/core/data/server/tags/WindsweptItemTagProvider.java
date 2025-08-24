@@ -44,6 +44,8 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
         this.tag(WindsweptItemTags.COOKED_MUTTON).add(Items.COOKED_MUTTON);
         this.tag(WindsweptItemTags.STRIPPED_LOGS).add(STRIPPED_HOLLY_LOG.get().asItem(), STRIPPED_CHESTNUT_LOG.get().asItem(), STRIPPED_PINE_LOG.get().asItem());
         this.tag(WindsweptItemTags.STRIPPED_WOOD).add(STRIPPED_HOLLY_WOOD.get().asItem(), STRIPPED_CHESTNUT_WOOD.get().asItem(), STRIPPED_PINE_WOOD.get().asItem());
+        this.tag(WindsweptItemTags.HONEY_BUCKETS).add(WOODEN_HONEY_BUCKET.get());
+        this.tag(WindsweptItemTags.CHOCOLATE_BUCKETS).add(WOODEN_CHOCOLATE_BUCKET.get());
         this.tag(Tags.Items.SEEDS).addTag(WindsweptItemTags.WILD_BERRY_SEEDS);
         this.tag(Tags.Items.ARMORS_HELMETS).add(ANTLER_HELMET.get(), LAVENDER_CROWN.get());
         this.tag(Tags.Items.ARMORS_CHESTPLATES).add(FEATHER_CLOAK.get());

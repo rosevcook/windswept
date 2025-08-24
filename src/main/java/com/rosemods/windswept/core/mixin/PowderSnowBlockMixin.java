@@ -53,7 +53,7 @@ public class PowderSnowBlockMixin extends Block implements IWoodenBucketPickupBl
     }
 
     @Override
-    public Item getWoodenBucketItem() {
+    public Item getWoodenBucketItem(BlockState state) {
         return WindsweptItems.WOODEN_POWDER_SNOW_BUCKET.get();
     }
 

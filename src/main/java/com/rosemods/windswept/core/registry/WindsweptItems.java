@@ -3,17 +3,20 @@ package com.rosemods.windswept.core.registry;
 import com.mojang.datafixers.util.Pair;
 import com.rosemods.windswept.common.item.*;
 import com.rosemods.windswept.core.Windswept;
+import com.rosemods.windswept.core.other.WindsweptConstants;
 import com.rosemods.windswept.core.other.WindsweptFoods;
 import com.rosemods.windswept.core.other.tags.WindsweptBannerPatternTags;
 import com.rosemods.windswept.integration.boatload.WindsweptBoatTypes;
 import com.teamabnormals.blueprint.common.item.BlueprintRecordItem;
 import com.teamabnormals.blueprint.core.util.PropertyUtil;
 import com.teamabnormals.blueprint.core.util.registry.ItemSubRegistryHelper;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 @Mod.EventBusSubscriber(modid = Windswept.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -39,6 +42,8 @@ public class WindsweptItems {
     public static final RegistryObject<Item> WOODEN_WATER_BUCKET = HELPER.createItem("wooden_water_bucket", () -> new WoodenBucketItem(() -> Fluids.WATER, new Item.Properties().durability(24).craftRemainder(WOODEN_BUCKET.get())));
     public static final RegistryObject<Item> WOODEN_MILK_BUCKET = HELPER.createItem("wooden_milk_bucket", () -> new WoodenMilkBucketItem(new Item.Properties().durability(24).craftRemainder(WOODEN_BUCKET.get())));
     public static final RegistryObject<Item> WOODEN_POWDER_SNOW_BUCKET = HELPER.createItem("wooden_powder_snow_bucket", () -> new WoodenPowderSnowBucketItem(new Item.Properties().durability(24).craftRemainder(WOODEN_BUCKET.get())));
+    public static final RegistryObject<Item> WOODEN_HONEY_BUCKET = HELPER.createItem("wooden_honey_bucket", () -> new WoodenBucketItem(() -> ForgeRegistries.FLUIDS.getValue(WindsweptConstants.HONEY), new Item.Properties().durability(24).craftRemainder(WOODEN_BUCKET.get())));
+    public static final RegistryObject<Item> WOODEN_CHOCOLATE_BUCKET = HELPER.createItem("wooden_chocolate_bucket", () -> new WoodenBucketItem(() -> ForgeRegistries.FLUIDS.getValue(WindsweptConstants.CHOCOLATE), new Item.Properties().durability(24).craftRemainder(WOODEN_BUCKET.get())));
 
     // Food //
     public static final RegistryObject<Item> WILD_BERRIES = HELPER.createItem("wild_berries", ItemSubRegistryHelper.areModsLoaded("berry_good") ? () -> new Item(PropertyUtil.food(WindsweptFoods.WILD_BERRIES)) : () -> new ItemNameBlockItem(WindsweptBlocks.WILD_BERRY_BUSH.get(), PropertyUtil.food(WindsweptFoods.WILD_BERRIES)));

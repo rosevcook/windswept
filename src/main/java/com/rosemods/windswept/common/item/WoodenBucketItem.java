@@ -7,8 +7,6 @@ import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
@@ -51,10 +49,10 @@ public class WoodenBucketItem extends BucketItem {
                 if (this.getFluid() == Fluids.EMPTY) {
                     BlockState state = level.getBlockState(blockpos);
 
-                    if (state.getBlock() instanceof IWoodenBucketPickupBlock pickup && pickup.canPickup(level, blockpos, state)) {
-                        ItemStack filledBucket = getFilled(itemstack, pickup.getWoodenBucketItem(), player);
+                    if (state.getBlock() instanceof IWoodenBucketPickupBlock pickup && pickup.canPickupFromWoodenBucket(level, blockpos, state)) {
+                        ItemStack filledBucket = getFilled(itemstack, pickup.getWoodenBucketItem(state), player);
 
-                        pickup.getWoodenBucketPickupSound().ifPresent(soundevent -> player.playSound(soundevent, 1f, 1f));
+                        pickup.getWoodenBucketPickupSound(state).ifPresent(soundevent -> player.playSound(soundevent, 1f, 1f));
                         pickup.pickupBlockFromWoodenBucket(level, blockpos, state);
 
                         player.awardStat(Stats.ITEM_USED.get(this));
@@ -107,7 +105,7 @@ public class WoodenBucketItem extends BucketItem {
 
     @Override
     public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
-        return this.getFluid() == Fluids.WATER ? getEmpty(itemStack, null, null) : super.getCraftingRemainingItem(itemStack);
+        return this.getFluid() == Fluids.EMPTY ? super.getCraftingRemainingItem(itemStack) : getEmpty(itemStack, null, null);
     }
 
     @Override

@@ -133,6 +133,7 @@ public final class WindsweptCreativeTabs {
                 .addItemsBefore(Ingredient.of(Items.BAMBOO_RAFT), PINE_BOAT.getFirst(), PINE_BOAT.getSecond())
                 .addItemsBefore(modLoaded(Items.BAMBOO_RAFT, "boatload"), PINE_FURNACE_BOAT, LARGE_PINE_BOAT)
                 .addItemsBefore(Ingredient.of(Items.FISHING_ROD), WOODEN_BUCKET, WOODEN_WATER_BUCKET, WOODEN_POWDER_SNOW_BUCKET, WOODEN_MILK_BUCKET)
+                .addItemsBefore(modLoaded(Items.FISHING_ROD, "create"), WOODEN_HONEY_BUCKET, WOODEN_CHOCOLATE_BUCKET)
                 .addItemsAfter(Ingredient.of(Items.MUSIC_DISC_OTHERSIDE), MUSIC_DISC_RAIN, MUSIC_DISC_SNOW, MUSIC_DISC_BUMBLEBEE)
                 .addItemsAfter(Ingredient.of(Items.CARROT_ON_A_STICK), HOLLY_BERRIES_ON_A_STICK)
 
