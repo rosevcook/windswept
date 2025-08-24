@@ -43,7 +43,7 @@ public abstract class FoxEatBerriesGoalMixin extends MoveToBlockGoal {
                 Block.popResource(this.mob.level(), this.blockPos, new ItemStack(WindsweptItems.WILD_BERRIES.get(), amount));
 
             this.mob.playSound(SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, 1f, 1f);
-            this.mob.level().setBlock(this.blockPos, state.setValue(WildBerryBushBlock.AGE, 1), 2);
+            this.mob.level().setBlock(this.blockPos, state.setValue(WildBerryBushBlock.AGE, 2), 2);
         }
 
     }

@@ -70,7 +70,7 @@ public class WildBerryBushBlock extends BushBlock implements BonemealableBlock {
             popResourceFromFace(level, pos, result.getDirection(), new ItemStack(WindsweptItems.WILD_BERRIES.get(), level.random.nextInt(2) + 1));
 
             level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1f, .8f + level.random.nextFloat() * .4f);
-            level.setBlock(pos, state.setValue(AGE, 1), 2);
+            level.setBlock(pos, state.setValue(AGE, 2), 2);
 
             return InteractionResult.sidedSuccess(level.isClientSide);
         }
