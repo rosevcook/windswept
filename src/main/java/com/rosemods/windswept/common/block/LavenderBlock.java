@@ -1,8 +1,17 @@
 package com.rosemods.windswept.common.block;
 
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
@@ -14,6 +23,8 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -26,6 +37,27 @@ public class LavenderBlock extends BushBlock implements BonemealableBlock {
     public LavenderBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(AGE, 0).setValue(PERSISTENT, false));
+    }
+
+    @Override
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+        ItemStack stack = player.getItemInHand(hand);
+
+        if (!state.getValue(PERSISTENT) && stack.is(Items.SHEARS)) {
+            BlockState state1 = state.setValue(PERSISTENT, true);
+
+            if (player instanceof ServerPlayer)
+                CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger((ServerPlayer)player, pos, stack);
+
+            level.playSound(player, player, SoundEvents.GROWING_PLANT_CROP, SoundSource.BLOCKS, 1f, 1f);
+            level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, state1));
+            level.setBlockAndUpdate(pos, state1);
+            stack.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(hand));
+
+            return InteractionResult.sidedSuccess(level.isClientSide);
+        }
+
+        return InteractionResult.PASS;
     }
 
     @Override
