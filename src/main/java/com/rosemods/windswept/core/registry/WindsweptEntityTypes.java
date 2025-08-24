@@ -27,7 +27,7 @@ public class WindsweptEntityTypes {
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
-        event.put(CHILLED.get(), Zombie.createAttributes().build());
+        event.put(CHILLED.get(), Chilled.createChilledAttributes().build());
         event.put(FROSTBITER.get(), Frostbiter.createFrostbiterAttributes().build());
     }
 

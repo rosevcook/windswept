@@ -88,7 +88,7 @@ public class WoodenBucketWrapper implements IFluidHandlerItem, ICapabilityProvid
 
     @Override
     public FluidStack drain(int maxDrain, FluidAction action) {
-        if (container.getCount() != 1 || maxDrain < FluidType.BUCKET_VOLUME)
+        if (this.container.getCount() != 1 || maxDrain < FluidType.BUCKET_VOLUME)
             return FluidStack.EMPTY;
 
         FluidStack fluidStack = this.getFluid();
@@ -105,7 +105,7 @@ public class WoodenBucketWrapper implements IFluidHandlerItem, ICapabilityProvid
 
     @Override
     public FluidStack drain(FluidStack stack, FluidAction action) {
-        if (container.getCount() != 1 || stack.getAmount() < FluidType.BUCKET_VOLUME)
+        if (this.container.getCount() != 1 || stack.getAmount() < FluidType.BUCKET_VOLUME)
             return FluidStack.EMPTY;
 
         FluidStack fluidStack = this.getFluid();
@@ -122,7 +122,7 @@ public class WoodenBucketWrapper implements IFluidHandlerItem, ICapabilityProvid
 
     @Override
     public <T> LazyOptional<T> getCapability(Capability<T> capability, Direction side) {
-        return ForgeCapabilities.FLUID_HANDLER_ITEM.orEmpty(capability, holder);
+        return ForgeCapabilities.FLUID_HANDLER_ITEM.orEmpty(capability, this.holder);
     }
 
     private static Item getBucketFromFluid(Fluid fluid) {

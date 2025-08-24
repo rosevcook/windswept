@@ -16,6 +16,9 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -101,7 +104,7 @@ public class Chilled extends Zombie {
     public void cncCompat(RandomSource random) {
         if (ModList.get().isLoaded("caverns_and_chasms")) {
             if (random.nextFloat() < .075f)
-                this.setItemSlot(EquipmentSlot.MAINHAND, randomDurability(random, random.nextBoolean() ? WindsweptConstants.getItem("caverns_and_chasms", "silver_sword") : WindsweptConstants.getItem("caverns_and_chasms", "silver_shovel")));
+                this.setItemSlot(EquipmentSlot.MAINHAND, randomDurability(random, WindsweptConstants.getItem("caverns_and_chasms", random.nextBoolean() ? "silver_sword" : "silver_shovel")));
             else if (random.nextFloat() < .05f) {
                 Item axe = WindsweptConstants.getItem("caverns_and_chasms", "silver_axe");
                 this.setItemSlot(EquipmentSlot.MAINHAND, randomDurability(random, axe));
@@ -141,6 +144,16 @@ public class Chilled extends Zombie {
 
         if (!this.isSilent())
             this.level().levelEvent(null, 1041, this.blockPosition(), 0);
+    }
+
+    public static AttributeSupplier.Builder createChilledAttributes() {
+        return Monster.createMonsterAttributes()
+                .add(Attributes.FOLLOW_RANGE, 35f)
+                .add(Attributes.MOVEMENT_SPEED, .23f)
+                .add(Attributes.ATTACK_DAMAGE, 3f)
+                .add(Attributes.ARMOR, 2f)
+                .add(Attributes.KNOCKBACK_RESISTANCE, .5f)
+                .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE);
     }
 
 }
