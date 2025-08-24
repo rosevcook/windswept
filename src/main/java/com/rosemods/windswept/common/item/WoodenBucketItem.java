@@ -1,11 +1,13 @@
 package com.rosemods.windswept.common.item;
 
 import com.rosemods.windswept.common.block.IWoodenBucketPickupBlock;
+import com.rosemods.windswept.common.capability.wrappers.WoodenBucketWrapper;
 import com.rosemods.windswept.core.WindsweptConfig;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.RandomSource;
@@ -26,6 +28,7 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
+import net.minecraftforge.common.capabilities.ICapabilityProvider;
 
 import java.util.function.Supplier;
 
@@ -83,6 +86,10 @@ public class WoodenBucketItem extends BucketItem {
         return InteractionResultHolder.pass(itemstack);
     }
 
+    public boolean isEmpty() {
+        return this.getFluid() == Fluids.EMPTY;
+    }
+
     @Override
     public int getMaxDamage(ItemStack stack) {
         return WindsweptConfig.COMMON.woodenBucketDurabilty.get();
@@ -100,17 +107,22 @@ public class WoodenBucketItem extends BucketItem {
 
     @Override
     public int getBurnTime(ItemStack stack, RecipeType<?> recipeType) {
-        return this.getFluid() == Fluids.EMPTY ? 600 : super.getBurnTime(stack, recipeType);
+        return this.isEmpty() ? 600 : super.getBurnTime(stack, recipeType);
     }
 
     @Override
     public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
-        return this.getFluid() == Fluids.EMPTY ? super.getCraftingRemainingItem(itemStack) : getEmpty(itemStack, null, null);
+        return this.isEmpty() ? super.getCraftingRemainingItem(itemStack) : getEmpty(itemStack, null, null);
     }
 
     @Override
     public EquipmentSlot getEquipmentSlot(ItemStack stack) {
-        return this.getFluid() == Fluids.EMPTY ? EquipmentSlot.HEAD : null;
+        return this.isEmpty() ? EquipmentSlot.HEAD : null;
+    }
+
+    @Override
+    public ICapabilityProvider initCapabilities(ItemStack stack, CompoundTag nbt) {
+        return new WoodenBucketWrapper(stack);
     }
 
     // Util //
@@ -137,10 +149,10 @@ public class WoodenBucketItem extends BucketItem {
         ItemStack bucket = new ItemStack(filled);
         handStack.getAllEnchantments().forEach(bucket::enchant);
 
-        if (!player.getAbilities().instabuild)
+        if (player == null || !player.getAbilities().instabuild)
             bucket.setDamageValue(handStack.getDamageValue());
 
-        return ItemUtils.createFilledResult(handStack, player, bucket);
+        return player != null ? ItemUtils.createFilledResult(handStack, player, bucket) : bucket;
     }
 
 }

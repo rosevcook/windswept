@@ -1,8 +1,10 @@
 package com.rosemods.windswept.common.item;
 
+import com.rosemods.windswept.common.capability.wrappers.WoodenBucketWrapper;
 import com.rosemods.windswept.core.WindsweptConfig;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.stats.Stats;
@@ -14,6 +16,7 @@ import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.MilkBucketItem;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.common.capabilities.ICapabilityProvider;
 
 public class WoodenMilkBucketItem extends MilkBucketItem {
 
@@ -52,6 +55,11 @@ public class WoodenMilkBucketItem extends MilkBucketItem {
     @Override
     public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
         return WoodenBucketItem.getEmpty(itemStack, null, null);
+    }
+
+    @Override
+    public ICapabilityProvider initCapabilities(ItemStack stack, CompoundTag nbt) {
+        return new WoodenBucketWrapper(stack);
     }
 
     // Util //
