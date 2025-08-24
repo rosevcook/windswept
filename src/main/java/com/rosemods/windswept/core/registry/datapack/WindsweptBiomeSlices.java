@@ -300,7 +300,7 @@ public final class WindsweptBiomeSlices {
         }
 
         private ResourceKey<Biome> maybePickWindsweptSavannaBiome(int p_201991_, int p_201992_, Climate.Parameter p_201993_, ResourceKey<Biome> p_201994_) {
-            return p_201991_ > 1 && p_201992_ < 4 && p_201993_.max() >= 0L ? FLOWERING_SAVANNA_AREA : p_201994_;
+            return p_201991_ > 1 && p_201992_ < 4 && p_201993_.max() >= 0L ? VANILLA : p_201994_;
         }
 
         private ResourceKey<Biome> pickShatteredCoastBiome(int temperatureIndex, int humidityIndex, Climate.Parameter p_187225_) {

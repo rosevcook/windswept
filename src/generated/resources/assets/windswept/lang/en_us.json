@@ -480,6 +480,7 @@
   "trim_material.windswept.icicles": "Icicles Material",
   "trim_material.windswept.pinecone": "Pinecone Material",
   "windswept.jei.info.carved_pinecone_block": "The face of the Carved Pinecone creates a single note randomly as wind passes through them, the note produced is deeper depending on how high they are stacked on top of pinecone blocks. \n(Is activated through random tick, right clicking, or redstone)",
+  "windswept.jei.info.elder_feather": "Elder Feathers can be found via Archaeology.",
   "windswept.jei.info.frozen_branch": "Tamed Frostbiters will shed their antlers.",
   "windswept.jei.info.ice_lantern": "The Ice Lantern emits a light incapable of melting Ice and Snow.",
   "windswept.jei.info.music_disc_bumblebee": "Sometimes dropped when shearing a Beehive for Honeycombs.",

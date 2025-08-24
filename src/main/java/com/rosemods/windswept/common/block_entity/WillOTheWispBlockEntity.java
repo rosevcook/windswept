@@ -39,7 +39,7 @@ public class WillOTheWispBlockEntity extends BlockEntity {
 
             if (blockState.is(WindsweptBlocks.WILL_O_THE_WISP.get())
                     && blockState.getValue(HorizontalDirectionalBlock.FACING) != direction && level.getBlockState(blockPos.relative(direction)).isAir())
-                level.setBlock(blockPos, blockState.setValue(HorizontalDirectionalBlock.FACING, direction), 2);
+                level.setBlockAndUpdate(blockPos, blockState.setValue(HorizontalDirectionalBlock.FACING, direction));
         });
     }
 

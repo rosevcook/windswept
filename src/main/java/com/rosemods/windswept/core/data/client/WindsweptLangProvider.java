@@ -146,6 +146,7 @@ public class WindsweptLangProvider extends LanguageProvider {
 
         // JEI Info //
         this.jeiInfo(FROZEN_BRANCH, "Tamed Frostbiters will shed their antlers.");
+        this.jeiInfo(ELDER_FEATHER, "Elder Feathers can be found via Archaeology.");
         this.jeiInfo(MUSIC_DISC_RAIN, "Dropped by a Drowned if killed by a Skeleton.");
         this.jeiInfo(MUSIC_DISC_SNOW, "Dropped by a Chilled if killed by a Skeleton.");
         this.jeiInfo(MUSIC_DISC_BUMBLEBEE, "Sometimes dropped when shearing a Beehive for Honeycombs.");
