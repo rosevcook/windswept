@@ -46,8 +46,8 @@ public class LavenderBlock extends BushBlock implements BonemealableBlock {
         if (!state.getValue(PERSISTENT) && stack.is(Items.SHEARS)) {
             BlockState state1 = state.setValue(PERSISTENT, true);
 
-            if (player instanceof ServerPlayer)
-                CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger((ServerPlayer)player, pos, stack);
+            if (player instanceof ServerPlayer serverPlayer)
+                CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger(serverPlayer, pos, stack);
 
             level.playSound(player, player, SoundEvents.GROWING_PLANT_CROP, SoundSource.BLOCKS, 1f, 1f);
             level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, state1));
@@ -67,8 +67,8 @@ public class LavenderBlock extends BushBlock implements BonemealableBlock {
 
     @Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource rand) {
-        if (level.getRawBrightness(pos.above(), 0) >= 9)
-            this.performBonemeal(level, rand, pos, state);
+        if (level.getRawBrightness(pos.above(), 0) >= 9 && !state.getValue(PERSISTENT) && state.getValue(AGE) < 2)
+            level.setBlockAndUpdate(pos, state.setValue(AGE, state.getValue(AGE) + 1));
     }
 
     @Override
@@ -94,7 +94,8 @@ public class LavenderBlock extends BushBlock implements BonemealableBlock {
 
     @Override
     public void performBonemeal(ServerLevel level, RandomSource rand, BlockPos pos, BlockState state) {
-        level.setBlock(pos, state.setValue(AGE, state.getValue(AGE) + 1).setValue(PERSISTENT, false), 2);
+        if (state.getValue(AGE) < 2)
+            level.setBlockAndUpdate(pos, state.setValue(AGE, state.getValue(AGE) + 1).setValue(PERSISTENT, false));
     }
 
 }

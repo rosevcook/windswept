@@ -25,7 +25,7 @@ public class RoseFlowerBlock extends FlowerBlock implements BonemealableBlock {
     }
 
     public static void grow(WorldGenLevel level, BlockPos pos, Block tallFlower) {
-        TallFlowerBlock.placeAt(level, tallFlower.defaultBlockState(), pos, 2);
+        TallFlowerBlock.placeAt(level, tallFlower.defaultBlockState(), pos, 3);
     }
 
     public Block getBushVariant() {
