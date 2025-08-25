@@ -299,7 +299,7 @@ public class Frostbiter extends TamableAnimal implements Endimatable, NeutralMob
 
     @Override
     public boolean canBeLeashed(Player player) {
-        return this.isTame();
+        return true;
     }
 
     @Override
