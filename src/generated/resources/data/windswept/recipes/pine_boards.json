@@ -14,16 +14,14 @@
         "group": "wooden_boards",
         "key": {
           "#": {
-            "item": "windswept:pine_planks"
+            "item": "windswept:pine_slab"
           }
         },
         "pattern": [
           "#",
-          "#",
           "#"
         ],
         "result": {
-          "count": 3,
           "item": "windswept:pine_boards"
         },
         "show_notification": true

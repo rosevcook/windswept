@@ -14,16 +14,14 @@
         "group": "wooden_boards",
         "key": {
           "#": {
-            "item": "windswept:chestnut_planks"
+            "item": "windswept:chestnut_slab"
           }
         },
         "pattern": [
           "#",
-          "#",
           "#"
         ],
         "result": {
-          "count": 3,
           "item": "windswept:chestnut_boards"
         },
         "show_notification": true

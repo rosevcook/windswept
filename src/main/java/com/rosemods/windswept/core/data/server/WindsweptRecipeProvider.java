@@ -349,7 +349,7 @@ public class WindsweptRecipeProvider extends BlueprintRecipeProvider {
         woodFromLogs(consumer, strippedWood, strippedLog);
         slab(planks, slab, "wooden_slab", consumer);
         stairs(planks, stairs, "wooden_stairs", consumer);
-        conditionalRecipe(ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, boards, 3).group("wooden_boards").define('#', planks).pattern("#").pattern("#").pattern("#").unlockedBy(getHasName(planks), has(planks)), new ModLoadedCondition("woodworks"), consumer, getSaveLocation(boards));
+        conditionalRecipe(ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, boards).group("wooden_boards").define('#', slab).pattern("#").pattern("#").unlockedBy(getHasName(slab), has(slab)), new ModLoadedCondition("woodworks"), consumer, getSaveLocation(boards));
         conditionalRecipe(ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, beehive).group("wooden_beehive").define('#', planks).define('H', Items.HONEYCOMB).pattern("###").pattern("HHH").pattern("###").unlockedBy(getHasName(planks), has(planks)), new ModLoadedCondition("woodworks"), consumer, getSaveLocation(beehive));
         conditionalRecipe(ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ladder, 4).group("wooden_ladders").define('#', planks).define('S', Items.STICK).pattern("S S").pattern("S#S").pattern("S S").unlockedBy(getHasName(planks), has(planks)), new ModLoadedCondition("woodworks"), consumer, getSaveLocation(ladder));
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, bookshelf).group("wooden_bookshelves").define('#', planks).define('B', Items.BOOK).pattern("###").pattern("BBB").pattern("###").unlockedBy(getHasName(planks), has(planks)).save(consumer, getSaveLocation(bookshelf));
