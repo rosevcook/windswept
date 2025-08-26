@@ -38,6 +38,7 @@ public final class WindsweptBlockInfo {
         DataUtil.registerCompostable(MOSS_CAMPION.get(), .65f);
         DataUtil.registerCompostable(NIGHTSHADE.get(), .65f);
         DataUtil.registerCompostable(BLUEBELLS.get(), .65f);
+        DataUtil.registerCompostable(MIMOSA.get(), .65f);
         DataUtil.registerCompostable(YELLOW_PETALS.get(), .3f);
 
         DataUtil.registerCompostable(RED_ROSE_BUSH.get(), .65f);
@@ -45,6 +46,7 @@ public final class WindsweptBlockInfo {
         DataUtil.registerCompostable(WHITE_ROSE_BUSH.get(), .65f);
         DataUtil.registerCompostable(YELLOW_ROSE_BUSH.get(), .65f);
         DataUtil.registerCompostable(LUPINE.get(), .65f);
+        DataUtil.registerCompostable(LIONS_TAIL.get(), .65f);
 
         DataUtil.registerCompostable(HOLLY_LEAVES.get(), .3f);
         DataUtil.registerCompostable(CHESTNUT_LEAVES.get(), .3f);
@@ -136,11 +138,13 @@ public final class WindsweptBlockInfo {
         DataUtil.registerFlammable(MOSS_CAMPION.get(), 60, 100);
         DataUtil.registerFlammable(NIGHTSHADE.get(), 60, 100);
         DataUtil.registerFlammable(BLUEBELLS.get(), 60, 100);
+        DataUtil.registerFlammable(MIMOSA.get(), 60, 100);
         DataUtil.registerFlammable(LUPINE.get(), 60, 100);
         DataUtil.registerFlammable(RED_ROSE_BUSH.get(), 60, 100);
         DataUtil.registerFlammable(BLUE_ROSE_BUSH.get(), 60, 100);
         DataUtil.registerFlammable(WHITE_ROSE_BUSH.get(), 60, 100);
         DataUtil.registerFlammable(YELLOW_ROSE_BUSH.get(), 60, 100);
+        DataUtil.registerFlammable(LIONS_TAIL.get(), 60, 100);
     }
 
 }
