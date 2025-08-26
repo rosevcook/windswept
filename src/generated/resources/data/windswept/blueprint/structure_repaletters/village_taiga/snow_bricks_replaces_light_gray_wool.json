@@ -1,0 +1,8 @@
+{
+  "repaletter": {
+    "type": "blueprint:simple",
+    "replaces_block": "minecraft:light_gray_wool",
+    "replaces_with": "windswept:snow_bricks"
+  },
+  "structures": "minecraft:village_taiga"
+}

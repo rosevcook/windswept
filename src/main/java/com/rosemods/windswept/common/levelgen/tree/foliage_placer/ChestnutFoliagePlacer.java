@@ -32,12 +32,12 @@ public class ChestnutFoliagePlacer extends FoliagePlacer {
     }
 
     @Override
-    protected void createFoliage(LevelSimulatedReader level, BiConsumer<BlockPos, BlockState> consumer, RandomSource rand, TreeConfiguration config, int p_161426_, FoliageAttachment foliage, int p_161428_, int p_161429_, int p_161430_) {
+    protected void createFoliage(LevelSimulatedReader level, FoliageSetter setter, RandomSource rand, TreeConfiguration config, int i, FoliageAttachment foliageAttachment, int i1, int i2, int i3) {
         for (int x = -1; x <= 1; x++)
             for (int y = -1; y <= 1; y++)
                 for (int z = -1; z <= 1; z++)
                     if (x == 0 || y == 0 || z == 0 || rand.nextInt(10) == 0)
-                        tryPlaceLeaf(level, consumer, rand, config, foliage.pos().offset(x, y, z));
+                        tryPlaceLeaf(level, setter, rand, config, foliageAttachment.pos().offset(x, y, z));
     }
 
     @Override

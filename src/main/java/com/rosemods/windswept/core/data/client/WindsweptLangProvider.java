@@ -3,23 +3,32 @@ package com.rosemods.windswept.core.data.client;
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.util.Pair;
 import com.rosemods.windswept.core.Windswept;
-import com.rosemods.windswept.core.other.WindsweptDamageSources;
 import com.rosemods.windswept.core.registry.WindsweptAttributes;
 import com.rosemods.windswept.core.registry.WindsweptEffects;
 import com.rosemods.windswept.core.registry.WindsweptEnchantments;
-import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
+import com.rosemods.windswept.core.registry.WindsweptPaintingVariants;
+import com.rosemods.windswept.core.registry.datapack.WindsweptBiomes;
+import com.rosemods.windswept.core.registry.datapack.WindsweptDamageTypes;
+import com.rosemods.windswept.core.registry.datapack.WindsweptTrimMaterials;
 import com.rosemods.windswept.integration.jei.WindsweptPlugin;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintStandingSignBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintWallSignBlock;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.decoration.PaintingVariant;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.alchemy.Potion;
+import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -40,23 +49,18 @@ public class WindsweptLangProvider extends LanguageProvider {
     private final List<String> keys = Lists.newArrayList();
 
     public WindsweptLangProvider(GatherDataEvent event) {
-        super(event.getGenerator(), Windswept.MOD_ID, "en_us");
+        super(event.getGenerator().getPackOutput(), Windswept.MOD_ID, "en_us");
     }
 
     @Override
     protected void addTranslations() {
         // Items //
-        this.add(HOLLY_BOATS.getSecond().get(), "Holly Boat with Chest");
-        this.add(CHESTNUT_BOATS.getSecond().get(), "Chestnut Boat with Chest");
-        this.add(PINE_BOATS.getSecond().get(), "Pine Boat with Chest");
-        this.add(CHRISTMAS_PUDDING_SLICE.get(), "Slice of Christmas Pudding");
-        this.add(SWEET_BERRY_BOWL.get(), "Bowl of Sweet Berries");
-        this.add(WILD_BERRY_BOWL.get(), "Bowl of Wild Berries");
+        this.add(HOLLY_BOAT.getSecond().get(), "Holly Boat with Chest");
+        this.add(CHESTNUT_BOAT.getSecond().get(), "Chestnut Boat with Chest");
+        this.add(PINE_BOAT.getSecond().get(), "Pine Boat with Chest");
         this.add(GOAT.get(), "Raw Chevon");
         this.add(COOKED_GOAT.get(), "Cooked Chevon");
-        this.add(GOAT_SHANKS.get(), "Raw Chevon Shanks");
-        this.add(COOKED_GOAT_SHANKS.get(), "Cooked Chevon Shanks");
-        this.add(FOUL_BERRY_BOWL.get(), "Bowl of Foul Berries");
+
         this.add(HOLLY_BERRIES_ON_A_STICK.get(), "Holly Berries on a Stick");
         this.translateBannerPattern(SNOW_CHARGE_BANNER_PATTERN, "snow_charge");
         this.translateBannerPattern(SNOW_GOLEM_BANNER_PATTERN, "snow_golem");
@@ -67,37 +71,31 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.add(HOLLY_FURNACE_BOAT.get(), "Holly Boat with Furnace");
         this.add(CHESTNUT_FURNACE_BOAT.get(), "Chestnut Boat with Furnace");
         this.add(PINE_FURNACE_BOAT.get(), "Pine Boat with Furnace");
+        this.addDescription(FEATHER_CLOAK, "Wearer will become invisible whilst crouching");
 
         // Blocks //
         this.translateSign(HOLLY_SIGNS, "holly");
-        this.add(HOLLY_HEDGE.get(), "Holly Leaf Hedge");
         this.add(HOLLY_LEAF_PILE.get(), "Pile of Holly Leaves");
         this.add(HOLLY_BERRY_BASKET.get(), "Basket of Holly Berries");
         this.translateSign(CHESTNUT_SIGNS, "chestnut");
-        this.add(CHESTNUT_HEDGE.get(), "Chestnut Leaf Hedge");
         this.add(CHESTNUT_LEAF_PILE.get(), "Pile of Chestnut Leaves");
         this.add(CHESTNUT_CRATE.get(), "Crate of Chestnuts");
         this.add(ROASTED_CHESTNUT_CRATE.get(), "Crate of Roasted Chestnuts");
         this.translateSign(PINE_SIGNS, "pine");
-        this.add(PINE_HEDGE.get(), "Pine Leaf Hedge");
         this.add(PINE_LEAF_PILE.get(), "Pile of Pine Leaves");
+        this.add(FLOWERING_ACACIA_LEAF_PILE.get(), "Pile of Flowering Acacia Leaves");
         this.add(WILL_O_THE_WISP.get(), "Will o' the Wisp");
         this.add("block.windswept.snow_carpet", "Snow Carpet");
         this.add(GINGER_ROOT_CRATE.get(), "Crate of Ginger Roots");
         this.add(WILD_BERRY_BASKET.get(), "Basket of Wild Berries");
-        this.add(RED_MUSHROOM_BASKET.get(), "Basket of Red Mushrooms");
-        this.add(BROWN_MUSHROOM_BASKET.get(), "Basket of Brown Mushrooms");
-        this.add(GLOW_SHROOM_BASKET.get(), "Basket of Glow Shrooms");
-
+        this.add(LIONS_TAIL.get(), "Lion's Tail");
 
         // Effects //
         this.translateEffect(WindsweptEffects.THORNS, "Causes damage to enemies when they attack you.");
         this.translateEffect(WindsweptEffects.FROST_RESISTANCE, "Grants immunity to frost. Allows for walking on Powder Snow. Stops Entity Conversion in Powder Snow.");
-
         this.translatePotion(WindsweptEffects.THORNS_POTION, "Prickling");
         this.translatePotion(WindsweptEffects.LONG_THORNS_POTION, "Prickling");
         this.translatePotion(WindsweptEffects.STRONG_THORNS_POTION, "Prickling");
-
         this.translatePotion(WindsweptEffects.FROST_RESISTANCE_POTION, "Frost Resistance");
         this.translatePotion(WindsweptEffects.LONG_FROST_RESISTANCE_POTION, "Frost Resistance");
 
@@ -110,11 +108,11 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateEnchantment(WindsweptEnchantments.SLIPPING_CURSE, "Curse of Slipping", "Causes the wearer to slip on any block as if it was ice whilst damaging the boots.");
 
         // Damage Sources //
-        this.translateDamageSource(WindsweptDamageSources.HOLLY_LEAVES,
+        this.translateDamageType(WindsweptDamageTypes.HOLLY_LEAVES,
                 player -> player + " was ripped to death by holly leaves",
                 (player, entity) -> player + " was ripped to death by holly leaves whilst trying to escape " + entity);
 
-        this.translateDamageSource(WindsweptDamageSources.ICICLE,
+        this.translateDamageType(WindsweptDamageTypes.ICICLE,
                 player -> player + " was impaled on an icicle",
                 (player, entity) -> player + " was impaled on an icicle whilst trying to escape " + entity);
 
@@ -123,7 +121,32 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateSlabfish("grove");
         this.translateSlabfish("pine");
 
+        // Trim Materials //
+        this.translateTrimMaterial(WindsweptTrimMaterials.ICICLES, "Icicles Material");
+        this.translateTrimMaterial(WindsweptTrimMaterials.PINECONE, "Pinecone Material");
+
+        // Paintings //
+        this.translatePainting(WindsweptPaintingVariants.CLIFFSIDE, "Binome");
+        this.translatePainting(WindsweptPaintingVariants.DRESS_CODES, "Yapettoshen");
+        this.translatePainting(WindsweptPaintingVariants.ECOTONAL_PAREIDOLIA, "Yapettoshen");
+        this.translatePainting(WindsweptPaintingVariants.THE_FOILS, "Yapettoshen");
+        this.translatePainting(WindsweptPaintingVariants.AURORAE, "Yapettoshen");
+        this.translatePainting(WindsweptPaintingVariants.HEARTH_RUG, "Yapettoshen");
+        this.translatePainting(WindsweptPaintingVariants.ALLU_PINE, "Yapettoshen");
+
+        // Biomes //
+        this.translateBiome(WindsweptBiomes.CHESTNUT_FOREST);
+        this.translateBiome(WindsweptBiomes.SNOWY_CHESTNUT_FOREST);
+        this.translateBiome(WindsweptBiomes.PINE_BARRENS);
+        this.translateBiome(WindsweptBiomes.SNOWY_PINE_BARRENS);
+        this.translateBiome(WindsweptBiomes.LAVENDER_HILLS);
+        this.translateBiome(WindsweptBiomes.LAVENDER_FIELDS);
+        this.translateBiome(WindsweptBiomes.TUNDRA);
+        this.translateBiome(WindsweptBiomes.FLOWERING_SAVANNA);
+
         // JEI Info //
+        this.jeiInfo(FROZEN_BRANCH, "Tamed Frostbiters will shed their antlers.");
+        this.jeiInfo(ELDER_FEATHER, "Elder Feathers can be found via Archaeology.");
         this.jeiInfo(MUSIC_DISC_RAIN, "Dropped by a Drowned if killed by a Skeleton.");
         this.jeiInfo(MUSIC_DISC_SNOW, "Dropped by a Chilled if killed by a Skeleton.");
         this.jeiInfo(MUSIC_DISC_BUMBLEBEE, "Sometimes dropped when shearing a Beehive for Honeycombs.");
@@ -139,7 +162,6 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.translateRegistry(ForgeRegistries.BLOCKS, Block::getDescriptionId);
         this.translateRegistry(ForgeRegistries.ITEMS, Item::getDescriptionId);
         this.translateRegistry(ForgeRegistries.ENTITY_TYPES, EntityType::getDescriptionId);
-        this.translateRegistry(ForgeRegistries.BIOMES, b -> "biome." + Windswept.MOD_ID + "." + ForgeRegistries.BIOMES.getKey(b).getPath());
     }
 
 
@@ -164,6 +186,21 @@ public class WindsweptLangProvider extends LanguageProvider {
         String descId = enchantment.get().getDescriptionId();
         this.add(descId, name);
         this.add(descId + ".desc", desc);
+    }
+
+    private void translateBiome(ResourceKey<Biome> biome) {
+        String name = biome.location().getPath();
+        this.add("biome." + Windswept.MOD_ID + "." + name, toUpper(name));
+    }
+
+    private void translateTrimMaterial(ResourceKey<TrimMaterial> material, String name) {
+        this.add("trim_material." + material.location().toString().replace(':', '.'), name);
+    }
+
+    private void translatePainting(RegistryObject<PaintingVariant> painting, String author) {
+        String name = ForgeRegistries.PAINTING_VARIANTS.getKey(painting.get()).getPath();
+        this.add("painting." + Windswept.MOD_ID + "." + name + ".title", toUpper(name));
+        this.add("painting." + Windswept.MOD_ID + "." + name + ".author", author);
     }
 
     private void translateMusicDisc(RegistryObject<? extends Item> item, String desc) {
@@ -202,9 +239,9 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.add(WindsweptPlugin.getDesc(item), desc);
     }
 
-    private void translateDamageSource(DamageSource source, Function<String, String> death, BiFunction<String, String, String> killed) {
-        this.add("death.attack." + source.getMsgId(), death.apply("%1$s"));
-        this.add("death.attack." + source.getMsgId() + ".player", killed.apply("%1$s", "%2$s"));
+    private void translateDamageType(ResourceKey<DamageType> source, Function<String, String> death, BiFunction<String, String, String> killed) {
+        //this.add("death.attack." + source.msgId(), death.apply("%1$s"));
+        //this.add("death.attack." + source.msgId() + ".player", killed.apply("%1$s", "%2$s"));
     }
 
     private void translatePotion(RegistryObject<? extends Potion> potion, String effect) {
@@ -217,8 +254,8 @@ public class WindsweptLangProvider extends LanguageProvider {
         this.add("item.caverns_and_chasms.tether_potion.effect." + name, "Tether Potion of " + effect);
     }
 
-    private void addDescription(RegistryObject<? extends Item> item, String desc) {
-        this.add(item.get().getDescriptionId() + ".desc", desc);
+    private void addDescription(RegistryObject<? extends ItemLike> item, String desc) {
+        this.add(item.get().asItem().getDescriptionId() + ".desc", desc);
     }
 
     private static <T> String toUpper(IForgeRegistry<T> registry, RegistryObject<? extends T> object) {

@@ -1,42 +1,22 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
-    {
-      "conditions": [
-        {
-          "type": "forge:or",
-          "values": [
-            {
-              "type": "forge:mod_loaded",
-              "modid": "woodworks"
-            },
-            {
-              "type": "blueprint:quark_flag",
-              "flag": "variant_bookshelves"
-            }
-          ]
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:crafting_shaped",
-        "group": "wooden_bookshelves",
-        "key": {
-          "#": {
-            "item": "windswept:pine_planks"
-          },
-          "B": {
-            "item": "minecraft:book"
-          }
-        },
-        "pattern": [
-          "###",
-          "BBB",
-          "###"
-        ],
-        "result": {
-          "item": "windswept:pine_bookshelf"
-        }
-      }
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "wooden_bookshelves",
+  "key": {
+    "#": {
+      "item": "windswept:pine_planks"
+    },
+    "B": {
+      "item": "minecraft:book"
     }
-  ]
+  },
+  "pattern": [
+    "###",
+    "BBB",
+    "###"
+  ],
+  "result": {
+    "item": "windswept:pine_bookshelf"
+  },
+  "show_notification": true
 }

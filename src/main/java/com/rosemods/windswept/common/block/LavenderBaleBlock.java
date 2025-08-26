@@ -19,7 +19,7 @@ public class LavenderBaleBlock extends DirectionalBlock {
 
     @Override
     public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float damage) {
-        entity.causeFallDamage(damage, .2f, DamageSource.FALL);
+        entity.causeFallDamage(damage, .2f, level.damageSources().fall());
     }
 
     @Override

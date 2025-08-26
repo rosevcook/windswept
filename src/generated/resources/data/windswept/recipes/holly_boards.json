@@ -10,21 +10,21 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "group": "wooden_boards",
         "key": {
           "#": {
-            "item": "windswept:holly_planks"
+            "item": "windswept:holly_slab"
           }
         },
         "pattern": [
           "#",
-          "#",
           "#"
         ],
         "result": {
-          "count": 3,
           "item": "windswept:holly_boards"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

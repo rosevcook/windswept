@@ -1,7 +1,0 @@
-{
-  "type": "blueprint:simple",
-  "priority": "high",
-  "replaces_block": "minecraft:infested_mossy_stone_bricks",
-  "replaces_with": "windswept:chiseled_icicle_block",
-  "selector": "minecraft:igloo"
-}

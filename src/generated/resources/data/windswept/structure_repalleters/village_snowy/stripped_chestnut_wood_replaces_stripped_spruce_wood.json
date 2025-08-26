@@ -1,7 +1,0 @@
-{
-  "type": "blueprint:simple",
-  "priority": "high",
-  "replaces_block": "minecraft:stripped_spruce_wood",
-  "replaces_with": "windswept:stripped_chestnut_wood",
-  "selector": "minecraft:village_snowy"
-}

@@ -2,6 +2,7 @@
   "values": [
     "#windswept:is_lavender",
     "#windswept:is_pine_barrens",
-    "#windswept:is_chestnut_forest"
+    "#windswept:is_chestnut_forest",
+    "windswept:flowering_savanna"
   ]
 }

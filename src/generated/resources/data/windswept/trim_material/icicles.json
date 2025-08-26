@@ -1,0 +1,9 @@
+{
+  "asset_name": "windswept_icicles",
+  "description": {
+    "color": "#6D91D7",
+    "translate": "trim_material.windswept.icicles"
+  },
+  "ingredient": "windswept:icicles",
+  "item_model_index": -1.0
+}

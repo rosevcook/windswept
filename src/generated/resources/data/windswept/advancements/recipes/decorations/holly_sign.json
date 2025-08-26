@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:holly_sign"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

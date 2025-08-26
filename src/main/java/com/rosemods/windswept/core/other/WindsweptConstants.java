@@ -6,17 +6,11 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public final class WindsweptConstants {
-    public static final boolean IN_DEV = false;
-    public static final String QUARK = modId("quark");
-    public static final String BERRY_GOOD = modId("berry_good");
-    public static final String WOODWORKS = modId("woodworks");
-    public static final String BOATLOAD = modId("boatload");
-    public static final String NEAPOLITAN = modId("neapolitan");
-    public static final String FARMERSDELIGHT = modId("farmersdelight");
-    public static final String AUTUMNITY = modId("autumnity");
-    public static final String CAVERNS_AND_CHASMS = modId("caverns_and_chasms");
-    public static final String ENDERGETIC = modId("endergetic");
-    public static final String ENVIRONMENTAL = modId("environmental");
+    public static final ResourceLocation MOSSY_COBBLESTONE_BRICK_WALL = new ResourceLocation("caverns_and_chasms", "mossy_cobblestone_brick_wall");
+    public static final ResourceLocation MOSSY_COBBLESTONE_TILE_WALL = new ResourceLocation("caverns_and_chasms", "mossy_cobblestone_tile_wall");
+    public static final ResourceLocation SWEET_BERRY_PIPS = new ResourceLocation("berry_good", "sweet_berry_pips");
+    public static final ResourceLocation HONEY = new ResourceLocation("create", "honey");
+    public static final ResourceLocation CHOCOLATE = new ResourceLocation("create", "chocolate");
 
     public static Item getItem(String modid, String path) {
         return ForgeRegistries.ITEMS.getValue(new ResourceLocation(modid, path));
@@ -24,10 +18,6 @@ public final class WindsweptConstants {
 
     public static Block getBlock(String modid, String path) {
         return ForgeRegistries.BLOCKS.getValue(new ResourceLocation(modid, path));
-    }
-
-    private static String modId(String modId) {
-        return IN_DEV ? "minecraft" : modId;
     }
 
 }

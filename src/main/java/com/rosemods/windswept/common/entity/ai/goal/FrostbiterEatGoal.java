@@ -5,8 +5,6 @@ import com.rosemods.windswept.core.other.tags.WindsweptBlockTags;
 import com.rosemods.windswept.core.registry.WindsweptPlayableEndimations;
 import com.teamabnormals.blueprint.core.util.NetworkUtil;
 import net.minecraft.core.BlockPos;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraftforge.event.ForgeEventFactory;
@@ -36,7 +34,7 @@ public class FrostbiterEatGoal extends Goal {
     @Override
     public void start() {
         this.tick = this.adjustedTickDelay(40);
-        this.frostbiter.level.broadcastEntityEvent(this.frostbiter, (byte) 10);
+        this.frostbiter.level().broadcastEntityEvent(this.frostbiter, (byte) 10);
         this.frostbiter.getNavigation().stop();
         NetworkUtil.setPlayingAnimation(this.frostbiter, WindsweptPlayableEndimations.FROSTBITER_EAT);
     }
@@ -53,9 +51,11 @@ public class FrostbiterEatGoal extends Goal {
         if (this.tick == this.adjustedTickDelay(5)) {
             BlockPos pos = this.frostbiter.blockPosition();
 
-            if (this.isFoodAt(pos) && ForgeEventFactory.getMobGriefingEvent(frostbiter.level, frostbiter)) {
-                this.frostbiter.level.destroyBlock(pos, false);
+            if (this.isFoodAt(pos)) {
                 this.frostbiter.ate();
+
+                if (ForgeEventFactory.getMobGriefingEvent(this.frostbiter.level(), this.frostbiter))
+                    this.frostbiter.level().destroyBlock(pos, false);
 
                 if (this.frostbiter.isBaby())
                     this.frostbiter.ageUp(AgeableMob.getSpeedUpSecondsWhenFeeding(-this.frostbiter.getAge()), true);
@@ -64,13 +64,13 @@ public class FrostbiterEatGoal extends Goal {
             }
         }
 
-        if (frostbiter.isTame() && tick % 2 == 0 && tick > adjustedTickDelay(10) && tick < adjustedTickDelay(30))
-            this.frostbiter.playSound(SoundEvents.BELL_BLOCK, .5f, .5f);
+        //if (frostbiter.isTame() && tick % 2 == 0 && tick > adjustedTickDelay(10) && tick < adjustedTickDelay(30))
+        //this.frostbiter.playSound(SoundEvents.BELL_BLOCK, .5f, .5f);
 
     }
 
     private boolean isFoodAt(BlockPos pos) {
-        return this.frostbiter.level.getBlockState(pos).is(WindsweptBlockTags.FROSTBITER_FOOD);
+        return this.frostbiter.level().getBlockState(pos).is(WindsweptBlockTags.FROSTBITER_FOOD);
     }
 
 }

@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "windswept:dry_mossy_cobblestone_tiles"
@@ -12,5 +13,6 @@
   "result": {
     "count": 6,
     "item": "windswept:dry_mossy_cobblestone_tile_wall"
-  }
+  },
+  "show_notification": true
 }

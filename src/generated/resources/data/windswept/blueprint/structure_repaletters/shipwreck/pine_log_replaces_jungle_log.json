@@ -1,0 +1,11 @@
+{
+  "repaletter": {
+    "type": "blueprint:simple",
+    "replaces_block": "minecraft:jungle_log",
+    "replaces_with": "windswept:pine_log"
+  },
+  "structures": [
+    "minecraft:shipwreck",
+    "minecraft:shipwreck_beached"
+  ]
+}

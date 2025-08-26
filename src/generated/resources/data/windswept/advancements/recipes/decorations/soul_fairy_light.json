@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:soul_fairy_light"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

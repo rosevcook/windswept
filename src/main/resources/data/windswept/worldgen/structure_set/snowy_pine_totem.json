@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "windswept:snowy_pine_totem",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 1631637836,
+    "spacing": 10,
+    "separation": 1
+  }
+}

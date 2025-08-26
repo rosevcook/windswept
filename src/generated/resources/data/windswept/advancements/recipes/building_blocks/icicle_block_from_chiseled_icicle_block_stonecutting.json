@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:icicle_block_from_chiseled_icicle_block_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

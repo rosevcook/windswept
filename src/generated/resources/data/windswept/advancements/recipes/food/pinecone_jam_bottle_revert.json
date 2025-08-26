@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:pinecone_jam_bottle_revert"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

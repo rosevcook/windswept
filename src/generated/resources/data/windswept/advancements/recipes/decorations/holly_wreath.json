@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:holly_wreath"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

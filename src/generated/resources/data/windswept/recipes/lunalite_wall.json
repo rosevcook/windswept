@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "windswept:lunalite"
@@ -12,5 +13,6 @@
   "result": {
     "count": 6,
     "item": "windswept:lunalite_wall"
-  }
+  },
+  "show_notification": true
 }

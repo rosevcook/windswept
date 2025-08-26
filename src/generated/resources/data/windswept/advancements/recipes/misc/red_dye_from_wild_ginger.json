@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:red_dye_from_wild_ginger"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

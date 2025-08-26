@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:purple_dye_from_lupine"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

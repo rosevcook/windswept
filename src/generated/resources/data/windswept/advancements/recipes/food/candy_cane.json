@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:candy_cane"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

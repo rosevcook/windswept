@@ -1,0 +1,9 @@
+{
+  "asset_name": "windswept_pinecone",
+  "description": {
+    "color": "#7C5741",
+    "translate": "trim_material.windswept.pinecone"
+  },
+  "ingredient": "windswept:pinecone",
+  "item_model_index": -1.0
+}

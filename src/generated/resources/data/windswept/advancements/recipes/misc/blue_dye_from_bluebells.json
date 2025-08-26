@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:blue_dye_from_bluebells"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

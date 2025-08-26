@@ -11,26 +11,26 @@ license = "All Rights Reserved"
     itemIcon = "windswept:holly_wreath"
     configBackground = "windswept:textures/block/holly_log.png"
     displayURL = "https://www.curseforge.com/minecraft/mc-mods/windsweptmod"
-    authors = "Rose"
+    authors = "Rose, Yape"
     description = '''A general expansion to snowy and forest areas of the game, incentivising players to explore and build in the new expanded areas'''
 
 [[dependencies.windswept]]
     modId = "forge"
     mandatory = true
-    versionRange = "[43.5.0,)"
+    versionRange = "[47.1.0,)"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.windswept]]
     modId = "minecraft"
     mandatory = true
-    versionRange = "[1.19.2,)"
+    versionRange = "[1.20.1,)"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.windswept]]
     modId = "blueprint"
     mandatory = true
-    versionRange = "[6.2.0,)"
+    versionRange = "[7.0.0,)"
     ordering = "BEFORE"
     side = "BOTH"

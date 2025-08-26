@@ -1,38 +1,18 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
-    {
-      "conditions": [
-        {
-          "type": "forge:or",
-          "values": [
-            {
-              "type": "forge:mod_loaded",
-              "modid": "berry_good"
-            },
-            {
-              "type": "blueprint:quark_flag",
-              "flag": "berry_sack"
-            }
-          ]
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:crafting_shaped",
-        "key": {
-          "#": {
-            "item": "windswept:wild_berries"
-          }
-        },
-        "pattern": [
-          "###",
-          "###",
-          "###"
-        ],
-        "result": {
-          "item": "windswept:wild_berry_basket"
-        }
-      }
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "windswept:wild_berries"
     }
-  ]
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "windswept:wild_berry_basket"
+  },
+  "show_notification": true
 }

@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "windswept:glazed_gingerbread_block"
@@ -12,5 +13,6 @@
   "result": {
     "count": 4,
     "item": "windswept:glazed_gingerbread_bricks"
-  }
+  },
+  "show_notification": true
 }

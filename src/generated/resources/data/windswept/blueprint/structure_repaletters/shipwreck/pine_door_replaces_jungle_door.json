@@ -1,0 +1,11 @@
+{
+  "repaletter": {
+    "type": "blueprint:simple",
+    "replaces_block": "minecraft:jungle_door",
+    "replaces_with": "windswept:pine_door"
+  },
+  "structures": [
+    "minecraft:shipwreck",
+    "minecraft:shipwreck_beached"
+  ]
+}

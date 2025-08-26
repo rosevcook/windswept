@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:packed_ice_bricks"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

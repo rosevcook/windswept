@@ -5,8 +5,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.SnowyDirtBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -24,10 +24,9 @@ public class GelisolBlock extends SnowyDirtBlock implements BonemealableBlock {
     }
 
     @Override
-    public boolean isValidBonemealTarget(BlockGetter getter, BlockPos pos, BlockState state, boolean isClient) {
-        BlockState above = getter.getBlockState(pos.above());
-
-        return above.getMaterial().isReplaceable() && !above.is(WindsweptBlocks.GELISOL_SPROUTS.get());
+    public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos blockPos, BlockState blockState, boolean b) {
+        BlockState above = levelReader.getBlockState(blockPos.above());
+        return above.canBeReplaced() && !above.is(WindsweptBlocks.GELISOL_GRASS.get());
     }
 
     @Override
@@ -48,7 +47,7 @@ public class GelisolBlock extends SnowyDirtBlock implements BonemealableBlock {
             }
 
             if (level.getBlockState(blockPos).isAir() && level.getBlockState(blockPos.below()).is(this))
-                level.setBlock(blockPos, WindsweptBlocks.GELISOL_SPROUTS.get().defaultBlockState(), 3);
+                level.setBlock(blockPos, WindsweptBlocks.GELISOL_GRASS.get().defaultBlockState(), 3);
         }
 
     }

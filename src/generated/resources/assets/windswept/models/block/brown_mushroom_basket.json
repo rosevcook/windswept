@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "bottom": "windswept:block/brown_mushroom_basket_bottom",
-    "side": "windswept:block/brown_mushroom_basket_side",
-    "top": "windswept:block/brown_mushroom_basket_top"
-  }
-}

@@ -1,5 +1,6 @@
 package com.rosemods.windswept.common.block;
 
+import com.rosemods.windswept.core.other.WindsweptConstants;
 import com.rosemods.windswept.core.other.tags.WindsweptItemTags;
 import com.rosemods.windswept.core.registry.WindsweptEffects;
 import com.rosemods.windswept.core.registry.WindsweptItems;
@@ -32,6 +33,8 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.fml.ModList;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class ChristmasPuddingBlock extends Block {
     public static final EnumProperty<PuddingStates> STATE = EnumProperty.create("state", PuddingStates.class);
@@ -63,7 +66,7 @@ public class ChristmasPuddingBlock extends Block {
             case ONE -> {
                 level.removeBlock(pos, false);
                 level.gameEvent(player, GameEvent.BLOCK_DESTROY, pos);
-                popResourceFromFace(level, pos.offset(.5f, -.5f, .5f), Direction.UP, WindsweptItems.HOLLY_BERRIES.get().getDefaultInstance());
+                popResourceFromFace(level, pos/*.offset(.5f, -.5f, .5f)*/, Direction.UP, WindsweptItems.HOLLY_BERRIES.get().getDefaultInstance());
             }
         }
     }
@@ -81,13 +84,12 @@ public class ChristmasPuddingBlock extends Block {
                 stack.hurt(1, level.getRandom(), (ServerPlayer) player);
 
             return InteractionResult.SUCCESS;
-        } else if (puddingState != PuddingStates.FIRE && stack.is(WindsweptItemTags.KNIVES)) {
+        } else if (puddingState != PuddingStates.FIRE && stack.is(WindsweptItemTags.KNIVES) && ModList.get().isLoaded("windswept_delights")) {
             takeOneSlice(state, player, level, pos);
             level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
             level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, .8f, .8f);
 
-            popResourceFromFace(level, pos.offset(.5f, -.5f, .5f), Direction.UP,
-                    WindsweptItems.CHRISTMAS_PUDDING_SLICE.get().getDefaultInstance());
+            popResourceFromFace(level, pos/*.offset(.5f, -.5f, .5f)*/, Direction.UP, WindsweptConstants.getItem("windswept_delights", "christmas_pudding_slice").getDefaultInstance());
             return InteractionResult.SUCCESS;
         } else if (puddingState != PuddingStates.FIRE && player.canEat(false)) {
             player.awardStat(Stats.EAT_CAKE_SLICE);
@@ -109,7 +111,7 @@ public class ChristmasPuddingBlock extends Block {
 
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        return level.getBlockState(pos.below()).getMaterial().isSolid();
+        return level.getBlockState(pos.below()).isSolid();
     }
 
     @Override

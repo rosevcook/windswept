@@ -1,0 +1,28 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "woodworks"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "ingredients": [
+          {
+            "item": "windswept:holly_chest"
+          },
+          {
+            "item": "minecraft:tripwire_hook"
+          }
+        ],
+        "result": {
+          "item": "windswept:trapped_holly_chest"
+        }
+      }
+    }
+  ]
+}

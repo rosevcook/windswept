@@ -16,6 +16,9 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -71,7 +74,7 @@ public class Chilled extends Zombie {
 
     @Override
     protected void populateDefaultEquipmentSlots(RandomSource rand, DifficultyInstance difficulty) {
-        float chance = this.level.getDifficulty() == Difficulty.HARD ? .5f : .33f;
+        float chance = this.level().getDifficulty() == Difficulty.HARD ? .5f : .33f;
 
         if (rand.nextFloat() < chance)
             this.setItemSlot(EquipmentSlot.HEAD, Items.LEATHER_HELMET.getDefaultInstance());
@@ -91,7 +94,7 @@ public class Chilled extends Zombie {
                 this.armorDropChances[EquipmentSlot.FEET.getIndex()] = .5f;
         }
 
-        if (rand.nextFloat() < .1f && this.level.getBiome(this.blockPosition()).is(WindsweptBiomeTags.IS_PINE_BARRENS)) {
+        if (rand.nextFloat() < .1f && this.level().getBiome(this.blockPosition()).is(WindsweptBiomeTags.IS_PINE_BARRENS)) {
             this.setItemSlot(EquipmentSlot.HEAD, WindsweptBlocks.CARVED_PINECONE_BLOCK.get().asItem().getDefaultInstance());
             this.armorDropChances[EquipmentSlot.HEAD.getIndex()] = .5f;
         }
@@ -99,9 +102,9 @@ public class Chilled extends Zombie {
     }
 
     public void cncCompat(RandomSource random) {
-        if (ModList.get().isLoaded(WindsweptConstants.CAVERNS_AND_CHASMS)) {
+        if (ModList.get().isLoaded("caverns_and_chasms")) {
             if (random.nextFloat() < .075f)
-                this.setItemSlot(EquipmentSlot.MAINHAND, randomDurability(random, random.nextBoolean() ? WindsweptConstants.getItem("caverns_and_chasms", "silver_sword") : WindsweptConstants.getItem("caverns_and_chasms", "silver_shovel")));
+                this.setItemSlot(EquipmentSlot.MAINHAND, randomDurability(random, WindsweptConstants.getItem("caverns_and_chasms", random.nextBoolean() ? "silver_sword" : "silver_shovel")));
             else if (random.nextFloat() < .05f) {
                 Item axe = WindsweptConstants.getItem("caverns_and_chasms", "silver_axe");
                 this.setItemSlot(EquipmentSlot.MAINHAND, randomDurability(random, axe));
@@ -140,7 +143,17 @@ public class Chilled extends Zombie {
         this.convertToZombieType(EntityType.ZOMBIE);
 
         if (!this.isSilent())
-            this.level.levelEvent(null, 1041, this.blockPosition(), 0);
+            this.level().levelEvent(null, 1041, this.blockPosition(), 0);
+    }
+
+    public static AttributeSupplier.Builder createChilledAttributes() {
+        return Monster.createMonsterAttributes()
+                .add(Attributes.FOLLOW_RANGE, 35f)
+                .add(Attributes.MOVEMENT_SPEED, .23f)
+                .add(Attributes.ATTACK_DAMAGE, 3f)
+                .add(Attributes.ARMOR, 2f)
+                .add(Attributes.KNOCKBACK_RESISTANCE, .5f)
+                .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE);
     }
 
 }

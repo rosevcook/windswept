@@ -1,8 +1,10 @@
 package com.rosemods.windswept.core.mixin;
 
 import com.rosemods.windswept.core.other.tags.WindsweptBiomeTags;
+import com.rosemods.windswept.core.registry.datapack.WindsweptBiomes;
 import net.minecraft.core.Holder;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.MobSpawnType;
@@ -25,11 +27,13 @@ public class SheepMixin {
         Holder<Biome> biome = level.getBiome(sheep.blockPosition());
 
         if (biome.is(WindsweptBiomeTags.IS_PINE_BARRENS))
-            sheep.setColor(rand.nextInt(4) == 0 ? DyeColor.ORANGE : DyeColor.BROWN);
+            sheep.setColor(rand.nextInt(4) == 0 && biome.is(WindsweptBiomes.PINE_BARRENS) ? DyeColor.ORANGE : DyeColor.BROWN);
         else if (biome.is(WindsweptBiomeTags.IS_LAVENDER) && rand.nextInt(4) == 0)
-            sheep.setColor(DyeColor.MAGENTA);
+            sheep.setColor(rand.nextBoolean() ? DyeColor.PURPLE : DyeColor.MAGENTA);
         else if (biome.is(WindsweptBiomeTags.IS_CHESTNUT_FOREST) && rand.nextInt(3) == 0)
             sheep.setColor(rand.nextInt(8) == 0 ? DyeColor.BLUE : DyeColor.BROWN);
+        else if (biome.is(BiomeTags.IS_SAVANNA) && rand.nextInt(biome.is(WindsweptBiomes.FLOWERING_SAVANNA) ? 3 : 8) == 0)
+            sheep.setColor(DyeColor.YELLOW);
     }
 
 }

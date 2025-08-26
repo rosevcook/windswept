@@ -1,6 +1,6 @@
 package com.rosemods.windswept.core.mixin;
 
-import com.rosemods.windswept.core.registry.WindsweptBiomes;
+import com.rosemods.windswept.core.registry.datapack.WindsweptBiomes;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import net.minecraft.nbt.CompoundTag;
@@ -27,7 +27,7 @@ public class FoxMixin {
 
         if (rand.nextInt(12) == 0)
             fox.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(WindsweptBlocks.FOXGLOVE.get()));
-        else if (fox.getFoxType() == Fox.Type.SNOW && rand.nextInt(4) == 0)
+        else if (fox.getVariant() == Fox.Type.SNOW && rand.nextInt(4) == 0)
             fox.setItemInHand(InteractionHand.MAIN_HAND, WindsweptItems.WILD_BERRIES.get().getDefaultInstance());
     }
 
@@ -35,8 +35,8 @@ public class FoxMixin {
     private void finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType type, SpawnGroupData spawnGroupData, CompoundTag tag, CallbackInfoReturnable<SpawnGroupData> info) {
         Fox fox = (Fox) (Object) this;
 
-        if (level.getRandom().nextBoolean() && level.getBiome(fox.blockPosition()).is(WindsweptBiomes.TUNDRA.getKey()))
-            fox.setFoxType(Fox.Type.SNOW);
+        if (level.getRandom().nextBoolean() && level.getBiome(fox.blockPosition()).is(WindsweptBiomes.TUNDRA))
+            fox.setVariant(Fox.Type.SNOW);
     }
 
 }

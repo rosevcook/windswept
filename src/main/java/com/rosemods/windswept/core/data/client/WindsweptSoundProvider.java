@@ -13,7 +13,7 @@ import static com.rosemods.windswept.core.registry.WindsweptSounds.*;
 
 public class WindsweptSoundProvider extends SoundDefinitionsProvider {
     public WindsweptSoundProvider(GatherDataEvent event) {
-        super(event.getGenerator(), Windswept.MOD_ID, event.getExistingFileHelper());
+        super(event.getGenerator().getPackOutput(), Windswept.MOD_ID, event.getExistingFileHelper());
     }
 
     @Override

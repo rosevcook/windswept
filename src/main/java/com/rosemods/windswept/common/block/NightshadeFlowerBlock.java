@@ -1,19 +1,19 @@
 package com.rosemods.windswept.common.block;
 
-import com.teamabnormals.blueprint.common.block.BlueprintFlowerBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.function.Supplier;
 
-public class NightshadeFlowerBlock extends BlueprintFlowerBlock {
+public class NightshadeFlowerBlock extends FlowerBlock {
 
     public NightshadeFlowerBlock(Supplier<MobEffect> stewEffect, int stewEffectDuration, Properties properties) {
         super(stewEffect, stewEffectDuration, properties);

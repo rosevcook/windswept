@@ -1,9 +1,7 @@
 package com.rosemods.windswept.common.block;
 
 import com.rosemods.windswept.core.registry.WindsweptItems;
-import com.teamabnormals.blueprint.core.util.item.filling.TargetedItemCategoryFiller;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.NonNullList;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -14,11 +12,10 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BonemealableBlock;
@@ -34,7 +31,6 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class WildBerryBushBlock extends BushBlock implements BonemealableBlock {
     public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
-    private static final TargetedItemCategoryFiller FILLER = new TargetedItemCategoryFiller(() -> Items.GLOW_BERRIES);
     private static final VoxelShape SMALL_SHAPE = Block.box(3f, 0f, 3f, 13f, 5f, 13f);
     private static final VoxelShape MID_SHAPE = Block.box(2f, 0f, 2f, 14f, 10f, 14f);
     private static final VoxelShape GROWN_SHAPE = Block.box(2f, 0f, 2f, 14f, 14f, 14f);
@@ -74,7 +70,7 @@ public class WildBerryBushBlock extends BushBlock implements BonemealableBlock {
             popResourceFromFace(level, pos, result.getDirection(), new ItemStack(WindsweptItems.WILD_BERRIES.get(), level.random.nextInt(2) + 1));
 
             level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1f, .8f + level.random.nextFloat() * .4f);
-            level.setBlock(pos, state.setValue(AGE, 1), 2);
+            level.setBlock(pos, state.setValue(AGE, 2), 2);
 
             return InteractionResult.sidedSuccess(level.isClientSide);
         }
@@ -93,8 +89,8 @@ public class WildBerryBushBlock extends BushBlock implements BonemealableBlock {
     }
 
     @Override
-    public boolean isValidBonemealTarget(BlockGetter level, BlockPos pos, BlockState state, boolean isClientSide) {
-        return state.getValue(AGE) < 3;
+    public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos blockPos, BlockState blockState, boolean b) {
+        return blockState.getValue(AGE) < 3;
     }
 
     @Override
@@ -106,11 +102,6 @@ public class WildBerryBushBlock extends BushBlock implements BonemealableBlock {
     public void performBonemeal(ServerLevel level, RandomSource rand, BlockPos pos, BlockState state) {
         int i = Math.min(3, state.getValue(AGE) + 1);
         level.setBlock(pos, state.setValue(AGE, i), 2);
-    }
-
-    @Override
-    public void fillItemCategory(CreativeModeTab group, NonNullList<ItemStack> items) {
-        FILLER.fillItem(this.asItem(), group, items);
     }
 
 }

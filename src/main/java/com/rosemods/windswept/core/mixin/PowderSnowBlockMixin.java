@@ -37,7 +37,7 @@ public class PowderSnowBlockMixin extends Block implements IWoodenBucketPickupBl
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource rand) {
         if (WindsweptConfig.CLIENT.powderSnowParticles.get() && rand.nextInt(16) == 0) {
             BlockState below = level.getBlockState(pos.below());
-            if (below.isAir() || below.is(BlockTags.FIRE) || below.getMaterial().isLiquid() || below.getMaterial().isReplaceable()) {
+            if (below.isAir() || below.is(BlockTags.FIRE) || below.canBeReplaced()) {
                 double d0 = (double) pos.getX() + rand.nextDouble();
                 double d1 = (double) pos.getY() - .05d;
                 double d2 = (double) pos.getZ() + rand.nextDouble();
@@ -53,7 +53,7 @@ public class PowderSnowBlockMixin extends Block implements IWoodenBucketPickupBl
     }
 
     @Override
-    public Item getWoodenBucketItem() {
+    public Item getWoodenBucketItem(BlockState state) {
         return WindsweptItems.WOODEN_POWDER_SNOW_BUCKET.get();
     }
 

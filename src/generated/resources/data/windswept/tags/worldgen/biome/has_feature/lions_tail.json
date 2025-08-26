@@ -1,0 +1,10 @@
+{
+  "values": [
+    "#minecraft:is_savanna",
+    "minecraft:wooded_badlands",
+    {
+      "id": "atmospheric:spiny_thicket",
+      "required": false
+    }
+  ]
+}

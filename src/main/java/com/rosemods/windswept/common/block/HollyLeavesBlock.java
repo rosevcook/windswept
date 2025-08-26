@@ -1,25 +1,21 @@
 package com.rosemods.windswept.common.block;
 
-import com.rosemods.windswept.core.other.WindsweptDamageSources;
-import com.rosemods.windswept.core.other.tags.WindsweptEntityTypeTags;
-import com.teamabnormals.blueprint.common.block.wood.BlueprintLeavesBlock;
+import com.rosemods.windswept.core.registry.datapack.WindsweptDamageTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import org.jetbrains.annotations.Nullable;
 
-public class HollyLeavesBlock extends BlueprintLeavesBlock {
-    private static final VoxelShape AABB = box(1f, 1f, 1f, 15f, 15f, 15f);
+public class HollyLeavesBlock extends LeavesBlock {
+    private static final VoxelShape AABB = box(1f, 0f, 1f, 15f, 15f, 15f);
 
     public HollyLeavesBlock(Properties properties) {
         super(properties);
@@ -36,22 +32,18 @@ public class HollyLeavesBlock extends BlueprintLeavesBlock {
     }
 
     @Override
-    public @Nullable BlockPathTypes getBlockPathType(BlockState state, BlockGetter level, BlockPos pos, @Nullable Mob mob) {
-        return BlockPathTypes.DAMAGE_CACTUS;
-    }
-
-    @Override
     @OnlyIn(Dist.CLIENT)
     public float getShadeBrightness(BlockState state, BlockGetter getter, BlockPos pos) {
         return .2f;
     }
 
     public static void entityInside(float damage, Entity entity, Level level) {
-        if (!level.isClientSide && (entity.xOld != entity.getX() || entity.zOld != entity.getZ()) && entity instanceof LivingEntity && !entity.getType().is(WindsweptEntityTypeTags.HOLLY_IMMUNE) && !(entity instanceof Player player && player.isCrouching())) {
+        if (!level.isClientSide && (entity.xOld != entity.getX() || entity.zOld != entity.getZ()) && ((entity instanceof Player player && !player.isCrouching()) || entity instanceof Villager)) {
             double d0 = Math.abs(entity.getX() - entity.xOld);
             double d1 = Math.abs(entity.getZ() - entity.zOld);
+
             if (d0 >= .003d || d1 >= .003d)
-                entity.hurt(WindsweptDamageSources.HOLLY_LEAVES, damage);
+                entity.hurt(entity.damageSources().source(WindsweptDamageTypes.HOLLY_LEAVES), damage);
         }
     }
 

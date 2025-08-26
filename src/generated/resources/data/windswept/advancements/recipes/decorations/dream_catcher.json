@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_feather": {
+    "has_elder_feather": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:feather"
+              "windswept:elder_feather"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_feather",
+      "has_elder_feather",
       "has_the_recipe"
     ]
   ],
@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:dream_catcher"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -10,6 +10,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "group": "wooden_beehive",
         "key": {
           "#": {
@@ -26,7 +27,8 @@
         ],
         "result": {
           "item": "windswept:chestnut_beehive"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

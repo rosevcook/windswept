@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:cooked_goat"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -7,12 +7,13 @@
           "type": "forge:not",
           "value": {
             "type": "forge:mod_loaded",
-            "modid": "farmersdelight"
+            "modid": "windswept_delights"
           }
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shapeless",
+        "category": "misc",
         "ingredients": [
           {
             "item": "minecraft:bowl"

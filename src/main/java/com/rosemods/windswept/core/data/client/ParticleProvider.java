@@ -7,27 +7,27 @@ import com.mojang.serialization.JsonOps;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.data.CachedOutput;
-import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
-import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 
 public abstract class ParticleProvider implements DataProvider {
     private static final Logger LOGGER = LogUtils.getLogger();
-    private final DataGenerator gen;
+    private final PackOutput packOutput;
     private final String modid;
     private final Map<String, ParticleDefinition> particles = new LinkedHashMap<>();
 
-    public ParticleProvider(DataGenerator gen, String modid) {
-        this.gen = gen;
+    public ParticleProvider(PackOutput packOutput, String modid) {
+        this.packOutput = packOutput;
         this.modid = modid;
     }
 
@@ -39,19 +39,18 @@ public abstract class ParticleProvider implements DataProvider {
     }
 
     @Override
-    public void run(CachedOutput cache) {
+    public CompletableFuture<?> run(CachedOutput cache) {
         this.addParticles();
+        CompletableFuture<?>[] futures = new CompletableFuture<?>[this.particles.size()];
+        int i = 0;
 
-        this.particles.forEach((k, v) -> {
-            Path path = this.gen.getOutputFolder().resolve("assets/" + this.modid + "/particles/" + k + ".json");
+        for (Map.Entry<String, ParticleDefinition> entry : this.particles.entrySet()) {
+            Path path = this.packOutput.getOutputFolder().resolve("assets/" + this.modid + "/particles/" + entry.getKey() + ".json");
+            futures[i] = DataProvider.saveStable(cache, entry.getValue().serialize(), path);
+            i++;
+        }
 
-            try {
-                DataProvider.saveStable(cache, v.serialize(), path);
-            } catch (IOException e) {
-                LOGGER.error("Couldn't save particles to {}", path, e);
-            }
-
-        });
+        return CompletableFuture.allOf(futures);
     }
 
     @Override

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_savanna",
+  "features": "windswept:rare_flowering_acacia_trees",
+  "step": "vegetal_decoration"
+}

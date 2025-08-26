@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_savanna",
+  "features": "windswept:rare_yellow_petals",
+  "step": "vegetal_decoration"
+}

@@ -25,7 +25,7 @@ public class ZombieMixin extends Monster {
 
     @Inject(method = "populateDefaultEquipmentSlots", at = @At("TAIL"))
     public void populateDefaultEquipmentSlots(RandomSource rand, DifficultyInstance difficulty, CallbackInfo info) {
-        Holder<Biome> biome = this.level.getBiome(this.blockPosition());
+        Holder<Biome> biome = this.level().getBiome(this.blockPosition());
         boolean chance = rand.nextFloat() < .1f;
         
         if (chance && biome.is(WindsweptBiomeTags.IS_PINE_BARRENS)) {

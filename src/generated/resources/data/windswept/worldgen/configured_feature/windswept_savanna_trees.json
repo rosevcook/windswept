@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "windswept:flowering_acacia_checked",
+    "features": [
+      {
+        "chance": 0.25,
+        "feature": "minecraft:acacia_checked"
+      }
+    ]
+  }
+}

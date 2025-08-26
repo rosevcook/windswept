@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "windswept:item/plumage_pottery_sherd"
+  }
+}

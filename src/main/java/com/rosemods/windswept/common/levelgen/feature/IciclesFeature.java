@@ -43,7 +43,7 @@ public class IciclesFeature extends Feature<NoneFeatureConfiguration> {
                         if (rand.nextInt(3) == 0 && !level.getBlockState(pos.above(2)).isAir())
                             level.setBlock(pos.above(), block, 2);
 
-                        if (rand.nextInt(3) == 0 && level.getBlockState(pos.below()).getMaterial().isReplaceable()) {
+                        if (rand.nextInt(3) == 0 && level.getBlockState(pos.below()).canBeReplaced()) {
                             level.setBlock(pos, top, 2);
                             level.setBlock(pos.below(), bottom.setValue(IciclesBlock.WATERLOGGED, level.getFluidState(pos.below()).is(Fluids.WATER)), 2);
                         } else

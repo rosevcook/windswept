@@ -11,4 +11,5 @@ public final class WindsweptFoliagePlacers {
     public static final DeferredRegister<FoliagePlacerType<?>> FOLIAGE_PLACERS = DeferredRegister.create(ForgeRegistries.FOLIAGE_PLACER_TYPES, Windswept.MOD_ID);
 
     public static final RegistryObject<FoliagePlacerType<?>> CHESTNUT_FOLIAGE_PLACER = FOLIAGE_PLACERS.register("chestnut_foliage_placer", () -> new FoliagePlacerType<>(ChestnutFoliagePlacer.CODEC));
+
 }

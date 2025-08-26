@@ -4,21 +4,13 @@
     {
       "conditions": [
         {
-          "type": "forge:or",
-          "values": [
-            {
-              "type": "forge:mod_loaded",
-              "modid": "caverns_and_chasms"
-            },
-            {
-              "type": "blueprint:quark_flag",
-              "flag": "apple_crate"
-            }
-          ]
+          "type": "forge:mod_loaded",
+          "modid": "caverns_and_chasms"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "key": {
           "#": {
             "item": "windswept:frozen_flesh"
@@ -31,7 +23,8 @@
         ],
         "result": {
           "item": "windswept:frozen_flesh_block"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

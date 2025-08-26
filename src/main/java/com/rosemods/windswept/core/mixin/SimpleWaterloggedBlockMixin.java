@@ -14,13 +14,13 @@ import org.spongepowered.asm.mixin.Mixin;
 public interface SimpleWaterloggedBlockMixin extends IWoodenBucketPickupBlock {
 
     @Override
-    default Item getWoodenBucketItem() {
-        return WindsweptItems.WOODEN_WATER_BUCKET.get();
+    default boolean canPickupFromWoodenBucket(LevelAccessor level, BlockPos pos, BlockState state) {
+        return level.getBlockState(pos).getValue(BlockStateProperties.WATERLOGGED);
     }
 
     @Override
-    default boolean canPickup(LevelAccessor level, BlockPos pos, BlockState state) {
-        return level.getBlockState(pos).getValue(BlockStateProperties.WATERLOGGED);
+    default Item getWoodenBucketItem(BlockState state) {
+        return WindsweptItems.WOODEN_WATER_BUCKET.get();
     }
 
 }

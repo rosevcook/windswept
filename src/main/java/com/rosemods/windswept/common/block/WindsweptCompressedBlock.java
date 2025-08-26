@@ -13,7 +13,7 @@ public class WindsweptCompressedBlock extends BlueprintDirectionalBlock {
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return ItemSubRegistryHelper.areModsLoaded(WindsweptConstants.BERRY_GOOD) ? super.getStateForPlacement(context) : this.defaultBlockState();
+        return ItemSubRegistryHelper.areModsLoaded("berry_good") ? super.getStateForPlacement(context) : this.defaultBlockState();
     }
 
 }

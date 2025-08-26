@@ -50,7 +50,7 @@ public class DreamCatcherBlock extends DoublePlantBlock {
 
     @Override
     public void playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
-        if (!level.isClientSide) {
+        if (!level.isClientSide)
             if (player.isCreative()) {
                 if (state.getValue(HALF) == DoubleBlockHalf.LOWER) {
                     BlockPos blockpos = pos.above();
@@ -63,7 +63,7 @@ public class DreamCatcherBlock extends DoublePlantBlock {
                 }
             } else
                 dropResources(state, level, pos, null, player, player.getMainHandItem());
-        }
+
 
         this.spawnDestroyParticles(level, player, pos, state);
         level.gameEvent(GameEvent.BLOCK_DESTROY, pos, GameEvent.Context.of(player, state));

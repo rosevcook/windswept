@@ -10,6 +10,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "key": {
           "#": {
             "item": "windswept:pine_leaf_pile"
@@ -21,7 +22,8 @@
         ],
         "result": {
           "item": "windswept:pine_leaves"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

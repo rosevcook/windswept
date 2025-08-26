@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:lavender_thatch"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

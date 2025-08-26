@@ -4,21 +4,13 @@
     {
       "conditions": [
         {
-          "type": "forge:or",
-          "values": [
-            {
-              "type": "forge:mod_loaded",
-              "modid": "woodworks"
-            },
-            {
-              "type": "blueprint:quark_flag",
-              "flag": "variant_ladders"
-            }
-          ]
+          "type": "forge:mod_loaded",
+          "modid": "woodworks"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "group": "wooden_ladders",
         "key": {
           "#": {
@@ -36,7 +28,8 @@
         "result": {
           "count": 4,
           "item": "windswept:chestnut_ladder"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

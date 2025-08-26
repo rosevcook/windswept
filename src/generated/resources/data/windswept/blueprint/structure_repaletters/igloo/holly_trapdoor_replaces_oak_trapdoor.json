@@ -1,0 +1,8 @@
+{
+  "repaletter": {
+    "type": "blueprint:simple",
+    "replaces_block": "minecraft:oak_trapdoor",
+    "replaces_with": "windswept:holly_trapdoor"
+  },
+  "structures": "minecraft:igloo"
+}

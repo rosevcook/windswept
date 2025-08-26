@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:glazed_gingerbread_brick_wall"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

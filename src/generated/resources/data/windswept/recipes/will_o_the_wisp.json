@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "#": {
       "item": "windswept:carved_pinecone_block"
@@ -14,5 +15,6 @@
   ],
   "result": {
     "item": "windswept:will_o_the_wisp"
-  }
+  },
+  "show_notification": true
 }

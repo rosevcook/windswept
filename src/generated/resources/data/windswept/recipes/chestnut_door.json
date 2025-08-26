@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "group": "wooden_door",
   "key": {
     "#": {
@@ -14,5 +15,6 @@
   "result": {
     "count": 3,
     "item": "windswept:chestnut_door"
-  }
+  },
+  "show_notification": true
 }

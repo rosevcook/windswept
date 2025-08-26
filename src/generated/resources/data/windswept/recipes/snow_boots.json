@@ -10,6 +10,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "equipment",
         "key": {
           "#": {
             "item": "minecraft:iron_ingot"
@@ -25,7 +26,8 @@
         ],
         "result": {
           "item": "windswept:snow_boots"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

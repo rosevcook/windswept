@@ -14,16 +14,6 @@
             },
             "trigger": "minecraft:consume_item"
           },
-          "windswept:chestnut_risotto": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "windswept:chestnut_risotto"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
           "windswept:chestnut_soup": {
             "conditions": {
               "item": {
@@ -44,41 +34,11 @@
             },
             "trigger": "minecraft:consume_item"
           },
-          "windswept:christmas_pudding_slice": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "windswept:christmas_pudding_slice"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
           "windswept:cooked_goat": {
             "conditions": {
               "item": {
                 "items": [
                   "windswept:cooked_goat"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
-          "windswept:cooked_goat_shanks": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "windswept:cooked_goat_shanks"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
-          "windswept:foul_berry_bowl": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "windswept:foul_berry_bowl"
                 ]
               }
             },
@@ -99,16 +59,6 @@
               "item": {
                 "items": [
                   "windswept:ginger_root"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
-          "windswept:ginger_snow_cone": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "windswept:ginger_snow_cone"
                 ]
               }
             },
@@ -144,16 +94,6 @@
             },
             "trigger": "minecraft:consume_item"
           },
-          "windswept:goat_shanks": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "windswept:goat_shanks"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
           "windswept:goat_stew": {
             "conditions": {
               "item": {
@@ -174,21 +114,21 @@
             },
             "trigger": "minecraft:consume_item"
           },
-          "windswept:lavender_scones": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "windswept:lavender_scones"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
           "windswept:lavender_tea": {
             "conditions": {
               "item": {
                 "items": [
                   "windswept:lavender_tea"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "windswept:minty_snow_cone": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:minty_snow_cone"
                 ]
               }
             },
@@ -224,11 +164,21 @@
             },
             "trigger": "minecraft:consume_item"
           },
-          "windswept:sweet_berry_bowl": {
+          "windswept:spicy_snow_cone": {
             "conditions": {
               "item": {
                 "items": [
-                  "windswept:sweet_berry_bowl"
+                  "windswept:spicy_snow_cone"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "windswept:sweet_snow_cone": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "windswept:sweet_snow_cone"
                 ]
               }
             },
@@ -239,46 +189,6 @@
               "item": {
                 "items": [
                   "windswept:wild_berries"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
-          "windswept:wild_berry_bowl": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "windswept:wild_berry_bowl"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
-          "windswept:wild_berry_cookie": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "windswept:wild_berry_cookie"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
-          "windswept:wild_berry_juice": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "windswept:wild_berry_juice"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
-          "windswept:wild_berry_popsicle": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "windswept:wild_berry_popsicle"
                 ]
               }
             },
@@ -296,25 +206,7 @@
             "windswept:wild_berries"
           ],
           [
-            "windswept:wild_berry_juice"
-          ],
-          [
-            "windswept:wild_berry_popsicle"
-          ],
-          [
             "windswept:candy_cane"
-          ],
-          [
-            "windswept:wild_berry_cookie"
-          ],
-          [
-            "windswept:wild_berry_bowl"
-          ],
-          [
-            "windswept:sweet_berry_bowl"
-          ],
-          [
-            "windswept:foul_berry_bowl"
           ],
           [
             "windswept:chestnuts"
@@ -326,25 +218,25 @@
             "windswept:chestnut_soup"
           ],
           [
-            "windswept:chestnut_risotto"
-          ],
-          [
             "windswept:ginger_root"
           ],
           [
             "windswept:gingerbread_cookie"
           ],
           [
-            "windswept:ginger_snow_cone"
-          ],
-          [
             "windswept:ginger_tea"
           ],
           [
-            "windswept:pinecone_jam_bottle"
+            "windswept:spicy_snow_cone"
           ],
           [
-            "windswept:lavender_scones"
+            "windswept:sweet_snow_cone"
+          ],
+          [
+            "windswept:minty_snow_cone"
+          ],
+          [
+            "windswept:pinecone_jam_bottle"
           ],
           [
             "windswept:lavender_tea"
@@ -356,19 +248,10 @@
             "windswept:cooked_goat"
           ],
           [
-            "windswept:goat_shanks"
-          ],
-          [
-            "windswept:cooked_goat_shanks"
-          ],
-          [
             "windswept:goat_stew"
           ],
           [
             "windswept:mutton_pie"
-          ],
-          [
-            "windswept:christmas_pudding_slice"
           ]
         ],
         "should_replace_requirements": false

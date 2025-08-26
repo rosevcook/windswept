@@ -1,7 +1,0 @@
-{
-  "type": "blueprint:simple",
-  "priority": "high",
-  "replaces_block": "minecraft:spruce_fence",
-  "replaces_with": "windswept:chestnut_fence",
-  "selector": "minecraft:village_snowy"
-}

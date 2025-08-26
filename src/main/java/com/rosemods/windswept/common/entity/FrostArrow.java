@@ -34,7 +34,7 @@ public class FrostArrow extends AbstractArrow {
     public void tick() {
         super.tick();
 
-        if (!this.inGround && this.level.isClientSide && this.tickCount > 2) {
+        if (!this.inGround && this.level().isClientSide && this.tickCount > 2) {
             Vec3 motion = this.getDeltaMovement();
 
             for (int i = 1; i < 3; i++) {
@@ -45,7 +45,7 @@ public class FrostArrow extends AbstractArrow {
                 double my = (Math.random() - .5d) * .03d - motion.y * .08d;
                 double mz = (Math.random() - .5d) * .03d - motion.z * .08d;
 
-                this.level.addParticle(ParticleTypes.SNOWFLAKE, px, py, pz, mx, my, mz);
+                this.level().addParticle(ParticleTypes.SNOWFLAKE, px, py, pz, mx, my, mz);
             }
         }
     }

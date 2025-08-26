@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:block",
+  "type": "minecraft:chest",
   "pools": [
     {
       "bonus_rolls": 0.0,
@@ -83,7 +83,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "windswept:wild_berry_popsicle"
+          "name": "windswept:sweet_snow_cone"
         },
         {
           "type": "minecraft:item",
@@ -188,5 +188,6 @@
         "min": 4.0
       }
     }
-  ]
+  ],
+  "random_sequence": "windswept:chests/grove_weathered_house"
 }

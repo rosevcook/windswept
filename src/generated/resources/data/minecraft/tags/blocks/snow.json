@@ -1,12 +1,11 @@
 {
   "values": [
+    "windswept:suspicious_snow",
     "windswept:snow_bricks",
     "windswept:snow_brick_slab",
     "windswept:snow_brick_stairs",
-    "windswept:snow_brick_vertical_slab",
     "windswept:snow_brick_wall",
     "windswept:snow_stairs",
-    "windswept:snow_slab",
-    "windswept:snow_vertical_slab"
+    "windswept:snow_slab"
   ]
 }

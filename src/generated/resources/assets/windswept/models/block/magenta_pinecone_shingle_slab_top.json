@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "windswept:block/magenta_pinecone_shingles",
+    "side": "windswept:block/magenta_pinecone_shingles",
+    "top": "windswept:block/magenta_pinecone_shingles"
+  }
+}

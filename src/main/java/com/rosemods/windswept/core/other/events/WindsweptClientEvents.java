@@ -1,33 +1,39 @@
 package com.rosemods.windswept.core.other.events;
 
+import com.rosemods.windswept.client.render.entity.ChilledRenderer;
+import com.rosemods.windswept.client.render.entity.FrostArrowRenderer;
+import com.rosemods.windswept.client.render.entity.FrostbiterRenderer;
 import com.rosemods.windswept.client.render.gui.CarvedPineconeOverlay;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.other.WindsweptModelLayers;
+import com.rosemods.windswept.core.registry.WindsweptBlockEntities;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
+import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.teamabnormals.blueprint.core.util.DataUtil;
 import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.client.renderer.blockentity.BrushableBlockRenderer;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeableLeatherItem;
 import net.minecraft.world.level.FoliageColor;
+import net.minecraft.world.level.GrassColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.client.gui.overlay.VanillaGuiOverlay;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Arrays;
 import java.util.List;
 
-@EventBusSubscriber(modid = Windswept.MOD_ID, bus = Bus.MOD, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = Windswept.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class WindsweptClientEvents {
-    private static final List<RegistryObject<Block>> FOLIAGE_COLOR_BLOCKS = Arrays.asList(WindsweptBlocks.CHESTNUT_LEAVES, WindsweptBlocks.CHESTNUT_LEAF_CARPET, WindsweptBlocks.CHESTNUT_HEDGE, WindsweptBlocks.CHESTNUT_LEAF_PILE);
+    private static final List<RegistryObject<Block>> FOLIAGE_COLOR_BLOCKS = Arrays.asList(WindsweptBlocks.CHESTNUT_LEAVES, WindsweptBlocks.CHESTNUT_LEAF_PILE, WindsweptBlocks.FLOWERING_ACACIA_LEAVES, WindsweptBlocks.FLOWERING_ACACIA_LEAF_PILE);
+    private static final List<RegistryObject<Block>> GRASS_COLOR_BLOCKS = Arrays.asList(WindsweptBlocks.YELLOW_PETALS);
 
     @SubscribeEvent
     public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
@@ -38,6 +44,12 @@ public class WindsweptClientEvents {
     @SubscribeEvent
     public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
         DataUtil.registerBlockColor(event.getBlockColors(), (state, tint, pos, u) -> pos != null && tint != null ? BiomeColors.getAverageFoliageColor(tint, pos) : FoliageColor.getDefaultColor(), FOLIAGE_COLOR_BLOCKS);
+        DataUtil.registerBlockColor(event.getBlockColors(), (state, tint, pos, u) -> pos != null && tint != null ? BiomeColors.getAverageGrassColor(tint, pos) : GrassColor.getDefaultColor(), GRASS_COLOR_BLOCKS);
+    }
+
+    @SubscribeEvent
+    public static void registerGuiOverlays(RegisterGuiOverlaysEvent event) {
+        event.registerAbove(VanillaGuiOverlay.FROSTBITE.id(), "carved_pinecone", new CarvedPineconeOverlay());
     }
 
     @SubscribeEvent
@@ -47,9 +59,11 @@ public class WindsweptClientEvents {
     }
 
     @SubscribeEvent
-    public static void registerGuiOverlays(RegisterGuiOverlaysEvent event) {
-        MinecraftForge.EVENT_BUS.register(new CarvedPineconeOverlay());
-        event.registerAbove(VanillaGuiOverlay.FROSTBITE.id(), "carved_pinecone", new CarvedPineconeOverlay());
+    public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(WindsweptEntityTypes.CHILLED.get(), ChilledRenderer::new);
+        event.registerEntityRenderer(WindsweptEntityTypes.FROSTBITER.get(), FrostbiterRenderer::new);
+        event.registerEntityRenderer(WindsweptEntityTypes.FROST_ARROW.get(), FrostArrowRenderer::new);
+        event.registerBlockEntityRenderer(WindsweptBlockEntities.SUSPICIOUS_SNOW.get(), BrushableBlockRenderer::new);
     }
 
 }

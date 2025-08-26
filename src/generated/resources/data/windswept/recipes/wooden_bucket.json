@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "key": {
     "#": {
       "tag": "minecraft:logs"
@@ -11,5 +12,6 @@
   ],
   "result": {
     "item": "windswept:wooden_bucket"
-  }
+  },
+  "show_notification": true
 }

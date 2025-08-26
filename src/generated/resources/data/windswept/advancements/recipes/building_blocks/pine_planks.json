@@ -28,5 +28,6 @@
     "recipes": [
       "windswept:pine_planks"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

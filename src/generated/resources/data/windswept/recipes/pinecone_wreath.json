@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "#": {
       "item": "windswept:pinecone"
@@ -15,5 +16,6 @@
   ],
   "result": {
     "item": "windswept:pinecone_wreath"
-  }
+  },
+  "show_notification": true
 }

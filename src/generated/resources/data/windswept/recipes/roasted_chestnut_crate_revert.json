@@ -1,25 +1,13 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
     {
-      "conditions": [
-        {
-          "type": "blueprint:quark_flag",
-          "flag": "apple_crate"
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:crafting_shapeless",
-        "ingredients": [
-          {
-            "item": "windswept:roasted_chestnut_crate"
-          }
-        ],
-        "result": {
-          "count": 9,
-          "item": "windswept:roasted_chestnuts"
-        }
-      }
+      "item": "windswept:roasted_chestnut_crate"
     }
-  ]
+  ],
+  "result": {
+    "count": 9,
+    "item": "windswept:roasted_chestnuts"
+  }
 }

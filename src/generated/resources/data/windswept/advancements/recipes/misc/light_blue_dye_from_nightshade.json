@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:light_blue_dye_from_nightshade"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

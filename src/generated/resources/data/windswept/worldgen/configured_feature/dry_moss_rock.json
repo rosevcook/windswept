@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:forest_rock",
+  "config": {
+    "state": {
+      "Name": "windswept:dry_mossy_cobblestone"
+    }
+  }
+}

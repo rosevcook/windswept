@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "F": {
+      "item": "windswept:elder_feather"
+    }
+  },
+  "pattern": [
+    "##",
+    "FF"
+  ],
+  "result": {
+    "count": 8,
+    "item": "windswept:elder_ornament"
+  },
+  "show_notification": true
+}

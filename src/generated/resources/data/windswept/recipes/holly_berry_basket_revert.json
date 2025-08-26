@@ -1,34 +1,13 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
     {
-      "conditions": [
-        {
-          "type": "forge:or",
-          "values": [
-            {
-              "type": "forge:mod_loaded",
-              "modid": "berry_good"
-            },
-            {
-              "type": "blueprint:quark_flag",
-              "flag": "berry_sack"
-            }
-          ]
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:crafting_shapeless",
-        "ingredients": [
-          {
-            "item": "windswept:holly_berry_basket"
-          }
-        ],
-        "result": {
-          "count": 9,
-          "item": "windswept:holly_berries"
-        }
-      }
+      "item": "windswept:holly_berry_basket"
     }
-  ]
+  ],
+  "result": {
+    "count": 9,
+    "item": "windswept:holly_berries"
+  }
 }

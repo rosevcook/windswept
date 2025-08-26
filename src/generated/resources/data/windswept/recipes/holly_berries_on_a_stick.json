@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "key": {
     "#": {
       "item": "minecraft:fishing_rod"
@@ -14,5 +15,6 @@
   ],
   "result": {
     "item": "windswept:holly_berries_on_a_stick"
-  }
+  },
+  "show_notification": true
 }

@@ -2,11 +2,14 @@ package com.rosemods.windswept.core.other.events;
 
 import com.google.common.collect.ImmutableMap;
 import com.rosemods.windswept.core.Windswept;
+import com.rosemods.windswept.core.other.WindsweptVillagerTypes;
 import com.rosemods.windswept.core.registry.WindsweptBlocks;
 import com.rosemods.windswept.core.registry.WindsweptItems;
 import com.teamabnormals.blueprint.core.util.TradeUtil;
 import com.teamabnormals.blueprint.core.util.TradeUtil.BlueprintTrade;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.npc.VillagerType;
@@ -45,13 +48,13 @@ public class WindsweptTradeEvents {
             for (VillagerTrades.ItemListing listing : event.getTrades().get(5))
                 if (listing instanceof VillagerTrades.EmeraldsForVillagerTypeItem trade) {
                     HashMap<VillagerType, Item> newTrades = new HashMap<>(trade.trades);
-                    VillagerType ice = Registry.VILLAGER_TYPE.get(Windswept.location("ice"));
+                    VillagerType ice = BuiltInRegistries.VILLAGER_TYPE.get(Windswept.location("ice"));
 
                     if (!trade.trades.containsKey(ice))
-                        newTrades.put(ice, WindsweptItems.HOLLY_BOATS.getFirst().get());
+                        newTrades.put(ice, WindsweptItems.HOLLY_BOAT.getFirst().get());
 
                     if (newTrades.get(VillagerType.SNOW) == Items.SPRUCE_BOAT)
-                        newTrades.replace(VillagerType.SNOW, WindsweptItems.CHESTNUT_BOATS.getFirst().get());
+                        newTrades.replace(VillagerType.SNOW, WindsweptItems.CHESTNUT_BOAT.getFirst().get());
 
                     trade.trades = ImmutableMap.copyOf(newTrades);
                 }

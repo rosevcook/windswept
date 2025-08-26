@@ -8,6 +8,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
@@ -23,10 +24,13 @@ public class PineTreeFeature extends BlueprintTreeFeature {
     public void doPlace(FeaturePlaceContext<TreeConfiguration> context) {
         BlockPos origin = context.origin();
         RandomSource rand = context.random();
-        BlockState weathered = WindsweptBlocks.WEATHERED_PINE_LOG.get().defaultBlockState();
-        int height = rand.nextInt(10, 14);
-        int weatheredHeight = rand.nextInt(5, 9);
+
+        boolean isWeathered = rand.nextBoolean() || context.level().getBiome(context.origin()).is(Biomes.OLD_GROWTH_PINE_TAIGA);
         boolean isFairy = rand.nextInt(3000) == 0;
+        int height = rand.nextInt(10, 14);
+        int weatheredHeight = rand.nextInt(7, height - 1);
+        int weatheredHeightMin = rand.nextInt(2, weatheredHeight - 2);
+        BlockState weathered = WindsweptBlocks.WEATHERED_PINE_LOG.get().defaultBlockState();
 
         if (isFairy) {
             BlockState state = WindsweptBlocks.NIGHTSHADE.get().defaultBlockState();
@@ -38,25 +42,17 @@ public class PineTreeFeature extends BlueprintTreeFeature {
         }
 
         // log
-        this.addLog(origin);
-        this.addLog(origin.above());
+        if (isWeathered) {
+            for (int y = 0; y < weatheredHeightMin; y++)
+                this.addLog(origin.above(y));
 
-        if (rand.nextInt(3) > 0 && weatheredHeight >= 6) {
-            this.addLog(origin.above(2));
-
-            if (rand.nextBoolean() && weatheredHeight >= 7)
-                this.addLog(origin.above(3));
-            else
-                this.addSpecialLog(origin.above(3), weathered);
-        } else {
-            this.addSpecialLog(origin.above(2), weathered);
-            this.addSpecialLog(origin.above(3), weathered);
-        }
-
-        for (int y = 4; y < height; y++)
-            if (y < weatheredHeight)
-                this.addSpecialLog(origin.above(y), weathered);
-            else
+            for (int y = weatheredHeightMin; y < height; y++)
+                if (y < weatheredHeight)
+                    this.addSpecialLog(origin.above(y), weathered);
+                else
+                    this.addLog(origin.above(y));
+        } else
+            for (int y = 0; y < height; y++)
                 this.addLog(origin.above(y));
 
         // branches
@@ -78,7 +74,7 @@ public class PineTreeFeature extends BlueprintTreeFeature {
                 BlockPos pos = origin.above(y).relative(direction);
                 directions.remove(direction);
 
-                if (y < weatheredHeight) {
+                if (y < weatheredHeight && isWeathered) {
                     this.addSpecialLog(pos, weathered);
                     this.addSpecialLog(pos.below(), weathered);
                 } else {
@@ -132,7 +128,7 @@ public class PineTreeFeature extends BlueprintTreeFeature {
     }
 
     private void addPinecones(BlockPos pos, int amount, boolean isFairy) {
-        this.addSpecialFoliage(pos, (isFairy ? WindsweptBlocks.SOUL_FAIRY_LIGHT : WindsweptBlocks.PINECONE).get().defaultBlockState().setValue(PineconeBlock.AMOUNT, amount));
+        this.addSpecialFoliage(pos, (isFairy ? WindsweptBlocks.NIGHT_FAIRY_LIGHT : WindsweptBlocks.PINECONE).get().defaultBlockState().setValue(PineconeBlock.AMOUNT, amount));
     }
 
     @Override

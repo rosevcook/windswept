@@ -30,5 +30,6 @@
     "recipes": [
       "windswept:shale_from_chiseled_polished_shale_bricks_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

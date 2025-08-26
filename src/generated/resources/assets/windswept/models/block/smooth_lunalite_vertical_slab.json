@@ -1,8 +1,0 @@
-{
-  "parent": "blueprint:block/vertical_slab",
-  "textures": {
-    "bottom": "windswept:block/smooth_lunalite",
-    "side": "windswept:block/smooth_lunalite",
-    "top": "windswept:block/smooth_lunalite"
-  }
-}

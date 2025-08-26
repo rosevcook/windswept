@@ -1,0 +1,28 @@
+{
+  "type": "windswept:fallen_log",
+  "config": {
+    "to_place": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "windswept:holly_log",
+            "Properties": {
+              "axis": "y"
+            }
+          },
+          "weight": 1
+        },
+        {
+          "data": {
+            "Name": "minecraft:spruce_log",
+            "Properties": {
+              "axis": "y"
+            }
+          },
+          "weight": 1
+        }
+      ]
+    }
+  }
+}

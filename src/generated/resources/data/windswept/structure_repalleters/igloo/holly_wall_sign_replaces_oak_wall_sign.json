@@ -1,7 +1,0 @@
-{
-  "type": "blueprint:simple",
-  "priority": "high",
-  "replaces_block": "minecraft:oak_wall_sign",
-  "replaces_with": "windswept:holly_wall_sign",
-  "selector": "minecraft:igloo"
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "blueprint:block/vertical_slab",
-  "textures": {
-    "bottom": "windswept:block/snow_bricks",
-    "side": "windswept:block/snow_bricks",
-    "top": "windswept:block/snow_bricks"
-  }
-}

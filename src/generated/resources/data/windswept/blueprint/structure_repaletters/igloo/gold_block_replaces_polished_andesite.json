@@ -1,0 +1,8 @@
+{
+  "repaletter": {
+    "type": "blueprint:simple",
+    "replaces_block": "minecraft:polished_andesite",
+    "replaces_with": "minecraft:gold_block"
+  },
+  "structures": "minecraft:igloo"
+}
