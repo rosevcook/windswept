@@ -36,12 +36,12 @@ public final class WindsweptBiomeModifiers {
         addFeature(context, "bluebells", WindsweptBiomeTags.HAS_BLUEBELLS, Decoration.VEGETAL_DECORATION, BLUEBELLS);
         addFeature(context, "snowy_sprouts", Tags.Biomes.IS_SNOWY, Decoration.VEGETAL_DECORATION, SNOWY_SPROUTS);
         addFeature(context, "foxgloves", BiomeTags.IS_TAIGA, Decoration.VEGETAL_DECORATION, FOXGLOVE);
-        addFeature(context, "holly_trees", WindsweptBiomeTags.HAS_HOLLY_TREES, Decoration.VEGETAL_DECORATION, HOLLY_TREES);
         addFeature(context, "grove_holly_trees", Biomes.GROVE, Decoration.VEGETAL_DECORATION, HOLLY_TREES_ON_SNOW, SPRUCE_TREES_ON_SNOW);
         addFeature(context, "wild_berries", WindsweptBiomeTags.HAS_WILD_BERRIES, Decoration.VEGETAL_DECORATION, WILD_BERRY_BUSH);
         addFeature(context, "common_wild_berries", Biomes.GROVE, Decoration.VEGETAL_DECORATION, WILD_BERRY_BUSH_COMMON);
         addFeature(context, "nightshades", BiomeTags.IS_OVERWORLD, Decoration.VEGETAL_DECORATION, NIGHTHSADE);
         addFeature(context, "rare_chestnut_trees", WindsweptBiomeTags.HAS_RARE_CHESTNUT_TREES, Decoration.VEGETAL_DECORATION, RARE_CHESTNUT_TREES);
+        addFeature(context, "rare_holly_trees", WindsweptBiomeTags.HAS_RARE_HOLLY_TREES, Decoration.VEGETAL_DECORATION, RARE_HOLLY_TREES);
         addFeature(context, "rare_snowy_holly_trees", WindsweptBiomeTags.HAS_RARE_SNOWY_HOLLY_TREES, Decoration.VEGETAL_DECORATION, RARE_HOLLY_TREES_ON_SNOW);
         addFeature(context, "icicles", Tags.Biomes.IS_SNOWY, Decoration.VEGETAL_DECORATION, ICICLES, FLOOR_ICICLES);
         addFeature(context, "shale", Tags.Biomes.IS_SNOWY, Decoration.UNDERGROUND_ORES, SHALE);

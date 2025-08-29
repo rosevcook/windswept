@@ -13,8 +13,8 @@ public final class WindsweptBiomeTags {
     public static final TagKey<Biome> HAS_BLUEBELLS = TagUtil.biomeTag(Windswept.MOD_ID, "has_feature/bluebells");
     public static final TagKey<Biome> HAS_LIONS_TAIL = TagUtil.biomeTag(Windswept.MOD_ID, "has_feature/lions_tail");
     public static final TagKey<Biome> HAS_WILD_BERRIES = TagUtil.biomeTag(Windswept.MOD_ID, "has_feature/wild_berries");
-    public static final TagKey<Biome> HAS_HOLLY_TREES = TagUtil.biomeTag(Windswept.MOD_ID, "has_feature/holly_trees");
     public static final TagKey<Biome> HAS_RARE_CHESTNUT_TREES = TagUtil.biomeTag(Windswept.MOD_ID, "has_feature/rare_chestnut_trees");
+    public static final TagKey<Biome> HAS_RARE_HOLLY_TREES = TagUtil.biomeTag(Windswept.MOD_ID, "has_feature/rare_holly_trees");
     public static final TagKey<Biome> HAS_RARE_SNOWY_HOLLY_TREES = TagUtil.biomeTag(Windswept.MOD_ID, "has_feature/rare_snowy_holly_trees");
 
     public static final TagKey<Biome> HAS_GROVE_WEATHERED_HOUSE = TagUtil.biomeTag(Windswept.MOD_ID, "has_structure/grove_weathered_house");

@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#windswept:has_feature/holly_trees",
-  "features": "windswept:holly_trees",
-  "step": "vegetal_decoration"
-}

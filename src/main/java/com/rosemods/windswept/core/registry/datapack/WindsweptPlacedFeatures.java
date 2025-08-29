@@ -41,7 +41,7 @@ public final class WindsweptPlacedFeatures {
     public static final ResourceKey<PlacedFeature> GINGER_PATCH = createKey("ginger_patch");
     public static final ResourceKey<PlacedFeature> ICICLES = createKey("icicles");
     public static final ResourceKey<PlacedFeature> FLOOR_ICICLES = createKey("floor_icicles");
-    public static final ResourceKey<PlacedFeature> HOLLY_TREES = createKey("holly_trees");
+    public static final ResourceKey<PlacedFeature> RARE_HOLLY_TREES = createKey("rare_holly_trees");
     public static final ResourceKey<PlacedFeature> HOLLY_BUSH = createKey("holly_bush");
     public static final ResourceKey<PlacedFeature> HOLLY_TREES_ON_SNOW = createKey("holly_trees_on_snow");
     public static final ResourceKey<PlacedFeature> RARE_HOLLY_TREES_ON_SNOW = createKey("rare_holly_trees_on_snow");
@@ -92,7 +92,7 @@ public final class WindsweptPlacedFeatures {
         register(context, GINGER_PATCH, WindsweptConfiguredFeatures.GINGER_PATCH, PlacementUtils.countExtra(0, .1f, 1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         register(context, ICICLES, WindsweptConfiguredFeatures.ICICLES, PlacementUtils.countExtra(4, .1f, 1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         register(context, FLOOR_ICICLES, WindsweptConfiguredFeatures.FLOOR_ICICLES, PlacementUtils.countExtra(1, .1f, 1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
-        register(context, HOLLY_TREES, WindsweptConfiguredFeatures.HOLLY_BEES, treePlacement(PlacementUtils.countExtra(3, .1f, 1)));
+        register(context, RARE_HOLLY_TREES, WindsweptConfiguredFeatures.HOLLY_BEES, treePlacement(PlacementUtils.countExtra(1, .2f, 1)));
         register(context, HOLLY_BUSH, WindsweptConfiguredFeatures.HOLLY_BUSH, treePlacement(PlacementUtils.countExtra(1, .1f, 2)));
         register(context, HOLLY_TREES_ON_SNOW, WindsweptConfiguredFeatures.HOLLY_BEES, treeOnSnowPlacement(PlacementUtils.countExtra(9, .1f, 1)));
         register(context, RARE_HOLLY_TREES_ON_SNOW, WindsweptConfiguredFeatures.HOLLY_BEES, treeOnSnowPlacement(PlacementUtils.countExtra(0, .1f, 1)));
