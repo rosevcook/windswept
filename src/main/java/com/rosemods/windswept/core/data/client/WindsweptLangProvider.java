@@ -240,8 +240,9 @@ public class WindsweptLangProvider extends LanguageProvider {
     }
 
     private void translateDamageType(ResourceKey<DamageType> source, Function<String, String> death, BiFunction<String, String, String> killed) {
-        //this.add("death.attack." + source.msgId(), death.apply("%1$s"));
-        //this.add("death.attack." + source.msgId() + ".player", killed.apply("%1$s", "%2$s"));
+        String msgId = source.location().getPath();
+        this.add("death.attack." + msgId, death.apply("%1$s"));
+        this.add("death.attack." + msgId + ".player", killed.apply("%1$s", "%2$s"));
     }
 
     private void translatePotion(RegistryObject<? extends Potion> potion, String effect) {

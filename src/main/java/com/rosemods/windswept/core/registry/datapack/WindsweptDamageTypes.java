@@ -11,7 +11,7 @@ public final class WindsweptDamageTypes {
     public static final ResourceKey<DamageType> ICICLE = createKey("icicle");
 
     public static void bootstrap(BootstapContext<DamageType> context) {
-        context.register(HOLLY_LEAVES, new DamageType("hollyLeaves", .1f));
+        context.register(HOLLY_LEAVES, new DamageType("holly_leaves", .1f));
         context.register(ICICLE, new DamageType("icicle", .1f));
     }
 
