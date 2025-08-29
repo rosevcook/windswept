@@ -639,6 +639,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
                     .add(LootItem.lootTableItem(PLUMAGE_POTTERY_SHERD.get()).setWeight(4))
                     .add(LootItem.lootTableItem(ELDER_FEATHER.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 4))))
                     .add(LootItem.lootTableItem(PINECONE.get()).setWeight(1))
+                    .add(LootItem.lootTableItem(FROZEN_FLESH.get()).setWeight(1))
                     .add(LootItem.lootTableItem(EMERALD).setWeight(1))
                     .add(LootItem.lootTableItem(STICK).setWeight(1))
             ), builder);
@@ -649,6 +650,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
                     .add(LootItem.lootTableItem(DRUPES_POTTERY_SHERD.get()).setWeight(3))
                     .add(LootItem.lootTableItem(ELDER_FEATHER.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 4))))
                     .add(LootItem.lootTableItem(HOLLY_BERRIES.get()).setWeight(1))
+                    .add(LootItem.lootTableItem(FROZEN_FLESH.get()).setWeight(1))
                     .add(LootItem.lootTableItem(EMERALD).setWeight(1))
                     .add(LootItem.lootTableItem(STICK).setWeight(1))
             ), builder);
