@@ -28,6 +28,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.ForgeHooks;
 
 public class WildBerryBushBlock extends BushBlock implements BonemealableBlock {
     public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
@@ -54,8 +55,11 @@ public class WildBerryBushBlock extends BushBlock implements BonemealableBlock {
     @Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource rand) {
         int i = state.getValue(AGE);
-        if (i < 3 && level.getRawBrightness(pos.above(), 0) >= 9)
-            level.setBlock(pos, state.setValue(AGE, i + 1), 2);
+        if (i < 3 && level.getRawBrightness(pos.above(), 0) >= 9 && ForgeHooks.onCropsGrowPre(level, pos, state, rand.nextInt(5) == 0)) {
+            BlockState state1 = state.setValue(AGE, i + 1);
+            level.setBlock(pos, state1, 2);
+            ForgeHooks.onCropsGrowPost(level, pos, state1);
+        }
     }
 
     @Override

@@ -1,12 +1,10 @@
 package com.rosemods.windswept.core.data.server;
 
 import com.google.common.collect.ImmutableList;
-import com.rosemods.windswept.common.block.ChristmasPuddingBlock;
 import com.rosemods.windswept.common.block.GingerCropBlock;
 import com.rosemods.windswept.common.block.LavenderBlock;
 import com.rosemods.windswept.common.block.PineconeBlock;
 import com.rosemods.windswept.core.Windswept;
-import com.rosemods.windswept.core.other.tags.WindsweptItemTags;
 import com.rosemods.windswept.core.registry.WindsweptEntityTypes;
 import net.minecraft.advancements.critereon.EntityPredicate;
 import net.minecraft.advancements.critereon.ItemPredicate;
@@ -405,14 +403,13 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.add(LAVENDER_THATCH_SLAB.get(), this::createSlabItemTable);
 
             // wild berry
-            this.add(WILD_BERRY_BUSH.get(), b -> applyExplosionDecay(b, LootTable.lootTable()
-                    .withPool(LootPool.lootPool()
-                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(b)
-                                    .setProperties(StatePropertiesPredicate.Builder.properties()
-                                            .hasProperty(SweetBerryBushBlock.AGE, 2)))
-                            .add(LootItem.lootTableItem(WILD_BERRIES.get()))
-                            .apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 2f)))
-                            .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));
+            this.add(WILD_BERRY_BUSH.get(), b -> applyExplosionDecay(b, LootTable.lootTable().withPool(LootPool.lootPool()
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(b)
+                                .setProperties(StatePropertiesPredicate.Builder.properties()
+                                        .hasProperty(SweetBerryBushBlock.AGE, 2)))
+                        .add(LootItem.lootTableItem(WILD_BERRIES.get()))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 2f)))
+                        .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));
             this.dropSelf(WILD_BERRY_BASKET.get());
 
             // icicle blocks

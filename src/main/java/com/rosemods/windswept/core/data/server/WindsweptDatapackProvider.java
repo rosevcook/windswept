@@ -23,7 +23,7 @@ public class WindsweptDatapackProvider extends DatapackBuiltinEntriesProvider {
             .add(Registries.DAMAGE_TYPE, WindsweptDamageTypes::bootstrap);
 
     public WindsweptDatapackProvider(GatherDataEvent event) {
-        super(event.getGenerator().getPackOutput(), event.getLookupProvider(), BUILDER, Set.of(Windswept.MOD_ID, "minecraft"));
+        super(event.getGenerator().getPackOutput(), event.getLookupProvider(), BUILDER, Set.of(Windswept.MOD_ID));
     }
 
 }
