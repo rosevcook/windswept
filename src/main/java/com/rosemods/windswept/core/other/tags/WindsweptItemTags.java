@@ -21,5 +21,7 @@ public final class WindsweptItemTags {
     public static final TagKey<Item> STRIPPED_WOOD = TagUtil.itemTag("forge", "stripped_wood");
     public static final TagKey<Item> HONEY_BUCKETS = TagUtil.itemTag("forge", "buckets/honey");
     public static final TagKey<Item> CHOCOLATE_BUCKETS = TagUtil.itemTag("forge", "buckets/chocolate");
+
     public static final TagKey<Item> KNIVES = TagUtil.itemTag("farmersdelight", "tools/knives");
+    public static final TagKey<Item> GINGERBREADS = TagUtil.itemTag("snowy_spirit", "gingerbreads");
 }

@@ -33,6 +33,9 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
         //environmental
         this.tag(WindsweptBlockTags.PINECONE_GOLEM_BASE_BLOCKS).add(PINECONE_BLOCK.get());
 
+        //snowy spirit
+        this.tag(WindsweptBlockTags.GINGERBREADS).add(GINGERBREAD_BLOCK.get(), GLAZED_GINGERBREAD_BLOCK.get());
+
         //woodworks
         this.tag(BlueprintBlockTags.LEAF_PILES).add(HOLLY_LEAF_PILE.get(), CHESTNUT_LEAF_PILE.get(), PINE_LEAF_PILE.get(), FLOWERING_ACACIA_LEAF_PILE.get());
         this.tag(BlueprintBlockTags.WOODEN_BOARDS).add(HOLLY_BOARDS.get(), CHESTNUT_BOARDS.get(), PINE_BOARDS.get());

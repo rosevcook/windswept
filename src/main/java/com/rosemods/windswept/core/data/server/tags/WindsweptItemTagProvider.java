@@ -61,6 +61,9 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
         this.copy(BlueprintBlockTags.WOODEN_BEEHIVES, BlueprintItemTags.WOODEN_BEEHIVES);
         this.copy(BlueprintBlockTags.WOODEN_TRAPPED_CHESTS, BlueprintItemTags.WOODEN_TRAPPED_CHESTS);
 
+        //snowy spirit
+        this.copy(WindsweptBlockTags.GINGERBREADS, WindsweptItemTags.GINGERBREADS);
+
         //boatload
         this.tag(BlueprintItemTags.FURNACE_BOATS).add(HOLLY_FURNACE_BOAT.get(), CHESTNUT_FURNACE_BOAT.get(), PINE_FURNACE_BOAT.get());
         this.tag(BlueprintItemTags.LARGE_BOATS).add(LARGE_HOLLY_BOAT.get(), LARGE_CHESTNUT_BOAT.get(), LARGE_PINE_BOAT.get());

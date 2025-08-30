@@ -16,4 +16,5 @@ public final class WindsweptBlockTags {
 
     public static final TagKey<Block> CHEST_MOUNTED_STORAGE = TagUtil.blockTag("create", "chest_mounted_storage");
     public static final TagKey<Block> PINECONE_GOLEM_BASE_BLOCKS = TagUtil.blockTag("environmental", "pinecone_golem_base_blocks");
+    public static final TagKey<Block> GINGERBREADS = TagUtil.blockTag("snowy_spirit", "gingerbreads");
 }
