@@ -35,6 +35,11 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
 
         //woodworks
         this.tag(BlueprintBlockTags.LEAF_PILES).add(HOLLY_LEAF_PILE.get(), CHESTNUT_LEAF_PILE.get(), PINE_LEAF_PILE.get(), FLOWERING_ACACIA_LEAF_PILE.get());
+        this.tag(BlueprintBlockTags.WOODEN_BOARDS).add(HOLLY_BOARDS.get(), CHESTNUT_BOARDS.get(), PINE_BOARDS.get());
+        this.tag(BlueprintBlockTags.WOODEN_BEEHIVES).add(HOLLY_BEEHIVE.get(), CHESTNUT_BEEHIVE.get(), PINE_BEEHIVE.get());
+        this.tag(BlueprintBlockTags.WOODEN_TRAPPED_CHESTS).add(TRAPPED_HOLLY_CHEST.get(), TRAPPED_CHESTNUT_CHEST.get(), TRAPPED_PINE_CHEST.get());
+        this.tag(BlueprintBlockTags.WOODEN_LADDERS).add(HOLLY_LADDER.get(), CHESTNUT_LADDER.get(), PINE_LADDER.get());
+        this.tag(BlueprintBlockTags.WOODEN_BOOKSHELVES).add(HOLLY_BOOKSHELF.get(), CHESTNUT_BOOKSHELF.get(), PINE_BOOKSHELF.get());
 
         //create
         this.tag(WindsweptBlockTags.CHEST_MOUNTED_STORAGE).add(HOLLY_CHEST.get(), TRAPPED_HOLLY_CHEST.get(), CHESTNUT_CHEST.get(), TRAPPED_CHESTNUT_CHEST.get(), PINE_CHEST.get(), TRAPPED_PINE_CHEST.get());
