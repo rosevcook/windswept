@@ -116,11 +116,6 @@ public class WindsweptLangProvider extends LanguageProvider {
                 player -> player + " was impaled on an icicle",
                 (player, entity) -> player + " was impaled on an icicle whilst trying to escape " + entity);
 
-        // Slabfish //
-        this.translateSlabfish("chestnut");
-        this.translateSlabfish("grove");
-        this.translateSlabfish("pine");
-
         // Trim Materials //
         this.translateTrimMaterial(WindsweptTrimMaterials.ICICLES, "Icicles Material");
         this.translateTrimMaterial(WindsweptTrimMaterials.PINECONE, "Pinecone Material");
@@ -220,10 +215,6 @@ public class WindsweptLangProvider extends LanguageProvider {
     private void translateEffect(RegistryObject<? extends MobEffect> effect, String desc) {
         this.add(effect.get(), toUpper(ForgeRegistries.MOB_EFFECTS, effect));
         this.add(effect.get().getDescriptionId() + ".description", desc);
-    }
-
-    private void translateSlabfish(String type) {
-        this.add("entity.environmental.slabfish.type." + type, toUpper(type));
     }
 
     private void translateBannerPattern(RegistryObject<? extends Item> item, String name) {
