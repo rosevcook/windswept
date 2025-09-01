@@ -16,12 +16,8 @@ public final class WindsweptFoods {
     public static final FoodProperties FROZEN_FLESH = new FoodProperties.Builder().nutrition(4).saturationMod(.1f).effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), .8f).meat().build();
     public static final FoodProperties CHESTNUTS = new FoodProperties.Builder().nutrition(2).saturationMod(.1f).build();
     public static final FoodProperties ROASTED_CHESTNUTS = new FoodProperties.Builder().nutrition(5).saturationMod(.4f).build();
-    public static final FoodProperties GOAT_SHANKS = new FoodProperties.Builder().nutrition(1).saturationMod(.1f).meat().build();
-    public static final FoodProperties COOKED_GOAT_SHANKS = new FoodProperties.Builder().nutrition(3).saturationMod(.3f).meat().build();
-    public static final FoodProperties WILD_BERRY_POPSICLE = new FoodProperties.Builder().nutrition(4).saturationMod(.7f).alwaysEat().effect(() -> new MobEffectInstance(WindsweptEffects.FROST_RESISTANCE.get(), 300, 0), 1f).build();
-    public static final FoodProperties CAKE_SLICE = new FoodProperties.Builder().nutrition(2).saturationMod(.1f).fast().effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 0), 1f).effect(() -> new MobEffectInstance(WindsweptEffects.THORNS.get(), 400, 0), 1f).build();
     public static final FoodProperties GINGER_ROOT = new FoodProperties.Builder().nutrition(1).saturationMod(.1f).build();
-    public static final FoodProperties GINGERBREAD_COOKIE = new FoodProperties.Builder().nutrition(2).alwaysEat().fast().saturationMod(.1f)/*.effect(() -> new MobEffectInstance(WindsweptEffects.PLENTY.get(), 200, 0), 1f)*/.build();
+    public static final FoodProperties GINGERBREAD_COOKIE = new FoodProperties.Builder().nutrition(2).fast().saturationMod(.1f)/*.effect(() -> new MobEffectInstance(WindsweptEffects.PLENTY.get(), 200, 0), 1f)*/.build();
     public static final FoodProperties SPICY_SNOW_CONE = new FoodProperties.Builder().nutrition(15).alwaysEat().saturationMod(.6f).effect(() -> new MobEffectInstance(WindsweptEffects.FROST_RESISTANCE.get(), 300, 0), 1f).build();
     public static final FoodProperties SWEET_SNOW_CONE = new FoodProperties.Builder().nutrition(15).alwaysEat().saturationMod(.6f).effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 300, 0), 1f).build();
     public static final FoodProperties MINY_SNOW_CONE = new FoodProperties.Builder().nutrition(15).alwaysEat().saturationMod(.6f).effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0), 1f).build();
