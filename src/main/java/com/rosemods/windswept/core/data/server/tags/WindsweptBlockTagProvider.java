@@ -55,6 +55,7 @@ public class WindsweptBlockTagProvider extends BlockTagsProvider {
         this.tag(BlueprintBlockTags.LADDERS).add(HOLLY_LADDER.get(), CHESTNUT_LADDER.get(), PINE_LADDER.get());
 
         //vanilla
+        this.tag(BlockTags.ENCHANTMENT_POWER_PROVIDER).add(HOLLY_BOOKSHELF.get(), CHESTNUT_BOOKSHELF.get(), PINE_BOOKSHELF.get());
         this.tag(BlockTags.CROPS).add(GINGER.get());
         this.tag(BlockTags.STONE_ORE_REPLACEABLES).add(SHALE.get());
         this.tag(BlockTags.BASE_STONE_OVERWORLD).add(SHALE.get());
