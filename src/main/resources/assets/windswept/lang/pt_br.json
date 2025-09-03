@@ -111,7 +111,7 @@
   "block.windswept.christmas_pudding": "Pudim Natalino",
   "block.windswept.cupric_fairy_light": "Luminária Cúprica",
   "block.windswept.cut_lunalite": "Lunalita Lapidada",
-  "block.windswept.cut_lunalite_brick_slab": "Laje de Tijolos de Lunalita,
+  "block.windswept.cut_lunalite_brick_slab": "Laje de Tijolos de Lunalita",
   "block.windswept.cut_lunalite_brick_stairs": "Escadas de Tijolos de Lunalita",
   "block.windswept.cut_lunalite_brick_wall": "Muro de Tijolos de Lunalita",
   "block.windswept.cut_lunalite_bricks": "Tijolos de Lunalita",
@@ -181,7 +181,6 @@
   "block.windswept.holly_boards": "Pranchas de Azevinheiro",
   "block.windswept.holly_bookshelf": "Estante de livros de Azevinheiro",
   "block.windswept.holly_button": "Botão de Azevinheiro",
-  "block.windswept.holly_cabinet": "Armário de Azevinheiro",
   "block.windswept.holly_chest": "Baú de Azevinheiro",
   "block.windswept.holly_door": "Porta de Azevinheiro",
   "block.windswept.holly_fence": "Cerca de Azevinheiro",
@@ -371,9 +370,6 @@
   "enchantment.windswept.slipping_curse": "Maldição do Deslizamento",
   "enchantment.windswept.slipping_curse.desc": "Faz com que o usuário deslize em cada bloco em que pisa, ao mesmo tempo em que danifica as botas.",
 
-  "entity.environmental.slabfish.type.chestnut": "Castanha",
-  "entity.environmental.slabfish.type.grove": "Bosque",
-  "entity.environmental.slabfish.type.pine": "Pinhal",
   "entity.windswept.chilled": "Congelado",
   "entity.windswept.frost_arrow": "Flecha de Gelo",
   "entity.windswept.frostbiter": "Mordigelo",
@@ -487,8 +483,8 @@
   "painting.windswept.the_foils.title": "The Foils",
 
   "trim_material.windswept.icicles": "Material de Gelo",
-  "trim_material.windswept.pinecone": "Material de Pinha"
-,
+  "trim_material.windswept.pinecone": "Material de Pinha",
+
   "windswept.jei.info.carved_pinecone_block": "O Rosto da Pinha Esculpida cria uma única nota aleatoriamente por causa do vento passando por ela. A nota produzida é mais grave dependendo do tanto de Blocos de Pinha empilhados abaixo do bloco esculpido. \n(É ativada por ticks aleatórios, clicando, ou por redstone)",
   "windswept.jei.info.elder_feather": "Penas Antigas podem ser achadas por arqueologia.",
   "windswept.jei.info.frozen_branch": "Mordigelos Domados trocam de chifres de vez em quando.",
