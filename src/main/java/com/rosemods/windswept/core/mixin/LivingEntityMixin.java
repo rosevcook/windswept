@@ -29,12 +29,10 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Override
     public void setTicksFrozen(int ticks) {
-        boolean hasFrostResist = ((LivingEntity) (Object) this).hasEffect(WindsweptEffects.FROST_RESISTANCE.get());
+        if (((LivingEntity) (Object) this).hasEffect(WindsweptEffects.FROST_RESISTANCE.get()) || this.getType().is(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES))
+            ticks = 0;
 
-        if (!hasFrostResist && !this.getType().is(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES))
-            super.setTicksFrozen(ticks);
-        else if (hasFrostResist)
-            super.setTicksFrozen(0);
+        super.setTicksFrozen(ticks);
     }
 
     @Override
