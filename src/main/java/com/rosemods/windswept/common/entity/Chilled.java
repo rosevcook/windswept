@@ -132,7 +132,7 @@ public class Chilled extends Zombie {
     @Override
     protected void enchantSpawnedArmor(RandomSource rand, float difficulty, EquipmentSlot slot) {
         ItemStack stack = this.getItemBySlot(slot);
-        if (!stack.isEmpty() && this.random.nextFloat() < .5f * difficulty)
+        if (!stack.isEmpty() && this.random.nextFloat() < .5f * difficulty && slot == EquipmentSlot.FEET)
             stack.enchant(WindsweptEnchantments.SLIPPING_CURSE.get(), 0);
         else
             super.enchantSpawnedArmor(rand, difficulty, slot);
