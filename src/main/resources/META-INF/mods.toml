@@ -12,12 +12,12 @@ license = "All Rights Reserved"
     configBackground = "windswept:textures/block/holly_log.png"
     displayURL = "https://www.curseforge.com/minecraft/mc-mods/windsweptmod"
     authors = "Rose, Yape"
-    description = '''A general expansion to snowy and forest areas of the game, incentivising players to explore and build in the new expanded areas'''
+    description = '''Windswept is a vanilla-esque mod that vastly expands colder regions of the game. It adds new biomes such as Tundras, Pine Barrens, Chestnut Forests, Lavender Fields, and Flowering Savannas, along with new flowers, enemies, and much more—basically a whole bunch of content related to winter!'''
 
 [[dependencies.windswept]]
     modId = "forge"
     mandatory = true
-    versionRange = "[47.1.0,)"
+    versionRange = "[47.1.3,)"
     ordering = "NONE"
     side = "BOTH"
 
