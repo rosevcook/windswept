@@ -24,7 +24,7 @@ license = "All Rights Reserved"
 [[dependencies.windswept]]
     modId = "minecraft"
     mandatory = true
-    versionRange = "[1.20.1,)"
+    versionRange = "[1.20.1,1.20.2)"
     ordering = "NONE"
     side = "BOTH"
 
