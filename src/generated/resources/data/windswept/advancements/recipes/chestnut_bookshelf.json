@@ -18,7 +18,7 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "windswept:chestnut_chest"
+              "recipe": "windswept:chestnut_bookshelf"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
@@ -31,7 +31,7 @@
         ],
         "rewards": {
           "recipes": [
-            "windswept:chestnut_chest"
+            "windswept:chestnut_bookshelf"
           ]
         },
         "sends_telemetry_event": false

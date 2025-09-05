@@ -4,12 +4,12 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_chestnut_planks": {
+          "has_holly_planks": {
             "conditions": {
               "items": [
                 {
                   "items": [
-                    "windswept:chestnut_planks"
+                    "windswept:holly_planks"
                   ]
                 }
               ]
@@ -18,20 +18,20 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "windswept:chestnut_chest"
+              "recipe": "windswept:holly_bookshelf"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
           [
-            "has_chestnut_planks",
+            "has_holly_planks",
             "has_the_recipe"
           ]
         ],
         "rewards": {
           "recipes": [
-            "windswept:chestnut_chest"
+            "windswept:holly_bookshelf"
           ]
         },
         "sends_telemetry_event": false

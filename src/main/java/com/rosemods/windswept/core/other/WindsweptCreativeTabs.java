@@ -2,13 +2,13 @@ package com.rosemods.windswept.core.other;
 
 import com.rosemods.windswept.core.Windswept;
 import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
-import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.function.Predicate;
@@ -64,10 +64,10 @@ public final class WindsweptCreativeTabs {
                 .addItemsBefore(Ingredient.of(Blocks.CHAIN), ICE_LANTERN)
                 .addItemsAfter(Ingredient.of(Blocks.CHAIN), ICE_CHAIN)
                 .addItemsAfter(Ingredient.of(Blocks.JUKEBOX), CARVED_PINECONE_BLOCK, WILL_O_THE_WISP, ELDER_WING, ELDER_ORNAMENT, DREAM_CATCHER, FROSTBITER_TROPHY)
-                .addItemsAfter(modLoaded(Blocks.LADDER/*WindsweptConstants.BAMBOO_LADDER*/, "woodworks"), HOLLY_LADDER, CHESTNUT_LADDER, PINE_LADDER)
-                .addItemsAfter(modLoaded(Blocks.BEEHIVE/*WindsweptConstants.BAMBOO_BEEHIVE*/, "woodworks"), HOLLY_BEEHIVE, CHESTNUT_BEEHIVE, PINE_BEEHIVE)
-                .addItemsAfter(Ingredient.of(Blocks.BOOKSHELF), HOLLY_BOOKSHELF, /*CHISELED_HOLLY_BOOKSHELF, */CHESTNUT_BOOKSHELF, /*CHISELED_CHESTNUT_BOOKSHELF, */PINE_BOOKSHELF/*, CHISELED_PINE_BOOKSHELF*/)
-                .addItemsAfter(modLoaded(Blocks.CHEST/*WindsweptConstants.BAMBOO_CLOSET*/, "woodworks"), HOLLY_CHEST, CHESTNUT_CHEST, PINE_CHEST)
+                .addItemsAfter(modLoaded(Blocks.LADDER, "woodworks", "quark"), HOLLY_LADDER, CHESTNUT_LADDER, PINE_LADDER)
+                .addItemsAfter(modLoaded(Blocks.BEEHIVE, "woodworks"), HOLLY_BEEHIVE, CHESTNUT_BEEHIVE, PINE_BEEHIVE)
+                .addItemsAfter(modLoaded(Blocks.BOOKSHELF, "woodworks", "quark"), HOLLY_BOOKSHELF, CHESTNUT_BOOKSHELF, PINE_BOOKSHELF)
+                .addItemsAfter(modLoaded(Blocks.CHEST, "woodworks", "quark"), HOLLY_CHEST, CHESTNUT_CHEST, PINE_CHEST)
                 .addItemsAfter(Ingredient.of(Blocks.SUSPICIOUS_GRAVEL), SUSPICIOUS_SNOW)
 
                 .tab(COLORED_BLOCKS)
@@ -111,7 +111,7 @@ public final class WindsweptCreativeTabs {
                 .addItemsAfter(Ingredient.of(Blocks.COMPARATOR), REDSTONE_FAIRY_LIGHT)
                 .addItemsAfter(Ingredient.of(Blocks.HONEY_BLOCK), PINECONE_JAM_BLOCK)
                 .addItemsAfter(Ingredient.of(Blocks.NOTE_BLOCK), CARVED_PINECONE_BLOCK)
-                .addItemsAfter(modLoaded(Blocks.TRAPPED_CHEST/*WindsweptConstants.TRAPPED_BAMBOO_CLOSET*/, "woodworks"), TRAPPED_HOLLY_CHEST, TRAPPED_CHESTNUT_CHEST, TRAPPED_PINE_CHEST)
+                .addItemsAfter(modLoaded(Blocks.TRAPPED_CHEST, "woodworks", "quark"), TRAPPED_HOLLY_CHEST, TRAPPED_CHESTNUT_CHEST, TRAPPED_PINE_CHEST)
 
                 .tab(COMBAT)
                 .addItemsAfter(Ingredient.of(Items.SPECTRAL_ARROW), FROST_ARROW)
@@ -156,11 +156,19 @@ public final class WindsweptCreativeTabs {
     }
 
     private static Predicate<ItemStack> modLoaded(ItemLike item, String... modids) {
-        return stack -> Ingredient.of(item).test(stack) && BlockSubRegistryHelper.areModsLoaded(modids);
+        return stack -> Ingredient.of(item).test(stack) && anyLoaded(modids);
     }
 
     public static Predicate<ItemStack> modLoaded(ResourceLocation location, String... modids) {
         return modLoaded(ForgeRegistries.ITEMS.getValue(location), modids);
+    }
+
+    private static boolean anyLoaded(String... modIds) {
+        for (String modId : modIds)
+            if (ModList.get().isLoaded(modId))
+                return true;
+
+        return false;
     }
 
 }

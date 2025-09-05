@@ -4,8 +4,17 @@
     {
       "conditions": [
         {
-          "type": "forge:mod_loaded",
-          "modid": "woodworks"
+          "type": "forge:or",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "quark"
+            },
+            {
+              "type": "forge:mod_loaded",
+              "modid": "woodworks"
+            }
+          ]
         }
       ],
       "recipe": {

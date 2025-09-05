@@ -1,22 +1,44 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "group": "wooden_bookshelves",
-  "key": {
-    "#": {
-      "item": "windswept:chestnut_planks"
-    },
-    "B": {
-      "item": "minecraft:book"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:or",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "quark"
+            },
+            {
+              "type": "forge:mod_loaded",
+              "modid": "woodworks"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "group": "wooden_bookshelves",
+        "key": {
+          "#": {
+            "item": "windswept:chestnut_planks"
+          },
+          "B": {
+            "item": "minecraft:book"
+          }
+        },
+        "pattern": [
+          "###",
+          "BBB",
+          "###"
+        ],
+        "result": {
+          "item": "windswept:chestnut_bookshelf"
+        },
+        "show_notification": true
+      }
     }
-  },
-  "pattern": [
-    "###",
-    "BBB",
-    "###"
-  ],
-  "result": {
-    "item": "windswept:chestnut_bookshelf"
-  },
-  "show_notification": true
+  ]
 }

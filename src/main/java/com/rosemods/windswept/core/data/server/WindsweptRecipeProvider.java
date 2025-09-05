@@ -17,10 +17,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
-import net.minecraftforge.common.crafting.conditions.ICondition;
-import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
-import net.minecraftforge.common.crafting.conditions.NotCondition;
-import net.minecraftforge.common.crafting.conditions.TagEmptyCondition;
+import net.minecraftforge.common.crafting.conditions.*;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -349,12 +346,16 @@ public class WindsweptRecipeProvider extends BlueprintRecipeProvider {
         woodFromLogs(consumer, strippedWood, strippedLog);
         slab(planks, slab, "wooden_slab", consumer);
         stairs(planks, stairs, "wooden_stairs", consumer);
+
+        ICondition woodworks = new ModLoadedCondition("woodworks");
+        ICondition quarkOrWoodworks = new OrCondition(new ModLoadedCondition("quark"), woodworks);
+
         conditionalRecipe(ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, boards).group("wooden_boards").define('#', slab).pattern("#").pattern("#").unlockedBy(getHasName(slab), has(slab)), new ModLoadedCondition("woodworks"), consumer, getSaveLocation(boards));
         conditionalRecipe(ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, beehive).group("wooden_beehive").define('#', planks).define('H', Items.HONEYCOMB).pattern("###").pattern("HHH").pattern("###").unlockedBy(getHasName(planks), has(planks)), new ModLoadedCondition("woodworks"), consumer, getSaveLocation(beehive));
-        conditionalRecipe(ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ladder, 4).group("wooden_ladders").define('#', planks).define('S', Items.STICK).pattern("S S").pattern("S#S").pattern("S S").unlockedBy(getHasName(planks), has(planks)), new ModLoadedCondition("woodworks"), consumer, getSaveLocation(ladder));
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, bookshelf).group("wooden_bookshelves").define('#', planks).define('B', Items.BOOK).pattern("###").pattern("BBB").pattern("###").unlockedBy(getHasName(planks), has(planks)).save(consumer, getSaveLocation(bookshelf));
-        conditionalRecipe(ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, chest).group("wooden_chests").define('#', planks).pattern("###").pattern("# #").pattern("###").unlockedBy(getHasName(planks), has(planks)), new ModLoadedCondition("woodworks"), consumer, getSaveLocation(chest));
-        conditionalRecipe(ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, trappedChest).requires(chest).requires(Items.TRIPWIRE_HOOK).unlockedBy(getHasName(planks), has(planks)), new ModLoadedCondition("woodworks"), consumer, getSaveLocation(trappedChest));
+        conditionalRecipe(ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ladder, 4).group("wooden_ladders").define('#', planks).define('S', Items.STICK).pattern("S S").pattern("S#S").pattern("S S").unlockedBy(getHasName(planks), has(planks)), quarkOrWoodworks, consumer, getSaveLocation(ladder));
+        conditionalRecipe(ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, bookshelf).group("wooden_bookshelves").define('#', planks).define('B', Items.BOOK).pattern("###").pattern("BBB").pattern("###").unlockedBy(getHasName(planks), has(planks)), quarkOrWoodworks, consumer, getSaveLocation(bookshelf));
+        conditionalRecipe(ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, chest).group("wooden_chests").define('#', planks).pattern("###").pattern("# #").pattern("###").unlockedBy(getHasName(planks), has(planks)), quarkOrWoodworks, consumer, getSaveLocation(chest));
+        conditionalRecipe(ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, trappedChest).requires(chest).requires(Items.TRIPWIRE_HOOK).unlockedBy(getHasName(planks), has(planks)), quarkOrWoodworks, consumer, getSaveLocation(trappedChest));
         conditionalRecipe(ShapelessRecipeBuilder.shapeless(RecipeCategory.TRANSPORTATION, furnaceBoat).requires(Items.FURNACE).requires(boat).unlockedBy(getHasName(boat), has(boat)), new ModLoadedCondition("boatload"), consumer, getSaveLocation(furnaceBoat));
         conditionalRecipe(ShapedRecipeBuilder.shaped(RecipeCategory.TRANSPORTATION, largeBoat).group("wooden_chests").define('#', planks).define('B', boat).pattern("#B#").pattern("###").unlockedBy(getHasName(boat), has(boat)), new ModLoadedCondition("boatload"), consumer, getSaveLocation(largeBoat));
     }
