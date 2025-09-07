@@ -117,6 +117,7 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.leafPile(HOLLY_LEAF_PILE, this.blockTexture(HOLLY_LEAVES.get()), false);
         this.ladder(HOLLY_LADDER);
         this.bookshelf(HOLLY_BOOKSHELF, HOLLY_PLANKS);
+        this.chiseledBookshelfBlock(CHISELED_HOLLY_BOOKSHELF);
         this.boards(HOLLY_BOARDS);
         this.chests(HOLLY_CHEST, TRAPPED_HOLLY_CHEST, this.blockTexture(HOLLY_PLANKS.get()));
         this.compressedBlock(HOLLY_BERRY_BASKET);
@@ -143,6 +144,7 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.leafPile(CHESTNUT_LEAF_PILE, this.blockTexture(CHESTNUT_LEAVES.get()), true);
         this.ladder(CHESTNUT_LADDER);
         this.bookshelf(CHESTNUT_BOOKSHELF, CHESTNUT_PLANKS);
+        this.chiseledBookshelfBlock(CHISELED_CHESTNUT_BOOKSHELF);
         this.boards(CHESTNUT_BOARDS);
         this.chests(CHESTNUT_CHEST, TRAPPED_CHESTNUT_CHEST, this.blockTexture(CHESTNUT_PLANKS.get()));
         this.hangingSignBlocks(STRIPPED_CHESTNUT_LOG, CHESTNUT_HANGING_SIGNS);
@@ -170,6 +172,7 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.leafPile(PINE_LEAF_PILE, this.blockTexture(PINE_LEAVES.get()), false);
         this.ladder(PINE_LADDER);
         this.bookshelf(PINE_BOOKSHELF, PINE_PLANKS);
+        this.chiseledBookshelfBlock(CHISELED_PINE_BOOKSHELF);
         this.boards(PINE_BOARDS);
         this.chests(PINE_CHEST, TRAPPED_PINE_CHEST, this.blockTexture(PINE_PLANKS.get()));
         this.hangingSignBlocks(STRIPPED_PINE_LOG, PINE_HANGING_SIGNS);

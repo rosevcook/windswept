@@ -9,10 +9,7 @@ import com.rosemods.windswept.common.block.grower.PineTreeGrower;
 import com.rosemods.windswept.common.item.WearableBlockItem;
 import com.rosemods.windswept.core.Windswept;
 import com.rosemods.windswept.core.other.WindsweptSoundTypes;
-import com.teamabnormals.blueprint.common.block.BlueprintBeehiveBlock;
-import com.teamabnormals.blueprint.common.block.LeafPileBlock;
-import com.teamabnormals.blueprint.common.block.LogBlock;
-import com.teamabnormals.blueprint.common.block.WoodBlock;
+import com.teamabnormals.blueprint.common.block.*;
 import com.teamabnormals.blueprint.common.block.chest.BlueprintChestBlock;
 import com.teamabnormals.blueprint.common.block.chest.BlueprintTrappedChestBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintCeilingHangingSignBlock;
@@ -62,6 +59,7 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> HOLLY_BEEHIVE = HELPER.createBlock("holly_beehive", () -> new BlueprintBeehiveBlock(Properties.HOLLY.beehive()));
     public static final RegistryObject<Block> HOLLY_LADDER = HELPER.createFuelBlock("holly_ladder", () -> new LadderBlock(Properties.HOLLY.ladder()), 300);
     public static final RegistryObject<Block> HOLLY_BOOKSHELF = HELPER.createFuelBlock("holly_bookshelf", () -> new Block(Properties.HOLLY.bookshelf()), 300);
+    public static final RegistryObject<Block> CHISELED_HOLLY_BOOKSHELF = HELPER.createFuelBlock("chiseled_holly_bookshelf", () -> new BlueprintChiseledBookShelfBlock(Properties.HOLLY.chiseledBookshelf()), 300);
     public static final RegistryObject<Block> HOLLY_BOARDS = HELPER.createBlock("holly_boards", () -> new RotatedPillarBlock(Properties.HOLLY.planks()));
     public static final RegistryObject<BlueprintChestBlock> HOLLY_CHEST = HELPER.createChestBlock("holly", Properties.HOLLY.chest());
     public static final RegistryObject<BlueprintTrappedChestBlock> TRAPPED_HOLLY_CHEST = HELPER.createTrappedChestBlockNamed("holly", Properties.HOLLY.chest());
@@ -91,6 +89,7 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> CHESTNUT_BEEHIVE = HELPER.createBlock("chestnut_beehive", () -> new BlueprintBeehiveBlock(Properties.CHESTNUT.beehive()));
     public static final RegistryObject<Block> CHESTNUT_LADDER = HELPER.createFuelBlock("chestnut_ladder", () -> new LadderBlock(Properties.CHESTNUT.ladder()), 300);
     public static final RegistryObject<Block> CHESTNUT_BOOKSHELF = HELPER.createFuelBlock("chestnut_bookshelf", () -> new Block(Properties.CHESTNUT.bookshelf()), 300);
+    public static final RegistryObject<Block> CHISELED_CHESTNUT_BOOKSHELF = HELPER.createFuelBlock("chiseled_chestnut_bookshelf", () -> new BlueprintChiseledBookShelfBlock(Properties.CHESTNUT.chiseledBookshelf()), 300);
     public static final RegistryObject<Block> CHESTNUT_BOARDS = HELPER.createBlock("chestnut_boards", () -> new RotatedPillarBlock(Properties.CHESTNUT.planks()));
     public static final RegistryObject<BlueprintChestBlock> CHESTNUT_CHEST = HELPER.createChestBlock("chestnut", Properties.CHESTNUT.chest());
     public static final RegistryObject<BlueprintTrappedChestBlock> TRAPPED_CHESTNUT_CHEST = HELPER.createTrappedChestBlockNamed("chestnut", Properties.CHESTNUT.chest());
@@ -122,6 +121,7 @@ public class WindsweptBlocks {
     public static final RegistryObject<Block> PINE_BEEHIVE = HELPER.createBlock("pine_beehive", () -> new BlueprintBeehiveBlock(Properties.PINE.beehive()));
     public static final RegistryObject<Block> PINE_LADDER = HELPER.createFuelBlock("pine_ladder", () -> new LadderBlock(Properties.PINE.ladder()), 300);
     public static final RegistryObject<Block> PINE_BOOKSHELF = HELPER.createFuelBlock("pine_bookshelf", () -> new Block(Properties.PINE.bookshelf()), 300);
+    public static final RegistryObject<Block> CHISELED_PINE_BOOKSHELF = HELPER.createFuelBlock("chiseled_pine_bookshelf", () -> new BlueprintChiseledBookShelfBlock(Properties.PINE.chiseledBookshelf()), 300);
     public static final RegistryObject<Block> PINE_BOARDS = HELPER.createBlock("pine_boards", () -> new RotatedPillarBlock(Properties.PINE.planks()));
     public static final RegistryObject<BlueprintChestBlock> PINE_CHEST = HELPER.createChestBlock("pine", Properties.PINE.chest());
     public static final RegistryObject<BlueprintTrappedChestBlock> TRAPPED_PINE_CHEST = HELPER.createTrappedChestBlockNamed("pine", Properties.PINE.chest());

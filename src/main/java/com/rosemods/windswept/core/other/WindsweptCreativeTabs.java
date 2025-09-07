@@ -66,7 +66,12 @@ public final class WindsweptCreativeTabs {
                 .addItemsAfter(Ingredient.of(Blocks.JUKEBOX), CARVED_PINECONE_BLOCK, WILL_O_THE_WISP, ELDER_WING, ELDER_ORNAMENT, DREAM_CATCHER, FROSTBITER_TROPHY)
                 .addItemsAfter(modLoaded(Blocks.LADDER, "woodworks", "quark"), HOLLY_LADDER, CHESTNUT_LADDER, PINE_LADDER)
                 .addItemsAfter(modLoaded(Blocks.BEEHIVE, "woodworks"), HOLLY_BEEHIVE, CHESTNUT_BEEHIVE, PINE_BEEHIVE)
-                .addItemsAfter(modLoaded(Blocks.BOOKSHELF, "woodworks", "quark"), HOLLY_BOOKSHELF, CHESTNUT_BOOKSHELF, PINE_BOOKSHELF)
+                .addItemsBefore(modLoaded(Blocks.CHISELED_BOOKSHELF, "woodworks", "quark"), HOLLY_BOOKSHELF)
+                .addItemsBefore(modLoaded(Blocks.CHISELED_BOOKSHELF, "woodworks"), CHISELED_HOLLY_BOOKSHELF)
+                .addItemsBefore(modLoaded(Blocks.CHISELED_BOOKSHELF, "woodworks", "quark"), CHESTNUT_BOOKSHELF)
+                .addItemsBefore(modLoaded(Blocks.CHISELED_BOOKSHELF, "woodworks"), CHISELED_CHESTNUT_BOOKSHELF)
+                .addItemsBefore(modLoaded(Blocks.CHISELED_BOOKSHELF, "woodworks", "quark"), PINE_BOOKSHELF)
+                .addItemsBefore(modLoaded(Blocks.CHISELED_BOOKSHELF, "woodworks"), CHISELED_PINE_BOOKSHELF)
                 .addItemsAfter(modLoaded(Blocks.CHEST, "woodworks", "quark"), HOLLY_CHEST, CHESTNUT_CHEST, PINE_CHEST)
                 .addItemsAfter(Ingredient.of(Blocks.SUSPICIOUS_GRAVEL), SUSPICIOUS_SNOW)
 

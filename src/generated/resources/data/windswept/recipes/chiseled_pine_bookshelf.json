@@ -1,0 +1,35 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "woodworks"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "group": "wooden_chiseled_bookshelves",
+        "key": {
+          "#": {
+            "item": "windswept:pine_planks"
+          },
+          "S": {
+            "item": "windswept:pine_slab"
+          }
+        },
+        "pattern": [
+          "###",
+          "SSS",
+          "###"
+        ],
+        "result": {
+          "item": "windswept:chiseled_pine_bookshelf"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

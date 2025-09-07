@@ -100,6 +100,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.add(HOLLY_BEEHIVE.get(), WindsweptBlockLoot::createBeeHiveDrop);
             this.dropSelf(HOLLY_LADDER.get());
             this.bookshelf(HOLLY_BOOKSHELF.get());
+            this.dropWhenSilkTouch(CHISELED_HOLLY_BOOKSHELF.get());
             this.dropSelf(HOLLY_BOARDS.get());
             this.dropSelf(HOLLY_CHEST.get());
             this.dropSelf(TRAPPED_HOLLY_CHEST.get());
@@ -138,6 +139,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.add(CHESTNUT_BEEHIVE.get(), WindsweptBlockLoot::createBeeHiveDrop);
             this.dropSelf(CHESTNUT_LADDER.get());
             this.bookshelf(CHESTNUT_BOOKSHELF.get());
+            this.dropWhenSilkTouch(CHISELED_CHESTNUT_BOOKSHELF.get());
             this.dropSelf(CHESTNUT_BOARDS.get());
             this.dropSelf(CHESTNUT_CHEST.get());
             this.dropSelf(TRAPPED_CHESTNUT_CHEST.get());
@@ -178,6 +180,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.add(PINE_BEEHIVE.get(), WindsweptBlockLoot::createBeeHiveDrop);
             this.dropSelf(PINE_LADDER.get());
             this.bookshelf(PINE_BOOKSHELF.get());
+            this.dropWhenSilkTouch(CHISELED_PINE_BOOKSHELF.get());
             this.dropSelf(PINE_BOARDS.get());
             this.dropSelf(PINE_CHEST.get());
             this.dropSelf(TRAPPED_PINE_CHEST.get());

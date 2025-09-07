@@ -61,6 +61,7 @@ public class WindsweptItemTagProvider extends ItemTagsProvider {
         this.copy(BlueprintBlockTags.WOODEN_LADDERS, BlueprintItemTags.WOODEN_LADDERS);
         this.copy(BlueprintBlockTags.WOODEN_BEEHIVES, BlueprintItemTags.WOODEN_BEEHIVES);
         this.copy(BlueprintBlockTags.WOODEN_TRAPPED_CHESTS, BlueprintItemTags.WOODEN_TRAPPED_CHESTS);
+        this.copy(BlueprintBlockTags.WOODEN_CHISELED_BOOKSHELVES, BlueprintItemTags.WOODEN_CHISELED_BOOKSHELVES);
 
         //snowy spirit
         this.copy(WindsweptBlockTags.GINGERBREADS, WindsweptItemTags.GINGERBREADS);

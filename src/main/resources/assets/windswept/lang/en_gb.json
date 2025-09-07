@@ -9,5 +9,8 @@
   "block.windswept.packed_ice_brick_wall": "Compressed Ice Brick Wall",
   "block.windswept.packed_ice_bricks": "Compressed Ice Bricks",
   "block.windswept.packed_ice_slab": "Compressed Ice Slab",
-  "block.windswept.packed_ice_stairs": "Compressed Ice Stairs"
+  "block.windswept.packed_ice_stairs": "Compressed Ice Stairs",
+  "block.windswept.chiseled_chestnut_bookshelf": "Chiselled Chestnut Bookshelf",
+  "block.windswept.chiseled_holly_bookshelf": "Chiselled Holly Bookshelf",
+  "block.windswept.chiseled_pine_bookshelf": "Chiselled Pine Bookshelf"
 }
