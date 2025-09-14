@@ -23,6 +23,6 @@ public final class WindsweptItemTags {
     public static final TagKey<Item> CHOCOLATE_BUCKETS = TagUtil.itemTag("forge", "buckets/chocolate");
 
     public static final TagKey<Item> KNIVES = TagUtil.itemTag("farmersdelight", "tools/knives");
-    public static final TagKey<Item> GINGERBREADS = TagUtil.itemTag("snowy_spirit", "gingerbreads");
+    public static final TagKey<Item> GINGERBREADS = TagUtil.itemTag("snowyspirit", "gingerbreads");
     public static final TagKey<Item> QUARK_LADDERS = TagUtil.itemTag("quark", "ladders");
 }
