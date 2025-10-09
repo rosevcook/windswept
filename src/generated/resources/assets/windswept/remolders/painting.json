@@ -1,0 +1,81 @@
+{
+  "molding": "json",
+  "remolder": [
+    {
+      "type": "add",
+      "target": "overrides",
+      "value": []
+    },
+    {
+      "type": "add",
+      "target": "overrides[]",
+      "value": {
+        "model": "windswept:item/painting/cliffside",
+        "predicate": {
+          "windswept:cliffside": 1.0
+        }
+      }
+    },
+    {
+      "type": "add",
+      "target": "overrides[]",
+      "value": {
+        "model": "windswept:item/painting/dress_codes",
+        "predicate": {
+          "windswept:dress_codes": 1.0
+        }
+      }
+    },
+    {
+      "type": "add",
+      "target": "overrides[]",
+      "value": {
+        "model": "windswept:item/painting/ecotonal_pareidolia",
+        "predicate": {
+          "windswept:ecotonal_pareidolia": 1.0
+        }
+      }
+    },
+    {
+      "type": "add",
+      "target": "overrides[]",
+      "value": {
+        "model": "windswept:item/painting/the_foils",
+        "predicate": {
+          "windswept:the_foils": 1.0
+        }
+      }
+    },
+    {
+      "type": "add",
+      "target": "overrides[]",
+      "value": {
+        "model": "windswept:item/painting/aurorae",
+        "predicate": {
+          "windswept:aurorae": 1.0
+        }
+      }
+    },
+    {
+      "type": "add",
+      "target": "overrides[]",
+      "value": {
+        "model": "windswept:item/painting/hearth_rug",
+        "predicate": {
+          "windswept:hearth_rug": 1.0
+        }
+      }
+    },
+    {
+      "type": "add",
+      "target": "overrides[]",
+      "value": {
+        "model": "windswept:item/painting/al-lu_pine",
+        "predicate": {
+          "windswept:al-lu_pine": 1.0
+        }
+      }
+    }
+  ],
+  "selector": "minecraft:models/item/painting"
+}

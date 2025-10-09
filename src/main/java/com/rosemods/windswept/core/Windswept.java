@@ -12,6 +12,7 @@ import com.rosemods.windswept.core.other.*;
 import com.rosemods.windswept.core.registry.*;
 import com.rosemods.windswept.core.registry.util.EffectSubRegistryHelper;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
+import com.teamabnormals.gallery.core.data.client.GalleryAssetsRemolderProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
@@ -80,6 +81,7 @@ public class Windswept {
         gen.addProvider(client, new WindsweptSplashProvider(event));
         gen.addProvider(client, new WindsweptParticleProvider(event));
         gen.addProvider(client, new WindsweptSpriteSourceProvider(event));
+        gen.addProvider(client, new GalleryAssetsRemolderProvider(MOD_ID, event.getGenerator().getPackOutput(), event.getLookupProvider()));
 
         WindsweptDatapackProvider dataPack;
         WindsweptBlockTagProvider blockTags;

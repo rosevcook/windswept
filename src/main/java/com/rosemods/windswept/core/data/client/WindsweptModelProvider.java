@@ -3,6 +3,7 @@ package com.rosemods.windswept.core.data.client;
 import com.mojang.datafixers.util.Pair;
 import com.rosemods.windswept.common.block.*;
 import com.rosemods.windswept.core.Windswept;
+import com.rosemods.windswept.core.registry.WindsweptPaintingVariants;
 import com.teamabnormals.blueprint.common.block.chest.BlueprintChestBlock;
 import com.teamabnormals.blueprint.common.block.chest.BlueprintTrappedChestBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintStandingSignBlock;
@@ -11,6 +12,7 @@ import com.teamabnormals.blueprint.core.Blueprint;
 import com.teamabnormals.blueprint.core.data.client.BlueprintBlockStateProvider;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.decoration.PaintingVariant;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
@@ -95,6 +97,14 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
         this.generatedItem(LAVENDER_CROWN.get(), TextureFolder.ITEM);
         this.generatedItem(ANTLER_HELMET.get(), TextureFolder.ITEM);
         this.generatedItem(PINECONE_JAM_BOTTLE.get(), TextureFolder.ITEM);
+
+        this.painting(WindsweptPaintingVariants.CLIFFSIDE);
+        this.painting(WindsweptPaintingVariants.DRESS_CODES);
+        this.painting(WindsweptPaintingVariants.ECOTONAL_PAREIDOLIA);
+        this.painting(WindsweptPaintingVariants.THE_FOILS);
+        this.painting(WindsweptPaintingVariants.AURORAE);
+        this.painting(WindsweptPaintingVariants.HEARTH_RUG);
+        this.painting(WindsweptPaintingVariants.ALLU_PINE);
 
         // holly
         this.pillar(STRIPPED_HOLLY_LOG);
@@ -523,6 +533,11 @@ public class WindsweptModelProvider extends BlueprintBlockStateProvider {
 
     private void spawnEgg(RegistryObject<? extends Item> egg) {
         this.itemModels().withExistingParent(getItemName(egg.get()), "item/template_spawn_egg");
+    }
+
+    private void painting(RegistryObject<PaintingVariant> painting) {
+        String name = ForgeRegistries.PAINTING_VARIANTS.getKey(painting.get()).getPath();
+        this.itemModels().withExistingParent("item/painting/" + name, "item/generated").texture("layer0", this.modLoc("item/painting/" + name));
     }
 
     // Blocks //
