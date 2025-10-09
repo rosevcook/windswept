@@ -52,7 +52,7 @@ public class FrostArrow extends AbstractArrow {
 
     @Override
     protected void onHitEntity(EntityHitResult result) {
-        if (result.getEntity() instanceof LivingEntity livingEntity)
+        if (result.getEntity() instanceof LivingEntity livingEntity && !livingEntity.level().isClientSide)
             livingEntity.setTicksFrozen((int) ((livingEntity.getTicksFrozen() + 100) * this.getDeltaMovement().length()));
 
         super.onHitEntity(result);

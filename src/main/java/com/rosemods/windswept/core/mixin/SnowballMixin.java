@@ -13,6 +13,8 @@ public class SnowballMixin {
     @Inject(method = "onHitEntity", at = @At("TAIL"))
     private void onHitEntity(EntityHitResult result, CallbackInfo info) {
         Entity entity = result.getEntity();
-        entity.setTicksFrozen(entity.getTicksFrozen() + 25);
+
+        if (!entity.level().isClientSide)
+            entity.setTicksFrozen(entity.getTicksFrozen() + 25);
     }
 }

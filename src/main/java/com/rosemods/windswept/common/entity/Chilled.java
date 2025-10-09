@@ -64,7 +64,7 @@ public class Chilled extends Zombie {
 
     @Override
     public boolean doHurtTarget(Entity entity) {
-        if (super.doHurtTarget(entity) && entity instanceof LivingEntity livingEntity) {
+        if (super.doHurtTarget(entity) && entity instanceof LivingEntity livingEntity && !livingEntity.level().isClientSide) {
             livingEntity.setTicksFrozen(livingEntity.getTicksFrozen() + 100);
             return true;
         }
