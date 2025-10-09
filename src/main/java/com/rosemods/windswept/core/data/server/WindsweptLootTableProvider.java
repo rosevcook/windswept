@@ -409,7 +409,7 @@ public class WindsweptLootTableProvider extends LootTableProvider {
             this.add(WILD_BERRY_BUSH.get(), b -> applyExplosionDecay(b, LootTable.lootTable().withPool(LootPool.lootPool()
                         .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(b)
                                 .setProperties(StatePropertiesPredicate.Builder.properties()
-                                        .hasProperty(SweetBerryBushBlock.AGE, 2)))
+                                        .hasProperty(SweetBerryBushBlock.AGE, 3)))
                         .add(LootItem.lootTableItem(WILD_BERRIES.get()))
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 2f)))
                         .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));

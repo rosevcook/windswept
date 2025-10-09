@@ -13,7 +13,7 @@
           "block": "windswept:wild_berry_bush",
           "condition": "minecraft:block_state_property",
           "properties": {
-            "age": "2"
+            "age": "3"
           }
         }
       ],
